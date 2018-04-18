@@ -3643,16 +3643,6 @@
         <name>EmailTemplate</name>
     </types>
     <types>
-        <members>b2b_care_admin_sla</members>
-        <members>b2b_care_bronze_sla</members>
-        <members>b2b_care_gold_sla</members>
-        <members>b2b_care_platinum_sla</members>
-        <members>b2b_care_service_sla</members>
-        <members>b2b_care_service_sla_old</members>
-        <members>b2b_care_silver_sla</members>
-        <name>EntitlementProcess</name>
-    </types>
-    <types>
         <members>Case</members>
         <name>EscalationRules</name>
     </types>
