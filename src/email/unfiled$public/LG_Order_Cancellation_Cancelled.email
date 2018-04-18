@@ -1,0 +1,5 @@
+<messaging:emailTemplate subject="Order Cancellation - Cancelled" recipientType="User" relatedToType="Case">
+<messaging:htmlEmailBody >
+<c:LG_CancelOrderMailComponent order="{!relatedTo.LG_Order__c}" />
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

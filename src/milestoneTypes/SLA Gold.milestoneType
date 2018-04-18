@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MilestoneType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Created for B2B Care for Sla type field Gold</description>
+    <recurrenceType>none</recurrenceType>
+</MilestoneType>

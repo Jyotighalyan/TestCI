@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Schedule Appointment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Schedule Appointment</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address Name --></label>
+        <name>LG_AddressName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>LG_Address__c</name>
+        <relationshipLabel><!-- Schedule Appointment --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Agreed Install Date --></label>
+        <name>LG_AgreedInstallDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>LG_Case__c</name>
+        <relationshipLabel><!-- Schedule Appointment --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date of First Email Notification --></label>
+        <name>LG_DateofFirstEmailNotification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of First SMS Notification --></label>
+        <name>LG_DateofFirstSMSNotification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Second Email Notification --></label>
+        <name>LG_DateofSecondEmailNotification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Second SMS Notification --></label>
+        <name>LG_DateofSecondSMSNotification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Comments --></label>
+        <name>LG_InstallationComments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Contact --></label>
+        <name>LG_InstallationContact__c</name>
+        <relationshipLabel><!-- Schedule Appointment --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Job Reference --></label>
+        <name>LG_JobReference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reasons --></label>
+        <name>LG_Reasons__c</name>
+        <picklistValues>
+            <masterLabel>Blockage</masterLabel>
+            <translation><!-- Blockage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Civils/Cabling Delay</masterLabel>
+            <translation><!-- Civils/Cabling Delay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Civils/Cabling completed early</masterLabel>
+            <translation><!-- Civils/Cabling completed early --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer delay</masterLabel>
+            <translation><!-- Customer delay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Embargo</masterLabel>
+            <translation><!-- Embargo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Escalation/Expedite</masterLabel>
+            <translation><!-- Escalation/Expedite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Install</masterLabel>
+            <translation><!-- Failed Install --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Force Majeure</masterLabel>
+            <translation><!-- Force Majeure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initial Date set</masterLabel>
+            <translation><!-- Initial Date set --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landlord Restrictions/Site specific RAMS required</masterLabel>
+            <translation><!-- Landlord Restrictions/Site specific RAMS required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network Issue</masterLabel>
+            <translation><!-- Network Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Noticing/Traffic Management</masterLabel>
+            <translation><!-- Noticing/Traffic Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLO Delay</masterLabel>
+            <translation><!-- OLO Delay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Dependant Order</masterLabel>
+            <translation><!-- Other Dependant Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Roll Out</masterLabel>
+            <translation><!-- Project Roll Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-plan required</masterLabel>
+            <translation><!-- Re-plan required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resource Issues</masterLabel>
+            <translation><!-- Resource Issues --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>LG_Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Slot --></label>
+        <name>LG_Slot__c</name>
+        <picklistValues>
+            <masterLabel>Afternoon Slot</masterLabel>
+            <translation><!-- Afternoon Slot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evening Slot</masterLabel>
+            <translation><!-- Evening Slot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morning Slot</masterLabel>
+            <translation><!-- Morning Slot --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Solution --></label>
+        <name>LG_Solution__c</name>
+        <relationshipLabel><!-- Schedule Appointment --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>LG_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation><!-- Scheduled --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Agreed Install date cannot be before Earliest Install dates --></errorMessage>
+        <name>Agreed_Installed_Date_validation</name>
+    </validationRules>
+</CustomObjectTranslation>

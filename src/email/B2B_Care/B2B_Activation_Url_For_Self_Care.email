@@ -1,0 +1,171 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; text-align: right;"><span lang="DE" style="font-family: Arial, sans-serif; background-color: rgb(255, 255, 255);"><font size="2">Ihre Rahmenvertragsnummer:&nbsp;{!Contact.LG_Contact_Account_No__c}</font></span></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; text-align: left;"><span lang="DE" style="font-family: Arial, sans-serif; background-color: rgb(255, 255, 255);"><font size="2"><br></font></span></div><div style="text-align: left;"><font size="2" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span lang="DE" style="font-family: Arial, sans-serif; background-color: rgb(255, 255, 255);">Guten Tag&nbsp;</span></font><font style=""><span style="background-color: rgb(255, 255, 255);"><font style=""><font style=""><font face="Arial, sans-serif">{!Contact.LG_SalutationLocal__c}</font><font face="arial"><span style="font-size: 12pt;">&nbsp;{!Contact.LastName},</span></font></font></font></span></font></div>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span lang="DE"><font size="2">&nbsp;</font></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE"><font size="2">als Unitymedia
+Businesskunde haben Sie die Möglichkeit sich in unserem Online-Kundencenter zu
+registrieren. In unserem Online-Kundencenter können Sie schnell und einfach
+Ihre Kontaktdaten ändern, Ihre Rechnungen einsehen und vieles mehr.</font></span><span style="font-size: small; font-family: Arial, sans-serif;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span lang="DE" style=""><font face="Arial, sans-serif" style="" size="2">Ihre
+Vorteile auf einen Blick:</font></span><span style="font-size: small; font-family: Arial, sans-serif;">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-left: 71.4pt; text-indent: -0.25in;"><!--[if !supportLists]--><font size="2"><span lang="DE" style="font-family: Symbol;">·<span style="font-variant-numeric: normal; font-stretch: normal; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="DE" style=""><font face="Arial, sans-serif" style="">Kontaktdaten wie E-Mail-Adresse aktualisieren</font></span></font><span style="font-size: small; font-family: Arial, sans-serif;">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpFirst" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-left: 71.4pt; text-indent: -0.25in;"><!--[if !supportLists]--><font size="2"><span lang="DE" style="font-family: Symbol;">·<span style="font-variant-numeric: normal; font-stretch: normal; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="DE" style=""><font face="Arial, sans-serif" style="">Ihre Rechnungen einsehen und downloaden</font></span></font><span style="font-size: small; font-family: Arial, sans-serif;">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-left: 71.4pt; text-indent: -0.25in;"><!--[if !supportLists]--><font size="2"><span lang="DE" style="font-family: Symbol;">·<span style="font-variant-numeric: normal; font-stretch: normal; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="DE" style=""><font face="Arial, sans-serif" style="">Ihre Zahlungsdetails verwalten</font></span></font><span style="font-size: small; font-family: Arial, sans-serif;">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-left: 71.4pt; text-indent: -0.25in;"><!--[if !supportLists]--><font size="2"><span lang="DE" style="font-family: Symbol;">·<span style="font-variant-numeric: normal; font-stretch: normal; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="DE" style=""><font face="Arial, sans-serif" style="">Anfragen an unseren Kundenservice stellen und
+nachverfolgen</font></span></font><span style="font-size: small; font-family: Arial, sans-serif;">&nbsp;</span></p>
+
+<p class="MsoListParagraphCxSpLast" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-left: 71.4pt; text-indent: -0.25in;"><!--[if !supportLists]--><font size="2"><span lang="DE" style="font-family: Symbol;">·<span style="font-variant-numeric: normal; font-stretch: normal; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="DE" style=""><font face="Arial, sans-serif" style="">Bestellungen nachverfolgen</font></span></font><span style="font-size: small; font-family: Arial, sans-serif;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span lang="DE" style=""><font face="Arial, sans-serif" style="" size="2">Wir
+freuen uns, Sie in unserem Online-Kundencenter begrüßen zu dürfen.</font></span><span style="font-family: Arial, sans-serif; font-size: small;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span lang="DE" style=""><font face="Arial, sans-serif" size="2">In
+einer separaten E-Mail erhalten Sie einen Aktivierungscode und den Link zur
+Registrierung.</font></span></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="Arial, Helvetica, sans-serif"><span style="font-size: 12px;">{!Contact.B2B_Self_Care_Redirection_Url__c}</span></font></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE" style=""><font size="2"><font face="Arial, sans-serif" style="">Sollten Sie Fragen
+haben, rufen Sie uns einfach an. Sie erreichen uns unter der &nbsp;Rufnummer 0800 141 299 99&nbsp; von Mo - Fr von 8 bis 20 Uhr und Sa 8 bis 16
+Uhr. Sie erreichen uns auch per E-Mail an <a href="mailto:Enterprise.Service@unitymedia.de" style="">Enterprise.Service@unitymedia.de</a>.
+</font><font face="arial" style=""><o:p></o:p></font></font></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE"><font size="2">&nbsp;<o:p></o:p></font></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE"><font size="2">Mit freundlichen
+Grüßen <o:p></o:p></font></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE"><font size="2">&nbsp;</font></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE"><font size="2">Unitymedia Business
+Team</font></span><span style="font-size: small;">&nbsp;</span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE"><font size="2">&nbsp;<o:p></o:p></font></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><font size="2">Tel.: 0800
+141 299 99<o:p></o:p></font></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><font size="2">Fax: 0800
+888 87 10<o:p></o:p></font></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><font size="2">&nbsp;<o:p></o:p></font></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE" style=""><a href="http://www.unitymedia.de/business" style=""><span lang="EN-US" style=""><font size="2">www.unitymedia.de/business</font></span></a></span><span style="font-size: 12pt;"><o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><o:p>&nbsp;</o:p></p>
+
+<table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; border-collapse: collapse; border: none;">
+ <tbody><tr>
+  <td width="151" valign="top" style="width:113.25pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><b><span lang="DE" style="font-size:7.0pt;mso-fareast-language:EN-US">Unitymedia
+  NRW GmbH<o:p></o:p></span></b></p>
+  </td>
+  <td width="180" valign="top" style="width:134.85pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><b><span style="font-size:7.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+  EN-US">Unitymedia Hessen GmbH &amp; Co. KG<o:p></o:p></span></b></p>
+  </td>
+  <td width="142" valign="top" style="width:106.3pt;border:none;mso-border-left-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><b><span lang="DE" style="font-size:7.0pt;mso-fareast-language:EN-US">Unitymedia
+  BW GmbH<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1;height:33.75pt">
+  <td width="151" valign="top" style="width:113.25pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:33.75pt">
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US;mso-fareast-language:EN-US">Unitymedia Business
+  Service <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US;mso-fareast-language:EN-US">Postfach 45 12 04 <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US;mso-fareast-language:EN-US">50887 Köln<o:p></o:p></span></p>
+  </td>
+  <td width="180" valign="top" style="width:134.85pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:33.75pt">
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US;mso-fareast-language:EN-US">Unitymedia Business
+  Service <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US;mso-fareast-language:EN-US">Postfach 45 12 04 <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US;mso-fareast-language:EN-US">50887 Köln<o:p></o:p></span></p>
+  </td>
+  <td width="142" valign="top" style="width:106.3pt;border:none;mso-border-left-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:33.75pt">
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US;mso-fareast-language:EN-US">Unitymedia Business
+  Service&nbsp; Postfach 90 01 31<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US;mso-fareast-language:EN-US">75090 Pforzheim<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="151" valign="top" style="width:113.25pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Handelsregister: <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Amtsgericht Köln HRB 55984<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Sitz der Gesellschaft: Köln<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">USt-ID DE 813243 253 <o:p></o:p></span></p>
+  </td>
+  <td width="180" valign="top" style="width:134.85pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Handelsregister:<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Amtsgericht Köln HRA 24116<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Sitz der Gesellschaft: Köln<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">USt-ID DE 213 891 500<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Geschäftsführende Gesellschafterin<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Unitymedia Hessen Verwaltung GmbH<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Amtsgericht Köln HRB 58137<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Sitz der Gesellschaft: Köln<o:p></o:p></span></p>
+  </td>
+  <td width="142" valign="top" style="width:106.3pt;border:none;mso-border-left-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Handelsregister:<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Amtsgericht Köln HRB 83533<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">Sitz der Gesellschaft: Köln<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">USt-ID DE 251338951<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3;mso-yfti-lastrow:yes;height:21.4pt">
+  <td width="473" colspan="3" valign="top" style="width:354.4pt;padding:0in 5.4pt 0in 5.4pt;
+  height:21.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;mso-fareast-language:EN-US">&nbsp;</span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size: 9.33333px;">Geschäftsführer: Lutz Schüler (Vorsitzender) | Gudrun Scharler | Christian Hindennach | Dr. Herbert Leifker | Winfried&nbsp; Rapp</span></p></td></tr></tbody></table><table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; border-collapse: collapse; border: none;"><tbody><tr style="font-size: 12pt; height: 21.4pt;"></tr></tbody></table>]]></td>
+</tr>
+</table>

@@ -1,0 +1,95 @@
+<apex:page showheader="False" sidebar="False" controller="LG_ReSendWelcomePackEmail" label="Re-send Welcome Pack" title="Re-send Welcome Pack">
+
+    <apex:includeScript value="/support/console/26.0/integration.js"/>
+    <script type="text/javascript">
+        /**
+        function RefreshPrimaryTab() 
+        {
+            if (sforce.console.isInConsole()) {
+               //in fulfillment console
+               sforce.console.getFocusedPrimaryTabId(showTabId);          
+            }
+            else{
+            //not in fulfillment console
+            window.opener.location.href="/{!$CurrentPage.parameters.id}";
+            }
+        }
+        
+        var showTabId = function showTabId(result) 
+        {
+            var tabId = result.id;
+            alert('Primary Tab IDs: primaryTabId ' + tabId );
+            sforce.console.refreshPrimaryTabById(tabId , true, refreshSuccess);
+        };
+        
+        var refreshSuccess = function refreshSuccess(result) 
+        {
+            //Report whether refreshing the primary tab was successful
+            if (result.success == true) 
+            {
+            alert('Primary tab refreshed successfully');
+            } 
+            else 
+            {
+            alert('Primary did not refresh');
+            }
+        };
+        **/
+        
+        function closeWindow() 
+        { 
+            //window.top.location='/console';
+            window.top.close();
+            //below will refresh the parent page
+            window.opener.location.href="/{!$CurrentPage.parameters.id}";
+        }  
+        
+        //below method will refresh parent on click on Window's Close button
+        function refreshParent()
+        {
+            //window.top.location='/console';
+            window.opener.location.href="/{!$CurrentPage.parameters.id}";
+        }
+        
+    </script>
+    <style>
+        .btnWidth{
+            width:80px;
+        }
+    </style>
+    <body onunload="refreshParent()">
+        <apex:form >
+            <apex:messages />
+            <apex:outputPanel id="errorPanel" rendered="{!!validationStatus}">
+                <apex:pageBlock title="Re-send Email">
+                    <apex:outputText value="{!errorMessage}" />
+                    <apex:pageBlockButtons location="bottom">
+                        <input type="button" value="Close" onClick="closeWindow()" class="btn btnWidth" />
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>         
+            </apex:outputPanel>
+            <apex:outputPanel id="formPanel" rendered="{!validationStatus}">
+                <apex:pageBlock title="Re-send Email">
+                    <apex:outputText value="{!$Label.LG_popupKundensetup}" rendered="{!kundenService}" /> 
+                    <apex:pageBlockSection columns="1" rendered="{!hidefn}" > <!--added for SFOM-2428-->
+                        <apex:inputField value="{!ast.LG_IPAddress__c}" rendered="{!!kundenService}"/>
+                        <apex:inputField value="{!ast.LG_MACAddress__c}" rendered="{!!kundenService}"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection columns="1" rendered="{!!hidefn}" > <!--added for SFOM-2428-->
+                        <apex:outputField value="{!ast.LG_IPAddress__c}" rendered="{!!kundenService}" />
+                        <apex:outputField value="{!ast.LG_MACAddress__c}" rendered="{!!kundenService}"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockButtons location="bottom">
+                        <apex:commandButton action="{!sendEmail}" value="Send Email" styleClass="btnWidth" rendered="{!(enableSendEmail || kundenService)}" 
+                        disabled="{!disablesendEmail}"/>
+                        
+                        <!--SFOM-2428 -->
+                        <apex:commandButton action="{!SaveAsset}" value="Save" styleClass="btnWidth" rendered="{!!(enableSendEmail || kundenService)}" />
+                      	<apex:commandButton value="Cancel" onclick="closeWindow()" disabled="{!disablesendEmail}" styleClass="btnWidth"/>
+                        
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+            </apex:outputPanel>
+        </apex:form> 
+    </body>
+</apex:page>

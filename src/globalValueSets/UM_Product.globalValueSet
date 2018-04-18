@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Office Internet</fullName>
+        <default>false</default>
+        <label>Office Internet</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Internet &amp; Phone</fullName>
+        <default>false</default>
+        <label>Office Internet &amp; Phone</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Internet</fullName>
+        <default>false</default>
+        <label>Company Internet</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Fiber</fullName>
+        <default>false</default>
+        <label>Company Fiber</label>
+    </customValue>
+    <customValue>
+        <fullName>LE Fiber</fullName>
+        <default>false</default>
+        <label>LE Fiber</label>
+    </customValue>
+    <customValue>
+        <fullName>Wholesale Data</fullName>
+        <default>false</default>
+        <label>Wholesale Data</label>
+    </customValue>
+    <customValue>
+        <fullName>LTE</fullName>
+        <default>false</default>
+        <label>LTE</label>
+    </customValue>
+    <customValue>
+        <fullName>WiFi/Wlan</fullName>
+        <default>false</default>
+        <label>WiFi/Wlan</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Voice</fullName>
+        <default>false</default>
+        <label>Company Voice</label>
+    </customValue>
+    <customValue>
+        <fullName>Mobilfunk</fullName>
+        <default>false</default>
+        <label>Mobilfunk</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital TV</fullName>
+        <default>false</default>
+        <label>Digital TV</label>
+    </customValue>
+    <customValue>
+        <fullName>Allgemeine Beratung</fullName>
+        <default>false</default>
+        <label>Allgemeine Beratung</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Internet 50</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Office Internet 50</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Internet 150</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Office Internet 150</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Internet 200</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Office Internet 200</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Internet 250</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Office Internet 250</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Internet 400</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Office Internet 400</label>
+    </customValue>
+    <customValue>
+        <fullName>1 static IP address (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1 static IP address (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>5 static IP addresses (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>5 static IP addresses (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Download Option 150MB (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Download Option 150MB (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Download Option 200 MB (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Download Option 200 MB (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Download Option 250 MB (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Download Option 250 MB (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Download Option 400 MB (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Download Option 400 MB (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe FLAT PLUS (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe FLAT PLUS (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>International FLAT PLUS (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>International FLAT PLUS (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>1 telephone line (analog, by call) (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1 telephone line (analog, by call) (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>3 telephone lines (3-10 RN) (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3 telephone lines (3-10 RN) (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>WLAN router (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>WLAN router (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>SPAR mobile (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>SPAR mobile (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>VPN (Office internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>VPN (Office internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Internet &amp; Phone 50</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Office Internet &amp; Phone 50</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Internet &amp; Phone 150</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Office Internet &amp; Phone 150</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Internet &amp; Phone 200</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Office Internet &amp; Phone 200</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Internet &amp; Phone 250</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Office Internet &amp; Phone 250</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Internet &amp; Phone 400</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Office Internet &amp; Phone 400</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Internet 200/15</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Internet 200/15</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Internet 200/25</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Internet 200/25</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Internet 200/40</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Internet 200/40</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Internet 250/15</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Internet 250/15</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Internet 250/25</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Internet 250/25</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Internet 250/40</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Internet 250/40</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Internet 400/15</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Internet 400/15</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Internet 400/25</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Internet 400/25</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Internet 400/40</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Internet 400/40</label>
+    </customValue>
+    <customValue>
+        <fullName>1 static IP address (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1 static IP address (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>13 static IP address (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>13 static IP address (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>5 static IP addresses (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>5 static IP addresses (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Download Option 150MB (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Download Option 150MB (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Download Option 200 MB (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Download Option 200 MB (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Download Option 250 MB (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Download Option 250 MB (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Download Option 400 MB (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Download Option 400 MB (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe FLAT PLUS (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe FLAT PLUS (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>International FLAT PLUS (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>International FLAT PLUS (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>1 telephone line (analog, by call) (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1 telephone line (analog, by call) (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>3 telephone lines (3-10 RN) (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3 telephone lines (3-10 RN) (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>WLAN router (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>WLAN router (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>SPAR mobile (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>SPAR mobile (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>VPN (Company Internet)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>VPN (Company Internet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Fiber 15 Mbit/s</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Fiber 15 Mbit/s</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Fiber 25 Mbit/s</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Fiber 25 Mbit/s</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Fiber 50 Mbit/s</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Fiber 50 Mbit/s</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Fiber 100 Mbit/s</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Fiber 100 Mbit/s</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Fiber 200 Mbit/s</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Fiber 200 Mbit/s</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Fiber 500 Mbit/s</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Fiber 500 Mbit/s</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Fiber 1 Gbit/s</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Fiber 1 Gbit/s</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Fiber 2 Gbit/s</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Fiber 2 Gbit/s</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Fiber 5 Gbit/s</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Fiber 5 Gbit/s</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Fiber 10 Gbit/s</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company Fiber 10 Gbit/s</label>
+    </customValue>
+    <customValue>
+        <fullName>IP Transit</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>IP Transit</label>
+    </customValue>
+    <customValue>
+        <fullName>Paid Peering</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Paid Peering</label>
+    </customValue>
+    <customValue>
+        <fullName>E-Line (P2P)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>E-Line (P2P)</label>
+    </customValue>
+    <customValue>
+        <fullName>Dark Fiber</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Dark Fiber</label>
+    </customValue>
+    <customValue>
+        <fullName>LTE Backhaul</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>LTE Backhaul</label>
+    </customValue>
+    <customValue>
+        <fullName>PowerSpot</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>PowerSpot</label>
+    </customValue>
+    <customValue>
+        <fullName>Managed Wlan Solution</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Managed Wlan Solution</label>
+    </customValue>
+    <customValue>
+        <fullName>City Wifi</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>City Wifi</label>
+    </customValue>
+    <customValue>
+        <fullName>Vermarktung</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Vermarktung</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN 1S0</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN 1S0</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN 2S0</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN 2S0</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN 3S0</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN 3S0</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN 4S0</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN 4S0</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN 5S0</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN 5S0</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN 6S0</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN 6S0</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN 7S0</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN 7S0</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN 8S0</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN 8S0</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN PMX 1 S2M</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN PMX 1 S2M</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN PMX 2 S2M</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN PMX 2 S2M</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN PMX 3 S2M</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN PMX 3 S2M</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN PMX 4 S2M</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN PMX 4 S2M</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 3 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 3 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 5 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 5 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 10 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 10 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 20 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 20 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 30 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 30 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 40 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 40 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 50 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 50 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 60 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 60 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 70 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 70 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 80 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 80 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 90 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 90 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 100 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 100 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 110 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 110 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 120 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 120 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 130 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 130 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 140 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 140 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 150 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 150 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 160 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 160 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 170 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 170 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 180 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 180 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 190 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 190 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 200 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 200 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 210 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 210 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 220 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 220 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 230 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 230 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 240 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 240 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 250 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 250 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 260 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 260 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 270 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 270 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 280 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 280 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 290 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 290 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk 300 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk 300 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk ab 300 Kan?</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk ab 300 Kan?</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk National Allnet Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk National Allnet Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SIP Trunk National Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SIP Trunk National Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SipTrunk Mobile Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SipTrunk Mobile Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SipTrunk Euro Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SipTrunk Euro Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice SipTrunk International Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice SipTrunk International Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN PMX National Allnet Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN PMX National Allnet Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN PMX national Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN PMX national Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN PMX mobile Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN PMX mobile Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN PMX Euro Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN PMX Euro Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN PMX international Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN PMX international Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN S01 national Allnet Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN S01 national Allnet Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN S01 national Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN S01 national Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN S01 mobile Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN S01 mobile Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN S01 Euro Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN S01 Euro Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN S01 Euro international Flat</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN S01 Euro international Flat</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice Sip Trunk National Minutenpaket</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice Sip Trunk National Minutenpaket</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice Sip Trunk Mobile Minutenpaket</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice Sip Trunk Mobile Minutenpaket</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice Sip Trunk Euro Minutenpaket</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice Sip Trunk Euro Minutenpaket</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN PMX National Minutenpaket</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN PMX National Minutenpaket</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN PMX Mobile Minutenpaket</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN PMX Mobile Minutenpaket</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN PMX Euro Minutenpaket</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN PMX Euro Minutenpaket</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN National Minutenpaket</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN National Minutenpaket</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN Mobile Minutenpaket</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN Mobile Minutenpaket</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice ISDN Euro Minutenpaket</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice ISDN Euro Minutenpaket</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Voice Tariff Plan</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Voice Tariff Plan</label>
+    </customValue>
+    <customValue>
+        <fullName>Umzugsservice</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Umzugsservice</label>
+    </customValue>
+    <customValue>
+        <fullName>Wechselgebühr</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Wechselgebühr</label>
+    </customValue>
+    <description>Global Picklist to manage and select product interest on leads</description>
+    <masterLabel>Product</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

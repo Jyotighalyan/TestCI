@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- NPS Result --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- NPS Result --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- NPS Result --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- NPS Result --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- NPS Result --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- NPS Result --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- NPS Result --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- NPS Result --></value>
+    </caseValues>
+    <fields>
+        <label>Account Name</label>
+        <name>Account_Name__c</name>
+        <relationshipLabel><!-- NPS Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Alert status --></label>
+        <name>B2B_Care_Alert_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bounced categories --></label>
+        <name>B2B_Care_Bounced_categories__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration date --></label>
+        <name>B2B_Care_Expiration_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reminded date --></label>
+        <name>B2B_Care_Reminded_date__c</name>
+    </fields>
+    <fields>
+        <label>Fall ID</label>
+        <name>Case_ID__c</name>
+        <relationshipLabel><!-- NPS Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Kontakt Name</label>
+        <name>Contact_Name__c</name>
+        <relationshipLabel><!-- NPS Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Email Kunde</label>
+        <name>Customer_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medallia ID --></label>
+        <name>Medallia_ID__c</name>
+    </fields>
+    <fields>
+        <label>Medallia URL</label>
+        <name>Medallia_URL__c</name>
+    </fields>
+    <fields>
+        <label>NPS Wert</label>
+        <name>NPS_Score__c</name>
+    </fields>
+    <fields>
+        <label>Opportunity ID</label>
+        <name>Opportunity_ID__c</name>
+        <relationshipLabel><!-- NPS Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Antwortdatum</label>
+        <name>Response_Date__c</name>
+    </fields>
+    <fields>
+        <label>Sub Order ID</label>
+        <name>Sub_Order_ID__c</name>
+        <relationshipLabel><!-- NPS Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Umfragestatus</label>
+        <name>Survey_Status__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <nameFieldLabel><!-- Survey Type --></nameFieldLabel>
+</CustomObjectTranslation>

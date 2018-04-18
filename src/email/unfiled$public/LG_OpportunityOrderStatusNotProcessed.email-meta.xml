@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to Opportunity Owner, when Order Status is in stage Not Processed.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Opportunity: Order Status is in stage Not Processed</name>
+    <style>none</style>
+    <subject>{!Account.Name} Internet Conpetitor End Date is 30 days before finish.</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

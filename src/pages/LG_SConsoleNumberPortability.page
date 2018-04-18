@@ -1,0 +1,157 @@
+<apex:page standardController="Case" extensions="LG_SConsoleNumberPortabilityExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+
+    <apex:form >
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock title="Number Portability" mode="{!Mode}" rendered="{!!editor}"> <!-- rendered="{!!editor}" -->
+            
+            <apex:pageBlockSection title="" columns="1" collapsible="true">
+
+                <!-- Table section -->
+                <apex:pageBlockTable value="{!viewModel}" var="obj">
+                    
+                    <!-- Collumns -->
+                    <apex:column headerValue="">
+                        
+                        <apex:commandLink action="{!toggleEditor}" value="Edit" id="theCommandLink">
+                            <apex:param name="processId" value="{!obj.process.Id}" />
+                        </apex:commandLink>
+                        
+                    </apex:column>
+                    <apex:column headerValue="Operator" value="{!obj.assetRec.LG_PortInOperator__c}"></apex:column>
+                    <apex:column headerValue="Range">
+                        <apex:outputText value="{!obj.assetRec.LG_NumberRange__c} ({!obj.assetRec.LG_NumberRangeSize__c})" />
+                    </apex:column>
+                    <apex:column headerValue="Porting Wish Date" value="{!obj.assetRec.LG_PortInWishDate__c}"></apex:column>
+                    <apex:column headerValue="Request Id" value="{!obj.request.LG_RequestId__c}"></apex:column>
+                    <apex:column headerValue="Porting Agreed Date" value="{!obj.request.LG_PortingAgreedDate__c}"></apex:column>
+                    <apex:column headerValue="Response" value="{!obj.request.LG_Response__c}"></apex:column>
+                    <apex:column headerValue="Porting In Types" value="{!obj.assetRec.LG_PortInType__c}"></apex:column>
+                    <apex:column headerValue="Donor Account" value="{!obj.donorAccount}"></apex:column>
+
+                <!-- / Table section -->
+                </apex:pageBlockTable>
+                
+            
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Suborder" columns="2" collapsible="false" rendered="{!jeopardy}">
+    			
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Suborder" />
+                    <apex:outputLink value="/{!solutionObject.Id}" id="lnkSuborder" target="_blank">{!solutionObject.Id}</apex:outputLink>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputField value="{!solutionObject.LG_TargetDate__c}" />
+                <apex:outputField value="{!solutionObject.LG_Jeopardy__c}" />
+                <apex:outputField value="{!solutionObject.LG_JeopardyExplanation__c}" />
+                
+            </apex:pageBlockSection>
+    
+            <apex:pageBlockSection id="jeopardySection" title="Suborder" columns="2" collapsible="false" rendered="{!!jeopardy}">
+    
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Suborder" />
+                    <apex:outputLink value="/{!solutionObject.Id}" id="lnkSuborder" target="_blank">{!solutionObject.Id}</apex:outputLink>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputField value="{!solutionObject.LG_TargetDate__c}" />
+                
+                <apex:pageBlockSectionItem >
+                    
+                    <apex:outputLabel value="{!$ObjectType.csord__Solution__c.fields.LG_Jeopardy__c.label}" for="jeopardySection" />
+                    <apex:actionRegion > <br />
+                        <apex:inputField id="jeopardyInput" value="{!solutionObject.LG_Jeopardy__c}">
+                            <apex:actionSupport event="onchange" rerender="jeopardySection" />
+                        </apex:inputField>
+                    </apex:actionRegion>
+                    
+                </apex:pageBlockSectionItem>
+
+                <apex:inputField value="{!solutionObject.LG_JeopardyExplanation__c}" required="{!solutionObject.LG_Jeopardy__c}" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons rendered="{!!caseClosed}">
+                <apex:commandButton action="{!editsolution}" value="Edit" rendered="{!jeopardy}" />
+                <apex:commandButton action="{!savesolution}" value="Save" rendered="{!!jeopardy}" />
+                <apex:commandButton action="{!cancelsolution}" value="Cancel" rendered="{!!jeopardy}" />
+            </apex:pageBlockButtons>
+
+        </apex:pageBlock>
+        
+        <apex:pageBlock id="editorControl" title="Number Portability" rendered="{!editor}"> <!-- rendered="{!editor}" -->
+        
+            <apex:pageBlockSection title="Request data" columns="1">
+            
+                <!--<apex:pageBlockSection columns="1">
+                    
+                    <strong>Process: </strong>
+                    
+                    <apex:inputField value="{!activeProcess.Id}" />
+                    <apex:inputField value="{!activeProcess.LG_ChangeIndicator__c}" />
+                    <apex:inputField value="{!activeProcess.LG_PortInWishDate__c}" />
+                
+                </apex:pageBlockSection>-->
+                
+                <apex:inputField value="{!activeRequest.LG_RequestId__c}" required="true" />
+                <apex:inputField value="{!activeRequest.LG_PortingAgreedDate__c}" required="true" />
+                <apex:inputField value="{!activeRequest.LG_Response__c}" />
+                
+            </apex:pageBlockSection>
+            
+            <!--<apex:pageBlockSection title="Process requests" columns="1">
+            
+                !-- Table section --
+                <apex:pageBlockTable title="Processes" value="{!activeRequest}" var="proc">
+    
+                    !-- Collumns --
+                    <apex:column headerValue="Name" value="{!proc.Name}"></apex:column>
+                    <apex:column headerValue="Porting agreed date">
+                        <apex:outputText value="{!proc.LG_PortingAgreedDate__c}" />
+                    </apex:column>
+                    <apex:column headerValue="Process" value="{!proc.LG_Process__c}"></apex:column>
+                    <apex:column headerValue="Request Id" value="{!proc.LG_RequestId__c}"></apex:column>
+                    <apex:column headerValue="Response" value="{!proc.LG_Response__c}"></apex:column>
+                
+                !-- / Table section --
+                </apex:pageBlockTable>
+            
+            </apex:pageBlockSection>-->
+            
+            <apex:pageBlockSection title="Number porting" columns="1">
+                
+                <!-- Table section -->
+                <apex:pageBlockTable value="{!activeViewModel}" var="obj">
+                    
+                    <!-- Collumns -->
+                    <apex:column headerValue="Operator" value="{!obj.assetRec.LG_PortInOperator__c}"></apex:column>
+                    <apex:column headerValue="Range">
+                        <apex:outputText value="{!obj.assetRec.LG_NumberRange__c} ({!obj.assetRec.LG_NumberRangeSize__c})" />
+                    </apex:column>
+                    <apex:column headerValue="Porting Wish Date" value="{!obj.assetRec.LG_PortInWishDate__c}"></apex:column>
+                    <apex:column headerValue="Request Id" value="{!obj.request.LG_RequestId__c}"></apex:column>
+                    <apex:column headerValue="Porting Agreed Date" value="{!obj.request.LG_PortingAgreedDate__c}"></apex:column>
+                    <apex:column headerValue="Response" value="{!obj.request.LG_Response__c}"></apex:column>
+                    <apex:column headerValue="Porting In Types" value="{!obj.assetRec.LG_PortInType__c}"></apex:column>
+                    <apex:column headerValue="Donor Account" value="{!obj.donorAccount}"></apex:column>
+
+                    <apex:column headerValue="Change Indicator" value="{!obj.process.LG_ChangeIndicator__c}"></apex:column>
+                    <apex:column headerValue="Previous Porting Wish Date" value="{!obj.process.LG_PortInWishDate__c}"></apex:column>
+                    <apex:column headerValue="Previous Request Id" value="{!obj.previousRequest.LG_RequestId__c}"></apex:column>
+                    <apex:column headerValue="Previous Porting Agreed Date" value="{!obj.previousRequest.LG_PortingAgreedDate__c}"></apex:column>
+                    
+                <!-- / Table section -->
+                </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons rendered="{!!caseClosed}">
+                <apex:commandButton action="{!save}" value="Save" />
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>
+    
+        </apex:pageBlock>
+
+    </apex:form>
+
+</apex:page>

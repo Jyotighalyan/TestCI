@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- Opportunity Report --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Opportunity Report --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Opportunity Report --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Opportunity Report --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Opportunity Report --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Opportunity Report --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Opportunity Report --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Opportunity Report --></value>
+    </caseValues>
+    <fields>
+        <label>Adressen</label>
+        <name>LG_Address__c</name>
+        <relationshipLabel>Report Opportunity</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Attribut</label>
+        <name>LG_Attribute__c</name>
+        <relationshipLabel>Report Opportunity</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Vertragsdauer</label>
+        <name>LG_ContractTerm__c</name>
+    </fields>
+    <fields>
+        <label>einmalig</label>
+        <name>LG_OneOff__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>LG_Opportunity__c</name>
+        <relationshipLabel>Report Opportunity</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Produktkategorie</label>
+        <name>LG_ProductCategoryLookup__c</name>
+        <relationshipLabel>Report Opportunity</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Produktkonfiguration</label>
+        <name>LG_ProductConfiguration__c</name>
+        <relationshipLabel>Report Opportunity</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Produktdefinition</label>
+        <name>LG_ProductDefinitionLookup__c</name>
+        <relationshipLabel>Report Opportunity</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Produktdetails</label>
+        <name>LG_ProductDetails__c</name>
+    </fields>
+    <fields>
+        <label>Warenkorb</label>
+        <name>LG_Product_Basket__c</name>
+        <relationshipLabel>Report Opportunity</relationshipLabel>
+    </fields>
+    <fields>
+        <label>wiederkehrend</label>
+        <name>LG_Recurring__c</name>
+    </fields>
+    <fields>
+        <label>Reihenfolge</label>
+        <name>LG_Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Name --></label>
+        <name>UM_CarrierName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Description --></label>
+        <name>UM_DiscountDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Duration --></label>
+        <name>UM_DiscountDuration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Price --></label>
+        <name>UM_DiscountPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Value --></label>
+        <name>UM_DiscountValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name/Company --></label>
+        <name>UM_LastNameCompany__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>UM_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Of New Phone Numbers --></label>
+        <name>UM_NumberOfNewPhoneNumbers__c</name>
+    </fields>
+    <fields>
+        <label><!-- One-Off Unit --></label>
+        <name>UM_One_Off_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Number --></label>
+        <name>UM_PhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- QuantityRef --></label>
+        <name>UM_QuantityRef__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>UM_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Unit --></label>
+        <name>UM_Recurring_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Code --></label>
+        <name>UM_State_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>UM_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street And Number --></label>
+        <name>UM_StreetAndNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZIP Code And City --></label>
+        <name>UM_ZIPCodeAndCity__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <nameFieldLabel><!-- Label --></nameFieldLabel>
+</CustomObjectTranslation>

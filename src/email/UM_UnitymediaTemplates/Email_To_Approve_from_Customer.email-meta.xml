@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CSCAP__FormalApprovalEmailLetterHead</letterhead>
+    <name>Email To Approve from Customer</name>
+    <style>freeForm</style>
+    <subject>Ihr Auftrag an Unitymedia Business</subject>
+    <textOnly>Guten Tag {!Salutation_Translation} {!Contact_lname},
+
+
+Sie setzen auf effiziente geschäftliche Kommunikation und haben sich deshalb für Unitymedia Business entschieden.
+
+
+
+Wie soeben besprochen, übersende ich Ihnen eine detaillierte Übersicht zu Ihrem Auftrag an Unitymedia Business.
+
+
+Direkt bestellen?
+
+Um alle Vorteile unseres maßgeschneiderten Business-Produktes schnell nutzen zu können, bestätigen Sie Ihren Auftrag ganz bequem und direkt über nachfolgenden Link.
+
+Eine gute Entscheidung für mehr Geschäftserfolg – Ihr Auftrag an Unitymedia Business
+
+
+Sollten Sie Fragen haben, stehe ich Ihnen jederzeit zur Verfügung.
+
+Mit freundlichen Grüßen
+
+{!OppOwnerFName} {!OppOwnerLName}
+
+
+
+T: {!OppPhone}
+F: {!Oppfax}
+M: {!OppOwnerMobile}
+
+{!OppOwnerEmail}
+
+Selbstständiger Vertriebspartner im Auftrag der {!OppCompanyName}
+
+{!OppSenderAddress}
+
+www.unitymedia.de/business</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

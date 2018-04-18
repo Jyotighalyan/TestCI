@@ -1,0 +1,187 @@
+<apex:page standardController="Case" extensions="LG_SConsoleProvisionDetailsExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />   
+    <apex:form >
+        <apex:pageMessages ></apex:pageMessages>
+    <apex:pageBlock title="" mode="{!Mode}">
+    
+    <!-- SFOM-1822<apex:pageBlockSection  title="Suborder" columns="2" collapsible="false" rendered="{!!Edit}">  -->
+    <apex:pageBlockSection title="Suborder" columns="2" collapsible="false" >
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__c}" rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__r.LG_Huawei_Tenant_ID__c}" rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.LG_Address__r.LG_FullAddressDetails__c}" label="Service Address" rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.csord__Order__c}" rendered="{!Provisioning}"/> <!--Added for SFOM 1637-->
+            <apex:outputText label="Solution" rendered="{!Provisioning}">
+                <apex:outputLink value="/{!Solution.Id}" >{!Solution.LG_Solution_Name__c}</apex:outputLink>   <!--Added for SFOM 1637-->
+            </apex:outputText>
+            <apex:outputField value="{!Solution.LG_TargetDate__c}" rendered="{!Provisioning}"/>
+            <apex:inputCheckbox value="{!jeopardy}" label="Jeopardy" rendered="{!Provisioning}" disabled="true"/>
+            <apex:outputField value="{!Solution.LG_EarliestInstallDate__c}" rendered="{!Provisioning}"/>
+            <apex:outputField value="{!Solution.LG_JeopardyExplanation__c}" rendered="{!Provisioning}"/>
+            <apex:outputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!Provisioning}"/>
+            <!--Field blocked on behalf of SFOM-505 -->
+            <!--<apex:outputfield value="{!Solution.Jeopardy_Reason__c}" rendered="{!Provisioning}"/>-->            
+            <apex:outputfield value="{!Solution.LG_Address__r.LG_Icomms_Premise_ID__c}" rendered="{!Provisioning}"/>
+             <apex:outputfield value="{!Solution.LG_Address__r.LG_Icomms_Site_ID__c}" rendered="{!Provisioning}"/> 
+             <!--Changes aa part of SFOM-2768 Starts-->
+             <apex:outputField value="{!assetValues[0].LG_Logistics_Supplier_Name__c}" rendered="{!Provisioning}"/>
+             <apex:outputField value="{!assetValues[0].LG_Logistics_Reference_Number__c}" rendered="{!Provisioning}"/>
+            <!--Changes aa part of SFOM-2768 Starts-->
+        </apex:pageBlockSection>
+        
+        <!-- SFOM-1822 <apex:pageBlockSection title="Suborder" columns="2" collapsible="false" rendered="{!Edit}">
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__c}" rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.csord__Order__c}" rendered="{!Provisioning}"/>--> <!--Added for SFOM 1637-->
+            <!-- SFOM-1822 <apex:outputText label="Solution" rendered="{!Provisioning}">
+                <apex:outputLink value="/{!Solution.Id}" >{!Solution.Name}</apex:outputLink> -->   <!--Added for SFOM 1637-->
+           <!-- SFOM-1822 </apex:outputText> 
+
+            <apex:outputField value="{!Solution.LG_TargetDate__c}" rendered="{!Provisioning}"/>
+            <apex:inputCheckbox value="{!jeopardy}" label="Jeopardy" rendered="{!Provisioning}" />
+            <apex:inputField value="{!Solution.LG_EarliestInstallDate__c}" rendered="{!Provisioning}"/>
+            <apex:inputTextarea value="{!Solution.LG_JeopardyExplanation__c}" rendered="{!Provisioning}" disabled="{!jeopardy}"/>
+            <apex:outputText value="" rendered="{!jeoExpMsg}"/>
+            <apex:outputPanel style="text-align:center;color:red;font-weight:bold;" layout="block" rendered="{!jeoExpMsg}">
+                Jeopardy Explanation is mandatory.
+            </apex:outputPanel>
+            <apex:inputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!Provisioning}"/> -->
+            <!--Field blocked on behalf of SFOM-505 -->
+            <!--<apex:selectList id="jeopardyReason" value="{!Solution.Jeopardy_Reason__c}" multiselect="false" size="1" label="Jeopardy Reason" rendered="{!Provisioning}">
+                    <apex:selectOptions value="{!JeopardyReason}"/> 
+            </apex:selectList> -->
+            <!-- SFOM-1822<apex:outputfield value="{!Solution.LG_Address__r.LG_Icomms_Premise_ID__c}" rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.LG_Address__r.LG_Icomms_Site_ID__c}" rendered="{!Provisioning}"/> 
+            
+        </apex:pageBlockSection> -->
+        <apex:pageBlockSection title="Provisioning Details" columns="1" collapsible="false" rendered="{!!Edit}">
+            <!--<apex:outputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!Provisioning}"/>-->
+           <apex:pageBlockTable value="{!ProvisioningDetails}"  var="provObj" rendered="{!Provisioning}" >
+               <apex:column headerValue="Provision Flag" width="35" style="text-align:center;">
+                    <apex:image value="{!URLFOR($Resource.TrafficSignal, '/'+provObj.provisionFlag)}" height="16" width="16" />
+                </apex:column>
+                <apex:column headerValue="Product Name">
+                    <apex:outputText >
+                        <apex:outputLink value="{!provObj.screenFlowPath}" rendered="{!provObj.screenFlowPath!=null}">{!provObj.service.Name}</apex:outputLink>
+                        <apex:outputText rendered="{!provObj.screenFlowPath==null}">{!provObj.service.Name}</apex:outputText>
+                        {!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                </apex:column>
+            <!--SFOM-2213<apex:column headerValue="Provisioning Code" value="{!provObj.service.LG_ProvisioningCode__c}" />-->
+               <!--SFOM-245   -->
+               <!--SFOM-1822c- Service External field added (Temporary) -->
+               <apex:column headerValue="Provisioning Service External Id" >
+                   <apex:outputField value="{!provObj.service.UM_ProvisioningServiceExternalId__c}" />
+                </apex:column>
+               <apex:column headerValue="Status" >
+                   <apex:outputField value="{!provObj.service.csord__Status__c}" />
+               </apex:column>
+               <!-- SFOM - 647 Added by : Ankur Gupta -- Start -->
+                <!-- SFOM-2213<apex:column headerValue="Delta Status" value="{!provObj.service.csordtelcoa__Delta_Status__c}"/>-->
+               <!-- SFOM - 647 Added by : Ankur Gupta -- End -->
+               
+        </apex:pageBlockTable>
+
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Provisioning Details" columns="1" collapsible="false" rendered="{!Edit}">
+            
+            <apex:pageBlockTable value="{!ProvisioningDetails}"  var="provObj" rendered="{!Provisioning}">
+                <apex:column headerValue="Provision Flag" width="35" style="text-align:center;">
+                    <apex:image value="{!URLFOR($Resource.TrafficSignal, '/'+provObj.provisionFlag)}" height="16" width="16" />
+                </apex:column>
+                <apex:column headerValue="Product Name">
+                    <apex:outputText >
+                        <apex:outputLink value="{!provObj.screenFlowPath}" rendered="{!provObj.screenFlowPath!=null}">{!provObj.service.Name}</apex:outputLink>
+                        <apex:outputText rendered="{!provObj.screenFlowPath==null}">{!provObj.service.Name}</apex:outputText>
+                        {!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                </apex:column>
+            <!--SFOM-2213<apex:column headerValue="Provisioning Code" value="{!provObj.service.LG_ProvisioningCode__c}" /> -->
+            <!--SFOM-245   -->
+            <!-- Blocking as a part of SFOM-2213 - as Manual change of Service status is restricted in UM -->
+           <!--<apex:column headerValue="Status" >
+               <apex:selectList value="{!provObj.service.LG_ServiceStatus__c}" multiselect="false" size="1" >
+                  <apex:selectOptions value="{!provObj.selectList}"></apex:selectOptions>
+                  </apex:selectList>
+           </apex:column> -->
+           <apex:column headerValue="Provisioning Service External Id" >
+                   <apex:inputField value="{!provObj.service.UM_ProvisioningServiceExternalId__c}" />
+           </apex:column> 
+           <apex:column headerValue="Status" >
+                   <apex:outputField value="{!provObj.service.csord__Status__c}" />
+            </apex:column>
+               
+             <!-- SFOM - 647 Added by : Ankur Gupta -- Start -->
+                <!-- SFOM-2213<apex:column headerValue="Delta Status" value="{!provObj.service.csordtelcoa__Delta_Status__c}"/>-->
+               <!-- SFOM - 647 Added by : Ankur Gupta -- End -->
+               <!-- SFOM-2213 - Ends-->
+        </apex:pageBlockTable>
+        </apex:pageBlockSection>
+
+       <!-- SFOM-2213 <apex:pageBlockSection title="Billable Items" columns="1" collapsible="false" rendered="{!Provisioning}">
+                     
+            <apex:pageBlockTable value="{!BillingDetails}"  var="billingObj" rendered="{!Provisioning}">
+                <apex:column headerValue="Name">
+                    <apex:outputText rendered="{!!billingObj.parent}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</apex:outputText>
+                    <apex:outputText rendered="{!billingObj.parent}"><b>&bull;</b>&nbsp;&nbsp;</apex:outputText>
+                    <apex:outputText rendered="{!!billingObj.parent}">&bull;&nbsp;&nbsp;</apex:outputText>
+                    <apex:outputLink value="{!URLFOR($Action.csord__Service_Line_Item__c.View, billingObj.serviceLineItem.Id)}" rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.Name}</apex:outputLink>
+                    <apex:outputText rendered="{!billingObj.parent}">{!billingObj.serviceName}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Description">
+                    <apex:outputText rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.csord__Line_Description__c}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Price">
+                    <apex:outputText rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.csord__Total_Price__c}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Billing Code"> -->
+                    <!--<apex:outputLink value="{!URLFOR('/apex/LG_SConsoleBillingAccDetails?id='+billingObj.serviceLineItem.LG_BillingAccount__c, null)}" rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.LG_BillingAccount__r.Name}</apex:outputLink> -->
+                    <!--SFOM-2213<apex:outputText rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.LG_BillingProductId__c}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Billing System Reference">
+                    <apex:outputLink value="{!URLFOR('/apex/LG_SConsoleBillingAccDetails?id='+billingObj.serviceLineItem.LG_BillingAccount__c, null)}" rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.LG_BillingAccount__r.LG_ExternalId__c}</apex:outputLink>
+                    <apex:outputLink value="{!URLFOR('/apex/LG_SConsoleBillingAccDetails?id='+billingObj.serviceLineItem.LG_BillingAccount__c, null)}" rendered="{!billingObj.serviceLineItem.LG_BillingAccount__r.Name != null && billingObj.serviceLineItem.LG_BillingAccount__r.LG_ExternalId__c == null && !billingObj.parent}">Click to create</apex:outputLink>
+                </apex:column>-->
+                <!-- SFOM - 647 Added by : Ankur Gupta -- Start -->
+                 <!--SFOM-2213<apex:column headerValue="Delta Status">
+                    <apex:outputText rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.csordtelcoa__Delta_Status__c}</apex:outputText>
+                </apex:column>-->
+                <!-- SFOM - 647 Added by : Ankur Gupta -- End -->
+                
+           <!--SFOM-2213 </apex:pageBlockTable>
+        </apex:pageBlockSection> -->
+        <!--<apex:pageBlockSection title="Billing Details" columns="1" collapsible="false" rendered="{!Edit}">
+                     
+            <apex:pageBlockTable value="{!BillingDetails}"  var="billingObj" rendered="{!Provisoning}">
+                <apex:column headerValue="Billing Codes">
+                    <apex:outputLink value="{!URLFOR($Action.csord__Service_Line_Item__c.View, slObj.Id)}">{!slObj.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Description">
+                    <apex:outputText >{!slObj.csord__Line_Description__c}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Price">
+                    <apex:outputText >{!slObj.csord__Total_Price__c}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Billing Account">
+                    <apex:outputLink onclick="srcUp('/apex/LG_SConsoleBillingAccDetails?id={!slObj.LG_BillingAccount__c}')">{!slObj.LG_BillingAccount__r.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="External Id">
+                    <apex:outputLink onclick="srcUp('/apex/LG_SConsoleBillingAccDetails?id={!slObj.LG_BillingAccount__c}');">{!slObj.LG_BillingAccount__r.LG_ExternalId__c}</apex:outputLink>
+                    <apex:outputLink onclick="srcUp('/apex/LG_SConsoleBillingAccDetails?id={!slObj.LG_BillingAccount__c}');" rendered="{!slObj.LG_BillingAccount__r.Name != null && slObj.LG_BillingAccount__r.LG_ExternalId__c == null}">Click to create</apex:outputLink>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection> -->
+        
+        
+        
+        
+        
+        <apex:pageBlockButtons rendered="{!!caseClosed}">
+            <apex:commandButton action="{!edit}" value="Edit" rendered="{!!Edit}" />
+            <apex:commandButton value="Refresh" onclick="window.location.reload();return false;" rendered="{!!Edit}"/>
+            <apex:commandButton action="{!save}" value="Save" rendered="{!Edit}" />
+            <apex:commandButton action="{!cancel}" value="Cancel" rendered="{!Edit}" />
+        </apex:pageBlockButtons>
+               
+        </apex:pageBlock>
+
+  		</apex:form>
+</apex:page>

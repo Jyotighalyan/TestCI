@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attribute --></label>
+        <name>LG_Attribute__c</name>
+        <relationshipLabel><!-- Product Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>LG_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>LG_Opportunity__c</name>
+        <relationshipLabel><!-- Product Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>LG_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sequence --></label>
+        <name>LG_Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>LG_Type__c</name>
+        <picklistValues>
+            <masterLabel>Bundle Detail</masterLabel>
+            <translation><!-- Bundle Detail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Detail</masterLabel>
+            <translation><!-- Order Detail --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>LG_Value__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

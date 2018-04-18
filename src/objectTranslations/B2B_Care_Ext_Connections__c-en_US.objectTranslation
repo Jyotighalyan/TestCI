@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Care Connections</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Care Connections</value>
+    </caseValues>
+    <fields>
+        <label><!-- Authentication Token --></label>
+        <name>Authentication_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brand --></label>
+        <name>Brand__c</name>
+    </fields>
+    <fields>
+        <label><!-- Connection URL --></label>
+        <name>Connection_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Session Timeout --></label>
+        <name>Session_Timeout__c</name>
+    </fields>
+    <fields>
+        <label><!-- UM No of Tries --></label>
+        <name>UM_No_of_Tries__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

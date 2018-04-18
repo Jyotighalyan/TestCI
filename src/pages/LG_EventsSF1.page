@@ -1,0 +1,122 @@
+<apex:page standardController="Event" extensions="LG_EventSF1Controller">
+    <apex:stylesheet value="{!URLFOR($Resource.LG_BootstrapSF1, 'css/bootstrap-namespaced.css')}" />
+    <style>
+        html, body, p { 
+            font-family: "ProximaNovaSoft-Regular", Calibri, 
+                "Gill Sans", "Gill Sans MT", Candara, Segoe, 
+                "Segoe UI", Arial, sans-serif; 
+            font-size: 100%;            
+            background-color: white;
+        }
+        a:link, a:hover, a:visited, a:active{
+            text-decoration: none;
+            color: black;
+        }
+        tr td a {
+            display:block;
+            height:100%;
+            width:100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        tr.border_bottom td {
+          border-bottom:1pt solid #F1F1F3;
+        }
+        tr.empty td{
+          border-bottom:0pt;
+        }
+        #event-menu{
+            display: inline-block;
+            width: 100%;
+            padding-bottom: 20px;
+            margin-bottom: 0px;
+        }
+        #filter-div{          
+            display: inline-block;
+            text-align: left;
+            width: 80%;
+        }
+        #button-div{
+            display: inline-block;
+            width: 19%;
+        }
+        #view-list{
+            display: inline-block;
+            font-weight: bold;
+        }
+        #icon{
+            display: inline-block;
+            margin-right: 10px;            
+        }
+        #button {
+            display: table;
+            width: 100%;
+        }
+        input { 
+            font-size: 95%; 
+        }        
+    </style>
+    <div class="bootstrap-sf1">
+        <div id="event-menu" class="page-header"><!-- TOP PART OF SCREEN -->
+                <div id="filter-div"><!-- LEFT PART -->
+                    <div id="icon"><br/>    
+                        <span class="s1icon s1icon-s-event s1icon-xl"></span>    
+                        <!-- <apex:image url="{!URLFOR($Resource.LG_BootstrapSF1,'icons/standard/event_120.png')}" height="42%" width="42%"  /> -->
+                    </div>
+                    <div id="view-list">
+                        <span class="page-header-label">EVENTS</span>
+                        <apex:form id="form">                    
+                            <apex:selectList value="{!selectedVal}" size="1" style="font-size: 1.5625rem; border: none;"> 
+                                <apex:actionSupport event="onchange" rerender="form,table,list" action="{!go}" /> 
+                                <apex:selectOptions value="{!menuOptions}" />
+                            </apex:selectList>
+                        </apex:form>
+                    </div>
+                </div><!-- END OF LEFT PART -->
+                <div id="button-div"><!-- RIGHT PART -->
+                    <div id="button">    
+                        <apex:form >
+                            <apex:commandButton onclick="sforce.one.createRecord('Event'); return false;" action="{!URLFOR($Action.Event.NewEvent)}" value="New Event" styleClass="btn btn-lg btn-default"/>
+                        </apex:form>
+                    </div>        
+                </div><!-- END OF RIGHT PART -->
+        </div>
+    </div>    
+        <apex:outputPanel id="table">   
+            <table style="width: 100%" >                
+                <apex:repeat value="{!filteredWEvents}" var="item" >
+                    <tr class="border_bottom" >                    
+                    <td>
+                        <table style="width: 100%">
+                            <tr class="empty">
+                                <td><a href="javascript:onclick=sforce.one.navigateToSObject('{!item.record.Id}')">
+                                    {!item.record.Subject}<br/><span style="color: #686c70; font-size: 90%;">{!item.record.Who.Name}<br/>{!item.record.What.Name}</span>
+                                    </a>
+                                </td>
+                                <td style="text-align:right; vertical-align: top;">                                
+                                    <a href="javascript:onclick=sforce.one.navigateToSObject('{!item.record.Id}')">                                    
+                                        <apex:outputText value="{0,date,dd MMMM}" style="color: #b5362d">
+                                           <apex:param value="{!item.record.StartDateTime}" />
+                                        </apex:outputText>
+                                        
+                                        <span style="color: #b5362d">
+                                            {!item.startTime}
+                                        </span>                                       
+                                        <span style="color: #b5362d">
+                                        {!IF(DATEVALUE(item.record.StartDateTime)<>DATEVALUE(item.record.EndDateTime),' - '&TEXT(DAY(DATEVALUE(item.record.EndDateTime)))&' '&CASE(MONTH(DATEVALUE(item.record.EndDateTime)), 1, "Jan", 2, "Feb", 3, "Mar",  4, "Apr",  5, "May",  6, "Jun", 7, "Jul", 8, "Aug", 9, "Sep", 10, "Octr", 11, "Nov", 12, "Decr", " ")," - ")}
+                                        </span>                                                                           
+                                        <span style="color: #b5362d">
+                                            {!item.endTime}
+                                        </span>                                              
+                                        <br />
+                                        {!item.record.Location}                                        
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>  
+                    </td>                       
+                    </tr>
+                </apex:repeat>                
+        </table>        
+    </apex:outputPanel>         
+</apex:page>

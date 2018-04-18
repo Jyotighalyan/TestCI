@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Account</masterLabel>
+        <translation>Kundenkonto</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Billing</masterLabel>
+        <translation>Billing</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Billing Account</masterLabel>
+        <translation>Billing Account</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Billing Related</masterLabel>
+        <translation>Billing bezogen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cancel</masterLabel>
+        <translation><!-- Cancel --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Change</masterLabel>
+        <translation>Änderung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Charge Dispute</masterLabel>
+        <translation>Rechnungswiderspruch</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Check</masterLabel>
+        <translation><!-- Check --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Collections Restart</masterLabel>
+        <translation>Inkasso gestartet</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Collections Stop</masterLabel>
+        <translation>Inkasso gestoppt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Commissions</masterLabel>
+        <translation>Vermittlungsgebühr</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Complaint</masterLabel>
+        <translation>Beschwerde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contact Centre</masterLabel>
+        <translation>Kontaktcenter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cost</masterLabel>
+        <translation><!-- Cost --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Courtesy Call</masterLabel>
+        <translation><!-- Courtesy Call --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer Missing Document</masterLabel>
+        <translation>Fehlendes Kundendokument</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Engineering</masterLabel>
+        <translation>Techniker</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Enhancement / Reduction</masterLabel>
+        <translation>Erweiterung / Verringerung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Feature Request</masterLabel>
+        <translation>Feature-Anfrage</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Inflight Change</masterLabel>
+        <translation><!-- Inflight Change --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Infrastructure</masterLabel>
+        <translation>Infrastruktur</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Install &amp; Activate</masterLabel>
+        <translation><!-- Install &amp; Activate --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Installation</masterLabel>
+        <translation>Installations</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Keep Customer Informed</masterLabel>
+        <translation><!-- Keep Customer Informed --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Logistics</masterLabel>
+        <translation>Logistik</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Modify</masterLabel>
+        <translation><!-- Modify --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New</masterLabel>
+        <translation>Neu</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Number Port</masterLabel>
+        <translation><!-- Number Port --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Number Port - Request</masterLabel>
+        <translation><!-- Number Port - Request --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Online Marketing</masterLabel>
+        <translation><!-- Online Marketing --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Orders</masterLabel>
+        <translation><!-- Orders --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>Sonstiges</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Complaints</masterLabel>
+        <translation>Sonstige Beschwerde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Partner</masterLabel>
+        <translation>Partner</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Payment</masterLabel>
+        <translation>Zahlung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Problem</masterLabel>
+        <translation>Problem</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Product</masterLabel>
+        <translation>Produkt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Product Information</masterLabel>
+        <translation><!-- Product Information --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Provision - Acct&amp;Request</masterLabel>
+        <translation><!-- Provision - Acct&amp;Request --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Provision - Request</masterLabel>
+        <translation><!-- Provision - Request --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Provisioning/selfinstall</masterLabel>
+        <translation><!-- Provisioning/selfinstall --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Query</masterLabel>
+        <translation><!-- Query --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Question</masterLabel>
+        <translation>Frage</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Registration</masterLabel>
+        <translation><!-- Registration --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Request</masterLabel>
+        <translation>Anfrage</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>SIM</masterLabel>
+        <translation><!-- SIM --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Service</masterLabel>
+        <translation>Service</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Service Degraded</masterLabel>
+        <translation>Service-Beeinträchtigung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Service Down</masterLabel>
+        <translation>Service-Ausfall</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Service Intermittent</masterLabel>
+        <translation>Serviceunterbrechungen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Service Performance</masterLabel>
+        <translation>Service Performance</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Service Quality</masterLabel>
+        <translation>Service Qualität</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Service Related</masterLabel>
+        <translation>In Bezug auf den Service</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Setting</masterLabel>
+        <translation>Einstellung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Standard</masterLabel>
+        <translation><!-- Standard --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Suborder</masterLabel>
+        <translation><!-- Suborder --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>System</masterLabel>
+        <translation><!-- System --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Visit-New</masterLabel>
+        <translation><!-- Visit-New --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Wait for Access</masterLabel>
+        <translation><!-- Wait for Access --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

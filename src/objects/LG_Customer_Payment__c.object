@@ -1,0 +1,1102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Customer Payment to allocate the mitigation payment resulted from the credit check including the payment transaction details.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AVSResponseCode__c</fullName>
+        <description>Address Verification Result provided by acquirer [RSP_AVS_CD]</description>
+        <externalId>false</externalId>
+        <label>Address Verification Response Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fraud_Record_Identifier_Fraud_Record_ID__c</fullName>
+        <description>FRAUD_REC_ID</description>
+        <externalId>false</externalId>
+        <label>Fraud Record Identifier (Fraud Record ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ACIPaymentTransactionID__c</fullName>
+        <externalId>false</externalId>
+        <label>ACI Payment Transaction ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ACI_Refund_Reverse_Transaction_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(isblank(LG_ReverseOrRefundTransactionId__c ),&apos;&apos;,(&apos;VM8&apos;+ LG_ReverseOrRefundTransactionId__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ACI Refund Reverse Transaction ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ACQID__c</fullName>
+        <description>ACQ_ID</description>
+        <externalId>false</externalId>
+        <label>ACQ ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Customer Payments</relationshipLabel>
+        <relationshipName>Customer_Payments</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>LG_Acquirer_Response_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Acquirer Response Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Address_DNA_Validated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Address Validated</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_AuthorizationNumberResponse__c</fullName>
+        <description>RSP_AUTH_NUM</description>
+        <externalId>false</externalId>
+        <label>Authorization Number Response</label>
+        <length>6</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BillingAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Billing Account</label>
+        <referenceTo>csconta__Billing_Account__c</referenceTo>
+        <relationshipLabel>Customer Payments</relationshipLabel>
+        <relationshipName>Customer_Payments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_BusinessTerm__c</fullName>
+        <externalId>false</externalId>
+        <label>Required Mitigation Term</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_CP_Transaction_ID__c</fullName>
+        <description>Field added as a part of Defect#1173</description>
+        <displayFormat>VM8{000000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>ACI Transaction ID</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>LG_Card_Expiry_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Card Expiry Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_County__c</fullName>
+        <externalId>false</externalId>
+        <label>County</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_DNAResponse__c</fullName>
+        <externalId>false</externalId>
+        <label>DNAResponse</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_DepositAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The value from Mitigation_Deposit  must map to &apos;Deposit Amount&apos;</description>
+        <externalId>false</externalId>
+        <label>Deposit Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LG_DepositDuration__c</fullName>
+        <description>The duration in months for which the customers up front deposit payment is held with VM.</description>
+        <externalId>false</externalId>
+        <label>Deposit Duration</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_FraudMatrixKey__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_FraudResponseCode__c+LG_FraudStatusCode__c+LG_cardTokenStatus__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Used as key for Fraud Matrix</inlineHelpText>
+        <label>Fraud Matrix Key</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_FraudNeuralScoreResponse__c</fullName>
+        <description>Fraud Neural (Score) Response [FRAUD_NEURAL]</description>
+        <externalId>false</externalId>
+        <label>Fraud Neural (Score) Response</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_FraudResponseCode__c</fullName>
+        <description>Fraud Response Code [FRAUD_RSP_CD]</description>
+        <externalId>false</externalId>
+        <label>Fraud Response Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_FraudRuleCategoryFlagResponse__c</fullName>
+        <description>Fraud Rule Category Flag Response [FRAUD_RCF]</description>
+        <externalId>false</externalId>
+        <label>Fraud Rule Category Flag Response</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_FraudStatusCode__c</fullName>
+        <description>FRAUD_STAT_CD</description>
+        <externalId>false</externalId>
+        <label>Fraud Status Code</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_FraudUseCodeResponse__c</fullName>
+        <description>FRAUD_USE_CD</description>
+        <externalId>false</externalId>
+        <label>Fraud Use Code Response</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_IPAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>IP Address</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_IssuerResponseCode__c</fullName>
+        <description>Issuer Response Code [RSP_ISSUER_CD]</description>
+        <externalId>false</externalId>
+        <label>Issuer Response Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_NameonPaymentCard__c</fullName>
+        <description>RWS_NAME_ON_CARD</description>
+        <externalId>false</externalId>
+        <label>Name on Payment Card</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_OrderNumber__c</fullName>
+        <description>Payment Order Number</description>
+        <displayFormat>VM8{0000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Order Number</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>LG_PartyAccountID__c</fullName>
+        <externalId>false</externalId>
+        <label>PartyAccountID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PaymentCardNumberMasked__c</fullName>
+        <description>ACCT_NUM</description>
+        <externalId>false</externalId>
+        <label>Payment Card Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PaymentDateTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Date Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LG_PaymentTransactionID__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Payment_TransactionID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Payment TransactionID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PaymentURL__c</fullName>
+        <description>The payment URL via which the customer or agent can enter card details to make the actual payment</description>
+        <externalId>false</externalId>
+        <label>Payment URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>LG_Payment_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Payment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LG_Payment_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(LG_paymentResponseDate__c)</formula>
+        <label>Payment Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_Payment_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Deposit</fullName>
+                    <default>false</default>
+                    <label>Deposit</label>
+                </value>
+                <value>
+                    <fullName>Upfront</fullName>
+                    <default>false</default>
+                    <label>Upfront</label>
+                </value>
+                <value>
+                    <fullName>Deposit &amp; Upfront</fullName>
+                    <default>false</default>
+                    <label>Deposit &amp; Upfront</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Payment_Session_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Session ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Payment_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Refunded</fullName>
+                    <default>false</default>
+                    <label>Refunded</label>
+                </value>
+                <value>
+                    <fullName>Reversed</fullName>
+                    <default>false</default>
+                    <label>Reversed</label>
+                </value>
+                <value>
+                    <fullName>Taken</fullName>
+                    <default>false</default>
+                    <label>Taken</label>
+                </value>
+                <value>
+                    <fullName>Not Completed</fullName>
+                    <default>false</default>
+                    <label>Not Completed</label>
+                </value>
+                <value>
+                    <fullName>Not Taken</fullName>
+                    <default>false</default>
+                    <label>Not Taken</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Payment_TransactionID__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment TransactionID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Payment_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Card</fullName>
+                    <default>false</default>
+                    <label>Card</label>
+                </value>
+                <value>
+                    <fullName>BACS</fullName>
+                    <default>false</default>
+                    <label>BACS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_PostalCode__c</fullName>
+        <externalId>false</externalId>
+        <label>PostalCode</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_RAWCallbackResponse__c</fullName>
+        <description>This is to store the RAW callback response</description>
+        <externalId>false</externalId>
+        <label>RAW Callback Response</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_RWSResponseCode__c</fullName>
+        <externalId>false</externalId>
+        <label>RWS Response Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_RefundOrderId__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(ISPICKVAL(LG_Payment_Status__c, &apos;Refunded&apos;), LG_Reverse_Refund_Payment_Transaction_ID__c,&apos;&apos;)</formula>
+        <label>Refund Order Id</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_RequestID__c</fullName>
+        <description>ORD_ID [Card Token]</description>
+        <externalId>false</externalId>
+        <label>Unique Reference Number for Order</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_RequestTypeCodePaymentMethodTrans__c</fullName>
+        <description>REQ_TYPE_CD</description>
+        <externalId>false</externalId>
+        <label>Request Type Code (Payment Method, Trans</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ResponseCodeAuthorizationResponse__c</fullName>
+        <description>RSP_CD</description>
+        <externalId>false</externalId>
+        <label>Response Code (Authorization Response)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ResponseCodeDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>ResponseCodeDescription</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ResponseCode__c</fullName>
+        <externalId>false</externalId>
+        <label>ResponseCode</label>
+        <length>155</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ResponseDate__c</fullName>
+        <description>Response Date (Authorization Date) [RSP_DT]</description>
+        <externalId>false</externalId>
+        <label>Response Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_ReverseOrRefundTransactionId__c</fullName>
+        <externalId>false</externalId>
+        <label>Reverse/Refund Transaction Id</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ReverseRefundPaymentDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Reverse/Refund Payment Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LG_Reverse_Refund_Payment_Transaction_ID__c</fullName>
+        <description>REVERSE_REFUND_CARDPAYMENTTRANSACTIONID</description>
+        <displayFormat>VM8R{00000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Reverse/Refund Payment Transaction ID</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>LG_SecureElectronicCommerceIndicatorDes__c</fullName>
+        <externalId>false</externalId>
+        <formula>&apos;0:Authentication Failed – cardholder authentication failed; authorization request should not be submitted,1:Authentication Successful – cardholder was successfully authenticated.&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Secure Electronic Commerce Indicator Des</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_SecureElectronicCommerceIndicator__c</fullName>
+        <description>Secure Electronic Commerce Indicator [TDS_ECI]</description>
+        <externalId>false</externalId>
+        <label>Secure Electronic Commerce Indicator</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_SecurityResponseCode__c</fullName>
+        <description>RSP_SEC_CD</description>
+        <externalId>false</externalId>
+        <label>Security Response Code</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_StatusCodeDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>StatusCodeDescription</label>
+        <length>155</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Street</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LG_SystemName__c</fullName>
+        <externalId>false</externalId>
+        <label>System Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TokenProcID__c</fullName>
+        <description>Token Proc ID [TOKEN_PROC_ID]</description>
+        <externalId>false</externalId>
+        <label>Token Proc ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_UniqueReferenceNumberforOrderRefund__c</fullName>
+        <description>Unique Reference Number for Order Refund</description>
+        <externalId>false</externalId>
+        <label>Unique Reference Number for Order Refund</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_UpfrontAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Upfront Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LG_UserID__c</fullName>
+        <externalId>false</externalId>
+        <label>User ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_VMTransactionID__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(isblank(LG_ACIPaymentTransactionID__c),&apos;&apos;,(&apos;VM8&apos;+ LG_ACIPaymentTransactionID__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>VM Transaction ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_VerificationResponseCode__c</fullName>
+        <description>RSP_VER_CD</description>
+        <externalId>false</externalId>
+        <label>Verification Response Code</label>
+        <length>16</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_acquirerResponseMessage__c</fullName>
+        <description>Message returned by upstream entity if provided [RWS_RESPONSE_MESSAGE]</description>
+        <externalId>false</externalId>
+        <label>RWS Response Message</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LG_cardPaymentTransactionID__c</fullName>
+        <description>A unique identifier for each card payment transaction. Usually, but not always necessarily, of format Example: VM8000000001</description>
+        <externalId>false</externalId>
+        <label>Card Transaction ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_cardTokenExpiryDate__c</fullName>
+        <description>Token expiry date</description>
+        <externalId>false</externalId>
+        <label>Token expiry date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_cardTokenStatus__c</fullName>
+        <description>Token Status Code [TOKEN_STAT_CD]</description>
+        <externalId>false</externalId>
+        <label>Token Status Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_cardToken__c</fullName>
+        <description>Token number returned by ReD1’s Gateway. This determines whether the transaction is submitted as a tokenized transaction. [TOKEN_ID]</description>
+        <externalId>false</externalId>
+        <label>Card Token</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_cardTypeCode__c</fullName>
+        <description>The payment card type represented with below codes. [	LG_cardTypeCode__c]</description>
+        <externalId>false</externalId>
+        <label>Card Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AX</fullName>
+                    <default>false</default>
+                    <label>AX</label>
+                </value>
+                <value>
+                    <fullName>DC</fullName>
+                    <default>false</default>
+                    <label>DC</label>
+                </value>
+                <value>
+                    <fullName>DI</fullName>
+                    <default>false</default>
+                    <label>DI</label>
+                </value>
+                <value>
+                    <fullName>JC</fullName>
+                    <default>false</default>
+                    <label>JC</label>
+                </value>
+                <value>
+                    <fullName>MC</fullName>
+                    <default>false</default>
+                    <label>MC</label>
+                </value>
+                <value>
+                    <fullName>SW</fullName>
+                    <default>false</default>
+                    <label>SW</label>
+                </value>
+                <value>
+                    <fullName>VI</fullName>
+                    <default>false</default>
+                    <label>VI</label>
+                </value>
+                <value>
+                    <fullName>PL</fullName>
+                    <default>false</default>
+                    <label>PL</label>
+                </value>
+                <value>
+                    <fullName>Other Alternative Payments CA</fullName>
+                    <default>false</default>
+                    <label>Other Alternative Payments CA</label>
+                </value>
+                <value>
+                    <fullName>TK</fullName>
+                    <default>false</default>
+                    <label>TK</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_fraudAssessmentStatusCode__c</fullName>
+        <description>Fraud check status</description>
+        <externalId>false</externalId>
+        <label>Fraud check status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ACCEPT</fullName>
+                    <default>false</default>
+                    <label>ACCEPT</label>
+                </value>
+                <value>
+                    <fullName>DENY</fullName>
+                    <default>false</default>
+                    <label>DENY</label>
+                </value>
+                <value>
+                    <fullName>CHALLENGE</fullName>
+                    <default>false</default>
+                    <label>CHALLENGE</label>
+                </value>
+                <value>
+                    <fullName>ERROR</fullName>
+                    <default>false</default>
+                    <label>ERROR</label>
+                </value>
+                <value>
+                    <fullName>SUSPEND</fullName>
+                    <default>false</default>
+                    <label>SUSPEND</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_paymentAuthorisationCode__c</fullName>
+        <description>Authorisation Code returned by the acquirer in the case of an approved transaction</description>
+        <externalId>false</externalId>
+        <label>Authorization code</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_paymentCardToken__c</fullName>
+        <description>A token number which is unique for the payment card and expiry date. Its usually a refence used instead of the actual card itself during refund or reversal or retrieval of payment results from third party or other payment engines.</description>
+        <externalId>false</externalId>
+        <label>Token</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_paymentRequestTypeCode__c</fullName>
+        <description>Request Type Code (Payment Method, Transaction Category)</description>
+        <externalId>false</externalId>
+        <label>Payment Request Type Code</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_paymentResponseCode__c</fullName>
+        <description>The response code for the payment.</description>
+        <externalId>false</externalId>
+        <label>Response Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>OC_SUCCESS</fullName>
+                    <default>false</default>
+                    <label>OC_SUCCESS</label>
+                </value>
+                <value>
+                    <fullName>OC_FAIL</fullName>
+                    <default>false</default>
+                    <label>OC_FAIL</label>
+                </value>
+                <value>
+                    <fullName>OC_REQ</fullName>
+                    <default>false</default>
+                    <label>OC_REQ</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_paymentResponseDate__c</fullName>
+        <description>Date Time the response was returned – format YYYY-MM-DD HH-MM-SS</description>
+        <externalId>false</externalId>
+        <label>Payment Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LG_paymentResponseMessage__c</fullName>
+        <description>Payment Response Message</description>
+        <externalId>false</externalId>
+        <label>Payment Response</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_paymentVerificationCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Verification code</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lg_CardExpirationDate__c</fullName>
+        <description>CARD_EXP_DT</description>
+        <externalId>false</externalId>
+        <label>Card Expiration Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Customer Payments</relationshipLabel>
+        <relationshipName>Customer_Payments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UPRN__c</fullName>
+        <externalId>true</externalId>
+        <label>UPRN</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Customer Payment</label>
+    <nameField>
+        <label>Customer Payment</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Customer Payments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

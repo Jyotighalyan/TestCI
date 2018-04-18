@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is created to decompose the incoming data feed (from Voiceworks) to multiple objects</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>UM_AccountNumber__c</fullName>
+        <description>Used to identify billing account and site to associate new service with.</description>
+        <externalId>false</externalId>
+        <label>Account Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ArticleName__c</fullName>
+        <description>This is product name in Voiceworks, Article Name</description>
+        <externalId>false</externalId>
+        <label>Article Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ArticleNumber__c</fullName>
+        <description>This is Voiceworks product Id, Article Number</description>
+        <externalId>false</externalId>
+        <label>Article Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Brand__c</fullName>
+        <description>For devices brand name</description>
+        <externalId>false</externalId>
+        <label>Brand</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Germany</fullName>
+                    <default>true</default>
+                    <label>Germany</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_CustomerName__c</fullName>
+        <description>This is an optional information which is not an identifier of the subscriber</description>
+        <externalId>false</externalId>
+        <label>Customer Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_DescriptionChanged__c</fullName>
+        <description>This field will be populated with 0 or 1. 1 means there is a change in description.</description>
+        <externalId>false</externalId>
+        <label>Description Changed?</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Description__c</fullName>
+        <description>This field have json data coming from Voiceworks</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>UM_Enddate__c</fullName>
+        <description>Equals the date of cancellation</description>
+        <externalId>false</externalId>
+        <label>End date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_ErrorMessage__c</fullName>
+        <description>to capture error  message</description>
+        <externalId>false</externalId>
+        <label>Error Message</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>UM_ExportType__c</fullName>
+        <description>This field represents whether current record is billing record or Hardware record.</description>
+        <externalId>false</externalId>
+        <label>Export Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Billing</fullName>
+                    <default>false</default>
+                    <label>Billing</label>
+                </value>
+                <value>
+                    <fullName>Hardware</fullName>
+                    <default>false</default>
+                    <label>Hardware</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_HardwareType__c</fullName>
+        <description>This field contains hardware type information</description>
+        <externalId>false</externalId>
+        <label>Hardware Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_HeadOfficeNumber__c</fullName>
+        <description>id of head office, optional</description>
+        <externalId>false</externalId>
+        <label>Head Office Number</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Interval__c</fullName>
+        <description>Recurrence interval of billing. -1 means one-time fee. Expected values are 1 or -1</description>
+        <externalId>false</externalId>
+        <label>Interval</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_MAC__c</fullName>
+        <description>asset mac address</description>
+        <externalId>false</externalId>
+        <label>MAC</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Model__c</fullName>
+        <description>device model number</description>
+        <externalId>false</externalId>
+        <label>Model</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ProcessLater__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This check box will decide to process in current batch or pick in next batch</description>
+        <externalId>false</externalId>
+        <label>Process Later</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_Quantity__c</fullName>
+        <description>This stores product quantity</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Serial__c</fullName>
+        <description>This is serial number of the device</description>
+        <externalId>false</externalId>
+        <label>Serial</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ShippingDate__c</fullName>
+        <description>Date of shipment</description>
+        <externalId>false</externalId>
+        <label>Shipping Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_Startdate__c</fullName>
+        <description>Equals the date of activation</description>
+        <externalId>false</externalId>
+        <label>Start date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_Status__c</fullName>
+        <description>To check the record status</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Processed</fullName>
+                    <default>false</default>
+                    <label>Processed</label>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                    <label>Failed</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_StoreOrderNumber__c</fullName>
+        <description>This is equivalent to transaction identifier in Voice Works</description>
+        <externalId>false</externalId>
+        <label>Store Order Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_SubscriberID__c</fullName>
+        <description>Describes for whom the orders are done</description>
+        <externalId>false</externalId>
+        <label>Subscriber ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_TotalPrice__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UM_TransactionId__c</fullName>
+        <description>Transaction Id populated by Spider to identify every transaction uniquely</description>
+        <externalId>false</externalId>
+        <label>Transaction Id</label>
+        <length>20</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Type__c</fullName>
+        <description>to check type of data</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Feed</fullName>
+                    <default>true</default>
+                    <label>Feed</label>
+                </value>
+                <value>
+                    <fullName>Process</fullName>
+                    <default>false</default>
+                    <label>Process</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_UnitPrice__c</fullName>
+        <externalId>false</externalId>
+        <label>Unit Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UM_VoiceWorksObjectId__c</fullName>
+        <description>Unique identifier for Voiceworks object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unique identifier for Voiceworks object</inlineHelpText>
+        <label>VoiceWorks Object Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_VoiceworksAccountID__c</fullName>
+        <description>Unique Voiceworks identifier</description>
+        <externalId>false</externalId>
+        <label>Voiceworks Account ID</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>VW Staging Feed</label>
+    <listViews>
+        <fullName>All1</fullName>
+        <columns>NAME</columns>
+        <columns>UM_AccountNumber__c</columns>
+        <columns>UM_TransactionId__c</columns>
+        <columns>UM_SubscriberID__c</columns>
+        <columns>UM_VoiceWorksObjectId__c</columns>
+        <columns>UM_ArticleNumber__c</columns>
+        <columns>UM_ArticleName__c</columns>
+        <columns>UM_DescriptionChanged__c</columns>
+        <columns>UM_Description__c</columns>
+        <columns>UM_Startdate__c</columns>
+        <columns>UM_Enddate__c</columns>
+        <columns>UM_Quantity__c</columns>
+        <columns>UM_Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>UM_ErrorMessage__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Billing_Export</fullName>
+        <columns>NAME</columns>
+        <columns>UM_AccountNumber__c</columns>
+        <columns>UM_ArticleNumber__c</columns>
+        <columns>UM_ArticleName__c</columns>
+        <columns>UM_DescriptionChanged__c</columns>
+        <columns>UM_Description__c</columns>
+        <columns>UM_Startdate__c</columns>
+        <columns>UM_Enddate__c</columns>
+        <columns>UM_UnitPrice__c</columns>
+        <columns>UM_Quantity__c</columns>
+        <columns>UM_SubscriberID__c</columns>
+        <columns>UM_VoiceWorksObjectId__c</columns>
+        <columns>UM_Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>UM_ErrorMessage__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>UM_ExportType__c</field>
+            <operation>equals</operation>
+            <value>Billing</value>
+        </filters>
+        <filters>
+            <field>UM_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <label>Billing Export</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Failed_Records</fullName>
+        <columns>NAME</columns>
+        <columns>UM_AccountNumber__c</columns>
+        <columns>UM_ArticleNumber__c</columns>
+        <columns>UM_Status__c</columns>
+        <columns>UM_ErrorMessage__c</columns>
+        <columns>UM_SubscriberID__c</columns>
+        <columns>UM_VoiceworksAccountID__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>UM_Status__c</field>
+            <operation>equals</operation>
+            <value>Failed</value>
+        </filters>
+        <label>Failed Records</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Hardware_Export</fullName>
+        <columns>NAME</columns>
+        <columns>UM_StoreOrderNumber__c</columns>
+        <columns>UM_HardwareType__c</columns>
+        <columns>UM_Brand__c</columns>
+        <columns>UM_Model__c</columns>
+        <columns>UM_MAC__c</columns>
+        <columns>UM_Serial__c</columns>
+        <columns>UM_ShippingDate__c</columns>
+        <columns>UM_Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>UM_ExportType__c</field>
+            <operation>equals</operation>
+            <value>Hardware</value>
+        </filters>
+        <label>Hardware Export</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Process_Later</fullName>
+        <columns>NAME</columns>
+        <columns>UM_VoiceworksAccountID__c</columns>
+        <columns>UM_ArticleNumber__c</columns>
+        <columns>UM_CustomerName__c</columns>
+        <columns>UM_DescriptionChanged__c</columns>
+        <columns>UM_Description__c</columns>
+        <columns>UM_Startdate__c</columns>
+        <columns>UM_Enddate__c</columns>
+        <columns>UM_Quantity__c</columns>
+        <columns>UM_Status__c</columns>
+        <columns>UM_ErrorMessage__c</columns>
+        <columns>UM_SubscriberID__c</columns>
+        <columns>UM_ProcessLater__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>UM_ProcessLater__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Process Later</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Processed_Records</fullName>
+        <columns>NAME</columns>
+        <columns>UM_AccountNumber__c</columns>
+        <columns>UM_ArticleNumber__c</columns>
+        <columns>UM_Status__c</columns>
+        <columns>UM_SubscriberID__c</columns>
+        <columns>UM_VoiceworksAccountID__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>UM_Status__c</field>
+            <operation>equals</operation>
+            <value>Processed</value>
+        </filters>
+        <label>Processed Records</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>VWF-{00000000}</displayFormat>
+        <label>VW Staging Feed Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>VW Staging Feeds</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>UM_Account_Number_Is_Mandatory</fullName>
+        <active>true</active>
+        <description>Account number is required for Billing Export and Feed type records</description>
+        <errorConditionFormula>AND(ISBLANK(UM_AccountNumber__c),ISPICKVAL(UM_ExportType__c ,&apos;Billing&apos;),ISPICKVAL(UM_Type__c ,&apos;Feed&apos;))</errorConditionFormula>
+        <errorDisplayField>UM_AccountNumber__c</errorDisplayField>
+        <errorMessage>Account Number is required for Billing Export and Type - Feed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>UM_Order_Number_Is_Mandatory</fullName>
+        <active>true</active>
+        <description>Order number is required for Hardware Export and Feed type records</description>
+        <errorConditionFormula>AND(ISBLANK(UM_StoreOrderNumber__c),ISPICKVAL(UM_ExportType__c ,&apos;Hardware&apos;),ISPICKVAL(UM_Type__c ,&apos;Feed&apos;))</errorConditionFormula>
+        <errorDisplayField>UM_StoreOrderNumber__c</errorDisplayField>
+        <errorMessage>Order Number is required for Hardware Export and Type - Feed.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

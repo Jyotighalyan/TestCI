@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Suborder</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Suborders</value>
+    </caseValues>
+    <fields>
+        <label><!-- Jeopardy Reason --></label>
+        <name>Jeopardy_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Address not found</masterLabel>
+            <translation><!-- Address not found --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled Orders (customer cancelled)</masterLabel>
+            <translation><!-- Cancelled Orders (customer cancelled) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled Orders (non-serviceable)</masterLabel>
+            <translation><!-- Cancelled Orders (non-serviceable) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Issue</masterLabel>
+            <translation><!-- Customer Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer has uncleared debts</masterLabel>
+            <translation><!-- Customer has uncleared debts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Excess Construction Charges</masterLabel>
+            <translation><!-- Excess Construction Charges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Support (Contractor)</masterLabel>
+            <translation><!-- Field Support (Contractor) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JIRA Order Creation Failed</masterLabel>
+            <translation><!-- JIRA Order Creation Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MiddleWare Timeout</masterLabel>
+            <translation><!-- MiddleWare Timeout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network Issue</masterLabel>
+            <translation><!-- Network Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number not owned</masterLabel>
+            <translation><!-- Number not owned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Cancellation</masterLabel>
+            <translation><!-- Order Cancellation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provisioning WO Creation Failed</masterLabel>
+            <translation><!-- Provisioning WO Creation Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rebook</masterLabel>
+            <translation><!-- Rebook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resource not available</masterLabel>
+            <translation><!-- Resource not available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resource not available in time</masterLabel>
+            <translation><!-- Resource not available in time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFDC failure</masterLabel>
+            <translation><!-- SFDC failure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site not serviceable</masterLabel>
+            <translation><!-- Site not serviceable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wayleave</masterLabel>
+            <translation><!-- Wayleave --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field is created for usage in HTML Templates --></help>
+        <label><!-- Account Name --></label>
+        <name>LG_AccountName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activation Needed --></label>
+        <name>LG_ActivationNeeded__c</name>
+    </fields>
+    <fields>
+        <help><!-- This Field has been created for usage in HTML Email Templates --></help>
+        <label><!-- Address Details --></label>
+        <name>LG_AddressDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>LG_Address__c</name>
+        <relationshipLabel>Suborders</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Any Active Service --></label>
+        <name>LG_AnyActiveService__c</name>
+    </fields>
+    <fields>
+        <label><!-- Any Numbers to Port --></label>
+        <name>LG_AnyNumbersToPort__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment to Cancel --></label>
+        <name>LG_AppointmentToCancel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver Comments --></label>
+        <name>LG_ApproverComments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Description --></label>
+        <name>LG_Cancellation_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Reason --></label>
+        <name>LG_Cancellation_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Decomposition Criteria --></label>
+        <name>LG_DecompositionCriteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earliest Install Date --></label>
+        <name>LG_EarliestInstallDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earliest porting wish date --></label>
+        <name>LG_EarliestPortingWishDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG_ExistingCama --></label>
+        <name>LG_ExistingCama__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fulfilment Date --></label>
+        <name>LG_FulfilmentDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this flag if we need to redirect the process from happy path to Jeopardy / Exception handling after Inflight Change (Appointment / Numbers / Configuration) was captured --></help>
+        <label><!-- Inflight Change --></label>
+        <name>LG_InflightChange__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Needed --></label>
+        <name>LG_InstallationNeeded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Wish Date --></label>
+        <name>LG_InstallationWishDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integration Description --></label>
+        <name>LG_Integration_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integration Status --></label>
+        <name>LG_Integration_Status__c</name>
+        <picklistValues>
+            <masterLabel>Billing Integration Timeout</masterLabel>
+            <translation><!-- Billing Integration Timeout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancellation Requested</masterLabel>
+            <translation><!-- Cancellation Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Install Survey Failed</masterLabel>
+            <translation><!-- Install Survey Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Install Survey Successful</masterLabel>
+            <translation><!-- Install Survey Successful --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installation Complete</masterLabel>
+            <translation><!-- Installation Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installation Details Missing</masterLabel>
+            <translation><!-- Installation Details Missing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installation In-Progress</masterLabel>
+            <translation><!-- Installation In-Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JIRA Order Creation Failed</masterLabel>
+            <translation><!-- JIRA Order Creation Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JIRA Work Order Created</masterLabel>
+            <translation><!-- JIRA Work Order Created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Middleware Request Failed</masterLabel>
+            <translation><!-- Middleware Request Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Creation Failed</masterLabel>
+            <translation><!-- Order Creation Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Work Order Created</masterLabel>
+            <translation><!-- Pending Work Order Created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request Acknowledged</masterLabel>
+            <translation><!-- Request Acknowledged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFDC failure</masterLabel>
+            <translation><!-- SFDC failure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Timeout</masterLabel>
+            <translation><!-- Timeout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work Order Created</masterLabel>
+            <translation><!-- Work Order Created --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- JeopardyExplanation --></label>
+        <name>LG_JeopardyExplanation__c</name>
+    </fields>
+    <fields>
+        <label><!-- JeopardyRaisedBy --></label>
+        <name>LG_JeopardyRaisedBy__c</name>
+        <relationshipLabel>Suborders</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Jeopardy --></label>
+        <name>LG_Jeopardy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira Status --></label>
+        <name>LG_Jira_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest porting wish date --></label>
+        <name>LG_LatestPortingWishDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Billing --></label>
+        <name>LG_NewBilling__c</name>
+    </fields>
+    <fields>
+        <label><!-- Numbers Incomplete --></label>
+        <name>LG_NumbersIncomplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old ESN Number --></label>
+        <name>LG_OldESNNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Suborder --></label>
+        <name>LG_OldSuborder__c</name>
+        <relationshipLabel>Suborders</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Name --></label>
+        <name>LG_OpportunityName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Cancelled --></label>
+        <name>LG_OrderCancelled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Changed --></label>
+        <name>LG_OrderChanged__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planning Required --></label>
+        <name>LG_PlanningRequired__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plan</masterLabel>
+            <translation><!-- Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plan &amp; Survey</masterLabel>
+            <translation><!-- Plan &amp; Survey --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Process Requests to Cancel --></label>
+        <name>LG_ProcessRequestsToCancel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provisioning Account No --></label>
+        <name>LG_ProvisioningAccountNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provisioning Work Order --></label>
+        <name>LG_ProvisioningWorkOrder__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provisioning External Id --></label>
+        <name>LG_Provisioning_External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- ReSendEmailCheck --></label>
+        <name>LG_ReSendEmailCheck__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retry Install --></label>
+        <name>LG_RetryInstall__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retry Number Port --></label>
+        <name>LG_RetryNumberPort__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retry Planning --></label>
+        <name>LG_RetryPlanning__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retry Provision --></label>
+        <name>LG_RetryProvision__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG_SendEmailCheck --></label>
+        <name>LG_SendEmailCheck__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG_SendEmail --></label>
+        <name>LG_SendEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suppress Welcome Pack --></label>
+        <name>LG_Suppress_Welcome_Pack__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Date --></label>
+        <name>LG_TargetDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Termination --></label>
+        <name>LG_Termination__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total One Off Charges --></label>
+        <name>LG_Total_One_off__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Recurring Charges --></label>
+        <name>LG_Total_Recurring__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Suborder Value --></label>
+        <name>LG_Total_Suborder_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trigger Partial Billing? --></label>
+        <name>LG_TriggerPartialBilling__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG_Wp_Attachment --></label>
+        <name>LG_Wp_Attachment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trigger Activate Date --></label>
+        <name>Trigger_Activate_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Completion Date --></label>
+        <name>UM_DeliveryCompletionDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Site Activated --></label>
+        <name>UM_NewSiteActivated__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of Tries --></label>
+        <name>UM_No_of_Tries__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wait for Access --></label>
+        <name>UM_WaitForAccess__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of Services --></label>
+        <name>VM_Count_of_Services__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jeopardy Last Raised --></label>
+        <name>VM_Jeopardy_Raised__c</name>
+    </fields>
+    <fields>
+        <label><!-- Main Component --></label>
+        <name>VM_MainComponent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Rental Price --></label>
+        <name>VM_Total_Rental_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Account that governs this Solution. --></help>
+        <label><!-- Account --></label>
+        <name>csord__Account__c</name>
+        <relationshipLabel>Suborders</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- External Id field used for bulk inserts of Orders &amp; Subscriptions objects. --></help>
+        <label><!-- External Identifier --></label>
+        <name>csord__External_Identifier2__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. Use External Identifier2 field instead. --></help>
+        <label><!-- DEPRECATED External Identifier --></label>
+        <name>csord__External_Identifier__c</name>
+    </fields>
+    <fields>
+        <help><!-- E.g. &quot;spokeServiceAmsterdam&quot; in Hub&amp;Spokes scenario. --></help>
+        <label><!-- Identification --></label>
+        <name>csord__Identification__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order Request object which introduced the latest changes to this object. --></help>
+        <label><!-- Order Request --></label>
+        <name>csord__Order_Request__c</name>
+        <relationshipLabel>Suborders</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The parent Order of this Solution. --></help>
+        <label><!-- Order --></label>
+        <name>csord__Order__c</name>
+        <relationshipLabel>Suborders</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used for state transitions. --></help>
+        <label><!-- Status --></label>
+        <name>csord__Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Solution type --></help>
+        <label><!-- Type --></label>
+        <name>csord__Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product configuration that initiated creation of this Solution --></help>
+        <label><!-- Product Configuration --></label>
+        <name>csordtelcoa__Product_Configuration__c</name>
+        <relationshipLabel><!-- Solutions --></relationshipLabel>
+    </fields>
+    <nameFieldLabel>Suborder Name</nameFieldLabel>
+    <recordTypes>
+        <label><!-- Quantity --></label>
+        <name>Quantity</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Suborder --></label>
+        <name>Suborder</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Conga_Composer_Welcome_Pack_Test --></label>
+        <name>Conga_Composer_Welcome_Pack_Test</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_Welcomepack --></label>
+        <name>Conga_Composer_Welcomepack</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LG_Configure --></label>
+        <name>LG_Configure</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LG_CorrectNumbers --></label>
+        <name>LG_CorrectNumbers</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LG_ReSchedule --></label>
+        <name>LG_ReSchedule</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Resend_Welcome_Pack --></label>
+        <name>Resend_Welcome_Pack</name>
+    </webLinks>
+</CustomObjectTranslation>

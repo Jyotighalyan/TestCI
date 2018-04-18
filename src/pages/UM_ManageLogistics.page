@@ -1,0 +1,97 @@
+<apex:page standardController="Case" extensions="UM_ManageLogisticsExtension" >
+    <apex:includeScript value="/soap/ajax/30.0/connection.js"/>
+    <apex:includeScript value="/support/console/30.0/integration.js"/>
+    <link rel="stylesheet" href="/apex/sfLigtningOverride" />
+    <script type="text/javascript">
+
+    window.onload = function(){
+        setPanelWidth();
+    }
+
+    window.onresize = function() {
+    setPanelWidth();
+    };
+
+    function setPanelWidth(){
+        var panelWidth = document.getElementById('{!$Component.Form.ipb1.ProvisioningSection.tableContent}');
+        panelWidth.style.width = (tableSize()-50) + 'px';
+    }
+
+    function tableSize() {
+      var myWidth = 0, myHeight = 0;
+      if( typeof( window.innerWidth ) == 'number' ) {
+        //Non-IE
+        myWidth = window.innerWidth;
+          //myHeight = window.innerHeight;
+      } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+        //IE 6+ in 'standards compliant mode'
+        myWidth = document.documentElement.clientWidth;
+          //myHeight = document.documentElement.clientHeight;
+      } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+        //IE 4 compatible
+        myWidth = document.body.clientWidth;
+          //myHeight = document.body.clientHeight;
+      }
+        //window.alert( 'Width = ' + myWidth );
+        //window.alert( 'Height = ' + myHeight );
+        return myWidth;
+    }
+    </script>
+   <apex:form id="Form">
+    <apex:pageBlock id="ipb1">
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlockSection title="{!$Label.LG_SuborderDetails}" rendered="{!!Edit}">
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" />
+            <apex:outputfield value="{!Solution.csord__Order__c}" />
+            <apex:outputField value="{!Solution.LG_Address__r.LG_TechnicalContact__r.Name}" label="{!$Label.LG_Technical_Contact}"/>
+            <apex:outputField value="{!Solution.LG_Address__r.LG_FullAddressDetails__c}" label="{!$Label.LG_Site}"/>
+            <apex:outputField value="{!Solution.UM_DeliveryCompletionDate__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_SuborderDetails}" rendered="{!Edit}">
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" />
+            <apex:outputfield value="{!Solution.csord__Order__c}" />
+            <apex:outputField value="{!Solution.LG_Address__r.LG_TechnicalContact__r.Name}" label="{!$Label.LG_Technical_Contact}"/>
+            <apex:outputField value="{!Solution.LG_Address__r.LG_FullAddressDetails__c}" label="{!$Label.LG_Site}"/>
+            <apex:inputField value="{!Solution.UM_DeliveryCompletionDate__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection id="ProvisioningSection" title="{!$Label.LG_ServiceDetails}" columns="1" >
+            <apex:outputPanel id="tableContent" layout="block" style="overflow:auto;" >
+            <apex:pageBlockTable value="{!ProvisioningDetails}" rendered="{!!Edit}"  var="provObj">
+               <apex:column headerValue="{!$Label.LG_Services}">
+                    <apex:outputText >
+                        <apex:outputLink value="{!URLFOR($Action.csord__Service__c.View, provObj.service.Id)}" >{!provObj.service.name}</apex:outputLink>
+                        <apex:outputText >{!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                    </apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Logistics Supplier Name" Value="{!assetValues[0].LG_Logistics_Supplier_Name__c}" />
+                 <apex:column headerValue="Logistics Reference" Value="{!assetValues[0].LG_Logistics_Reference_Number__c}" />
+                <apex:column headerValue="ESN" value="{!assetValues[0].LG_MACAddress__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable value="{!ProvisioningDetails}" rendered="{!Edit}"  var="provObj">
+               <apex:column headerValue="{!$Label.LG_Services}">
+                    <apex:outputText >
+                        <apex:outputLink value="{!URLFOR($Action.csord__Service__c.View, provObj.service.Id)}" >{!provObj.service.name}</apex:outputLink>
+                        <apex:outputText >{!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                    </apex:outputText>
+                </apex:column>
+                 <apex:column headerValue="Logistics Supplier Name">
+                    <apex:inputField value="{!assetValues[0].LG_Logistics_Supplier_Name__c}"/>
+                </apex:column>
+                <apex:column headerValue="Logistics Reference">
+                    <apex:inputField value="{!assetValues[0].LG_Logistics_Reference_Number__c}"/>
+                </apex:column>
+                <apex:column headerValue="ESN">
+                    <apex:inputField value="{!assetValues[0].LG_MACAddress__c}"/>
+                </apex:column>
+        </apex:pageBlockTable>
+        </apex:outputPanel>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons rendered="{!!isClosed}">
+            <apex:commandButton value="Save" action="{!Save}" rendered="{!Edit}"/>
+            <apex:commandButton value="Cancel" action="{!Cancel}" rendered="{!Edit}"/>
+            <apex:commandButton value="{!$Label.LG_ButtonEdit}" action="{!Edit}" rendered="{!!Edit}"/>
+            <apex:commandButton value="{!$Label.LG_ButtonRefresh}" action="{!PageRefresh}" rendered="{!!Edit}"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

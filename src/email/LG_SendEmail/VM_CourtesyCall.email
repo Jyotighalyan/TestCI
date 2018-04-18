@@ -1,0 +1,18 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="1" >
+<![CDATA[<p class="MsoNormal" style="line-height:26.25pt"><b><span style="font-size:22.5pt;
+color:#ED1C24">Update on your order</span></b><span style="font-size:22.5pt;
+color:#ED1C24"> </span></p>
+
+<br>{!csord__Solution__c.LG_OpportunityName__c} / {!csord__Solution__c.LG_AccountName__c}<br><br>Address:{!csord__Solution__c.LG_AddressDetails__c}<span class="ph" id="substitute_text_email_templates"><br><br></span>Dear <span class="ph" id="substitute_text_email_templates">{!BLANKVALUE(Contact.FirstName,                     "Valued Customer")}</span> ,]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<br><br>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="1" >
+<![CDATA[Kind regards, <br>{!User.Name}| Order Manager | Business Customer Operations (BCO) <br>Virgin Media Business | T: 0333 000 5922&nbsp; <br>T: 0800 052 0800 Option 1&nbsp; <br><br>Why not track your order online? Just click the link below -&nbsp;&nbsp; <a href="http://www.virginmediabusiness.co.uk/help/s/trackorder">Track My Order</a><br>]]></td>
+</tr>
+</table>

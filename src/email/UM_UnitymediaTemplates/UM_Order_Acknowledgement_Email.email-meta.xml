@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>38.0</apiVersion>
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>UM_Order Acknowledgement Email</name>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>71</minorNumber>
+        <namespace>CSCAP</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>361</minorNumber>
+        <namespace>cscfga</namespace>
+    </packageVersions>
+    <style>none</style>
+    <subject>Order Acknowledgement Email</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

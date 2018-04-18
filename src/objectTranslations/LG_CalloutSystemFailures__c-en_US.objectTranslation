@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Callout System Failure</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Callout System Failures</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>LG_Account__c</name>
+        <relationshipLabel><!-- Callout System Failures --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Service Call System Error Code --></help>
+        <label><!-- Error Code --></label>
+        <name>LG_ErrorCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Service Callout System error code description --></help>
+        <label><!-- Error Description --></label>
+        <name>LG_ErrorDescription__c</name>
+    </fields>
+    <fields>
+        <help><!-- Refers to the Date when the Opportunity Owner was Notified --></help>
+        <label><!-- Notification Date To Opportunity Owner --></label>
+        <name>LG_NotificationDateToOpportunityOwner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notify Owner --></label>
+        <name>LG_NotifyOwner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Name --></label>
+        <name>LG_OpportunityName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Opportunity Owner Email --></help>
+        <label><!-- Opportunity Owner Email --></label>
+        <name>LG_OpportunityOwnerEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Owner --></label>
+        <name>LG_OpportunityOwner__c</name>
+        <relationshipLabel><!-- Callout System Failures --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Stage --></label>
+        <name>LG_OpportunityStage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>LG_Opportunity__c</name>
+        <relationshipLabel><!-- Callout System Failures --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Refers to the request message of the service call --></help>
+        <label><!-- Request Message --></label>
+        <name>LG_RequestMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Message --></label>
+        <name>LG_ResponseMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Name --></label>
+        <name>LG_ServiceName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>LG_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Refers to identifying the service which has failed --></help>
+        <label><!-- Type of Service --></label>
+        <name>LG_TypeOfService__c</name>
+        <picklistValues>
+            <masterLabel>Card Payment Result</masterLabel>
+            <translation><!-- Card Payment Result --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Check Business</masterLabel>
+            <translation><!-- Credit Check Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Check Result</masterLabel>
+            <translation><!-- Credit Check Result --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNA Address</masterLabel>
+            <translation><!-- DNA Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debt Check</masterLabel>
+            <translation><!-- Debt Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equifax Address Lookup</masterLabel>
+            <translation><!-- Equifax Address Lookup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equifax Company Lookup</masterLabel>
+            <translation><!-- Equifax Company Lookup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fraud Check</masterLabel>
+            <translation><!-- Fraud Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiate Card Payment</masterLabel>
+            <translation><!-- Initiate Card Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment Direct Debit</masterLabel>
+            <translation><!-- Payment Direct Debit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refund Card Payment</masterLabel>
+            <translation><!-- Refund Card Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reverse Card Payment</masterLabel>
+            <translation><!-- Reverse Card Payment --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Callout System Failure Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Request and Response Section --></label>
+            <section>Request and Response Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot notify user without  changing the Status to &apos;Completed&apos; --></errorMessage>
+        <name>NotifyOppOwnerOnlyWhenCompleted</name>
+    </validationRules>
+</CustomObjectTranslation>

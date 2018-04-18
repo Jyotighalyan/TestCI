@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- Site --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Site --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Site --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Site --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Site --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Site --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Site --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Site --></value>
+    </caseValues>
+    <fields>
+        <label>Adresszeile 1</label>
+        <name>Address_Line_1__c</name>
+    </fields>
+    <fields>
+        <label>Adresszeile 2</label>
+        <name>Address_Line_2__c</name>
+    </fields>
+    <fields>
+        <label>Beschreibung</label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label>Hausnummerzusatz</label>
+        <name>House_Number_Extension__c</name>
+    </fields>
+    <fields>
+        <label>Hausnummer</label>
+        <name>House_Number__c</name>
+    </fields>
+    <fields>
+        <label>Installationsadresse</label>
+        <name>Installation_Address__c</name>
+    </fields>
+    <fields>
+        <label>Postleitzahl Postanschrift</label>
+        <name>Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Id --></label>
+        <name>Site_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Type --></label>
+        <name>Site_Type__c</name>
+    </fields>
+    <fields>
+        <label>Stadt</label>
+        <name>Town__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <nameFieldLabel><!-- SPT Site Name --></nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,156 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="Standard1"><span lang="DE" style="font-size: 12pt;"><span style="white-space: pre;">				</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><font size="1"><span lang="DE"><span style="font-family: &quot;Times New Roman&quot;, serif;">Ihre Rahmenvertragsnummer: &nbsp;</span></span><font face="Times New Roman, serif">{!Account.AccountNumber}</font><span style="white-space: pre;">											</span>&nbsp; &nbsp;<span style="font-family: &quot;Times New Roman&quot;, serif;">Ihre Kundennummer: &nbsp;</span><font face="Times New Roman, serif">{!Case.00N6E000000PuzA}</font><span style="white-space: pre;">						</span></font></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;"><br></p><p class="Standard1" style="font-size: 12pt;">Guten Tag <span style="background:yellow;mso-highlight:yellow">&lt;Salutation&gt;</span> <span style="background:yellow;mso-highlight:yellow">&lt;Lastname&gt;,</span><span style="font-size:18.0pt;mso-ansi-language:EN-US"><o:p></o:p></span></p><p class="Standard1" align="center" style="font-size: 12pt; text-align: center; line-height: 12pt;">&nbsp;&nbsp;<o:p></o:p></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;">&nbsp;<o:p></o:p></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;"><span lang="DE">In der Zeit von<b> <span style="background:yellow;mso-highlight:yellow">&lt;Maintenance_Start_DateTime&nbsp; (DD.MM.YYYY, HH:MM)&gt;</span> Uhr </b>bis<b>
+<span style="background:yellow;mso-highlight:yellow">&lt; Maintenance_End_DateTime&nbsp; (DD.MM.YYYY, HH:MM)&gt;</span> Uhr </b>finden
+Wartungsarbeiten statt.<b> </b>Daher<b>
+</b>kann es für Ihre <b>Virtual
+Voice </b>Produkte am Standort <b><span style="background:fuchsia;mso-highlight:fuchsia">&lt;Streetname Housenumber,
+Zip-Code City&gt;</span></b> zu Beeinträchtigungen oder Ausfällen von ca. <b><span style="background:yellow;mso-highlight:
+yellow">&lt;Estimated Downtime in minutes „MMM“)&gt;</span></b> Minuten kommen.
+Während der Unterbrechungen können Sie ggf. keine Telefondienste nutzen, dies
+bedeutet, dass ab- und eingehende Anrufe möglicherweise nicht funktionieren.
+Notrufe können dann nur mobil abgesetzt werden.<br>
+<br>
+Wir bedauern die Unannehmlichkeiten und bitten um Ihr Verständnis.</span><span lang="DE">&nbsp;<o:p></o:p></span></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;</span></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;"><span lang="DE">Sollten Sie Fragen
+haben, rufen Sie uns einfach an. Sie erreichen uns jederzeit unter der
+Rufnummer 0800 141 299 99. Sie erreichen uns auch per E-Mail an Enterprise.BusinessVoice@unitymedia.de.
+<o:p></o:p></span></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;<o:p></o:p></span></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;"><span lang="DE">Mit freundlichen
+Grüßen <o:p></o:p></span></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;<o:p></o:p></span></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;"><span lang="DE">Unitymedia Business
+Team <o:p></o:p></span></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;<o:p></o:p></span></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;<o:p></o:p></span></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;<o:p></o:p></span></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;">Tel.: 0800
+141 299 99<o:p></o:p></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;">&nbsp;<o:p></o:p></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;"><span lang="DE"><a href="http://www.unitymedia.de/business"><span lang="EN-US">www.unitymedia.de/business</span></a></span><o:p></o:p></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;">&nbsp;<o:p></o:p></p><p class="Standard1" style="font-size: 12pt; line-height: 12pt;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="font-size: 12pt; border-collapse: collapse; border: none;">
+ <tbody><tr>
+  <td width="151" valign="top" style="width:113.25pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><b><span lang="DE" style="font-size:7.0pt">Unitymedia NRW GmbH<o:p></o:p></span></b></p>
+  </td>
+  <td width="180" valign="top" style="width:134.85pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><b><span style="font-size:7.0pt;mso-ansi-language:EN-US">Unitymedia
+  Hessen GmbH &amp; Co. KG<o:p></o:p></span></b></p>
+  </td>
+  <td width="142" valign="top" style="width:106.3pt;border:none;mso-border-left-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><b><span lang="DE" style="font-size:7.0pt">Unitymedia BW GmbH<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1;height:33.75pt">
+  <td width="151" valign="top" style="width:113.25pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:33.75pt">
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US">Unitymedia Business Service <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US">Postfach 45 12 04 <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US">50887 Köln<o:p></o:p></span></p>
+  </td>
+  <td width="180" valign="top" style="width:134.85pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:33.75pt">
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US">Unitymedia Business Service <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US">Postfach 45 12 04 <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US">50887 Köln<o:p></o:p></span></p>
+  </td>
+  <td width="142" valign="top" style="width:106.3pt;border:none;mso-border-left-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:33.75pt">
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US">Unitymedia Business Service&nbsp; Postfach 90 01 31<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US">75090 Pforzheim<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="151" valign="top" style="width:113.25pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Handelsregister: <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Amtsgericht Köln HRB 55984<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Sitz der Gesellschaft: Köln<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">USt-ID DE 813 243 353 <o:p></o:p></span></p>
+  </td>
+  <td width="180" valign="top" style="width:134.85pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Handelsregister:<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Amtsgericht Köln HRA 24116<o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;font-family:&quot;Arial&quot;,sans-serif">Sitz der Gesellschaft: Köln<o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;font-family:&quot;Arial&quot;,sans-serif">USt-ID DE 213 891 500<o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;font-family:&quot;Arial&quot;,sans-serif">Geschäftsführende Gesellschafterin:
+  Unitymedia Hessen Verwaltung GmbH Amtsgericht Köln<o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;font-family:&quot;Arial&quot;,sans-serif">HRB 58137<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Sitz der Gesellschaft: Köln<o:p></o:p></span></p>
+  </td>
+  <td width="142" valign="top" style="width:106.3pt;border:none;mso-border-left-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Handelsregister:<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Amtsgericht Köln HRB 83533<o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt;font-family:&quot;Arial&quot;,sans-serif">Sitz der Gesellschaft: Köln<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">USt-ID DE 251 338 951<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="473" colspan="3" valign="top" style="width:354.4pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">&nbsp;</span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Geschäftsführung: Lutz Schüler (Vorsitzender) | Gudrun Scharler |
+  Christian Hindennach | Dr. Herbert Leifker | Winfried&nbsp; Rapp<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>]]></td>
+</tr>
+</table>

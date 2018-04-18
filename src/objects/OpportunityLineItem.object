@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddProduct</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChoosePricebook</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditAllProduct</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Discount</fullName>
+    </fields>
+    <fields>
+        <fullName>Estimated_Usage_Value__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the TOTAL usage value as opposed to the annual figure</inlineHelpText>
+        <label>Usage Value</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Excess_Construction_Charge__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Excess Construction Charge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Install_Value__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Install Value</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LG_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <referenceTo>cscrm__Address__c</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>Opportunity_Product</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_CongaAddressDetails__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.LG_FullAddressDetails__c</formula>
+        <label>Conga Address Details</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_CongaBold__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_OLIType__c = &apos;Main&apos; ||  LG_MainOLI__c</formula>
+        <label>Conga Bold</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_CongaExtraDetails__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( LG_ProductDetail__c  != null ,  LG_ProductDetail__c,if(  ((!LG_MainOLI__c &amp;&amp; Ispickval(LG_Type__c , &quot;Recurring&quot;)) = true &amp;&amp; Quantity &gt; 1) ,  &apos;X &apos; + Text(Quantity) ,&apos;&apos;))</formula>
+        <label>Conga Extra Details</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_CongaInternetSpeed__c</fullName>
+        <externalId>false</externalId>
+        <formula>SUBSTITUTE(LEFT( LG_ProductDetail__c ,
+ (FIND(&quot;-&quot;, LG_ProductDetail__c))),
+&quot;-&quot;,&quot;&quot;)</formula>
+        <label>Conga Internet Speed</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ContractTerm__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Term</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_DiscountAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_DiscountCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount Code</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_DiscountId__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount Id</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_DiscountMessage__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount Message</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_DiscountMonths__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount Months</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_IsQuantumProduct__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsQuantumProduct?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_MainOLI__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Main OLI</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_OLIType__c</fullName>
+        <externalId>false</externalId>
+        <label>OLI Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_OneOffPrice__c</fullName>
+        <externalId>false</externalId>
+        <label>One-Off Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LG_ProductDetail__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Detail</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>Segment</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Recurring</fullName>
+                    <default>false</default>
+                    <label>Recurring</label>
+                </value>
+                <value>
+                    <fullName>One Off</fullName>
+                    <default>false</default>
+                    <label>One Off</label>
+                </value>
+                <value>
+                    <fullName>Promotional Discount</fullName>
+                    <default>false</default>
+                    <label>Promotional Discount</label>
+                </value>
+                <value>
+                    <fullName>Promotional Action</fullName>
+                    <default>false</default>
+                    <label>Promotional Action</label>
+                </value>
+                <value>
+                    <fullName>Closing Deal</fullName>
+                    <default>false</default>
+                    <label>Closing Deal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ListPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>OpportunityId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductCode</fullName>
+    </fields>
+    <fields>
+        <fullName>Quantity</fullName>
+    </fields>
+    <fields>
+        <fullName>Rental_Value__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the TOTAL rental value as opposed to an annual figure.  e.g. Ã‚Â£1000 per year rental would be Ã‚Â£3000 if this was a 36 months contract.</inlineHelpText>
+        <label>Total Rental Value</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <description>To store the sequence in which the products are to be displayed in the quote.</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ServiceDate</fullName>
+    </fields>
+    <fields>
+        <fullName>Subtotal</fullName>
+    </fields>
+    <fields>
+        <fullName>TotalPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>UnitPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>cscfga__Attribute__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Attribute</label>
+        <referenceTo>cscfga__Attribute__c</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>Opportunity_Product</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+</CustomObject>

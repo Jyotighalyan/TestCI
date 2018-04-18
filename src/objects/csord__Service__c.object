@@ -1,0 +1,4415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>UM_ServiceValidate</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>UM_ViewServiceDetails</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>A model of a service provided to a customer. A Service has a recurring component.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Address_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.LG_AddressID__c</formula>
+        <label>Address Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.cscrm__City__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.cscrm__Country__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+  <fields>
+        <fullName>House_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.LG_HouseNumber__c</formula>
+        <label>House Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HouseNumberExtension__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.LG_HouseNumberExtension__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HouseNumberExtension</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Premise_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.Name</formula>
+        <label>Premise Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Premise_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.LG_PremiseNumber__c</formula>
+        <label>Premise Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+     <fields>
+        <fullName>State_Province__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.cscrm__State_Province__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>State/Province</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+     <fields>
+        <fullName>Street__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.cscrm__Street__c</formula>
+        <label>Street</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip_Postal_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.cscrm__Zip_Postal_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Zip/Postal Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>B2B_Care_Billing_Account_Number__c</fullName>
+        <description>Created for Care Track for Case Object Billing Account Number from Service</description>
+        <externalId>false</externalId>
+        <formula>csord__Subscription__r.csconta__Billing_Account__r.LG_BillingAccountNumber__c</formula>
+        <label>Case Billing Account Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>B2B_Care_Service_Billing_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>csord__Subscription__r.csconta__Billing_Account__r.LG_BillingAccountNumber__c</formula>
+        <label>Service Billing Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>B2B_Care_Snoopy_URL_Parameter__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT( LG_Address__r.cscrm__State_Province__c , 1) &amp; LG_ProvisioningAccountNo__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Snoopy URL Parameter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>csord__Subscription__r.Billing_Account_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Account Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Access_Technology__c</fullName>
+        <externalId>false</externalId>
+        <label>Access Technology</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Action__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(csordtelcoa__Delta_Status__c, &apos;Continuing In Subscription&apos;) &amp;&amp; ISPICKVAL(csord__Subscription__r.csordtelcoa__Change_Type__c, &apos;Move&apos;)  , &apos;Add&apos;, IF(ISBLANK( TEXT(csordtelcoa__Delta_Status__c)) &amp;&amp; LG_AttributeValuesChanged__c, &apos;Change&apos;, IF(ISBLANK( TEXT(csordtelcoa__Delta_Status__c)), &apos;Add&apos;, IF( ISPICKVAL(csordtelcoa__Delta_Status__c, &apos;Continuing In Subscription&apos;) &amp;&amp; csordtelcoa__Product_Configuration__r.LG_AttributeValuesChanged__c , &apos;Change&apos;, CASE(TEXT(csordtelcoa__Delta_Status__c), &apos;Added To Subscription&apos;, &apos;Add&apos;, &apos;Deleted From Subscription&apos;, &apos;Delete&apos;, &apos;None&apos;)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Action</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ActivateValid__c</fullName>
+        <externalId>false</externalId>
+        <label>Activate Valid</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Activate_Valid__c</fullName>
+        <externalId>false</externalId>
+        <formula>csordtelcoa__Product_Configuration__r.LG_ActivateValid__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Activate Valid</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Activationneeded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Activation Needed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_AddOnPriceItemAssociation__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Add On Price Item Association</label>
+        <referenceTo>cspmb__Price_Item_Add_On_Price_Item_Association__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_AddOn__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Add On</label>
+        <referenceTo>cspmb__Add_On_Price_Item__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_Additional_Hour__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Hour</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Additional_Work_Note__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Work Note</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <referenceTo>cscrm__Address__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_AreaCodes__c</fullName>
+        <externalId>false</externalId>
+        <label>Area Codes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AttributeValuesChanged__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used when Service is New. Field is checked if there was a change in product configuration attributes, that have a flag &apos;Calculate Delta&apos; set to true, after the Activation Completed or Ready for Billing Service Status.</description>
+        <externalId>false</externalId>
+        <label>Attribute values changed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_BNumberShielding__c</fullName>
+        <externalId>false</externalId>
+        <label>B-number shielding</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BillingFrequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Frequency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BlockType__c</fullName>
+        <externalId>false</externalId>
+        <label>Block Type</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_COMMAND_Service_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>COMMAND Service ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_CallBarringLevel__c</fullName>
+        <externalId>false</externalId>
+        <label>Call barring level</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_CallerID__c</fullName>
+        <externalId>false</externalId>
+        <label>Caller ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Capability__c</fullName>
+        <externalId>false</externalId>
+        <label>Capability</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Care_Full_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(LG_Address__r.cscrm__Street__c), &apos;&apos;, LG_Address__r.cscrm__Street__c) +
+IF( ISBLANK(LG_Address__r.LG_HouseNumber__c), &apos;&apos;, &apos; &apos; + LG_Address__r.LG_HouseNumber__c) +
+IF( ISBLANK(LG_Address__r.LG_HouseNumberExtension__c) , &apos;,&apos;, &apos; &apos; +LG_Address__r.LG_HouseNumberExtension__c+ &apos;,&apos;)+ 
+IF( ISBLANK(LG_Address__r.cscrm__Zip_Postal_Code__c), &apos;&apos;, &apos; &apos; + LG_Address__r.cscrm__Zip_Postal_Code__c) +
+IF( ISBLANK(LG_Address__r.cscrm__City__c), &apos;&apos;, &apos; &apos; + LG_Address__r.cscrm__City__c)</formula>
+        <label>Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ChangeTypeCode__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( LG_ChangeType__c , &quot;Add&quot;, &quot;401&quot;, &quot;New&quot;, &quot;401&quot;, &quot;Terminate&quot;, &quot;402&quot;, &quot;Change&quot;,&quot;403&quot;,&quot;Migrate&quot;,&quot;403&quot;, &quot;Contract Renewal&quot;, &quot;404&quot;, &quot;Retention&quot;, &quot;403&quot;,&quot;Move&quot;,&quot;405&quot;,&quot;&quot;,&quot;401&quot;, &quot;000&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Change Type Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ChangeType__c</fullName>
+        <externalId>false</externalId>
+        <label>Change Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Change</fullName>
+                    <default>false</default>
+                    <label>Change</label>
+                </value>
+                <value>
+                    <fullName>Add</fullName>
+                    <default>false</default>
+                    <label>Add</label>
+                </value>
+                <value>
+                    <fullName>Contract Renewal</fullName>
+                    <default>false</default>
+                    <label>Contract Renewal</label>
+                </value>
+                <value>
+                    <fullName>Migrate</fullName>
+                    <default>false</default>
+                    <label>Migrate</label>
+                </value>
+                <value>
+                    <fullName>Move</fullName>
+                    <default>false</default>
+                    <label>Move</label>
+                </value>
+                <value>
+                    <fullName>Retention</fullName>
+                    <default>false</default>
+                    <label>Retention</label>
+                </value>
+                <value>
+                    <fullName>Terminate</fullName>
+                    <default>false</default>
+                    <label>Terminate</label>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Charge_Group_Name__c</fullName>
+        <description>This is the Group charge Name to be populated from Product configuration object (output mapped) incase of BDS products like &apos;Company VPN Anywhere&apos; and &apos;Company VPN Connection&apos;</description>
+        <externalId>false</externalId>
+        <label>LG Charge Group Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ConnectionRequired__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Connection Required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_ContractEndDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>csord__Subscription__r.LG_Contract__r.csconta__Valid_To__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contract End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_ContractStartDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>csord__Subscription__r.LG_Contract__r.csconta__Valid_From__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contract Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_ContractTerm__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Term</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_CurrencyCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Currency Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_DeactivationWishDate__c</fullName>
+        <description>Holds the deactivation wish date request by the Customer</description>
+        <externalId>false</externalId>
+        <label>Deactivation Wish Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_DecompositionCriteria__c</fullName>
+        <description>Used as a criteria for grouping the services to the suborders</description>
+        <externalId>false</externalId>
+        <label>Decomposition Criteria</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>LG_DecompositionCriteria</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_DeviatingBillingDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Deviating Billing Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_Discount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Discount</label>
+        <referenceTo>LG_Discount__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_DonorOperatorCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Donor Operator Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_EffectiveDate__c</fullName>
+        <description>This is the date when the change requested in configuration was implemented from the customer perspective. Normally this translates to Start Date. If the Delta Status was delete, this would translate to End Date.</description>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_ExternalSubscriptionName__c</fullName>
+        <externalId>false</externalId>
+        <label>External Subscription Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_FailureReason__c</fullName>
+        <externalId>false</externalId>
+        <label>Failure Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_From_Service__c</fullName>
+        <description>This field is used to capture the FROM Service for BDS</description>
+        <externalId>false</externalId>
+        <label>From Service</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Gesamt__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Quantity__c  *  csord__Total_Recurring_Charges__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LG_Gesamt</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Hardware__c</fullName>
+        <externalId>false</externalId>
+        <label>Hardware</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_IPAddressExtensionLegacy__c</fullName>
+        <externalId>false</externalId>
+        <label>IP Address Extension (Legacy)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_IgnoreContractTerm__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Ignore Contract Term</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_InstallDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Install Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_InstallValid__c</fullName>
+        <externalId>false</externalId>
+        <label>Install Valid</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Install_Valid__c</fullName>
+        <externalId>false</externalId>
+        <formula>csordtelcoa__Product_Configuration__r.LG_InstallValid__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Install Valid</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationNeeded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Installation Needed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationPlannedDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Planned Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationType__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationWishDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Wish Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_InternetSecurityLegacy__c</fullName>
+        <externalId>false</externalId>
+        <label>Internet Security (Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_InternetTypeLegacy__c</fullName>
+        <externalId>false</externalId>
+        <label>Internet Type (Legacy)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MarketSegment__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Segment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MultiWifiAccessPoint__c</fullName>
+        <externalId>false</externalId>
+        <label>Multi Wifi Access Point</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_NameTelephony__c</fullName>
+        <externalId>false</externalId>
+        <label>Name Telephony</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Network_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Network Type</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_OldSuborder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Old Suborder</label>
+        <referenceTo>csord__Solution__c</referenceTo>
+        <relationshipLabel>Services (Old Suborder)</relationshipLabel>
+        <relationshipName>Services1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_OrderNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Number</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Phonenumbers__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone Numbers</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PinLegacy__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Pin (Legacy)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_PortingCity__c</fullName>
+        <externalId>false</externalId>
+        <label>Porting City</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortingHouseNumberAddition__c</fullName>
+        <externalId>false</externalId>
+        <label>Porting House Number Addition</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortingHouseNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Porting House Number</label>
+        <length>6</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortingInitials__c</fullName>
+        <externalId>false</externalId>
+        <label>Porting Initials</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortingName__c</fullName>
+        <externalId>false</externalId>
+        <label>Porting Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortingPrefix__c</fullName>
+        <externalId>false</externalId>
+        <label>Porting Prefix</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortingStreet__c</fullName>
+        <externalId>false</externalId>
+        <label>Porting Street</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortingWishDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Porting Wish Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_PortingZipcode__c</fullName>
+        <externalId>false</externalId>
+        <label>Porting Zipcode</label>
+        <length>7</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    
+    <fields>
+        <fullName>LG_Primary_Access_Network__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Access Network</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Primary_Access_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Access Type</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Primary_Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Primary</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_ProductDefinitionName__c</fullName>
+        <externalId>false</externalId>
+        <formula>csordtelcoa__Product_Configuration__r.cscfga__Product_Definition__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Definition Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ProductFamily__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Family</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ProductName__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product Name</label>
+        <referenceTo>cspmb__Price_Item__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_Product_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Category</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ProvisionValid__c</fullName>
+        <externalId>false</externalId>
+        <label>Provision Valid</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Provision_Valid__c</fullName>
+        <externalId>false</externalId>
+        <formula>csordtelcoa__Product_Configuration__r.LG_ProvisionValid__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Provision Valid</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ProvisioningAccountNo__c</fullName>
+        <externalId>false</externalId>
+        <label>Provisioning Account No</label>
+        <length>75</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ProvisioningCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Provisioning Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LG_ProvisioningSystemID__c</fullName>
+        <externalId>false</externalId>
+        <label>Cable Master ID</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ProvisioningSystem__c</fullName>
+        <externalId>false</externalId>
+        <label>Provisioning System</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+	<fields>
+        <fullName>LG_RootOrder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Root Order</label>
+        <referenceTo>csord__Order__c</referenceTo>
+        <relationshipLabel>Services (Root Order)</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+	<fields>
+        <fullName>LG_ReasonforBillingDateDeviation__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Billing Date Deviation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Need</fullName>
+                    <default>false</default>
+                    <label>Need</label>
+                </value>
+                <value>
+                    <fullName>Values</fullName>
+                    <default>false</default>
+                    <label>Values</label>
+                </value>
+                <value>
+                    <fullName>From</fullName>
+                    <default>false</default>
+                    <label>From</label>
+                </value>
+                <value>
+                    <fullName>DWH</fullName>
+                    <default>false</default>
+                    <label>DWH</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_SLA__c</fullName>
+        <externalId>false</externalId>
+        <label>SLA</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ServiceExternalId__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Service External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ServiceStatus__c</fullName>
+        <description>Pick-list to save the status of the service provisioning.</description>
+        <externalId>false</externalId>
+        <label>Service Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Requested</fullName>
+                    <default>true</default>
+                    <label>Requested</label>
+                  <fullName>LG_SecondaryProductConfiguration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Secondary Product Configuration</label>
+        <referenceTo>cscfga__Product_Configuration__c</referenceTo>
+        <relationshipLabel>Services (Secondary Product Configuration)</relationshipLabel>
+        <relationshipName>Services1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_Secondary_Access_Network__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Access Network</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Secondary_Access_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Access Type</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Secondary_Value__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Secondary</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+      </value>
+                <value>
+                    <fullName>Provisioned</fullName>
+                    <default>false</default>
+                    <label>Provisioned</label>
+                </value>
+                <value>
+                    <fullName>Activation Completed</fullName>
+                    <default>false</default>
+                    <label>Activation Completed</label>
+                </value>
+                <value>
+                    <fullName>Ready for Billing</fullName>
+                    <default>false</default>
+                    <label>Ready for Billing</label>
+                </value>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+                <value>
+                    <fullName>Closed Replaced</fullName>
+                    <default>false</default>
+                    <label>Closed Replaced</label>
+                </value>
+                <value>
+                    <fullName>Provisioning Failed</fullName>
+                    <default>false</default>
+                    <label>Provisioning Failed</label>
+                </value>
+                <value>
+                    <fullName>Activation Failed</fullName>
+                    <default>false</default>
+                    <label>Activation Failed</label>
+                </value>
+                <value>
+                    <fullName>Installation Failed</fullName>
+                    <default>false</default>
+                    <label>Installation Failed</label>
+                </value>
+                <value>
+                    <fullName>Service Termination Requested</fullName>
+                    <default>false</default>
+                    <label>Service Termination Requested</label>
+                </value>
+                <value>
+                    <fullName>Canceled</fullName>
+                    <default>false</default>
+                    <label>Canceled</label>
+                </value>
+                <value>
+                    <fullName>Activated</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Activated</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Service_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_SecondaryProductConfiguration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Secondary Product Configuration</label>
+        <referenceTo>cscfga__Product_Configuration__c</referenceTo>
+        <relationshipLabel>Services (Secondary Product Configuration)</relationshipLabel>
+        <relationshipName>Services1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_Site__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Site</label>
+        <referenceTo>cscrm__Site__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_SoftDeleted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for versioning and tracking</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates that the record is not relevant do to the change is active version (newer or older version exists and it is active)</inlineHelpText>
+        <label>Soft Deleted</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_Suborder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Suborder</label>
+        <referenceTo>csord__Solution__c</referenceTo>
+        <relationshipLabel>Services (Suborder)</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_TelephonyPlusTypeLegacy__c</fullName>
+        <externalId>false</externalId>
+        <label>Telephony Plus Type (Legacy)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TerminatedService__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Terminated Service</label>
+        <referenceTo>csord__Service__c</referenceTo>
+        <relationshipLabel>Services (Terminated Service)</relationshipLabel>
+        <relationshipName>Services1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_TerminatedSubscription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Terminated Subscription</label>
+        <referenceTo>csord__Subscription__c</referenceTo>
+        <relationshipLabel>Services (Terminated Subscription)</relationshipLabel>
+        <relationshipName>Services2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_TestResult__c</fullName>
+        <externalId>false</externalId>
+        <label>Test Result</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_To_Service__c</fullName>
+        <externalId>false</externalId>
+        <label>To Service</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TypeOfPhoneRange__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Of Phone Range</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TypeTelephony__c</fullName>
+        <externalId>false</externalId>
+        <label>Type (Telephony)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Persistent_Id__c</fullName>
+        <description>Unique identifier for the VPN Site</description>
+        <externalId>false</externalId>
+        <label>Persistent Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Temp_State__c</fullName>
+        <description>Temporary field created to load state on Attributes.</description>
+        <externalId>false</externalId>
+        <label>Temp State</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Contract_Value__c</fullName>
+        <externalId>false</externalId>
+        <formula>csord__Total_Recurring_Charges__c  *  LG_ContractTerm__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Contract Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_AS_Number__c</fullName>
+        <description>BGP Autonomous System Number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>BGP Autonomous System Number</inlineHelpText>
+        <label>UM AS Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Announced_prefix__c</fullName>
+        <description>BGP Title of issue</description>
+        <externalId>false</externalId>
+        <inlineHelpText>BGP Title of issue</inlineHelpText>
+        <label>UM Announced prefix</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_BGP_Password__c</fullName>
+        <description>Password for selection of workflow</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Password for selection of workflow</inlineHelpText>
+        <label>UM BGP Password</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_BillingProductId__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Product Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_CablemasterDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Cablemaster Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_Cancellation_Period__c</fullName>
+        <defaultValue>3</defaultValue>
+        <description>UM_Cancellation_Period__c</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Cancellatiob periof in Months.</inlineHelpText>
+        <label>Cancellation Period (In Months)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Cancellation__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_CostCAPEX__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost (CAPEX)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_CostOPEX__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost (OPEX)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Customer_Company__c</fullName>
+        <description>Account Name for JIRA form</description>
+        <externalId>false</externalId>
+        <formula>LG_RootOrder__r.csord__Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Company</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Customer_Number__c</fullName>
+        <description>Account Number for JIRA Form</description>
+        <externalId>false</externalId>
+        <formula>LG_RootOrder__r.csord__Account__r.LG_AccountNumber__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Customer_Region__c</fullName>
+        <description>Customer Region for JIRA Form</description>
+        <externalId>false</externalId>
+        <formula>LG_RootOrder__r.csord__Account__r.UM_VisitStateProvince__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_CustomersInvoiceGroupingReference__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer&apos;s Invoice Grouping Reference</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_DeactivationReason__c</fullName>
+        <externalId>false</externalId>
+        <label>Deactivation Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_DependsOnProductConfiguration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Depends On Product Configuration</label>
+        <referenceTo>cscfga__Product_Configuration__c</referenceTo>
+        <relationshipLabel>Services (Depends On Product Configuration)</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UM_DependsOnService__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Depends On Service</label>
+        <referenceTo>csord__Service__c</referenceTo>
+        <relationshipLabel>Services (Depends On)</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+     <fields>
+        <fullName>LG_DependsOnSecondaryService__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Depends On Secondary Service</label>
+        <referenceTo>csord__Service__c</referenceTo>
+        <relationshipLabel>Services (Service)</relationshipLabel>
+        <relationshipName>Services3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UM_DownloadSpeed__c</fullName>
+        <externalId>false</externalId>
+        <label>Download Speed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ESN__c</fullName>
+        <externalId>false</externalId>
+        <label>ESN</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_EntryDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Entry Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_EstimatedPriceCAPEX__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Price (CAPEX)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_EstimatedPriceOPEX__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Price (OPEX)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Geolocation__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT (LG_Address__r.cscrm__Geolocation__Latitude__s)  &amp; &quot;, &quot; &amp; TEXT (LG_Address__r.cscrm__Geolocation__Longitude__s)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Geolocation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_GetCurrentContractTerm__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Get Current Contract Term</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+     <fields>
+        <fullName>UM_HPBXExternalId__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (CONTAINS( LG_ProductFamily__c , &apos;Virtual Voice&apos;), 
+csord__Subscription__r.csconta__Billing_Account__r.LG_BillingAccountNumber__c &amp; &apos;|&apos; &amp; LG_Address__r.LG_PremiseNumber__c &amp; &apos;|&apos; &amp; 
+CASE( LG_Address__r.cscrm__State_Province__c , &apos;BW&apos;, &apos;BW&apos;, &apos;HSN&apos;, &apos;HSN&apos;,&apos;NRW&apos;),&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HPBX External ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_HelpText__c</fullName>
+        <externalId>false</externalId>
+        <label>Help Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_IPv4__c</fullName>
+        <description>BGP IPv4 Address space</description>
+        <externalId>false</externalId>
+        <inlineHelpText>BGP IPv4 Address space</inlineHelpText>
+        <label>UM IPv4</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_IPv6__c</fullName>
+        <description>BGP IPv6 Address space</description>
+        <externalId>false</externalId>
+        <inlineHelpText>BGP IPv6 Address space</inlineHelpText>
+        <label>UM IPv6</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Is_Active_Today__c</fullName>
+        <externalId>false</externalId>
+        <formula>csord__Activation_Date__c &lt;= TODAY()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Active Today?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_Is_Inactive_Today__c</fullName>
+        <externalId>false</externalId>
+        <formula>csord__Deactivation_Date__c &lt;= TODAY()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Inactive Today</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_JiraIssueTypeId__c</fullName>
+        <externalId>false</externalId>
+        <label>JiraIssueTypeId</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Latest_Cancellation_Letter_Arrival__c</fullName>
+        <description>This is calculated in the background based on the number of months put in Cancellation Period</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contract End Date - Cancellation Period (in Months)</inlineHelpText>
+        <label>Latest Cancellation Letter Arrival Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_LogisticsReference__c</fullName>
+        <description>To store the Logistics Reference number</description>
+        <externalId>false</externalId>
+        <label>Logistics Reference</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_MACAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>MAC Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_NumberManagement__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Management</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>UM_NumberOfOpenPortingProcesses__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Open Porting Processes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Order_Number__c</fullName>
+        <description>Order Number for JIRA form</description>
+        <externalId>false</externalId>
+        <formula>LG_RootOrder__r.csord__Order_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_PICReason__c</fullName>
+        <externalId>false</externalId>
+        <label>PIC Reason</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>UM_PartnerAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Partner Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Partner</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UM_PartnerSalesId__c</fullName>
+        <externalId>false</externalId>
+        <formula>csord__Subscription__r.Sales_Partner_Id__c</formula>
+        <label>Partner Sales Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_PhoneExtension__c</fullName>
+        <description>for storing VW phone extension</description>
+        <externalId>false</externalId>
+        <label>Phone Extension</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ProductDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ProvisioningServiceExternalId__c</fullName>
+        <externalId>false</externalId>
+        <label>Provisioning Service External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_SalesID__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_SendVoiceworksExternalID__c</fullName>
+        <externalId>false</externalId>
+        <label>Send Voiceworks External ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ServiceStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Requested</fullName>
+                    <default>true</default>
+                    <label>Requested</label>
+                </value>
+                <value>
+                    <fullName>Sent to Provisioning</fullName>
+                    <default>false</default>
+                    <label>Sent to Provisioning</label>
+                </value>
+                <value>
+                    <fullName>Numbers Ported</fullName>
+                    <default>false</default>
+                    <label>Numbers Ported</label>
+                </value>
+                <value>
+                    <fullName>Ready for Billing</fullName>
+                    <default>false</default>
+                    <label>Ready for Billing</label>
+                </value>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Termination Requested</fullName>
+                    <default>false</default>
+                    <label>Termination Requested</label>
+                </value>
+                <value>
+                    <fullName>Terminated</fullName>
+                    <default>false</default>
+                    <label>Terminated</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+                <value>
+                    <fullName>Closed Replaced</fullName>
+                    <default>false</default>
+                    <label>Closed Replaced</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_StoreOrderNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Store Order Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_SubscriberId__c</fullName>
+        <description>This is HPBX related field. Stores the Subscriber id sent by 3rd party.</description>
+        <externalId>true</externalId>
+        <label>Subscriber ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_SubscriberName__c</fullName>
+        <externalId>false</externalId>
+        <label>Subscriber Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_TerminationCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Termination Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_TestNumberBlock__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Test Number Block</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_UploadSpeed__c</fullName>
+        <externalId>false</externalId>
+        <label>Upload Speed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_VoiceWorksObjectId__c</fullName>
+        <description>filed for storing voiceworks object id on service</description>
+        <externalId>false</externalId>
+        <label>VoiceWorks Object Id</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+      <fields>
+        <fullName>LG_Replacement_Service_Change_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(csordtelcoa__Replacement_Service__r.csord__Subscription__r.csordtelcoa__Change_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Replacement Service Change Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_WaitForAccess__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Wait for Access</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_WorkflowTriggerTimer__c</fullName>
+        <externalId>false</externalId>
+        <formula>LastModifiedDate - 0.03125</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Workflow Trigger Timer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>csord__Activation_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date of activation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date of activation.</inlineHelpText>
+        <label>Activation Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>csord__Client_Identifier__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>A field for the service owner (client) to store their own unique identifier on the Service Object, for ease of identification to external systems</description>
+        <externalId>true</externalId>
+        <inlineHelpText>A field for the service owner (client) to store their own unique identifier on the Service Object, for ease of identification to external systems</inlineHelpText>
+        <label>Client Identifier</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Deactivation_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date of deactivation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date of deactivation.</inlineHelpText>
+        <label>Deactivation Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>csord__Deactivation_Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A reason to deactivate the service.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A reason to deactivate the service.</inlineHelpText>
+        <label>Deactivation Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__External_Identifier2__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</inlineHelpText>
+        <label>External Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>csord__External_Identifier__c</fullName>
+        <deprecated>false</deprecated>
+        <description>DEPRECATED. External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>DEPRECATED. Use External Identifier2 field instead.</inlineHelpText>
+        <label>DEPRECATED External Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Identification__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Identification string for the object, used as the reference from external systems.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. &quot;spokeServiceAmsterdam&quot; in Hub&amp;Spokes scenario.</inlineHelpText>
+        <label>Identification</label>
+        <length>255</length>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Order_Request__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Order Request object which introduced the latest changes to this object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Order Request object which introduced the latest changes to this object.</inlineHelpText>
+        <label>Order Request</label>
+        <referenceTo>csord__Order_Request__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The parent Order of this Service.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent Order of this Service.</inlineHelpText>
+        <label>Order</label>
+        <referenceTo>csord__Order__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Service_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The address to which this Service will be delivered.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The address to which this Service will be delivered.</inlineHelpText>
+        <label>Service Address</label>
+        <referenceTo>cscrm__Address__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Service__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The parent Service of this Service.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent Service of this Service.</inlineHelpText>
+        <label>Parent Service</label>
+        <referenceTo>csord__Service__c</referenceTo>
+        <relationshipLabel>Child Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Solution__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The parent Solution of this Service</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent Solution of this Service</inlineHelpText>
+        <label>Solution</label>
+        <referenceTo>csord__Solution__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the Service in the fulfillment process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for state transitions.</inlineHelpText>
+        <label>Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Subscription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The parent Subscription of this Service.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent Subscription of this Service.</inlineHelpText>
+        <label>Subscription</label>
+        <referenceTo>csord__Subscription__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>csord__Total_One_Off_Charges__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sum of all the one-off charges of the service’s line items</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of all the one-off charges of the service’s line items</inlineHelpText>
+        <label>Total One-Off Charges</label>
+        <summarizedField>csord__Service_Line_Item__c.csord__Total_Price__c</summarizedField>
+        <summaryFilterItems>
+            <field>csord__Service_Line_Item__c.csord__Is_Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>csord__Service_Line_Item__c.csord__Is_Recurring__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>csord__Service_Line_Item__c.csord__Service__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>csord__Total_Recurring_Charges__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sum of all the recurring charges of the service’s line items</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of all the recurring charges of the service’s line items</inlineHelpText>
+        <label>Total Recurring Charges</label>
+        <summarizedField>csord__Service_Line_Item__c.csord__Total_Price__c</summarizedField>
+        <summaryFilterItems>
+            <field>csord__Service_Line_Item__c.csord__Is_Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>csord__Service_Line_Item__c.csord__Is_Recurring__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>csord__Service_Line_Item__c.csord__Service__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Delta_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Delta Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Continuing In Subscription</fullName>
+                    <default>false</default>
+                    <label>Continuing In Subscription</label>
+                </value>
+                <value>
+                    <fullName>Added To Subscription</fullName>
+                    <default>false</default>
+                    <label>Added To Subscription</label>
+                </value>
+                <value>
+                    <fullName>Deleted From Subscription</fullName>
+                    <default>false</default>
+                    <label>Deleted From Subscription</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Main_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Parent_Product_Configuration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Parent Product Configuration</label>
+        <referenceTo>cscfga__Product_Configuration__c</referenceTo>
+        <relationshipLabel>Services (Parent Product Configuration)</relationshipLabel>
+        <relationshipName>Services1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Product_Basket__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product Basket</label>
+        <referenceTo>cscfga__Product_Basket__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Product_Bundle__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product Bundle</label>
+        <referenceTo>cscfga__Product_Bundle__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Product_Configuration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product Configuration</label>
+        <referenceTo>cscfga__Product_Configuration__c</referenceTo>
+        <relationshipLabel>Services</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Replaced_Service__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Replaced Service</label>
+        <referenceTo>csord__Service__c</referenceTo>
+        <relationshipLabel>Replacement Services</relationshipLabel>
+        <relationshipName>Replaced_Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Replacement_Product_Configuration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to the Product Configuration that will be used for generation of a Service that will replace this Service instance</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to the Product Configuration that will be used for generation of a Service that will replace this Service instance</inlineHelpText>
+        <label>Replacement Product Configuration</label>
+        <referenceTo>cscfga__Product_Configuration__c</referenceTo>
+        <relationshipLabel>Replaced Services</relationshipLabel>
+        <relationshipName>Replaced_Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Replacement_Service__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Replacement Service</label>
+        <referenceTo>csord__Service__c</referenceTo>
+        <relationshipLabel>Replaced Services</relationshipLabel>
+        <relationshipName>Replacement_Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Service_Number_Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <displayFormat>{000000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Service Number Sequence</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Service_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Service Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Access_Active_IPv4__c</fullName>
+        <externalId>false</externalId>
+        <label>UM Access Active IPv4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Access_Active_IPv6__c</fullName>
+        <externalId>false</externalId>
+        <label>UM Access Active IPv6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Access_Transfer_IPv4__c</fullName>
+        <externalId>false</externalId>
+        <label>UM Access Transfer IPv4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Access_Transfer_IPv6__c</fullName>
+        <externalId>false</externalId>
+        <label>UM Access Transfer IPv6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AdditionalInformation__c</fullName>
+        <description>Used in Jira Integration for description attribute.</description>
+        <externalId>false</externalId>
+        <label>Additional Information</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_RootOrder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Root Order</label>
+        <referenceTo>csord__Order__c</referenceTo>
+        <relationshipLabel>Services (Root Order)</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_IsExistingHardware__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will be populated with a boolean value, to indicate whether the hardware of the product has been changed. I.e. when IsExistingHardware will be set to &apos;Yes&apos; on scenarios like Move / Change, to indicate if there were no hardware changes done on the product and hence no need to provision the same.</description>
+        <externalId>false</externalId>
+        <label>Is Existing Hardware</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Service</label>
+    <listViews>
+        <fullName>All_Services</fullName>
+        <columns>NAME</columns>
+        <columns>csordtelcoa__Service_Number__c</columns>
+        <columns>LG_ProductFamily__c</columns>
+        <columns>UM_ProductDescription__c</columns>
+        <columns>LG_ServiceStatus__c</columns>
+        <columns>csord__Subscription__c</columns>
+        <columns>UM_CustomersInvoiceGroupingReference__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_InstallationWishDate__c</columns>
+        <columns>LG_InstallationPlannedDate__c</columns>
+        <columns>csord__Total_One_Off_Charges__c</columns>
+        <columns>csord__Total_Recurring_Charges__c</columns>
+        <columns>LG_Quantity__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>csordtelcoa__Replacement_Service__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Services</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Business_Voice</fullName>
+        <columns>NAME</columns>
+        <columns>csordtelcoa__Service_Number__c</columns>
+        <columns>UM_ProductDescription__c</columns>
+        <columns>LG_ServiceStatus__c</columns>
+        <columns>csord__Subscription__c</columns>
+        <columns>UM_CustomersInvoiceGroupingReference__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_InstallationWishDate__c</columns>
+        <columns>LG_InstallationPlannedDate__c</columns>
+        <columns>csord__Total_One_Off_Charges__c</columns>
+        <columns>csord__Total_Recurring_Charges__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>csordtelcoa__Replacement_Service__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LG_ProductFamily__c</field>
+            <operation>equals</operation>
+            <value>Business Voice</value>
+        </filters>
+        <label>Business Voice</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CF</fullName>
+        <columns>NAME</columns>
+        <columns>Billing_Account_Number__c</columns>
+        <columns>csord__Order__c</columns>
+        <columns>csord__Service__c</columns>
+        <columns>UM_ServiceStatus__c</columns>
+        <columns>LG_Suborder__c</columns>
+        <columns>LG_MarketSegment__c</columns>
+        <columns>csord__Subscription__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LG_ProductFamily__c</field>
+            <operation>equals</operation>
+            <value>Company Fiber</value>
+        </filters>
+        <label>CF</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Numbers_Ported</fullName>
+        <columns>NAME</columns>
+        <columns>csordtelcoa__Service_Number__c</columns>
+        <columns>LG_ProductFamily__c</columns>
+        <columns>UM_ProductDescription__c</columns>
+        <columns>LG_ServiceStatus__c</columns>
+        <columns>csord__Subscription__c</columns>
+        <columns>UM_CustomersInvoiceGroupingReference__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_InstallationWishDate__c</columns>
+        <columns>LG_InstallationPlannedDate__c</columns>
+        <columns>csord__Total_One_Off_Charges__c</columns>
+        <columns>csord__Total_Recurring_Charges__c</columns>
+        <columns>LG_Quantity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LG_ServiceStatus__c</field>
+            <operation>equals</operation>
+            <value>Numbers Ported</value>
+        </filters>
+        <label>Numbers Ported</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Service_Active</fullName>
+        <columns>NAME</columns>
+        <columns>csordtelcoa__Service_Number__c</columns>
+        <columns>LG_ProductFamily__c</columns>
+        <columns>UM_ProductDescription__c</columns>
+        <columns>LG_ServiceStatus__c</columns>
+        <columns>csord__Subscription__c</columns>
+        <columns>UM_CustomersInvoiceGroupingReference__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_InstallationWishDate__c</columns>
+        <columns>LG_InstallationPlannedDate__c</columns>
+        <columns>csord__Total_One_Off_Charges__c</columns>
+        <columns>csord__Total_Recurring_Charges__c</columns>
+        <columns>LG_Quantity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LG_ServiceStatus__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <label>Service Active</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Service_Cancelled</fullName>
+        <columns>NAME</columns>
+        <columns>csordtelcoa__Service_Number__c</columns>
+        <columns>LG_ProductFamily__c</columns>
+        <columns>UM_ProductDescription__c</columns>
+        <columns>LG_ServiceStatus__c</columns>
+        <columns>csord__Subscription__c</columns>
+        <columns>UM_CustomersInvoiceGroupingReference__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_InstallationWishDate__c</columns>
+        <columns>LG_InstallationPlannedDate__c</columns>
+        <columns>csord__Total_One_Off_Charges__c</columns>
+        <columns>csord__Total_Recurring_Charges__c</columns>
+        <columns>LG_Quantity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LG_ServiceStatus__c</field>
+            <operation>equals</operation>
+            <value>Cancelled</value>
+        </filters>
+        <label>Service Cancelled</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Service_Inactive</fullName>
+        <columns>NAME</columns>
+        <columns>csordtelcoa__Service_Number__c</columns>
+        <columns>LG_ProductFamily__c</columns>
+        <columns>UM_ProductDescription__c</columns>
+        <columns>LG_ServiceStatus__c</columns>
+        <columns>csord__Subscription__c</columns>
+        <columns>UM_CustomersInvoiceGroupingReference__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_InstallationWishDate__c</columns>
+        <columns>LG_InstallationPlannedDate__c</columns>
+        <columns>csord__Total_One_Off_Charges__c</columns>
+        <columns>csord__Total_Recurring_Charges__c</columns>
+        <columns>LG_Quantity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LG_ServiceStatus__c</field>
+            <operation>equals</operation>
+            <value>Inactive</value>
+        </filters>
+        <label>Service Inactive</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Service_Ready_for_Billing</fullName>
+        <columns>NAME</columns>
+        <columns>csordtelcoa__Service_Number__c</columns>
+        <columns>LG_ProductFamily__c</columns>
+        <columns>UM_ProductDescription__c</columns>
+        <columns>LG_ServiceStatus__c</columns>
+        <columns>csord__Subscription__c</columns>
+        <columns>UM_CustomersInvoiceGroupingReference__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_InstallationWishDate__c</columns>
+        <columns>LG_InstallationPlannedDate__c</columns>
+        <columns>csord__Total_One_Off_Charges__c</columns>
+        <columns>csord__Total_Recurring_Charges__c</columns>
+        <columns>LG_Quantity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LG_ServiceStatus__c</field>
+            <operation>equals</operation>
+            <value>Ready for Billing</value>
+        </filters>
+        <label>Service Ready for Billing</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Service_Requested</fullName>
+        <columns>NAME</columns>
+        <columns>csordtelcoa__Service_Number__c</columns>
+        <columns>LG_ProductFamily__c</columns>
+        <columns>UM_ProductDescription__c</columns>
+        <columns>LG_ServiceStatus__c</columns>
+        <columns>csord__Subscription__c</columns>
+        <columns>UM_CustomersInvoiceGroupingReference__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_InstallationWishDate__c</columns>
+        <columns>LG_InstallationPlannedDate__c</columns>
+        <columns>csord__Total_One_Off_Charges__c</columns>
+        <columns>csord__Total_Recurring_Charges__c</columns>
+        <columns>LG_Quantity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LG_ServiceStatus__c</field>
+            <operation>equals</operation>
+            <value>Requested</value>
+        </filters>
+        <label>Service Requested</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Service_Sent_to_Provisioning</fullName>
+        <columns>NAME</columns>
+        <columns>csordtelcoa__Service_Number__c</columns>
+        <columns>LG_ProductFamily__c</columns>
+        <columns>UM_ProductDescription__c</columns>
+        <columns>LG_ServiceStatus__c</columns>
+        <columns>csord__Subscription__c</columns>
+        <columns>UM_CustomersInvoiceGroupingReference__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_InstallationWishDate__c</columns>
+        <columns>LG_InstallationPlannedDate__c</columns>
+        <columns>csord__Total_One_Off_Charges__c</columns>
+        <columns>csord__Total_Recurring_Charges__c</columns>
+        <columns>LG_Quantity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LG_ServiceStatus__c</field>
+            <operation>equals</operation>
+            <value>Sent to Provisioning</value>
+        </filters>
+        <label>Service Sent to Provisioning</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Service_Terminated</fullName>
+        <columns>NAME</columns>
+        <columns>csordtelcoa__Service_Number__c</columns>
+        <columns>LG_ProductFamily__c</columns>
+        <columns>UM_ProductDescription__c</columns>
+        <columns>LG_ServiceStatus__c</columns>
+        <columns>csord__Subscription__c</columns>
+        <columns>UM_CustomersInvoiceGroupingReference__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_InstallationWishDate__c</columns>
+        <columns>LG_InstallationPlannedDate__c</columns>
+        <columns>csord__Total_One_Off_Charges__c</columns>
+        <columns>csord__Total_Recurring_Charges__c</columns>
+        <columns>LG_Quantity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LG_ServiceStatus__c</field>
+            <operation>equals</operation>
+            <value>Terminated</value>
+        </filters>
+        <label>Service Terminated</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Service_Termination_Requested</fullName>
+        <columns>NAME</columns>
+        <columns>csordtelcoa__Service_Number__c</columns>
+        <columns>LG_ProductFamily__c</columns>
+        <columns>UM_ProductDescription__c</columns>
+        <columns>LG_ServiceStatus__c</columns>
+        <columns>csord__Subscription__c</columns>
+        <columns>UM_CustomersInvoiceGroupingReference__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_InstallationWishDate__c</columns>
+        <columns>LG_InstallationPlannedDate__c</columns>
+        <columns>csord__Total_One_Off_Charges__c</columns>
+        <columns>csord__Total_Recurring_Charges__c</columns>
+        <columns>LG_Quantity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LG_ServiceStatus__c</field>
+            <operation>equals</operation>
+            <value>Termination Requested</value>
+        </filters>
+        <label>Service Termination Requested</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Service Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Services</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>ForBusinessVoiceServices</fullName>
+        <active>true</active>
+        <description>The Button &apos;Send email to Sipwise&apos; should be only available at Busines Voice Services.</description>
+        <label>ForBusinessVoiceServices</label>
+        <picklistValues>
+            <picklist>LG_ActivateValid__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ChangeType__c</picklist>
+            <values>
+                <fullName>Add</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_DecompositionCriteria__c</picklist>
+            <values>
+                <fullName>Set 1 - On-Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 10 - VoiceWorks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 11 - Engineers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 12 - JIRA Orchestrated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 13 - JIRA Bearer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 14 - CaMa Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 15 - CaMa Manual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 16 - CaMa OI Manual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - BDS Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - HBPX Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 18 - Direct to Kenan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 19 - Additional Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 2 - Off-Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 20 - BDS Site Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 21 - VPN Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 22 - Parent%2FCategory Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 23 - UM CaMa Bridge Mode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 24 - UM JIRA Fiber Bridge Mode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 25 - Business Anywhere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 26 - UM Managed WLAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 3 - Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 5 - CaMa Internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 5 - No Grouping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 6 - CaMa Dependent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 7 - JIRA Fiber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 8 - CS Voice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 9 - CaMa Bearer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_InstallValid__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ProvisionValid__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ReasonforBillingDateDeviation__c</picklist>
+            <values>
+                <fullName>DWH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>From</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Values</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ServiceStatus__c</picklist>
+            <values>
+                <fullName>Activation Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed Replaced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provisioned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provisioning Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_ServiceStatus__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed Replaced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Numbers Ported</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Sent to Provisioning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Termination Requested</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>csordtelcoa__Delta_Status__c</picklist>
+            <values>
+                <fullName>Added To Subscription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Continuing In Subscription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deleted From Subscription</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Service</fullName>
+        <active>true</active>
+        <label>Service</label>
+        <picklistValues>
+            <picklist>LG_ActivateValid__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ChangeType__c</picklist>
+            <values>
+                <fullName>Add</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_DecompositionCriteria__c</picklist>
+            <values>
+                <fullName>Set 1 - On-Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 10 - VoiceWorks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 11 - Engineers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 12 - JIRA Orchestrated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 13 - JIRA Bearer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 14 - CaMa Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 15 - CaMa Manual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 16 - CaMa OI Manual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - BDS Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - HBPX Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 18 - Direct to Kenan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 19 - Additional Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 2 - Off-Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 20 - BDS Site Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 21 - VPN Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 22 - Parent%2FCategory Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 23 - UM CaMa Bridge Mode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 24 - UM JIRA Fiber Bridge Mode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 25 - Business Anywhere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 26 - UM Managed WLAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 3 - Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 5 - CaMa Internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 5 - No Grouping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 6 - CaMa Dependent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 7 - JIRA Fiber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 8 - CS Voice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 9 - CaMa Bearer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_InstallValid__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ProvisionValid__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ReasonforBillingDateDeviation__c</picklist>
+            <values>
+                <fullName>DWH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>From</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Values</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ServiceStatus__c</picklist>
+            <values>
+                <fullName>Activation Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed Replaced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provisioned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provisioning Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_ServiceStatus__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed Replaced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Numbers Ported</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Sent to Provisioning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Termination Requested</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>csordtelcoa__Delta_Status__c</picklist>
+            <values>
+                <fullName>Added To Subscription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Continuing In Subscription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deleted From Subscription</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Service_Read_Only</fullName>
+        <active>true</active>
+        <label>Service Read Only</label>
+        <picklistValues>
+            <picklist>LG_ActivateValid__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ChangeType__c</picklist>
+            <values>
+                <fullName>Add</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_DecompositionCriteria__c</picklist>
+            <values>
+                <fullName>Set 1 - On-Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 10 - VoiceWorks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 11 - Engineers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 12 - JIRA Orchestrated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 13 - JIRA Bearer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 14 - CaMa Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 15 - CaMa Manual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 16 - CaMa OI Manual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - BDS Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - HBPX Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 18 - Direct to Kenan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 19 - Additional Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 2 - Off-Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 20 - BDS Site Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 21 - VPN Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 22 - Parent%2FCategory Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 23 - UM CaMa Bridge Mode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 24 - UM JIRA Fiber Bridge Mode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 25 - Business Anywhere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 26 - UM Managed WLAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 3 - Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 5 - CaMa Internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 5 - No Grouping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 6 - CaMa Dependent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 7 - JIRA Fiber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 8 - CS Voice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 9 - CaMa Bearer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_InstallValid__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ProvisionValid__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ReasonforBillingDateDeviation__c</picklist>
+            <values>
+                <fullName>DWH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>From</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Values</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ServiceStatus__c</picklist>
+            <values>
+                <fullName>Activation Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed Replaced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provisioned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provisioning Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_ServiceStatus__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed Replaced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Numbers Ported</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Sent to Provisioning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Termination Requested</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>csordtelcoa__Delta_Status__c</picklist>
+            <values>
+                <fullName>Added To Subscription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Continuing In Subscription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deleted From Subscription</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>LG_SLA__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OBJECT_ID</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LG_ProductFamily__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LG_ServiceStatus__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>LG_SLA__c</lookupFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Fields_Set_To_Read_Only</fullName>
+        <active>false</active>
+        <description>Fields Set to Read Only When Service Status Type is Active</description>
+        <errorConditionFormula>ISPICKVAL( PRIORVALUE( LG_ServiceStatus__c ),&quot;Active&quot;)</errorConditionFormula>
+        <errorDisplayField>csord__Activation_Date__c</errorDisplayField>
+        <errorMessage>Contractual data cannot be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>It_is_not_possible_to_return_to_previous</fullName>
+        <active>false</active>
+        <description>It is not possible to return to previous Service Status</description>
+        <errorConditionFormula>CASE(  LG_ServiceStatus__c ,
+&quot;Requested&quot;,1,
+&quot;Sent to Provisioning&quot;,2,
+&quot;Ported&quot;,1,
+&quot;Ready for Billing&quot;,3,
+&quot;Cancelled&quot;,3,
+&quot;Active&quot;,4,
+&quot;Terminated&quot;,6,
+&quot;Inactive&quot;,6,
+&quot;Termination Requested&quot;,5,0)
+&lt;
+CASE(PRIORVALUE(LG_ServiceStatus__c ) ,
+&quot;Requested&quot;,1,
+&quot;Sent to Provisioning&quot;,2,
+&quot;Numbers Ported&quot;,1,
+&quot;Ready for Billing&quot;,3,
+&quot;Cancelled&quot;,3,
+&quot;Active&quot;,4,
+&quot;Terminated&quot;,6,
+&quot;Inactive&quot;,6,
+&quot;Termination Requested&quot;,5,0)</errorConditionFormula>
+        <errorMessage>It is not possible to return to the previous Service Status</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Service_Status_set_to_Active</fullName>
+        <active>true</active>
+        <description>It is not possible to go to status Ready for Billing on field Service Status until Activation Date is populated</description>
+        <errorConditionFormula>(ISPICKVAL( LG_ServiceStatus__c , &apos;Ready for Billing&apos;)) &amp;&amp; ( ISBLANK( csord__Activation_Date__c ) )</errorConditionFormula>
+        <errorMessage>Please populate Activation Date before setting Service Status to Ready for Billing</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Service_Status_set_to_Service_Cancelled</fullName>
+        <active>true</active>
+        <description>It is not possible to go to status Service Cancelled on field Service Status until PIC reason is populated</description>
+        <errorConditionFormula>(ISPICKVAL( LG_ServiceStatus__c , &apos;Cancelled&apos;)) &amp;&amp; ( ISBLANK(  UM_PICReason__c ) )</errorConditionFormula>
+        <errorMessage>Please populatePIC Reason before setting Service Status to Cancelled</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>B2B_Care_BDS_Partner_Portal</fullName>
+        <availability>online</availability>
+        <description>This button will take you to BDS Partner Portal</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>BDS Portal</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&apos;http://www.google.com&apos;)</url>
+    </webLinks>
+    <webLinks>
+        <fullName>B2B_Care_Check_MK</fullName>
+        <availability>online</availability>
+        <description>On click it will take you to the external system - MK Application.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Check MK</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&apos;https://de-krp01a-checkmk01.dcn.ish.de/cmkdevmgmt01/check_mk/view.py?FNT_SERVICE_ID={!csord__Service__c.LG_COMMAND_Service_ID__c}&amp;filled_in=filter&amp;search=Search&amp;view_name=b2b_all_services_salesforce&apos;)</url>
+    </webLinks>
+    <webLinks>
+        <fullName>B2B_Care_Check_Snoopy</fullName>
+        <availability>online</availability>
+        <description>This button will take you to Snoopy Ext System.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Snoopy</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&apos;https://sbc.unity.media.corp/goto/snoopy/identifier/{!csord__Service__c.B2B_Care_Snoopy_URL_Parameter__c}&apos;)</url>
+    </webLinks>
+    <webLinks>
+        <fullName>B2B_Care_Command</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Command</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&apos;https://www-tb-prod.kabelbw.local/kabelbw/&apos;)</url>
+    </webLinks>
+    <webLinks>
+        <fullName>B2B_Care_ITUMA</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>ITUMA</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&apos;https://www.mypowerspot.de/&apos;)</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Enter_Cable_Master_ID</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Eingabe CaMa-Kd.Nr.</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/37.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/37.0/apex.js&quot;)}
+
+{!REQUIRESCRIPT(&apos;//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js&apos;)}
+{!REQUIRESCRIPT(&apos;//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js&apos;)}
+
+var $g = jQuery.noConflict();
+var csord__Service__c = new sforce.SObject(&quot;Service&quot;);
+
+if(&quot;{!csord__Service__c.LG_ServiceStatus__c}&quot;===&quot;Active&quot;)
+{
+
+$.noConflict();
+jQuery(function($) {
+try {
+// Start Added for custom pop-up message
+$g(function() {
+//var html = prompt(&quot;Bitte CaMa-Kundennummer eingeben&quot;, &quot;&quot;);
+var html=&apos;&lt;div id=&quot;dialog&quot; style=&quot;display: none&quot; title=&quot;Eingabe CaMa-Kd.Nr.&quot;&gt;&lt;p&gt;Bitte CaMa-Kundennummer eingeben&lt;/p&gt; &lt;input type=&quot;text&quot; id=&quot;cont&quot; value=&quot;&quot;&gt;&lt;/div&gt;&apos;;
+$g(&apos;head&apos;).append(&apos;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css&quot; type=&quot;text/css&quot;/&gt;&apos;)
+
+$g(&apos;body&apos;).append(html);
+
+$g(&quot;#dialog&quot;).dialog({
+autoOpen: true,
+modal: false,
+ buttons: {
+&quot;OK&quot;: function() {
+$g(this).dialog(&quot;close&quot;);
+var popup = document.getElementById(&quot;cont&quot;).value;
+var ser = new sforce.SObject(&quot;csord__Service__c&quot;);
+ser.id=&quot;{!csord__Service__c.Id}&quot;;
+ser.LG_ProvisioningSystemID__c=popup;
+var result = sforce.connection.update([ser]);
+window.location.reload();
+},
+}
+
+});
+});
+// End Added for custom pop-up message
+} catch (e) {
+alert( e .toString() );
+}
+
+});
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Technical_Case</fullName>
+        <availability>online</availability>
+        <description>Techincal Case Button for Service Page Layout</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Technical Case</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/37.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/support/console/37.0/integration.js&quot;)}
+var result = sforce.connection.query(&quot;Select Id,Name from Recordtype where Name=&apos;Technical Case&apos; limit 1&quot;);
+var RType = result.getArray(&quot;records&quot;)[0].Id;
+
+
+var service = sforce.connection.query(&quot;Select Id, csord__Subscription__r.csord__Account__c, csord__Subscription__r.csord__Account__r.Name,Name from csord__Service__c where Id=&apos;{!csord__Service__c.Id}&apos; limit 1&quot;);
+
+var SAccount=service.getArray(&quot;records&quot;)[0].csord__Subscription__r.csord__Account__r.Name;
+var SAccountId=service.getArray(&quot;records&quot;)[0].csord__Subscription__r.csord__Account__c;
+var SName=service.getArray(&quot;records&quot;)[0].Name;
+var SId=service.getArray(&quot;records&quot;)[0].Id;
+
+var qr = sforce.connection.query(&quot;SELECT DurableId,QualifiedApiName FROM FieldDefinition WHERE EntityDefinition.QualifiedApiName = &apos;Case&apos; and QualifiedApiName=&apos;LG_Service__c&apos;&quot;);
+
+
+
+var ServiceId = qr.getArray(&quot;records&quot;)[0].DurableId.split(&apos;.&apos;);
+
+
+var returl=&apos;/500/e?retURL={!csord__Service__c.Id}&amp;RecordType=&apos;+RType+&apos;&amp;def_account_id=&apos;+SAccountId+&apos;&amp;CF&apos;+ServiceId[1]+&apos;=&apos;+SName+&apos;&amp;CF&apos;+ServiceId[1]+&apos;_lkid=&apos;+SId+&apos;&amp;ent=Case&apos;;
+
+
+
+
+if (sforce.console.isInConsole()) {
+srcUp(returl+&apos;&amp;isdtp=vw&apos;);
+} else {
+window.open(returl);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>B2B_Service_Change_Request</fullName>
+        <availability>online</availability>
+        <description>Button to create new service change request case</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Service Change Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/37.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/support/console/37.0/integration.js&quot;)} 
+
+var result = sforce.connection.query(&quot;Select Id,Name from Recordtype where Name=&apos;Service Change Request&apos; limit 1&quot;); 
+var RType = result.getArray(&quot;records&quot;)[0].Id; 
+
+
+var service = sforce.connection.query(&quot;Select Id, csord__Subscription__r.csord__Account__c, csord__Subscription__r.csord__Account__r.Name,Name from csord__Service__c where Id=&apos;{!csord__Service__c.Id}&apos; limit 1&quot;); 
+
+var SAccount=service.getArray(&quot;records&quot;)[0].csord__Subscription__r.csord__Account__r.Name; 
+var SAccountId=service.getArray(&quot;records&quot;)[0].csord__Subscription__r.csord__Account__c; 
+var SName=service.getArray(&quot;records&quot;)[0].Name; 
+var SId=service.getArray(&quot;records&quot;)[0].Id; 
+
+var qr = sforce.connection.query(&quot;SELECT DurableId,QualifiedApiName FROM FieldDefinition WHERE EntityDefinition.QualifiedApiName = &apos;Case&apos; and QualifiedApiName=&apos;LG_Service__c&apos;&quot;); 
+
+
+
+var ServiceId = qr.getArray(&quot;records&quot;)[0].DurableId.split(&apos;.&apos;); 
+
+
+var returl=&apos;/500/e?retURL={!csord__Service__c.Id}&amp;RecordType=&apos;+RType+&apos;&amp;def_account_id=&apos;+SAccountId+&apos;&amp;CF&apos;+ServiceId[1]+&apos;=&apos;+SName+&apos;&amp;CF&apos;+ServiceId[1]+&apos;_lkid=&apos;+SId+&apos;&amp;ent=Case&apos;; 
+
+
+
+
+if (sforce.console.isInConsole()) { 
+srcUp(returl+&apos;&amp;isdtp=vw&apos;); 
+} else { 
+window.open(returl); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_email_to_Sipwise</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send email to B2BSolutions</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/37.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/37.0/apex.js&quot;)}
+
+{!REQUIRESCRIPT(&apos;//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js&apos;)}
+{!REQUIRESCRIPT(&apos;//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js&apos;)}
+
+var $g = jQuery.noConflict();
+var csord__Service__c = new sforce.SObject(&quot;Service&quot;);
+
+if(&quot;{!csord__Service__c.LG_ProductFamily__c}&quot;===&quot;Business Voice&quot; || &quot;{!csord__Service__c.LG_ProductFamily__c}&quot;===&quot;Company Voice&quot;)
+{
+
+
+var serviceID = &apos;{!csord__Service__c.Id}&apos;;
+
+$.noConflict();
+	jQuery(function($) {
+	//var inp = $(&quot;input[name=&apos;validate_iban&apos;]&quot;);
+		//$.each(inp, function( key, val ) {
+		// val.value = &apos;Please wait...&apos;;
+		// val.className = &apos;btnDisabled&apos;;
+		// val.disabled = true;
+	//});
+	sforce.connection.sessionId = &apos;{!$Api.Session_ID}&apos;;
+	// Make a synchronous call to the Apex Web service method
+	try {
+		var res = sforce.apex.execute(
+		&apos;UM_SendEmailToSipwiseController&apos;, // class
+		&apos;sendEmailJS&apos;, // method
+		{recordId:&apos;{!csord__Service__c.Id}&apos;});
+		//alert( res );
+
+// Start Added for custom pop-up message
+var html = &apos;&lt;div id=&quot;dialog&quot; style=&quot;display: none&quot;&gt;&lt;p&gt;&lt;center&gt;Email Sent Successfully&lt;/center&gt; &lt;/p&gt;&lt;/div&gt;&apos;;
+$g(function() {
+$g(&apos;head&apos;).append(&apos;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css&quot; type=&quot;text/css&quot;/&gt;&apos;)
+
+    $g(&apos;body&apos;).append(html);
+
+    $g(&quot;#dialog&quot;).dialog({
+        autoOpen: true,
+        modal: false,
+
+    });
+});
+// End Added for custom pop-up message
+	} catch (e) {
+		alert( e .toString() );
+	}
+	window.location.reload();
+});
+}
+
+else{
+// Start Added for custom pop-up message
+var html = &apos;&lt;div id=&quot;dialog&quot; style=&quot;display: none&quot; title=&quot;Error&quot;&gt;&lt;p&gt; You can not send email to B2B Solutions for this service&lt;/p&gt;&lt;/div&gt;&apos;;
+$g(function() {
+ $g(&apos;head&apos;).append(&apos;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css&quot; type=&quot;text/css&quot;/&gt;&apos;)
+
+    $g(&apos;body&apos;).append(html);
+
+    $g(&quot;#dialog&quot;).dialog({
+modal: false,
+autoOpen: true,
+
+        buttons: {
+
+          &quot;OK&quot;: function() {
+                $g(this).dialog(&quot;close&quot;);
+            },
+        }
+    });
+});
+// End Added for custom pop-up message
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>csordtelcoa__Modify_Service_Configuration</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Modify Service Configuration</masterLabel>
+        <openType>sidebar</openType>
+        <page>csordtelcoa__ModifyServiceConfiguration</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>csordtelcoa__View_Product_Configuration_Attributes</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>View Product Configuration Attributes</masterLabel>
+        <openType>sidebar</openType>
+        <page>csordtelcoa__ViewProductConfigAttributes</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

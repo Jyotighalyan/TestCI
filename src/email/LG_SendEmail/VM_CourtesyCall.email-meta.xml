@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>VM_CourtesyCall</letterhead>
+    <name>Courtesy Call</name>
+    <style>formalLetter</style>
+    <subject>Update on your order</subject>
+    <textOnly>Update on your order
+
+
+{!csord__Solution__c.LG_OpportunityName__c} / {!csord__Solution__c.LG_AccountName__c}
+
+Address:{!csord__Solution__c.LG_AddressDetails__c}
+
+Dear {!BLANKVALUE(Contact.FirstName,                     &quot;Valued Customer&quot;)} ,
+
+
+
+Kind regards,
+{!User.Name}| Order Manager | Business Customer Operations (BCO)
+Virgin Media Business | T: 0333 000 5922
+T: 0800 052 0800 Option 1
+
+Why not track your order online? Just click the link below - Track My Order</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

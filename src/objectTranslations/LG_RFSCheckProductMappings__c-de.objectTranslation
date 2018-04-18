@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- RFS Check Product Mapping --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- RFS Check Product Mapping --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- RFS Check Product Mapping --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- RFS Check Product Mapping --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- RFS Check Product Mapping --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- RFS Check Product Mapping --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- RFS Check Product Mapping --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- RFS Check Product Mapping --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Capability --></label>
+        <name>LG_Capability__c</name>
+        <picklistValues>
+            <masterLabel>Data</masterLabel>
+            <translation>Daten</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV</masterLabel>
+            <translation><!-- TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voice</masterLabel>
+            <translation><!-- Voice --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Download Adjustment --></label>
+        <name>LG_DownloadAdjustment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Download --></label>
+        <name>LG_Download__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>LG_ProductFamily__c</name>
+        <picklistValues>
+            <masterLabel>DTV</masterLabel>
+            <translation><!-- DTV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HPBX</masterLabel>
+            <translation><!-- HPBX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet</masterLabel>
+            <translation><!-- Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation>Mobilfunk</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIN</masterLabel>
+            <translation><!-- PIN --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provider --></label>
+        <name>LG_Provider__c</name>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation>Intern</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tele2</masterLabel>
+            <translation><!-- Tele2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- QoS --></label>
+        <name>LG_QoS__c</name>
+        <picklistValues>
+            <masterLabel>M1</masterLabel>
+            <translation><!-- M1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voice</masterLabel>
+            <translation><!-- Voice --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rank --></label>
+        <name>LG_Rank__c</name>
+    </fields>
+    <fields>
+        <label><!-- Technology --></label>
+        <name>LG_Technology__c</name>
+        <picklistValues>
+            <masterLabel>Digital</masterLabel>
+            <translation><!-- Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fibre</masterLabel>
+            <translation>fiber</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HFC</masterLabel>
+            <translation><!-- HFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation>Mobilfunk</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Upload Adjustment --></label>
+        <name>LG_UploadAdjustment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Upload --></label>
+        <name>LG_Upload__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <layouts>
+        <layout>Product Mapping</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>RFS Result Adjustment</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- RFS Check Product Mapping Name --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- Product Mapping --></label>
+        <name>Product_Mapping</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RFS Result Adjustment --></label>
+        <name>RFS_Result_Adjustment</name>
+    </recordTypes>
+</CustomObjectTranslation>

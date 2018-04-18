@@ -1,0 +1,46 @@
+<messaging:emailTemplate subject="Order Request from Salesforce for Opportunity: {!relatedTo.Name}" recipientType="User" relatedToType="Opportunity">
+    <messaging:htmlEmailBody >
+        <html>
+            <head>
+                <style type="text/css">
+                    body {
+                        font-family: sans-serif;
+                    }
+                    table {
+                        border-collapse: collapse;
+                        border: 1px solid rgb(120, 120, 120);
+                        width: 100%;
+                    }
+                    thead td, tbody th {
+                        background-color: rgb(180, 180, 180);
+                        font-weight: bold;
+                    }
+                    tr.secondary th {
+                        background-color: transparent;
+                        text-align: left;
+                    }
+                    thead th {
+                        background-color: rgb(150, 150, 150);
+                    }
+                    tbody td.detail-col1-key, tbody td.detail-col2-key {
+                        width: 14%;
+                        font-weight: bold;
+                        border-right: 0px;
+                    }
+                    tbody td.detail-col1-value, tbody td.detail-col2-value {
+                        width: 36%;
+                        border-left: none;
+                    }
+                    table td, table th {
+                        border: 1px solid rgb(120, 120, 120);
+                        padding: 0.2em;
+                        vertical-align: text-top;
+                    }
+                </style>
+            </head>
+            <body>
+                <c:LG_OpportunityOrderDetailComponent relatedToOpportunity="{!relatedTo}"/>
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,297 @@
+<apex:page id="LG_PublicListing" controller="LG_PublicListingController" showHeader="true" sidebar="true" docType="html-5.0" title="Public Listing">
+<apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, '/datepicker/css/bootstrap-datepicker.standalone.css')}"/>
+<link rel="stylesheet" href="/apex/sfLigtningOverride" type="text/css"/>
+<apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'jquery.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, '/datepicker/js/bootstrap-datepicker.js')}" />
+
+<script>
+        jQuery.noConflict();
+          
+             function assetAlteredMain(row){
+                jQuery('[id$="hiddenRowValue"]').val(row);
+                alnum();
+            }
+    
+     .headerRow .TableTitle {
+    background-color: #B2D9E5 !important;
+    background-image: none !important; //This is needed if you want to overwrite the header background
+    color: #CC0000 !important; 
+    font-size:100% !important; 
+  }
+    </script>
+    <script type="text/javascript">
+    
+   
+    function closePopup(){
+        closepopup();
+    }
+    
+    function showPopup(row){
+        //var rowValue = (row.rowIndex - 1);
+        jQuery('[id$="hiddenRowValue"]').val(row);
+        showpopup();
+        
+    }
+     </script>
+     <script>
+    $(document).ready(function(){
+    $("adrs").hover(function(){
+        $(this).css("background-color", "yellow");
+        }, function(){
+        $(this).css("background-color", "pink");
+    });
+});
+    
+    </script>
+    <style>
+        th.vfLabelColTextWrap {white-space:nowrap !important;}
+        .detailList{white-space:nowrap !important;}
+        .activeTab {
+            background-color: #bbbd23;
+            color: white;
+            background-image: none;
+        }
+        .inactiveTab {
+            background-color: lightgrey;
+            color: black;
+            background-image: none;
+        }
+        .rich-tabpanel-content {
+            background-color: white;
+        }
+        
+        .customPopup {
+            background-color: white;
+            border-style: solid;
+            border-width: 2px;
+            left: 25%;
+            padding: 10px;
+            position: absolute;
+            z-index: 9999;
+            width: 500px;
+            top: 20%;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+        .closeButton {
+            float: right;
+            font-weight: bold;
+        }
+          
+
+    </style>
+    <!-- LOADING ANIMATION -->
+    <apex:outputpanel >
+        <apex:actionstatus id="loading">
+            <apex:facet name="start">
+                <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb;
+                           height: 100%;opacity:0.65;width:100%;">
+                    <div class="waitingHolder" style="top: 50%; width: 70%;">
+                        <img class="waitingImage" src="/img/loading.gif" title="Please, wait..."/>
+                        <span class="waitingDescription">Loading...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionstatus>
+    </apex:outputpanel>
+
+    <apex:form id="all">
+        <apex:pageBlock id="headerBlock" title="Public Listing" rendered="{!returnId != null}">
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem rendered="{!account != null}">
+                    <apex:outputLabel for="accountLink" value="Account"/>
+                    <apex:outputLink value="/{!account.Id}" id="accountLink">{!account.Name}</apex:outputLink>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!basket != null}">
+                    <apex:outputLabel for="basketLink" value="Basket"/>
+                    <apex:outputLink value="/{!basket.Id}" id="basketLink">{!basket.Name}</apex:outputLink>
+                </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem rendered="{!cs!= null}">
+                    <apex:outputLabel for="CaseLink" value="Case"/>
+                    <apex:outputLink value="/{!cs.Id}" id="CaseLink">{!cs.CaseNumber}</apex:outputLink>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageMessages id="errorMessage"/>
+        <!-- PRODUCT FINDING SECTION -->
+        <apex:pageBlock id="numberManipulation" rendered="{!returnId != null}">
+            <apex:actionRegion >
+                <apex:actionFunction action="{!closePopup}" reRender="popupBlock" name="closepopup" />
+            <apex:pageblock id="popupBlock">
+            <apex:outputPanel id="popupWindow" rendered="{!displayPopup}">
+                <apex:outputPanel styleClass="popupBackground" layout="block" />
+                <apex:outputPanel id="popInnerOutputPnl" styleClass="customPopup" layout="block" rendered="true">
+                    <apex:commandButton value="x" onclick="closePopup();return false;" styleClass="closeButton"/>
+                    <apex:pageblock id="SelectedNumberId">
+                     <apex:pageblockSection columns="1" title="Phone Number Details" collapsible="false">
+                        <apex:repeat value="{!editNonPublicNumbersList}" var="editNumber" first="{!rowVal}" rows="1" rendered="true">
+                            <apex:repeat value="{!$ObjectType.Asset.FieldSets.OM_Portin}" var="editfield" >
+                            
+                               <apex:outputText value="{!editNumber.nmbrAsset[editfield]}" rendered="{!editfield.Label == 'Phone Number' && (numberBlockSize!=1 || (numberBlockSize==1 && telephoneConfig!=null))}"/>
+                               <apex:inputText value="{!editNumber.nmbrAsset[editfield]}" rendered="{!editfield.Label == 'Phone Number' && numberBlockSize==1 && telephoneConfig==null}"/>
+                             
+                               <!--   <apex:outputText value="{!editNumber.nmbrAsset['LG_Asset__r.'+editfield]}" rendered="{!editfield.Label == 'Number Range'}"/>
+                               <apex:inputCheckbox value="{!editNumber.nmbrAsset[editfield]}" rendered="{!editfield.Type == 'boolean'}"/>
+                                -->
+                                <apex:inputField value="{!editNumber.nmbrAsset[editfield]}" label="Directory Listing Name"  rendered="{!if(editfield.Label == 'Public Listing Name' && editfield.Label != 'Phone Number'&& editfield.Label != 'Number Range',true,false)}"/>
+                                <apex:inputField value="{!editNumber.nmbrAsset[editfield]}"  rendered="{!if(editfield.Label != 'Public Listing Name' && editfield.Label != 'Phone Number'&& editfield.Label != 'Number Range' ,true,false)}"/>
+
+                            
+                            </apex:repeat>
+                         </apex:repeat>
+                     </apex:pageblockSection>
+                    <apex:pageBlockButtons location="bottom">
+                        <apex:commandButton value="Alter" action="{!assetEditAltered}" reRender="all">
+                     </apex:commandButton>
+                    </apex:pageBlockButtons>
+                    </apex:pageblock> 
+                </apex:outputPanel>
+            </apex:outputPanel>
+                </apex:pageblock>
+            </apex:actionRegion>
+            <apex:tabPanel switchType="client" id="phoneNumbersTabPanel" tabClass="activeTab" inactiveTabClass="inactiveTab">
+                <apex:tab label="Phone Numbers" name="phoneNumbers" id="phoneNumbersTab">
+                    <apex:pageBlock id="allPhoneNumbers">
+                        <apex:actionregion >
+                            <apex:outputLabel style="margin-right:0" styleClass="labelCol vfLabelColTextWrap" for="searchbox" value="Search number"/>
+                            <apex:inputText id="searchbox" value="{!searchWord}"/>
+                            <apex:commandButton id="search_button" rerender="all" value="Search" status="loading" action="{!refreshListValues}"/>
+                        </apex:actionregion>
+
+                        <apex:actionregion >
+                            <apex:actionFunction name="selectOption" id="selectOption" status="loading" rerender="all">
+                                <!-- action="{!checkAndAddProduct}"
+                                <apex:param assignTo="{!selectedProductId}" name="productIdParam" value=""/>
+                                <apex:param assignTo="{!selectedProductName}" name="productNameParam" value=""/> -->
+                            </apex:actionFunction>
+                           <apex:actionFunction action="{!assetAltered}" reRender="alteredNumbers" name="alnum"  status="categoryChange"/>
+                            <apex:actionFunction action="{!assetSelectRow}" reRender="SelectedNumberId" name="rowVal" /> 
+                            <apex:actionFunction action="{!showPopup}" reRender="popupBlock" name="showpopup" />
+                            <apex:variable var="i" value="{!0}"/>
+                            <apex:pageBlockTable value="{!nonPublicNumbersList}" var="number" id="nonPublicNumbersTable">
+                               <apex:column headerValue="Number">
+                                     <apex:outputLink onClick="showPopup('{!i}');" value="#">{!number.nmbrAsset.LG_PhoneNumber__c}
+                                     
+                                                   <!--      <apex:param assignTo="{!number.checked}" value="true"/>-->
+                                        </apex:outputLink>
+                                     <apex:variable var="i" value="{!i+1}"/>   
+                                        
+                                </apex:column>
+                
+                                
+                                
+                                
+                                 <!--<apex:column headerValue="Number Range">
+                                    <apex:outputText value="{!number.nmbrAsset.LG_Asset__r.LG_NumberRange__c}"/>
+                                </apex:column> -->
+                                <apex:column headerValue="Type">
+                                    <apex:outputText value="{!number.nmbrAsset.LG_NumberRangeType__c}"/>
+                                </apex:column>
+                                 <apex:column headerValue="InDirectory">
+                                    <apex:inputCheckbox value="{!number.nmbrAsset.LG_InDirectory__c}" />
+                                </apex:column> 
+                                <apex:column headerValue=" Address/Product" headerClass="TableTitle">
+                                                            
+                                <a href="/{!number.nmbrAsset.id}"  id="{!number.nmbrAsset.id}{!i}"
+                                onblur="LookupHoverDetail.getHover('{!number.nmbrAsset.id}{!i}').hide();" 
+                                onfocus="LookupHoverDetail.getHover('{!number.nmbrAsset.id}{!i}', '/{!number.nmbrAsset.id}/m?retURL=%2F{!number.nmbrAsset.id}&isAjaxRequest=1').show();"
+                                onmouseout="LookupHoverDetail.getHover('{!number.nmbrAsset.id}{!i}').hide();" 
+                                onmouseover="LookupHoverDetail.getHover('{!number.nmbrAsset.id}{!i}','/{!number.nmbrAsset.id}/m?retURL=%2F{!number.nmbrAsset.id}&isAjaxRequest=1').show();"> 
+                                {!number.nmbrAsset.LG_TelephonyProductConfiguration__r.LG_Address__r.name}, {!number.nmbrAsset.LG_TelephonyProductConfiguration__r.Name}
+                                </a>
+                                 <!--   <apex:outputText value="    {!number.nmbrAsset.LG_TelephonyProductConfiguration__r.LG_Address__r.name}, {!number.nmbrAsset.LG_TelephonyProductConfiguration__r.Name}"/>
+                              -->
+                                </apex:column>
+                                <!-- <apex:column headerValue="Telephony Service" value="{!number.nmbrAsset.LG_TelephonyService__c}"/>-->
+                                <apex:column headerValue="Directory Listing Name">
+                                    <apex:outputText value="{!number.nmbrAsset.LG_PublicListingName__c}"/>
+                                </apex:column>
+                            
+                                <!--<apex:column headerValue="Publish/Unpublish">
+                                    <apex:outputLink value="#" onClick="assetAlteredMain('{!i}');">{!if(number.nmbrAsset.LG_Published__c==false,'Publish','UnPublish')}</apex:outputLink>
+                                    <apex:variable var="i" value="{!i+1}"/>
+                                </apex:column> -->
+                                
+                      </apex:pageBlockTable>
+                           <apex:inputHidden id="hiddenRowValue" value="{!rowVal}" />  
+                          </apex:actionregion>
+
+                        <apex:actionregion >
+                            <!-- prev button only visible when offset bigger than 0-->
+                            <apex:commandButton image="/img/func_icons/cal/leftArrow.gif" id="prevPageButton" rerender="all" status="loading" action="{!prevPage}" rendered="{!offset <> 0}"/>
+                            <apex:commandButton image="/img/func_icons/cal/rightArrow.gif" rerender="all" status="loading" action="{!nextPage}" rendered="{!showNextBtn}"/>
+                        </apex:actionregion>
+                    </apex:pageBlock>
+                </apex:tab>
+                <apex:tab label="Publicly Listed Phone Numbers" name="publicNumbers" id="publicNumbersTab">
+                    <apex:pageBlock id="publicNumbersBlock">
+                        <apex:actionregion >
+                            <apex:outputLabel style="margin-right:0" styleClass="labelCol vfLabelColTextWrap" for="searchbox" value="Search number"/>
+                            <apex:inputText id="searchbox" value="{!searchWordPublic}"/>
+                            <apex:commandButton id="search_button_public" rerender="all" value="Search" status="loading"/>
+                        </apex:actionregion>
+
+                        <apex:actionregion >
+                            <apex:actionFunction name="selectOption" id="selectOption" status="loading" rerender="all"/>
+                            <apex:pageBlockTable value="{!publicNumbers}" var="number">
+                         
+                                <apex:repeat value="{!$ObjectType.Asset.FieldSets.OM_Portin}" var="field">
+                                    <apex:column headerValue="{!field.Label}" rendered="{!field.Label != 'In Directory'}">
+                                        <apex:outputText value="{!number.nmbrAsset[field]}" rendered="{!field.Label != 'Number Range'}"/>
+                                    <!--    <apex:outputText value="{!number.nmbrAsset['LG_Asset__r.'+field]}" rendered="{!field.Label == 'Number Range'}"/>
+                                        -->
+                                  </apex:column>
+                            </apex:repeat>
+                                 <!--  <apex:column headerValue="Publish/Unpublish">
+                                    <apex:outputLink value="#" >{!if(number.nmbrAsset.LG_Published__c==true,'Unpublish','Publish')}</apex:outputLink>
+                                </apex:column>-->
+
+                            </apex:pageBlockTable>
+                        </apex:actionregion>
+                         
+
+                        <apex:actionregion >
+                            <!-- prev button only visible when offset bigger than 0-->
+                            <apex:commandButton image="/img/func_icons/cal/leftArrow.gif" id="prevPageButtonPublic" rerender="all" status="loading" action="{!prevPagePublic}" rendered="{!offsetPublic <> 0}"/>
+                            <apex:commandButton image="/img/func_icons/cal/rightArrow.gif" rerender="all" status="loading" action="{!nextPagePublic}" rendered="{!showNextBtnPublic}"/>
+                        </apex:actionregion>
+                    </apex:pageBlock>
+                </apex:tab>
+            </apex:tabPanel>
+        </apex:pageBlock>
+        <apex:pageBlock title="Altered Numbers"  id="alteredNumbers" >
+            <apex:pageblockButtons >
+                <apex:commandButton value="Save" action="{!save}" />
+                <apex:commandButton value="Cancel" action="{!redirectToReturnId}"/>
+            </apex:pageblockButtons>
+                <apex:actionregion >
+                    
+              <apex:pageBlockTable value="{!selectedAsset}" var="number">
+                           
+                                <apex:column headerValue="Number">
+                                    <apex:outputText value="{!number.LG_PhoneNumber__c}"/>
+                                </apex:column>
+                       
+                              <apex:column headerValue="Type">
+                                    <apex:outputText value="{!number.LG_NumberRangeType__c}"/>
+                                </apex:column>
+                                   <apex:column headerValue="Directory Listing Name ">
+                                    <apex:outputText value="{!number.LG_PublicListingName__c}"/>
+                                </apex:column>
+                                    
+                                       
+                            </apex:pageBlockTable>
+                        </apex:actionregion>
+                    
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

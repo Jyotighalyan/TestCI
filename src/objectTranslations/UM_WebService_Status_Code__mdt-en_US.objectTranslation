@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>WebService Status Code</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>WebService Status Codes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>UM_Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Code --></label>
+        <name>UM_Status_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>UM_Status__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

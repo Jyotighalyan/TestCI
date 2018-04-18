@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Profile Extensions</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Profile Extensions</value>
+    </caseValues>
+    <fields>
+        <label><!-- DWH User --></label>
+        <name>LG_DWHUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Upload --></label>
+        <name>LG_DataUpload__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Profile User --></label>
+        <name>LG_MarketingProfileUser__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Collection</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Collections</value>
+    </caseValues>
+    <fields>
+        <label><!-- Billing Account Number --></label>
+        <name>Billing_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Account --></label>
+        <name>UM_Billing_Location__c</name>
+        <relationshipLabel><!-- Collections --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Collection Amount --></label>
+        <name>UM_Collection_Amount_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Amount --></label>
+        <name>UM_Collection_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Hold Status --></label>
+        <name>UM_Collection_Hold_Status_Translation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Hold Status --></label>
+        <name>UM_Collection_Hold_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection ID --></label>
+        <name>UM_Collection_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Indicator --></label>
+        <name>UM_Collection_Indicator_Translation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Indicator --></label>
+        <name>UM_Collection_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Level --></label>
+        <name>UM_Collection_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Method --></label>
+        <name>UM_Collection_Method_Translation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Method --></label>
+        <name>UM_Collection_Method__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Start-Date --></label>
+        <name>UM_Collection_Start_Date_Converted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Start-Date --></label>
+        <name>UM_Collection_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Status --></label>
+        <name>UM_Collection_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>UM_Customer_SF_ID__c</name>
+        <relationshipLabel><!-- Collections --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Days left to next collection event --></label>
+        <name>UM_Days_left_to_next_collection_event__c</name>
+    </fields>
+    <layouts>
+        <layout>Collection Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

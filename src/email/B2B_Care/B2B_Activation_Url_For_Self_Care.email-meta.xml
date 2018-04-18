@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email Template for Self Care Portal Activation URL</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>B2B_Care_Unity_Media_Email</letterhead>
+    <name>B2B Activation Url For Self Care</name>
+    <style>freeForm</style>
+    <subject>Einladung zu unserem Online-Kundencenter</subject>
+    <textOnly>Ihre Rahmenvertragsnummer: {!Contact.LG_Contact_Account_No__c}
+
+Guten Tag {!Contact.LG_SalutationLocal__c} {!Contact.LastName},
+
+
+als Unitymedia Businesskunde haben Sie die Möglichkeit sich in unserem Online-Kundencenter zu registrieren. In unserem Online-Kundencenter können Sie schnell und einfach Ihre Kontaktdaten ändern, Ihre Rechnungen einsehen und vieles mehr.
+
+Ihre Vorteile auf einen Blick:
+
+· Kontaktdaten wie E-Mail-Adresse aktualisieren
+
+· Ihre Rechnungen einsehen und downloaden
+
+· Ihre Zahlungsdetails verwalten
+
+· Anfragen an unseren Kundenservice stellen und nachverfolgen
+
+· Bestellungen nachverfolgen
+
+Wir freuen uns, Sie in unserem Online-Kundencenter begrüßen zu dürfen.
+
+In einer separaten E-Mail erhalten Sie einen Aktivierungscode und den Link zur Registrierung.
+
+{!Contact.B2B_Self_Care_Redirection_Url__c}
+
+Sollten Sie Fragen haben, rufen Sie uns einfach an. Sie erreichen uns unter der  Rufnummer 0800 141 299 99  von Mo - Fr von 8 bis 20 Uhr und Sa 8 bis 16 Uhr. Sie erreichen uns auch per E-Mail an Enterprise.Service@unitymedia.de.
+
+
+Mit freundlichen Grüßen
+
+
+Unitymedia Business Team
+
+
+Tel.: 0800 141 299 99
+
+Fax: 0800 888 87 10
+
+
+www.unitymedia.de/business
+
+
+Unitymedia NRW GmbH
+
+Unitymedia Hessen GmbH &amp; Co. KG
+
+Unitymedia BW GmbH
+
+Unitymedia Business Service
+
+Postfach 45 12 04
+
+50887 Köln
+
+Unitymedia Business Service
+
+Postfach 45 12 04
+
+50887 Köln
+
+Unitymedia Business Service  Postfach 90 01 31
+
+75090 Pforzheim
+
+Handelsregister:
+
+Amtsgericht Köln HRB 55984
+
+Sitz der Gesellschaft: Köln
+
+USt-ID DE 813243 253
+
+Handelsregister:
+
+Amtsgericht Köln HRA 24116
+
+Sitz der Gesellschaft: Köln
+
+USt-ID DE 213 891 500
+
+Geschäftsführende Gesellschafterin
+
+Unitymedia Hessen Verwaltung GmbH
+
+Amtsgericht Köln HRB 58137
+
+Sitz der Gesellschaft: Köln
+
+Handelsregister:
+
+Amtsgericht Köln HRB 83533
+
+Sitz der Gesellschaft: Köln
+
+USt-ID DE 251338951
+
+
+Geschäftsführer: Lutz Schüler (Vorsitzender) | Gudrun Scharler | Christian Hindennach | Dr. Herbert Leifker | Winfried  Rapp</textOnly>
+    <type>html</type>
+</EmailTemplate>

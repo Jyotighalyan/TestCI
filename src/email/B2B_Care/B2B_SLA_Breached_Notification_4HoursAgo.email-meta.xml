@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SLA Breached Notification</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>B2B_SLA_Breached_Notification_4HoursAgo</name>
+    <style>none</style>
+    <subject>SLA – Bearbeitungsfrist seit 4h abgelaufen</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

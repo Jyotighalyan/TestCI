@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>text/plain</contentType>
+    <description>This setting contains the display field for address validator for specific countries explicitly for Address Object only</description>
+</StaticResource>

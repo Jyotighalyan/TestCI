@@ -1,0 +1,36 @@
+<apex:page standardController="Case" extensions="LG_SConsoleManageEsnExtension">
+    <apex:includeScript value="/soap/ajax/30.0/connection.js"/>
+    <apex:includeScript value="/support/console/30.0/integration.js"/>
+    <link rel="stylesheet" href="/apex/sfLigtningOverride" />
+    <apex:form > 
+    <apex:pageBlock id="mainSection1">
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlockSection title="Order Details" columns="2" collapsible="true">
+            <apex:outputField value="{!orderObject.Name}"/>
+        </apex:pageBlockSection>
+        <apex:outputPanel rendered="{!isClosed || !isEditMode}">
+           <apex:pageBlockSection title="List of Assets" columns="2" collapsible="true">
+             <apex:pageBlockTable value="{!assetList}"  var="a">
+                <apex:column headerValue="Asset Name" Value="{!a.name}" />
+                <apex:column headerValue="ESN Number" value="{!a.LG_MACAddress__c}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:outputPanel>
+         <apex:outputPanel rendered="{!isEditMode}" >
+            <apex:pageBlockSection title="List of Assets" columns="2" collapsible="true">
+               <apex:pageBlockTable value="{!assetList}"  var="a">
+                <apex:column headerValue="Asset Name" Value="{!a.name}" />
+                <apex:column headerValue="ESN Number">
+                <apex:inputField value="{!a.LG_MACAddress__c}"/>
+                </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:outputPanel>
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!setEditMode}" value="Edit" rendered="{!!isClosed}" reRender="mainSection1"/>
+            <apex:commandButton action="{!updateAssetList}" value="Save" rendered="{!!isClosed && isEditMode}" reRender="mainSection1"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

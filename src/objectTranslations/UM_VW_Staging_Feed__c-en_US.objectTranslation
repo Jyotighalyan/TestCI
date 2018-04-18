@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>VW Staging Feed</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>VW Staging Feeds</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Number --></label>
+        <name>UM_AccountNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Article Name --></label>
+        <name>UM_ArticleName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Article Number --></label>
+        <name>UM_ArticleNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brand --></label>
+        <name>UM_Brand__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>UM_Country__c</name>
+        <picklistValues>
+            <masterLabel>Germany</masterLabel>
+            <translation><!-- Germany --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Name --></label>
+        <name>UM_CustomerName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description Changed? --></label>
+        <name>UM_DescriptionChanged__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>UM_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- End date --></label>
+        <name>UM_Enddate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>UM_ErrorMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Export Type --></label>
+        <name>UM_ExportType__c</name>
+        <picklistValues>
+            <masterLabel>Billing</masterLabel>
+            <translation><!-- Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hardware</masterLabel>
+            <translation><!-- Hardware --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hardware Type --></label>
+        <name>UM_HardwareType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Head Office Number --></label>
+        <name>UM_HeadOfficeNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interval --></label>
+        <name>UM_Interval__c</name>
+    </fields>
+    <fields>
+        <label><!-- MAC --></label>
+        <name>UM_MAC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model --></label>
+        <name>UM_Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process Later --></label>
+        <name>UM_ProcessLater__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>UM_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serial --></label>
+        <name>UM_Serial__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Date --></label>
+        <name>UM_ShippingDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start date --></label>
+        <name>UM_Startdate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>UM_Status__c</name>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Store Order Number --></label>
+        <name>UM_StoreOrderNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscriber ID --></label>
+        <name>UM_SubscriberID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Price --></label>
+        <name>UM_TotalPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Id --></label>
+        <name>UM_TransactionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>UM_Type__c</name>
+        <picklistValues>
+            <masterLabel>Feed</masterLabel>
+            <translation><!-- Feed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process</masterLabel>
+            <translation><!-- Process --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unit Price --></label>
+        <name>UM_UnitPrice__c</name>
+    </fields>
+    <fields>
+        <help><!-- Unique identifier for Voiceworks object --></help>
+        <label><!-- VoiceWorks Object Id --></label>
+        <name>UM_VoiceWorksObjectId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Voiceworks Account ID --></label>
+        <name>UM_VoiceworksAccountID__c</name>
+    </fields>
+    <layouts>
+        <layout>VW Staging Feed Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hardware Information --></label>
+            <section>Hardware Information</section>
+        </sections>
+        <sections>
+            <label><!-- Subscriber Information --></label>
+            <section>Subscriber Information</section>
+        </sections>
+        <sections>
+            <label><!-- Subscription Information --></label>
+            <section>Subscription Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Account Number is required for Billing Export and Type - Feed. --></errorMessage>
+        <name>UM_Account_Number_Is_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Order Number is required for Hardware Export and Type - Feed. --></errorMessage>
+        <name>UM_Order_Number_Is_Mandatory</name>
+    </validationRules>
+</CustomObjectTranslation>

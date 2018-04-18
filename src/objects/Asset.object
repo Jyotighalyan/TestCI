@@ -1,0 +1,3036 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fieldSets>
+        <fullName>OM_Portin</fullName>
+        <description>in directory listing</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>OM Portin</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>UM_CloneAssetFields</fullName>
+        <description>Used to copy values from Assets to MACD Assets</description>
+        <displayedFields>
+            <field>csord__Asset_Value__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_AtkNrITEMNr__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LG_MACAddress__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_SecondMACAddress__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SerialNumber</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_Model__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_CustomerSiteID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_InstallationLocation__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Status</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>InstallDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_vLANID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>CloneAssetFields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>UM_CopyChildAssets</fullName>
+        <description>Copy values from original child assets to new child assets.</description>
+        <displayedFields>
+            <field>UM_AtkNrITEMNr__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LG_MACAddress__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_SecondMACAddress__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SerialNumber</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_Model__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_CustomerSiteID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_InstallationLocation__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_vLANID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>CopyChildAssets</label>
+    </fieldSets>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AssetLevel</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>AssetProvidedById</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AssetServicedById</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>InstallDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsCompetitorProduct</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsInternal</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LG_AreaCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Area Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Asset__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Asset</label>
+        <referenceTo>Asset</referenceTo>
+        <relationshipLabel>Assets (Asset)</relationshipLabel>
+        <relationshipName>Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_ContractType__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_EndNumber__c</fullName>
+        <description>End Number of the Number Range</description>
+        <externalId>false</externalId>
+        <label>End Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Entry_Format__c</fullName>
+        <externalId>false</externalId>
+        <label>Entry Format</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Entry</fullName>
+                    <default>false</default>
+                    <label>Single Entry</label>
+                </value>
+                <value>
+                    <fullName>Group Entry</fullName>
+                    <default>false</default>
+                    <label>Group Entry</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_ExpirationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_ExternalID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Fax__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Fax</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_House_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Premises</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_IPAddress__c</fullName>
+        <description>Network IP address for asset</description>
+        <externalId>false</externalId>
+        <label>Network IP Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_IP_Address_First_Part__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE(LEFT(LG_IPAddress__c,FIND(&quot;.&quot;,LG_IPAddress__c)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LG IP Address First Part</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_IP_Address_Fourth_Part__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE(SUBSTITUTE(LG_IPAddress__c, TEXT(LG_IP_Address_First_Part__c)&amp; &quot;.&quot; &amp; TEXT(LG_IP_Address_Second_Part__c)&amp; &quot;.&quot; &amp; TEXT(LG_IP_Address_Third_Part__c)&amp;&quot;.&quot;, &quot;&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LG IP Address Fourth Part</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_IP_Address_Second_Part__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE(LEFT(RIGHT(LG_IPAddress__c,LEN(LG_IPAddress__c) - FIND(&quot;.&quot;,LG_IPAddress__c)),FIND(&quot;.&quot;,RIGHT(LG_IPAddress__c,LEN(LG_IPAddress__c) - FIND(&quot;.&quot;,LG_IPAddress__c)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LG IP Address Second Part</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_IP_Address_Third_Part__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE(LEFT(SUBSTITUTE(LG_IPAddress__c, TEXT(LG_IP_Address_First_Part__c)&amp; &quot;.&quot; &amp; TEXT(LG_IP_Address_Second_Part__c)&amp;&quot;.&quot; , &quot;&quot;),FIND(&quot;.&quot;,SUBSTITUTE(LG_IPAddress__c, TEXT(LG_IP_Address_First_Part__c)&amp; &quot;.&quot; &amp; TEXT(LG_IP_Address_Second_Part__c)&amp;&quot;.&quot; , &quot;&quot;))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LG IP Address Third Part</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_InDirectory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, number is publicly listed in the phone directory</description>
+        <externalId>false</externalId>
+        <label>In Directory</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Address</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_ListingType__c</fullName>
+        <externalId>false</externalId>
+        <label>Listing Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Listed and published (DE)</fullName>
+                    <default>false</default>
+                    <label>Listed and published (DE)</label>
+                </value>
+                <value>
+                    <fullName>Listed but not published (DQR)</fullName>
+                    <default>false</default>
+                    <label>Listed but not published (DQR)</label>
+                </value>
+                <value>
+                    <fullName>Ex-directory – number will not be published or given in search results (XD)</fullName>
+                    <default>false</default>
+                    <label>Ex-directory – number will not be published or given in search results (XD)</label>
+                </value>
+                <value>
+                    <fullName>Not listed or published (NQR)</fullName>
+                    <default>false</default>
+                    <label>Not listed or published (NQR)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    
+    <fields>
+        <fullName>LG_Logistics_Reference_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Logistics Reference Number</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Logistics_Supplier_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Logistics Supplier Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MACAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>MAC Address</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_NumberActivationCeaseDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Number Activation/Cease</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_NumberRangeProductConfiguration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Number Range Product Configuration</label>
+        <referenceTo>cscfga__Product_Configuration__c</referenceTo>
+        <relationshipLabel>Assets (Number Range Product Configuration)</relationshipLabel>
+        <relationshipName>Assets1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_NumberRangeService__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Number Range Service</label>
+        <referenceTo>csord__Service__c</referenceTo>
+        <relationshipLabel>Assets (Number Range Service)</relationshipLabel>
+        <relationshipName>Assets1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_NumberRangeSize__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Range Size</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_NumberRangeType__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Range Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Portin</fullName>
+                    <default>false</default>
+                    <label>Portin</label>
+                </value>
+                <value>
+                    <fullName>Port-In</fullName>
+                    <default>false</default>
+                    <label>Port-In</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_NumberRange__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Range</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Number_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Main Entry</fullName>
+                    <default>false</default>
+                    <label>Main Entry</label>
+                </value>
+                <value>
+                    <fullName>Sub Entry</fullName>
+                    <default>false</default>
+                    <label>Sub Entry</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_PhoneNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortInCity__c</fullName>
+        <externalId>false</externalId>
+        <label>Port-In City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortInHouseNumberExtension__c</fullName>
+        <externalId>false</externalId>
+        <label>Port-In House Number Extension</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortInHouseNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Port-In House Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortInInitials__c</fullName>
+        <externalId>false</externalId>
+        <label>Port-In Initials</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortInName__c</fullName>
+        <externalId>false</externalId>
+        <label>Port-In Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortInOperator__c</fullName>
+        <externalId>false</externalId>
+        <label>Port-In Operator</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortInPrefix__c</fullName>
+        <externalId>false</externalId>
+        <label>Port-In Prefix</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortInStreet__c</fullName>
+        <externalId>false</externalId>
+        <label>Port-In Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortInType__c</fullName>
+        <externalId>false</externalId>
+        <label>Port-In Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                    <label>Standard</label>
+                </value>
+                <value>
+                    <fullName>Special</fullName>
+                    <default>false</default>
+                    <label>Special</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_PortInWishDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Port-In Wish Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_PortInZipcode__c</fullName>
+        <externalId>false</externalId>
+        <label>Port-In Zipcode</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PostalCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Postcode</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ProductGroup__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Group</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ProductVariant__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Variant</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PublicListingAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>Thoroughfare</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PublicListingCompanyName__c</fullName>
+        <externalId>false</externalId>
+        <label>Public Listing Company Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PublicListingDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PublicListingName__c</fullName>
+        <description>Keeps the value of the phone directory name for the number.</description>
+        <externalId>false</externalId>
+        <label>Public Listing Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Published__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>LG_Published</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_SoftDeleted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for versioning and tracking</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates that the record is not relevant do to the change is active version (newer or older version exists and it is active)</inlineHelpText>
+        <label>Soft Deleted</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_StartNumber__c</fullName>
+        <description>Starting Number of the Number Range</description>
+        <externalId>false</externalId>
+        <label>Start Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_SubHeader__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Header</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TelephonyProductConfiguration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Telephony Product Configuration</label>
+        <referenceTo>cscfga__Product_Configuration__c</referenceTo>
+        <relationshipLabel>Assets</relationshipLabel>
+        <relationshipName>Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_TelephonyService__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Telephony Service</label>
+        <referenceTo>csord__Service__c</referenceTo>
+        <relationshipLabel>Assets (Telephony Service)</relationshipLabel>
+        <relationshipName>LG_Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_Unpublished__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>LG_Unpublished</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Price</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductCode</fullName>
+    </fields>
+    <fields>
+        <fullName>ProductDescription</fullName>
+    </fields>
+    <fields>
+        <fullName>ProductFamily</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PurchaseDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Quantity</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>RootAssetId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SerialNumber</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StockKeepingUnit</fullName>
+    </fields>
+    <fields>
+        <fullName>UM_AreaCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Area Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_AtkNrITEMNr__c</fullName>
+        <externalId>false</externalId>
+        <label>Atk-Nr/ITEM-Nr</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Brand__c</fullName>
+        <externalId>false</externalId>
+        <label>Brand</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Business_Voice_Service__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Business Voice Service</label>
+        <referenceTo>csord__Service__c</referenceTo>
+        <relationshipLabel>Assets (Business Voice Service)</relationshipLabel>
+        <relationshipName>Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UM_CDRIDNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>CDR ID Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_CustomerSiteID__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Site ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_EndNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>End Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Historical_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Historical Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>37th Lord of Brackley</fullName>
+                    <default>false</default>
+                    <label>37th Lord of Brackley</label>
+                </value>
+                <value>
+                    <fullName>Altgraf und Altgräfin</fullName>
+                    <default>false</default>
+                    <label>Altgraf und Altgräfin</label>
+                </value>
+                <value>
+                    <fullName>Altgräfin</fullName>
+                    <default>false</default>
+                    <label>Altgräfin</label>
+                </value>
+                <value>
+                    <fullName>Altgräfin und Altgraf</fullName>
+                    <default>false</default>
+                    <label>Altgräfin und Altgraf</label>
+                </value>
+                <value>
+                    <fullName>Baron</fullName>
+                    <default>false</default>
+                    <label>Baron</label>
+                </value>
+                <value>
+                    <fullName>Baron und Baronin</fullName>
+                    <default>false</default>
+                    <label>Baron und Baronin</label>
+                </value>
+                <value>
+                    <fullName>Baronesse</fullName>
+                    <default>false</default>
+                    <label>Baronesse</label>
+                </value>
+                <value>
+                    <fullName>Baronin</fullName>
+                    <default>false</default>
+                    <label>Baronin</label>
+                </value>
+                <value>
+                    <fullName>Baronin und Baron</fullName>
+                    <default>false</default>
+                    <label>Baronin und Baron</label>
+                </value>
+                <value>
+                    <fullName>Burggraf</fullName>
+                    <default>false</default>
+                    <label>Burggraf</label>
+                </value>
+                <value>
+                    <fullName>Burggraf und Burggräfin</fullName>
+                    <default>false</default>
+                    <label>Burggraf und Burggräfin</label>
+                </value>
+                <value>
+                    <fullName>Burggräfin</fullName>
+                    <default>false</default>
+                    <label>Burggräfin</label>
+                </value>
+                <value>
+                    <fullName>Burggräfin und Burggraf</fullName>
+                    <default>false</default>
+                    <label>Burggräfin und Burggraf</label>
+                </value>
+                <value>
+                    <fullName>Comtesse</fullName>
+                    <default>false</default>
+                    <label>Comtesse</label>
+                </value>
+                <value>
+                    <fullName>Earl</fullName>
+                    <default>false</default>
+                    <label>Earl</label>
+                </value>
+                <value>
+                    <fullName>Edle</fullName>
+                    <default>false</default>
+                    <label>Edle</label>
+                </value>
+                <value>
+                    <fullName>Edle und Edler</fullName>
+                    <default>false</default>
+                    <label>Edle und Edler</label>
+                </value>
+                <value>
+                    <fullName>Edler</fullName>
+                    <default>false</default>
+                    <label>Edler</label>
+                </value>
+                <value>
+                    <fullName>Edler und Edle</fullName>
+                    <default>false</default>
+                    <label>Edler und Edle</label>
+                </value>
+                <value>
+                    <fullName>Erbgraf</fullName>
+                    <default>false</default>
+                    <label>Erbgraf</label>
+                </value>
+                <value>
+                    <fullName>Erbgraf und Erbgräfin</fullName>
+                    <default>false</default>
+                    <label>Erbgraf und Erbgräfin</label>
+                </value>
+                <value>
+                    <fullName>Erbgräfin</fullName>
+                    <default>false</default>
+                    <label>Erbgräfin</label>
+                </value>
+                <value>
+                    <fullName>Erbgräfin und Erbgraf</fullName>
+                    <default>false</default>
+                    <label>Erbgräfin und Erbgraf</label>
+                </value>
+                <value>
+                    <fullName>Erbprinz</fullName>
+                    <default>false</default>
+                    <label>Erbprinz</label>
+                </value>
+                <value>
+                    <fullName>Erbprinz und Erbprinzessin</fullName>
+                    <default>false</default>
+                    <label>Erbprinz und Erbprinzessin</label>
+                </value>
+                <value>
+                    <fullName>Erbprinzessin</fullName>
+                    <default>false</default>
+                    <label>Erbprinzessin</label>
+                </value>
+                <value>
+                    <fullName>Erbprinzessin und Erbprinz</fullName>
+                    <default>false</default>
+                    <label>Erbprinzessin und Erbprinz</label>
+                </value>
+                <value>
+                    <fullName>Erzherzog</fullName>
+                    <default>false</default>
+                    <label>Erzherzog</label>
+                </value>
+                <value>
+                    <fullName>Erzherzog und Erzherzogin</fullName>
+                    <default>false</default>
+                    <label>Erzherzog und Erzherzogin</label>
+                </value>
+                <value>
+                    <fullName>Erzherzogin</fullName>
+                    <default>false</default>
+                    <label>Erzherzogin</label>
+                </value>
+                <value>
+                    <fullName>Erzherzogin und Erzherzog</fullName>
+                    <default>false</default>
+                    <label>Erzherzogin und Erzherzog</label>
+                </value>
+                <value>
+                    <fullName>Freifrau</fullName>
+                    <default>false</default>
+                    <label>Freifrau</label>
+                </value>
+                <value>
+                    <fullName>Freifrau und Freiherr</fullName>
+                    <default>false</default>
+                    <label>Freifrau und Freiherr</label>
+                </value>
+                <value>
+                    <fullName>Freifrau Vogt</fullName>
+                    <default>false</default>
+                    <label>Freifrau Vogt</label>
+                </value>
+                <value>
+                    <fullName>Freifrauen</fullName>
+                    <default>false</default>
+                    <label>Freifrauen</label>
+                </value>
+                <value>
+                    <fullName>Freiherr</fullName>
+                    <default>false</default>
+                    <label>Freiherr</label>
+                </value>
+                <value>
+                    <fullName>Freiherr und Freifrau</fullName>
+                    <default>false</default>
+                    <label>Freiherr und Freifrau</label>
+                </value>
+                <value>
+                    <fullName>Freiherren</fullName>
+                    <default>false</default>
+                    <label>Freiherren</label>
+                </value>
+                <value>
+                    <fullName>Freiherrlich</fullName>
+                    <default>false</default>
+                    <label>Freiherrlich</label>
+                </value>
+                <value>
+                    <fullName>Freiin</fullName>
+                    <default>false</default>
+                    <label>Freiin</label>
+                </value>
+                <value>
+                    <fullName>Freiin Marschall</fullName>
+                    <default>false</default>
+                    <label>Freiin Marschall</label>
+                </value>
+                <value>
+                    <fullName>Frfr.</fullName>
+                    <default>false</default>
+                    <label>Frfr.</label>
+                </value>
+                <value>
+                    <fullName>Frhr.</fullName>
+                    <default>false</default>
+                    <label>Frhr.</label>
+                </value>
+                <value>
+                    <fullName>Fürst</fullName>
+                    <default>false</default>
+                    <label>Fürst</label>
+                </value>
+                <value>
+                    <fullName>Fürst und Fürstin</fullName>
+                    <default>false</default>
+                    <label>Fürst und Fürstin</label>
+                </value>
+                <value>
+                    <fullName>Fürst und Graf</fullName>
+                    <default>false</default>
+                    <label>Fürst und Graf</label>
+                </value>
+                <value>
+                    <fullName>Fürstin</fullName>
+                    <default>false</default>
+                    <label>Fürstin</label>
+                </value>
+                <value>
+                    <fullName>Fürstin und Fürst</fullName>
+                    <default>false</default>
+                    <label>Fürstin und Fürst</label>
+                </value>
+                <value>
+                    <fullName>Graf</fullName>
+                    <default>false</default>
+                    <label>Graf</label>
+                </value>
+                <value>
+                    <fullName>Graf und Gräfin</fullName>
+                    <default>false</default>
+                    <label>Graf und Gräfin</label>
+                </value>
+                <value>
+                    <fullName>Grafen</fullName>
+                    <default>false</default>
+                    <label>Grafen</label>
+                </value>
+                <value>
+                    <fullName>Gräfin</fullName>
+                    <default>false</default>
+                    <label>Gräfin</label>
+                </value>
+                <value>
+                    <fullName>Gräfin und Graf</fullName>
+                    <default>false</default>
+                    <label>Gräfin und Graf</label>
+                </value>
+                <value>
+                    <fullName>Herren</fullName>
+                    <default>false</default>
+                    <label>Herren</label>
+                </value>
+                <value>
+                    <fullName>Herrn</fullName>
+                    <default>false</default>
+                    <label>Herrn</label>
+                </value>
+                <value>
+                    <fullName>Herzog</fullName>
+                    <default>false</default>
+                    <label>Herzog</label>
+                </value>
+                <value>
+                    <fullName>Herzog und Herzogin</fullName>
+                    <default>false</default>
+                    <label>Herzog und Herzogin</label>
+                </value>
+                <value>
+                    <fullName>Herzogin</fullName>
+                    <default>false</default>
+                    <label>Herzogin</label>
+                </value>
+                <value>
+                    <fullName>Herzogin und Herzog</fullName>
+                    <default>false</default>
+                    <label>Herzogin und Herzog</label>
+                </value>
+                <value>
+                    <fullName>Komtesse</fullName>
+                    <default>false</default>
+                    <label>Komtesse</label>
+                </value>
+                <value>
+                    <fullName>Komtur</fullName>
+                    <default>false</default>
+                    <label>Komtur</label>
+                </value>
+                <value>
+                    <fullName>Lady</fullName>
+                    <default>false</default>
+                    <label>Lady</label>
+                </value>
+                <value>
+                    <fullName>Lady of Glenmore</fullName>
+                    <default>false</default>
+                    <label>Lady of Glenmore</label>
+                </value>
+                <value>
+                    <fullName>Laird</fullName>
+                    <default>false</default>
+                    <label>Laird</label>
+                </value>
+                <value>
+                    <fullName>Laird of Camster</fullName>
+                    <default>false</default>
+                    <label>Laird of Camster</label>
+                </value>
+                <value>
+                    <fullName>Laird of Glencairn</fullName>
+                    <default>false</default>
+                    <label>Laird of Glencairn</label>
+                </value>
+                <value>
+                    <fullName>Landgraf</fullName>
+                    <default>false</default>
+                    <label>Landgraf</label>
+                </value>
+                <value>
+                    <fullName>Landgraf und Landgräfin</fullName>
+                    <default>false</default>
+                    <label>Landgraf und Landgräfin</label>
+                </value>
+                <value>
+                    <fullName>Landgräfin</fullName>
+                    <default>false</default>
+                    <label>Landgräfin</label>
+                </value>
+                <value>
+                    <fullName>Landgräfin und Landgraf</fullName>
+                    <default>false</default>
+                    <label>Landgräfin und Landgraf</label>
+                </value>
+                <value>
+                    <fullName>Lehnsgraf</fullName>
+                    <default>false</default>
+                    <label>Lehnsgraf</label>
+                </value>
+                <value>
+                    <fullName>Lehnsgraf und Lehnsgräfin</fullName>
+                    <default>false</default>
+                    <label>Lehnsgraf und Lehnsgräfin</label>
+                </value>
+                <value>
+                    <fullName>Lehnsgräfin</fullName>
+                    <default>false</default>
+                    <label>Lehnsgräfin</label>
+                </value>
+                <value>
+                    <fullName>Lehnsgräfin und Lehnsgraf</fullName>
+                    <default>false</default>
+                    <label>Lehnsgräfin und Lehnsgraf</label>
+                </value>
+                <value>
+                    <fullName>Lord</fullName>
+                    <default>false</default>
+                    <label>Lord</label>
+                </value>
+                <value>
+                    <fullName>Lord and Lady of Aberdeen</fullName>
+                    <default>false</default>
+                    <label>Lord and Lady of Aberdeen</label>
+                </value>
+                <value>
+                    <fullName>Lord of Brideswell</fullName>
+                    <default>false</default>
+                    <label>Lord of Brideswell</label>
+                </value>
+                <value>
+                    <fullName>Lord of Kerry</fullName>
+                    <default>false</default>
+                    <label>Lord of Kerry</label>
+                </value>
+                <value>
+                    <fullName>Lord of Millington</fullName>
+                    <default>false</default>
+                    <label>Lord of Millington</label>
+                </value>
+                <value>
+                    <fullName>Lord von Kerry</fullName>
+                    <default>false</default>
+                    <label>Lord von Kerry</label>
+                </value>
+                <value>
+                    <fullName>Markgraf</fullName>
+                    <default>false</default>
+                    <label>Markgraf</label>
+                </value>
+                <value>
+                    <fullName>Markgraf und Markgräfin</fullName>
+                    <default>false</default>
+                    <label>Markgraf und Markgräfin</label>
+                </value>
+                <value>
+                    <fullName>Markgräfin</fullName>
+                    <default>false</default>
+                    <label>Markgräfin</label>
+                </value>
+                <value>
+                    <fullName>Markgräfin und Markgraf</fullName>
+                    <default>false</default>
+                    <label>Markgräfin und Markgraf</label>
+                </value>
+                <value>
+                    <fullName>Marquess</fullName>
+                    <default>false</default>
+                    <label>Marquess</label>
+                </value>
+                <value>
+                    <fullName>Marquis</fullName>
+                    <default>false</default>
+                    <label>Marquis</label>
+                </value>
+                <value>
+                    <fullName>Marquise</fullName>
+                    <default>false</default>
+                    <label>Marquise</label>
+                </value>
+                <value>
+                    <fullName>Prince</fullName>
+                    <default>false</default>
+                    <label>Prince</label>
+                </value>
+                <value>
+                    <fullName>Prinz</fullName>
+                    <default>false</default>
+                    <label>Prinz</label>
+                </value>
+                <value>
+                    <fullName>Prinz und Herzog</fullName>
+                    <default>false</default>
+                    <label>Prinz und Herzog</label>
+                </value>
+                <value>
+                    <fullName>Prinz und Landgraf</fullName>
+                    <default>false</default>
+                    <label>Prinz und Landgraf</label>
+                </value>
+                <value>
+                    <fullName>Prinz und Prinzessin</fullName>
+                    <default>false</default>
+                    <label>Prinz und Prinzessin</label>
+                </value>
+                <value>
+                    <fullName>Prinzen</fullName>
+                    <default>false</default>
+                    <label>Prinzen</label>
+                </value>
+                <value>
+                    <fullName>Prinzessin</fullName>
+                    <default>false</default>
+                    <label>Prinzessin</label>
+                </value>
+                <value>
+                    <fullName>Prinzessin und Prinz</fullName>
+                    <default>false</default>
+                    <label>Prinzessin und Prinz</label>
+                </value>
+                <value>
+                    <fullName>Reichsfreiherr</fullName>
+                    <default>false</default>
+                    <label>Reichsfreiherr</label>
+                </value>
+                <value>
+                    <fullName>Reichsgraf</fullName>
+                    <default>false</default>
+                    <label>Reichsgraf</label>
+                </value>
+                <value>
+                    <fullName>Reichsgraf und Reichsgräfin</fullName>
+                    <default>false</default>
+                    <label>Reichsgraf und Reichsgräfin</label>
+                </value>
+                <value>
+                    <fullName>Reichsgräfin</fullName>
+                    <default>false</default>
+                    <label>Reichsgräfin</label>
+                </value>
+                <value>
+                    <fullName>Reichsgräfin und Reichsgraf</fullName>
+                    <default>false</default>
+                    <label>Reichsgräfin und Reichsgraf</label>
+                </value>
+                <value>
+                    <fullName>Ritter</fullName>
+                    <default>false</default>
+                    <label>Ritter</label>
+                </value>
+                <value>
+                    <fullName>Ritter und Edler</fullName>
+                    <default>false</default>
+                    <label>Ritter und Edler</label>
+                </value>
+                <value>
+                    <fullName>Ritter und Edler Herr</fullName>
+                    <default>false</default>
+                    <label>Ritter und Edler Herr</label>
+                </value>
+                <value>
+                    <fullName>Ritter von Lazan</fullName>
+                    <default>false</default>
+                    <label>Ritter von Lazan</label>
+                </value>
+                <value>
+                    <fullName>Scheich</fullName>
+                    <default>false</default>
+                    <label>Scheich</label>
+                </value>
+                <value>
+                    <fullName>Schenk Graf</fullName>
+                    <default>false</default>
+                    <label>Schenk Graf</label>
+                </value>
+                <value>
+                    <fullName>Sir</fullName>
+                    <default>false</default>
+                    <label>Sir</label>
+                </value>
+                <value>
+                    <fullName>Vicomtesse</fullName>
+                    <default>false</default>
+                    <label>Vicomtesse</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_InstallationLocation__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Location</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Model</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Number_Range_Attribute__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Number Range Attribute</label>
+        <referenceTo>cscfga__Attribute__c</referenceTo>
+        <relationshipLabel>Assets</relationshipLabel>
+        <relationshipName>Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UM_Product_Configuration__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(UM_Number_Range_Attribute__r.cscfga__Product_Configuration__c)</formula>
+        <label>Product Configuration</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Published__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Published</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_SecondMACAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>Second MAC Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ShippingDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_StartNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Access point</fullName>
+                    <default>false</default>
+                    <label>Access point</label>
+                </value>
+                <value>
+                    <fullName>Switch</fullName>
+                    <default>false</default>
+                    <label>Switch</label>
+                </value>
+                <value>
+                    <fullName>Modem</fullName>
+                    <default>false</default>
+                    <label>Modem</label>
+                </value>
+                <value>
+                    <fullName>Gateway</fullName>
+                    <default>false</default>
+                    <label>Gateway</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_vLANID__c</fullName>
+        <externalId>false</externalId>
+        <label>vLAN-ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UsageEndDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>csord__Asset_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Describes the asset in more detail</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describes the asset in more detail</inlineHelpText>
+        <label>Asset Value</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__External_Identifier2__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</inlineHelpText>
+        <label>External Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>csord__External_Identifier__c</fullName>
+        <deprecated>false</deprecated>
+        <description>DEPRECATED. External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</inlineHelpText>
+        <label>DEPRECATED External Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Identification__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Identification string for the object, used as the reference from external systems.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. &quot;spokeServiceAmsterdam&quot; in Hub&amp;Spokes scenario.</inlineHelpText>
+        <label>Identification</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Order_Line_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The parent of this asset.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent of this asset. Only one of Order, OrderLineItem, Service or ServiceLineItem can be filled in for any asset.</inlineHelpText>
+        <label>Order Line Item</label>
+        <referenceTo>csord__Order_Line_Item__c</referenceTo>
+        <relationshipLabel>Salesforce Assets</relationshipLabel>
+        <relationshipName>Salesforce_Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Order_Request__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Order Request object which introduced the latest changes to this object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Order Request object which introduced the latest changes to this object.</inlineHelpText>
+        <label>Order Request</label>
+        <referenceTo>csord__Order_Request__c</referenceTo>
+        <relationshipLabel>Salesforce Assets</relationshipLabel>
+        <relationshipName>Salesforce_Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The parent of this asset.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent of this asset. Only one of Order, OrderLineItem, Service or ServiceLineItem can be filled in for any asset.</inlineHelpText>
+        <label>Order</label>
+        <referenceTo>csord__Order__c</referenceTo>
+        <relationshipLabel>Salesforce Assets</relationshipLabel>
+        <relationshipName>Salesforce_Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Service_Line_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The parent of this asset.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent of this asset. Only one of Order, OrderLineItem, Service or ServiceLineItem can be filled in for any asset.</inlineHelpText>
+        <label>Service Line Item</label>
+        <referenceTo>csord__Service_Line_Item__c</referenceTo>
+        <relationshipLabel>Salesforce Assets</relationshipLabel>
+        <relationshipName>Salesforce_Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Service__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The parent of this asset.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent of this asset. Only one of Order, OrderLineItem, Service or ServiceLineItem can be filled in for any asset.</inlineHelpText>
+        <label>Service</label>
+        <referenceTo>csord__Service__c</referenceTo>
+        <relationshipLabel>Salesforce Assets</relationshipLabel>
+        <relationshipName>Salesforce_Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Attribute_Field__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Underlying attribute field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Underlying attribute field</inlineHelpText>
+        <label>Attribute Field</label>
+        <referenceTo>cscfga__Attribute_Field__c</referenceTo>
+        <relationshipLabel>Salesforce Assets</relationshipLabel>
+        <relationshipName>Salesforce_Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Delta_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Delta Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Added</fullName>
+                    <default>false</default>
+                    <label>Added</label>
+                </value>
+                <value>
+                    <fullName>Deleted</fullName>
+                    <default>false</default>
+                    <label>Deleted</label>
+                </value>
+                <value>
+                    <fullName>Unchanged</fullName>
+                    <default>false</default>
+                    <label>Unchanged</label>
+                </value>
+                <value>
+                    <fullName>Changed</fullName>
+                    <default>false</default>
+                    <label>Changed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Replaced_Asset__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Replaced Asset</label>
+        <referenceTo>Asset</referenceTo>
+        <relationshipLabel>Replacement Assets</relationshipLabel>
+        <relationshipName>Replacement_Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Replacement_Asset__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Replacement Asset</label>
+        <referenceTo>Asset</referenceTo>
+        <relationshipLabel>Replaced Assets</relationshipLabel>
+        <relationshipName>Replaced_Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <listViews>
+        <fullName>AllAssets</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Assets</label>
+    </listViews>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Number_Block</fullName>
+        <active>true</active>
+        <label>Number Block</label>
+        <picklistValues>
+            <picklist>LG_Entry_Format__c</picklist>
+            <values>
+                <fullName>Group Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Entry</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ListingType__c</picklist>
+            <values>
+                <fullName>Ex-directory %E2%80%93 number will not be published or given in search results %28XD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Listed and published %28DE%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Listed but not published %28DQR%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not listed or published %28NQR%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_NumberRangeType__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Port-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portin</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_Number_Type__c</picklist>
+            <values>
+                <fullName>Main Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sub Entry</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_PortInType__c</picklist>
+            <values>
+                <fullName>Special</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_Historical_Name__c</picklist>
+            <values>
+                <fullName>37th Lord of Brackley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altgraf und Altgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altgräfin und Altgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baron und Baronin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baronesse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baronin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baronin und Baron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burggraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burggraf und Burggräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burggräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burggräfin und Burggraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comtesse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earl</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edle und Edler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edler und Edle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbgraf und Erbgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbgräfin und Erbgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbprinz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbprinz und Erbprinzessin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbprinzessin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbprinzessin und Erbprinz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erzherzog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erzherzog und Erzherzogin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erzherzogin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erzherzogin und Erzherzog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freifrau</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freifrau Vogt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freifrau und Freiherr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freifrauen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freiherr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freiherr und Freifrau</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freiherren</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freiherrlich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freiin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freiin Marschall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frfr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frhr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fürst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fürst und Fürstin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fürst und Graf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fürstin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fürstin und Fürst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Graf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Graf und Gräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grafen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gräfin und Graf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herren</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herrn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herzog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herzog und Herzogin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herzogin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herzogin und Herzog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Komtesse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Komtur</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lady</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lady of Glenmore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laird</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laird of Camster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laird of Glencairn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landgraf und Landgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landgräfin und Landgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lehnsgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lehnsgraf und Lehnsgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lehnsgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lehnsgräfin und Lehnsgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lord</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lord and Lady of Aberdeen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lord of Brideswell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lord of Kerry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lord of Millington</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lord von Kerry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Markgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Markgraf und Markgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Markgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Markgräfin und Markgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marquess</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marquis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marquise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prince</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinz und Herzog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinz und Landgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinz und Prinzessin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinzen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinzessin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinzessin und Prinz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reichsfreiherr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reichsgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reichsgraf und Reichsgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reichsgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reichsgräfin und Reichsgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ritter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ritter und Edler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ritter und Edler Herr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ritter von Lazan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schenk Graf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sir</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vicomtesse</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_Type__c</picklist>
+            <values>
+                <fullName>Access point</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gateway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Modem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>csordtelcoa__Delta_Status__c</picklist>
+            <values>
+                <fullName>Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Changed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deleted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unchanged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Phone_Number</fullName>
+        <active>true</active>
+        <label>Phone Number</label>
+        <picklistValues>
+            <picklist>LG_Entry_Format__c</picklist>
+            <values>
+                <fullName>Group Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Entry</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ListingType__c</picklist>
+            <values>
+                <fullName>Ex-directory %E2%80%93 number will not be published or given in search results %28XD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Listed and published %28DE%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Listed but not published %28DQR%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not listed or published %28NQR%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_NumberRangeType__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Port-In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portin</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_Number_Type__c</picklist>
+            <values>
+                <fullName>Main Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sub Entry</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_PortInType__c</picklist>
+            <values>
+                <fullName>Special</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_Historical_Name__c</picklist>
+            <values>
+                <fullName>37th Lord of Brackley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altgraf und Altgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altgräfin und Altgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baron und Baronin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baronesse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baronin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baronin und Baron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burggraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burggraf und Burggräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burggräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burggräfin und Burggraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comtesse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earl</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edle und Edler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edler und Edle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbgraf und Erbgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbgräfin und Erbgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbprinz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbprinz und Erbprinzessin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbprinzessin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erbprinzessin und Erbprinz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erzherzog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erzherzog und Erzherzogin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erzherzogin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erzherzogin und Erzherzog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freifrau</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freifrau Vogt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freifrau und Freiherr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freifrauen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freiherr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freiherr und Freifrau</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freiherren</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freiherrlich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freiin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freiin Marschall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frfr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frhr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fürst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fürst und Fürstin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fürst und Graf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fürstin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fürstin und Fürst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Graf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Graf und Gräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grafen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gräfin und Graf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herren</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herrn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herzog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herzog und Herzogin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herzogin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herzogin und Herzog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Komtesse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Komtur</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lady</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lady of Glenmore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laird</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laird of Camster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laird of Glencairn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landgraf und Landgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landgräfin und Landgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lehnsgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lehnsgraf und Lehnsgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lehnsgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lehnsgräfin und Lehnsgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lord</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lord and Lady of Aberdeen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lord of Brideswell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lord of Kerry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lord of Millington</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lord von Kerry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Markgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Markgraf und Markgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Markgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Markgräfin und Markgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marquess</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marquis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marquise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prince</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinz und Herzog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinz und Landgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinz und Prinzessin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinzen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinzessin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prinzessin und Prinz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reichsfreiherr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reichsgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reichsgraf und Reichsgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reichsgräfin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reichsgräfin und Reichsgraf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ritter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ritter und Edler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ritter und Edler Herr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ritter von Lazan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schenk Graf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sir</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vicomtesse</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_Type__c</picklist>
+            <values>
+                <fullName>Access point</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gateway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Modem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>csordtelcoa__Delta_Status__c</picklist>
+            <values>
+                <fullName>Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Changed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deleted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unchanged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>ASSET.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASSET.SERIAL_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASSET.INSTALL_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PRODUCT2.NAME</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ASSET.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ASSET.SERIAL_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ASSET.INSTALL_DATE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.NAME</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ASSET.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ASSET.SERIAL_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ASSET.INSTALL_DATE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.NAME</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>ASSET.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ASSET.SERIAL_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ASSET.INSTALL_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>B2B_Asset_Technical_Case</fullName>
+        <availability>online</availability>
+        <description>Create Technical Case from Asset Details page.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Technical Case</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/37.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/support/console/37.0/integration.js&quot;)} 
+//alert(&apos;@122&apos;);
+var result = sforce.connection.query(&quot;Select Id,Name from Recordtype where Name=&apos;Technical Case&apos; limit 1&quot;); 
+//alert(&apos;@121&apos;+result);
+var RType = result.getArray(&quot;records&quot;)[0].Id; 
+//alert(&apos;@122&apos;+RType);
+
+var Asset = sforce.connection.query(&quot;Select Id, Name, Account.Name, Account.Id, csord__Service__r.Name, csord__Service__r.Id from Asset where Id=&apos;{!Asset.Id}&apos; limit 1&quot;); 
+//alert(&apos;@123&apos;+Asset);
+var SAccountId=Asset.getArray(&quot;records&quot;)[0].Account.Id; 
+var AssetAccountName = Asset.getArray(&quot;records&quot;)[0].Account.Name; 
+var AssetName = Asset.getArray(&quot;records&quot;)[0].Name; 
+var AssetId = Asset.getArray(&quot;records&quot;)[0].Id;
+var AssetServiceName = Asset.getArray(&quot;records&quot;)[0].csord__Service__r.Name;  
+var AssetServiceId = Asset.getArray(&quot;records&quot;)[0].csord__Service__r.Id; 
+
+
+var qr = sforce.connection.query(&quot;SELECT DurableId,QualifiedApiName FROM FieldDefinition WHERE EntityDefinition.QualifiedApiName = &apos;Case&apos; and QualifiedApiName=&apos;LG_Service__c&apos;&quot;); 
+
+
+
+var ServiceId = qr.getArray(&quot;records&quot;)[0].DurableId.split(&apos;.&apos;); 
+//alert(&apos;Before&apos;);
+
+
+var returl=&apos;/500/e?retURL={!Asset.Id}&amp;RecordType=&apos;+RType+
+&apos;&amp;def_account_id=&apos;+SAccountId+
+&apos;&amp;CF&apos;+ServiceId[1]+&apos;=&apos;+AssetServiceName+&apos;&amp;CF&apos;+ServiceId[1]+&apos;_lkid=&apos;+AssetServiceId+
+&apos;&amp;Asset=&apos;+AssetName+&apos;&amp;ent=Case&apos;;
+
+
+
+
+if (sforce.console.isInConsole()) { 
+srcUp(returl+&apos;&amp;isdtp=vw&apos;); 
+} else { 
+window.open(returl); 
+}</url>
+    </webLinks>
+</CustomObject>

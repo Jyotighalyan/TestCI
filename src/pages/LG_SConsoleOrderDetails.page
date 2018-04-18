@@ -1,0 +1,51 @@
+<apex:page standardController="Case" extensions="LG_SConsoleOrderDetailsExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+    
+    <!--
+        * Custom SF Service Console
+        * 
+        * @author Petar Miletic
+        * @story SFOM-29
+        * @since  03/11/2016
+    -->
+
+    <apex:form >
+    
+    <apex:pageBlock title="" mode="{!Mode}">
+        
+        <apex:pageBlockSection title="" columns="2" collapsible="true" rendered="{!!Edit}">
+
+            <!--<apex:outputField value="{!Order.Name}"> 
+                <apex:inlineEditSupport showOnEdit="saveButton, cancelButton" hideOnEdit="editButton" event="ondblClick" changedStyleClass="myBoldClass" resetFunction="resetInlineEdit" />
+            </apex:outputField>
+            <apex:outputField value="{!Order.OwnerId}"> 
+                <apex:inlineEditSupport showOnEdit="saveButton, cancelButton" hideOnEdit="editButton" event="ondblClick" changedStyleClass="myBoldClass" resetFunction="resetInlineEdit" />
+            </apex:outputField>-->
+            <apex:outputField value="{!Order.Name}"/>
+            <apex:outputField value="{!Order.OwnerId}"/>
+
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="" columns="2" collapsible="true" rendered="{!Edit}">
+
+            <apex:inputField value="{!Order.Name}"/>
+            <apex:inputField value="{!Order.OwnerId}"/>
+
+        </apex:pageBlockSection>
+
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!edit}" value="Edit" rendered="{!!Edit}" />
+            <apex:commandButton action="{!save}" value="Save" rendered="{!Edit}" />
+            <apex:commandButton action="{!cancel}" value="Cancel" rendered="{!Edit}" />
+        </apex:pageBlockButtons>
+
+    </apex:pageBlock>
+    
+    </apex:form>
+    
+    <!--<ul>
+        <li>Display mode: {!Mode}</li>
+        <li>Edit: {!Edit}</li>
+        <li>Record Type: {!RecordType}</li>
+    </ul>-->
+</apex:page>

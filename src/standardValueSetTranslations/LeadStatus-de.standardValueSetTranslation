@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Confirmed</masterLabel>
+        <translation>bestätigt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacted - Decision maker not available</masterLabel>
+        <translation>kontaktiert - Entscheider nicht verfügbar</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacted - Follow up</masterLabel>
+        <translation>kontaktiert - Follow up / Folgetermin</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacted - Future interest</masterLabel>
+        <translation>kontaktiert - Interesse in Zukunft</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Disqualified</masterLabel>
+        <translation>disqualifiziert / ausgeschlossen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New</masterLabel>
+        <translation>Neu</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not Contacted</masterLabel>
+        <translation>nicht kontaktiert</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Qualified</masterLabel>
+        <translation>qualifiziert</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Reminder to Acknowledge the assigned case</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>B2B_Case_Assigned_Alert_Level2_Service</name>
+    <style>none</style>
+    <subject>OLA – Admin Fall 3 Stunden  ohne Bearbeitung</subject>
+    <type>text</type>
+</EmailTemplate>

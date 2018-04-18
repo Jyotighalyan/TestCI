@@ -1,0 +1,95 @@
+<apex:page standardController="Case" extensions="LG_SConsoleServiceDetailsExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+    
+    <!--
+        * Custom SF Service Console
+        * 
+        * @author Petar Miletic
+        * @story SFOM-29
+        * @since  03/11/2016
+    -->
+
+    <apex:form >
+    
+    <!--<apex:pageBlock title="" mode="{!Mode}">
+        
+        <apex:pageBlockSection title="" columns="2" collapsible="true" rendered="{!!Edit}">
+
+            <apex:outputField value="{!Service.Name}"/>
+            <apex:outputField value="{!Service.csord__Status__c}"/>
+            <apex:outputField value="{!Service.LastModifiedById}"/>
+            <apex:outputField value="{!Service.CreatedById}"/>
+            <apex:outputField value="{!Service.LastModifiedDate}"/>
+            <apex:outputField value="{!Service.CreatedDate}"/>
+            <apex:outputField value="{!Case.LG_Solution__c}"/>
+
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="" columns="2" collapsible="true" rendered="{!Edit}">
+
+            <apex:inputField value="{!Service.Name}"/>
+            <apex:inputField value="{!Service.csord__Status__c}"/>
+            <apex:inputField value="{!Service.LastModifiedById}"/>
+            <apex:inputField value="{!Service.CreatedById}"/>
+            <apex:inputField value="{!Service.LastModifiedDate}"/>
+            <apex:inputField value="{!Service.CreatedDate}"/>
+
+        </apex:pageBlockSection>
+
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!edit}" value="Edit" rendered="{!!Edit}" />
+            <apex:commandButton action="{!save}" value="Save" rendered="{!Edit}" />
+            <apex:commandButton action="{!cancel}" value="Cancel" rendered="{!Edit}" />
+        </apex:pageBlockButtons>
+
+    </apex:pageBlock>-->
+    
+    
+    <apex:pageBlock title="Services">
+
+        <apex:pageBlockTable value="{!ServiceItems}" var="data" rendered="{!ServiceItems.size > 0}">
+
+            <apex:column value="{!data.Name}"/>
+            <apex:column value="{!data.LG_ServiceExternalId__c}"/>
+            <apex:column value="{!data.csord__Status__c}"/>
+            <!-- SFOM - 647 Added by : Ankur Gupta -- Start -->
+             <apex:column value="{!data.csordtelcoa__Delta_Status__c}"/>
+            <!-- SFOM - 647 Added by : Ankur Gupta -- end -->
+
+        </apex:pageBlockTable>
+        
+        <apex:outputpanel rendered="{!ServiceItems.size == 0}">
+            No records to display.
+        </apex:outputpanel>
+
+    </apex:pageBlock>
+    
+    <p>Please enter the appointment to LASER and below Services to ICOMS</p>
+    
+    <apex:pageBlock title="Service Line Items">
+
+        <apex:pageBlockTable value="{!ServiceLineItems}" var="data" rendered="{!ServiceLineItems.size > 0}">
+            
+            <apex:column value="{!data.Name}"/>
+            <apex:column value="{!data.csord__Start_Date__c}"/>
+            <apex:column value="{!data.csord__End_Date__c}"/>
+            <!-- SFOM - 647 Added by : Ankur Gupta -- Start -->
+            <apex:column value="{!data.csordtelcoa__Delta_Status__c}"/>
+            <!-- SFOM - 647 Added by : Ankur Gupta -- End -->
+
+        </apex:pageBlockTable>
+        
+        <apex:outputpanel rendered="{!ServiceLineItems.size == 0}">
+            No records to display.
+        </apex:outputpanel>
+
+    </apex:pageBlock>
+    
+    </apex:form>
+    
+    <!--<ul>
+        <li>Display mode: {!Mode}</li>
+        <li>Edit: {!Edit}</li>
+        <li>Record Type: {!RecordType}</li>
+    </ul>-->
+</apex:page>

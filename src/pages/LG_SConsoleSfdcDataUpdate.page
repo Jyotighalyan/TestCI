@@ -1,0 +1,109 @@
+<apex:page standardController="Case" extensions="LG_SConsoleSfdcDataUpdateExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+    <style>
+     .errorM3 .messageText{
+            color: #cc0000;
+        }
+    </style>
+    <apex:form >
+        <apex:pageMessages ></apex:pageMessages>
+    <apex:pageBlock title="" mode="{!Mode}">
+
+        <apex:pageBlockSection title="{!$Label.LG_Suborder}" columns="2" collapsible="false" rendered="{!!Edit}">
+            <!--added cama for sfom-1486-->
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" rendered="{!Provisioning || Cama || CamaCustomerType}"/>
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__c}" rendered="{!Provisioning || Cama || CamaCustomerType}"/>
+             <apex:outputfield value="{!Solution.csord__Order__c}" rendered="{!Provisioning || Cama || CamaCustomerType}"/>  <!-- added for SFOM-1637 -->
+            <apex:outputText label="Solution" rendered="{!Provisioning || Cama || CamaCustomerType}">
+                <apex:outputLink value="/{!Solution.Id}" >{!Solution.LG_Solution_Name__c}</apex:outputLink>    <!-- added for SFOM-1637 -->
+            </apex:outputText>
+            <apex:outputField value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__r.csordtelcoa__Change_Type__c}" rendered="{!Provisioning || Cama}"/>
+            <apex:outputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!Provisioning || Cama || CamaCustomerType}"/>
+            <apex:outputField value="{!Solution.LG_ProvisioningAccountNo__c}" rendered="{!Cama || CamaCustomerType}"/>
+            <apex:outputfield value="{!Solution.LG_Address__r.LG_Icomms_Premise_ID__c}" rendered="{!Provisioning || Cama}"/>
+             <apex:outputfield value="{!Solution.LG_Address__r.LG_Icomms_Site_ID__c}" rendered="{!Provisioning || Cama}"/>
+        </apex:pageBlockSection>
+
+          <apex:pageBlockSection title="{!$Label.LG_Suborder}" columns="2" collapsible="false" rendered="{!Edit}">
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" rendered="{!Provisioning || Cama}"/>
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__c}" rendered="{!Provisioning || Cama}"/>
+            <apex:outputfield value="{!Solution.csord__Order__c}" rendered="{!Provisioning || Cama}"/>  <!-- added for SFOM-1637 -->
+            <apex:outputText label="Solution" rendered="{!Provisioning || Cama}">
+                <apex:outputLink value="/{!Solution.Id}" >{!Solution.LG_Solution_Name__c}</apex:outputLink>      <!-- added for SFOM-1637 -->
+            </apex:outputText>
+            <apex:outputField value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__r.csordtelcoa__Change_Type__c}" rendered="{!Provisioning || Cama}"/>
+            <apex:inputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!Provisioning || Cama}" required="{!if(Cama,True,false)}"/>
+            <apex:inputField value="{!Solution.LG_ProvisioningAccountNo__c}" rendered="{!Cama}"  required="true"/>
+            
+            <apex:outputfield value="{!Solution.LG_Address__r.LG_Icomms_Premise_ID__c}" rendered="{!Provisioning || Cama}"/>
+             <apex:outputfield value="{!Solution.LG_Address__r.LG_Icomms_Site_ID__c}" rendered="{!Provisioning || Cama}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_ProvisioningDetails}" columns="1" collapsible="false" rendered="{!!Edit && Provisioning}">
+           <apex:pageBlockTable value="{!ProvisioningDetails}"  var="provObj" rendered="{!Provisioning}" >
+                <apex:column headerValue="{!$Label.LG_ProductName}">
+                    <apex:outputText >
+                        <apex:outputText >{!provObj.service.Name}</apex:outputText>
+                        {!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                </apex:column>
+            <apex:column headerValue="{!$Label.LG_ProvisioningCode}" value="{!provObj.service.LG_ProvisioningCode__c}" />
+            <apex:column headerValue="{!$Label.LG_DeltaStatus}" value="{!provObj.service.csordtelcoa__Delta_Status__c}"/>
+            <apex:column headerValue="{!$Label.LG_Action}" value="{!provObj.service.LG_Action__c}"/>
+        </apex:pageBlockTable>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="{!$Label.LG_ProvisioningDetails}" columns="1" collapsible="false" rendered="{!AND(Provisioning,Edit)}">
+            <apex:pageBlockTable value="{!ProvisioningDetails}"  var="provObj" rendered="{!Provisioning}">
+                <apex:column headerValue="{!$Label.LG_ProductName}">
+                        <apex:outputText >
+                        <apex:outputText >{!provObj.service.Name}</apex:outputText>
+                        {!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                </apex:column>
+            <apex:column headerValue="{!$Label.LG_ProvisioningCode}" value="{!provObj.service.LG_ProvisioningCode__c}" />
+            <apex:column headerValue="{!$Label.LG_DeltaStatus}" value="{!provObj.service.csordtelcoa__Delta_Status__c}"/>
+            <apex:column headerValue="{!$Label.LG_Action}" value="{!provObj.service.LG_Action__c}"/>
+        </apex:pageBlockTable>
+        </apex:pageBlockSection>
+
+         <apex:pageBlockSection title="{!$Label.LG_BillableItems}" columns="1" collapsible="false" rendered="{!Provisioning}">
+            <apex:pageBlockTable value="{!BillingDetails}"  var="billingObj" rendered="{!Provisioning}">
+                <apex:column headerValue="{!$Label.LG_Name}">
+                    <apex:outputText rendered="{!!billingObj.parent}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</apex:outputText>
+                    <apex:outputText rendered="{!billingObj.parent}"><b>&bull;</b>&nbsp;&nbsp;</apex:outputText>
+                    <apex:outputText rendered="{!!billingObj.parent}">&bull;&nbsp;&nbsp;</apex:outputText>
+                    <apex:outputLink value="{!URLFOR($Action.csord__Service_Line_Item__c.View, billingObj.serviceLineItem.Id)}" rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.Name}</apex:outputLink>
+                    <apex:outputText rendered="{!billingObj.parent}">{!billingObj.serviceName}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="{!$Label.LG_Description}">
+                    <apex:outputText rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.csord__Line_Description__c}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="{!$Label.LG_Price}">
+                    <apex:outputText rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.csord__Total_Price__c}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="{!$Label.LG_BillingCode}">
+
+                    <apex:outputText rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.LG_BillingProductId__c}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="{!$Label.LG_BillingSystemReference}">
+                    <apex:outputLink value="{!URLFOR('/apex/LG_SConsoleBillingAccDetails?id='+billingObj.serviceLineItem.LG_BillingAccount__c, null)}" rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.LG_BillingAccount__r.LG_ExternalId__c}</apex:outputLink>
+                    <apex:outputLink value="{!URLFOR('/apex/LG_SConsoleBillingAccDetails?id='+billingObj.serviceLineItem.LG_BillingAccount__c, null)}" rendered="{!billingObj.serviceLineItem.LG_BillingAccount__r.Name != null && billingObj.serviceLineItem.LG_BillingAccount__r.LG_ExternalId__c == null && !billingObj.parent && !caseClosed}">Click to create</apex:outputLink>
+                </apex:column>
+                 <apex:column headerValue="{!$Label.LG_DeltaStatus}">
+                    <apex:outputText rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.csordtelcoa__Delta_Status__c}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="{!$Label.LG_Action}">
+                   <apex:outputText rendered="{!!billingObj.parent}">{!billingObj.serviceLineItem.LG_Action__c}</apex:outputText>
+               </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockButtons rendered="{!!caseClosed}">
+            <apex:commandButton action="{!edit}" value="{!$Label.LG_ButtonEdit}" rendered="{!!Edit}" />
+            <apex:commandButton value="{!$Label.LG_ButtonRefresh}" onclick="window.location.reload();return false;" rendered="{!!Edit}"/>
+            <apex:commandButton action="{!save}" value="{!$Label.LG_ButtonSave}" rendered="{!Edit}" />
+            <apex:commandButton action="{!cancel}" value="{!$Label.LG_ButtonCancel}" rendered="{!Edit}" />
+        </apex:pageBlockButtons>
+
+        </apex:pageBlock>
+
+        </apex:form>
+</apex:page>

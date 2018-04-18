@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Holds the specific SMS endpoints and the names of the specific implementation classes.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>LG_LocalizationClass__c</fullName>
+        <description>Class that holds specific implementation for certain country</description>
+        <externalId>false</externalId>
+        <label>Localization class</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_SMSEndpoint__c</fullName>
+        <description>SMS Endpoint for SMS Gateway service</description>
+        <externalId>false</externalId>
+        <label>SMS Endpoint</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>SMS Gateway Configuration</label>
+    <visibility>Public</visibility>
+</CustomObject>

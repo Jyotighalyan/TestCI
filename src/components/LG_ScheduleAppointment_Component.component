@@ -1,0 +1,6 @@
+<apex:component controller="LG_ScheduleAppComponentController" access="Global" >
+     <apex:attribute name="SolutionId" type="Id" description="Id of the Solution" assignTo="{!solId}"/>
+     <apex:repeat value="{!serviceLineItems}" var="serviceItem">
+        {!serviceItem.name}
+    </apex:repeat>
+</apex:component>

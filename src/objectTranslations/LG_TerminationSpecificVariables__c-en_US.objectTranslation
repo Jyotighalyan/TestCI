@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Termination Specific Variables</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Termination Specific Variables</value>
+    </caseValues>
+    <fields>
+        <label><!-- Allowed Discount Percentage --></label>
+        <name>LG_AllowedDiscountPercentage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the minimum lead time for the termination (a user cannot select the termination wish date that is less then today+value in this field). --></help>
+        <label><!-- Min Lead Time --></label>
+        <name>LG_MinLeadTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Minimum Threshold --></label>
+        <name>LG_MinimumThreshold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Tolerated Days --></label>
+        <name>LG_NumberOfToleratedDays__c</name>
+    </fields>
+    <fields>
+        <label><!-- Penalty Fee Calculation Class --></label>
+        <name>LG_PenaltyFeeCalculationClass__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

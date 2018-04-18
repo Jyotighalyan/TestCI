@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Care_SME_Director_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Care SME Director Share</label>
+        <sharedTo>
+            <role>UMB2BDirector_SME</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>UMB2B_Service</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Care_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Care Share</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>UMB2B_Service</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>UMB2BVP_SALES</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Care_to_Care_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Care to Care Share</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>UMB2B_Service</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>UMB2B_Service</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Decomposition Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Decomposition Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- All Together Decomposition Criteria --></label>
+        <name>LG_AllTogetherDecompositionCriteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- CombineInternetDecompositionCriteria --></label>
+        <name>LG_CombineInternetDecompositionCriteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Dependent With Parent --></label>
+        <name>LG_GroupDependentWithParent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Decomposition Criteria --></label>
+        <name>LG_LegacyDecompositionCriteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- MacdDecompositionCriteria --></label>
+        <name>LG_MacdDecompositionCriteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Grouping Decomposition Criteria --></label>
+        <name>LG_NoGroupingDecompositionCriteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Override No grouping Criteria --></label>
+        <name>LG_OverrideNogroupingCriteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Per Site Decomposition Criteria --></label>
+        <name>LG_PerSiteDecompositionCriteria__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the comma separated list of product families that are site-agnostic. Site/Address will not be taken into account when grouping the services under the same solution. --></help>
+        <label><!-- Site Agnostic Product Families --></label>
+        <name>LG_SiteAgnosticProductFamilies__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- Invoice Header --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Invoice Header --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Invoice Header --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Invoice Header --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Invoice Header --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Invoice Header --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Invoice Header --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Invoice Header --></value>
+    </caseValues>
+    <fields>
+        <label>Rechnungskontonummer</label>
+        <name>Billing_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Backout Status --></label>
+        <name>UM_Backout_Status__c</name>
+    </fields>
+    <fields>
+        <label>Rechnungsaccount</label>
+        <name>UM_Billing_Location__c</name>
+        <relationshipLabel>Rechnungsübersichten</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>UM_Customer_SF_ID__c</name>
+        <relationshipLabel>Rechnungsübersichten</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Invoice Number --></label>
+        <name>UM_InvoiceNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding Invoice Amount --></label>
+        <name>UM_Invoice_Amount_Gross_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding Invoice Amount --></label>
+        <name>UM_Invoice_Amount_Gross__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gross Total Due --></label>
+        <name>UM_Invoice_Amount_Net_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gross Total Due --></label>
+        <name>UM_Invoice_Amount_Net__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Date --></label>
+        <name>UM_Invoice_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- CDR Available? --></label>
+        <name>UM_IsCDRAvailable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open CDR --></label>
+        <name>UM_OpenCDR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Invoice --></label>
+        <name>UM_OpenPDF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Due Date --></label>
+        <name>UM_Payment_Due_Date__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <layouts>
+        <layout>Invoice Header Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Invoice Headers Name --></nameFieldLabel>
+</CustomObjectTranslation>

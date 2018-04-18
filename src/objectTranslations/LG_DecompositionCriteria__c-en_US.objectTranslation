@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Decomposition Criteria</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Decomposition Criteria</value>
+    </caseValues>
+    <fields>
+        <label><!-- Add On Price Item --></label>
+        <name>LG_AddOnPriceItem__c</name>
+        <relationshipLabel><!-- Decomposition Criteria --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Decomposition Criteria --></label>
+        <name>LG_DecompositionCriteria__c</name>
+        <picklistValues>
+            <masterLabel>Set 1 - On-Net</masterLabel>
+            <translation><!-- Set 1 - On-Net --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 10 - VoiceWorks</masterLabel>
+            <translation><!-- Set 10 - VoiceWorks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 11 - Engineers</masterLabel>
+            <translation><!-- Set 11 - Engineers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 12 - JIRA Orchestrated</masterLabel>
+            <translation><!-- Set 12 - JIRA Orchestrated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 13 - JIRA Bearer</masterLabel>
+            <translation><!-- Set 13 - JIRA Bearer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 14 - CaMa Mobile</masterLabel>
+            <translation><!-- Set 14 - CaMa Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 15 - CaMa Manual</masterLabel>
+            <translation><!-- Set 15 - CaMa Manual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 16 - CaMa OI Manual</masterLabel>
+            <translation><!-- Set 16 - CaMa OI Manual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 17 - BDS Charges</masterLabel>
+            <translation><!-- Set 17 - BDS Charges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 17 - Charges</masterLabel>
+            <translation><!-- Set 17 - Charges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 17 - HPBX Charges</masterLabel>
+            <translation><!-- Set 17 - HPBX Charges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 18 - Direct to Kenan</masterLabel>
+            <translation><!-- Set 18 - Direct to Kenan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 19 - Additional Charges</masterLabel>
+            <translation><!-- Set 19 - Additional Charges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 2 - Legacy</masterLabel>
+            <translation><!-- Set 2 - Legacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 20 - BDS Site Process</masterLabel>
+            <translation><!-- Set 20 - BDS Site Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 21 - VPN Process</masterLabel>
+            <translation><!-- Set 21 - VPN Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 22 - Parent/Category Only</masterLabel>
+            <translation><!-- Set 22 - Parent/Category Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 23 - UM CaMa Bridge Mode</masterLabel>
+            <translation><!-- Set 23 - UM CaMa Bridge Mode --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 24 - UM JIRA Fiber Bridge Mode</masterLabel>
+            <translation><!-- Set 24 - UM JIRA Fiber Bridge Mode --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 3 - Mobile</masterLabel>
+            <translation><!-- Set 3 - Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 4</masterLabel>
+            <translation><!-- Set 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 5 - CaMa Internet</masterLabel>
+            <translation><!-- Set 5 - CaMa Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 6 - CaMa Dependent</masterLabel>
+            <translation><!-- Set 6 - CaMa Dependent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 7 - JIRA Fiber</masterLabel>
+            <translation><!-- Set 7 - JIRA Fiber --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 8 - CS Voice</masterLabel>
+            <translation><!-- Set 8 - CS Voice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set 9 - CaMa Bearer</masterLabel>
+            <translation><!-- Set 9 - CaMa Bearer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Partner Needed --></label>
+        <name>LG_PartnerNeeded__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

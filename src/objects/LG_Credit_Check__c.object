@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>LG_ApplicationDate__c</fullName>
+        <description>The date on which the credit check was done with the bureau.</description>
+        <externalId>false</externalId>
+        <label>Application Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_ApplicationID__c</fullName>
+        <externalId>false</externalId>
+        <label>Application ID</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>CustomerCreditCheckResults</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>LG_CaseReason__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Previous application was accepted and Total exp.&gt;Credit limit.</fullName>
+                    <default>false</default>
+                    <label>Previous application was accepted and Total exp.&gt;Credit limit.</label>
+                </value>
+                <value>
+                    <fullName>Previous application was not accepted.</fullName>
+                    <default>false</default>
+                    <label>Previous application was not accepted.</label>
+                </value>
+                <value>
+                    <fullName>Company not found and no consent for principal.</fullName>
+                    <default>false</default>
+                    <label>Company not found and no consent for principal.</label>
+                </value>
+                <value>
+                    <fullName>Company not found.</fullName>
+                    <default>false</default>
+                    <label>Company not found.</label>
+                </value>
+                <value>
+                    <fullName>Non Ltd Company not found and no consent for principal.</fullName>
+                    <default>false</default>
+                    <label>Non Ltd Company not found and no consent for principal.</label>
+                </value>
+                <value>
+                    <fullName>Non Ltd Company not found.</fullName>
+                    <default>false</default>
+                    <label>Non Ltd Company not found.</label>
+                </value>
+                <value>
+                    <fullName>Prospect or Customer appeals mitigation.</fullName>
+                    <default>false</default>
+                    <label>Prospect or Customer appeals mitigation.</label>
+                </value>
+                <value>
+                    <fullName>Credit check expired with previous mitigation.</fullName>
+                    <default>false</default>
+                    <label>Credit check expired with previous mitigation.</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_ConsentGivenAccount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Consent Given</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_ConsentGivenContact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Consent Given</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_CreditCheck_ExecutionDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Execution Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LG_CreditCheck_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Check Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Started</fullName>
+                    <default>false</default>
+                    <label>Started</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Referred</fullName>
+                    <default>false</default>
+                    <label>Referred</label>
+                </value>
+                <value>
+                    <fullName>Not completed</fullName>
+                    <default>false</default>
+                    <label>Not completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Credit_Limit__c</fullName>
+        <description>The recomended credti limit for the applicant where the applicant can be an individual or organisation.</description>
+        <externalId>false</externalId>
+        <label>Credit Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LG_Decision__c</fullName>
+        <description>The recomended decision for the credti check application.</description>
+        <externalId>false</externalId>
+        <label>Decision</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Accept</fullName>
+                    <default>false</default>
+                    <label>Accept</label>
+                </value>
+                <value>
+                    <fullName>Refer</fullName>
+                    <default>false</default>
+                    <label>Refer</label>
+                </value>
+                <value>
+                    <fullName>Decline</fullName>
+                    <default>false</default>
+                    <label>Decline</label>
+                </value>
+                <value>
+                    <fullName>Mitigation</fullName>
+                    <default>false</default>
+                    <label>Mitigation</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_EquifaxCompanyAddressline1__c</fullName>
+        <description>Address line one as returned by Service</description>
+        <externalId>false</externalId>
+        <label>Equifax Company Addressline1</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_EquifaxCompanyAddressline2__c</fullName>
+        <externalId>false</externalId>
+        <label>Equifax Company Addressline2</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_EquifaxCompanyAddressline3__c</fullName>
+        <externalId>false</externalId>
+        <label>Equifax Company Addressline3</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_EquifaxCompanyAddressline4__c</fullName>
+        <externalId>false</externalId>
+        <label>Equifax Company Addressline4</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_EquifaxOrganisationType__c</fullName>
+        <externalId>false</externalId>
+        <label>EquifaxOrganisationType</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Business Partnership</fullName>
+                    <default>false</default>
+                    <label>Business Partnership</label>
+                </value>
+                <value>
+                    <fullName>Charity</fullName>
+                    <default>false</default>
+                    <label>Charity</label>
+                </value>
+                <value>
+                    <fullName>Community Interest Company</fullName>
+                    <default>false</default>
+                    <label>Community Interest Company</label>
+                </value>
+                <value>
+                    <fullName>Company Ltd by Guarantee</fullName>
+                    <default>false</default>
+                    <label>Company Ltd by Guarantee</label>
+                </value>
+                <value>
+                    <fullName>Company Ltd by Shares</fullName>
+                    <default>false</default>
+                    <label>Company Ltd by Shares</label>
+                </value>
+                <value>
+                    <fullName>Co-operative</fullName>
+                    <default>false</default>
+                    <label>Co-operative</label>
+                </value>
+                <value>
+                    <fullName>Limited</fullName>
+                    <default>false</default>
+                    <label>Limited</label>
+                </value>
+                <value>
+                    <fullName>Limited Liability Partnership</fullName>
+                    <default>false</default>
+                    <label>Limited Liability Partnership</label>
+                </value>
+                <value>
+                    <fullName>Limited Partnership</fullName>
+                    <default>false</default>
+                    <label>Limited Partnership</label>
+                </value>
+                <value>
+                    <fullName>Non UK entity</fullName>
+                    <default>false</default>
+                    <label>Non UK entity</label>
+                </value>
+                <value>
+                    <fullName>Public Sector</fullName>
+                    <default>false</default>
+                    <label>Public Sector</label>
+                </value>
+                <value>
+                    <fullName>Religious Organisation</fullName>
+                    <default>false</default>
+                    <label>Religious Organisation</label>
+                </value>
+                <value>
+                    <fullName>Sole Trader</fullName>
+                    <default>false</default>
+                    <label>Sole Trader</label>
+                </value>
+                <value>
+                    <fullName>Unincorporated Association</fullName>
+                    <default>false</default>
+                    <label>Unincorporated Association</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Equifax_Organisation_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Equifax Organisation ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Credit Checks</relationshipLabel>
+        <relationshipName>Credit_Checks</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_Payment_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Total_Exposure_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Exposure</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LG_applicationExpiryDate__c</fullName>
+        <description>The date on which the credit check application expires with the bureau.</description>
+        <externalId>false</externalId>
+        <label>Expiry Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_bureauType__c</fullName>
+        <description>The type of the credit bureau.</description>
+        <externalId>false</externalId>
+        <label>Consumer Bureau</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_businessTermValue__c</fullName>
+        <description>Represents the corresponding business term value (usually in amount representing deposit or upfront payment) for the business Term. Amount is usually in GBP and duration in months.</description>
+        <externalId>false</externalId>
+        <label>Payment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LG_creditApplicationReference__c</fullName>
+        <description>The application reference given back by the credit checking agency back to the applying party.</description>
+        <externalId>false</externalId>
+        <label>Credit Check Application Reference</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_decisionReasons__c</fullName>
+        <description>The reason behind which the recommended decision is given. There could be more than one reasons for the recommendation.</description>
+        <externalId>false</externalId>
+        <label>Credit Check Decision Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_decision_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>decision Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_postcode__c</fullName>
+        <externalId>false</externalId>
+        <label>postcode</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_principalIdentifier__c</fullName>
+        <description>Identifies the principal to which the application dates apply. Applicable only for Consumer Bureau.</description>
+        <externalId>false</externalId>
+        <label>principalIdentifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_underwrittersNotes__c</fullName>
+        <description>The notes entered by the credit check agencies underwriter.</description>
+        <externalId>false</externalId>
+        <label>underwrittersNotes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lg_businessTerm__c</fullName>
+        <externalId>false</externalId>
+        <label>Deposit Duration</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Credit Check</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Credit Check Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Credit Checks</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

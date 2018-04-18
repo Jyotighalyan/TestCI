@@ -1,0 +1,3 @@
+Hallo {!Case.B2B_Manager_FName__c}, 
+
+der Fall {!Case.CaseNumber} wurde vor 60 Minuten einem Bearbeiter zugewiesen, aber noch nicht bearbeitet.

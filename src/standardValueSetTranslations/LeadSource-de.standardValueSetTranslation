@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>BD Lightening</masterLabel>
+        <translation><!-- BD Lightening --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BD London</masterLabel>
+        <translation><!-- BD London --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BD Midlands</masterLabel>
+        <translation><!-- BD Midlands --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BD N.Ireland</masterLabel>
+        <translation><!-- BD N.Ireland --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BD North</masterLabel>
+        <translation><!-- BD North --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BD Scotland</masterLabel>
+        <translation><!-- BD Scotland --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BD South</masterLabel>
+        <translation><!-- BD South --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BD South West</masterLabel>
+        <translation><!-- BD South West --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BD TechCity</masterLabel>
+        <translation><!-- BD TechCity --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Business Development</masterLabel>
+        <translation><!-- Business Development --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>D2D</masterLabel>
+        <translation><!-- D2D --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Email</masterLabel>
+        <translation><!-- Email --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Employee Referral</masterLabel>
+        <translation>Mitarbeiterempfehlung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Events</masterLabel>
+        <translation><!-- Events --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Inbound Call</masterLabel>
+        <translation>Anruf Inbound</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Inbound Referral</masterLabel>
+        <translation><!-- Inbound Referral --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Indirect Partner Channel</masterLabel>
+        <translation><!-- Indirect Partner Channel --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>MI BI</masterLabel>
+        <translation><!-- MI BI --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Marketing</masterLabel>
+        <translation><!-- Marketing --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Marketing Campaign</masterLabel>
+        <translation><!-- Marketing Campaign --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nurture</masterLabel>
+        <translation><!-- Nurture --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Online</masterLabel>
+        <translation><!-- Online --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>Andere</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Outbound</masterLabel>
+        <translation><!-- Outbound --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Outbound Lead</masterLabel>
+        <translation><!-- Outbound Lead --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Partner Referral</masterLabel>
+        <translation>Empfehlung Partner</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Project Lightning</masterLabel>
+        <translation><!-- Project Lightning --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Purchased List</masterLabel>
+        <translation>Liste erworben</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Referral</masterLabel>
+        <translation><!-- Referral --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Retail</masterLabel>
+        <translation>Einzelhandel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Salesperson</masterLabel>
+        <translation><!-- Salesperson --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Self-Generated</masterLabel>
+        <translation><!-- Self-Generated --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>SoHo</masterLabel>
+        <translation><!-- SoHo --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Telemarketing</masterLabel>
+        <translation><!-- Telemarketing --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Web</masterLabel>
+        <translation><!-- Web --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Web Chat</masterLabel>
+        <translation><!-- Web Chat --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>WebSME</masterLabel>
+        <translation><!-- WebSME --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Wholesale</masterLabel>
+        <translation><!-- Wholesale --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>eCommerce</masterLabel>
+        <translation><!-- eCommerce --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

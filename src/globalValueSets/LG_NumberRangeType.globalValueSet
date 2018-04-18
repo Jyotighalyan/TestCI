@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>New</fullName>
+        <default>false</default>
+        <label>New</label>
+    </customValue>
+    <customValue>
+        <fullName>Port-In</fullName>
+        <default>false</default>
+        <label>Port-In</label>
+    </customValue>
+    <masterLabel>Number Range Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>LG_Access_Planningloop__c</fullName>
+        <description>Orchestration process step where access planning Jeopardy case is created</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Orchestration process step where access planning Jeopardy case is created</inlineHelpText>
+        <label>Access Planning loop</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_InstallLoop__c</fullName>
+        <description>Orchestration process step where Install Jeopardy case is created</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Orchestration process step where Install Jeopardy case is created</inlineHelpText>
+        <label>Install Loop</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_NumberPortLoop__c</fullName>
+        <description>Orchestration process step where Install Number Port case is created</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Orchestration process step where Install Number Port case is created</inlineHelpText>
+        <label>Number Port Loop</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_OrchestrationProcess__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Orchestration process for which parameters to be set</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Orchestration process for which parameters to be set</inlineHelpText>
+        <label>Orchestration Process</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortingWindow__c</fullName>
+        <description>Minimum days required for porting window after which number port has to be retried</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Minimum days required for porting window after which number port has to be retried</inlineHelpText>
+        <label>Porting Window</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ProvisionLoop__c</fullName>
+        <description>Orchestration process step where Porivison Jeopardy case is created</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Orchestration process step where Porivison Jeopardy case is created</inlineHelpText>
+        <label>Provision Loop</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_RetryInstall__c</fullName>
+        <description>Orchestration process step for wait till installation target date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Orchestration process step for wait till installation target date</inlineHelpText>
+        <label>Retry Install</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_RetryNumberPort__c</fullName>
+        <description>Orchestration process step for number porting request</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Orchestration process step for number porting request</inlineHelpText>
+        <label>Retry Number Port</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_RetryProvision__c</fullName>
+        <description>Orchestration process step for provision request</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Orchestration process step for provision request</inlineHelpText>
+        <label>Retry Provision</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Inflight Change Step</label>
+    <visibility>Public</visibility>
+</CustomObject>

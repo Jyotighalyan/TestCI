@@ -1,0 +1,757 @@
+<apex:page id="LG_InstallationInformation" controller="LG_InstallationInformationController" extensions="InstallationSiteDetailRemoter" showHeader="true" sidebar="true" docType="html-5.0" title="Installation Information per Site">
+    <apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, 'sfdcBootstrap.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, '/datepicker/css/bootstrap-datepicker.standalone.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'bootstrap.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, '/datepicker/js/bootstrap-datepicker.js')}" />
+    
+   
+    <!--Added below styles part of QNT-441 -->    
+    <style>
+        .mainIframe {
+            width: 100%;
+            height: 300px;
+        }
+        .lookupInput a {
+            display: block;
+            position: absolute;
+            top: 0px;
+        }
+        .lookupInput img {
+            float: right;
+        }
+        span.lookupInput {
+            position: relative;
+            display: inherit;
+        }
+        .lookupInput a, .lookupInput a {
+            border: none !important;
+            background: none !important;
+        }
+    
+        ul.tab {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+    
+        ul.tab li {float: left;}
+    
+        ul.tab li a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+    
+        ul.tab li a:hover {
+            background-color: #ddd;
+            text-decoration: none;
+        }
+    
+        ul.tab li a:focus, .active {
+            background-color: #ccc;
+            text-decoration: none;
+        }
+    
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    
+        .sfdcBootstrap a:hover, .sfdcBootstrap a:focus {
+            background-color: #ddd;
+            text-decoration: none;
+        }
+        .sfdcBootstrap a:focus, .sfdcBootstrap a:active {
+            background-color: #ccc;
+            text-decoration: none;
+        }
+        .sfdcBootstrap .panel-title > a {
+            padding: 10px;
+        }
+    
+        iframe {
+            width: 100%;
+        }
+    
+        .wayleaveIframe {
+            height: 330px;
+        }
+    
+        .statusIconSections {
+            margin-top: 8px;
+        }
+    
+        div.panel-title > img.statusIconSections {
+            margin-top: 0px;
+        }
+    
+        .validationMsg {
+            color: red;
+            display: none;
+        }
+    
+        .inputInvalid {
+            background-color: rgba(255,0,0,0.2);
+        }
+    
+        .pageTitleContainer {
+            display: inline-flex;
+            width: 100%;
+            position: relative;
+        }
+    
+        .pageTitle {
+            margin-left: 1em;
+        }
+    
+        .backButton {
+            position: absolute;
+            right: 0px;
+        }
+        .editButton {
+            position: absolute;
+            right: 150px;
+        }
+        .lookupInput{
+            white-space: normal;
+    
+        }
+    
+        #loading-curtain-div {
+            height:100%;
+            width:100%;
+            position:absolute;
+            left:0px;
+            top:0px;
+            z-index:5;
+            background-color: black;
+            opacity: 0.5;
+            -webkit-transition: all 0.30s ease-out;
+            -moz-transition: all 0.30s ease-out;
+        }
+    
+        .loading-image-container {
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            color: white;
+            opacity: 1;
+        }
+    
+        .errorMessage {
+            color: red;
+            font-weight: bold;
+        }
+        .requiredBlock {
+            background-color: #c00;
+            bottom: 1px;
+            left: -4px;
+            position: absolute;
+            top: 1px;
+            width: 3px;
+        }
+    
+        /*tmp start*/
+        .sfdcBootstrap .row {
+            margin-top: 10px;
+        }
+        /*tmp end*/
+    </style>
+    
+    <!--end-->
+    <script>
+        $( document ).ready(function()
+        {
+        
+            $('.input-group.date').datepicker({
+                format: 'dd-mm-yyyy',
+                weekStart: 1,
+                autoclose: true,
+                todayHighlight: true,
+                todayBtn: true,
+                clearBtn: true,
+                forceParse: false
+            });
+
+            $('input[id^=wishdate-]').each(function()
+            {
+                var siteId = this.id.split('-')[1];
+                var minDate = $('#' + siteId + '-leadTime').html();
+                $(this).parent().datepicker('setStartDate', minDate);
+
+                var daysDisabled = '0';
+
+                if ($('#marketsegment-' + siteId).val() == 'Small')
+                {
+                    daysDisabled = '0,6';
+                }
+
+                $(this).parent().datepicker('setDaysOfWeekDisabled', daysDisabled);
+            });
+
+            $('input[id^=planneddate-]').each(function()
+            {
+                var siteId = this.id.split('-')[1];
+
+                var daysDisabled = '0';
+
+                if ($('#marketsegment-' + siteId).val() == 'Small')
+                {
+                    daysDisabled = '0,6';
+                }
+                $(this).parent().datepicker('setStartDate', todayFormat());
+                $(this).parent().datepicker('setDaysOfWeekDisabled', daysDisabled);
+            });
+        });
+
+        function todayFormat()
+        {
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1;
+            var yyyy = today.getFullYear();
+
+            if (dd < 10)
+            {
+                dd = '0' + dd;
+            }
+
+            if (mm < 10)
+            {
+                mm = '0' + mm;
+            }
+
+            return dd + '-' + mm + '-' + yyyy;
+        }
+
+        function collapseAll()
+        {
+            var newstate = $('#btnCollapseAll').attr('state') ^ 1,
+                    text = newstate ? "Expand" : "Collapse";
+
+            // if state = 0, collapse all panels
+            if ($('#btnCollapseAll').attr('state') == "0" )
+            {
+                $('.panel-collapse.in').collapse('hide');
+            }
+            // otherwise, expand all the panels
+            else
+            {
+                $('.panel-collapse:not(".in")').collapse('show');
+            }
+
+            $('#btnCollapseAll').html(text +" All");
+            $('#btnCollapseAll').attr('state', newstate)
+        }
+
+        function prepareDatesAndSave()
+        {
+            //siteId~date#siteId2~date2...
+            var sitesToWishDate = '';
+            var sitesToPlannedDate = '';
+
+            $('input[id^=wishdate-]').each(function()
+            {
+                var siteId = this.id.split('-')[1];
+
+                sitesToWishDate += siteId + '~' + this.value + '#';
+            });
+
+            sitesToWishDate = sitesToWishDate.slice(0, -1);
+
+            $('input[id^=planneddate-]').each(function()
+            {
+                var siteId = this.id.split('-')[1];
+
+                sitesToPlannedDate += siteId + '~' + this.value + '#';
+            });
+
+            sitesToPlannedDate = sitesToPlannedDate.slice(0, -1);
+
+            save(sitesToWishDate, sitesToPlannedDate);
+        }
+
+        function clearAllTechContacts()
+        {
+            $('input[id*=globalTechnicalContact][type!=hidden]').val(null);
+            $('input[id*=globalTechnicalContact_lkid]').val(null);
+            $('input[id*=globalTechnicalContact_lkold]').val(null);
+            setAllTechnicalContactsAsGlobal();
+        }
+
+        function setAllTechnicalContactsAsGlobal()
+        {
+            var selectedContactName = $('input[id*=globalTechnicalContact][type!=hidden]').val();
+            var selectedContact = $('input[id*=globalTechnicalContact_lkid]').val();
+            var selectedContactlkold = $('input[id*=globalTechnicalContact_lkold]').val();
+
+            $('input[id*=technicalContact][type!=hidden]').each(function()
+            {
+                this.value = selectedContactName;
+            });
+            $('input[id*=technicalContact_lkid]').each(function()
+            {
+                this.value = selectedContact;
+            });
+            $('input[id*=technicalContact_lkold]').each(function()
+            {
+                this.value = selectedContactlkold;
+            });
+        }
+        
+        // QNT-441
+        function openTab(evt, tabId, suffix) {
+        //alert('open tab called');
+            evt.preventDefault();
+            var i, tabcontent, tablinks;
+            $('.tabcontent' + suffix).each( function (index, tabitem) {
+                $(this).hide();
+            });
+            $('.tablinks' + suffix).each( function (index, tabitem) {
+                $(this).removeClass('active');
+            });
+            $('#' + tabId + suffix).show();
+            evt.currentTarget.className += " active";
+        }
+        
+        function iframeLoaded (callerElement) {
+        if ($(callerElement).attr('src')) {
+            $(callerElement).show();
+            var siteId = $(callerElement).attr('id').split('-')[1];
+            $('.pcLoadingImg-'+siteId).hide();
+
+        }
+        //RerenderPanelBGP();
+        }
+        
+        <!-- updated on 23rd Jan 2018 to handle return url for the close product configuration class for partner portals -->
+        if (window.location.href.indexOf("/partners/") > -1) {
+        var retURL = '/partners/apex%2FCloseProductConfiguration%3FconfigId%3D';
+        }
+        else
+        {
+        var retURL = 'apex%2FCloseProductConfiguration%3FconfigId%3D';
+        }
+        console.log('retURL--'+retURL);
+        
+        function showProductConfiguration(siteId, configId, isChild, prodctDefiniton) {
+            //alert('method called');
+            //alert(prodctDefiniton);
+            $('#productIframe-' + siteId).hide();
+            $('.pcLoadingImg-'+siteId + '.pcLoadingImg-' + configId).show();
+    
+            //Check if retURL is null or not
+            <!-- updated on 23rd Jan 2018 to handle return url for the close product configuration class for partner portals -->
+            if (window.location.href.indexOf("/partners/") > -1) {
+            if(retURL ==''){
+                  console.log('Return URL is null and need to assign the redirect URL');
+                 retURL =  '/partners/apex%2FCloseProductConfiguration%3FconfigId%3D';
+               }}
+               else 
+               {
+                 if(retURL ==''){
+                  console.log('Return URL is null and need to assign the redirect URL');
+                 retURL =  'apex%2FCloseProductConfiguration%3FconfigId%3D';
+               }
+               }
+               retURL = retURL + configId;
+    
+            //if (preloadedProductConfigs[siteId] != configId) {
+                
+                //var screenName = prodctDefiniton + sufix;
+                var screenName = prodctDefiniton;
+                // Changes done for users login through partner portal -- 22 Jan 2018
+                if (window.location.href.indexOf("/partners/") > -1) {
+                    $('#productIframe-' + siteId).attr('src', '/partners/apex/c__InlineProductConfiguration?template=CustomScreenTemplate&ScreenFlowName=' + screenName + '&retURL=' + retURL +'&configId=' + configId + '&isChild=' + isChild);
+                } 
+                else {
+                    $('#productIframe-' + siteId).attr('src', '/apex/c__InlineProductConfiguration?template=CustomScreenTemplate&ScreenFlowName=' + screenName + '&retURL=' + retURL +'&configId=' + configId + '&isChild=' + isChild);
+                }
+                // end
+                console.log('retURL@@--'+retURL);
+                console.log(' --> ' + '/apex/c__InlineProductConfiguration?template=CustomScreenTemplate&ScreenFlowName=' + screenName + '&retURL=' + retURL +'&configId=' + configId + '&isChild=' + isChild);
+            //}
+            //preloadedProductConfigs[siteId] = '';
+            retURL = '';
+        }
+        
+        var completedSiteProducts = {};
+        var successIcon = '/img/msg_icons/confirm32.png';
+        var failIcon = '/img/msg_icons/error32.png';
+        function completeSection(configID, sectionName, siteID) {
+            //alert(siteID);
+            console.log('completed journey');
+            console.log('section: ' + sectionName);
+            if (sectionName == 'products') {
+                ////clearScreenFlows();
+                checkProductConfigurationStatus(configID,siteID);
+                /*if(pageMode == false){
+                    ResetOrderSummary();
+                }*/
+                //RerenderPanelBGP();
+                
+            } else {
+            $('.statusIconSections.' + sectionName + '-' + siteId).attr('src', successIcon);
+            }
+            console.log('site: ' + siteId);
+        }
+        
+        function checkProductConfigurationStatus(configID,siteID) {
+            
+            var start = new Date().getTime();
+            //var vBskIdVal="{!basket.Id}";
+                        
+            Visualforce.remoting.Manager.invokeAction(
+            
+                '{!$RemoteAction.InstallationSiteDetailRemoter.getProductConfigurations}',
+                configID,
+                function (result, event) {
+                
+                    if (event.status) {
+                        for (var i=0; i < result.length; i++) {
+                            if (result[i].LG_PlanningDetailsStatus__c == 'Complete' && result[i].cscfga__Configuration_Status__c == 'Valid' ) {
+                                $('.pcStatusImg-' + result[i].Id).attr('src', successIcon);
+                                //$('.statusIconSections.products-' + result[i].LG_Address__c).attr('src', successIcon);
+                                
+                            } else {
+                                $('.pcStatusImg-' + result[i].Id).attr('src', failIcon);
+                                //$('.statusIconSections.products-' + result[i].LG_Address__c).attr('src', failIcon);
+                                
+                            }
+                            
+                        }
+                        
+                        //*** To check the product status flag even if there are multiple products on same site
+                        var productElement = document.getElementById("productsTabId-"+siteID);
+                        var imageElement = productElement.getElementsByTagName("img");
+                        var imgSrc;
+                        //alert(imageElement.length);
+                        for(var i=0;i<imageElement.length;i++){
+                        
+                            imgSrc = imageElement[i].src;
+                            var position = imgSrc.indexOf('error32.png');
+                            //alert('-----imgSrc-----'+imgSrc);
+                            //alert('-----pos-----'+pos);
+                            if(position!= -1)
+                            {
+                                //alert('error32--'+siteID);
+                                $('.statusIconSections.products-' + siteID).attr('src', failIcon);
+                                break;
+                            }
+                            else
+                            {
+                                //alert('confirm32--'+siteID);
+                                $('.statusIconSections.products-' + siteID).attr('src', successIcon);
+                            }
+                            
+                        }     
+                        //***end
+                        
+                        removeRemoteError('getProductConfigurations');
+                    } else {
+                        addRemoteError('getProductConfigurations', 'Error getting product configurations: ' + event.message);
+                    }
+                },{buffer: false}
+            );
+            var end = new Date().getTime();
+            var time = end - start;
+            console.log('Time taken by getProductConfigurations Script' + time);
+        }
+        
+        function checkRequiredFieldsForSiteDetailsIcon(siteId,productFamily){
+         //alert('method called');
+         //alert(productFamily);
+         // Check the below logic only when there is company fiber product.
+         if(productFamily=='CF'){
+            var siteElement = document.getElementById("contactDetailsTabId-"+siteId);
+            //alert(siteElement.id);
+            //alert(siteElement.LG_FullAddressDetails__c);            
+            var selectElement = siteElement.getElementsByTagName("select");
+            var formElement = siteElement.getElementsByTagName("input");
+            //alert(formElement);
+            var conIdVal='';
+            var gnvVal='';
+            for(i=0;i<formElement.length;i++){
+                if(formElement[i].id.indexOf("consultingId")!=-1){
+                    conIdVal=formElement[i].value;
+                }
+            }
+            
+            for(i=0;i<selectElement.length;i++){
+                if(selectElement[i].id.indexOf("gnv")!=-1){
+                    gnvVal=selectElement[i].value;
+                }
+            }
+                        
+           // alert('---gnvVal---'+gnvVal);
+           // alert('---conIdVal---'+conIdVal);
+            
+            if(gnvVal!='--None--' && gnvVal!='' && conIdVal!=''){
+              $('.statusIconSections.contact-' + siteId).attr('src', successIcon);
+            } else {
+              $('.statusIconSections.contact-' + siteId).attr('src', failIcon);              
+            }
+         }  
+        }
+                       
+        //end
+        
+    </script>
+    <apex:form >
+        <div class="sfdcBootstrap">
+            <div class="container">
+                <br/>
+                <h2>{!$Label.UM_InstallationInformationperSite}</h2>
+                <br/>
+                <br/>
+                <div class="well">
+                    <div class="input-group">
+                        <span style="font-size:16px">{!$Label.UM_ProductBasket} </span>&nbsp;&nbsp;&nbsp;
+                        <a href="/{!basket.Id}" style="font-size:14px">{!basket.Name}</a>
+                        <span class="input-group-btn">
+                            <button onclick="collapseAll()" type="button" id="btnCollapseAll" class="btn btn-warning pull-right btn-xs" state="0">Collapse All</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="well">
+                    <div class="row">
+                        <div style="margin-left:20px">
+                            <label>{!$Label.UM_TechnicalContact}</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <apex:inputField styleClass="form-control" value="{!dummyForTechContact.LG_TechnicalContact__c}" id="globalTechnicalContact"/>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-md" onclick="setAllTechnicalContactsAsGlobal()">
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> {!$Label.UM_Set}
+                                </button>
+                                <button type="button" class="btn btn-default btn-md" onclick="clearAllTechContacts()">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> {!$Label.UM_Clear}
+                                </button>
+                                <button type="button" class="btn btn-default btn-md" onclick="createNewContact()">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {!$Label.UM_NewContact}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-group">
+                    <apex:repeat value="{!AllSites}" var="wrapperSite" id="sitePanels">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse{!wrapperSite.site.Id}">{!wrapperSite.site.LG_FullAddressDetails__c}</a>
+                                </h4>
+                            </div>
+                            <div id="collapse{!wrapperSite.site.Id}" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                <!--
+                                {!wrapperSite.site.Product_Configurations__r[0].Name}
+                                {!wrapperSite.site.Product_Configurations__r[0].cscfga__Product_Family__c}
+                                {!wrapperSite.productName}
+                                -->
+                                    <ul class="tab">
+                                        <!--<li class="contactTab-{!wrapperSite.site.Product_Configurations__r[0].Name}">-->
+                                        <li class="contactTab-{!wrapperSite.productName}">
+                                            <!--<img class="statusIconSections contact-{!wrapperSite.site.Id}" src='/img/msg_icons/error32.png'/>-->
+                                            <img class="statusIconSections contact-{!wrapperSite.site.Id}" src='/img/msg_icons/{!wrapperSite.siteDetailsFlagValue}'/>
+                                        </li>
+                                        <li class="contactTab-{!wrapperSite.productName}">
+                                            <a href="#" class="tablinks-{!wrapperSite.site.Id}" onclick="openTab(event, 'contactDetailsTabId', '-{!wrapperSite.site.Id}')">
+                                                Site Details
+                                            </a>
+                                        </li>
+                                        <li class="productsTab-{!wrapperSite.productName}" style="display:{!if(wrapperSite.displayProducts,'','none')};">
+                                            <!--<img class="statusIconSections products-{!wrapperSite.site.Id}" src='/img/msg_icons/error32.png'/>-->
+                                            <img class="statusIconSections products-{!wrapperSite.site.Id}" src='/img/msg_icons/{!wrapperSite.productFlagValue}'/>
+                                        </li>
+                                        <!--<li class="productsTab-{!wrapperSite.site.Product_Configurations__r[0].Name}" style="display:{!if(CONTAINS(wrapperSite.site.Product_Configurations__r[0].Name,'BGP'),'','none')};">-->
+                                         <li class="productsTab-{!wrapperSite.productName}" style="display:{!if(wrapperSite.displayProducts,'','none')};">
+                                            <a href="#" class="tablinks-{!wrapperSite.site.Id}" onclick="openTab(event, 'productsTabId', '-{!wrapperSite.site.Id}')">
+                                                Products
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div id="contactDetailsTabId-{!wrapperSite.site.Id}" class="tabcontent tabcontent-{!wrapperSite.site.Id} contactTab-{!wrapperSite.productName}" style="display:block">
+                                         <div class="well">
+                                            <!--<apex:pageMessages id="showmsg"></apex:pageMessages> -->
+                                            <div class="row" style="margin-bottom:10px">
+                                                <div class="col-sm-3" style="text-align:right">
+                                                    <label>{!$Label.UM_SharedOfficeBuilding}</label>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <apex:inputCheckbox value="{!wrapperSite.site.LG_SharedOfficeBuilding__c}"/>
+                                                </div>
+                                            </div>
+                                            <!--{!wrapperSite.productName}-->
+                                            <!--<div class="row" style="margin-bottom:10px">-->
+                                            <div class="row" style="margin-bottom:10px; display:{!if(wrapperSite.displaySiteDetailFields,'','none')};">
+                                                <div class="col-sm-3" style="text-align:right">
+                                                    <label>{!$Label.UM_COAXConnectionLocation}</label>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <apex:inputTextarea rows="3" styleClass="form-control" id="coaxConnection" value="{!wrapperSite.site.LG_COAXConnectionLocation__c}"/>
+                                                </div>
+                                            </div>
+                                            <!--QNT-441 -->
+                                            <!--{!wrapperSite.productFamily}-->
+                                            <div class="row" style="margin-bottom:10px">
+                                                <div class="col-sm-3" style="text-align:right">
+                                                    <label>{!$Label.UM_ConsultingID}</label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="requiredBlock" style="display:{!if(wrapperSite.requiredField,'','none')};"></div>
+                                                    <!--<apex:inputText styleClass="form-control" id="consultingId" value="{!wrapperSite.siteSurvey.UM_Consulting_ID__c}"/>-->
+                                                    <apex:inputText required="{!wrapperSite.requiredField}" styleClass="form-control" id="consultingId" value="{!wrapperSite.siteSurvey.UM_Consulting_ID__c}" onblur="checkRequiredFieldsForSiteDetailsIcon('{!wrapperSite.site.Id}','{!wrapperSite.productFamily}')"/>
+                                                </div>
+                                            </div>
+                                            <!--{!wrapperSite.requiredField}-->
+                                            <div class="row" style="margin-bottom:10px">
+                                                <div class="col-sm-3" style="text-align:right">
+                                                    <label>{!$Label.UM_GNV}</label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <!--<apex:inputField styleClass="form-control" id="gnv" value="{!wrapperSite.siteSurvey.UM_GNV__c}"/>-->
+                                                    <!--QNT-756, Bug -->
+                                                    <apex:inputField required="{!wrapperSite.requiredField}" styleClass="form-control" id="gnv" value="{!wrapperSite.siteSurvey.UM_GNV__c}" onchange="checkRequiredFieldsForSiteDetailsIcon('{!wrapperSite.site.Id}','{!wrapperSite.productFamily}')"/>
+                                                </div>
+                                            </div>
+                                            <!-- end -->
+                                            <div class="row">
+                                                <div class="col-sm-3" style="text-align:right">
+                                                    <label>{!$Label.UM_TechnicalContact}</label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <apex:inputField styleClass="form-control" value="{!wrapperSite.site.LG_TechnicalContact__c}" id="technicalContact"/>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <button type="button" class="btn btn-default btn-md" onClick="document.getElementById('{!$Component.technicalContact}').value = ''; return false;">
+                                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> {!$Label.UM_Clear}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <hr/>
+                                            </div>
+                                            <!--<div class="row" style="margin-bottom:10px">-->
+                                            <div class="row" style="margin-bottom:10px; display:{!if(wrapperSite.displaySiteDetailFields,'','none')};">
+                                                <div class="col-sm-3">
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    {!$Label.UM_Earliestpossiblewishdate}
+                                                    <label id="{!wrapperSite.site.Id}-leadTime"><apex:outputText value="{0,date,dd-MM-yyyy}"><apex:param value="{!siteMinInstallDate[wrapperSite.site.Id]}"/></apex:outputText></label>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="margin-bottom:10px">
+                                                <div class="col-sm-3" style="text-align:right">
+                                                    <label>{!$Label.UM_WishDate}</label>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <div class="input-group date col-sm-3">
+                                                        <input id="marketsegment-{!wrapperSite.site.Id}" type="hidden" value="{!siteMarketSegment[wrapperSite.site.Id]}"/>
+                                                        <input onkeydown="return false" type="text" class="form-control" id="wishdate-{!wrapperSite.site.Id}" value="{!siteWishDate[wrapperSite.site.Id]}"/><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--<div class="row">-->
+                                            <div class="row" style="display:{!if(wrapperSite.displaySiteDetailFields,'','none')};">
+                                                <div class="col-sm-3" style="text-align:right">
+                                                    <label>{!$Label.UM_PlannedDate}</label>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <div class="input-group date col-sm-3">
+                                                        <input onkeydown="return false" type="text" class="form-control" id="planneddate-{!wrapperSite.site.Id}" value="{!sitePlannedDate[wrapperSite.site.Id]}"/><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                                    <!--<div id="productsTabId-{!wrapperSite.site.Id}" class="tabcontent tabcontent-{!wrapperSite.site.Id} productsTab-{!wrapperSite.site.Product_Configurations__r[0].Name}" style="display:block">-->
+                                    <div id="productsTabId-{!wrapperSite.site.Id}" class="tabcontent tabcontent-{!wrapperSite.site.Id} productsTab-{!wrapperSite.productName}" style="display:{!if(CONTAINS(wrapperSite.productName,'BGP'),'','none')};">
+                                        <div class="well">    
+                                             <apex:repeat value="{!wrapperSite.site.Product_Configurations__r}" var="prodConfig">
+                                                 <div class="row" style="display:{!if(CONTAINS(prodConfig.Name,'BGP'),'','none')};">
+                                                     <div class="row">
+                                                         <div class="col-sm-8">
+                                                             <apex:outputPanel rendered="{!(CONTAINS(prodConfig.Name,'BGP'))}" id="panelBGP">
+                                                                 <!--<button type="button" class="btn btn-default btn-md" onclick="showProductConfiguration('{!wrapperSite.site.Id}', '{!prodConfig.Id}' ,'true', '{!if(prodConfig.Name=='BGP','Inflight Configuration - ' + prodConfig.Name,'')}' )">
+                                                                 <img class="pcStatusImg-{!wrapperSite.site.Id} pcStatusImg-{!prodConfig.Id}" src="/img/msg_icons/error32.png"/>{!prodConfig.Name}
+                                                                 </button>-->
+                                                                 <!-- 
+                                                                 <apex:outputPanel rendered="{!if(prodConfig.LG_PlanningDetailsStatus__c != 'Complete' || prodConfig.cscfga__Configuration_Status__c != 'Valid',true,false)}">
+                                                                 <button type="button" class="btn btn-default btn-md" onclick="showProductConfiguration('{!wrapperSite.site.Id}', '{!prodConfig.Id}' ,'true', '{!if(prodConfig.Name=='BGP','Inflight Configuration - ' + prodConfig.Name,'')}' )">
+                                                                 <img class="pcStatusImg-{!wrapperSite.site.Id} pcStatusImg-{!prodConfig.Id}" src="/img/msg_icons/error32.png"/>{!prodConfig.Name}
+                                                                 </button>
+                                                                 </apex:outputPanel>
+                                                                
+                                                                 <apex:outputPanel rendered="{!if(prodConfig.LG_PlanningDetailsStatus__c == 'Complete' && prodConfig.cscfga__Configuration_Status__c == 'Valid',true,false)}">
+                                                                 <button type="button" class="btn btn-default btn-md" onclick="showProductConfiguration('{!wrapperSite.site.Id}', '{!prodConfig.Id}' ,'true', '{!if(prodConfig.Name=='BGP','Inflight Configuration - ' + prodConfig.Name,'')}' )">
+                                                                 <img class="pcStatusImg-{!wrapperSite.site.Id} pcStatusImg-{!prodConfig.Id}" src="/img/msg_icons/confirm32.png"/>{!prodConfig.Name}
+                                                                 </button>
+                                                                 </apex:outputPanel>-->
+                                                                 
+                                                                 <!--{!productConfigNames[prodConfig.Id]} -->
+                                                                 <apex:outputPanel rendered="{!if(prodConfig.LG_PlanningDetailsStatus__c != 'Complete' || prodConfig.cscfga__Configuration_Status__c != 'Valid',true,false)}">
+                                                                 <button type="button" class="btn btn-default btn-md" onclick="showProductConfiguration('{!wrapperSite.site.Id}', '{!prodConfig.Id}' ,'true', '{!productConfigNames[prodConfig.Id]}' )">
+                                                                 <img class="pcStatusImg-{!wrapperSite.site.Id} pcStatusImg-{!prodConfig.Id}" src="/img/msg_icons/error32.png"/>{!prodConfig.Name}
+                                                                 </button>
+                                                                 </apex:outputPanel>
+                                                                
+                                                                 <apex:outputPanel rendered="{!if(prodConfig.LG_PlanningDetailsStatus__c == 'Complete' && prodConfig.cscfga__Configuration_Status__c == 'Valid',true,false)}">
+                                                                 <button type="button" class="btn btn-default btn-md" onclick="showProductConfiguration('{!wrapperSite.site.Id}', '{!prodConfig.Id}' ,'true', '{!productConfigNames[prodConfig.Id]}' )">
+                                                                 <img class="pcStatusImg-{!wrapperSite.site.Id} pcStatusImg-{!prodConfig.Id}" src="/img/msg_icons/confirm32.png"/>{!prodConfig.Name}
+                                                                 </button>
+                                                                 </apex:outputPanel>
+                                                                 
+                                                             </apex:outputPanel>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                             </apex:repeat>
+                                             
+                                             <div class="row">
+                                                 <iframe height="400" width="1100" id="productIframe-{!wrapperSite.site.Id}" class="mainIframe" style="display:none;" onload="iframeLoaded(this)"></iframe>
+                                             </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Start -->
+                                        <!--Deleted the code within this section which was present previously as part of Site details and put them in the upper div <div id="contactDetailsTabId-{!wrapperSite.site.Id}" > created related to Site tab. -->
+                                    <!-- end -->
+                                    
+                                    <!--Added part of QNT-441 -->
+                                      <!--Deleted the code within this section. Back up file name "LG_InstallationInformation-back-beforeDeleting below Product section added part of QNT-441" -->
+                                    <!-- end-->
+                                </div>
+                            </div>
+                        </div>
+                    </apex:repeat>
+                    <!--<apex:actionFunction name="RerenderPanelBGP" immediate="true" reRender="panelBGP"/> -->
+                </div>
+                <div style="text-align: center">
+                
+                    <apex:actionFunction name="save" action="{!save}" rerender="">
+                      <apex:param name="wishDates" value="" assignTo="{!siteIdToWishDates}"/>
+                      <apex:param name="plannedDates" value="" assignTo="{!siteIdToPlannedDates}"/>
+                    </apex:actionFunction>
+                    <apex:actionFunction name="createNewContact" action="{!createNewContact}"/>
+                    <apex:actionFunction name="redirectToReturn" action="{!redirectToReturnId}"/>
+                    <button type="button" class="btn btn-warning" onclick="prepareDatesAndSave()">Save</button>
+                    <button type="button" class="btn btn-default" onclick="redirectToReturn()">Cancel</button>
+                </div>
+                <br/>
+            </div>
+        </div>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page standardController="Lead" extensions="LG_OpenCloudSenseController" showheader="false" sidebar="false" applyBodyTag="false"> 
+      <script language="JavaScript" type="text/javascript">
+
+            function Redirect() {
+               //alert("opening URL: {!redirectUrl}");
+               window.top.location.href="{!redirectUrl}";
+               //window.open("{!redirectUrl}", "_blank");
+               return true;
+            }
+
+      </script> 
+    <html>    
+    <head>
+        <meta http-equiv="refresh" content="0;URL={!redirectUrl}">
+        </meta>
+    </head>
+    <body onload="Redirect();">
+        <center><h1>Open Cloudsense</h1></center>
+    </body>
+    </html>
+</apex:page>

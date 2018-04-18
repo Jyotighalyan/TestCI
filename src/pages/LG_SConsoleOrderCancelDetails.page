@@ -1,0 +1,77 @@
+<apex:page standardController="Case" extensions="LG_SConsoleOrderCancelExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+
+    <!--
+        * Custom SF Service Console
+        *
+        * @author Ganesh
+        * @story SFOM-390
+        * @since  04/02/2017
+    -->
+    <script>
+        function changeOrchProcess(row){
+                jQuery('[id$="hiddenRowValue"]').val(parseInt(row));
+                changeOrch();
+        }
+    </script>
+    <apex:form >
+
+    <apex:pageBlock >
+        <apex:pageMessages id="apexMessage"></apex:pageMessages>
+        <apex:pageBlockSection title="{!$Label.LG_OrderDetails}" columns="2" collapsible="true" >
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.LG_Order}" />
+                <apex:outputLink value="{!URLFOR($Action.csord__Order__c.View, Order.Id)}" rendered="{!null != Order.Id}">{!Order.Name}</apex:outputLink>
+            </apex:pageBlockSectionItem>
+            <apex:outputField value="{!Order.csord__Status2__c}"/>
+            <apex:outputField value="{!Order.csord__Order_Type__c}"/>
+            <apex:outputField value="{!Order.OwnerId}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_AccountDetails}" collapsible="true" columns="2">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.LG_Account}" />
+                <apex:outputLink value="{!URLFOR($Action.Account.View, Order.csord__Account__r.Id)}" rendered="{! null != Order.csord__Account__r.Id}">{!Order.csord__Account__r.Name}</apex:outputLink>
+            </apex:pageBlockSectionItem>
+            <apex:outputField value="{!Order.csord__Account__r.LG_AccountNumber__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_OpportunityDetails}" collapsible="true" columns="2">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.LG_Opportunity}" />
+                <apex:outputLink value="{!URLFOR($Action.Opportunity.View, Order.csordtelcoa__Opportunity__r.Id)}" rendered="{! null != Order.csordtelcoa__Opportunity__r.Id}">{!Order.csordtelcoa__Opportunity__r.Name}</apex:outputLink>
+            </apex:pageBlockSectionItem>
+            <apex:outputField value="{!Order.csordtelcoa__Opportunity__r.StageName}"/>
+            <apex:outputField value="{!Order.csordtelcoa__Opportunity__r.Owner.Email}"/>
+            <apex:outputField value="{!Order.csordtelcoa__Opportunity__r.OwnerId}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_RelatedSubOrderDetails}" id="subOrderDetails" collapsible="true" columns="1">
+            <apex:variable var="i" value="{!0}"/>
+               <apex:pageBlockTable value="{!OrderCancelDetail}"  var="orderCancelObj" width="100%">
+                   <apex:column headerValue="{!$Label.LG_Suborder}">
+                       <apex:outputLink value="{!URLFOR($Action.csord__Solution__c.View, orderCancelObj.solution.Id)}" >{!orderCancelObj.solution.Name}</apex:outputLink>
+                   </apex:column>
+                   <!--<apex:column headerValue="Status" value="{!orderCancelObj.solution.csord__Status__c}"/> -->
+                   <apex:column headerValue="{!$Label.LG_SuborderOwner}" value="{!orderCancelObj.solution.Ownerid}"/>
+                   <apex:column headerValue="{!$Label.LG_WorkOrder}" value="{!orderCancelObj.solution.LG_ProvisioningWorkOrder__c}"/>
+                   <apex:column headerValue="{!$Label.LG_Address}" value="{!orderCancelObj.solution.LG_Address__c}"/>
+                   <apex:column headerValue="{!$Label.LG_InJeopardy}?" value="{!orderCancelObj.solution.LG_Jeopardy__c}"/>
+                   <apex:column headerValue="{!$Label.LG_JeopardyRaisedby}" value="{!orderCancelObj.solution.LG_JeopardyRaisedBy__c}"/>
+                   <apex:column headerValue="{!$Label.LG_JeopardyReason}" value="{!orderCancelObj.solution.Jeopardy_Reason__c}"/>
+                   <apex:column headerValue="{!$Label.LG_OrderCancelled}?" value="{!orderCancelObj.solution.LG_OrderCancelled__c}"/>
+                   <apex:column headerValue="{!$Label.LG_OrderChanged}?" value="{!orderCancelObj.solution.LG_OrderChanged__c}"/>
+                   <apex:column headerValue="{!$Label.LG_Pause}/{!$Label.LG_Resume}">
+                       <apex:commandButton value="{!if(orderCancelObj.orchestrator.CSPOFA__Process_On_Hold__c,"Resume","Pause")}" action="{!changeOrchStatus}" onclick="changeOrchProcess('{!i}');" rendered="{!caseNew}"/>
+                       <apex:variable var="i" value="{!i+1}"/>
+                   </apex:column>
+            </apex:pageBlockTable>
+            <apex:actionFunction action="{!changeOrchStatus}" reRender="subOrderDetails" name="changeOrch" />
+            <apex:inputHidden id="hiddenRowValue" value="{!rowVal}" />
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons rendered="{!caseNew}">
+            <apex:commandButton value="{!$Label.LG_ConfirmOrderCancellation}" action="{!cancelConfirmed}" reRender="apexMessage"/>
+            <apex:commandButton value="{!$Label.LG_CancelOrderCancellation}" action="{!cancelCancelled}" reRender="apexMessage"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+
+    </apex:form>
+
+ </apex:page>

@@ -1,0 +1,21 @@
+<messaging:emailTemplate subject="Appointment has been modified" recipientType="Contact" relatedToType="LG_ScheduleAppointment__c">
+<messaging:plainTextEmailBody >
+
+Hi {!relatedTo.LG_InstallationContact__r.Name} ,
+
+        This is to confirm that your scheduled appointment has been modified. Below are the details of the modified  appointment:
+
+        Installation Address: {!relatedTo.LG_Address__r.LG_FullAddressDetails__c} 
+
+        Date of visit : {!relatedTo.LG_AgreedInstallDate__c}
+
+        Time Slot: {!relatedTo.LG_Slot__c}
+
+        Products to be Installed:
+        <c:LG_ScheduleAppointment_Component SolutionId="{!relatedTo.LG_Solution__c}" />
+
+
+
+Thanks.
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Order Management</name>
+    <queueSobject>
+        <sobjectType>CSPOFA__Orchestration_Process_Template__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>CSPOFA__Orchestration_Process__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>CSPOFA__Orchestration_Step_Dependency_Template__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>CSPOFA__Orchestration_Step_Dependency__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>CSPOFA__Orchestrator_Config__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>csord__Order__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>csord__Solution__c</sobjectType>
+    </queueSobject>
+</Queue>

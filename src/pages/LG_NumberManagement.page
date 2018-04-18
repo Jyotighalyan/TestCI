@@ -1,0 +1,275 @@
+<apex:page id="LG_NumberManagement" controller="LG_NumberManagementController" showHeader="{!basketContext}" sidebar="{!basketContext}" title="{!$Label.LG_NumberManagementTitle}">
+	<link rel="stylesheet" href="/apex/sfLigtningOverride"/>
+	<apex:includeScript value="/support/console/28.0/integration.js"/>
+	<apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'jquery.min.js')}"/>
+	<style>
+		.apexp .bPageBlock.apexDefaultPageBlock .pbBody {
+			width: 100%;
+			overflow: auto;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var basketContext = $('#basketContext').val();
+			if (basketContext == 'false') {
+				setTabTitle();
+			}
+
+			rerenderNumberRangeHead();
+		});
+
+		function setTabTitle() {
+			//Set the current tab's title
+			sforce.console.setTabTitle('Number Management');
+		}
+
+		function closeTab() {
+			//First find the ID of the current tab to close it
+			sforce.console.getEnclosingTabId(closeSubtab);
+		}
+
+		var closeSubtab = function closeSubtab(result) {
+			//Now that we have the tab ID, we can close it
+			var tabId = result.id;
+			sforce.console.closeTab(tabId);
+		};
+
+		function generateNumberRange(startNumberIndex) {
+			var startNumberId = '[data-id=startNumber-' + startNumberIndex + ']';
+			var blockSizeId = '[data-id=blockSize-' + startNumberIndex + ']';
+			var startNumber = $(startNumberId).val();
+			var blockSize = $(blockSizeId).html();
+			calculateNumberRange(startNumber, blockSize, startNumberIndex);
+		}
+
+		function calculateNumberRange(startNumber, blockSize, startNumberIndex) {
+			var endNumberId = '[data-id=endNumber-' + startNumberIndex + ']';
+			var numberRangeId = '[data-id=numberRange-' + startNumberIndex + ']';
+			var numbersId = '[data-id=numbers-' + startNumberIndex + ']';
+			var endNumber = $(endNumberId);
+			var numberRange = $(numberRangeId);
+			var numbers = $(numbersId);
+			var numbersArr = [];
+
+			if (startNumber != '' && blockSize != '') {
+				var zeroIsFirst = startNumber.charAt(0) == '0';
+				var startNumberInt = parseInt(startNumber);
+				var lastNumber;
+				for (var i = 0; i < blockSize; i += 1) {
+					lastNumber = startNumberInt + i;
+					var lastNumberLength = lastNumber.toString().length;
+					//if there was a 0 at first place, we have to add it, as leading zeros are removed during incrementation of the number
+					if (zeroIsFirst) {
+						while (lastNumber.toString().length < startNumber.length) {
+							lastNumber = '0' + lastNumber;
+						}
+					}
+					numbersArr.push(lastNumber);
+				}
+				endNumber.val(lastNumber);
+				if (blockSize == '1') {
+					numberRange.val(startNumber);
+				} else {
+					numberRange.val(startNumber + '-' + lastNumber);
+				}
+			} else {
+				endNumber.val('');
+				numberRange.val('');
+			}
+			numbers.val(JSON.stringify(numbersArr));
+			rerenderNumberRangeHead();
+		}
+
+		function redirectToReturnId() {
+			var basketContext = $('#basketContext').val();
+			if (basketContext == 'true') {
+				window.location = '/' + $('#recordId').val();
+			} else {
+				closeTab();
+			}
+		}
+
+		function cancel() {
+			redirectToReturnId();
+		}
+
+		function navigateToPublicListing() {
+			var nmbrMngUrl = encodeURI('/apex/LG_NumberManagement?id=' + $('#recordId').val());
+			window.location = '/apex/LG_PublicListing?id=' + $('#recordId').val() + '&retUrl=' + nmbrMngUrl;
+		}
+
+		//upserts the assets and the related details
+		function save() {
+			if (allFieldsValid()) {
+				updateAssets();
+				redirectToReturnId();
+			}
+		}
+
+		//validates that all the required fields are populated and valid before saving
+		function allFieldsValid() {
+			var allFieldsValid = true;
+			var numberOfRows = $('#numberOfRows').val();
+			var validationsRequiredForPortIn = $('#validationsRequiredForPortIn').val() == 'true';
+			var validationsRequiredForNew = $('#validationsRequiredForNew').val() == 'true';
+			var minNumberLength = $('#minNumberLength').val();
+			var maxNumberLength = $('#maxNumberLength').val();
+
+			for (var i = 1; i <= numberOfRows; i += 1) {
+				$('[data-id=startNumber-' + i + ']').css('border-color', '');
+				var startNumber = $('[data-id=startNumber-' + i + ']').val();
+				var type = $('[data-id=type-' + i + ']').html();
+
+				if (startNumber == '') {
+					if ((validationsRequiredForNew && validationsRequiredForPortIn) || (type == 'New' && validationsRequiredForNew) || (type == 'Port-In' && validationsRequiredForPortIn)) {
+						$('[data-id=startNumber-' + i + ']').css('border-color', 'red');
+						allFieldsValid = false;
+					}
+				} else {
+					if (startNumber.length > maxNumberLength || startNumber.length < minNumberLength) {
+						$('[data-id=startNumber-' + i + ']').css('border-color', 'red');
+						allFieldsValid = false;
+					}
+				}
+				if ($('.errorMsg').length > 0) {
+					allFieldsValid = false;
+				}
+			}
+			return allFieldsValid;
+		}
+
+		function setSameValueOnRelatedRows(field) {
+			var fieldId = $(field).attr('data-id');
+			var fieldName = fieldId.split('#')[0];
+			var rowIndex = fieldId.split('#')[1];
+			var addressId = fieldId.split('#')[2];
+			var fieldVal = $(field).val();
+			var firstLine = true;
+			var fieldsToUpdate = [];
+
+			$('[data-id^=' + fieldName + ']').each(function () {
+				var relatedFieldId = $(this).attr('data-id');
+				if (relatedFieldId == fieldId) {
+					return true;
+				}
+				var relatedFieldName = relatedFieldId.split('#')[0];
+				var relatedRowIndex = relatedFieldId.split('#')[1];
+				var relatedAddressId = relatedFieldId.split('#')[2];
+				if (relatedAddressId != addressId) {
+					return true;
+				}
+
+				if (parseInt(relatedRowIndex) < parseInt(rowIndex)) {
+					notFirstLine = false;
+					return false;
+				}
+				fieldsToUpdate.push($(this));
+			});
+			if (firstLine) {
+				$.each(fieldsToUpdate, function () {
+					$(this).val(fieldVal);
+				});
+			}
+
+			rerenderNumberRangeHead();
+		}
+		//# sourceURL=numberManagementPage.js
+	</script>
+	<apex:form >
+		<apex:pageblock title="{!$Label.LG_NumberManagementTitle}">
+			<apex:pageblockButtons >
+				<apex:commandButton html-data-id="btnPublicListing" value="{!$Label.LG_PublicListingTitle}" onclick="navigateToPublicListing(); return false;" rendered="{!recordId != null}"/>
+				<apex:commandButton html-data-id="btnSave" value="{!$Label.LG_NumberManagementSave}" onclick="save(); return false;" rendered="{!recordId != null && !pageReadOnly}"/>
+				<apex:commandButton value="{!$Label.LG_NumberManagementCancel}" onclick="cancel(); return false;"/>
+			</apex:pageblockButtons>
+			<apex:outputText value="Valid Id was not provided in the URL" rendered="{!recordId == null}"/>
+
+			<apex:outputPanel id="numberRangeHead" rendered="{!recordId != null}">
+				<apex:variable value="{!0}" var="rowNum"/>
+				<input id="recordId" type="hidden" value="{!recordId}"/>
+				<input id="basketContext" type="hidden" value="{!basketContext}"/>
+				<input id="numberOfRows" type="hidden" value="{!numberRangeList.size}"/>
+				<input id="validationsRequiredForNew" type="hidden" value="{!validationsRequiredForNew}"/>
+				<input id="validationsRequiredForPortIn" type="hidden" value="{!validationsRequiredForPortIn}"/>
+				<input id="minNumberLength" type="hidden" value="{!numberMngSettings.LG_MinNumberLength__c}"/>
+				<input id="maxNumberLength" type="hidden" value="{!numberMngSettings.LG_MaxNumberLength__c}"/>
+				<apex:pageBlockTable value="{!numberRangeList}" var="numberRange">
+					<apex:column width="150px" title="{!numberRange.addressTooltip}">
+						<apex:outputText title="{!numberRange.addressTooltip}">{!numberRange.addressDesc}</apex:outputText>
+					</apex:column>
+
+					<apex:column headerValue="{!$Label.LG_NumberManagementBlockType}">
+						<apex:variable var="rowNum" value="{!rowNum + 1}"/>
+						<apex:outputText value="{!numberRange.numberBlockAsset.LG_NumberRangeType__c}"/>
+					</apex:column>
+
+					<apex:column headerValue="{!$Label.LG_NumberManagementBlockSize}">
+						<apex:outputText value="{!numberRange.numberBlockAsset.LG_NumberRangeSize__c}" html-data-id="blockSize-{!rowNum}"/>
+					</apex:column>
+
+					<apex:column headerValue="{!$Label.LG_NumberManagementStartNumber}" title="{!numberLengthValidationMsg}">
+						<apex:inputText style="width:100px"
+							html-data-id="startNumber-{!rowNum}"
+							disabled="{!pageReadOnly}"
+							onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+							value="{!numberRange.numberBlockAsset.LG_StartNumber__c}"
+							onchange="generateNumberRange({!rowNum})"/>
+						<apex:inputHidden html-data-id="endNumber-{!rowNum}" value="{!numberRange.numberBlockAsset.LG_EndNumber__c}"/>
+					</apex:column>
+
+					<apex:column headerValue="{!$Label.LG_NumberManagementNumberRange}">
+						<apex:inputText size="30" html-readonly="true" html-data-id="numberRange-{!rowNum}" value="{!numberRange.numberBlockAsset.LG_NumberRange__c}"/>
+						<!-- used for passing the numbers array -->
+						<apex:inputHidden value="{!numberRange.numbers}" html-data-id="numbers-{!rowNum}"/>
+					</apex:column>
+
+					<apex:repeat value="{!portInDetailsFields}" var="f">
+						<apex:column headerValue="{!f.label}" width="100px">
+							<apex:inputField value="{!numberRange.numberBlockAsset[f.fieldPath]}"
+								html-data-id="{!f.fieldPath}#{!rowNum}#{!numberRange.numberBlockAsset.LG_TelephonyProductConfiguration__r.LG_Address__c}"
+								required="{!OR(f.required, f.dbrequired) && validationsRequiredForPortIn}"
+								rendered="{!f.fieldPath != 'LG_PortInOperator__c' && numberRange.numberBlockAsset.LG_NumberRangeType__c == 'Port-In' && !pageReadOnly}"
+								onchange="setSameValueOnRelatedRows(this)"/>
+							<apex:outputField value="{!numberRange.numberBlockAsset[f.fieldPath]}"
+								html-data-id="{!f.fieldPath}#{!rowNum}#{!numberRange.numberBlockAsset.LG_TelephonyProductConfiguration__r.LG_Address__c}"
+								rendered="{!f.fieldPath != 'LG_PortInOperator__c' && numberRange.numberBlockAsset.LG_NumberRangeType__c == 'Port-In' && pageReadOnly}"/>
+							<apex:selectList size="1"
+								value="{!numberRange.numberBlockAsset[f.fieldPath]}"
+								html-data-id="{!f.fieldPath}#{!rowNum}#{!numberRange.numberBlockAsset.LG_TelephonyProductConfiguration__r.LG_Address__c}"
+								required="{!OR(f.required, f.dbrequired) && validationsRequiredForPortIn}"
+								disabled="{!pageReadOnly}"
+								rendered="{!f.fieldPath == 'LG_PortInOperator__c' && numberRange.numberBlockAsset.LG_NumberRangeType__c == 'Port-In'}"
+								onchange="setSameValueOnRelatedRows(this)">
+								<apex:selectOptions value="{!portInOperators}"/>
+							</apex:selectList>
+						</apex:column>
+					</apex:repeat>
+
+					<apex:repeat value="{!newDetailsFields}" var="f">
+						<apex:column headerValue="{!f.label}">
+							<apex:inputField value="{!numberRange.numberBlockAsset[f.fieldPath]}"
+								html-data-id="{!f.fieldPath}#{!rowNum}#{!numberRange.numberBlockAsset.LG_TelephonyProductConfiguration__r.LG_Address__c}"
+								required="{!OR(f.required, f.dbrequired) && validationsRequiredForNew}"
+								rendered="{!f.fieldPath != 'LG_PortInOperator__c' && numberRange.numberBlockAsset.LG_NumberRangeType__c == 'New' && !pageReadOnly}"
+								onchange="setSameValueOnRelatedRows(this)"/>
+							<apex:outputField value="{!numberRange.numberBlockAsset[f.fieldPath]}"
+								html-data-id="{!f.fieldPath}#{!rowNum}#{!numberRange.numberBlockAsset.LG_TelephonyProductConfiguration__r.LG_Address__c}"
+								rendered="{!f.fieldPath != 'LG_PortInOperator__c' && numberRange.numberBlockAsset.LG_NumberRangeType__c == 'New' && pageReadOnly}"/>
+							<apex:selectList size="1"
+								value="{!numberRange.numberBlockAsset[f.fieldPath]}"
+								html-data-id="{!f.fieldPath}#{!rowNum}#{!numberRange.numberBlockAsset.LG_TelephonyProductConfiguration__r.LG_Address__c}"
+								required="{!OR(f.required, f.dbrequired) && validationsRequiredForNew}"
+								disabled="{!pageReadOnly}"
+								rendered="{!f.fieldPath == 'LG_PortInOperator__c' && numberRange.numberBlockAsset.LG_NumberRangeType__c == 'New'}"
+								onchange="setSameValueOnRelatedRows(this)">
+								<apex:selectOptions value="{!portInOperators}"/>
+							</apex:selectList>
+						</apex:column>
+					</apex:repeat>
+				</apex:pageBlockTable>
+			</apex:outputPanel>
+		</apex:pageblock>
+		<apex:actionFunction name="updateAssets" action="{!save}" rerender=""/>
+		<apex:actionFunction name="rerenderNumberRangeHead" rerender="numberRangeHead"/>
+	</apex:form>
+</apex:page>

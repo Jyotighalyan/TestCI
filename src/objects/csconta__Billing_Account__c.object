@@ -1,0 +1,2014 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fieldSets>
+        <fullName>BillingAccount</fullName>
+        <description>Used for Kenan Account Sync functionality.</description>
+        <displayedFields>
+            <field>csconta__Street__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LG_HouseNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LG_HouseNumberExtension__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>csconta__City__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>csconta__Country__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>csconta__Postcode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_Billing_State_Province__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LG_ContractualOrganization__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_BillFormatOptions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>csconta__Billing_Channel__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>csconta__Payment_Terms__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UM_Print_TVO_Info__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>BillingAccount</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>LG_LogicalBillingAccountClone</fullName>
+        <description>This field set will copy all the fields data while creating the logical billing accounts</description>
+        <label>Logical Billing Account Clone</label>
+    </fieldSets>
+    <fields>
+        <fullName>ADDTTURL__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( AND ( ISPICKVAL(PaymentMethods__c , &apos;Direct Debit&apos;) ,LG_PaperDDMandate__c ==false), $Setup.ADDTTSiteURL__c.LG_URL__c+&apos;addtt?p0=&apos;+EncryptedID__c+&apos;&amp;p1=&apos;, &apos;&apos;)</formula>
+        <label>ADDTT URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Balance__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>csconta__Account__r.Name</formula>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF($Profile.Name == &apos;UM_Partner&apos;, 
+HYPERLINK(&quot;https://uat-unitymedia.cs83.force.com/partners/&quot; &amp; Id, LG_BillingAccountNumber__c,&quot;_parent&quot;), 
+HYPERLINK(&quot;/&quot; &amp; Id , LG_BillingAccountNumber__c, &quot;_parent&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Accounts</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Contact_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact__r.FirstName</formula>
+        <label>Billing Contact First Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Contact_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact__r.LastName</formula>
+        <label>Billing Contact Last Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Billing Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Billing Accounts</relationshipLabel>
+        <relationshipName>Billing_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cable_master_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Cable master ID</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>160</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Conga_AccountID__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_BillingAccountNumber__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Conga_AccountID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Conga_AccountNameExtension__c</fullName>
+        <externalId>false</externalId>
+        <formula>csconta__Account__r.UM_Legal_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Name Extension</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Conga_AccountName__c</fullName>
+        <externalId>false</externalId>
+        <formula>csconta__Account__r.Name</formula>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Conga_salutation__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact__r.LG_SalutationLocal__c  &amp; &apos; &apos; &amp;  Billing_Contact__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Conga_salutation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deactivation_Kenan_response__c</fullName>
+        <description>Text field to capture Kenan response for deactivation of BA</description>
+        <externalId>false</externalId>
+        <label>Deactivation Kenan response</label>
+        <length>60</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deactivation_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Deactivation date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EncryptedID__c</fullName>
+        <externalId>false</externalId>
+        <label>Encrypted ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Full_address__c</fullName>
+        <externalId>false</externalId>
+        <formula>csconta__Street__c  &amp; &quot; &quot; &amp; LG_HouseNumber__c &amp; &quot; &quot; &amp; LG_HouseNumberExtension__c &amp; &quot; ,&quot; &amp; csconta__Postcode__c &amp; &quot; &quot; &amp;csconta__City__c</formula>
+        <label>Full address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Infonova__c</fullName>
+        <externalId>true</externalId>
+        <label>Infonova ID</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Kenan_billing_status__c</fullName>
+        <externalId>false</externalId>
+        <label>Kenan billing status</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BankAccountHolder__c</fullName>
+        <description>Name registered to the Bank Account number</description>
+        <externalId>false</externalId>
+        <label>Bank Account Holder</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BankAccountNumberIBAN__c</fullName>
+        <externalId>false</externalId>
+        <label>Bank Account Number (IBAN)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BillingAccountIdentifier__c</fullName>
+        <externalId>false</externalId>
+        <formula>Name &amp; &quot; - &quot; &amp; TEXT(LG_PaymentType__c) &amp; &quot; &quot; &amp; LG_BankAccountNumberIBAN__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Account Identifier</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BillingAccountName__c</fullName>
+        <description>Field is updated with Account name on creation</description>
+        <externalId>false</externalId>
+        <label>Billing Account Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BillingAccountNumber__c</fullName>
+        <displayFormat>61{00000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Billing Account Number</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>LG_BillingContact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Billing Account</relationshipLabel>
+        <relationshipName>Billing_Account</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_BillingEmailAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Email Address</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Billing_Contact_FirstName__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Contact FirstName</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Billing_Contact_LastName__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Contact LastName</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Billing_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Billing Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Billing Accounts (Billing Contact)</relationshipLabel>
+        <relationshipName>Billing_Accounts2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_ContractualOrganization__c</fullName>
+        <externalId>false</externalId>
+        <label>Contractual Organization</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>LG_ContractualOrganization</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_CustomerReference__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Reference</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Default__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Defines if the Billing Account should be used as a default Billing Account</description>
+        <externalId>false</externalId>
+        <label>Default</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_DeliveryMethod__c</fullName>
+        <externalId>false</externalId>
+        <label>Delivery Method</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>true</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Post</fullName>
+                    <default>false</default>
+                    <label>Post</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_DirectDebitMandate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Direct Debit Mandate</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_ExternalId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ExternalSystem__c</fullName>
+        <description>Holds the name of the Billing Account&apos;s External System.</description>
+        <externalId>false</externalId>
+        <label>External System</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ICOMS</fullName>
+                    <default>false</default>
+                    <label>ICOMS</label>
+                </value>
+                <value>
+                    <fullName>RBM</fullName>
+                    <default>false</default>
+                    <label>RBM</label>
+                </value>
+                <value>
+                    <fullName>Kenan</fullName>
+                    <default>false</default>
+                    <label>Kenan</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_FirstName__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_HouseNumberExtension__c</fullName>
+        <externalId>false</externalId>
+        <label>House Number Extension</label>
+        <length>6</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_HouseNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>House Number</label>
+        <length>6</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_In_Collections__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>mark if an account is in debt or not</description>
+        <externalId>false</externalId>
+        <inlineHelpText>mark if an account is in debt or not</inlineHelpText>
+        <label>In Collections</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_LastName__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_LogicalBillingAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Logical Billing Account</label>
+        <referenceTo>csconta__Billing_Account__c</referenceTo>
+        <relationshipLabel>Billing Accounts (Logical Billing Account)</relationshipLabel>
+        <relationshipName>Billing_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_MandateEndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Mandate End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_MandateStartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Mandate Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_MyBillAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>MyBill Account Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.Account.Id</field>
+                <operation>equals</operation>
+                <valueField>$Source.csconta__Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Billing Accounts (Contact)</relationshipLabel>
+        <relationshipName>Billing_Accounts1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_MyBillAddress__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>MyBill Address</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>cscrm__Address__c.cscrm__Account__r.Id</field>
+                <operation>equals</operation>
+                <valueField>$Source.csconta__Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>cscrm__Address__c</referenceTo>
+        <relationshipLabel>Billing Accounts (MyBill Address)</relationshipLabel>
+        <relationshipName>Billing_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_MyBillBillingSysAccId__c</fullName>
+        <externalId>true</externalId>
+        <label>Billing System Account Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MyBillContactFirstName__c</fullName>
+        <externalId>false</externalId>
+        <label>MyBill Billing Contact First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MyBillContactLastName__c</fullName>
+        <externalId>false</externalId>
+        <label>MyBill Billing Contact Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MyBillEmail__c</fullName>
+        <externalId>false</externalId>
+        <label>MyBill Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MyBillExists__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>MyBill Exists?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_MyBillMobile__c</fullName>
+        <externalId>false</externalId>
+        <label>MyBill Mobile</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>LG_MyBillPhone__c</fullName>
+        <externalId>false</externalId>
+        <label>MyBill Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>LG_MyBill_Customer_Id__c</fullName>
+        <description>External Reference to MyBill Customer Id</description>
+        <externalId>true</externalId>
+        <label>MyBill Customer Id</label>
+        <length>60</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Override_Billing_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Override Billing Contact</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_PaperDDMandate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Paper DD Mandate</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_PaymentType__c</fullName>
+        <description>Payment Type / Method used by the customer</description>
+        <externalId>false</externalId>
+        <label>Payment Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Self-payer</fullName>
+                    <default>true</default>
+                    <label>Self-payer</label>
+                </value>
+                <value>
+                    <fullName>Direct Debit</fullName>
+                    <default>false</default>
+                    <label>Direct Debit</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_PreviousMasterAccount__c</fullName>
+        <externalId>false</externalId>
+        <label>Previous Master Account</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing State</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ICOMS</fullName>
+                    <default>false</default>
+                    <label>ICOMS</label>
+                </value>
+                <value>
+                    <fullName>RBM</fullName>
+                    <default>false</default>
+                    <label>RBM</label>
+                </value>
+                <value>
+                    <fullName>Mobile</fullName>
+                    <default>false</default>
+                    <label>Mobile</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mandate_reference_number__c</fullName>
+        <description>Mandate reference number</description>
+        <externalId>false</externalId>
+        <label>Mandate reference number</label>
+        <length>35</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Billing Account assigned to Opportunity</description>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Billing Accounts</relationshipLabel>
+        <relationshipName>Billing_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PaymentMethods__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Method</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Direct Debit</fullName>
+                    <default>true</default>
+                    <label>Direct Debit</label>
+                </value>
+                <value>
+                    <fullName>BACS</fullName>
+                    <default>false</default>
+                    <label>BACS</label>
+                </value>
+                <value>
+                    <fullName>CHAPS</fullName>
+                    <default>false</default>
+                    <label>CHAPS</label>
+                </value>
+                <value>
+                    <fullName>Giro</fullName>
+                    <default>false</default>
+                    <label>Giro</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Picklist_request__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This choice triggers an email with the request as chosen to the back-office to process in Kenan</inlineHelpText>
+        <label>Collection request</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Collection freeze</fullName>
+                    <default>false</default>
+                    <label>Collection freeze</label>
+                </value>
+                <value>
+                    <fullName>Collection re-continue</fullName>
+                    <default>false</default>
+                    <label>Collection re-continue</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subscription_PO_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Subscription PO Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_BankAccountNumberBic__c</fullName>
+        <externalId>false</externalId>
+        <label>BIC code</label>
+        <length>11</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_BankAccountType__c</fullName>
+        <externalId>false</externalId>
+        <label>Bank Account Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>UM_BankAccountType</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_BankName__c</fullName>
+        <externalId>false</externalId>
+        <label>Bank Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_BillFormatOptions__c</fullName>
+        <externalId>false</externalId>
+        <label>Bill Format Option</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Summary</fullName>
+                    <default>true</default>
+                    <label>Summary</label>
+                </value>
+                <value>
+                    <fullName>With itemized bill - masked last 3 digits</fullName>
+                    <default>false</default>
+                    <label>With itemized bill - masked last 3 digits</label>
+                </value>
+                <value>
+                    <fullName>With itemized bill - full unmasked numbers</fullName>
+                    <default>false</default>
+                    <label>With itemized bill - full unmasked numbers</label>
+                </value>
+                <value>
+                    <fullName>Summary - no itemized bill</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Summary - no itemized bill</label>
+                </value>
+                <value>
+                    <fullName>With itemized bill - full unmasked numbers - full EVN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>With itemized bill - full unmasked numbers - full EVN</label>
+                </value>
+                <value>
+                    <fullName>With itemized bill - masked last 3 digits - partial EVN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>With itemized bill - masked last 3 digits - partial EVN</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_Billing_Account_withPaymentInfo__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_BillingAccountNumber__c &amp; &quot; - &quot; &amp; TEXT(LG_PaymentType__c) &amp; &quot; &quot; &amp; LG_BankAccountNumberIBAN__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Account withPaymentInfo</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Billing_State_Province__c</fullName>
+        <description>State\Province field</description>
+        <externalId>false</externalId>
+        <label>State/Province</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Hold_Reason__c</fullName>
+        <description>If status is set to “hold for collection”, reason is mandatory</description>
+        <externalId>false</externalId>
+        <label>Collection Hold Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Customer contact required</fullName>
+                    <default>false</default>
+                    <label>Customer contact required</label>
+                </value>
+                <value>
+                    <fullName>Customer rejects the correctness of the invoice</fullName>
+                    <default>false</default>
+                    <label>Customer rejects the correctness of the invoice</label>
+                </value>
+                <value>
+                    <fullName>In contract negotiations</fullName>
+                    <default>false</default>
+                    <label>In contract negotiations</label>
+                </value>
+                <value>
+                    <fullName>Charge in invoice unclear</fullName>
+                    <default>false</default>
+                    <label>Charge in invoice unclear</label>
+                </value>
+                <value>
+                    <fullName>Customer has paid to incorect account</fullName>
+                    <default>false</default>
+                    <label>Customer has paid to incorect account</label>
+                </value>
+                <value>
+                    <fullName>Payment term in invoice different than what was agreed</fullName>
+                    <default>false</default>
+                    <label>Payment term in invoice different than what was agreed</label>
+                </value>
+                <value>
+                    <fullName>Situation to be decided by Unitymedia&apos;s managing director</fullName>
+                    <default>false</default>
+                    <label>Situation to be decided by Unitymedia&apos;s managing director</label>
+                </value>
+                <value>
+                    <fullName>Letter from laywer or consumer protection received</fullName>
+                    <default>false</default>
+                    <label>Letter from laywer or consumer protection received</label>
+                </value>
+                <value>
+                    <fullName>Freeze request for any other reason</fullName>
+                    <default>false</default>
+                    <label>Freeze request for any other reason</label>
+                </value>
+                <value>
+                    <fullName>Open HOLD for any other reason</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Open HOLD for any other reason</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Hold_Remaining_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(UM_Collection_Hold_Reason__c, &quot;&quot;),
+   NULL,
+  (UM_Collection_Reason_Change_Date__c - TODAY() + 
+   CASE(UM_Collection_Hold_Reason__c,
+        &quot;In contract negotiations&quot;, 60,
+        &quot;Situation to be decided by Unitymedia&apos;s managing director&quot;, 60,
+        30)))</formula>
+        <label>Collection Hold Remaining Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Reason_Change_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Collection Reason Change Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_CongaUMEntity__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(LG_ContractualOrganization__c, &apos;Hessen (HSN)&apos;), &apos;Unitymedia Hessen GmbH &amp; Co KG&apos;, 
+  IF( ISPICKVAL(LG_ContractualOrganization__c, &apos;Baden-Württemberg (BAW)&apos;), &apos;Unitymedia BW GmbH&apos;, 
+    IF( ISPICKVAL(LG_ContractualOrganization__c, &apos;Nordrhein-Westfalen (NRW)&apos;), &apos;Unitymedia NRW GmbH&apos;, &apos;&apos;)
+  )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Conga UM Entity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Create_Payment_Profile_in_Billing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Create Payment Profile in Billing</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_IBANValidated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IBAN Validated</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_IsAccountSynced__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Account Synced</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+     <fields>
+        <fullName>UM_IsDecativateSynced__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Deactivate Synced</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_Kenan_Sync_Message__c</fullName>
+        <externalId>false</externalId>
+        <label>Kenan Sync Message</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>UM_LastSyncedwithBilling__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Synced with Billing</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>UM_MandateReferenceNumber__c</fullName>
+        <description>Mandate reference number</description>
+        <externalId>false</externalId>
+        <label>Mandate reference number</label>
+        <length>35</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Print_TVO_Info__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox for Kenan to print additional Information on invoice on custom demand</description>
+        <externalId>false</externalId>
+        <label>Print TVO Info</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_SalesId__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csconta__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Billing Accounts</relationshipLabel>
+        <relationshipName>Billing_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csconta__Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <referenceTo>cscrm__Address__c</referenceTo>
+        <relationshipLabel>Billing Accounts</relationshipLabel>
+        <relationshipName>Billing_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csconta__Billing_Channel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Billing Channel</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Paper</fullName>
+                    <default>true</default>
+                    <label>Paper</label>
+                </value>
+                <value>
+                    <fullName>E-Mail PDF</fullName>
+                    <default>false</default>
+                    <label>E-Mail PDF</label>
+                </value>
+                <value>
+                    <fullName>Paper + E-Mail PDF</fullName>
+                    <default>false</default>
+                    <label>Paper + E-Mail PDF</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>csconta__Billing_City__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( csconta__Override_Account_Address__c ,   csconta__Address__r.cscrm__City__c , csconta__Account__r.BillingCity)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csconta__Billing_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( csconta__Override_Account_Address__c,  csconta__Address__r.cscrm__Country__c  ,csconta__Account__r.BillingCountry)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csconta__Billing_Cycle__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Text(csconta__Account__r.csconta__Billing_Cycle__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Cycle</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csconta__Billing_Language__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Billing Language</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>English</fullName>
+                    <default>false</default>
+                    <label>English</label>
+                </value>
+                <value>
+                    <fullName>Finnish</fullName>
+                    <default>false</default>
+                    <label>Finnish</label>
+                </value>
+                <value>
+                    <fullName>Swedish</fullName>
+                    <default>false</default>
+                    <label>Swedish</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>csconta__Billing_Postcode__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( csconta__Override_Account_Address__c,  csconta__Address__r.cscrm__Zip_Postal_Code__c,  csconta__Account__r.BillingPostalCode)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Postcode</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csconta__Billing_Street__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( csconta__Override_Account_Address__c,  csconta__Address__r.cscrm__Street__c,  csconta__Account__r.BillingStreet)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Street</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csconta__City__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csconta__Country__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csconta__Financial_Account_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Financial Account Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csconta__Format_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Format Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>true</default>
+                    <label>Standard</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>csconta__Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Unused</label>
+        <referenceTo>csord__Order__c</referenceTo>
+        <relationshipLabel>Billing Accounts</relationshipLabel>
+        <relationshipName>Billing_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csconta__Override_Account_Address__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Override Account Address</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>csconta__Parent_Billing_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Parent Billing Account</label>
+        <referenceTo>csconta__Billing_Account__c</referenceTo>
+        <relationshipLabel>Billing Accounts</relationshipLabel>
+        <relationshipName>Billing_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csconta__Payment_Terms__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Payment Terms</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Monthly 1st - 30 days payment term</fullName>
+                    <default>false</default>
+                    <label>Monthly 1st - 30 days payment term</label>
+                </value>
+                <value>
+                    <fullName>M02 - Test</fullName>
+                    <default>false</default>
+                    <label>M02 - Test</label>
+                </value>
+                <value>
+                    <fullName>M09 - Test</fullName>
+                    <default>false</default>
+                    <label>M09 - Test</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>csconta__Postcode__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Postcode</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csconta__Service__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field is not used</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is not used</inlineHelpText>
+        <label>Unused</label>
+        <referenceTo>csord__Service__c</referenceTo>
+        <relationshipLabel>Unused</relationshipLabel>
+        <relationshipName>Billing_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csconta__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Pending activation</fullName>
+                    <default>false</default>
+                    <label>Pending activation</label>
+                </value>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Pending disconnection</fullName>
+                    <default>false</default>
+                    <label>Pending disconnection</label>
+                </value>
+                <value>
+                    <fullName>Disconnected</fullName>
+                    <default>false</default>
+                    <label>Disconnected</label>
+                </value>
+		<value>
+                    <fullName>Deactivation Requested</fullName>
+                    <default>false</default>
+                    <label>Deactivation Requested</label>
+                </value>
+		<value>
+                    <fullName>Deactivation Pending</fullName>
+                    <default>false</default>
+                    <label>Deactivation Pending</label>
+                </value>
+		<value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>csconta__Street__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csconta__Subscription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field is not used</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is not used</inlineHelpText>
+        <label>Unused</label>
+        <referenceTo>csord__Subscription__c</referenceTo>
+        <relationshipLabel>Unused</relationshipLabel>
+        <relationshipName>Billing_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Billing Account</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>LG_PaymentType__c</columns>
+        <columns>Conga_AccountName__c</columns>
+        <columns>UM_BankName__c</columns>
+        <columns>LG_ExternalId__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>BA-{0000000}</displayFormat>
+        <label>Billing Account Sequence</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Billing Accounts</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>LG_BillingAccountNumber__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>LG_BillingAccountNumber__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>LG_BillingAccountNumber__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>LG_BillingAccountNumber__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>LG_BillingAccountNumber__c</searchFilterFields>
+        <searchResultsAdditionalFields>Billing_Account_Number__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Account_Holder_Required_for_Direct_Debit</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(TEXT(LG_PaymentType__c)=&apos;Direct Debit&apos;, ISBLANK( LG_BankAccountHolder__c),NOT($Setup.No_Validation__c.Flag__c))</errorConditionFormula>
+        <errorDisplayField>LG_BankAccountHolder__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Account_IBAN_Required_for_Direct_Debit</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(TEXT(LG_PaymentType__c)=&apos;Direct Debit&apos;, ISBLANK(  LG_BankAccountNumberIBAN__c),NOT($Setup.No_Validation__c.Flag__c))</errorConditionFormula>
+        <errorDisplayField>LG_BankAccountNumberIBAN__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BIC_Required_for_Direct_Debit</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(TEXT(LG_PaymentType__c)=&apos;Direct Debit&apos;,  ISBLANK(UM_BankAccountNumberBic__c),NOT($Setup.No_Validation__c.Flag__c))</errorConditionFormula>
+        <errorDisplayField>UM_BankAccountNumberBic__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandate_Ref_Required_For_Direct_Debit</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(TEXT(LG_PaymentType__c)=&apos;Direct Debit&apos;, ISBLANK( UM_MandateReferenceNumber__c))</errorConditionFormula>
+        <errorDisplayField>UM_MandateReferenceNumber__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandate_Start_Date_Required_for_DD</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(TEXT(LG_PaymentType__c)=&apos;Direct Debit&apos;, ISBLANK( LG_MandateStartDate__c))</errorConditionFormula>
+        <errorDisplayField>LG_MandateStartDate__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>UM_Collection_Reason_Empty</fullName>
+        <active>true</active>
+        <description>If status is set to “In collection”, reason should be empty</description>
+        <errorConditionFormula>AND(ISPICKVAL(Picklist_request__c, &quot;Collection re-continue&quot;),
+    NOT(ISPICKVAL(UM_Collection_Hold_Reason__c, &quot;&quot;)),NOT($Setup.No_Validation__c.Flag__c))</errorConditionFormula>
+        <errorDisplayField>UM_Collection_Hold_Reason__c</errorDisplayField>
+        <errorMessage>If status is set to “In collection”, reason should be empty</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>UM_Collection_Reason_Mandatory</fullName>
+        <active>true</active>
+        <description>If status is set to “hold for collection”, reason is mandatory</description>
+        <errorConditionFormula>AND(ISPICKVAL(Picklist_request__c, &quot;Collection freeze&quot;),
+    ISPICKVAL(UM_Collection_Hold_Reason__c, &quot;&quot;),NOT($Setup.No_Validation__c.Flag__c))</errorConditionFormula>
+        <errorDisplayField>UM_Collection_Hold_Reason__c</errorDisplayField>
+        <errorMessage>If status is set to “hold for collection”, reason is mandatory</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>csconta__Override_Account_Billing_Address</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(NOT(csconta__Override_Account_Address__c),  NOT(ISBLANK(csconta__Address__c)))</errorConditionFormula>
+        <errorDisplayField>csconta__Address__c</errorDisplayField>
+        <errorMessage>The address lookup must be cleared if &quot;Override Account Address&quot; is unchecked</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Conga_Composer</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Conga Composer</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://composer.congamerge.com
+?sessionId={!API.Session_ID}
+&amp;serverUrl={!API.Partner_Server_URL_290}
+&amp;id={!csconta__Billing_Account__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_SEPA_Mandate</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Create SEPA Doc.</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>https://composer.congamerge.com
+?sessionId={!API.Session_ID} 
+&amp;serverUrl={!API.Partner_Server_URL_290} 
+&amp;id={!csconta__Billing_Account__c.Id}
+&amp;ReportId=00O4E000000ONqu?{pv0}={!csconta__Billing_Account__c.Id}, 
+&amp;TemplateId={!$Setup.LG_EnvironmentVariables__c.UM_CongaTemplateId02__c} 
+&amp;SelectTemplates=0 
+&amp;DefaultPDF=1 
+&amp;OFN=Unitymedia_SEPA_Mandate_{!csconta__Billing_Account__c.csconta__Account__c}_{!Today}
+&amp;FP0=1 
+&amp;DS2=1 
+&amp;DS3=1 
+&amp;DS7=1
+&amp;SC0=1 
+&amp;SC1=Attachments
+&amp;returl=%2F{!csconta__Billing_Account__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Deactivate_Billing_Account</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Deactivate Billing Account</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)}
+ 
+var roleName =&apos;{!$UserRole.Name}&apos;;
+var profileName = &apos;{!$Profile.Name}&apos;;
+
+if ((profileName == &apos;UM_CSR_Profile&apos;) &amp;&amp; (roleName !=&apos;B2B BS SME Care&apos; &amp;&amp; roleName !=&apos;B2B Billing Operations&apos;))
+{
+  alert(&apos;Please check your role. It should be either B2B BS SME CARE or B2B BS Billing&apos;);
+}
+
+else
+{
+var billingAcc = new sforce.SObject(&quot;csconta__Billing_Account__c&quot;);
+ billingAcc.ID = &apos;{!csconta__Billing_Account__c.Id}&apos;;
+ billingAcc.Status = &apos;{!csconta__Billing_Account__c.csconta__Status__c}&apos;;
+
+var result = sforce.apex.execute(&quot;UM_Deactivate_Billing_Account&quot;,&quot;deactivateBA&quot;,{billingId:billingAcc.ID});
+
+
+if (result == &apos;Deactivate&apos;){
+window.location.reload();
+}
+else if (result == &apos;Error&apos;){
+alert(&apos;Please check the conditions: For all the linked services deactivation date should not be null and Status should not be equal to active&apos;);
+}
+else if (result == &apos;Already Deactivated&apos;){
+alert(&apos;Status is already - Deactivation Requested&apos;);
+}
+else if (result == &apos;No linked Services&apos;){
+alert(&apos;No Subscriptions/Services present&apos;);
+}
+else if (result == &apos;Already Deact Pending&apos;){
+alert (&apos;Status is already Deactivation Pending&apos;);
+}
+else if (result == &apos;Already Inactive&apos;){
+alert (&apos;Status is already Inactive&apos;);
+}
+
+if (result == &apos;Invoke API&apos;){
+if( billingAcc.Status == &apos;Deactivation Requested&apos;)
+{
+ alert(&apos;Status is already - Deactivation Requested&apos;);
+}
+sforce.apex.execute(&quot;UM_KenanAccountSyncCtrl&quot;,&quot;invokeACAPI&quot;,{billingId:billingAcc.ID});
+window.location.reload();
+}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Billing_Account</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Billing Account</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>if(&apos;{!$Profile.Name}&apos; == &apos;UM_Partner&apos;) 
+location.href = (&apos;/partners/apex/UM_BillingAccount?aId={!Account.Id}&amp;retUrl=%2F{!Account.Id}&apos;); 
+else 
+window.location.href = (&apos;/apex/UM_BillingAccount?aId={!Account.Id}&amp;retUrl=%2F{!Account.Id}&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Synchronise_with_Billing</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Synchronise with Billing</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if(&quot;{!csconta__Billing_Account__c.UM_BillFormatOptions__c}&quot;==&apos;&apos;||
+   &quot;{!csconta__Billing_Account__c.csconta__Billing_Channel__c}&quot;==&apos;&apos;||
+   &quot;{!csconta__Billing_Account__c.LG_ContractualOrganization__c}&quot;==&apos;&apos;||
+   &quot;{!csconta__Billing_Account__c.csconta__Status__c}&quot;==&apos;&apos;||
+   &quot;{!csconta__Billing_Account__c.csconta__City__c}&quot;==&apos;&apos;||
+   &quot;{!csconta__Billing_Account__c.csconta__Postcode__c}&quot;==&apos;&apos;||
+   &quot;{!csconta__Billing_Account__c.csconta__Street__c}&quot;==&apos;&apos;||
+   &quot;{!csconta__Billing_Account__c.csconta__Country__c}&quot;==&apos;&apos;||
+   &quot;{!csconta__Billing_Account__c.LG_HouseNumber__c}&quot;==&apos;&apos;){    
+alert(&quot;Please provide all mandatory information on Billing Account before you proceed&quot;);
+}
+else
+    window.open(&quot;../apex/UM_KenanAccountSync?BillingId={!csconta__Billing_Account__c.Id}&quot;,&apos;_blank&apos;,400,400);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Validate_IBAN</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Validate IBAN</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/37.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/37.0/apex.js&quot;)}
+$.noConflict();
+jQuery(function($) {
+  var inp = $(&quot;input[name=&apos;validate_iban&apos;]&quot;);
+  $.each(inp, function( key, val ) {
+    val.value = &apos;Please wait...&apos;;
+    val.className = &apos;btnDisabled&apos;;
+    val.disabled = true;  
+  });
+  sforce.connection.sessionId = &apos;{!$Api.Session_ID}&apos;;
+  // Make a synchronous call to the Apex Web service method
+  try {
+    var res = sforce.apex.execute(
+      &apos;UM_ValidateIban&apos;,       // class
+      &apos;checkIbanWebservice&apos;,   // method
+      {recordId:&apos;{!csconta__Billing_Account__c.Id}&apos;});
+    alert( res );
+  } catch (e) {
+     alert( e.toString() );
+  }
+  window.location.reload();
+});</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>LG_AddOnPriceItem__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Add On Price Item</label>
+        <referenceTo>cspmb__Add_On_Price_Item__c</referenceTo>
+        <relationshipLabel>Decomposition Criteria</relationshipLabel>
+        <relationshipName>Decomposition_Criteria</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_DecompositionCriteria__c</fullName>
+        <description>Used as a criteria for grouping the services to the suborders</description>
+        <externalId>false</externalId>
+        <label>Decomposition Criteria</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Set 1 - On-Net</fullName>
+                    <default>false</default>
+                    <label>Set 1 - On-Net</label>
+                </value>
+                <value>
+                    <fullName>Set 2 - Legacy</fullName>
+                    <default>false</default>
+                    <label>Set 2 - Legacy</label>
+                </value>
+                <value>
+                    <fullName>Set 3 - Mobile</fullName>
+                    <default>false</default>
+                    <label>Set 3 - Mobile</label>
+                </value>
+                <value>
+                    <fullName>Set 4</fullName>
+                    <default>false</default>
+                    <label>Set 4</label>
+                </value>
+                <value>
+                    <fullName>Set 5 - CaMa Internet</fullName>
+                    <default>false</default>
+                    <label>Set 5 - CaMa Internet</label>
+                </value>
+                <value>
+                    <fullName>Set 6 - CaMa Dependent</fullName>
+                    <default>false</default>
+                    <label>Set 6 - CaMa Dependent</label>
+                </value>
+                <value>
+                    <fullName>Set 7 - JIRA Fiber</fullName>
+                    <default>false</default>
+                    <label>Set 7 - JIRA Fiber</label>
+                </value>
+                <value>
+                    <fullName>Set 8 - CS Voice</fullName>
+                    <default>false</default>
+                    <label>Set 8 - CS Voice</label>
+                </value>
+                <value>
+                    <fullName>Set 9 - CaMa Bearer</fullName>
+                    <default>false</default>
+                    <label>Set 9 - CaMa Bearer</label>
+                </value>
+                <value>
+                    <fullName>Set 10 - VoiceWorks</fullName>
+                    <default>false</default>
+                    <label>Set 10 - VoiceWorks</label>
+                </value>
+                <value>
+                    <fullName>Set 11 - Engineers</fullName>
+                    <default>false</default>
+                    <label>Set 11 - Engineers</label>
+                </value>
+                <value>
+                    <fullName>Set 12 - JIRA Orchestrated</fullName>
+                    <default>false</default>
+                    <label>Set 12 - JIRA Orchestrated</label>
+                </value>
+                <value>
+                    <fullName>Set 13 - JIRA Bearer</fullName>
+                    <default>false</default>
+                    <label>Set 13 - JIRA Bearer</label>
+                </value>
+                <value>
+                    <fullName>Set 14 - CaMa Mobile</fullName>
+                    <default>false</default>
+                    <label>Set 14 - CaMa Mobile</label>
+                </value>
+                <value>
+                    <fullName>Set 15 - CaMa Manual</fullName>
+                    <default>false</default>
+                    <label>Set 15 - CaMa Manual</label>
+                </value>
+                <value>
+                    <fullName>Set 16 - CaMa OI Manual</fullName>
+                    <default>false</default>
+                    <label>Set 16 - CaMa OI Manual</label>
+                </value>
+                <value>
+                    <fullName>Set 17 - Charges</fullName>
+                    <default>false</default>
+                    <label>Set 17 - Charges</label>
+                </value>
+                <value>
+                    <fullName>Set 18 - Direct to Kenan</fullName>
+                    <default>false</default>
+                    <label>Set 18 - Direct to Kenan</label>
+                </value>
+                <value>
+                    <fullName>Set 19 - Additional Charges</fullName>
+                    <default>false</default>
+                    <label>Set 19 - Additional Charges</label>
+                </value>
+                <value>
+                    <fullName>Set 20 - BDS Site Process</fullName>
+                    <default>false</default>
+                    <label>Set 20 - BDS Site Process</label>
+                </value>
+                <value>
+                    <fullName>Set 21 - VPN Process</fullName>
+                    <default>false</default>
+                    <label>Set 21 - VPN Process</label>
+                </value>
+                <value>
+                    <fullName>Set 22 - Parent/Category Only</fullName>
+                    <default>false</default>
+                    <label>Set 22 - Parent/Category Only</label>
+                </value>
+                <value>
+                    <fullName>Set 23 - UM CaMa Bridge Mode</fullName>
+                    <default>false</default>
+                    <label>Set 23 - UM CaMa Bridge Mode</label>
+                </value>
+                <value>
+                    <fullName>Set 24 - UM JIRA Fiber Bridge Mode</fullName>
+                    <default>false</default>
+                    <label>Set 24 - UM JIRA Fiber Bridge Mode</label>
+                </value>
+                <value>
+                    <fullName>Set 17 - BDS Charges</fullName>
+                    <default>false</default>
+                    <label>Set 17 - BDS Charges</label>
+                </value>
+                <value>
+                    <fullName>Set 17 - HPBX Charges</fullName>
+                    <default>false</default>
+                    <label>Set 17 - HPBX Charges</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_PartnerNeeded__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Needed</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Decomposition Criteria</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>LG_DecompositionCriteria__c</columns>
+        <columns>LG_AddOnPriceItem__c</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>LG_PartnerNeeded__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>DC-{0000}</displayFormat>
+        <label>Decomposition Criteria Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Decomposition Criteria</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Warenkorb</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Warenkorb</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Warenkorb</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Warenkorb</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Warenkorb</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Warenkorb</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Warenkorb</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Warenkorb</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Lapse Date --></label>
+        <name>Account_Lapse_Date__c</name>
+    </fields>
+    <fields>
+        <label>Geburtsdatum Admin</label>
+        <name>LG_AdminContactDateofBirth__c</name>
+    </fields>
+    <fields>
+        <label>Email Admin</label>
+        <name>LG_AdminContactEmail__c</name>
+    </fields>
+    <fields>
+        <label>Vorname Admin</label>
+        <name>LG_AdminContactFirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Admin Contact Id --></label>
+        <name>LG_AdminContactId__c</name>
+    </fields>
+    <fields>
+        <label>Nachname Admin</label>
+        <name>LG_AdminContactLastName__c</name>
+    </fields>
+    <fields>
+        <label>Mittelname Admin</label>
+        <name>LG_AdminContactMiddleName__c</name>
+    </fields>
+    <fields>
+        <label>Mobilfunknummer Admin</label>
+        <name>LG_AdminContactMobile__c</name>
+    </fields>
+    <fields>
+        <label>Telefonnummer Admin</label>
+        <name>LG_AdminContactPhone__c</name>
+    </fields>
+    <fields>
+        <label>Kontakt Admin</label>
+        <name>LG_AdminContactPicklist__c</name>
+        <picklistValues>
+            <masterLabel>(new Contact)</masterLabel>
+            <translation><!-- (new Contact) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Anrede Admin</label>
+        <name>LG_AdminContactSalutation__c</name>
+        <picklistValues>
+            <masterLabel>Mr.</masterLabel>
+            <translation><!-- Mr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ms.</masterLabel>
+            <translation><!-- Ms. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Inhaber Bankaccount</label>
+        <name>LG_BankAccountName__c</name>
+    </fields>
+    <fields>
+        <label>Bank Account Number (IBAN)</label>
+        <name>LG_BankNumber__c</name>
+    </fields>
+    <fields>
+        <label>Nummer Warenkorb</label>
+        <name>LG_BasketNumber__c</name>
+    </fields>
+    <fields>
+        <label>Rechnungsaccount</label>
+        <name>LG_BillingAccount__c</name>
+        <relationshipLabel>Warenkorbe</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billing Channel --></label>
+        <name>LG_BillingChannel__c</name>
+        <picklistValues>
+            <masterLabel>E-Mail PDF</masterLabel>
+            <translation><!-- E-Mail PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paper</masterLabel>
+            <translation><!-- Paper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paper + E-Mail PDF</masterLabel>
+            <translation><!-- Paper + E-Mail PDF --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Stadt Rechnungsadresse</label>
+        <name>LG_BillingCity__c</name>
+    </fields>
+    <fields>
+        <label>Land Rechnungsadresse</label>
+        <name>LG_BillingCountry__c</name>
+        <picklistValues>
+            <masterLabel>Germany</masterLabel>
+            <translation><!-- Germany --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netherlands</masterLabel>
+            <translation><!-- Netherlands --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Billing Email Address --></label>
+        <name>LG_BillingEmailAddress__c</name>
+    </fields>
+    <fields>
+        <label>Zusatz Hausnummer Rechnungsadresse</label>
+        <name>LG_BillingHouseNumberExtension__c</name>
+    </fields>
+    <fields>
+        <label>Hausnummer Rechnungsadresse</label>
+        <name>LG_BillingHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label>Postleitzahl Rechnungsadresse</label>
+        <name>LG_BillingPostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Wie Installationsadresse</label>
+        <name>LG_BillingSameAsInstallationAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing State/Province --></label>
+        <name>LG_BillingStateProvince__c</name>
+    </fields>
+    <fields>
+        <label>Straße Rechnungsadresse</label>
+        <name>LG_BillingStreet__c</name>
+    </fields>
+    <fields>
+        <label>Lokation Übergabepunkt/Service (Coax)</label>
+        <name>LG_COAXConnectionLocation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client number --></help>
+        <label>Kundennummer</label>
+        <name>LG_ClientNumber__c</name>
+    </fields>
+    <fields>
+        <label>Erstellt am</label>
+        <name>LG_CreatedFrom__c</name>
+        <picklistValues>
+            <masterLabel>Tablet</masterLabel>
+            <translation><!-- Tablet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Kundenreferenz</label>
+        <name>LG_CustomerReference__c</name>
+    </fields>
+    <fields>
+        <label><!-- DTV --></label>
+        <name>LG_DTV__c</name>
+        <picklistValues>
+            <masterLabel>Keep</masterLabel>
+            <translation><!-- Keep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminate</masterLabel>
+            <translation><!-- Terminate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Downgrade --></label>
+        <name>LG_Downgrade__c</name>
+    </fields>
+    <fields>
+        <label>frühestes Installationsdatum</label>
+        <name>LG_EarliestInstallationDate__c</name>
+    </fields>
+    <fields>
+        <label>bestehender Vertrag</label>
+        <name>LG_ExistingSubscription__c</name>
+        <picklistValues>
+            <masterLabel>Connect ZZP</masterLabel>
+            <translation><!-- Connect ZZP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office basis</masterLabel>
+            <translation><!-- Office basis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential with internet</masterLabel>
+            <translation><!-- Residential with internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential without internet</masterLabel>
+            <translation><!-- Residential without internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soho 1P/5P</masterLabel>
+            <translation><!-- Soho 1P/5P --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>IP-Adresse</label>
+        <name>LG_IPAddress__c</name>
+        <picklistValues>
+            <masterLabel>Keep</masterLabel>
+            <translation><!-- Keep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminate</masterLabel>
+            <translation><!-- Terminate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Install Validation Result --></label>
+        <name>LG_InstallValidationResult__c</name>
+        <picklistValues>
+            <masterLabel>Invalid</masterLabel>
+            <translation><!-- Invalid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not checked</masterLabel>
+            <translation><!-- Not checked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valid</masterLabel>
+            <translation><!-- Valid --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Ort der Installation</label>
+        <name>LG_InstallationCity__c</name>
+    </fields>
+    <fields>
+        <label>Installationsland</label>
+        <name>LG_InstallationCountry__c</name>
+        <picklistValues>
+            <masterLabel>Germany</masterLabel>
+            <translation><!-- Germany --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netherlands</masterLabel>
+            <translation><!-- Netherlands --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Installation D2D Offline --></label>
+        <name>LG_InstallationD2DOffline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Digital Available --></label>
+        <name>LG_InstallationDigitalAvailable__c</name>
+    </fields>
+    <fields>
+        <label>Hausnummernzusatz Installationsadresse</label>
+        <name>LG_InstallationHouseNumberExtension__c</name>
+    </fields>
+    <fields>
+        <label>Hausnummer der Installationsadresse</label>
+        <name>LG_InstallationHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Internet Available --></label>
+        <name>LG_InstallationInternetAvailable__c</name>
+    </fields>
+    <fields>
+        <label>PLZ Installationsort</label>
+        <name>LG_InstallationPostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation State/Province --></label>
+        <name>LG_InstallationStateProvince__c</name>
+    </fields>
+    <fields>
+        <label>Straße der Installationsadresse</label>
+        <name>LG_InstallationStreet__c</name>
+    </fields>
+    <fields>
+        <label>Hauptgrund &quot;Verloren&quot;</label>
+        <name>LG_MainReasonLost__c</name>
+        <picklistValues>
+            <masterLabel>Afraid to change vendor</masterLabel>
+            <translation><!-- Afraid to change vendor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bad experience with Ziggo in retail market</masterLabel>
+            <translation><!-- Bad experience with Ziggo in retail market --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Decision made primary office</masterLabel>
+            <translation><!-- Decision made primary office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delivery</masterLabel>
+            <translation><!-- Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Does not appreciate telemarketing/d2d sales</masterLabel>
+            <translation><!-- Does not appreciate telemarketing/d2d sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loyal to current provider</masterLabel>
+            <translation><!-- Loyal to current provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not satisfied with quality UPC/Ziggo</masterLabel>
+            <translation><!-- Not satisfied with quality UPC/Ziggo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other reasons</masterLabel>
+            <translation><!-- Other reasons --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price is not attractive enough</masterLabel>
+            <translation><!-- Price is not attractive enough --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product doesn&apos;t match needs customer</masterLabel>
+            <translation><!-- Product doesn&apos;t match needs customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stuck in existing contract</masterLabel>
+            <translation><!-- Stuck in existing contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Switch is too much hassle</masterLabel>
+            <translation><!-- Switch is too much hassle --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Marktsegment</label>
+        <name>LG_MarketSegment__c</name>
+    </fields>
+    <fields>
+        <label>Zahlungsziel</label>
+        <name>LG_PaymentTerms__c</name>
+        <picklistValues>
+            <masterLabel>30 Days</masterLabel>
+            <translation><!-- 30 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Days</masterLabel>
+            <translation><!-- 60 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90 Days</masterLabel>
+            <translation><!-- 90 Days --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Zahlungsart</label>
+        <name>LG_PaymentType__c</name>
+        <picklistValues>
+            <masterLabel>Direct Debit</masterLabel>
+            <translation><!-- Direct Debit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self-payer</masterLabel>
+            <translation><!-- Self-payer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Ort Postanschrift</label>
+        <name>LG_PostalCity__c</name>
+    </fields>
+    <fields>
+        <label>Land Postanschrift</label>
+        <name>LG_PostalCountry__c</name>
+        <picklistValues>
+            <masterLabel>Germany</masterLabel>
+            <translation><!-- Germany --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netherlands</masterLabel>
+            <translation><!-- Netherlands --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Hausnummernzusatz Postanschrift</label>
+        <name>LG_PostalHouseNumberExtension__c</name>
+    </fields>
+    <fields>
+        <label>Hausnummer Postanschrift</label>
+        <name>LG_PostalHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label>Postleitzahl Postanschrift</label>
+        <name>LG_PostalPostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Wie Installationsadresse</label>
+        <name>LG_PostalSameAsInstallationAddress__c</name>
+    </fields>
+    <fields>
+        <label>Straße Postanschrift</label>
+        <name>LG_PostalStreet__c</name>
+    </fields>
+    <fields>
+        <label>Bevorzugtes Installationsdatum</label>
+        <name>LG_PreferredInstallationDate__c</name>
+    </fields>
+    <fields>
+        <label>Bevorzugte Installationszeit</label>
+        <name>LG_PreferredInstallationTime__c</name>
+        <picklistValues>
+            <masterLabel>08:00 - 13:00</masterLabel>
+            <translation><!-- 08:00 - 13:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 - 18:00</masterLabel>
+            <translation><!-- 12:00 - 18:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18.00 - 21.00</masterLabel>
+            <translation><!-- 18.00 - 21.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saturday 10.00 - 18.00</masterLabel>
+            <translation><!-- Saturday 10.00 - 18.00 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Kommentar</label>
+        <name>LG_ResultofVisit__c</name>
+        <picklistValues>
+            <masterLabel>Customer Approved</masterLabel>
+            <translation><!-- Customer Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Rejected</masterLabel>
+            <translation><!-- Customer Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote Requested</masterLabel>
+            <translation><!-- Quote Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Running User Sales Channel --></label>
+        <name>LG_RunningUserSalesChannel__c</name>
+    </fields>
+    <fields>
+        <label>SB Telefon ID</label>
+        <name>LG_SBTelephonyId__c</name>
+    </fields>
+    <fields>
+        <label>Wie Admin Kontakt</label>
+        <name>LG_SameAsAdminContact__c</name>
+    </fields>
+    <fields>
+        <label>ausgewählte Produkte</label>
+        <name>LG_SelectedProducts__c</name>
+    </fields>
+    <fields>
+        <label>Mehrfachbelegter Bürokomplex</label>
+        <name>LG_SharedOfficeBuilding__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suite/Room --></label>
+        <name>LG_SuiteRoom__c</name>
+    </fields>
+    <fields>
+        <label>Wie Rechnungskontakt</label>
+        <name>LG_TechContactSameasBillingContact__c</name>
+    </fields>
+    <fields>
+        <label>Geburtsdatum technischer Kontakt</label>
+        <name>LG_TechnicalContactDateofBirth__c</name>
+    </fields>
+    <fields>
+        <label>Email technischer Kontakt</label>
+        <name>LG_TechnicalContactEmail__c</name>
+    </fields>
+    <fields>
+        <label>Vorname technischer Kontakt</label>
+        <name>LG_TechnicalContactFirstName__c</name>
+    </fields>
+    <fields>
+        <label>ID technischer Kontakt</label>
+        <name>LG_TechnicalContactId__c</name>
+    </fields>
+    <fields>
+        <label>Nachname technischer Kontakt</label>
+        <name>LG_TechnicalContactLastName__c</name>
+    </fields>
+    <fields>
+        <label>MIttelname technischer Kontakt</label>
+        <name>LG_TechnicalContactMiddleName__c</name>
+    </fields>
+    <fields>
+        <label>Mobilfunknummer technischer Kontakt</label>
+        <name>LG_TechnicalContactMobile__c</name>
+    </fields>
+    <fields>
+        <label>Telefon technischer Konakt</label>
+        <name>LG_TechnicalContactPhone__c</name>
+    </fields>
+    <fields>
+        <label>Technischer Kontakt</label>
+        <name>LG_TechnicalContactPicklist__c</name>
+        <picklistValues>
+            <masterLabel>(new Contact)</masterLabel>
+            <translation><!-- (new Contact) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Anrede technischer Kontakt</label>
+        <name>LG_TechnicalContactSalutation__c</name>
+        <picklistValues>
+            <masterLabel>Mr.</masterLabel>
+            <translation><!-- Mr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ms.</masterLabel>
+            <translation><!-- Ms. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Telefon</label>
+        <name>LG_Telephony__c</name>
+        <picklistValues>
+            <masterLabel>Keep</masterLabel>
+            <translation><!-- Keep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminate</masterLabel>
+            <translation><!-- Terminate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Einmalige Gebühr Total</label>
+        <name>LG_TotalOneOff__c</name>
+    </fields>
+    <fields>
+        <label>Wiederkehrende Gebühr Total</label>
+        <name>LG_TotalRecurringCharge__c</name>
+    </fields>
+    <fields>
+        <label>Upload Nummern Portierung</label>
+        <name>LG_UploadPortingNumbers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used Quote Objects --></label>
+        <name>LG_UsedQuoteObjects__c</name>
+    </fields>
+    <fields>
+        <label>Gültigkeitsdatum</label>
+        <name>LG_ValidationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visit Address ID --></label>
+        <name>LG_VisitAddressID__c</name>
+    </fields>
+    <fields>
+        <label>Zusatzinformation Adresse</label>
+        <name>LG_VisitDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel>Warenkorbe</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Priced Quote Valid for Days --></label>
+        <name>Priced_Quote_Valid_for_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Created Date --></label>
+        <name>Quote_Created_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Expiry Date --></label>
+        <name>Quote_Expiry_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Stage --></label>
+        <name>Quote_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quoted</masterLabel>
+            <translation><!-- Quoted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quoting</masterLabel>
+            <translation><!-- Quoting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-Priced</masterLabel>
+            <translation><!-- Re-Priced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Synchronised</masterLabel>
+            <translation><!-- Synchronised --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Won</masterLabel>
+            <translation><!-- Won --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>UM_ApprovalStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- BIC code --></label>
+        <name>UM_BankAccountNumberBic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Name --></label>
+        <name>UM_BankName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Downsell Approval Required --></label>
+        <name>UM_DownsellApprovalRequired__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner States --></label>
+        <name>UM_PartnerStates__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quoting Date --></label>
+        <name>UM_QuotingDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Running User User Type --></label>
+        <name>UM_RunningUserUserType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>cfgoffline__Account__c</name>
+        <relationshipLabel>Warenkorbe</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Status of accessibility of the basket. The basket gets blocked when it is in the process of cloning (whether it is cloned or the clone itself). --></help>
+        <label><!-- Accessibility Status --></label>
+        <name>csbb__Accessibility_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>csbb__Account__c</name>
+        <relationshipLabel>Warenkorbe</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Includes High Level Products --></label>
+        <name>csbb__Includes_High_Level_Products__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional information on the Product Basket record, used by CSBB. --></help>
+        <label><!-- Optionals --></label>
+        <name>csbb__Optionals__c</name>
+    </fields>
+    <fields>
+        <label>Synchronisiert mit Opportunity</label>
+        <name>csbb__Synchronised_With_Opportunity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays status of the Basket. --></help>
+        <label>Status</label>
+        <name>cscfga__Basket_Status__c</name>
+        <picklistValues>
+            <masterLabel>Contains Errors</masterLabel>
+            <translation><!-- Contains Errors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ContainsExpiredProducts</masterLabel>
+            <translation><!-- ContainsExpiredProducts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Is Valid</masterLabel>
+            <translation><!-- Is Valid --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Name of Opportunity this Basket is associated with. --></help>
+        <label><!-- Opportunity --></label>
+        <name>cscfga__Opportunity__c</name>
+        <relationshipLabel>Warenkorbe</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- List of product IDs contained in this Basket. --></help>
+        <label><!-- Products Id Qty In Basket --></label>
+        <name>cscfga__Products_Id_Qty_In_Basket__c</name>
+    </fields>
+    <fields>
+        <help><!-- List of Product Names contained in the Basket. --></help>
+        <label>Produkte im Warenkorb</label>
+        <name>cscfga__Products_In_Basket__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product Configuration that is used as a Shared Context which is associated with this Basket. --></help>
+        <label><!-- Shared Context Configuration --></label>
+        <name>cscfga__Shared_Context_Configuration__c</name>
+        <relationshipLabel>Warenkorbe</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Sum of non-recurring and one year&apos;s worth of recurring prices of all items contained in this Basket. --></help>
+        <label>Gesamtpreis</label>
+        <name>cscfga__Total_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- Details about user session within which this Bundle was created. --></help>
+        <label><!-- User Session --></label>
+        <name>cscfga__User_Session__c</name>
+        <relationshipLabel>Warenkorbe</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Total Contract Value --></label>
+        <name>cscfga__total_contract_value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>csordtelcoa__Account__c</name>
+        <relationshipLabel>Warenkorbe</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- In standalone basket scenario, use this picklist to trigger order generation --></help>
+        <label><!-- Basket Stage --></label>
+        <name>csordtelcoa__Basket_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Closed Won</masterLabel>
+            <translation><!-- Closed Won --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospecting</masterLabel>
+            <translation><!-- Prospecting --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Change Type --></label>
+        <name>csordtelcoa__Change_Type__c</name>
+        <picklistValues>
+            <masterLabel>Add</masterLabel>
+            <translation><!-- Add --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change</masterLabel>
+            <translation><!-- Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clone</masterLabel>
+            <translation><!-- Clone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Downgrade</masterLabel>
+            <translation><!-- Downgrade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Migrate</masterLabel>
+            <translation><!-- Migrate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Move</masterLabel>
+            <translation><!-- Move --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relocation</masterLabel>
+            <translation><!-- Relocation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminate</masterLabel>
+            <translation><!-- Terminate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade</masterLabel>
+            <translation><!-- Upgrade --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Order Generation Batch Job Id --></label>
+        <name>csordtelcoa__Order_Generation_Batch_Job_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Force batch processing of the opportunity --></help>
+        <label><!-- Process Order Generation In Batch --></label>
+        <name>csordtelcoa__Process_Order_Generation_In_Batch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Configuration Clone Batch Job Id --></label>
+        <name>csordtelcoa__Product_Configuration_Clone_Batch_Job_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Force generation of MACD basket in a batch --></help>
+        <label><!-- Product Configuration Clone In Batch --></label>
+        <name>csordtelcoa__Product_Configuration_Clone_In_Batch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription To Be Added To --></label>
+        <name>csordtelcoa__Subscription_To_Be_Added_To__c</name>
+        <relationshipLabel><!-- Product Baskets (Subscription To Be Added To) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Subscription To Be Changed --></label>
+        <name>csordtelcoa__Subscription_To_Be_Changed__c</name>
+        <relationshipLabel>Warenkorbe</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Synchronisiert mit Opportunity</label>
+        <name>csordtelcoa__Synchronised_with_Opportunity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Status --></label>
+        <name>spt_Quote_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>CSADetails</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Related Objects --></label>
+            <section>Related Objects</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CSAPostConfiguration</layout>
+        <sections>
+            <label><!-- Admin contact details --></label>
+            <section>Admin contact details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Payment details --></label>
+            <section>Payment details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CSAPostConfigurationSOHO</layout>
+        <sections>
+            <label>Adressen Details</label>
+            <section>Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Admin contact details --></label>
+            <section>Admin contact details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Existing services --></label>
+            <section>Existing services</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Other --></label>
+            <section>Other</section>
+        </sections>
+        <sections>
+            <label><!-- Payment details --></label>
+            <section>Payment details</section>
+        </sections>
+        <sections>
+            <label><!-- Technical contact details --></label>
+            <section>Technical contact details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CSAPostConfigurationSmallBusiness</layout>
+        <sections>
+            <label><!-- Admin details --></label>
+            <section>Admin details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Existing services --></label>
+            <section>Existing services</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CSAPreConfiguration</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Warenkorbname</nameFieldLabel>
+    <recordTypes>
+        <label><!-- CSAPostConfiguration --></label>
+        <name>CSAPostConfiguration</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- CSAPreConfiguration --></label>
+        <name>CSAPreConfiguration</name>
+    </recordTypes>
+</CustomObjectTranslation>

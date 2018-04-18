@@ -1,0 +1,244 @@
+<apex:page showHeader="true" sidebar="true" standardController="UM_InvoiceHeader__c" extensions="KenanInvoiceControllerExt" title="{!$Label.KenanInvoicePageTitle}">
+
+    <apex:stylesheet value="{!URLFOR($Resource.kenanInvoice, 'css/main.css')}"/>
+
+    <apex:form >
+    	<apex:sectionHeader title="{!$Label.KenanInvoicePageTitle}" subtitle="{!invoiceHeader.Name}"/>
+        
+        <apex:pageBlock title="{!$Label.KenanInvoicePageHeaderInfo}" mode="maindetail">
+
+        	<apex:pageMessages id="msgs"/>
+
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!URLFOR($Action.Kenan_Adjustment__c.New,null,[invoiceId=invoiceHeader.Id])}" value="{!$Label.KenanInvoiceAdjustInvoiceLabel}" />
+                <apex:commandButton action="{!cancel}" immediate="true" value="{!$Label.KenanInvoicePageCancelButton}" />
+                <apex:commandButton action="{!Case}" value="{!$Label.New_Billing_Case}"/>
+            </apex:pageBlockButtons>
+            
+        	<apex:pageBlockSection showHeader="false">
+        		<apex:repeat value="{!$ObjectType.UM_InvoiceHeader__c.FieldSets.InvoiceHeader}" var="f">
+        	        <apex:outputField value="{!invoiceHeader[f]}" />
+                </apex:repeat>
+            </apex:pageBlockSection>
+           
+        </apex:pageBlock>
+        
+        <!-- Account level invoice items -->
+		<apex:pageBlock title="{!$Label.KenanInvoiceAccountLevel}"> 
+			<apex:pageBlockSection showHeader="false" columns="1">
+				<apex:outputPanel rendered="{!accountLevelInvoiceItems.size == 0}">
+					{!$Label.KenanInvoicePageNoAccountDetailsMessage}
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!accountLevelInvoiceItems.size != 0}">
+				    <apex:pageBlockTable id="table" var="accountLevelInvoiceItem" value="{!accountLevelInvoiceItems}" headerClass="align-center">
+				    	<apex:column headerValue="Action" headerClass="align-center action-column" styleClass="align-center">
+                        	<apex:commandLink action="{!URLFOR($Action.Kenan_Adjustment__c.New,null,[invoiceId=invoiceHeader.Id,itemId=accountLevelInvoiceItem.ExternalId])}" value="{!$Label.KenanInvoiceAdjustItemLabel}" rendered="{!accountLevelInvoiceItem.typeCode__c != '1'}"/>
+						</apex:column>
+				        <apex:repeat var="f" value="{!accountFields}">
+				            <apex:column headerValue="{!f.Label}" headerClass="{!IF(f.fieldPath == 'amount__c', 'align-right', IF(f.fieldPath == 'descriptionText__c', 'align-left', 'align-center'))}" styleClass="{!IF(f.fieldPath == 'amount__c', 'align-right', IF(f.fieldPath == 'descriptionText__c', 'align-left', 'align-center'))}">
+				                <apex:outputField value="{!accountLevelInvoiceItem[f.fieldPath]}" rendered="{!f.fieldPath != 'amount__c'}"/>
+								<apex:outputText value="{!$Label.KenanInvoicePageCurrencySymbol}{0,number,###,##0.00}" rendered="{!f.fieldPath == 'amount__c'}" styleClass="amount">
+									<apex:param value="{!accountLevelInvoiceItem[f.fieldPath]}" />
+								</apex:outputText>
+				            </apex:column>
+				        </apex:repeat>
+				    </apex:pageBlockTable>
+
+				    <apex:pageBlockSection showHeader="false" columns="1">
+					    <apex:outputPanel layout="block" styleClass="summary-section">
+							<apex:outputPanel styleClass="summary-label">
+								{!$Label.KenanInvoiceAccountLevelTotalLabel}
+							</apex:outputPanel>
+							<apex:outputPanel >	
+								<apex:outputText value="{!$Label.KenanInvoicePageCurrencySymbol}{0,number,###,##0.00}" styleClass="emphasis">
+									<apex:param value="{!accountLevelTotal}" />
+								</apex:outputText>
+							</apex:outputPanel>
+						</apex:outputPanel>
+					</apex:pageBlockSection>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+
+		<!-- Invoice Totals -->
+		<apex:pageBlock title="{!$Label.KenanInvoicePageTotal}"> 
+			<apex:pageBlockSection showHeader="false" columns="1">
+				<apex:outputPanel rendered="{!invoiceTotalItems.size == 0}">
+					{!$Label.KenanInvoicePageNoTotalsMessage}
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!invoiceTotalItems.size != 0}">
+				    <apex:pageBlockTable id="table" var="invoiceTotalItem" value="{!invoiceTotalItems}" headerClass="align-center">
+				        <apex:repeat var="f" value="{!accountFields}">
+				            <apex:column headerValue="{!f.Label}" headerClass="{!IF(f.fieldPath == 'amount__c', 'align-right', IF(f.fieldPath == 'descriptionText__c', 'align-left', 'align-center'))}" styleClass="{!IF(f.fieldPath == 'amount__c', 'align-right', IF(f.fieldPath == 'descriptionText__c', 'align-left', 'align-center'))}">
+				                <apex:outputText value="{!$Label.KenanInvoicePageCurrencySymbol}{0,number,###,##0.00}" rendered="{! OR(f.fieldPath == 'amount__c', f.fieldPath == 'tax__c')}" styleClass="amount">
+									<apex:param value="{!invoiceTotalItem[f.fieldPath]}" />
+								</apex:outputText>
+				                <apex:outputField value="{!invoiceTotalItem[f.fieldPath]}" rendered="{! AND(f.fieldPath != 'amount__c', f.fieldPath != 'tax__c')}"/>
+				            </apex:column>
+				        </apex:repeat>
+				    </apex:pageBlockTable>
+				    <apex:pageBlockSection showHeader="false" columns="1">
+					    <apex:outputPanel layout="block">
+							<apex:outputPanel styleClass="summary-label">
+								{!$Label.KenanInvoiceNewChargesDescription}
+							</apex:outputPanel>
+							<apex:outputPanel >	
+								<apex:outputText value="{!$Label.KenanInvoicePageCurrencySymbol}{0,number,###,##0.00}" styleClass="emphasis">
+									<apex:param value="{!newInvoiceTotal}" />
+								</apex:outputText>
+							</apex:outputPanel>
+						</apex:outputPanel>
+					</apex:pageBlockSection>
+				    <!--  -->
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+
+        <!-- Payments for invoice -->
+		<apex:pageBlock title="{!$Label.KenanInvoicePayments}"> 
+			<apex:pageBlockSection showHeader="false" columns="1">
+				<apex:outputPanel rendered="{!paymentInvoiceItems.size == 0}">
+					{!$Label.KenanInvoicePageNoPaymentsMessage}
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!paymentInvoiceItems.size != 0}">
+				    <apex:pageBlockTable id="table" var="paymentInvoiceItem" value="{!paymentInvoiceItems}" headerClass="align-center">
+				        <apex:repeat var="f" value="{!paymentFields}">
+				            <apex:column headerValue="{!f.Label}" headerClass="{!IF(f.fieldPath == 'amount__c', 'align-right', IF(f.fieldPath == 'descriptionText__c', 'align-left', 'align-center'))}" styleClass="{!IF(f.fieldPath == 'amount__c', 'align-right', IF(f.fieldPath == 'descriptionText__c', 'align-left', 'align-center'))}">
+				            	<apex:outputText value="{!$Label.KenanInvoicePageCurrencySymbol}{0,number,###,##0.00}" rendered="{! OR(f.fieldPath == 'amount__c', f.fieldPath == 'tax__c')}" styleClass="amount">
+									<apex:param value="{!paymentInvoiceItem[f.fieldPath]}" />
+								</apex:outputText>
+				                <apex:outputField value="{!paymentInvoiceItem[f.fieldPath]}" rendered="{! AND(f.fieldPath != 'amount__c', f.fieldPath != 'tax__c')}"/>
+				            </apex:column>
+				        </apex:repeat>
+				    </apex:pageBlockTable>
+
+					<apex:pageBlockSection showHeader="false" columns="1">
+					    <apex:outputPanel layout="block" styleClass="summary-section">
+							<apex:outputPanel styleClass="summary-label">
+								{!$Label.KenanInvoicePaymentTotalLabel}
+							</apex:outputPanel>
+							<apex:outputPanel >	
+								<apex:outputText value="{!$Label.KenanInvoicePageCurrencySymbol}{0,number,###,##0.00}" styleClass="emphasis">
+									<apex:param value="{!paymentTotal}" />
+								</apex:outputText>
+							</apex:outputPanel>
+						</apex:outputPanel>
+					</apex:pageBlockSection>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+
+        <!-- Services and invoice items -->
+        <apex:pageBlock title="{!$Label.KenanInvoiceServices}">   
+			<apex:pageBlockSection showHeader="false" columns="1">
+				<apex:outputPanel rendered="{!serviceWrappers == 0}">
+					{!$Label.KenanInvoicePageNoInvoiceDetailsMessage}
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!serviceWrappers.size != 0}">
+					<apex:repeat value="{!serviceWrappers}" var="serviceWrapper">
+						<apex:pageBlockSection title="{!$Label.KenanInvoicePageServiceHeaderPrefix} {!serviceWrapper.serviceName}" columns="1">
+							<apex:pageBlockTable id="table" var="invoiceItem" value="{!serviceWrapper.invoiceItems}">
+								<apex:column headerValue="Action" headerClass="align-center action-column" styleClass="align-center">
+									<apex:commandLink action="{!URLFOR($Action.Kenan_Adjustment__c.New,null,[invoiceId=invoiceHeader.Id,itemId=invoiceItem.ExternalId])}" value="{!$Label.KenanInvoiceAdjustItemLabel}" />
+								</apex:column>
+						        <apex:repeat var="f" value="{!serviceFields}">
+						            <apex:column headerValue="{!f.Label}" headerClass="{!IF(f.fieldPath == 'amount__c', 'align-right amount', IF(f.fieldPath == 'descriptionText__c', 'align-left', 'align-center'))}" styleClass="{!IF(f.fieldPath == 'amount__c', 'align-right', IF(f.fieldPath == 'discount__c', 'align-right amount', IF(f.fieldPath == 'descriptionText__c', 'align-left', 'align-center')))}">
+						                <apex:outputText value="{!$Label.KenanInvoicePageCurrencySymbol}{0,number,###,##0.00}" rendered="{! OR(f.fieldPath == 'amount__c', f.fieldPath == 'tax__c', f.fieldPath == 'discount__c')}" styleClass="amount">
+											<apex:param value="{!invoiceItem[f.fieldPath]}" />
+										</apex:outputText>
+				                		<apex:outputField value="{!invoiceItem[f.fieldPath]}" rendered="{! AND(f.fieldPath != 'amount__c', f.fieldPath != 'tax__c',f.fieldPath != 'discount__c')}"/>
+						            </apex:column>
+						        </apex:repeat>
+						    </apex:pageBlockTable>
+
+						    <!-- Summary item -->
+						    <apex:outputPanel layout="block" styleClass="summary-section">
+								<apex:outputPanel styleClass="summary-label">
+									{!serviceWrapper.summaryLabel}
+								</apex:outputPanel>
+								<apex:outputPanel >	
+									<apex:outputText value="{!$Label.KenanInvoicePageCurrencySymbol}{0,number,###,##0.00}" styleClass="emphasis">
+										<apex:param value="{!serviceWrapper.summaryItem.amount__c}" />
+									</apex:outputText>
+								</apex:outputPanel>
+							</apex:outputPanel>
+						</apex:pageBlockSection>
+					</apex:repeat>
+
+					<!-- Service total -->
+					<apex:pageBlockSection showHeader="false" columns="1">
+						<apex:outputPanel layout="block" styleClass="summary-section">
+							<apex:outputPanel styleClass="summary-label">
+								{!$Label.KenanInvoiceServiceTotalLabel}
+							</apex:outputPanel>
+							<apex:outputPanel >	
+								<apex:outputText value="{!$Label.KenanInvoicePageCurrencySymbol}{0,number,###,##0.00}" styleClass="emphasis">
+									<apex:param value="{!serviceTotal}" />
+								</apex:outputText>
+							</apex:outputPanel>
+						</apex:outputPanel>
+					</apex:pageBlockSection>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+        </apex:pageBlock>
+
+        <!-- Adjustment items-->
+        <apex:pageBlock title="{!$Label.KenanInvoicePageAdjustmentsTitle}"> 
+			<apex:pageBlockSection showHeader="false" columns="1">
+				<apex:outputPanel rendered="{!adjustmentItems.size == 0}">
+					{!$Label.KenanInvoicePageNoRelatedAdjustmentsMessage}
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!adjustmentItems.size != 0}">
+				    <apex:pageBlockTable id="table" var="adjustmentItem" value="{!adjustmentItems}" headerClass="align-center">
+				    	<apex:column headerValue="Action" headerClass="align-center action-column" styleClass="align-center">
+                        	<apex:commandLink action="{!URLFOR($Action.Kenan_Adjustment__c.New,null,[invoiceId=invoiceHeader.Id,itemId=adjustmentItem.ExternalId])}" value="{!$Label.KenanInvoiceAdjustItemLabel}"/>
+						</apex:column>
+				        <apex:repeat var="f" value="{!accountFields}">
+				            <apex:column headerValue="{!f.Label}" headerClass="{!IF(f.fieldPath == 'amount__c', 'align-right', IF(f.fieldPath == 'descriptionText__c', 'align-left', 'align-center'))}" styleClass="{!IF(f.fieldPath == 'amount__c', 'align-right', IF(f.fieldPath == 'descriptionText__c', 'align-left', 'align-center'))}">
+				                <apex:outputField value="{!adjustmentItem[f.fieldPath]}" rendered="{!f.fieldPath != 'amount__c'}"/>
+								<apex:outputText value="{!$Label.KenanInvoicePageCurrencySymbol}{0,number,###,##0.00}" rendered="{!f.fieldPath == 'amount__c'}" styleClass="amount">
+									<apex:param value="{!adjustmentItem[f.fieldPath]}" />
+								</apex:outputText>
+				            </apex:column>
+				        </apex:repeat>
+				    </apex:pageBlockTable>
+
+				    <apex:pageBlockSection showHeader="false" columns="1">
+					    <apex:outputPanel layout="block" styleClass="summary-section">
+							<apex:outputPanel styleClass="summary-label">
+								{!$Label.KenanInvoiceTotalsTotalLabel}
+							</apex:outputPanel>
+							<apex:outputPanel >	
+								<apex:outputText value="{!$Label.KenanInvoicePageCurrencySymbol}{0,number,###,##0.00}" styleClass="emphasis">
+									<apex:param value="{!invoiceTotal}" />
+								</apex:outputText>
+							</apex:outputPanel>
+						</apex:outputPanel>
+					</apex:pageBlockSection>
+
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+
+        <!-- Related Adjustments -->
+        <apex:pageBlock title="{!$Label.KenanInvoicePageAdjustmentsAgainstInvoiceTitle}">
+			<apex:pageBlockSection showHeader="false" columns="1">
+				<apex:outputPanel rendered="{!invoiceHeader.Adjustments__r.size == 0}">
+					{!$Label.KenanInvoicePageNoRelatedAdjustmentsMessage}
+				</apex:outputPanel>
+				<apex:outputPanel >
+					<apex:pageBlockTable id="table" var="adjustment" value="{!invoiceHeader.Adjustments__r}" headerClass="align-center">
+				    	<apex:repeat value="{!$ObjectType.Kenan_Adjustment__c.FieldSets.Kenan_Invoice_Header_Related_Fields}" var="f" >
+				    		<apex:column headerValue="{!$ObjectType.Kenan_Adjustment__c.fields[f].Label}" headerClass="align-left">
+								<apex:commandLink action="{!URLFOR('/' + adjustment.Id)}" value="{!adjustment.Name}" rendered="{!f.fieldPath == 'Name'}"/>
+								<apex:outputField value="{!adjustment[f]}" rendered="{!f.fieldPath != 'Name'}"/>
+							</apex:column>
+						</apex:repeat>
+					</apex:pageBlockTable>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+        </apex:pageBlock>
+
+	</apex:form>
+    
+</apex:page>

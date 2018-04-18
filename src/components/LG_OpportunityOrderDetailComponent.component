@@ -1,0 +1,294 @@
+<apex:component controller="LG_OpportunityOrderDetailController" access="global">
+    <!-- Attributes -->
+    <apex:attribute name="relatedToOpportunity" type="Opportunity" assignTo="{!relatedTo}" description="The Opportunity record that is the source of displayed data." />
+    <!-- GUI -->
+    <apex:variable var="domain" value="{!LEFT($Api.Enterprise_Server_URL_310, FIND('.salesforce.com/', $Api.Enterprise_Server_URL_310) + LEN('.salesforce.com/') - 2)}"/>
+    <table class="detailTable">
+        <thead>
+            <tr>
+                <th colspan="4"><apex:outputText value="{!$Label.LG_OpportunityDetail}: "/><apex:outputLink value="{!domain}/{!relatedTo.Id}">{!relatedTo.Name}</apex:outputLink></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="detail-col1-key">{!$Label.LG_Product}</td>
+                <td class="detail-col1-value" colspan="3"><apex:outputText value="{!mainProducts}"/></td>
+            </tr>
+            <tr>
+                <th colspan="4">{!$Label.LG_AccountInformation}</th>
+            </tr>
+            <tr>
+                <td class="detail-col1-key">{!$ObjectType.Opportunity.fields.AccountId.Label}</td>
+                <td class="detail-col1-value" colspan="3"><apex:outputText value="{!relatedTo.Account.Id}"/></td>
+            </tr>
+            <tr>
+                <td class="detail-col1-key">{!$ObjectType.Account.fields.Name.Label}</td>
+                <td class="detail-col1-value" colspan="3"><apex:outputField value="{!relatedTo.Account.Name}"/></td>
+            </tr>
+            <tr>
+                <td class="detail-col1-key">{!$ObjectType.Account.fields.LG_Segment__c.Label}</td>
+                <td class="detail-col1-value" colspan="3"><apex:outputField value="{!relatedTo.Account.LG_Segment__c}"/></td>
+            </tr>
+            <tr>
+                <td class="detail-col1-key">{!$ObjectType.Account.fields.Phone.Label}</td>
+                <td class="detail-col1-value" colspan="3"><apex:outputField value="{!relatedTo.Account.Phone}"/></td>
+            </tr>
+            <tr>
+                <td class="detail-col1-key">{!$ObjectType.Account.fields.LG_ChamberOfCommerceNumber__c.Label}</td>
+                <td class="detail-col1-value" colspan="3"><apex:outputField value="{!relatedTo.Account.LG_ChamberOfCommerceNumber__c}"/></td>
+            </tr>
+             <tr>
+                <td class="detail-col1-key">{!$ObjectType.Account.fields.LG_Footprint__c.Label}</td>
+                <td class="detail-col1-value" colspan="3"><apex:outputField value="{!relatedTo.Account.LG_Footprint__c}"/></td>
+            </tr>
+            <tr>
+                <th colspan="4">{!$Label.LG_OrderInformation}</th>
+            </tr>
+            <tr>
+                <td class="detail-col2-key">{!$ObjectType.Opportunity.fields.LG_PreferredInstallationDate__c.Label}</td>
+                <td class="detail-col2-value"><apex:outputField value="{!relatedTo.LG_PreferredInstallationDate__c}"/></td>
+                <td class="detail-col1-key">{!$ObjectType.Opportunity.fields.Id.Label}</td>
+                <td class="detail-col1-value"><apex:outputText value="{!relatedTo.Id}"/></td>
+            </tr>
+            <tr>
+                <td class="detail-col2-key">{!$ObjectType.Opportunity.fields.LG_PreferredInstallationTime__c.Label}</td>
+                <td class="detail-col2-value"><apex:outputField value="{!relatedTo.LG_PreferredInstallationTime__c}"/></td>
+                <td class="detail-col1-key">{!$Label.LG_PartnerID}</td>
+                <!-- td class="detail-col1-value"><apex:outputText value="{!relatedTo.PartnerAccountId}"/></td-->
+                <td/>
+            </tr>
+            <tr>
+                <td class="detail-col2-key">{!$ObjectType.Opportunity.fields.LG_SharedOfficeBuilding__c.Label}</td>
+                <td class="detail-col2-value"><apex:outputText rendered="{!relatedTo.LG_SharedOfficeBuilding__c}" value="&#9746;" escape="false"/><apex:outputText rendered="{!NOT(relatedTo.LG_SharedOfficeBuilding__c)}" value="&#9744;" escape="false"/></td>
+                <td class="detail-col1-key">{!$Label.LG_PartnerName}</td>
+                <!-- td class="detail-col1-value"><apex:outputField value="{!relatedTo.PartnerAccount.Name}"/></td-->
+                <td/>
+            </tr>
+            <tr>
+                <td class="detail-col2-key">{!$ObjectType.Opportunity.fields.LG_COAXConnectionLocation__c.Label}</td>
+                <td class="detail-col2-value"><apex:outputField value="{!relatedTo.LG_COAXConnectionLocation__c}"/></td>
+                <td class="detail-col1-key">{!$ObjectType.Opportunity.fields.LG_NEWSalesChannel__c.Label}</td>
+                <td class="detail-col1-value"><apex:outputField value="{!relatedTo.LG_NEWSalesChannel__c}"/></td>
+            </tr>
+            <tr>
+                <td class="detail-col2-key">{!$ObjectType.Opportunity.fields.LG_ContractTermMonths__c.Label}</td>
+                <td class="detail-col2-value"><apex:outputField value="{!relatedTo.LG_ContractTermMonths__c}"/></td>
+                <td class="detail-col1-key">{!$ObjectType.Opportunity.fields.Type.Label}</td>
+                <td class="detail-col1-value"><apex:outputField value="{!relatedTo.Type}"/></td>
+            </tr>
+            <tr>
+                <td class="detail-col1-key">{!$ObjectType.Opportunity.fields.Description.Label}</td>
+                <td class="detail-col1-value" colspan="3"><apex:outputField value="{!relatedTo.Description}"/></td>
+            </tr>
+            <tr>
+                <th colspan="4">{!$Label.LG_PaymentInformation}</th>
+            </tr>
+            <tr>
+                <td class="detail-col1-key">{!$ObjectType.Opportunity.fields.LG_PaymentType__c.Label}</td>
+                <td class="detail-col1-value"><apex:outputField value="{!relatedTo.LG_PaymentType__c}"/></td>
+                <td class="detail-col2-key" rowspan="4">{!$Label.LG_BillingAddress}</td>
+                <td class="detail-col2-value" rowspan="4">
+                    <apex:outputField value="{!relatedTo.LG_BillingStreet__c}"/><apex:outputText value=" " rendered="{!relatedTo.LG_BillingHouseNumber__c <> null}"/><apex:outputField value="{!relatedTo.LG_BillingHouseNumber__c}"/><apex:outputText value="/" rendered="{!relatedTo.LG_BillingHouseNumberExtension__c <> null}"/><apex:outputField value="{!relatedTo.LG_BillingHouseNumberExtension__c}"/><br/>
+                    <apex:outputField value="{!relatedTo.LG_BillingCity__c}"/><apex:outputText value=", " rendered="{!relatedTo.LG_BillingPostalCode__c <> null}"/><apex:outputField value="{!relatedTo.LG_BillingPostalCode__c}"/><br/>
+                    <apex:outputField value="{!relatedTo.LG_BillingCountry__c}"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="detail-col1-key">{!$ObjectType.Opportunity.fields.LG_BankNumber__c.Label}</td>
+                <td class="detail-col1-value"><apex:outputField value="{!relatedTo.LG_BankNumber__c}"/></td>
+            </tr>
+            <tr>
+                <td class="detail-col1-key">{!$ObjectType.Opportunity.fields.LG_BankAccountName__c.Label}</td>
+                <td class="detail-col1-value"><apex:outputField value="{!relatedTo.LG_BankAccountName__c}"/></td>
+            </tr>
+            <tr>
+                <td class="detail-col1-key">{!$ObjectType.Opportunity.fields.LG_CustomerReference__c.Label}</td>
+                <td class="detail-col1-value"><apex:outputField value="{!relatedTo.LG_CustomerReference__c}"/></td>
+            </tr>
+            <tr>
+                <th colspan="4">{!$Label.LG_AddressInformation}</th>
+            </tr>
+            <tr>
+                <td class="detail-col2-key">{!$Label.LG_InstallationAddress}</td>
+                <td class="detail-col2-value">
+                    <apex:outputField value="{!relatedTo.LG_InstallationStreet__c}"/><apex:outputText value=" " rendered="{!relatedTo.LG_InstallationHouseNumber__c <> null}"/><apex:outputField value="{!relatedTo.LG_InstallationHouseNumber__c}"/><apex:outputText value="/" rendered="{!relatedTo.LG_InstallationHouseNumberExtension__c <> null}"/><apex:outputField value="{!relatedTo.LG_InstallationHouseNumberExtension__c}"/><br/>
+                    <apex:outputField value="{!relatedTo.LG_InstallationCity__c}"/><apex:outputText value=", " rendered="{!relatedTo.LG_InstallationPostalCode__c <> null}"/><apex:outputField value="{!relatedTo.LG_InstallationPostalCode__c}"/><br/>
+                    <apex:outputField value="{!relatedTo.LG_InstallationCountry__c}"/>
+                </td>
+                <td class="detail-col1-key">{!$Label.LG_PostalAddress}</td>
+                <td class="detail-col1-value">
+                    <apex:outputField value="{!relatedTo.LG_PostalStreet__c}"/><apex:outputText value=" " rendered="{!relatedTo.LG_PostalHouseNumber__c <> null}"/><apex:outputField value="{!relatedTo.LG_PostalHouseNumber__c}"/><apex:outputText value="/" rendered="{!relatedTo.LG_PostalHouseNumberExtension__c <> null}"/><apex:outputField value="{!relatedTo.LG_PostalHouseNumberExtension__c}"/><br/>
+                    <apex:outputField value="{!relatedTo.LG_PostalCity__c}"/><apex:outputText value=", " rendered="{!relatedTo.LG_PostalCode__c <> null}"/><apex:outputField value="{!relatedTo.LG_PostalCode__c}"/><br/>
+                    <apex:outputField value="{!relatedTo.LG_PostalCountry__c}"/>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="9">
+                    {!$Label.LG_ContactRoles}
+                </th>
+            </tr>
+            <tr>
+                <td>{!$ObjectType.OpportunityContactRole.fields.Role.Label}</td>
+                <td>{!$ObjectType.Contact.fields.Salutation.Label}</td>
+                <td>{!$ObjectType.Contact.fields.FirstName.Label}</td>
+                <td>{!$ObjectType.Contact.fields.LastName.Label}</td>
+                <td>{!$ObjectType.Contact.fields.Phone.Label}</td>
+                <td>{!$ObjectType.Contact.fields.MobilePhone.Label}</td>
+                <td>{!$ObjectType.Contact.fields.Email.Label}</td>
+                <td>{!$ObjectType.Contact.fields.Fax.Label}</td>
+                <td>{!$ObjectType.Contact.fields.Birthdate.Label}</td>
+            </tr>
+        </thead>
+        <tbody>
+            <apex:repeat var="contactRole" value="{!relatedTo.OpportunityContactRoles}">
+                <tr>
+                    <td><apex:outputField value="{!contactRole.Role}"/></td>
+                    <td><apex:outputField value="{!contactRole.Contact.Salutation}"/></td>
+                    <td><apex:outputField value="{!contactRole.Contact.FirstName}"/></td>
+                    <td><apex:outputText value="{!contactRole.Contact.MiddleName} {!contactRole.Contact.LastName}"/></td>
+                    <td><apex:outputField value="{!contactRole.Contact.Phone}"/></td>
+                    <td><apex:outputField value="{!contactRole.Contact.MobilePhone}"/></td>
+                    <td><apex:outputText value="{!contactRole.Contact.Email}"/></td>
+                    <td><apex:outputField value="{!contactRole.Contact.Fax}"/></td>
+                    <td><apex:outputField value="{!contactRole.Contact.Birthdate}"/></td>
+                </tr>
+            </apex:repeat>
+        </tbody>
+    </table>
+    <br/>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="4">
+                    {!$Label.LG_Products} <apex:outputText rendered="{!relatedTo.Pricebook2 <> null}" value=" ({!relatedTo.Pricebook2.Name})"/>
+                </th>
+            </tr>
+            <tr>
+                <td>{!$ObjectType.Product2.fields.Name.Label}</td>
+                <td>{!$ObjectType.OpportunityLineItem.fields.LG_Type__c.Label}</td>
+                <td>{!$ObjectType.OpportunityLineItem.fields.UnitPrice.Label}</td>
+                <td>{!$ObjectType.OpportunityLineItem.fields.LG_OneOffPrice__c.Label}</td>
+            </tr>
+        </thead>
+        <tbody>
+            <apex:repeat var="lineItem" value="{!relatedTo.OpportunityLineItems}">
+                <tr>
+                    <td><apex:outputField value="{!lineItem.Product2.Name}"/></td>
+                    <td><apex:outputField value="{!lineItem.LG_Type__c}"/></td>
+                    <td><apex:outputField value="{!lineItem.UnitPrice}"/></td>
+                    <td><apex:outputField value="{!lineItem.LG_OneOffPrice__c}" /></td>
+                </tr>
+            </apex:repeat>
+        </tbody>
+    </table>
+    <apex:outputPanel rendered="{!productDetails.size > 0}" layout="none">
+        <br/>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        {!$Label.LG_DetailedOrderInformation}
+                    </th>
+                </tr>
+                <tr>
+                    <td>{!$ObjectType.LG_ProductDetail__c.fields.LG_Product__c.Label}</td>
+                    <td>{!$ObjectType.LG_ProductDetail__c.fields.LG_Name__c.Label}</td>
+                    <td>{!$ObjectType.LG_ProductDetail__c.fields.LG_Value__c.Label}</td>
+                </tr>
+            </thead>
+            <tbody>
+                <apex:repeat var="attribute" value="{!productDetails}">
+                    <tr>
+                        <td><apex:outputField value="{!attribute.LG_Product__c}"/></td>
+                        <td><apex:outputField value="{!attribute.LG_Name__c}"/></td>
+                        <td><apex:outputField value="{!attribute.LG_Value__c}"/></td>
+                    </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+    </apex:outputPanel>
+    <apex:variable value="{!null}" var="numberPortingInfo"/>    
+    <apex:variable value="{!numberPortingInformation}" var="numberPortingInfo"/>
+    <apex:outputPanel rendered="{!numberPortingInfo.totalCount > 0}" layout="none">
+        <br/>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="6">
+                        {!$ObjectType.LG_PortingNumber__c.LabelPlural}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <apex:outputPanel layout="none" rendered="{!numberPortingInfo.fixedLineNumbersSmall.size > 0}">
+                    <tr>
+                        <th colspan="6">{!$Label.LG_FixedLineNumbers}</th>
+                    </tr>
+                    <tr class="secondary">
+                        <th>{!$Label.LG_PortingWishdate}</th>
+                        <th>{!$ObjectType.LG_PortingNumber__c.fields.LG_PrimaryNumber__c.Label}</th>
+                        <th>{!$ObjectType.LG_PortingNumber__c.fields.LG_Operator__c.Label}</th>
+                        <th>{!$ObjectType.LG_PortingNumber__c.fields.LG_PhoneNumber__c.Label}</th>
+                        <th>{!$ObjectType.LG_PortingNumber__c.fields.LG_FirstPhoneNumber__c.Label}</th>
+                        <th>{!$ObjectType.LG_PortingNumber__c.fields.LG_LastPhoneNumber__c.Label}</th>
+                    </tr>
+                    <apex:repeat var="porting" value="{!numberPortingInfo.fixedLineNumbersSmall}">
+                        <tr>
+                            <td><apex:outputField value="{!porting.LG_PortingDate__c}"/></td>
+                            <td><apex:outputField value="{!porting.LG_PrimaryNumber__c}"/></td>
+                            <td><apex:outputField value="{!porting.LG_Operator__c}"/></td>
+                            <td><apex:outputField value="{!porting.LG_PhoneNumber__c}"/></td>
+                            <td><apex:outputField value="{!porting.LG_FirstPhoneNumber__c}"/></td>
+                            <td><apex:outputField value="{!porting.LG_LastPhoneNumber__c}"/></td>
+                        </tr>
+                    </apex:repeat>
+                </apex:outputPanel>
+                <apex:outputPanel layout="none" rendered="{!numberPortingInfo.fixedLineNumbersSOHO.size > 0}">
+                    <tr>
+                        <th colspan="6">{!$Label.LG_FixedLineNumbers}</th>
+                    </tr>
+                    <tr class="secondary">
+                        <th>{!$Label.LG_PortingWishdate}</th>
+                        <th>{!$ObjectType.LG_PortingNumber__c.fields.LG_PhoneNumber__c.Label}</th>
+                        <th>{!$ObjectType.LG_PortingNumber__c.fields.LG_Operator__c.Label}</th>
+                        <th colspan="2">{!$ObjectType.LG_PortingNumber__c.fields.LG_CustomerName__c.Label}</th>
+                        <th>{!$ObjectType.LG_PortingNumber__c.fields.LG_InDirectory__c.Label}</th>
+                    </tr>
+                    <apex:repeat var="porting" value="{!numberPortingInfo.fixedLineNumbersSOHO}">
+                        <tr>
+                            <td><apex:outputField value="{!porting.LG_PortingDate__c}"/></td>
+                            <td><apex:outputField value="{!porting.LG_PhoneNumber__c}"/></td>
+                            <td><apex:outputField value="{!porting.LG_Operator__c}"/></td>
+                            <td colspan="2"><apex:outputField value="{!porting.LG_CustomerName__c}"/></td>
+                            <td><apex:outputField value="{!porting.LG_InDirectory__c}"/></td>
+                        </tr>
+                    </apex:repeat>
+                </apex:outputPanel>
+                <apex:outputPanel layout="none" rendered="{!numberPortingInfo.mobileNumbers.size > 0}">
+                    <tr>
+                        <th colspan="6">{!$Label.LG_MobileNumbers}</th>
+                    </tr>
+                    <tr class="secondary">
+                        <th>{!$Label.LG_PortingWishdate}</th>
+                        <th>{!$ObjectType.LG_PortingNumber__c.fields.LG_PhoneNumber__c.Label}</th>
+                        <th>{!$ObjectType.LG_PortingNumber__c.fields.LG_Operator__c.Label}</th>
+                        <th colspan="3">{!$ObjectType.LG_PortingNumber__c.fields.LG_SIMcardnumber__c.Label}</th>
+                    </tr>
+                    <apex:repeat var="porting" value="{!numberPortingInfo.mobileNumbers}">
+                        <tr>
+                            <td><apex:outputField value="{!porting.LG_PortingDate__c}"/></td>
+                            <td><apex:outputField value="{!porting.LG_PhoneNumber__c}"/></td>
+                            <td><apex:outputField value="{!porting.LG_Operator__c}"/></td>
+                            <td colspan="3"><apex:outputField value="{!porting.LG_SIMcardnumber__c}"/></td>
+                        </tr>
+                    </apex:repeat>
+                </apex:outputPanel>
+            </tbody>
+        </table>
+    </apex:outputPanel>
+</apex:component>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Congatemplates</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Congatemplates</value>
+    </caseValues>
+    <fields>
+        <label><!-- Billingaccaddtt --></label>
+        <name>Billingaccaddtt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Authorizationtoport Template --></label>
+        <name>LG_Authorizationtoport_Template__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccountreportID --></label>
+        <name>LG_BillingAccountreportID__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingaccountDD --></label>
+        <name>LG_BillingaccountDD__c</name>
+    </fields>
+    <fields>
+        <label><!-- BinaryValueOne --></label>
+        <name>LG_BinaryValueOne__c</name>
+    </fields>
+    <fields>
+        <label><!-- CorresconInfoId --></label>
+        <name>LG_CC_CorresconInfoId__c</name>
+    </fields>
+    <fields>
+        <label><!-- SiteInfoID --></label>
+        <name>LG_CC_SiteInfoID__c</name>
+    </fields>
+    <fields>
+        <label><!-- allproductsreportId --></label>
+        <name>LG_CC_allproductsreportId__c</name>
+    </fields>
+    <fields>
+        <label><!-- opppricontrole --></label>
+        <name>LG_CC_opppricontrole__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractTemplateID --></label>
+        <name>LG_ContractTemplateID__c</name>
+    </fields>
+    <fields>
+        <label><!-- DDMandate Template --></label>
+        <name>LG_DDMandate_Template__c</name>
+    </fields>
+    <fields>
+        <label><!-- DataReportId --></label>
+        <name>LG_DataReportId__c</name>
+    </fields>
+    <fields>
+        <label><!-- DataTCVQueryId --></label>
+        <name>LG_DataTCVQueryId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dataprop --></label>
+        <name>LG_Dataprop__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG_MIAProp --></label>
+        <name>LG_MIAProp__c</name>
+    </fields>
+    <fields>
+        <label><!-- MIATotalQueryID --></label>
+        <name>LG_MIATotalQueryID__c</name>
+    </fields>
+    <fields>
+        <label><!-- MIAReport --></label>
+        <name>LG_MIA_Prod__c</name>
+    </fields>
+    <fields>
+        <label><!-- MIA report Pd --></label>
+        <name>LG_MIA_report_Pd__c</name>
+    </fields>
+    <fields>
+        <label><!-- MTMIAProp Report Pd --></label>
+        <name>LG_MTMIAProp_Report_Pd__c</name>
+    </fields>
+    <fields>
+        <label><!-- MTMIA Report Pd --></label>
+        <name>LG_MTMIA_Report_Pd__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG_MT-MIA prop --></label>
+        <name>LG_MT_MIA_prop__c</name>
+    </fields>
+    <fields>
+        <label><!-- MT-MIA report Id --></label>
+        <name>LG_MT_MIA_report_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- MobileReportID --></label>
+        <name>LG_MobileReportID__c</name>
+    </fields>
+    <fields>
+        <label><!-- MobileTCVQueryId --></label>
+        <name>LG_MobileTCVQueryId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobileprop --></label>
+        <name>LG_Mobileprop__c</name>
+    </fields>
+    <fields>
+        <label><!-- OpptyPBQueryID --></label>
+        <name>LG_OpptyPBQueryID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order report Id --></label>
+        <name>LG_Order_report_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- PropositionsID --></label>
+        <name>LG_PropositionsID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SendContractDocValidation --></label>
+        <name>LG_SendContractDocValidation__c</name>
+    </fields>
+    <fields>
+        <label><!-- SitesMappedId --></label>
+        <name>LG_SitesMappedId__c</name>
+    </fields>
+    <fields>
+        <label><!-- TotalOneOffChargeId --></label>
+        <name>LG_TotalOneOffChargeId__c</name>
+    </fields>
+    <fields>
+        <label><!-- VoiceAdditionalID --></label>
+        <name>LG_VoiceAdditionalID__c</name>
+    </fields>
+    <fields>
+        <label><!-- VoiceInboundId --></label>
+        <name>LG_VoiceInboundId__c</name>
+    </fields>
+    <fields>
+        <label><!-- VoiceProductprop --></label>
+        <name>LG_VoiceProductprop__c</name>
+    </fields>
+    <fields>
+        <label><!-- VoiceReportID --></label>
+        <name>LG_VoiceReportID__c</name>
+    </fields>
+    <fields>
+        <label><!-- VoiceTCVId --></label>
+        <name>LG_VoiceTCVId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wayleave for LandLord --></label>
+        <name>LG_Wayleave_for_LandLord__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wayleave for Tenant --></label>
+        <name>LG_Wayleave_for_Tenant__c</name>
+    </fields>
+    <fields>
+        <label><!-- dataprodfortable --></label>
+        <name>LG_dataprodfortable__c</name>
+    </fields>
+    <fields>
+        <label><!-- service Feature Report --></label>
+        <name>LG_serviceFeatureReport__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG_voicenoadd --></label>
+        <name>LG_voicenoadd__c</name>
+    </fields>
+    <fields>
+        <label><!-- MIAProp ReportPD --></label>
+        <name>MIAProp_ReportPD__c</name>
+    </fields>
+    <fields>
+        <label><!-- MT-MIA Query ID --></label>
+        <name>MT_MIA_Query_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- service Feature prop --></label>
+        <name>service_Feature_prop__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

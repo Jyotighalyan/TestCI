@@ -1,0 +1,44 @@
+<apex:page showHeader="false" controller="LG_QOSTemplateController" sidebar="true">
+   
+   
+   
+    
+    <script>
+    
+    
+    </script>
+    
+
+    <div style="width:100%">
+        <table width="100%" border="1" cellspacing="0" cellpadding="6">
+            <tr>
+                   <th width="7%">
+                        QOS Type
+                   </th>
+                   <th width="27%">
+                        Voice Traffic
+                   </th>
+                   <th width="50%">
+                        Low Loss Traffic
+                   </th>
+    
+                   <th>
+                        Total Upstream Bandwidth
+                   </th>
+                   <th>
+                        Total Downstream Bandwidth
+                   </th>
+            </tr>
+    <apex:repeat value="{!standortqosList}" var="qos" rendered="true">
+        <tr>
+                <td width="100px; font-size:12px;"><apex:outputText id="QosType" value="{!qos.Qos_Type__c}" >  </apex:outputText> </td>
+                <td width="100px; font-size:12px;"><apex:outputText id="voiceTraffic" value="{!qos.Voice_Traffic__c }" >  </apex:outputText> </td>
+                <td width="100px; font-size:12px;"><apex:outputText id="lowLossTrafic" value="{!qos.Low_Loss_Traffic_MB_Sec__c}" >  </apex:outputText> </td>
+                <td width="100px; font-size:12px;"><apex:outputText id="upBand" value="{!qos.Total_Upstream_Bandwidth_MB_Sec__c}" >  </apex:outputText> </td>
+                <td width="100px; font-size:12px;"><apex:outputText id="downBand" value="{!qos.Total_Downstream_Bandwidth_MB_Sec__c}" >  </apex:outputText> </td>
+        </tr>
+        
+    </apex:repeat>
+   </table>
+   </div>
+</apex:page>

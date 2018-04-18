@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SOHO Base Price List</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SOHO Base Price Lists</value>
+    </caseValues>
+    <fields>
+        <label><!-- Bundle Name --></label>
+        <name>Bundle_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internet Name --></label>
+        <name>Internet_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price --></label>
+        <name>Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- TV Name --></label>
+        <name>TV_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Telephony --></label>
+        <name>Telephony__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

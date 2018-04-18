@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[For adjustment&nbsp;{!Kenan_Adjustment__c.Name} an approval is requested<div>Type of request:&nbsp;<span style="font-size: medium;">{!Kenan_Adjustment__c.Adjustment_Type__c}<br>Status of request: {!Kenan_Adjustment__c.requestStatus__c}<br></span></div>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="arial" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size: 12pt;">created by:&nbsp;{!Kenan_Adjustment__c.CreatedBy}</span></font><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">Created date:&nbsp;{!Kenan_Adjustment__c.CreatedDate}</div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial"><br></font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial">{!Kenan_Adjustment__c.Adjustment_Reason__c}</font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-family: arial;"><br></span></div><div><span style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">Account:&nbsp;</span><font face="arial">{!Kenan_Adjustment__c.accountExternalId__c}</font></div><div><font face="arial"><br></font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size: medium;">Invoice&nbsp;</span><span style="font-family: arial;">information</span></div><div><font face="arial">{!Kenan_Adjustment__c.billRefNo__c}</font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">{!Kenan_Adjustment__c.Invoice_Header__c}&nbsp;</span><font face="arial">{!Kenan_Adjustment__c.Invoice_HeaderId__c}</font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial">{!Kenan_Adjustment__c.Invoice_Item__c}</font></div><div><font face="arial">{!Kenan_Adjustment__c.currencyCode__c}</font><font face="arial" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">{!Kenan_Adjustment__c.Total_Amount__c}</font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial"><br></font></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

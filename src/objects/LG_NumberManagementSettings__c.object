@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Holds the settings for Number Management.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>LG_BlockSizes__c</fullName>
+        <defaultValue>&quot;1,10,100,1000&quot;</defaultValue>
+        <description>Holds the CSV list of available Number Range Block Sizes (i.e. 1,10,100,1000).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Holds the CSV list of available Number Range Block Sizes (i.e. 1,10,100,1000).</inlineHelpText>
+        <label>Block Sizes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BlockTypeAttribute__c</fullName>
+        <description>Holds the name of the Block Type  (New, Port-In) Attribute of the (optional) Number Range Product Definition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Holds the name of the  Block Type  (New, Port-In) Attribute of the (optional) Number Range Product Definition.</inlineHelpText>
+        <label>Block Type Attribute</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_EndNumberAttribute__c</fullName>
+        <description>Holds the name of the End Number Attribute of the (optional) Number Range Product Definition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Holds the name of the End Number Attribute of the (optional) Number Range Product Definition.</inlineHelpText>
+        <label>End Number Attribute</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MaxNumberLength__c</fullName>
+        <externalId>false</externalId>
+        <label>Max Number Length</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MinNumberLength__c</fullName>
+        <externalId>false</externalId>
+        <label>Min Number Length</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_NewDetailsFieldSet__c</fullName>
+        <description>Holds the name of the Asset objects field set used on the Capture Number Preferences page (and a controller) for additional new numbers details.</description>
+        <externalId>false</externalId>
+        <label>New Details Field Set</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_NumberRangeAttribute__c</fullName>
+        <description>Holds the name of the Number Range Attribute of the (optional) Number Range Product Definition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Holds the name of the Number Range Attribute of the (optional) Number Range Product Definition.</inlineHelpText>
+        <label>Number Range Attribute</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_NumberRangeProdConfForNew__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, a number range product configuration for New numbers would be created (while creating the assets for numbers).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, a number range product configuration for New numbers would be created (while creating the assets for numbers).</inlineHelpText>
+        <label>Number Range Prod.Conf. for New</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_NumberRangeProdConfForPortIn__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, a number range product configuration for Port-In numbers would be created (while creating the assets for numbers).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, a number range product configuration for Port-In numbers would be created (while creating the assets for numbers).</inlineHelpText>
+        <label>Number Range Prod.Conf. for Port-In</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_NumberRangeProductDefinitionName__c</fullName>
+        <description>Number Range Product Configuration&apos;s Product Definition Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number Range Product Configuration&apos;s Product Definition Name</inlineHelpText>
+        <label>Number Range Product Definition Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortInDetailsFieldSet__c</fullName>
+        <description>Holds the name of the Asset objects field set used on the Capture Number Preferences page (and a controller).</description>
+        <externalId>false</externalId>
+        <label>Port In Details Field Set</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PortInOperators__c</fullName>
+        <description>Holds the name of a specific global picklist that holds the list of Port In Operators - currently a CSV list</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Holds the name of a specific global picklist that holds the list of Port In Operators - currently a CSV list</inlineHelpText>
+        <label>Port-In Operators</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_RequireDetailsForNew__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>If unchecked, validations won&apos;t be fired for new number blocks during sales process. Only Number Block Type (New or Port In) and Number Block Size fields will be required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If unchecked, validations won&apos;t be fired for new number blocks during sales process. Only Number Block Type (New or Port In) and Number Block Size fields will be required.</inlineHelpText>
+        <label>Require Details for New</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_RequireDetailsForPortIn__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>If unchecked, validations won&apos;t be fired for port-in number blocks during sales process. Only Number Block Type (New or Port In) and Number Block Size fields will be required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If unchecked, validations won&apos;t be fired for port-in number blocks during sales process. Only Number Block Type (New or Port In) and Number Block Size fields will be required.</inlineHelpText>
+        <label>Require Details for Port In</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_SizeAttribute__c</fullName>
+        <description>Holds the name of the Size Attribute of the (optional) Number Range Product Definition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Holds the name of the Size Attribute of the (optional) Number Range Product Definition.</inlineHelpText>
+        <label>Size Attribute</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_StartNumberAttribute__c</fullName>
+        <description>Holds the name of the Start Number Attribute of the (optional) Number Range Product Definition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Holds the name of the Start Number Attribute of the (optional) Number Range Product Definition.</inlineHelpText>
+        <label>Start Number Attribute</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TelephonyNumberRangeAttribute__c</fullName>
+        <description>Holds the name of the Number Range attribute of the Telephony product definition. This attribute is a related product attribute.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Holds the name of the Number Range attribute of the Telephony product definition. This attribute is a related product attribute.</inlineHelpText>
+        <label>Telephony Number Range Attribute</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Number Management Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

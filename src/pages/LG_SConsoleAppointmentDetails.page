@@ -1,0 +1,211 @@
+<apex:page standardController="Case" extensions="LG_SConsoleAppointmentDetailsExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+ <!--   <Style type="text/css">
+    .div_background {
+        background: none repeat scroll 0 0 #333333;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        opacity: 0.5;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 101;
+        filter: alpha(opacity = 70);
+    }
+
+    .div_select_type{
+        left: 35%;
+        top: 35%;
+        margin: 0 auto;
+        position: fixed;
+        width: 340px;
+        height:100px;
+        z-index: 200;
+        padding-top:10px;
+        background-color:white;
+    }
+</Style>-->
+<apex:form >
+    <apex:pageBlock title="" mode="{!Mode}" id="mainPgBlk">
+        <apex:pageMessages id="pgMsg"></apex:pageMessages>
+        <!-- *********  Solution Section ********* -->
+        <apex:pageBlockSection title="{!$Label.LG_SubOrderTitle}"  collapsible="false" >
+
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" />
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__c}" />
+            <apex:outputfield value="{!Solution.csord__Order__c}" />
+            <apex:outputText label="Solution" >
+                <apex:outputLink value="/{!Solution.Id}" >{!Solution.Name}</apex:outputLink>
+            </apex:outputText>
+            <apex:outputField label="{!$Label.LG_ICOMSWorkOrder}:" value="{!solution.LG_ProvisioningWorkOrder__c}"/>
+            <apex:outputField label="{!$Label.LG_TargetDate}:" value="{!solution.LG_TargetDate__c}"/>
+            <apex:inputField label="{!$Label.LG_InstallationContact}:" value="{!appointmentObject.LG_InstallationContact__c}" rendered="{!Edit}"/>
+            <apex:outputField label="{!$Label.LG_InstallationContact}:" value="{!appointmentObject.LG_InstallationContact__c}" rendered="{!!Edit}"/>
+            <apex:outputField label="{!$Label.LG_EarliestInstallDate}:" value="{!solution.LG_EarliestInstallDate__c}" id="EID"/>
+            <apex:outputField label="{!$Label.LG_ContactNumber}:" value="{!Solution.LG_Address__r.LG_TechnicalContact__r.phone}"/>
+
+  <!--      To be hidden as design is still not finalised
+            <apex:outputField label="Project Civils Completion Date:" value="{!solution.LG_EarliestInstallDate__c}" />
+            <apex:outputLabel value=""/>-->
+           <!-- <apex:outputField label="Suborder:" value="{!solution.Name}"/> -->
+            <!--<apex:outputField label="Suborder:" value="{!case.LG_Solution__c}"/>-->
+            <apex:outputField label="{!$Label.LG_NumberstoPort}:" value="{!solution.LG_AnyNumbersToPort__c}" />
+ <!--            <apex:outputLabel value=""/>
+           <apex:outputPanel >
+            <table style="width:100%;">
+                <tr style="line-height:25px;">
+                    <td style="width:35%;">
+                        <div align="right" style="font-size: 91%;font-weight: bold;color: #4a4a56;">
+                            Porting Wish Dates:
+                        </div>
+                    </td>
+                    <td style="width:20%;">
+                        <div align="Left" style="padding-left:10px;">
+                            <apex:outputField value="{!solution.LG_EarliestPortingWishDate__c}" />
+                        </div>
+                    </td>
+                    <td style="width:10%;font-size: 91%;font-weight: bold;color: #4a4a56;">
+                        <div align="left">To    </div>
+                    </td>
+                    <td style="width:20%;">
+                        <div align="left"><apex:outputField value="{!solution.LG_LatestPortingWishDate__c}"/></div>
+                    </td>
+                    <td>
+                        <div align="left"><apex:commandButton value="Change"/></div>
+                    </td>
+                </tr>
+
+            </table>
+            </apex:outputPanel>!-->
+
+        </apex:pageBlockSection>
+         <apex:pageBlockSection columns="3">
+             <apex:outputField Label="{!$Label.LG_PortingWishDates}:" value="{!solution.LG_EarliestPortingWishDate__c}"/>
+            <apex:outputField Label="{!$Label.Label_To}" value="{!solution.LG_LatestPortingWishDate__c}"/>
+            <apex:commandButton value="{!$Label.Label_Change}" rendered="{!Case.status!="Closed"}" />
+         </apex:pageBlockSection>
+        <!--SFOM-662  Start-->
+        <apex:pageBlockSection id="siteDetails" title="Site"  collapsible="false" >
+            <apex:outputPanel style="color:red;font-weight:bold;" layout="block" rendered="{!FTTPWarning && OrgVal == 'VMB'}">
+                {!$Label.LG_FTTPWarningMessage}
+            </apex:outputPanel>
+            <apex:outputText value="" rendered="{!FTTPWarning && OrgVal == 'VMB'}"/>
+
+            <apex:outputField label="{!$Label.LG_Site}:" value="{!solution.LG_Address__r.LG_FullAddressDetails__c}" /> 
+            <apex:outputField value="{!solution.LG_Address__r.Delivery_Type__c}" rendered="{!OrgVal == 'VMB'}"/>
+        </apex:pageBlockSection>
+        <!--SFOM-662  End-->
+        <!-- *********  Appointment Section ********* -->
+
+        <apex:pageBlockSection title="{!$Label.LG_Appointment}" columns="2" collapsible="false" rendered="{!!Edit}" >
+
+            <apex:outputField label="{!$Label.LG_AgreedInstall}:" value="{!appointmentObject.LG_AgreedInstallDate__c}"/>
+            <apex:outputField label="{!$Label.LG_Slot}:" value="{!appointmentObject.LG_Slot__c}"/>
+            <apex:outputField label="{!$Label.LG_JobRef}:" value="{!appointmentObject.LG_JobReference__c}" />
+            <apex:outputField label="{!$Label.LG_Status}:" value="{!appointmentObject.LG_Status__c}" />
+            <apex:outputField label="{!$Label.LG_Remarks}:" value="{!appointmentObject.LG_Remarks__c}" />
+            <apex:outputField label="{!$Label.LG_ReasonforModCancelAppointment}:" value="{!appointmentObject.LG_Reasons__c}" rendered="{!modifytype}" />
+
+        </apex:pageBlockSection>
+
+        <!-- *********  Appointment Editable Section ********* -->
+
+        <apex:pageBlockSection title="{!$Label.LG_Appointment}" columns="2" collapsible="false" rendered="{!Edit}" >
+            <apex:inputField label="{!$Label.LG_AgreedInstall}:" value="{!appointmentObject.LG_AgreedInstallDate__c}" id="AID" />
+            <apex:inputField label="{!$Label.LG_Slot}:" value="{!appointmentObject.LG_Slot__c}" />
+            <apex:inputField label="{!$Label.LG_JobRef}:" value="{!appointmentObject.LG_JobReference__c}" />
+
+            <apex:selectList disabled="true" size="1" value="{!appointmentObject.LG_Status__c}">
+                <apex:selectOptions value="{!statusOptions}"></apex:selectOptions>
+            </apex:selectList>
+
+            <apex:inputField label="{!$Label.LG_Remarks}:" value="{!appointmentObject.LG_Remarks__c}" />
+            <apex:inputField label="{!$Label.LG_ReasonforModCancelAppointment}:" value="{!appointmentObject.LG_Reasons__c}" rendered="{!modifytype}" />
+
+        </apex:pageBlockSection>
+
+        <!-- ********* Services Section ********* -->
+        <apex:pageBlockSection title="{!$Label.LG_Services}" columns="1" collapsible="false" >
+
+            <apex:pageBlockTable columns="3"  value="{!ServiceItems}" var="serv">
+                 <apex:column headervalue="{!$Label.LG_ServiceName}">
+                    <apex:outputLink value="/apex/LG_ViewAttributeDefenition?id={!Serv.id}">{!Serv.name}</apex:outputLink>
+                 </apex:column>
+
+                 <apex:column headervalue="{!$Label.LG_Status} " value="{!Serv.LG_ServiceStatus__c}" />
+                <!-- Commented as per request from Marian
+                <apex:column headervalue="Installation Wish Date" value="{!Serv.LG_InstallationWishDate__c}" />-->
+
+                <!-- SFOM - 647 Added by : Ankur Gupta -- Start -->
+                <apex:column headervalue="{!$Label.LG_DeltaStatus}" value="{!Serv.csordtelcoa__Delta_Status__c}"/>
+                <!-- SFOM - 647 Added by : Ankur Gupta -- End -->
+            </apex:pageBlockTable>
+
+            <apex:outputpanel rendered="{!ServiceItems.size == 0}">
+               {!$Label.LG_NoRecordsToDisplay}.
+            </apex:outputpanel>
+
+        </apex:pageBlockSection>
+
+        <!-- Appointment History Section -->
+        <apex:pageBlockSection title="{!$Label.LG_AppointmentHistory}" columns="1" collapsible="false" rendered="{!modifytype}" >
+            <apex:pageBlockTable value="{!appointmentHistory}" var="hist">
+                    <apex:column headerValue="{!$Label.LG_Field}" value="{!hist.Field}"/>
+                    <apex:column headerValue="{!$Label.LG_OldValue}" value="{!hist.oldValue}"/>
+                    <apex:column headerValue="{!$Label.LG_Field}" value="{!hist.newValue}"/>
+                    <apex:column headerValue="{!$Label.LG_Date}" value="{!hist.createddate}"/>
+                    <apex:column headerValue="{!$Label.LG_User}" value="{!hist.createdbyid}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+
+        <!-- *********  Notes & Attachments Section ********* -->
+
+        <apex:pageBlockSection title="{!$Label.LG_NotesAttachments}" columns="2" collapsible="false" >
+
+            <apex:pageblockTable value="{!file}" var="f">
+                <apex:column headerValue="">
+                <apex:outputLink value="{!URLFOR($Action.Attachment.Download, f.Id)}"
+                                            target="_blank">View</apex:outputLink>
+                </apex:column>
+                <apex:column value="{!f.Name}" headerValue="{!$Label.LG_FileName}"/>
+                <!--<apex:column value="{!f.LastModifiedDate}" headerValue="Last Modified"/>
+                <apex:column value="{!f.Owner.Name}" headerValue="Created By"/>
+                -->
+            </apex:pageblockTable>
+            <!-- To view details of the attachement
+            <apex:repeat value="{!file}" var="f">
+                <apex:panelgrid>
+                    <apex:outputLink value="/{!f.Id}" target="_blank">View File</apex:outputLink>
+                </apex:panelgrid>
+            </apex:repeat>
+            -->
+        </apex:pageBlockSection>
+
+        <!--Popup for UploadFile-->
+        <apex:outputPanel rendered="{!displayPopup}">
+              <div class="div_background"></div>
+              <div class="div_select_type" align="center">
+                <apex:inputFile value="{!fileBody}" fileName="{!fileName}" />
+                <br/><br/><br/>
+                <apex:commandButton value="{!$Label.LG_ButtonSubmit}" action="{!UploadFile}"/>
+                <apex:commandButton value="{!$Label.LG_ButtonCancel}" action="{!closePopup}"/>
+              </div>
+        </apex:outputPanel>
+        <!-- *********  Page Buttons Section ********* -->
+        <apex:pageBlockButtons >
+           <apex:commandButton action="{!edit}" value="{!$Label.LG_ButtonEdit}" rendered="{!!Edit && case.status!="Closed"}" />
+           <apex:commandButton value="{!$Label.LG_ButtonUpload}" action="{!showPopup}" rendered="{!Edit}" />
+           <apex:commandButton action="{!save}" value="{!$Label.LG_ButtonSave}" rendered="{!Edit  && !bengin}" reRender="mainPgBlk" status="loadingStatus"/>
+           <apex:commandButton action="{!save}" value="{!$Label.LG_ButtonSave}" rendered="{!Edit  && bengin}" reRender="mainPgBlk" status="loadingStatus" onclick="if(!confirm('New appointment date invalidates current Number Porting arrangements and will require a corrective Number Porting step to be performed')){return false};"/>
+            <!-- <apex:commandButton action="{!save}" value="Save" rendered="{!Edit}" onclick="return validate()"/> -->
+           <apex:commandButton action="{!cancel}" value="{!$Label.LG_ButtonCancel}" rendered="{!Edit}" />
+            <apex:actionStatus id="loadingStatus" startText="{!$Label.LG_Loading}.." style="align:center;font-size:20px;font-weight:50;"></apex:actionStatus>
+            <apex:commandButton action="{!refresh}" value="{!$Label.LG_ButtonRefresh}" rendered="{!!Edit && case.status!="Closed"}"/>
+        </apex:pageBlockButtons>
+
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

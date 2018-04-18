@@ -1,0 +1,8 @@
+Hi, 
+
+The following lead has been modified by your manager. 
+Company: {!Lead.Company} 
+Lead Name: {!Lead.Name} 
+
+By clicking on the below link, Please look into the Lead History section for the changes applied on this record: 
+{!IF(Receiving_User.Profile="UM_Partner"," http://unitymedia.force.com/partners/"+Lead.Id,Lead.Link)}

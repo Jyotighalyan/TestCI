@@ -1,0 +1,87 @@
+<apex:component controller="BasketEditorController" >
+    <div class="bootstrap-iso">
+        <c:BreadCrumb />
+    </div>
+    <script>
+        console.log('loading component');
+        var CSCustom = (function(CS){
+            CS.BasketParams = JSON.parse('{!params}');
+
+            //setup UserContext object because it is used in cscfga js and it is missing because page header is not shown
+            //UserContext = {};
+            //UserContext.dateFormat = "dd/MM/yyyy";
+
+            return CS;
+        })(CSCustom || {});
+        CSCustom = (function(CSCustom){
+
+            function renderScreenList() {
+                var screens = CS.Service.getProductIndex().screensByProduct[CS.Service.getCurrentProductId()],
+                    currentScreenIdx = CS.Service.getCurrentScreenIndex(),
+                    currentConfigRef = CS.Service.getCurrentConfigRef();
+
+                function getScreenStatus(currentConfigRef, screenNo) {
+                    if(CS.Service.config[currentConfigRef].screens === undefined || CS.Service.config[currentConfigRef].screens[screenNo].validation === undefined) {
+                        return null; // validation did not yet pass trough so return sliently and expose no icon indicators
+                    }
+                    return CS.Service.config[currentConfigRef].screens[screenNo].validation.isValid
+                }
+
+                var validIcon = 'glyphicon-ok-circle';
+                var invalidIcon = 'glyphicon-remove-circle';
+
+                var html = screens.map(function (it, i) {
+                    var status = getScreenStatus(currentConfigRef, i);
+
+                    var icon = '';
+                    if(status === true) {
+                        icon = '<i class="glyphicon ' + validIcon + '"></i>';
+                    }
+                    else if (status === false) {
+                        icon = '<i class="glyphicon ' + invalidIcon + '" style="color: #e74c3c"></i>';
+                    }
+
+
+                    if (i === currentScreenIdx) {
+                        var itemHtml = '<a onclick="clickAction(this, displayScreen, ' + i + ')" href="#" class="btn btn-inverse active">' + it.Name + ' ' + icon + '</a>';
+                    } else {
+                        var itemHtml = '<a onclick="clickAction(this, displayScreen, ' + i + ')" href="#" class="btn btn-inverse">' + it.Name + ' ' + icon + '</a>';
+                    }
+                    return itemHtml;
+                });
+                jQuery('.btn-breadcrumb').html(html.join(''));
+            }
+
+            var orgDisScr = null;
+            function init(afterScreenDisplay) {
+                if (orgDisScr) {
+                    return;
+                }
+                orgDisScr = CS.Service.displayScreen;
+                CS.Service.displayScreen = function(idx, overrideSelector, onComplete) {
+                    if (typeof overrideSelector === 'function') {
+                        onComplete = overrideSelector;
+                        overrideSelector = null;
+                    }
+                    function callback() {
+                        if (typeof onComplete === 'function') {
+                            onComplete();   
+                        }
+                        if (typeof renderScreenList === 'function') {
+                            renderScreenList();
+                        }
+                        if (typeof afterScreenDisplay === 'function') {
+                            afterScreenDisplay();
+                        }
+                    }
+                    orgDisScr(idx, overrideSelector, callback);
+                }
+            }
+
+            CSCustom.ScreenList = {};
+            CSCustom.ScreenList.init = init;
+            CSCustom.ScreenList.render = renderScreenList;
+            return CSCustom;
+        })(CSCustom || {});
+    </script>
+</apex:component>

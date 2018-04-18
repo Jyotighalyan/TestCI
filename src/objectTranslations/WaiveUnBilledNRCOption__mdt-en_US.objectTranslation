@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Waive UnBilled NRC Option</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Waive UnBilled NRC Options</value>
+    </caseValues>
+    <fields>
+        <label><!-- IsDefault --></label>
+        <name>IsDefault__c</name>
+    </fields>
+    <fields>
+        <label><!-- LanguageCode --></label>
+        <name>LanguageCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- waiveUnBilledNRC --></label>
+        <name>waiveUnBilledNRC__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

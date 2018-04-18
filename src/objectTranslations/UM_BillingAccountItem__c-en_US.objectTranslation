@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Billing Account Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Billing Account Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Billing Account --></label>
+        <name>UM_BillingAccount__c</name>
+        <relationshipLabel><!-- Billing Account Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billing Code --></label>
+        <name>UM_BillingCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Type --></label>
+        <name>UM_BillingType__c</name>
+        <picklistValues>
+            <masterLabel>One-Off</masterLabel>
+            <translation><!-- One-Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recurring</masterLabel>
+            <translation><!-- Recurring --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount --></label>
+        <name>UM_Discount__c</name>
+        <relationshipLabel><!-- Billing Account Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>UM_EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>UM_External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Future Dated --></label>
+        <name>UM_Is_Future_Dated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Type --></label>
+        <name>UM_ItemType__c</name>
+        <picklistValues>
+            <masterLabel>Discount</masterLabel>
+            <translation><!-- Discount --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number of Months --></label>
+        <name>UM_NumberofMonths__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage --></label>
+        <name>UM_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>UM_StartDate__c</name>
+    </fields>
+    <layouts>
+        <layout>Billing Account Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

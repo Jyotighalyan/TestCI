@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- mandate --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- mandate --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- mandate --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- mandate --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- mandate --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- mandate --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- mandate --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- mandate --></value>
+    </caseValues>
+    <fields>
+        <label><!-- BIC code --></label>
+        <name>BIC_code__c</name>
+    </fields>
+    <fields>
+        <label>Rechnungskontonummer</label>
+        <name>Billing_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Account --></label>
+        <name>Billing_Account__c</name>
+        <relationshipLabel><!-- Mandates --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Creditor ID --></label>
+        <name>Creditor_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- IBAN --></label>
+        <name>IBAN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue date --></label>
+        <name>Issue_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy_Mandate_reference # --></label>
+        <name>Legacy_Mandate_reference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deactivated</masterLabel>
+            <translation><!-- Deactivated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New, send to customer</masterLabel>
+            <translation>Neu, um Kunden senden</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Termination date --></label>
+        <name>Termination_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of mandate --></label>
+        <name>Type_of_mandate__c</name>
+        <picklistValues>
+            <masterLabel>Recurring</masterLabel>
+            <translation><!-- Recurring --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- customer signature received? --></label>
+        <name>customer_signature__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <layouts>
+        <layout>mandate Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Mandate Reference # --></nameFieldLabel>
+</CustomObjectTranslation>

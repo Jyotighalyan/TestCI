@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Task: Follow up Lead</masterLabel>
+        <translation>Aufgabe: Wiedervorlage Lead</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Task: Follow up Quote</masterLabel>
+        <translation>Aufgabe: Wiedervorlage Angebot</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Task: Other</masterLabel>
+        <translation>Aufgabe: Andere</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Task: Request Data Update</masterLabel>
+        <translation>Aufgabe: Anfrage Datenupdate</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Task: Request Record Transfer</masterLabel>
+        <translation>Aufgabe: Anfrage Transfer Datensatz</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Task: Schedule Call</masterLabel>
+        <translation>Aufgabe: Anruf planen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Task: Send Email</masterLabel>
+        <translation>Aufgabe: Email versenden</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Task: Send Letter/Quote</masterLabel>
+        <translation>Aufgabe: Brief/Angebot versenden</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

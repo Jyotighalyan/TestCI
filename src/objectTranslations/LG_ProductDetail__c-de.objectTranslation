@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- Product Detail --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Product Detail --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Product Detail --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Product Detail --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Product Detail --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Product Detail --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Product Detail --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Product Detail --></value>
+    </caseValues>
+    <fields>
+        <label>Merkmal</label>
+        <name>LG_Attribute__c</name>
+        <relationshipLabel>Produktdetails</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>LG_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>LG_Opportunity__c</name>
+        <relationshipLabel>Produktdetails</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Produkt</label>
+        <name>LG_Product__c</name>
+    </fields>
+    <fields>
+        <label>Reihenfolge</label>
+        <name>LG_Sequence__c</name>
+    </fields>
+    <fields>
+        <label>Typ</label>
+        <name>LG_Type__c</name>
+        <picklistValues>
+            <masterLabel>Bundle Detail</masterLabel>
+            <translation>Details Bundle</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Detail</masterLabel>
+            <translation>Details Bestellung</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Wert</label>
+        <name>LG_Value__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <nameFieldLabel><!-- Product Details Name --></nameFieldLabel>
+</CustomObjectTranslation>

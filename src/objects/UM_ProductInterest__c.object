@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is for capturing interest in multiple products</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>UM_Capex__c</fullName>
+        <externalId>false</externalId>
+        <label>Capex</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UM_Chance__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>0% - LOSS
+10% - Lead, Interessent, Kontakt mit Kunden
+30% - Bedarfsanalyse
+40% - ON HOLD
+60% - Termin vor Ort, Angebotsphase, Capex-Kosten ermittelt, Angebot in schriftlicher Form liegt vor
+90% - Commitment des Kunden vorhanden
+100% - WIN</inlineHelpText>
+        <label>Chance</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>UM_Chance</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_ContractTerm__c</fullName>
+        <description>Number field to capture contract term in months</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contract term in months</inlineHelpText>
+        <label>Contract Term</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Forecast__c</fullName>
+        <externalId>false</externalId>
+        <label>Forecast</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Product Interest</relationshipLabel>
+        <relationshipName>Product_Interest</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UM_MRR__c</fullName>
+        <externalId>false</externalId>
+        <label>MRR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UM_OTC__c</fullName>
+        <externalId>false</externalId>
+        <label>OTC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UM_Opex__c</fullName>
+        <externalId>false</externalId>
+        <label>Opex</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UM_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Product Interest</relationshipLabel>
+        <relationshipName>Product_Interest</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UM_ProductDetails__c</fullName>
+        <description>Free text field to capture details about the product interest</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Free text field to capture details about the product interest</inlineHelpText>
+        <label>Product Details</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>UM_Product__c</fullName>
+        <description>Picklist to capture Product Interest</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>UM_Product</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_ProjectLoadTotal__c</fullName>
+        <externalId>false</externalId>
+        <formula>UM_Quantity__c *  UM_ContractTerm__c *  (UM_MRR__c +  UM_OTC__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Load (Total)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UM_ProjectLoadWeighted__c</fullName>
+        <description>Translates the change picklist value to string and than to integer and calculates the weighted project load.</description>
+        <externalId>false</externalId>
+        <formula>VALUE(
+CASE( UM_Chance__c ,
+ &apos;0%&apos;, TEXT(0),
+ &apos;10%&apos;, TEXT(0.10),
+ &apos;20%&apos;, TEXT(0.20),
+ &apos;30%&apos;, TEXT(0.30),
+ &apos;40%&apos;, TEXT(0.40),
+ &apos;50%&apos;, TEXT(0.50),
+ &apos;60%&apos;, TEXT(0.60),
+ &apos;70%&apos;, TEXT(0.70),
+ &apos;80%&apos;, TEXT(0.8),
+ &apos;90%&apos;, TEXT(0.9),
+ &apos;100%&apos;,TEXT(1),
+TEXT(0))
+)
+* UM_ProjectLoadTotal__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Load (Weighted)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UM_Quantity__c</fullName>
+        <description>Number field to capture product interest quantity</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ROI__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>ROI in months</inlineHelpText>
+        <label>ROI</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Product Interest</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PI{00000000}</displayFormat>
+        <label>Product Interest Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Product Interest</pluralLabel>
+    <recordTypes>
+        <fullName>Lead</fullName>
+        <active>true</active>
+        <label>Lead</label>
+        <picklistValues>
+            <picklist>UM_Chance__c</picklist>
+            <values>
+                <fullName>0%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90%25</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_Product__c</picklist>
+            <values>
+                <fullName>Allgemeine Beratung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Fiber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Voice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital TV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LE Fiber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LTE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobilfunk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Internet %26 Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wholesale Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WiFi%2FWlan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Oppty</fullName>
+        <active>true</active>
+        <label>Oppty</label>
+        <picklistValues>
+            <picklist>UM_Chance__c</picklist>
+            <values>
+                <fullName>0%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90%25</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_Product__c</picklist>
+            <values>
+                <fullName>Allgemeine Beratung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Fiber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Voice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital TV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LE Fiber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LTE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobilfunk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Internet %26 Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wholesale Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WiFi%2FWlan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>UM_ForecastInFuture</fullName>
+        <active>true</active>
+        <errorConditionFormula>UM_Forecast__c &lt;=  TODAY()</errorConditionFormula>
+        <errorDisplayField>UM_Forecast__c</errorDisplayField>
+        <errorMessage>Forecast must be in the future</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,3 @@
+<apex:page showHeader="true" sidebar="true" docType="html-5.0" controller="LG_QuickCreatePremisePageController" action="{!createNewPremise}" >
+    <!--  -->c:UM_ValidateAddressComponent isOutsideAddressValidation="true" /-->
+</apex:page>

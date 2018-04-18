@@ -1,0 +1,52 @@
+<apex:page controller="PartnerKnowledgePublish"><apex:outputPanel layout="block">
+<table>
+<br/>
+<br/>
+    <tr>
+        <td width="30%">
+            <apex:outputText value="{!$Label.Marketing_Distribution_Document}" style="font-weight:bold;font-size:large"/>
+             <br/>
+            <br/>
+            <apex:repeat var="cv" value="{!Offer}">
+            <apex:outputLink value="/servlet/fileField?entityId={!cv.Id}&field=Attachment__Name__s ">
+            <apex:outputfield value="{!cv.Title}"/>
+            </apex:outputLink> 
+            <br/>
+            <apex:outputtext value="{! IF(LEN(cv.summary)> 30,(LEFT(cv.summary,30)&'...'), cv.summary)}" />
+            <br/>
+            <br/>
+            </apex:repeat>
+        </td>
+         <td width="30%">
+             <apex:outputText value="{!$Label.Newsletter}" style="font-weight:bold;font-size:large"/>
+              <br/>
+            <br/>
+            <apex:repeat var="cv" value="{!Newsletter}">
+            <apex:outputLink value="/servlet/fileField?entityId={!cv.Id}&field=Attachment__Name__s ">
+            <apex:outputfield value="{!cv.Title}"/>
+            </apex:outputLink> 
+            <br/>
+             <apex:outputtext value="{! IF(LEN(cv.summary)> 30,(LEFT(cv.summary,30)&'...'), cv.summary)}" />
+            <br/>
+             <br/>
+            </apex:repeat>
+        </td>     
+         <td width="30%">
+             <apex:outputText value="{!$Label.Formulation}" style="font-weight:bold;font-size:large"/>
+             <br/>
+             <br/>
+              <apex:repeat var="cv" value="{!Forms}">
+           <!-- <apex:outputLink value="/articles/offer/{!cv.UrlName}">-->
+            <apex:outputLink value="/servlet/fileField?entityId={!cv.Id}&field=Attachment__Name__s ">
+            <apex:outputfield value="{!cv.Title}"/> 
+            </apex:outputLink>
+            <br/>
+             <apex:outputtext value="{! IF(LEN(cv.summary)> 30,(LEFT(cv.summary,30)&'...'), cv.summary)}" />
+             <br/>
+             <br/>
+            </apex:repeat>
+        </td>
+    </tr>
+    </table>
+    </apex:outputPanel>
+</apex:page>

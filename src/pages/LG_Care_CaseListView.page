@@ -1,0 +1,10 @@
+<apex:page showHeader="true" tabstyle="Case" standardController="Case" recordSetVar="Cases" >
+    <!--<apex:pageBlock id="pb">-->
+    <apex:outputPanel id="panelId">
+        <apex:enhancedList type="Case" height="800" id="YourListViewId" customizable="true" />
+    </apex:outputPanel>
+            <apex:form >     
+                <apex:actionPoller rerender="panelId" interval="120" oncomplete="reload()"/>
+            </apex:form>
+   <!--</apex:pageBlock>-->
+</apex:page>

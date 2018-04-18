@@ -1,0 +1,151 @@
+<apex:page id="LG_TerminationDetails" controller="LG_TerminationDetailsController" showHeader="true" sidebar="true" docType="html-5.0" title="{!$Label.LG_TerminationDetailsTitle}">
+	<apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, 'sfdcBootstrap.css')}"/>
+	<apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, '/datepicker/css/bootstrap-datepicker.standalone.css')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'jquery.min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'bootstrap.min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, '/datepicker/js/bootstrap-datepicker.js')}"/>
+	<script>
+		$(document).ready(function () {
+			$('.input-group.date').datepicker({
+				format: 'dd-mm-yyyy',
+				weekStart: 1,
+				autoclose: true,
+				todayHighlight: true,
+				todayBtn: true,
+				clearBtn: true,
+				forceParse: false
+			});
+
+			$('input[id^=wishdate-]').each(function () {
+				var premiseId = this.id.split('-')[1];
+				var minDate = $('#minTerminationDate').html();
+				$(this).parent().datepicker('setStartDate', minDate);
+
+				var daysDisabled = '0';
+
+				$(this).parent().datepicker('setDaysOfWeekDisabled', daysDisabled);
+			});
+		});
+
+		function todayFormat() {
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth() + 1;
+			var yyyy = today.getFullYear();
+
+			if (dd < 10) {
+				dd = '0' + dd;
+			}
+
+			if (mm < 10) {
+				mm = '0' + mm;
+			}
+
+			return dd + '-' + mm + '-' + yyyy;
+		}
+
+		function collapseAll() {
+			var newstate = $('#btnCollapseAll').attr('state') ^ 1,
+				text = newstate
+					? "{!$Label.LG_ExpandAll}"
+					: "{!$Label.LG_CollapseAll}";
+
+			// if state = 0, collapse all panels
+			if ($('#btnCollapseAll').attr('state') == "0") {
+				$('.panel-collapse.in').collapse('hide' // otherwise, expand all the panels
+				);
+			} else {
+				$('.panel-collapse:not(".in")').collapse('show');
+			}
+
+			$('#btnCollapseAll').html(text);
+			$('#btnCollapseAll').attr('state', newstate)
+		}
+
+		function prepareDatesAndSave() {
+			//premiseId~date#premiseId2~date2...
+			var premisesToWishDate = '';
+			$('input[id^=wishdate-]').each(function () {
+				var premiseId = this.id.split('-')[1];
+
+				premisesToWishDate += premiseId + '~' + this.value + '#';
+			});
+
+			premisesToWishDate = premisesToWishDate.slice(0, -1);
+
+			save(premisesToWishDate);
+		}
+	</script>
+	<apex:form >
+		<div class="sfdcBootstrap">
+			<div class="container">
+				<br/>
+				<h2>{!$Label.LG_TerminationDetailsTitle}</h2>
+				<br/>
+				<br/>
+				<div class="well ">
+					<div class="input-group">
+						<span style="font-size:16px">{!$Label.LG_ProductBasketLabel}
+						</span>&nbsp;&nbsp;&nbsp;
+						<a href="/{!basket.Id}" style="font-size:14px">{!basket.Name}</a>
+						<span class="input-group-btn">
+							<button onclick="collapseAll()" type="button" id="btnCollapseAll" class="btn btn-danger pull-right btn-xs" state="0">{!$Label.LG_CollapseAll}</button>
+						</span>
+					</div>
+				</div>
+				<div class="well well-sm">
+					<div class="row">
+						<div class="col-sm-3" style="text-align:right">
+							{!$Label.LG_EarliestPossibleTerminationDate}
+							<label id="minTerminationDate">
+								<apex:outputText value="{0,date,dd-MM-yyyy}"><apex:param value="{!minTerminationDate}"/></apex:outputText>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="panel-group">
+					<apex:repeat value="{!premises}" var="premise" id="premisePanels">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapse{!premise.Id}">{!premise.LG_FullAddressDetails__c}</a>
+								</h4>
+							</div>
+							<div id="collapse{!premise.Id}" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<div class="row" style="margin-bottom:10px">
+										<div class="col-sm-3">
+											<ul>
+												<apex:repeat value="{!premiseToServices[premise.Id]}" var="service" id="services">
+													<li>{!service.Name}</li>
+												</apex:repeat>
+											</ul>
+										</div>
+										<div class="col-sm-8">
+											<label for="usr">{!$Label.LG_TerminationDate}</label>
+											<div class="input-group date col-sm-3">
+												<input onkeydown="return false" type="text" class="form-control" id="wishdate-{!premise.Id}" value="{!premiseWishDate[premise.Id]}"/>
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-th"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</apex:repeat>
+				</div>
+				<div style="text-align: center">
+					<apex:actionFunction name="save" action="{!save}" rerender="">
+						<apex:param name="wishDates" value="" assignTo="{!premiseIdToWishDates}"/>
+					</apex:actionFunction>
+					<apex:actionFunction name="redirectToReturn" action="{!redirectToReturnId}"/>
+					<button type="button" class="btn btn-danger" onclick="prepareDatesAndSave()">{!$Label.LG_ButtonSave}</button>
+					<button type="button" class="btn btn-default" onclick="redirectToReturn()">{!$Label.LG_ButtonCancel}</button>
+				</div>
+				<br/>
+			</div>
+		</div>
+	</apex:form>
+</apex:page>

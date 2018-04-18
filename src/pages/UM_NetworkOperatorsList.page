@@ -1,0 +1,95 @@
+<apex:page id="UM_NetworkOperatorsPage" controller="UM_NetworkOperatorsListCtrl" showHeader="false" sidebar="false" docType="html-5.0" title="Network Operators">
+    <apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, 'sfdcBootstrap.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'bootstrap.min.js')}" />
+    
+    <style>
+        #myInput {
+        
+        //background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+        //background-position: 10px 12px; /* Position the search icon */
+        //background-repeat: no-repeat; /* Do not repeat the icon image */
+       
+        width: 60%; /* Full-width */
+        font-size: 16px; /* Increase font-size */
+        padding: 12px 20px 12px 40px; /* Add some padding */
+        border: 1px solid #ddd; /* Add a grey border */
+        margin-bottom: 12px; /* Add some space below the input */
+        margin-left: 150px;
+        }
+    </style>
+    <script>
+    function cancelAndRelease()
+        {
+            //disable the button that it cannot be double-clicked
+           $('#btnCancelAvNumbers').prop('disabled', false);
+            parent.$('#frmConfirmation #btnCloseAvNumbersModal').click();
+        }
+    
+    function search() {
+        // Declare variables 
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("tblNetworkOperators");
+        tr = table.getElementsByTagName("tr");
+        
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            } 
+        }
+    }
+    
+    function setOperatorJS(pMainPortId,pOperatorName){
+        var portId=pMainPortId;
+
+        console.log('*** portId='+portId );
+
+        if(portId!=''){
+            parent.setOperator(portId,pOperatorName);
+        }
+        parent.$('#frmConfirmation #btnCloseAvNumbersModal').click();
+    }
+    </script>
+    <apex:form >
+        <apex:pageMessages >     </apex:pageMessages>
+        <input type="text" id="myInput" onkeyup="search()" placeholder="Search for names.."/>
+        <div class="sfdcBootstrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-11">
+                        <div id="tblNetworkOperatorsDiv" class="table-responsive">
+                            <table id="tblNetworkOperators" class="table table-striped table-hover table-condensed">
+                                <tbody>
+                                    <apex:repeat value="{!NetworkOperatorsList}" var="operator">
+                                        <tr>
+                                            <td>{!operator.mainPortId}</td>
+                                            <td>{!operator.longName}</td>
+                                            <td>{!operator.shortName}</td>
+                                            <td>
+                                                <!--<button id="{!operator.mainPortId}" type="button" class="btn btn-link btn-xs" onclick="setPhoneNumbers(this.id);">Select</button>-->
+                                                <apex:commandButton id="btnSelectOperator" styleClass="btn btn-link btn-xs" value="Select" onclick="setOperatorJS('{!operator.mainPortId}', '{!operator.longName}');"/>
+
+                                            </td>
+                                        </tr>
+                                    </apex:repeat>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <button id="btnCancelAvNumbers" type="button" style="position:fixed; bottom:0px; right:5px" class="btn btn-default" onclick="cancelAndRelease()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </apex:form>
+    
+</apex:page>

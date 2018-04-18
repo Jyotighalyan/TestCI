@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template for email to put Billing Account in Collections again</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Put in Collections</name>
+    <style>none</style>
+    <subject>Please put {!csconta__Billing_Account__c.csconta__Account__c} ({!csconta__Billing_Account__c.LG_ExternalId__c}) in collections again</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

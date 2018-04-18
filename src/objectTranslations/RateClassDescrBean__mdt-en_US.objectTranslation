@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RateClassDescrBean</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>RateClassDescrBean</value>
+    </caseValues>
+    <fields>
+        <label><!-- ConfigTagId --></label>
+        <name>ConfigTagId__c</name>
+    </fields>
+    <fields>
+        <label><!-- DescriptionCode --></label>
+        <name>DescriptionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- DescriptionGroup --></label>
+        <name>DescriptionGroup__c</name>
+    </fields>
+    <fields>
+        <label><!-- DescriptionText --></label>
+        <name>DescriptionText__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsDefault --></label>
+        <name>IsDefault__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key --></label>
+        <name>Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- LanguageCode --></label>
+        <name>LanguageCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- LevelCode --></label>
+        <name>LevelCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- RateClass --></label>
+        <name>RateClass__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShortDescriptionText --></label>
+        <name>ShortDescriptionText__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

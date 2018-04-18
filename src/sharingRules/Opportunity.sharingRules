@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Care_SME_Director_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Care SME Director Share</label>
+        <sharedTo>
+            <role>UMB2BDirector_SME</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>UMB2B_Service</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Care_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Care Share</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>UMB2B_Service</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>UMB2BVP_SALES</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Opportunity_Rule_For_send_quote_for_approval</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Opportunity Rule For send quote for approval</label>
+        <sharedTo>
+            <group>ClickApprove_Group</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>UM_GlobalSystemAdministration</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Service_Internal_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Service Internal Share</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>UMB2B_Service</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>UMB2B_Service</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

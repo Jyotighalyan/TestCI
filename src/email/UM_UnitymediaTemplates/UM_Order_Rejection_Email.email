@@ -1,0 +1,5 @@
+<messaging:emailTemplate subject="Wir haben Sie mit unserem Angebot nicht überzeugt?" recipientType="Contact" relatedToType="CSCAP__Customer_Approval__c">
+    <messaging:htmlEmailBody >
+        <c:UM_OrderRejectionEmail IDForEmail="{!relatedTo.id}"/>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

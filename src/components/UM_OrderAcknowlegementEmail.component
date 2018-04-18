@@ -1,0 +1,29 @@
+<apex:component access="global" controller="UM_OrderAcknowlegementEmailController">
+    <apex:attribute id="custApproId" assignTo="{!custApproId}" name="IDForEmail" type="ID" description="SF ID"/>
+   
+    <center><apex:image value="{!$Label.UM_Logo_Url_Center}" /></center>
+    <apex:outputLabel value="{!$Label.UM_OrderAcknowlegmentEmailTemplateSalutation}" escape="false"/> {!salutationContact} {!surnameContact},<br/><br/>
+    <apex:outputLabel value="{!$Label.UM_OrderAcknowlegmentEmailTemplateBody1}" escape="false"/> {!orderdateCA} 
+    <apex:outputLabel value="!" escape="false"/><br/><br/>
+    <apex:outputLabel value="{!$Label.UM_OrderAcknowlegmentEmailTemplateBody6}" escape="false"/>
+    <apex:outputLabel value="{!$Label.UM_OrderAcknowlegmentEmailTemplateBody7}" escape="false"/> 
+    
+    <table >
+        <apex:repeat var="p" value="{!productConfigurationList}"></apex:repeat>
+    </table>
+    
+    {!firstNameOppOwner} {!surnameOppOwner} <br/><br/>
+    
+    <apex:image value="{!$Label.UM_Logo_Url}" /><br/> 
+    T: {!telephoneOppOwner}<br/>      
+    F: {!faxNumberOppOwner}<br/>      
+    M: {!mobNumberOppOwner}<br/><br/> 
+    
+    {!emailOppOwner}<!--[<<email address opportunity owner>>]--><br/><br/>
+    
+    <apex:outputLabel value="{!$Label.UM_OrderAcknowlegmentEmailTemplateBody4}" escape="false"/> {!company}<br/><br/>
+    <apex:outputlabel value="{!address}" escape="false"></apex:outputlabel>
+    <font size="0.7"> <apex:outputLink > www.unitymediabusiness.de/business </apex:outputLink></font>
+    
+    
+</apex:component>

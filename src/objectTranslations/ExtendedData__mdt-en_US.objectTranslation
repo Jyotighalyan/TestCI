@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ExtendedData</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ExtendedData</value>
+    </caseValues>
+    <fields>
+        <label><!-- MetaData Display Field --></label>
+        <name>MetaData_Display_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- MetaData Key Field --></label>
+        <name>MetaData_EnumKey_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- MetaData Type --></label>
+        <name>MetaData_Type__c</name>
+        <picklistValues>
+            <masterLabel>AccountCategoryBean__mdt</masterLabel>
+            <translation><!-- AccountCategoryBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AccountSegmentMapBean__mdt</masterLabel>
+            <translation><!-- AccountSegmentMapBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AccountType__mdt</masterLabel>
+            <translation><!-- AccountType__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AddressTypeBean__mdt</masterLabel>
+            <translation><!-- AddressTypeBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BillDispatchMethodBean__mdt</masterLabel>
+            <translation><!-- BillDispatchMethodBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BillFmtOptBean__mdt</masterLabel>
+            <translation><!-- BillFmtOptBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BillPeriodBean__mdt</masterLabel>
+            <translation><!-- BillPeriodBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BillingFrequencyBean__mdt</masterLabel>
+            <translation><!-- BillingFrequencyBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CountryCodeBean__mdt</masterLabel>
+            <translation><!-- CountryCodeBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ExtendedData__mdt</masterLabel>
+            <translation><!-- ExtendedData__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MktCodeBean__mdt</masterLabel>
+            <translation><!-- MktCodeBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PrivacyLevelBean__mdt</masterLabel>
+            <translation><!-- PrivacyLevelBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RateClassDescrBean__mdt</masterLabel>
+            <translation><!-- RateClassDescrBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RateCurrencyBean__mdt</masterLabel>
+            <translation><!-- RateCurrencyBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SalesChannelBean__mdt</masterLabel>
+            <translation><!-- SalesChannelBean__mdt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TimezoneBean__mdt</masterLabel>
+            <translation><!-- TimezoneBean__mdt --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ObjectType --></label>
+        <name>ObjectType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Property --></label>
+        <name>Property__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

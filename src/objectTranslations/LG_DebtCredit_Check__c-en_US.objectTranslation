@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Debt/Credit Check</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Debt/Credit Check</value>
+    </caseValues>
+    <fields>
+        <label><!-- Current Bill ExposurePeriod --></label>
+        <name>LG_CurrentBillExposurePeriod__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Balance Validity --></label>
+        <name>LG_Customer_Balance_Validity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exposure Period --></label>
+        <name>LG_Exposure_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payable Debt Tolerance --></label>
+        <name>LG_Payable_Debt_Tolerance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Principal Current Address Validity --></label>
+        <name>LG_Principal_Current_Address_Validity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Validate Prospect Flag --></label>
+        <name>LG_Validate_Prospect_Flag__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

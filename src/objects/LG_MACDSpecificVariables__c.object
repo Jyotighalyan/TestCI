@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Holds the settings used in the MACD process.
+i.e. what change types should set the service status to request deactivation, which Sales Channels can initiate the Terminate MACD process, etc.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>LG_SalesChannelsAllowedForTerminate__c</fullName>
+        <description>Holds a comma separated list of Sales Channel names that are allowed to initiate the Terminate MACD process.</description>
+        <externalId>false</externalId>
+        <label>Sales Channels allowed for Terminate</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>MACD Specific Variables</label>
+    <visibility>Public</visibility>
+</CustomObject>

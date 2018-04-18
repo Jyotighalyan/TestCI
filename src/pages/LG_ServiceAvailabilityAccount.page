@@ -1,0 +1,9 @@
+<apex:page standardController="Account">
+    <script type="text/javascript">
+        // HACK: This is a JavaScript hack to prevent Salesforce from applying a background for the <body> element in community portal.
+        try {
+            document.body.style.setProperty('background-color', 'transparent', 'important');
+        } catch (ex) {}
+    </script>
+    <c:LG_ServiceAvailabilityComponent postalCode="{!account.LG_VisitPostalCode__c}" houseNumber="{!account.LG_VisitHouseNumber__c}" houseNumberExtension="{!account.LG_VisitHouseNumberExtension__c}"/>
+</apex:page>

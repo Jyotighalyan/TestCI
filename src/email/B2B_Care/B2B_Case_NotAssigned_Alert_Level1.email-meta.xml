@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify Manager when case is unassigned and is in open for more that 30 mins after it was created</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>B2B_Case_NotAssigned_Alert_Level1</name>
+    <style>none</style>
+    <subject>SLA/OLA - Offenen Fall zuweisen</subject>
+    <type>text</type>
+</EmailTemplate>

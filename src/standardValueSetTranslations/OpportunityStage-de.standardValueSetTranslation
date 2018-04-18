@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Awareness of interest</masterLabel>
+        <translation>Lead/Interessent</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Lost</masterLabel>
+        <translation>geschlossen verloren</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer Approved</masterLabel>
+        <translation>Angebot angenommen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Decision Phase</masterLabel>
+        <translation>Entscheidungsphase</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Demand Analysis</masterLabel>
+        <translation>Bedarfsanalyse</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Follow-Up</masterLabel>
+        <translation>Wiedervorlage</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Offer Phase</masterLabel>
+        <translation>Angebotsphase</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pre-Installation-Cancellation</masterLabel>
+        <translation><!-- Pre-Installation-Cancellation --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Quotation Delivered</masterLabel>
+        <translation>Angebot zugestellt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ready for Order</masterLabel>
+        <translation>Bereit für Auftrag</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

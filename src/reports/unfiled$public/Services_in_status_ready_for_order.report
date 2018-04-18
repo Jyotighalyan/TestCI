@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>csord__Subscription__c$Name</field>
+    </columns>
+    <columns>
+        <field>csord__Subscription__c.csord__Services__r$Name</field>
+    </columns>
+    <columns>
+        <field>csord__Subscription__c.csord__Services__r.csord__Service_line_Items__r$Name</field>
+    </columns>
+    <columns>
+        <field>csord__Subscription__c$Kenan_Response__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>csord__Subscription__c.csord__Services__r$LG_ServiceStatus__c</column>
+            <operator>equals</operator>
+            <value>Ready for Billing</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>csord__Subscription__c$csord__Account__c</column>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>csord__Subscription__c$csord__Account__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Services in status ready for order</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Subscriptions_with_Services__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>csord__Subscription__c$Billing_Termination_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

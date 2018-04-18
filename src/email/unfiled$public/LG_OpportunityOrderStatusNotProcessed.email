@@ -1,0 +1,7 @@
+*** OPPORTUNITY ORDER STATUS: NOT PROCESSED ***  
+
+The following Opportunity has Order Status in stage Not Processed.  
+Opportunity Name:  {!Opportunity.Name}
+Account Name: {!Account.Name} 
+
+Click on the link to access the opportunity directly:  {!Opportunity.Link}

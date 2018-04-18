@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>this is used for storing NRC Reasons and corresponding Kenan Codes . Used in Billing Account level adjustments</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>UM_Is_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_Is_Negative_Amount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>true if the NRC reason is for negative amount</description>
+        <externalId>false</externalId>
+        <label>Is Negative Amount</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_Kenan_Code__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>stores Kenan codes</inlineHelpText>
+        <label>Kenan Code</label>
+        <length>10</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Kenan_NRC_Reason__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>stores NRC reasons</inlineHelpText>
+        <label>Kenan NRC Reason</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Kenan NRC Reasons Mapping</label>
+    <visibility>Public</visibility>
+</CustomObject>

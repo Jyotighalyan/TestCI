@@ -1,0 +1,2194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>A grouping object for a set of Subscriptions and other objects within a related group.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Jeopardy_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Jeopardy Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Field Support (Contractor)</fullName>
+                    <default>false</default>
+                    <label>Field Support (Contractor)</label>
+                </value>
+                <value>
+                    <fullName>Customer Issue</fullName>
+                    <default>false</default>
+                    <label>Customer Issue</label>
+                </value>
+                <value>
+                    <fullName>Rebook</fullName>
+                    <default>false</default>
+                    <label>Rebook</label>
+                </value>
+                <value>
+                    <fullName>Network Issue</fullName>
+                    <default>false</default>
+                    <label>Network Issue</label>
+                </value>
+                <value>
+                    <fullName>Address not found</fullName>
+                    <default>false</default>
+                    <label>Address not found</label>
+                </value>
+                <value>
+                    <fullName>Resource not available in time</fullName>
+                    <default>false</default>
+                    <label>Resource not available in time</label>
+                </value>
+                <value>
+                    <fullName>Customer has uncleared debts</fullName>
+                    <default>false</default>
+                    <label>Customer has uncleared debts</label>
+                </value>
+                <value>
+                    <fullName>Number not owned</fullName>
+                    <default>false</default>
+                    <label>Number not owned</label>
+                </value>
+                <value>
+                    <fullName>Resource not available</fullName>
+                    <default>false</default>
+                    <label>Resource not available</label>
+                </value>
+                <value>
+                    <fullName>Wayleave</fullName>
+                    <default>false</default>
+                    <label>Wayleave</label>
+                </value>
+                <value>
+                    <fullName>Excess Construction Charges</fullName>
+                    <default>false</default>
+                    <label>Excess Construction Charges</label>
+                </value>
+                <value>
+                    <fullName>Site not serviceable</fullName>
+                    <default>false</default>
+                    <label>Site not serviceable</label>
+                </value>
+                <value>
+                    <fullName>Cancelled Orders (non-serviceable)</fullName>
+                    <default>false</default>
+                    <label>Cancelled Orders (non-serviceable)</label>
+                </value>
+                <value>
+                    <fullName>Cancelled Orders (customer cancelled)</fullName>
+                    <default>false</default>
+                    <label>Cancelled Orders (customer cancelled)</label>
+                </value>
+                <value>
+                    <fullName>Provisioning WO Creation Failed</fullName>
+                    <default>false</default>
+                    <label>Provisioning WO Creation Failed</label>
+                </value>
+                <value>
+                    <fullName>MiddleWare Timeout</fullName>
+                    <default>false</default>
+                    <label>MiddleWare Timeout</label>
+                </value>
+                <value>
+                    <fullName>JIRA Order Creation Failed</fullName>
+                    <default>false</default>
+                    <label>JIRA Order Creation Failed</label>
+                </value>
+                <value>
+                    <fullName>SFDC failure</fullName>
+                    <default>false</default>
+                    <label>SFDC failure</label>
+                </value>
+                <value>
+                    <fullName>Order Cancellation</fullName>
+                    <default>false</default>
+                    <label>Order Cancellation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+</fields>
+<fields>
+        <fullName>LG_ServiceAction__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Action</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AccessAvailable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Field to identify whether we can initiate MWLAN Jira flow</description>
+        <externalId>false</externalId>
+        <label>LG_AccessAvailable</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_AccountName__c</fullName>
+        <description>Displaying the Account Name in Email Templates</description>
+        <externalId>false</externalId>
+        <formula>csord__Order__r.csord__Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This field is created for usage in HTML Templates</inlineHelpText>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Jira_Flow__c</fullName>
+        <description>Identifier for Jira Automated/manual Flow</description>
+        <externalId>false</externalId>
+        <label>Jira Flow</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ActivationNeeded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If any of the related services requires activation, this field will be set to true</description>
+        <externalId>false</externalId>
+        <label>Activation Needed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_AddressDetails__c</fullName>
+        <description>Stores the detailed installation address for the solution</description>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.LG_FullAddressDetails__c</formula>
+        <inlineHelpText>This Field has been created for usage in HTML Email Templates</inlineHelpText>
+        <label>Address Details</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <referenceTo>cscrm__Address__c</referenceTo>
+        <relationshipLabel>Solutions</relationshipLabel>
+        <relationshipName>Solutions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_AnyActiveService__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used as a flag for the Any Active Service custom orchestrator step.</description>
+        <externalId>false</externalId>
+        <label>Any Active Service</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_AnyNumbersToPort__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Any Numbers to Port</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_AppointmentToCancel__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Appointment to Cancel</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_ApproverComments__c</fullName>
+        <externalId>false</externalId>
+        <label>Approver Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LG_Cancellation_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_Cancellation_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_DecompositionCriteria__c</fullName>
+        <externalId>false</externalId>
+        <label>Decomposition Criteria</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>LG_DecompositionCriteria</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_DependsOnSecondary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This flag is set to true if the Site Service has secondary service for a solution</description>
+        <externalId>false</externalId>
+        <label>LG_DependsOnSecondary</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_EarliestInstallDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Earliest Install Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_EarliestPortingWishDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Earliest porting wish date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_ExistingCama__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>to identify if existing CAMA order</description>
+        <externalId>false</externalId>
+        <label>LG_ExistingCama</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_FulfilmentDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_TargetDate__c - 20</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Fulfilment Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_InflightChange__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Last minute changes from customer which have manageable impact on ongoing fulfilment process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this flag if we need to redirect the process from happy path to Jeopardy / Exception handling after Inflight Change (Appointment / Numbers / Configuration) was captured</inlineHelpText>
+        <label>Inflight Change</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationNeeded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Installation Needed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationWishDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Wish Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_Integration_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Integration Description</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LG_Integration_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Integration Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Work Order Created</fullName>
+                    <default>false</default>
+                    <label>Work Order Created</label>
+                </value>
+                <value>
+                    <fullName>Request Acknowledged</fullName>
+                    <default>false</default>
+                    <label>Request Acknowledged</label>
+                </value>
+                <value>
+                    <fullName>Error</fullName>
+                    <default>false</default>
+                    <label>Error</label>
+                </value>
+                <value>
+                    <fullName>Timeout</fullName>
+                    <default>false</default>
+                    <label>Timeout</label>
+                </value>
+                <value>
+                    <fullName>SFDC failure</fullName>
+                    <default>false</default>
+                    <label>SFDC failure</label>
+                </value>
+                <value>
+                    <fullName>Order Creation Failed</fullName>
+                    <default>false</default>
+                    <label>Order Creation Failed</label>
+                </value>
+                <value>
+                    <fullName>Pending Work Order Created</fullName>
+                    <default>false</default>
+                    <label>Pending Work Order Created</label>
+                </value>
+                <value>
+                    <fullName>Billing Integration Timeout</fullName>
+                    <default>false</default>
+                    <label>Billing Integration Timeout</label>
+                </value>
+                <value>
+                    <fullName>Middleware Request Failed</fullName>
+                    <default>false</default>
+                    <label>Middleware Request Failed</label>
+                </value>
+                <value>
+                    <fullName>Installation Complete</fullName>
+                    <default>false</default>
+                    <label>Installation Complete</label>
+                </value>
+                <value>
+                    <fullName>Installation Details Missing</fullName>
+                    <default>false</default>
+                    <label>Installation Details Missing</label>
+                </value>
+                <value>
+                    <fullName>Cancellation Requested</fullName>
+                    <default>false</default>
+                    <label>Cancellation Requested</label>
+                </value>
+                <value>
+                    <fullName>Install Survey Failed</fullName>
+                    <default>false</default>
+                    <label>Install Survey Failed</label>
+                </value>
+                <value>
+                    <fullName>Install Survey Successful</fullName>
+                    <default>false</default>
+                    <label>Install Survey Successful</label>
+                </value>
+                <value>
+                    <fullName>Installation In-Progress</fullName>
+                    <default>false</default>
+                    <label>Installation In-Progress</label>
+                </value>
+                <value>
+                    <fullName>JIRA Work Order Created</fullName>
+                    <default>false</default>
+                    <label>JIRA Work Order Created</label>
+                </value>
+                <value>
+                    <fullName>JIRA Order Creation Failed</fullName>
+                    <default>false</default>
+                    <label>JIRA Order Creation Failed</label>
+                </value>
+                <value>
+                    <fullName>JIRA Initiated Cancellation</fullName>
+                    <default>false</default>
+                    <label>JIRA Initiated Cancellation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_IsFirstDayofNextMonth__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(TODAY())</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsFirstDayofNextMonth</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_JeopardyExplanation__c</fullName>
+        <externalId>false</externalId>
+        <label>JeopardyExplanation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LG_JeopardyRaisedBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>User who raised the solution to jeopardy</description>
+        <externalId>false</externalId>
+        <label>JeopardyRaisedBy</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Solutions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_Jeopardy__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Jeopardy</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_Jira_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Jira Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_LatestPortingWishDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Latest porting wish date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_LogisticsDispatchNeeded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>flag on solution obj to show if logistics dispatch is required or not</description>
+        <externalId>false</externalId>
+        <label>LG_LogisticsDispatchNeeded</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_NewBilling__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If true, a new billing account must be provisioned.</description>
+        <externalId>false</externalId>
+        <label>New Billing</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_NumbersIncomplete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, some of the suborder related Number Block Asset records are incomplete - required fields have no values in it.</description>
+        <externalId>false</externalId>
+        <label>Numbers Incomplete</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_OldESNNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Old ESN Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_OldSuborder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Old Suborder</label>
+        <referenceTo>csord__Solution__c</referenceTo>
+        <relationshipLabel>Solutions</relationshipLabel>
+        <relationshipName>Solutions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    
+    <fields>
+        <fullName>LG_OneStepCase_Provisioning_Account_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>(csordtelcoa__Product_Configuration__r.cscfga__Product_Basket__r.LG_BillingAccount__r.LG_BillingAccountNumber__c)+(LG_Address__r.cscrm__Country__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Provisioning Account No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_OpportunityName__c</fullName>
+        <externalId>false</externalId>
+        <formula>csord__Order__r.csordtelcoa__Opportunity__r.Name</formula>
+        <label>Opportunity Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_OrderCancelled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Order Cancelled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_OrderChanged__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Order Changed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_PlanningRequired__c</fullName>
+        <externalId>false</externalId>
+        <label>Planning Required</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Plan &amp; Survey</fullName>
+                    <default>false</default>
+                    <label>Plan &amp; Survey</label>
+                </value>
+                <value>
+                    <fullName>Plan</fullName>
+                    <default>false</default>
+                    <label>Plan</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_ProcessRequestsToCancel__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used in the Any Number Port Requests Orchestrator Custom step.</description>
+        <externalId>false</externalId>
+        <label>Process Requests to Cancel</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_ProvisioningAccountNo__c</fullName>
+        <externalId>false</externalId>
+        <label>Provisioning Account No</label>
+        <length>75</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ProvisioningWorkOrder__c</fullName>
+        <externalId>true</externalId>
+        <label>Provisioning Work Order</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Provisioning_External_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>Provisioning External Id</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ReSendEmailCheck__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Resend functionality of the Welcome Pack for CSR users</description>
+        <externalId>false</externalId>
+        <label>ReSendEmailCheck</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_RetryInstall__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Retry Install</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_RetryNumberPort__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Retry Number Port</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_RetryPlanning__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Retry Planning</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_RetryProvision__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Retry Provision</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_SecondaryAccessAvailable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>this field will be marked true in case Site service under the solution object has secondary access available.</description>
+        <externalId>false</externalId>
+        <label>LG_SecondaryAccessAvailable</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_SendEmailCheck__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>LG_SendEmailCheck</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_SendEmail__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;&amp;id=&quot;+Id+
+&quot;&amp;QueryId=[Service]a1g0E0000000U4T?pv0=&quot;+Id+ 
+&quot;&amp;QueryId=[solution]a1g0E0000000U4O?pv0=&quot;+Id+
+&quot;&amp;QueryId=[Account]a1g0E0000000U4Y?pv0=&quot;+Id+
+&quot;&amp;QueryId=[asset]a1g0E0000000U4d?pv0=&quot;+Id+ 
+&quot;&amp;QueryId=[BillingAcc]a1g0E0000000U4i?pv0={QVar0}&quot;+
+&quot;&amp;QueryId=[EmailTemp]a1g0E000000104Q?pv0={QVar4}&quot;+ 
+&quot;&amp;QVar0Id=a1g0E0000000U4n?pv0=&quot;+Id+
+&quot;&amp;QVar0Format=21000&quot;+
+&quot;&amp;QVar1Id=a1g0E0000000U4x?pv0=&quot;+Id+
+&quot;&amp;QVar2Id=a1g0E0000000U52?pv0=&quot;+Id+
+&quot;&amp;QVar3Id=a1g0E0000000U57?pv0={QVar1}~pv1={QVar2}&quot;+
+&quot;&amp;QVar4Id=a1g0E0000000U4s?pv0={QVar3}&quot;+
+&quot;&amp;CETId={Qvar4}&quot;+
+&quot;&amp;TemplateId=&quot;+$Label.UM_SendWelcomePack+
+&quot;&amp;fp0=1&quot; +
+&quot;&amp;LG4=1&quot; +
+&quot;&amp;QMode=3&quot; +
+&quot;&amp;EmailFromID=&quot; + $Label.UM_OrgWideAddressId +
+&quot;&amp;EmailToID=&quot;+ csord__Order__r.csordtelcoa__Opportunity__r.LG_PrimaryContact__r.Id +
+&quot;&amp;EmailCC=&quot;+ LG_Address__r.LG_TechnicalContact__r.Id +
+&quot;&amp;DS7=2&quot;+
+&quot;&amp;LG3=1&quot;+
+&quot;&amp;DefaultPDF=1&quot; +
+&quot;&amp;Culture=de-DE&quot;+
+&quot;&amp;LGAttachOption=1&quot;</formula>
+        <label>LG_SendEmail</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Suppress_Welcome_Pack__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This checkbox allows the user to suppress sending the Welcome Pack</description>
+        <externalId>false</externalId>
+        <label>Suppress Welcome Pack</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+	<fields>
+        <fullName>LG_Activated_New_Site__c</fullName>
+        <externalId>false</externalId>
+        <label>Activated New Site</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TargetDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+	 <fields>
+        <fullName>LG_ServiceCancellableType__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Cancellable Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                    <label>Daily</label>
+                </value>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Both</fullName>
+                    <default>false</default>
+                    <label>Both</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+     <fields>
+        <fullName>LG_Solution_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Suborder Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Termination__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Termination</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_Total_One_off__c</fullName>
+        <externalId>false</externalId>
+        <label>Total One Off Charges</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Total_Recurring__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Recurring Charges</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Total_Suborder_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Suborder Value</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TriggerPartialBilling__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Trigger Partial Billing?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_Wp_Attachment__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;&amp;solmgr=1&quot; + 
+&quot;&amp;id=&quot; + Id +
+&quot;&amp;QueryId=[Service]a1g0E0000000U4T?pv0=&quot;+Id+ 
+&quot;&amp;QueryId=[solution]a1g0E0000000U4O?pv0=&quot;+Id+ 
+&quot;&amp;QueryId=[Account]a1g0E0000000U4Y?pv0=&quot;+Id+ 
+&quot;&amp;QueryId=[asset]a1g0E0000000U4d?pv0=&quot;+Id+ 
+&quot;&amp;QueryId=[BillingAcc]a1g0E0000000U4i?pv0={QVar0}&quot;+ 
+&quot;&amp;QueryId=[EmailTemp]a1g0E000000104Q?pv0={QVar4}&quot;+ 
+&quot;&amp;QVar0Id=a1g0E0000000U4n?pv0=&quot;+Id+ 
+&quot;&amp;QVar0Format=21000&quot;+ 
+&quot;&amp;QVar1Id=a1g0E0000000U4x?pv0=&quot;+Id+ 
+&quot;&amp;QVar2Id=a1g0E0000000U52?pv0=&quot;+Id+ 
+&quot;&amp;QVar3Id=a1g0E0000000U57?pv0={QVar1}~pv1={QVar2}&quot;+ 
+&quot;&amp;QVar4Id=a1g0E0000000U4s?pv0={QVar3}&quot;+ 
+&quot;&amp;templateid=&quot; + $Label.UM_SendWelcomePack + 
+&quot;&amp;qmode=Attachments&quot; + 
+&quot;&amp;DefaultPDF=1&quot; +
+&quot;&amp;Culture=de-DE&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LG_Wp_Attachment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+     <fields>
+        <fullName>LG_type_Of_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Of Services</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Service__c</fullName>
+        <externalId>false</externalId>
+        <label>services</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>New_Site_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>New Site Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PAC__c</fullName>
+        <externalId>false</externalId>
+        <label>PAC</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trigger_Activate_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_TargetDate__c - 2</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Trigger Activate Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_DeliveryCompletionDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Delivery Completion Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_JiraAssigneeName__c</fullName>
+        <description>Used for populating Assignee name returned from Jira for jira tickets.</description>
+        <externalId>false</externalId>
+        <label>Assignee Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_NewSiteActivated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>New Site Activated</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_No_of_Tries__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>to keep counts of re-tries before its failed</description>
+        <externalId>false</externalId>
+        <label>No of Tries</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_WaitForAccess__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Wait for Access</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VM_Count_of_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of Services</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VM_Jeopardy_Raised__c</fullName>
+        <externalId>false</externalId>
+        <label>Jeopardy Last Raised</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>VM_MainComponent__c</fullName>
+        <externalId>false</externalId>
+        <label>Main Component</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VM_Total_Rental_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Rental Price</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Account that governs this Solution.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account that governs this Solution.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Solutions</relationshipLabel>
+        <relationshipName>Solutions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__External_Identifier2__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</inlineHelpText>
+        <label>External Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>csord__External_Identifier__c</fullName>
+        <deprecated>false</deprecated>
+        <description>DEPRECATED. External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>DEPRECATED. Use External Identifier2 field instead.</inlineHelpText>
+        <label>DEPRECATED External Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Identification__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Identification string for the object, used as the reference from external systems.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. &quot;spokeServiceAmsterdam&quot; in Hub&amp;Spokes scenario.</inlineHelpText>
+        <label>Identification</label>
+        <length>255</length>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Order_Request__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Order Request object which introduced the latest changes to this object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Order Request object which introduced the latest changes to this object.</inlineHelpText>
+        <label>Order Request</label>
+        <referenceTo>csord__Order_Request__c</referenceTo>
+        <relationshipLabel>Solutions</relationshipLabel>
+        <relationshipName>Solutions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The parent Order of this Solution.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent Order of this Solution.</inlineHelpText>
+        <label>Order</label>
+        <referenceTo>csord__Order__c</referenceTo>
+        <relationshipLabel>Solutions</relationshipLabel>
+        <relationshipName>Solutions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the Solution in the fulfillment process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for state transitions.</inlineHelpText>
+        <label>Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Solution type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Solution type</inlineHelpText>
+        <label>Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Product_Configuration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Product configuration that initiated creation of this Solution</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product configuration that initiated creation of this Solution</inlineHelpText>
+        <label>Product Configuration</label>
+        <referenceTo>cscfga__Product_Configuration__c</referenceTo>
+        <relationshipLabel>Solutions</relationshipLabel>
+        <relationshipName>Solutions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Solution</label>
+    <listViews>
+        <fullName>All_Suborders</fullName>
+        <columns>NAME</columns>
+        <columns>csord__Account__c</columns>
+        <columns>LG_AccountName__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_TargetDate__c</columns>
+        <columns>LG_Jeopardy__c</columns>
+        <columns>csord__Order__c</columns>
+        <columns>csord__Status__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LG_OpportunityName__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>csord__Solution__c.Suborder</value>
+        </filters>
+        <label>All Suborders</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Order_Management_Solution</fullName>
+        <columns>UM_No_of_Tries__c</columns>
+        <columns>NAME</columns>
+        <columns>LG_Integration_Status__c</columns>
+        <columns>LG_Integration_Description__c</columns>
+        <columns>LG_ProvisioningAccountNo__c</columns>
+        <columns>LG_ProvisioningWorkOrder__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>csord__Status__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Queue</filterScope>
+        <label>Order Management</label>
+        <language>en_US</language>
+        <queue>Order_Management</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Suborders_Cancelled</fullName>
+        <columns>NAME</columns>
+        <columns>csord__Account__c</columns>
+        <columns>LG_AccountName__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_TargetDate__c</columns>
+        <columns>LG_Jeopardy__c</columns>
+        <columns>csord__Order__c</columns>
+        <columns>csord__Status__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LG_OpportunityName__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>csord__Status__c</field>
+            <operation>equals</operation>
+            <value>Cancelled</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>csord__Solution__c.Suborder</value>
+        </filters>
+        <label>Suborders - Cancelled</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Suborders_Complete</fullName>
+        <columns>NAME</columns>
+        <columns>csord__Account__c</columns>
+        <columns>LG_AccountName__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_TargetDate__c</columns>
+        <columns>LG_Jeopardy__c</columns>
+        <columns>csord__Order__c</columns>
+        <columns>csord__Status__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LG_OpportunityName__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>csord__Status__c</field>
+            <operation>equals</operation>
+            <value>Complete</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>csord__Solution__c.Suborder</value>
+        </filters>
+        <label>Suborders - Complete</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Suborders_In_Progress</fullName>
+        <columns>NAME</columns>
+        <columns>csord__Account__c</columns>
+        <columns>LG_AccountName__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>LG_TargetDate__c</columns>
+        <columns>LG_Jeopardy__c</columns>
+        <columns>csord__Order__c</columns>
+        <columns>csord__Status__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LG_OpportunityName__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>csord__Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>csord__Solution__c.Suborder</value>
+        </filters>
+        <label>Suborders - In Progress</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>csord__All</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Solution Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Solutions</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Quantity</fullName>
+        <active>true</active>
+        <label>Quantity</label>
+        <picklistValues>
+            <picklist>Jeopardy_Reason__c</picklist>
+            <values>
+                <fullName>Address not found</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled Orders %28customer cancelled%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled Orders %28non-serviceable%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer has uncleared debts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excess Construction Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Support %28Contractor%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MiddleWare Timeout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number not owned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provisioning WO Creation Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resource not available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resource not available in time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site not serviceable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wayleave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_DecompositionCriteria__c</picklist>
+            <values>
+                <fullName>Set 1 - On-Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 10 - VoiceWorks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 11 - Engineers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 12 - JIRA Orchestrated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 13 - JIRA Bearer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 14 - CaMa Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 15 - CaMa Manual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 16 - CaMa OI Manual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - BDS Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - HBPX Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 18 - Direct to Kenan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 19 - Additional Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 2 - Off-Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 20 - BDS Site Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 21 - VPN Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 22 - Parent%2FCategory Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 23 - UM CaMa Bridge Mode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 24 - UM JIRA Fiber Bridge Mode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 25 - Business Anywhere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 26 - UM Managed WLAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 3 - Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 5 - CaMa Internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 5 - No Grouping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 6 - CaMa Dependent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 7 - JIRA Fiber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 8 - CS Voice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 9 - CaMa Bearer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_Integration_Status__c</picklist>
+            <values>
+                <fullName>Billing Integration Timeout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Install Survey Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Install Survey Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Creation Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Work Order Created</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Acknowledged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFDC failure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Timeout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Order Created</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_PlanningRequired__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan %26 Survey</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Suborder</fullName>
+        <active>true</active>
+        <description>Used for decomposing order and grouping Services that can be provisioned together</description>
+        <label>Suborder</label>
+        <picklistValues>
+            <picklist>Jeopardy_Reason__c</picklist>
+            <values>
+                <fullName>Address not found</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled Orders %28customer cancelled%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled Orders %28non-serviceable%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer has uncleared debts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excess Construction Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Support %28Contractor%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JIRA Order Creation Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MiddleWare Timeout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number not owned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provisioning WO Creation Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resource not available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resource not available in time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFDC failure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site not serviceable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wayleave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_DecompositionCriteria__c</picklist>
+            <values>
+                <fullName>Set 1 - On-Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 10 - VoiceWorks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 11 - Engineers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 12 - JIRA Orchestrated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 13 - JIRA Bearer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 14 - CaMa Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 15 - CaMa Manual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 16 - CaMa OI Manual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - BDS Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 17 - HBPX Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 18 - Direct to Kenan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 19 - Additional Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 2 - Off-Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 20 - BDS Site Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 21 - VPN Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 22 - Parent%2FCategory Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 23 - UM CaMa Bridge Mode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 24 - UM JIRA Fiber Bridge Mode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 25 - Business Anywhere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 26 - UM Managed WLAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 3 - Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 5 - CaMa Internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 5 - No Grouping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 6 - CaMa Dependent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 7 - JIRA Fiber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 8 - CS Voice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set 9 - CaMa Bearer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_Integration_Status__c</picklist>
+            <values>
+                <fullName>Billing Integration Timeout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancellation Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Install Survey Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Install Survey Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation Details Missing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation In-Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JIRA Order Creation Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JIRA Work Order Created</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middleware Request Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Creation Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Work Order Created</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Acknowledged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFDC failure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Timeout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Order Created</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JIRA Initiated Cancellation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_PlanningRequired__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan %26 Survey</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchFilterFields>LG_ProvisioningAccountNo__c</searchFilterFields>
+        <searchFilterFields>LG_ProvisioningWorkOrder__c</searchFilterFields>
+        <searchResultsAdditionalFields>LG_ProvisioningWorkOrder__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Conga_Composer_Welcome_Pack_Test</fullName>
+        <availability>online</availability>
+        <description>Created by Conga Solution Manager. Record link: https://apxtconga4.cs83.visual.force.com/a1m4E000000wK04QAE.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>660</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Welcome Pack Test</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://composer.congamerge.com?SolMgr=1
+&amp;sessionId={!API.Session_ID}
+&amp;serverUrl={!API.Partner_Server_URL_290}
+&amp;Id={!csord__Solution__c.Id}
+
+&amp;QueryId=[Service]a1g4E000002BA1a?pv0={!csord__Solution__c.Id},,
+[asset]a1g4E000002BfqN?pv0={!csord__Solution__c.Id},,
+[Account]a1g4E000002BA1f?pv0={!csord__Solution__c.Id},,
+[solution]a1g4E000002BA1V?pv0={!csord__Solution__c.Id},
+
+&amp;TemplateId=a1o4E000001P23I</url>
+        <width>900</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Conga_Composer_Welcomepack</fullName>
+        <availability>online</availability>
+        <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://apxtconga4.cs89.visual.force.com/a1m0E00000029OuQAI
+30-Nov-2017 10:24:19 AM</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>660</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Welcomepack</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://composer.congamerge.com?SolMgr=1
+&amp;sessionId={!API.Session_ID}
+&amp;serverUrl={!API.Partner_Server_URL_290}
+&amp;Id={!csord__Solution__c.Id}
+
+&amp;QueryId=[Service]a1g0E0000000U4T?pv0={!csord__Solution__c.Id},
+[Solution]a1g0E0000000U4O?pv0={!csord__Solution__c.Id},
+[Account]a1g0E0000000U4Y?pv0={!csord__Solution__c.Id},
+[asset]a1g0E0000000U4d?pv0={!csord__Solution__c.Id},
+[BillingAcc]a1g0E0000000U4i?pv0={QVar0},
+[EmailTemp]a1g0E000000104Q?pv0={QVar4}
+
+&amp;TemplateId=a1o0E0000000GdZ
+
+&amp;QVar0Id=a1g0E0000000U4n?pv0={!csord__Solution__c.Id}
+&amp;QVar0Format=21000
+&amp;QVar1Id=a1g0E0000000U52?pv0={!csord__Solution__c.Id}
+&amp;CongaEmailTemplateId={QVar4}
+&amp;QVar2Id=a1g0E0000000U4x?pv0={!csord__Solution__c.Id}
+&amp;QVar3Id=a1g0E0000000U57?pv0={Qvar2}~pv1={Qvar1}
+&amp;QVar4Id=a1g0E0000000U4s?pv0={QVar3}
+&amp;Culture=de-DE</url>
+        <width>900</width>
+    </webLinks>
+    <webLinks>
+        <fullName>LG_Configure</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Configure</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)} 
+
+if (confirm(&quot;Configure?&quot;)) { 
+var SystemCheck = sforce.apex.execute(&quot;LG_CamaOrderUtil&quot;,&quot;checkProvisioningSystem&quot;,{solutionId:&quot;{!csord__Solution__c.Id}&quot;});
+
+if (SystemCheck != &quot;Success&quot;) {
+    alert (SystemCheck);
+} else {
+
+var StatusCheck = sforce.apex.execute(&quot;LG_OrderCancelUtil&quot;,&quot;validateSubOrderStatus&quot;,{orderId:&quot;{!csord__Solution__c.csord__OrderId__c}&quot;}); 
+
+if(StatusCheck == &apos;&apos;){ 
+
+var result = sforce.apex.execute(&quot;LG_InflightChangeUtil&quot;,&quot;configure&quot;,{solutionId:&quot;{! csord__Solution__c.Id}&quot;}); 
+
+var patt = new RegExp(&quot;^[a-zA-Z0-9]{15,18}$&quot;); 
+
+if (patt.test(result )) 
+{ 
+window.location.href = &quot;/&quot; + result; 
+} else { 
+alert(result); 
+} 
+
+}else{ 
+alert(StatusCheck ); 
+} 
+}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>LG_CorrectNumbers</fullName>
+        <availability>online</availability>
+        <description>Correct numbers</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Correct Numbers</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)} 
+
+if (confirm(&quot;Correct numbers?&quot;)) { 
+
+var SystemCheck = sforce.apex.execute(&quot;LG_CamaOrderUtil&quot;,&quot;checkProvisioningSystem&quot;,{solutionId:&quot;{!csord__Solution__c.Id}&quot;});
+
+if (SystemCheck != &quot;Success&quot;) {
+    alert (SystemCheck);
+} else {
+
+var StatusCheck = sforce.apex.execute(&quot;LG_OrderCancelUtil&quot;,&quot;validateSubOrderStatus&quot;,{orderId:&quot;{!csord__Solution__c.csord__OrderId__c}&quot;}); 
+
+if(StatusCheck == &apos;&apos;){ 
+
+var result = sforce.apex.execute(&quot;LG_InflightChangeUtil&quot;,&quot;correctNumbers&quot;,{solutionId:&quot;{! csord__Solution__c.Id}&quot;}); 
+
+var patt = new RegExp(&quot;^[a-zA-Z0-9]{15,18}$&quot;); 
+
+if (patt.test(result )) 
+{ 
+window.location.href = &quot;/&quot; + result; 
+} else { 
+alert(result); 
+} 
+
+}else{ 
+alert(StatusCheck ); 
+} 
+}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>LG_ReSchedule</fullName>
+        <availability>online</availability>
+        <description>Re-Schedule directly when customer calls</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Re-Schedule</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)} 
+
+if (confirm(&quot;Start Re-Schedule?&quot;)) {
+
+var SystemCheck = sforce.apex.execute(&quot;LG_CamaOrderUtil&quot;,&quot;checkProvisioningSystem&quot;,{solutionId:&quot;{!csord__Solution__c.Id}&quot;});
+
+if (SystemCheck != &quot;Success&quot;) {
+    alert (SystemCheck);
+} else {
+
+var StatusCheck = sforce.apex.execute(&quot;LG_OrderCancelUtil&quot;,&quot;validateSubOrderStatus&quot;,{orderId:&quot;{!csord__Solution__c.csord__OrderId__c}&quot;}); 
+
+if(StatusCheck == &apos;&apos;){ 
+
+var result = sforce.apex.execute(&quot;LG_InflightChangeUtil&quot;,&quot;reSchedule&quot;,{solutionId:&quot;{! csord__Solution__c.Id}&quot;}); 
+
+var patt = new RegExp(&quot;^[a-zA-Z0-9]{15,18}$&quot;); 
+
+if (patt.test(result )) 
+{ 
+window.location.href = &quot;/&quot; + result; 
+} else { 
+alert(result); 
+} 
+
+}else{ 
+alert(StatusCheck ); 
+} 
+}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Resend_Welcome_Pack</fullName>
+        <availability>online</availability>
+        <description>Resend functionality of the Welcome Pack for CSR users</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Reconfigure Welcome Pack</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&apos;)}
+
+{!REQUIRESCRIPT(&apos;//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js&apos;)}
+
+//var $g = jQuery.noConflict();
+//var csord__Solution__c = new sforce.SObject(&quot;Solution&quot;);
+var soluID= &quot;{!csord__Solution__c.Id}&quot;;
+
+window.open(&apos;/apex/LG_ResendWelcomePackEmail?id=&apos;+soluID,&quot;Re-sendWindow&quot;, &quot;width=500,height=300,top=200,left=500,scrollbars=no&quot;);</url>
+    </webLinks>
+</CustomObject>

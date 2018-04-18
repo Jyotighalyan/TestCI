@@ -1,0 +1,173 @@
+<apex:page StandardController="Account" extensions="LG_Care_PlannedMaintenanceStatusCntrl">
+  
+  <style type="text/css">
+        
+        a:hover {
+        text-decoration: none;
+        }
+        
+        
+        [data-tooltip] {
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        }
+        
+        
+        [data-tooltip]:before {
+        visibility: hidden;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+        pointer-events: none;
+        }
+        
+        
+        [data-tooltip]:before {
+        border-style: solid;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        margin-bottom: 5px;
+        margin-left: -80px;
+        padding: 7px;
+        width: 160px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background-color: #ffffff;
+        color: #000000;
+        content: attr(data-tooltip);
+        text-align: center;
+        font-size: 11px;
+        line-height: 1;
+        }
+        
+        
+        
+        
+        [data-tooltip]:hover:before {
+        visibility: visible;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 0.99;
+        }
+        
+    </style>
+  <apex:includeScript value="/support/console/39.0/integration.js"/>
+ <script type="text/javascript">
+        
+        var globalVarCaseId;
+        var globalVarCaseNumber;
+        //The callback function that openSubtab will call once it has the ID for its primary tab
+        var callOpenSubtab=function callOpenSubtab(result) {
+            sforce.console.openSubtab(result.id, 
+               '/'+globalVarCaseId, true, globalVarCaseNumber);
+        };
+        
+        function openSubtab(caseId,x) {
+            globalVarCaseId = caseId;
+            globalVarCaseNumber = x;
+            sforce.console.getEnclosingPrimaryTabId(callOpenSubtab);
+        }
+  </script>
+  
+  <apex:outputLabel style="font-family:verdana;font-weight:bold;font-size: 15px;" value="{!$Label.B2B_Care_Planned_Maintenance_Header}:"></apex:outputLabel>
+  
+  <apex:pageMessages id="msg-page-messages" rendered="false"/>
+  <div>
+       <!--<span style="color:red">{!$Label.B2B_Care_PlannedMaintenance_Now}:</span>-->
+       <br></br>
+       <span style="color:red;">
+           <apex:outputText rendered="{!inProgressCaseList !=null && inProgressCaseList.size > 0}">{!$Label.B2B_Care_PlannedMaintenance_Now}:</apex:outputText> 
+       </span>
+       <!--<apex:repeat value="{!inProgress }" var="Case1" id="theTable0"  rendered="{!IF(inProgress!=null,true,false) && inProgress.size > 0}">
+              
+             <apex:facet name="header">Case Number</apex:facet>
+             <A HREF="#" onClick="openSubtab('{!Case1.id}','{!Case1.CaseNumber}');return false">{!Case1.CaseNumber}</A>
+      </apex:repeat>-->
+      
+      <apex:repeat value="{!inProgressCaseList}" var="Case1" id="theTable0" rendered="{!IF(inProgressCaseList!=null,true,false) && inProgressCaseList.size > 0}">
+              
+             <apex:facet name="header">Case Number</apex:facet>
+             <A HREF="#" onClick="openSubtab('{!Case1.caseObj.id}','{!Case1.caseObj.CaseNumber}');return false">{!Case1.caseObj.CaseNumber}</A>
+              (<apex:repeat value="{!Case1.servList}" var="serv">
+                  <A HREF="#" data-tooltip="{!serv.LG_Care_Full_Address__c}" onClick="openSubtab('{!serv.id}','{!serv.Name}');return false">{!serv.Name}</A>
+              </apex:repeat>)
+      </apex:repeat>
+  </div>
+  <div>
+       <!--<span style="color:red">{!$Label.B2B_Care_PlannedMaintenance_Scheduled}:</span> -->
+       <span style="color:red;">
+           <apex:outputText rendered="{!scheduledCaseList!=null && scheduledCaseList.size > 0}">{!$Label.B2B_Care_PlannedMaintenance_Scheduled}:</apex:outputText> 
+       </span>
+       <!--<apex:repeat value="{!scheduled}" var="Case1" id="theTable" rendered="{!IF(scheduled!=null,true,false) && scheduled.size > 0}">
+              
+             <apex:facet name="header">Case Number</apex:facet>
+             <A HREF="#" onClick="openSubtab('{!Case1.id}','{!Case1.CaseNumber}');return false">{!Case1.CaseNumber}</A>
+              
+      </apex:repeat>-->
+      
+      <apex:repeat value="{!scheduledCaseList}" var="Case1" id="theTable" rendered="{!IF(scheduledCaseList!=null,true,false) && scheduledCaseList.size > 0}">
+              
+             <apex:facet name="header">Case Number</apex:facet>
+             <A HREF="#" onClick="openSubtab('{!Case1.caseObj.id}','{!Case1.caseObj.CaseNumber}');return false">{!Case1.caseObj.CaseNumber}</A>
+              (<apex:repeat value="{!Case1.servList}" var="serv">
+                  <A HREF="#" data-tooltip="{!serv.LG_Care_Full_Address__c}" onClick="openSubtab('{!serv.id}','{!serv.Name}');return false">{!serv.Name}</A>
+              </apex:repeat>)
+      </apex:repeat>
+      
+  </div>
+  <div>
+       <!--<span style="color:red">{!$Label.B2B_Care_PlannedMaintenance_Scheduled}:</span> -->
+       <span style="color:red;">
+           <apex:outputText rendered="{!outageCaseList!=null && outageCaseList.size > 0}">{!$Label.B2B_Care_Check_Outage_Cases}:</apex:outputText> 
+       </span>
+       <!--<apex:repeat value="{!outage}" var="Case1" id="theTable1" rendered="{!IF(outage!=null,true,false) && outage.size > 0}">
+              
+             <apex:facet name="header">Case Number</apex:facet>
+             <A HREF="#" onClick="openSubtab('{!Case1.id}','{!Case1.CaseNumber}');return false">{!Case1.CaseNumber}</A>
+              
+      </apex:repeat>-->
+      
+      <apex:repeat value="{!outageCaseList}" var="Case1" id="theTable1" rendered="{!IF(outageCaseList!=null,true,false) && outageCaseList.size > 0}">
+              
+             <apex:facet name="header">Case Number</apex:facet>
+             <A HREF="#" onClick="openSubtab('{!Case1.caseObj.id}','{!Case1.caseObj.CaseNumber}');return false">{!Case1.caseObj.CaseNumber}</A>
+              (<apex:repeat value="{!Case1.servList}" var="serv">
+                  <A HREF="#" data-tooltip="{!serv.LG_Care_Full_Address__c}" onClick="openSubtab('{!serv.id}','{!serv.Name}');return false">{!serv.Name}</A>
+              </apex:repeat>)
+      </apex:repeat>
+  </div>
+  <br></br>
+  <div>
+      <span style="color:red;">
+           <apex:outputText rendered="{!plannedMaintenanceForHPBX!=null && plannedMaintenanceForHPBX.size > 0}">{!$Label.LG_Care_PlannedMaintenance_HPBX}</apex:outputText> 
+      </span>
+      
+      <apex:repeat value="{!plannedMaintenanceForHPBX}" var="Case1" id="theTableHpbx1" rendered="{!IF(plannedMaintenanceForHPBX!=null,true,false) && plannedMaintenanceForHPBX.size > 0}">
+              
+             <apex:facet name="header">Case Number</apex:facet>
+             <A HREF="#" onClick="openSubtab('{!Case1.id}','{!Case1.CaseNumber}');return false">{!Case1.CaseNumber}</A>
+      </apex:repeat>
+  </div>
+  
+  <div>
+      <span style="color:red;">
+           <apex:outputText rendered="{!outageForHPBX!=null && outageForHPBX.size > 0}">{!$Label.LG_Care_Outage_For_HPBX}</apex:outputText> 
+      </span>
+      
+      <apex:repeat value="{!outageForHPBX}" var="Case1" id="theTableHpbx2" rendered="{!IF(outageForHPBX!=null,true,false) && outageForHPBX.size > 0}">
+              
+             <apex:facet name="header">Case Number</apex:facet>
+             <A HREF="#" onClick="openSubtab('{!Case1.id}','{!Case1.CaseNumber}');return false">{!Case1.CaseNumber}</A>
+      </apex:repeat>
+  </div>
+  <br></br>
+  <br></br>
+  <apex:outputPanel >
+      <A HREF="{!$Label.B2B_Care_Check_MK_URL}" target="_blank"><span style="color:blue">Check MK</span></A>
+  </apex:outputPanel>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

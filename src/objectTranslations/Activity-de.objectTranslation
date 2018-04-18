@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <caseType>Accusative</caseType>
+            <plural>false</plural>
+            <value>Bezogen auf</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Accusative</caseType>
+            <plural>true</plural>
+            <value>Bezüge zu</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Dative</caseType>
+            <plural>false</plural>
+            <value>Bezogen auf</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Dative</caseType>
+            <plural>true</plural>
+            <value>Bezügen zu</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Genitive</caseType>
+            <plural>false</plural>
+            <value>Bezogen auf</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Genitive</caseType>
+            <plural>true</plural>
+            <value>Bezüge zu</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bezogen auf</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>true</plural>
+            <value>Bezüge zu</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>related_to_activity</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Anfang</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>start_date_activity</name>
+    </fields>
+    <fields>
+        <label><!-- Process Step link --></label>
+        <name>CSPOFA__Process_Step_link__c</name>
+    </fields>
+    <fields>
+        <label>externe ID</label>
+        <name>LG_ExternalID__c</name>
+    </fields>
+    <fields>
+        <label>Partneraccount</label>
+        <name>LG_PartnerAccount__c</name>
+    </fields>
+    <fields>
+        <label>Bevorzugter Kommunikationskanal</label>
+        <name>LG_Preferred_Communication_Channel__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>zugehörige externe ID</label>
+        <name>LG_RelatedExternalID__c</name>
+    </fields>
+    <fields>
+        <label>Ergebnis - L2</label>
+        <name>LG_Result_L2__c</name>
+    </fields>
+    <fields>
+        <label>Ergebnis - L3</label>
+        <name>LG_Result_L3__c</name>
+    </fields>
+    <fields>
+        <label>Ergebnis</label>
+        <name>LG_Result__c</name>
+        <picklistValues>
+            <masterLabel>Follow up</masterLabel>
+            <translation>Wiedervorlage</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Future interest</masterLabel>
+            <translation>Kunde interessiert</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invalid Data</masterLabel>
+            <translation>ungültige Daten</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not interested</masterLabel>
+            <translation>kein interesse</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not reached</masterLabel>
+            <translation>nicht erreichbar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote</masterLabel>
+            <translation>Angebot</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation>Vertragsabsachluß</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Channel --></label>
+        <name>LG_SalesChannel__c</name>
+    </fields>
+</CustomObjectTranslation>

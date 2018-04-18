@@ -1,0 +1,15 @@
+<apex:page showHeader="false" docType="html-5.0" sidebar="false" controller="UM_KenanSubscriptionSyncCtrl" action="{!updateKenanService}" >
+    <script>
+        function CloseAndRefresh(){
+            window.opener.location.href="/{!$CurrentPage.parameters.Id}";
+            self.close();
+        }
+        window.resizeTo(600,300);
+        
+    </script>
+    <apex:pageMessages escape="false"/> 
+    <br/>
+    <p style="padding-left:0.5cm;">
+	    <input type="button" Class="btn" id="btn" onclick="CloseAndRefresh();" value="Close" />        
+    </p>
+</apex:page>

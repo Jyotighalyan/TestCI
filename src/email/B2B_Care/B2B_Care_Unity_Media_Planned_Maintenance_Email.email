@@ -1,0 +1,131 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span lang="DE"><span style="white-space:pre">				</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span lang="DE" style="font-size: x-small;"><span style="font-family: &quot;Times New Roman&quot;, serif;">Ihre Rahmenvertragsnummer: &nbsp;</span></span><font face="Times New Roman, serif" style="font-size: x-small;">{!Account.AccountNumber}</font><span style="font-size: 12pt; white-space: pre;">											</span><span style="font-size: x-small;">&nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-size: x-small; font-family: &quot;Times New Roman&quot;, serif;">Ihre Kundennummer: &nbsp;</span><font face="Times New Roman, serif" style="font-size: x-small;">{!Case.00N6E000000PuzA}</font><span style="font-size: 12pt; white-space: pre;">						</span></p><p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span lang="DE"><br><br></span></p><p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span lang="DE">Guten Tag&nbsp;{!Contact.LG_SalutationLocal__c}&nbsp;{!Contact.LastName},</span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;&nbsp;<o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;<o:p></o:p></span></p>
+
+<p class="Standard1" style="line-height: 12pt;"><span lang="DE"><font face="arial" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size: 12pt;">In der Zeit </span></font><b style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial"><span style="font-size: 12pt;">von </span>{!Case.LG_Estimated_Start_Time__c}<span style="font-size: 12pt;">&nbsp;Uhr&nbsp;</span></font><font face="arial">{!Case.LG_Estimated_resolution_time__c}<span style="font-size: 12pt;">Uhr </span></font></b><font face="arial" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size: 12pt;">finden Wartungsarbeiten statt.</span></font><b style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"> Daher </b><font face="arial" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size: 12pt;">kann es
+an Ihrem Anschluss zu einem Totalausfall von ca.&nbsp;</span></font><font face="arial"><b>{!Case.LG_PM_Estimated_Duration__c}</b><span style="font-size: 12pt;">Stunden bei Ihren Diensten kommen. Während der
+Unterbrechungen können Sie keine Telefon- und Internetdienste nutzen. Notrufe
+können dann nur mobil abgesetzt werden.</span></font><br>
+<br><font face="arial" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size: 12pt;">
+Wir bedauern die Unannehmlichkeiten und bitten um Ihr Verständnis.</span></font></span><span lang="DE" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">&nbsp;<o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">Sollten Sie Fragen
+haben, rufen Sie uns einfach an. Sie erreichen uns unter der Rufnummer 0800 141
+299 99 – Mo - Fr von 8 bis 20 Uhr und Sa 8 bis 16 Uhr. Sie erreichen uns auch
+per E-Mail an <a href="mailto:Enterprise.Service@unitymedia.de">Enterprise.Service@unitymedia.de</a>.
+<o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;<o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">Mit freundlichen
+Grüßen <o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;<o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">Unitymedia Business
+Team <o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;<o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;<o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;<o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">Tel.:
+</span><span lang="DE">0800 141 299 99<o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">Fax:
+</span><span lang="DE">0800 888 87 10<o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE">&nbsp;<o:p></o:p></span></p>
+
+<p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><span lang="DE"><a href="http://www.unitymedia.de/business">www.unitymedia.de/business</a><o:p></o:p></span></p><p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><br></p><p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;"><br></p><p class="Standard1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 12pt;">&nbsp; &nbsp;&nbsp;</p><table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; border-collapse: collapse; border: none;">
+ <tbody><tr>
+  <td width="151" valign="top" style="width:113.25pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><b><span lang="DE" style="font-size:7.0pt">Unitymedia NRW GmbH<o:p></o:p></span></b></p>
+  </td>
+  <td width="180" valign="top" style="width:134.85pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><b><span lang="DE" style="font-size:7.0pt">Unitymedia Hessen GmbH &amp;
+  Co. KG<o:p></o:p></span></b></p>
+  </td>
+  <td width="142" valign="top" style="width:106.3pt;border:none;mso-border-left-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><b><span lang="DE" style="font-size:7.0pt">Unitymedia BW GmbH<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1;height:33.75pt">
+  <td width="151" valign="top" style="width:113.25pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:33.75pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Unitymedia Business Service <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Postfach 45 12 04 <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">50887 Köln<o:p></o:p></span></p>
+  </td>
+  <td width="180" valign="top" style="width:134.85pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:33.75pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Unitymedia Business Service <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Postfach 45 12 04 <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">50887 Köln<o:p></o:p></span></p>
+  </td>
+  <td width="142" valign="top" style="width:106.3pt;border:none;mso-border-left-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:33.75pt">
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US">Unitymedia Business Service&nbsp; Postfach 90 01 31<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span style="font-size:7.0pt;
+  mso-ansi-language:EN-US">75090 Pforzheim</span><span lang="DE" style="font-size:7.0pt"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="151" valign="top" style="width:113.25pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Handelsregister: <o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Amtsgericht Köln HRB 83533 <o:p></o:p></span></p>
+  </td>
+  <td width="180" valign="top" style="width:134.85pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Handelsregister:<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Amtsgericht Köln HRA 24116<o:p></o:p></span></p>
+  </td>
+  <td width="142" valign="top" style="width:106.3pt;border:none;mso-border-left-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Handelsregister:<o:p></o:p></span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Amtsgericht Köln HRB 83533<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="473" colspan="3" valign="top" style="width:354.4pt;border:none;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">&nbsp;</span></p>
+  <p class="Standard1" style="line-height:12.0pt"><span lang="DE" style="font-size:
+  7.0pt">Geschäftsführer: Lutz Schüler (Vorsitzender) | Dr. Herbert Leifker |
+  Winfried Rapp <o:p></o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><br></p>
+  </td>
+ </tr>
+</tbody></table>]]></td>
+</tr>
+</table>

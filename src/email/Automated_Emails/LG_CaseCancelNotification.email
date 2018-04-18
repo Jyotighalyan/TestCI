@@ -1,0 +1,11 @@
+<messaging:emailTemplate subject="Cancellation of related cases" recipientType="User" relatedToType="csord__Solution__c">
+<messaging:plainTextEmailBody >
+There was an inflight change on the suborder {!relatedto.name} and the Case that you owned was cancelled. Please stop working on it.
+
+
+Thanks
+
+
+This is an automated notification
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

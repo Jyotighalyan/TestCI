@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Unity Media Email Template Logo Header used in email template</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>B2B Care Unity Media Email Logo Header</name>
+    <public>true</public>
+</Document>

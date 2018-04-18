@@ -1,0 +1,43 @@
+<apex:page controller="LG_Care_CaseOwnerUndo_Controller">
+<apex:form id="theForm" >
+    <apex:sectionHeader title="Case Undo" subtitle="Cases"/>
+    
+    <apex:pageBlock >
+        
+    <apex:message />
+        <style type="text/css">
+        table.exceptionText td {
+                 font-size:16px;
+                 font-weight:bold;
+                 color:red;}
+        </style>
+    <apex:messages layout="table" styleClass="exceptionText"/>
+        <apex:pageBlockTable value="{!caseWrapperList}" var="wrapper" id="tableId">
+            <apex:column >
+                <apex:inputCheckbox value="{!wrapper.selected}"/>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.Case.Fields.CaseNumber.Label}">
+                <apex:outputLink value="/{!wrapper.caseObj.Id}">{!wrapper.caseObj.caseNumber}</apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="{!$Label.B2B_Care_vfPage_CaseUndo3}">
+            	<apex:outputText value="{!wrapper.oldOwner}"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="{!$Label.B2B_Care_vfPage_CaseUndo4}">
+                <apex:outputText value="{!wrapper.newOwner}"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.Case.Fields.CreatedDate.Label}">
+                <apex:outputText value="{!wrapper.CreatedDate}"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.Case.Fields.LastModifieddate.Label}">
+                <apex:outputText value="{!wrapper.LastModifiedDate}"></apex:outputText>
+            </apex:column>
+        </apex:pageBlockTable>
+        
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Undo" action="{!undoCaseOwner}" reRender="theForm"/>
+        </apex:pageBlockButtons>
+
+
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

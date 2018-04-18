@@ -1,0 +1,3 @@
+<apex:page showHeader="true" sidebar="true" docType="html-5.0">
+    <c:LG_ValidateAddressComponent isOutsideAddressValidation="false"/>
+</apex:page>

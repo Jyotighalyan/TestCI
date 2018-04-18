@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>38.0</apiVersion>
+    <available>true</available>
+    <description>Email sent when a Inflight case related to a solution is closed</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Case Cancel Notification</name>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>20</minorNumber>
+        <namespace>csord</namespace>
+    </packageVersions>
+    <style>none</style>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

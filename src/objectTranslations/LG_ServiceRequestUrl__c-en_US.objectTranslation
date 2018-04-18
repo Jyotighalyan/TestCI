@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service Request URL</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Service Request URL</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address Check --></label>
+        <name>LG_AddressCheck__c</name>
+    </fields>
+    <fields>
+        <label><!-- Availability Check --></label>
+        <name>LG_AvailabilityCheck__c</name>
+    </fields>
+    <fields>
+        <label><!-- Localization class --></label>
+        <name>LG_LocalizationClass__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Request New --></label>
+        <name>LG_OrderRequestNew__c</name>
+    </fields>
+    <fields>
+        <label><!-- URL --></label>
+        <name>LG_Url__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

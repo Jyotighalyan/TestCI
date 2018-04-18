@@ -1,0 +1,2495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>csbb__BasketbuilderApp</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>UM_NewBasketRedirect</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>csbb__CSBasketRedirect</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Basket to supercede bundles...</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fieldSets>
+        <fullName>csbb__Custom_Field_Set</fullName>
+        <description>Used to incorporate custom fields into the Basket Builder page. Add fields to this fieldset to display them in the page.</description>
+        <label>Custom Field Set</label>
+    </fieldSets>
+    <fields>
+        <fullName>Account_Lapse_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL(TEXT(csbb__Account__r.Priced_Quote_Valid_for_Days__c) ) ,NULL, Quote_Created_Date__c+VALUE(TEXT(csbb__Account__r.Priced_Quote_Valid_for_Days__c)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Lapse Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_AdminContactDateofBirth__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact Date of Birth</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_AdminContactEmail__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact Email</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AdminContactFirstName__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact First Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AdminContactId__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AdminContactLastName__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AdminContactMiddleName__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact Middle Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AdminContactMobile__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact Mobile</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AdminContactPhone__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact Phone</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AdminContactPicklist__c</fullName>
+        <description>A picklist field to be used inside CSA.</description>
+        <externalId>false</externalId>
+        <label>Admin Contact</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>(new Contact)</fullName>
+                    <default>true</default>
+                    <label>(new Contact)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_AdminContactSalutation__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact Salutation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Mr.</fullName>
+                    <default>false</default>
+                    <label>Mr.</label>
+                </value>
+                <value>
+                    <fullName>Ms.</fullName>
+                    <default>false</default>
+                    <label>Ms.</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_BankAccountName__c</fullName>
+        <externalId>false</externalId>
+        <label>Bank Account Holder</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BankNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Bank Number (IBAN)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BasketNumber__c</fullName>
+        <displayFormat>B{0000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Basket Number</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>LG_BillingAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Billing Account</label>
+        <referenceTo>csconta__Billing_Account__c</referenceTo>
+        <relationshipLabel>Product Baskets</relationshipLabel>
+        <relationshipName>Product_Baskets</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_BillingChannel__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Channel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Paper</fullName>
+                    <default>true</default>
+                    <label>Paper</label>
+                </value>
+                <value>
+                    <fullName>E-Mail PDF</fullName>
+                    <default>false</default>
+                    <label>E-Mail PDF</label>
+                </value>
+                <value>
+                    <fullName>Paper + E-Mail PDF</fullName>
+                    <default>false</default>
+                    <label>Paper + E-Mail PDF</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_BillingCity__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BillingCountry__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Country</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Germany</fullName>
+                    <default>true</default>
+                    <label>Germany</label>
+                </value>
+                <value>
+                    <fullName>Netherlands</fullName>
+                    <default>false</default>
+                    <label>Netherlands</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_BillingEmailAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Email Address</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BillingHouseNumberExtension__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing House Number Extension</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BillingHouseNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing House Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BillingPostalCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Postal Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BillingSameAsInstallationAddress__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>A checkbox field to be used inside CSA. Custom logic attached to this field to copy values from installation fields to billing address fields.</description>
+        <externalId>false</externalId>
+        <label>Same as installation address</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_BillingStateProvince__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing State/Province</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_BillingStreet__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_COAXConnectionLocation__c</fullName>
+        <externalId>false</externalId>
+        <label>COAX Connection Location</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ClientNumber__c</fullName>
+        <description>Client number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Client number</inlineHelpText>
+        <label>Client number</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_CreatedFrom__c</fullName>
+        <externalId>false</externalId>
+        <label>Created From</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Web</fullName>
+                    <default>true</default>
+                    <label>Web</label>
+                </value>
+                <value>
+                    <fullName>Tablet</fullName>
+                    <default>false</default>
+                    <label>Tablet</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_CustomerReference__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer reference</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_DTV__c</fullName>
+        <description>DTV</description>
+        <externalId>false</externalId>
+        <label>DTV</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>true</default>
+                    <label>N/A</label>
+                </value>
+                <value>
+                    <fullName>Keep</fullName>
+                    <default>false</default>
+                    <label>Keep</label>
+                </value>
+                <value>
+                    <fullName>Terminate</fullName>
+                    <default>false</default>
+                    <label>Terminate</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Downgrade__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked - MACD Migrate is being considered as Downgrade.</description>
+        <externalId>false</externalId>
+        <label>Downgrade</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_EarliestInstallationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Earliest Installation Date</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ExistingSubscription__c</fullName>
+        <externalId>false</externalId>
+        <label>Existing subscription</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>true</default>
+                    <label>N/A</label>
+                </value>
+                <value>
+                    <fullName>Residential without internet</fullName>
+                    <default>false</default>
+                    <label>Residential without internet</label>
+                </value>
+                <value>
+                    <fullName>Residential with internet</fullName>
+                    <default>false</default>
+                    <label>Residential with internet</label>
+                </value>
+                <value>
+                    <fullName>Soho 1P/5P</fullName>
+                    <default>false</default>
+                    <label>Soho 1P/5P</label>
+                </value>
+                <value>
+                    <fullName>Office basis</fullName>
+                    <default>false</default>
+                    <label>Office basis</label>
+                </value>
+                <value>
+                    <fullName>Connect ZZP</fullName>
+                    <default>false</default>
+                    <label>Connect ZZP</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_IPAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>IP Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>true</default>
+                    <label>N/A</label>
+                </value>
+                <value>
+                    <fullName>Keep</fullName>
+                    <default>false</default>
+                    <label>Keep</label>
+                </value>
+                <value>
+                    <fullName>Terminate</fullName>
+                    <default>false</default>
+                    <label>Terminate</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_InstallValidationResult__c</fullName>
+        <externalId>false</externalId>
+        <label>Install Validation Result</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not checked</fullName>
+                    <default>true</default>
+                    <label>Not checked</label>
+                </value>
+                <value>
+                    <fullName>Invalid</fullName>
+                    <default>false</default>
+                    <label>Invalid</label>
+                </value>
+                <value>
+                    <fullName>Valid</fullName>
+                    <default>false</default>
+                    <label>Valid</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationCity__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationCountry__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Country</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Germany</fullName>
+                    <default>true</default>
+                    <label>Germany</label>
+                </value>
+                <value>
+                    <fullName>Netherlands</fullName>
+                    <default>false</default>
+                    <label>Netherlands</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationD2DOffline__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Installation D2D Offline</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationDigitalAvailable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Installation Digital Available</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationHouseNumberExtension__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation House Number Extension</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationHouseNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation House Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationInternetAvailable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Installation Internet Available</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationPostalCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Postal Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationStateProvince__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation State/Province</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationStreet__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MainReasonLost__c</fullName>
+        <externalId>false</externalId>
+        <label>Main Reason Lost</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Delivery</fullName>
+                    <default>false</default>
+                    <label>Delivery</label>
+                </value>
+                <value>
+                    <fullName>Price is not attractive enough</fullName>
+                    <default>false</default>
+                    <label>Price is not attractive enough</label>
+                </value>
+                <value>
+                    <fullName>Product doesn&apos;t match needs customer</fullName>
+                    <default>false</default>
+                    <label>Product doesn&apos;t match needs customer</label>
+                </value>
+                <value>
+                    <fullName>Loyal to current provider</fullName>
+                    <default>false</default>
+                    <label>Loyal to current provider</label>
+                </value>
+                <value>
+                    <fullName>Switch is too much hassle</fullName>
+                    <default>false</default>
+                    <label>Switch is too much hassle</label>
+                </value>
+                <value>
+                    <fullName>Not satisfied with quality UPC/Ziggo</fullName>
+                    <default>false</default>
+                    <label>Not satisfied with quality UPC/Ziggo</label>
+                </value>
+                <value>
+                    <fullName>Afraid to change vendor</fullName>
+                    <default>false</default>
+                    <label>Afraid to change vendor</label>
+                </value>
+                <value>
+                    <fullName>Does not appreciate telemarketing/d2d sales</fullName>
+                    <default>false</default>
+                    <label>Does not appreciate telemarketing/d2d sales</label>
+                </value>
+                <value>
+                    <fullName>Decision made primary office</fullName>
+                    <default>false</default>
+                    <label>Decision made primary office</label>
+                </value>
+                <value>
+                    <fullName>Stuck in existing contract</fullName>
+                    <default>false</default>
+                    <label>Stuck in existing contract</label>
+                </value>
+                <value>
+                    <fullName>Bad experience with Ziggo in retail market</fullName>
+                    <default>false</default>
+                    <label>Bad experience with Ziggo in retail market</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Other reasons</fullName>
+                    <default>false</default>
+                    <label>Other reasons</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_MarketSegment__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Segment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PaymentTerms__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Terms</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>30 Days</fullName>
+                    <default>true</default>
+                    <label>30 Days</label>
+                </value>
+                <value>
+                    <fullName>60 Days</fullName>
+                    <default>false</default>
+                    <label>60 Days</label>
+                </value>
+                <value>
+                    <fullName>90 Days</fullName>
+                    <default>false</default>
+                    <label>90 Days</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_PaymentType__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Self-payer</fullName>
+                    <default>false</default>
+                    <label>Self-payer</label>
+                </value>
+                <value>
+                    <fullName>Direct Debit</fullName>
+                    <default>false</default>
+                    <label>Direct Debit</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_PostalCity__c</fullName>
+        <externalId>false</externalId>
+        <label>Postal City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PostalCountry__c</fullName>
+        <externalId>false</externalId>
+        <label>Postal Country</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Germany</fullName>
+                    <default>true</default>
+                    <label>Germany</label>
+                </value>
+                <value>
+                    <fullName>Netherlands</fullName>
+                    <default>false</default>
+                    <label>Netherlands</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_PostalHouseNumberExtension__c</fullName>
+        <externalId>false</externalId>
+        <label>Postal House Number Extension</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LG_PostalHouseNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Postal House Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PostalPostalCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Postal Postal Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PostalSameAsInstallationAddress__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>A checkbox field to be used inside CSA. Custom logic attached to this field to copy values from installation fields to postal address fields.</description>
+        <externalId>false</externalId>
+        <label>Same as installation address</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_PostalStreet__c</fullName>
+        <externalId>false</externalId>
+        <label>Postal Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PreferredInstallationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Installation Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_PreferredInstallationTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Installation Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>08:00 - 13:00</fullName>
+                    <default>false</default>
+                    <label>08:00 - 13:00</label>
+                </value>
+                <value>
+                    <fullName>12:00 - 18:00</fullName>
+                    <default>false</default>
+                    <label>12:00 - 18:00</label>
+                </value>
+                <value>
+                    <fullName>18.00 - 21.00</fullName>
+                    <default>false</default>
+                    <label>18.00 - 21.00</label>
+                </value>
+                <value>
+                    <fullName>Saturday 10.00 - 18.00</fullName>
+                    <default>false</default>
+                    <label>Saturday 10.00 - 18.00</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_ResultofVisit__c</fullName>
+        <externalId>false</externalId>
+        <label>Result of Visit</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Quote Requested</fullName>
+                    <default>false</default>
+                    <label>Quote Requested</label>
+                </value>
+                <value>
+                    <fullName>Customer Approved</fullName>
+                    <default>false</default>
+                    <label>Customer Approved</label>
+                </value>
+                <value>
+                    <fullName>Customer Rejected</fullName>
+                    <default>false</default>
+                    <label>Customer Rejected</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_RunningUserSalesChannel__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT ($User.LG_SalesChannel__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Running User Sales Channel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_SBTelephonyId__c</fullName>
+        <externalId>false</externalId>
+        <label>SB Telephony Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_SameAsAdminContact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>A checkbox field to be used inside CSA. Custom logic attached to this field to copy values from admin contact to technical contact.</description>
+        <externalId>false</externalId>
+        <label>Same as Admin Contact</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_SelectedProducts__c</fullName>
+        <description>Keeps a list of selected products during a MACD process</description>
+        <externalId>false</externalId>
+        <label>Selected Products</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_SharedOfficeBuilding__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Shared Office Building</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_SuiteRoom__c</fullName>
+        <externalId>false</externalId>
+        <label>Suite/Room</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TechContactSameasBillingContact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Same as Billing Contact</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_TechnicalContactDateofBirth__c</fullName>
+        <externalId>false</externalId>
+        <label>Technical Contact Date of Birth</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_TechnicalContactEmail__c</fullName>
+        <externalId>false</externalId>
+        <label>Technical Contact Email</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TechnicalContactFirstName__c</fullName>
+        <externalId>false</externalId>
+        <label>Technical Contact First Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TechnicalContactId__c</fullName>
+        <externalId>false</externalId>
+        <label>Technical Contact Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TechnicalContactLastName__c</fullName>
+        <externalId>false</externalId>
+        <label>Technical Contact Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TechnicalContactMiddleName__c</fullName>
+        <externalId>false</externalId>
+        <label>Technical Contact Middle Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TechnicalContactMobile__c</fullName>
+        <externalId>false</externalId>
+        <label>Technical Contact Mobile</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TechnicalContactPhone__c</fullName>
+        <externalId>false</externalId>
+        <label>Technical Contact Phone</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_TechnicalContactPicklist__c</fullName>
+        <description>A picklist field to be used inside CSA.</description>
+        <externalId>false</externalId>
+        <label>Technical Contact</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>(new Contact)</fullName>
+                    <default>false</default>
+                    <label>(new Contact)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_TechnicalContactSalutation__c</fullName>
+        <externalId>false</externalId>
+        <label>Technical Contact Salutation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Mr.</fullName>
+                    <default>false</default>
+                    <label>Mr.</label>
+                </value>
+                <value>
+                    <fullName>Ms.</fullName>
+                    <default>false</default>
+                    <label>Ms.</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Telephony__c</fullName>
+        <externalId>false</externalId>
+        <label>Telephony</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>true</default>
+                    <label>N/A</label>
+                </value>
+                <value>
+                    <fullName>Keep</fullName>
+                    <default>false</default>
+                    <label>Keep</label>
+                </value>
+                <value>
+                    <fullName>Terminate</fullName>
+                    <default>false</default>
+                    <label>Terminate</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_TotalOneOff__c</fullName>
+        <description>Used as a rollup summary field for cscfga__One_Off_Charge__c field of the related cscfga__Product_Configuration__c objects</description>
+        <externalId>false</externalId>
+        <label>Total One Off</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LG_TotalRecurringCharge__c</fullName>
+        <description>Used as a rollup summary field for cscfga__Recurring_Charge__c field of the related cscfga__Product_Configuration__c objects</description>
+        <externalId>false</externalId>
+        <label>Total Recurring Charge</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LG_UploadPortingNumbers__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(LG_SBTelephonyId__c),&apos;&apos;, HYPERLINK(&apos;/apex/c__LG_TelephonePorting?PCId=&apos; + LG_SBTelephonyId__c, &apos;Number porting upload needs to be done!&apos;))</formula>
+        <label>Upload Porting Numbers</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_UsedQuoteObjects__c</fullName>
+        <externalId>false</externalId>
+        <label>Used Quote Objects</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ValidationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Validation Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LG_VisitAddressID__c</fullName>
+        <externalId>false</externalId>
+        <label>Visit Address ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_VisitDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>Visit Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Product Baskets</relationshipLabel>
+        <relationshipName>Product_Baskets</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Priced_Quote_Valid_for_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>BLANKVALUE(TEXT(csbb__Account__r.Priced_Quote_Valid_for_Days__c),&apos;30&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Priced Quote Valid for Days</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quote_Created_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE( CreatedDate )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Quote Created Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Quote_Expiry_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( TEXT(Quote_Stage__c) = &apos;Quoting&apos;, Quote_Created_Date__c + 30 , IF( AND(TEXT(Quote_Stage__c) = &apos;Synchronised&apos;, NOT( ISNULL( Account_Lapse_Date__c ) ) ), Account_Lapse_Date__c ,IF( AND(TEXT(Quote_Stage__c) = &apos;Quoted&apos;, NOT( ISNULL( Account_Lapse_Date__c ) ) ), Account_Lapse_Date__c ,IF( AND(TEXT(Quote_Stage__c) = &apos;Re-Priced&apos;, NOT( ISNULL( Account_Lapse_Date__c ) ) ), Account_Lapse_Date__c ,IF( AND(TEXT(Quote_Stage__c) = &apos;Synchronised&apos;, ISNULL( Account_Lapse_Date__c ) ), Quote_Created_Date__c +30 ,IF( AND(TEXT(Quote_Stage__c) = &apos;Quoted&apos;, ISNULL( Account_Lapse_Date__c ) ), Quote_Created_Date__c +30 ,IF( AND(TEXT(Quote_Stage__c) = &apos;Re-Priced&apos;, ISNULL( Account_Lapse_Date__c ) ), Quote_Created_Date__c +30 ,NULL)))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Quote Expiry Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Quote_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Quote Stage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Quoting</fullName>
+                    <default>false</default>
+                    <label>Quoting</label>
+                </value>
+                <value>
+                    <fullName>Synchronised</fullName>
+                    <default>false</default>
+                    <label>Synchronised</label>
+                </value>
+                <value>
+                    <fullName>Quoted</fullName>
+                    <default>false</default>
+                    <label>Quoted</label>
+                </value>
+                <value>
+                    <fullName>Re-Priced</fullName>
+                    <default>false</default>
+                    <label>Re-Priced</label>
+                </value>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <default>false</default>
+                    <label>Accepted</label>
+                </value>
+                <value>
+                    <fullName>Won</fullName>
+                    <default>false</default>
+                    <label>Won</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_ApprovalStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT (cscfga__Opportunity__r.UM_Approval__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Approval Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_BankAccountNumberBic__c</fullName>
+        <externalId>false</externalId>
+        <label>BIC code</label>
+        <length>11</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_BankName__c</fullName>
+        <externalId>false</externalId>
+        <label>Bank Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_DownsellApprovalRequired__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Downsell Approval Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_IBANValid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IBAN Validated</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_PartnerStates__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISBLANK( cscfga__Opportunity__r.SF_Sales_Partner_ID_BW__c ) , 
+IF(ISBLANK( cscfga__Opportunity__r.SF_Sales_Partner_ID_NRW_HSN__c ),&apos;&apos;,&apos;NRW,HSN&apos;), 
+IF(ISBLANK( cscfga__Opportunity__r.SF_Sales_Partner_ID_NRW_HSN__c ),&apos;BW&apos;,&apos;BW,NRW,HSN&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Partner States</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_QuotingDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>cscfga__Opportunity__r.UM_QuotingDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Quoting Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_RunningUserUserType__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT ($User.UserType)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Running User User Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cfgoffline__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Product Baskets</relationshipLabel>
+        <relationshipName>Product_Baskets</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csbb__Accessibility_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Status of accessibility of the basket. The basket gets blocked when it is in the process of cloning (whether it is cloned or the clone itself).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of accessibility of the basket. The basket gets blocked when it is in the process of cloning (whether it is cloned or the clone itself).</inlineHelpText>
+        <label>Accessibility Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csbb__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Product Baskets</relationshipLabel>
+        <relationshipName>Product_Baskets</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csbb__Includes_High_Level_Products__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Includes High Level Products</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>csbb__Optionals__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Additional information on the Product Basket record, used by CSBB.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional information on the Product Basket record, used by CSBB.</inlineHelpText>
+        <label>Optionals</label>
+        <length>4096</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>csbb__Synchronised_With_Opportunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Synchronised With Opportunity</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cscfga__Basket_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays status of the Basket.</inlineHelpText>
+        <label>Basket Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Is Valid</fullName>
+                    <default>false</default>
+                    <label>Is Valid</label>
+                </value>
+                <value>
+                    <fullName>Contains Errors</fullName>
+                    <default>false</default>
+                    <label>Contains Errors</label>
+                </value>
+                <value>
+                    <fullName>ContainsExpiredProducts</fullName>
+                    <default>false</default>
+                    <label>ContainsExpiredProducts</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cscfga__Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Opportunity this Basket is associated with.</inlineHelpText>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Product Baskets</relationshipLabel>
+        <relationshipName>Product_Baskets</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cscfga__Products_Id_Qty_In_Basket__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>List of product IDs contained in this Basket.</inlineHelpText>
+        <label>Products Id Qty In Basket</label>
+        <length>8000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>cscfga__Products_In_Basket__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>List of Product Names contained in the Basket.</inlineHelpText>
+        <label>Products Names In Basket</label>
+        <length>4000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>cscfga__Shared_Context_Configuration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Product Configuration that is used as a Shared Context which is associated with this Basket.</inlineHelpText>
+        <label>Shared Context Configuration</label>
+        <referenceTo>cscfga__Product_Configuration__c</referenceTo>
+        <relationshipLabel>Product Baskets</relationshipLabel>
+        <relationshipName>Product_Baskets</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cscfga__Total_Price__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of non-recurring and one year&apos;s worth of recurring prices of all items contained in this Basket.</inlineHelpText>
+        <label>Total Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>cscfga__User_Session__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Details about user session within which this Bundle was created.</inlineHelpText>
+        <label>User Session</label>
+        <referenceTo>cscfga__User_Session__c</referenceTo>
+        <relationshipLabel>Product Baskets</relationshipLabel>
+        <relationshipName>Product_Baskets</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cscfga__total_contract_value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Total Contract Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Product Baskets</relationshipLabel>
+        <relationshipName>Product_Baskets</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Basket_Stage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>In standalone basket scenario, use this picklist to trigger order generation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>In standalone basket scenario, use this picklist to trigger order generation</inlineHelpText>
+        <label>Basket Stage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Prospecting</fullName>
+                    <default>true</default>
+                    <label>Prospecting</label>
+                </value>
+                <value>
+                    <fullName>Closed Won</fullName>
+                    <default>false</default>
+                    <label>Closed Won</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Change_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Change Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Change</fullName>
+                    <default>false</default>
+                    <label>Change</label>
+                </value>
+                <value>
+                    <fullName>Migrate</fullName>
+                    <default>false</default>
+                    <label>Migrate</label>
+                </value>
+                <value>
+                    <fullName>Terminate</fullName>
+                    <default>false</default>
+                    <label>Terminate</label>
+                </value>
+                <value>
+                    <fullName>Clone</fullName>
+                    <default>false</default>
+                    <label>Clone</label>
+                </value>
+                <value>
+                    <fullName>Move</fullName>
+                    <default>false</default>
+                    <label>Move</label>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Add</fullName>
+                    <default>false</default>
+                    <label>Add</label>
+                </value>
+                <value>
+                    <fullName>Upgrade</fullName>
+                    <default>false</default>
+                    <label>Upgrade</label>
+                </value>
+                <value>
+                    <fullName>Downgrade</fullName>
+                    <default>false</default>
+                    <label>Downgrade</label>
+                </value>
+                <value>
+                    <fullName>Relocation</fullName>
+                    <default>false</default>
+                    <label>Relocation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Order_Generation_Batch_Job_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Order Generation Batch Job Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Process_Order_Generation_In_Batch__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the opportunity is set to be processed in batch mode</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Force batch processing of the opportunity</inlineHelpText>
+        <label>Process Order Generation In Batch</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Product_Configuration_Clone_Batch_Job_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product Configuration Clone Batch Job Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Product_Configuration_Clone_In_Batch__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the product configuration cloning is set to be processed in batch mode</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Force generation of MACD basket in a batch</inlineHelpText>
+        <label>Product Configuration Clone In Batch</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Subscription_To_Be_Added_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Subscription To Be Added To</label>
+        <referenceTo>csord__Subscription__c</referenceTo>
+        <relationshipLabel>Product Baskets (Subscription To Be Added To)</relationshipLabel>
+        <relationshipName>Product_Baskets1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Subscription_To_Be_Changed__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Subscription To Be Changed</label>
+        <referenceTo>csord__Subscription__c</referenceTo>
+        <relationshipLabel>Product Baskets</relationshipLabel>
+        <relationshipName>Product_Baskets</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Synchronised_with_Opportunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Synchronised with Opportunity</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>spt_Quote_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Quote Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Expired</fullName>
+                    <default>false</default>
+                    <label>Expired</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Product Basket</label>
+    <listViews>
+        <fullName>cscfga__All</fullName>
+        <columns>NAME</columns>
+        <columns>cscfga__User_Session__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>cscfga__Total_Price__c</columns>
+        <columns>cscfga__Opportunity__c</columns>
+        <columns>cscfga__Basket_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Product Basket Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Baskets</pluralLabel>
+    <recordTypes>
+        <fullName>CSAPostConfiguration</fullName>
+        <active>true</active>
+        <label>CSAPostConfiguration</label>
+        <picklistValues>
+            <picklist>LG_AdminContactPicklist__c</picklist>
+            <values>
+                <fullName>%28new Contact%29</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_AdminContactSalutation__c</picklist>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_BillingChannel__c</picklist>
+            <values>
+                <fullName>E-Mail PDF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_BillingCountry__c</picklist>
+            <values>
+                <fullName>Germany</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_CreatedFrom__c</picklist>
+            <values>
+                <fullName>Tablet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_DTV__c</picklist>
+            <values>
+                <fullName>Keep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Terminate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ExistingSubscription__c</picklist>
+            <values>
+                <fullName>Connect ZZP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Office basis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential with internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential without internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soho 1P%2F5P</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_IPAddress__c</picklist>
+            <values>
+                <fullName>Keep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Terminate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_InstallValidationResult__c</picklist>
+            <values>
+                <fullName>Invalid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not checked</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Valid</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_InstallationCountry__c</picklist>
+            <values>
+                <fullName>Netherlands</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_MainReasonLost__c</picklist>
+            <values>
+                <fullName>Afraid to change vendor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bad experience with Ziggo in retail market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decision made primary office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not appreciate telemarketing%2Fd2d sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loyal to current provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not satisfied with quality UPC%2FZiggo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other reasons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price is not attractive enough</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product doesn%27t match needs customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stuck in existing contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switch is too much hassle</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_PaymentTerms__c</picklist>
+            <values>
+                <fullName>30 Days</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>60 Days</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90 Days</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_PaymentType__c</picklist>
+            <values>
+                <fullName>Direct Debit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-payer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_PostalCountry__c</picklist>
+            <values>
+                <fullName>Germany</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_PreferredInstallationTime__c</picklist>
+            <values>
+                <fullName>08%3A00 - 13%3A00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12%3A00 - 18%3A00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18%2E00 - 21%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saturday 10%2E00 - 18%2E00</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ResultofVisit__c</picklist>
+            <values>
+                <fullName>Customer Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Requested</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_TechnicalContactPicklist__c</picklist>
+            <values>
+                <fullName>%28new Contact%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_TechnicalContactSalutation__c</picklist>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_Telephony__c</picklist>
+            <values>
+                <fullName>Keep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Terminate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>cscfga__Basket_Status__c</picklist>
+            <values>
+                <fullName>Contains Errors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ContainsExpiredProducts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Is Valid</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>csordtelcoa__Change_Type__c</picklist>
+            <values>
+                <fullName>Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Terminate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CSAPreConfiguration</fullName>
+        <active>false</active>
+        <label>CSAPreConfiguration</label>
+        <picklistValues>
+            <picklist>LG_AdminContactPicklist__c</picklist>
+            <values>
+                <fullName>%28new Contact%29</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_AdminContactSalutation__c</picklist>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_BillingChannel__c</picklist>
+            <values>
+                <fullName>E-Mail PDF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Paper %2B E-Mail PDF</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_BillingCountry__c</picklist>
+            <values>
+                <fullName>Germany</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_CreatedFrom__c</picklist>
+            <values>
+                <fullName>Tablet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_DTV__c</picklist>
+            <values>
+                <fullName>Keep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Terminate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ExistingSubscription__c</picklist>
+            <values>
+                <fullName>Connect ZZP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Office basis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential with internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residential without internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soho 1P%2F5P</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_IPAddress__c</picklist>
+            <values>
+                <fullName>Keep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Terminate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_InstallValidationResult__c</picklist>
+            <values>
+                <fullName>Invalid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not checked</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Valid</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_InstallationCountry__c</picklist>
+            <values>
+                <fullName>Germany</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_MainReasonLost__c</picklist>
+            <values>
+                <fullName>Afraid to change vendor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bad experience with Ziggo in retail market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decision made primary office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not appreciate telemarketing%2Fd2d sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loyal to current provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not satisfied with quality UPC%2FZiggo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other reasons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price is not attractive enough</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product doesn%27t match needs customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stuck in existing contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switch is too much hassle</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_PaymentTerms__c</picklist>
+            <values>
+                <fullName>30 Days</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>60 Days</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90 Days</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_PaymentType__c</picklist>
+            <values>
+                <fullName>Direct Debit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-payer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_PostalCountry__c</picklist>
+            <values>
+                <fullName>Germany</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_PreferredInstallationTime__c</picklist>
+            <values>
+                <fullName>08%3A00 - 13%3A00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12%3A00 - 18%3A00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18%2E00 - 21%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saturday 10%2E00 - 18%2E00</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_ResultofVisit__c</picklist>
+            <values>
+                <fullName>Customer Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Requested</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_TechnicalContactPicklist__c</picklist>
+            <values>
+                <fullName>%28new Contact%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_TechnicalContactSalutation__c</picklist>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LG_Telephony__c</picklist>
+            <values>
+                <fullName>Keep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Terminate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>cscfga__Basket_Status__c</picklist>
+            <values>
+                <fullName>Contains Errors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ContainsExpiredProducts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Is Valid</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>csordtelcoa__Change_Type__c</picklist>
+            <values>
+                <fullName>Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Terminate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

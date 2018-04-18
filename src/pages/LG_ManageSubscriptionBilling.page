@@ -1,0 +1,71 @@
+<apex:page standardController="Case" extensions="LG_ManageSubscriptionBillingController">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+    <style type="text/css">
+    th.vfLabelColTextWrap {white-space:nowrap !important;}
+    .detailList{white-space:nowrap !important;}
+   #j_id0:Form:ipb1:ProvisioningSection:Provisiondetails{overflow-x: scroll !important;}
+</style>
+
+<apex:form >
+
+    <apex:pageBlock title="" >
+        
+         <!--<apex:pageBlockSection title="Case" columns="2" collapsible="false" >
+         <apex:outputField value="{!caseRecord.Type}" label="Case Record Type"/>
+         <apex:commandButton value="Close" rendered="true" action="{!close}"/>
+         <apex:outputField value="{!caseRecordType.Name}" label="Type" rendered="true"/>
+         </apex:pageBlockSection> -->
+        
+        <apex:pageBlockSection title="Solution" columns="2" collapsible="false" >
+        <apex:outputField value="{!relatedSolution.csord__Order__c}" label="Order:"/>
+        <apex:outputField value="{!relatedSolution.Name}" label="Solution:"/>
+    <!--        <apex:outputField value="{!relatedSubOrder.Name}" label="Suborder:"/>-->
+        <apex:outputField label="ICOMS Work Order:" value="{!relatedSolution.LG_ProvisioningWorkOrder__c}"/>
+        
+        </apex:pageBlockSection>
+        
+     <apex:pageBlockSection title="Services" columns="1" collapsible="false" >
+         
+              <apex:pageBlockTable value="{!relatedServices}"  var="d" rendered="true">
+                <apex:column headerValue="Provisioning" width="50">
+                    <apex:outputlink value="/apex/LG_ViewAttributeDefenition?id={!d.service.Id}">{!d.service.Name}</apex:outputlink>,{!d.address},{!d.keyAttribute}
+                </apex:column>
+                <apex:column headerValue="Status" width="25">
+                    <apex:outputText value="{!d.status}"/>
+                </apex:column>
+                  <apex:column headerValue="Start Date" width="25">
+                    <apex:outputText value="{0,date,MM/dd/yy}"> <apex:param value="{!d.startDate}" /> </apex:outputText>
+                </apex:column>
+                   <!-- SFOM - 647 Added by : Ankur Gupta -- Start -->
+                   <apex:column headerValue="Delta Status" value="{!d.deltaStatus}"/>           
+					<!-- SFOM - 647 Added by : Ankur Gupta -- End -->	
+                  
+            </apex:pageBlockTable>
+             
+        
+     </apex:pageBlockSection>
+        
+  <apex:pageBlockSection title="Service Line Item" columns="1" collapsible="false" >
+         
+              <apex:pageBlockTable value="{!relatedServiceLineItems}"  var="s" rendered="true" >
+                <apex:column headerValue="Product,Price,Billing Code">
+                    <apex:outputText value="{!s.lineItem.Name}, {!s.lineItem.csord__Total_Price__c}, "/>
+                </apex:column>
+                <apex:column headerValue="Billing Account Name, External Id">
+                    <apex:outputLink value="{!URLFOR('/apex/LG_SConsoleBillingAccDetails?id='+s.billingAccount.Id, null)}">{!s.billingAccount.Name}, {!s.billingAccount.LG_ExternalId__c}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Status">
+                    <apex:outputText value="{!s.service.LG_ServiceStatus__c }"/>
+                </apex:column>
+                  <apex:column headerValue="Start Date">
+                    <apex:outputText value="{0,date,MM/dd/yy}"> <apex:param value="{!s.service.csord__Activation_Date__c}" /> </apex:outputText>
+                </apex:column>
+                  
+				<!-- SFOM - 647 Added by : Ankur Gupta -- Start -->	
+                   <apex:column headerValue="Delta Status" value="{!s.lineitem.csordtelcoa__Delta_Status__c}"/>         
+				<!-- SFOM - 647 Added by : Ankur Gupta -- End -->	
+            </apex:pageBlockTable>
+     </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

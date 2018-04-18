@@ -1,0 +1,279 @@
+<apex:page Controller="LG_SconsoleSiteSurveyController" >
+<apex:includeScript value="/soap/ajax/30.0/connection.js"/>
+<apex:includeScript value="/support/console/30.0/integration.js"/>    
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+<script>
+    	function deleteAttachedFile(attachmentId){
+            if(confirm("Are you sure?")){
+                Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.LG_SconsoleSiteSurveyController.deleteAttachment}',
+                attachmentId, handleResult);
+                return true;
+            }else{
+                return false;
+            }
+        }
+    
+        function handleResult(result, event){
+            if(result){
+                alert('Deleted successfully.');
+            }else{
+                alert('Delete operation falied.');
+            }
+    
+        }
+</script>
+
+<apex:form >
+    <apex:pageBlock title="{!$Label.LG_Site_Survey_Details}" rendered="{!isEditDetails && !isEditNew}">
+	<apex:pageBlockButtons location="top">
+                <apex:commandButton id="saveButton" value="Save" action="{!saveSurvey}" style="display:none"/>
+            	<apex:commandButton id="cancelButton" value="Cancel" action="{!Cancel}" style="display:none"/>
+        	</apex:pageBlockButtons>
+        <apex:pageMessages id="pgmsg1"></apex:pageMessages>
+        <apex:pageBlockSection >                
+            <apex:outputField value="{!SiteSurvey.Name}" label="{!$Label.LG_Name}"/>
+            <apex:outputField value="{!SiteSurvey.Access_Technology__c}" label="{!$Label.LG_Access_Technology}"/>
+            <apex:outputField value="{!SiteSurvey.Date__c}" label="{!$Label.LG_Date}"/>
+            <apex:outputField value="{!SiteSurvey.Site__c}" label="{!$Label.LG_Site}"/>  
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_Civils}" collapsible="false">               
+            <apex:outputField value="{!SiteSurvey.civils_duct_m__c}" label="{!$Label.LG_Duct}"> 
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>                   
+            </apex:outputField>                    
+            <apex:outputField value="{!SiteSurvey.civils_type__c}" label="{!$Label.LG_Type}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.civils_duration_days__c}" label="{!$Label.LG_Duration}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.civils_notice_days__c}" label="{!$Label.LG_Notice}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.civils_hand_hole__c}" label="{!$Label.LG_HandHoles}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.civils_man_holes__c}" label="{!$Label.LG_ManHoles}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.civils_details__c}" label="{!$Label.LG_Description}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputText value="" />
+            <apex:outputField value="{!SiteSurvey.LG_CivilsCapex__c}" label="{!$Label.LG_Capex}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.LG_CivilsOpex__c}" label="{!$Label.LG_Opex}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_Cabling}">
+            <apex:outputField value="{!SiteSurvey.cabling_cable_m__c}" label="{!$Label.LG_Cable}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.cabling_type__c}" label="{!$Label.LG_Type}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.cabling_duration_days__c}" label="{!$Label.LG_Duration}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.cabling_notice_days__c}" label="{!$Label.LG_Notice}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.cabling_details__c}" label="{!$Label.LG_Description}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputText value="" />
+            <apex:outputField value="{!SiteSurvey.LG_CablingCapex__c}" label="{!$Label.LG_Capex}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.LG_CablingOpex__c}" label="{!$Label.LG_Opex}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_Internal_Cabling}">
+            <apex:outputField value="{!SiteSurvey.internal_cable_m__c}" label="{!$Label.LG_Cable}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.internal_type__c}" label="{!$Label.LG_Type}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.internal_duration__c}" label="{!$Label.LG_Duration}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.internal_notice_days__c}" label="{!$Label.LG_Notice}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.internal_details__c}" label="{!$Label.LG_Description}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputText value="" />
+            <apex:outputField value="{!SiteSurvey.LG_InternalCablingCapex__c}" label="{!$Label.LG_Capex}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.LG_InternalCablingOpex__c}" label="{!$Label.LG_Opex}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+        </apex:pageBlockSection>
+        <apex:PageBlockSection title="{!$Label.LG_Total}">
+            <apex:outputField value="{!SiteSurvey.Project__c}" label="{!$Label.LG_Project}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.Budget_Estimate__c}" label="{!$Label.LG_Budget_Estimate}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.Wish_Date__c}" label="{!$Label.LG_Wish_Date}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.Earliest_Comp__c}" label="{!$Label.LG_Earliest_Comp}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.Jeopardy__c}" label="{!$Label.LG_Jeopardy}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:outputField value="{!SiteSurvey.total_details__c}" label="{!$Label.LG_Description}">
+                <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton, cancelButton"></apex:inlineEditSupport>
+            </apex:outputField>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.LG_Attachment}" for="file1"/>
+                <apex:inputfile value="{!attachment.body}" filename="{!attachment.Name}" title="Add Attachment" id="file1"/>
+            </apex:pageBlockSectionItem>
+            
+	    <apex:commandButton value="{!$Label.LG_ButtonAttach}" action="{!uploadAttachment}"/>
+	    </apex:PageBlockSection>
+            <apex:PageBlockSection title="{!$Label.LG_Attachment}s" rendered="{!siteAttachmentCheck}" columns="1">
+                <apex:pageBlockTable value="{!siteAttachment}"  var="attObj" >
+                    <apex:column headerValue="{!$Label.LG_Action}">
+                        <apex:commandlink action="{!PageRefresh}" onclick="deleteAttachedFile('{!attObj.Id}');">Del</apex:commandlink>
+                        <!--<apex:commandlink action="{!deleteAttachment}" value="Delete">
+                            <apex:param name="attachmentId" value="{!eviObj.Id}"/>
+                        </apex:commandlink>-->
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.LG_Attachment}">
+                        <apex:outputText ><apex:outputLink value="{!URLFOR($Action.Attachment.Download, attObj.Id)}" >{!attObj.Name}</apex:outputLink></apex:outputText>
+                    </apex:column>
+                    <apex:column value="{!attObj.LastModifiedDate}" />
+                    <apex:column value="{!attObj.OwnerId}" />
+				</apex:pageBlockTable>
+            </apex:PageBlockSection>
+        </apex:pageBlock>
+    
+    <apex:pageBlock title="{!$Label.LG_Site_Survey_Details}" rendered="{!!isEditDetails && !isEditNew}">
+        <apex:pageBlockSection >                
+            <apex:outputField value="{!SiteSurvey.Name}" label="{!$Label.LG_Name}"/>
+            <apex:outputField value="{!SiteSurvey.Access_Technology__c}" label="{!$Label.LG_Access_Technology}"/>
+            <apex:outputField value="{!SiteSurvey.Date__c}" label="{!$Label.LG_Date}"/>
+            <apex:outputField value="{!SiteSurvey.Site__c}" label="{!$Label.LG_Site}"/>  
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_Civils}" collapsible="false">               
+            <apex:outputField value="{!SiteSurvey.civils_duct_m__c}" label="{!$Label.LG_Duct}" />                   
+            <apex:outputField value="{!SiteSurvey.civils_type__c}" label="{!$Label.LG_Type}" />
+            <apex:outputField value="{!SiteSurvey.civils_duration_days__c}" label="{!$Label.LG_Duration}"/>
+            <apex:outputField value="{!SiteSurvey.civils_notice_days__c}" label="{!$Label.LG_Notice}"/>            
+            <apex:outputField value="{!SiteSurvey.civils_hand_hole__c}" label="{!$Label.LG_HandHoles}"/>
+            <apex:outputField value="{!SiteSurvey.civils_man_holes__c}" label="{!$Label.LG_ManHoles}"/>
+            <apex:outputField value="{!SiteSurvey.civils_details__c}" label="{!$Label.LG_Description}"/>
+            <apex:outputText value="" />
+            <apex:outputField value="{!SiteSurvey.LG_CivilsCapex__c}" label="{!$Label.LG_Capex}"/>
+            <apex:outputField value="{!SiteSurvey.LG_CivilsOpex__c}" label="{!$Label.LG_Opex}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_Cabling}">
+            <apex:outputField value="{!SiteSurvey.cabling_cable_m__c}" label="{!$Label.LG_Cable}"/>
+            <apex:outputField value="{!SiteSurvey.cabling_type__c}" label="{!$Label.LG_Type}"/>
+            <apex:outputField value="{!SiteSurvey.cabling_duration_days__c}" label="{!$Label.LG_Duration}"/>
+            <apex:outputField value="{!SiteSurvey.cabling_notice_days__c}" label="{!$Label.LG_Notice}"/>
+            <apex:outputField value="{!SiteSurvey.cabling_details__c}" label="{!$Label.LG_Description}"/>
+            <apex:outputText value="" />
+            <apex:outputField value="{!SiteSurvey.LG_CablingCapex__c}" label="{!$Label.LG_Capex}"/>
+            <apex:outputField value="{!SiteSurvey.LG_CablingOpex__c}" label="{!$Label.LG_Opex}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_Internal_Cabling}">
+            <apex:outputField value="{!SiteSurvey.internal_cable_m__c}" label="{!$Label.LG_Cable}"/>
+            <apex:outputField value="{!SiteSurvey.internal_type__c}" label="{!$Label.LG_Type}"/>
+            <apex:outputField value="{!SiteSurvey.internal_duration__c}" label="{!$Label.LG_Duration}"/>
+            <apex:outputField value="{!SiteSurvey.internal_notice_days__c}" label="{!$Label.LG_Notice}"/>
+            <apex:outputField value="{!SiteSurvey.internal_details__c}" label="{!$Label.LG_Description}"/>
+            <apex:outputText value="" />
+            <apex:outputField value="{!SiteSurvey.LG_InternalCablingCapex__c}" label="{!$Label.LG_Capex}"/>
+            <apex:outputField value="{!SiteSurvey.LG_InternalCablingOpex__c}" label="{!$Label.LG_Opex}"/>
+        </apex:pageBlockSection>
+        <apex:PageBlockSection title="{!$Label.LG_Total}">
+            <apex:outputField value="{!SiteSurvey.Project__c}" label="{!$Label.LG_Project}"/>
+            <apex:outputField value="{!SiteSurvey.Budget_Estimate__c}" label="{!$Label.LG_Budget_Estimate}"/>
+            <apex:outputField value="{!SiteSurvey.Wish_Date__c}" label="{!$Label.LG_Wish_Date}"/>
+            <apex:outputField value="{!SiteSurvey.Earliest_Comp__c}" label="{!$Label.LG_Earliest_Comp}"/>
+            <apex:outputField value="{!SiteSurvey.Jeopardy__c}" label="{!$Label.LG_Jeopardy}"/>
+            <apex:outputField value="{!SiteSurvey.total_details__c}" label="{!$Label.LG_Description}"/>
+        </apex:PageBlockSection>
+        <apex:PageBlockSection title="{!$Label.LG_Attachment}s" rendered="{!siteAttachmentCheck}" columns="1">
+                <apex:pageBlockTable value="{!siteAttachment}"  var="attObj" >
+                    <apex:column headerValue="{!$Label.LG_Attachment}">
+                        <apex:outputText ><apex:outputLink value="{!URLFOR($Action.Attachment.Download, attObj.Id)}" >{!attObj.Name}</apex:outputLink></apex:outputText>
+                    </apex:column>
+                    <apex:column value="{!attObj.LastModifiedDate}" />
+                    <apex:column value="{!attObj.OwnerId}" />
+				</apex:pageBlockTable>
+            </apex:PageBlockSection>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="{!$Label.LG_Site_Survey_Details}" rendered="{!isEditNew}">
+        <apex:pageMessages id="pgmsg2"></apex:pageMessages>
+        <apex:pageBlockSection >
+            <apex:inputField value="{!SiteSurvey.Name}" label="{!$Label.LG_Name}" required="true"/>
+            <apex:inputField value="{!SiteSurvey.Access_Technology__c}" label="{!$Label.LG_Access_Technology}" required="true"/>
+            <apex:inputField value="{!SiteSurvey.Date__c}" label="{!$Label.LG_Date}" required="true"/>
+            <!--OMB-730 - Display Site as Text-->
+            <apex:outputText value="{!siteAddress}" label="{!$Label.LG_Site}" />            
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_Civils}">
+                <apex:inputField value="{!SiteSurvey.civils_duct_m__c}" label="{!$Label.LG_Duct}"/>
+                <apex:inputField value="{!SiteSurvey.civils_type__c}" label="{!$Label.LG_Type}"/>
+                <apex:inputField value="{!SiteSurvey.civils_duration_days__c}" label="{!$Label.LG_Duration}"/>
+                <apex:inputField value="{!SiteSurvey.civils_notice_days__c}" label="{!$Label.LG_Notice}"/>
+            	<apex:inputField value="{!SiteSurvey.civils_hand_hole__c}" label="{!$Label.LG_HandHoles}"/>
+            	<apex:inputField value="{!SiteSurvey.civils_man_holes__c}" label="{!$Label.LG_ManHoles}"/>
+                <apex:inputField value="{!SiteSurvey.civils_details__c}" label="{!$Label.LG_Description}"/>
+            	<apex:outputText value="" />
+                <apex:inputField value="{!SiteSurvey.LG_CivilsCapex__c}" label="{!$Label.LG_Capex}" required="true"/>
+                <apex:inputField value="{!SiteSurvey.LG_CivilsOpex__c}" label="{!$Label.LG_Opex}" required="true"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_Cabling}">
+                <apex:inputField value="{!SiteSurvey.cabling_cable_m__c}" label="{!$Label.LG_Cable}"/>
+                <apex:inputField value="{!SiteSurvey.cabling_type__c}" label="{!$Label.LG_Type}"/>
+                <apex:inputField value="{!SiteSurvey.cabling_duration_days__c}" label="{!$Label.LG_Duration}"/>
+                <apex:inputField value="{!SiteSurvey.cabling_notice_days__c}" label="{!$Label.LG_Notice}"/>
+                <apex:inputField value="{!SiteSurvey.cabling_details__c}" label="{!$Label.LG_Description}"/>
+            	<apex:outputText value="" />
+                <apex:inputField value="{!SiteSurvey.LG_CablingCapex__c}" label="{!$Label.LG_Capex}" required="true"/>
+                <apex:inputField value="{!SiteSurvey.LG_CablingOpex__c}" label="{!$Label.LG_Opex}" required="true"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_Internal_Cabling}">
+            	<apex:inputField value="{!SiteSurvey.internal_cable_m__c}" label="{!$Label.LG_Cable}"/>
+                <apex:inputField value="{!SiteSurvey.internal_type__c}" label="{!$Label.LG_Type}"/>
+                <apex:inputField value="{!SiteSurvey.internal_duration__c}" label="{!$Label.LG_Duration}"/>
+                <apex:inputField value="{!SiteSurvey.internal_notice_days__c}" label="{!$Label.LG_Notice}"/>
+                <apex:inputField value="{!SiteSurvey.internal_details__c}" label="{!$Label.LG_Description}"/>
+            	<apex:outputText value="" />
+                <apex:inputField value="{!SiteSurvey.LG_InternalCablingCapex__c}" label="{!$Label.LG_Capex}" required="true"/>
+                <apex:inputField value="{!SiteSurvey.LG_InternalCablingOpex__c}" label="{!$Label.LG_Opex}" required="true"/>
+        </apex:pageBlockSection>
+        <apex:PageBlockSection title="{!$Label.LG_Total}">
+                <apex:inputField value="{!SiteSurvey.Project__c}" label="{!$Label.LG_Project}"/>
+                <apex:inputField value="{!SiteSurvey.Budget_Estimate__c}" label="{!$Label.LG_Budget_Estimate}"/>
+                <apex:inputField value="{!SiteSurvey.Wish_Date__c}" label="{!$Label.LG_Wish_Date}" required="true"/>
+                <apex:inputField value="{!SiteSurvey.Earliest_Comp__c}" label="{!$Label.LG_Earliest_Comp}"/>
+                <apex:inputField value="{!SiteSurvey.Jeopardy__c}" label="{!$Label.LG_Jeopardy}"/>
+                <apex:inputField value="{!SiteSurvey.total_details__c}" label="{!$Label.LG_Description}"/>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.LG_Attachment}" for="file"/>
+                    <apex:inputfile value="{!myfile.body}" filename="{!myfile.Name}" title="Add Attachment" id="file"/>
+            </apex:pageBlockSectionItem>
+        </apex:PageBlockSection>
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!saveSurvey}" value="Save"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+    
+</apex:form>
+</apex:page>

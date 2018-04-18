@@ -1,0 +1,1538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label>Account Name</label>
+        <name>B2B_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label>Alternativer Kontakt</label>
+        <name>B2B_Alternate_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label>Alternative Telefonnummer</label>
+        <name>B2B_Alternate_Contact_Number__c</name>
+    </fields>
+    <fields>
+        <label>Alternative Email-Adresse</label>
+        <name>B2B_Alternate_Email__c</name>
+    </fields>
+    <fields>
+        <label>Betroffene Services</label>
+        <name>B2B_Care_Affected_Services__c</name>
+    </fields>
+    <fields>
+        <label>Kündigungscode</label>
+        <name>B2B_Care_Cancellation_Code__c</name>
+        <picklistValues>
+            <masterLabel>01  Kunde verweigert Zutritt</masterLabel>
+            <translation><!-- 01  Kunde verweigert Zutritt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02  laut Kd. wieder in Ordnung</masterLabel>
+            <translation><!-- 02  laut Kd. wieder in Ordnung --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03  VOM KUNDEN WIDERRUFEN</masterLabel>
+            <translation><!-- 03  VOM KUNDEN WIDERRUFEN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04  Fehler Innendienst</masterLabel>
+            <translation><!-- 04  Fehler Innendienst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05  Kunde zieht Störung fehlt</masterLabel>
+            <translation><!-- 05  Kunde zieht Störung fehlt --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Case Pause Time --></label>
+        <name>B2B_Care_Case_Pause_Time__c</name>
+    </fields>
+    <fields>
+        <label>Ticket über USMS erstellt</label>
+        <name>B2B_Care_Created_Ticket_From_USMS__c</name>
+    </fields>
+    <fields>
+        <label>Element ID</label>
+        <name>B2B_Care_Element_Id__c</name>
+    </fields>
+    <fields>
+        <label>Kunden Landesinfo</label>
+        <name>B2B_Care_PE_Customer_Country_Info__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Billing Account Number --></label>
+        <name>B2B_Care_Service_Billing_Account__c</name>
+    </fields>
+    <fields>
+        <label>Datum Fall zugewiesen</label>
+        <name>B2B_Case_Assigned_Date__c</name>
+    </fields>
+    <fields>
+        <label>B2B Fall nicht zugewiesen Level1</label>
+        <name>B2B_Case_UnAssigned_Level1__c</name>
+    </fields>
+    <fields>
+        <label>Vervollständigungsdatum</label>
+        <name>B2B_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label>Vollständigkeitsstatus</label>
+        <name>B2B_Completion_Status__c</name>
+    </fields>
+    <fields>
+        <label>Vervollständigungszeit</label>
+        <name>B2B_Completion_Time__c</name>
+    </fields>
+    <fields>
+        <label>Kundennummer</label>
+        <name>B2B_Customer_Number__c</name>
+    </fields>
+    <fields>
+        <label>Eingangsbestatigung senden</label>
+        <name>B2B_Send_Case_Acknowledge_Notification__c</name>
+    </fields>
+    <fields>
+        <label>Kundensituation</label>
+        <name>B2B_Customer_Situation__c</name>
+    </fields>
+    <fields>
+        <label>Fehlercode</label>
+        <name>B2B_Error_Code__c</name>
+    </fields>
+    <fields>
+        <label>Fehlermeldung</label>
+        <name>B2B_Error_Message__c</name>
+    </fields>
+    <fields>
+        <label>Störungscode</label>
+        <name>B2B_Fault_Code__c</name>
+    </fields>
+    <fields>
+        <label>Code suchen</label>
+        <name>B2B_Finding_Code__c</name>
+    </fields>
+    <fields>
+        <label>Email Teamleiter</label>
+        <name>B2B_Manager_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager FName --></label>
+        <name>B2B_Manager_FName__c</name>
+    </fields>
+    <fields>
+        <label>Nicht erledigt Code</label>
+        <name>B2B_Not_Done_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- OLA Reports --></label>
+        <name>B2B_OLA_Reports__c</name>
+    </fields>
+    <fields>
+        <label>Bestellung Kommentar</label>
+        <name>B2B_Order_Comment__c</name>
+    </fields>
+    <fields>
+        <label>Bestellung Anmerkungen</label>
+        <name>B2B_Order_Remarks__c</name>
+    </fields>
+    <fields>
+        <label>Status Bestellung</label>
+        <name>B2B_Order_Status__c</name>
+    </fields>
+    <fields>
+        <label>Order Type</label>
+        <name>B2B_Order_Type__c</name>
+        <picklistValues>
+            <masterLabel>F2B</masterLabel>
+            <translation>F2B</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S2B</masterLabel>
+            <translation>S2B</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Störung Service</label>
+        <name>B2B_Outage_Service__c</name>
+    </fields>
+    <fields>
+        <label>Störungsart</label>
+        <name>B2B_Outage_Type__c</name>
+    </fields>
+    <fields>
+        <label>Profil überschreiben</label>
+        <name>B2B_Override_Profile__c</name>
+    </fields>
+    <fields>
+        <label>Kommentar Position</label>
+        <name>B2B_Position_Comment__c</name>
+    </fields>
+    <fields>
+        <label>Bevorzugter Kommunikationskanal</label>
+        <name>B2B_Preferred_Communication_Channel__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation>Email</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation>Telefon</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Problem Code</label>
+        <name>B2B_Problem_Code__c</name>
+    </fields>
+    <fields>
+        <label>Bundesland</label>
+        <name>B2B_Region__c</name>
+    </fields>
+    <fields>
+        <label>Lösungscode</label>
+        <name>B2B_Solution_Code__c</name>
+    </fields>
+    <fields>
+        <label>Quellcode</label>
+        <name>B2B_Source_Code__c</name>
+    </fields>
+    <fields>
+        <label>Statusveränderungscode</label>
+        <name>B2B_Status_Change_Code__c</name>
+    </fields>
+    <fields>
+        <label>Erfolg</label>
+        <name>B2B_Success__c</name>
+    </fields>
+    <fields>
+        <label>Techniker ID</label>
+        <name>B2B_Technician_Id__c</name>
+    </fields>
+    <fields>
+        <label>Techniker Name</label>
+        <name>B2B_Technician_Name__c</name>
+    </fields>
+    <fields>
+        <label>Vorläufiges Datum</label>
+        <name>B2B_Temporary_Date__c</name>
+    </fields>
+    <fields>
+        <label>Ticket Priorität</label>
+        <name>B2B_Ticket_Priority__c</name>
+    </fields>
+    <fields>
+        <label>Arbeitsinfo Notizen</label>
+        <name>B2B_Work_Info_Notes__c</name>
+    </fields>
+    <fields>
+        <label>Arbeitsinfo Typ</label>
+        <name>B2B_Work_Info_Type__c</name>
+        <picklistValues>
+            <masterLabel>Customer Communication</masterLabel>
+            <translation>Kundenkommunikation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Follow-up</masterLabel>
+            <translation>Kunde auf Wiedervorlage</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Status Update</masterLabel>
+            <translation>Kunde Status Update</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Orchestration Step Close Reason --></label>
+        <name>CSPOFA__Orchestration_Step_Close_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Cannot Fix</masterLabel>
+            <translation><!-- Cannot Fix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed successfully</masterLabel>
+            <translation><!-- Completed successfully --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Could not be completed</masterLabel>
+            <translation><!-- Could not be completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved</masterLabel>
+            <translation><!-- Resolved --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Orchestration Step --></label>
+        <name>CSPOFA__Orchestration_Step__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>CaMa Ticketnummer</label>
+        <name>CaMa_Ticket_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Only enter if the enquiry is regarding a Customer&apos;s account --></help>
+        <label><!-- Customer Name --></label>
+        <name>Customer_Name__c</name>
+    </fields>
+    <fields>
+        <label>Dimension Data Ticket ID</label>
+        <name>Dimension_Data_Ticket_ID__c</name>
+    </fields>
+    <fields>
+        <label>ITUMA Ticket ID</label>
+        <name>ITUMA_Ticket_ID__c</name>
+    </fields>
+    <fields>
+        <label>Weitere Informationen</label>
+        <name>LG_Additional_Supporting_Info__c</name>
+    </fields>
+    <fields>
+        <help><!-- Adjustment Amount for linked adjustment 2 field --></help>
+        <label>Betrag Gutschrift 2</label>
+        <name>LG_Adjustment_amount2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Adjustment Amount for linked adjustment 1 field --></help>
+        <label>Betrag Gutschrift</label>
+        <name>LG_Adjustment_amount_1__c</name>
+    </fields>
+    <fields>
+        <label>Datum SLA Unterbrechung</label>
+        <name>LG_B2B_SLA_Paused_Date__c</name>
+    </fields>
+    <fields>
+        <label>Kategorisierung Tier 1</label>
+        <name>LG_B2B_USMS_Categorization_Tier1__c</name>
+        <picklistValues>
+            <masterLabel>Connectivity</masterLabel>
+            <translation>Verbindung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance</masterLabel>
+            <translation>Performance</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality</masterLabel>
+            <translation>Quality</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Kategorisierung Tier 2</label>
+        <name>LG_B2B_USMS_Categorization_Tier2__c</name>
+        <picklistValues>
+            <masterLabel>Internet</masterLabel>
+            <translation>Internet</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signal</masterLabel>
+            <translation>Signal</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Firma</label>
+        <name>LG_B2B_USMS_Company__c</name>
+    </fields>
+    <fields>
+        <label>Einfluss</label>
+        <name>LG_B2B_USMS_Impact__c</name>
+        <picklistValues>
+            <masterLabel>1-Extensive/Widespread</masterLabel>
+            <translation>1-Weitreichend</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-Significant/Large</masterLabel>
+            <translation>2-Signifikant / groß</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-Moderate/Limited</masterLabel>
+            <translation>3-Moderat / begrenzt</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4-Minor/Localized</masterLabel>
+            <translation>4-Klein / lokal</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Service</label>
+        <name>LG_B2B_USMS_Service__c</name>
+        <picklistValues>
+            <masterLabel>B2B VPN DE PROD</masterLabel>
+            <translation><!-- B2B VPN DE PROD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FBE Services DE</masterLabel>
+            <translation><!-- FBE Services DE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IP Core Netcool Alarm DE</masterLabel>
+            <translation><!-- IP Core Netcool Alarm DE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ingress DE</masterLabel>
+            <translation><!-- Ingress DE --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Urgency --></label>
+        <name>LG_B2B_USMS_Urgency__c</name>
+    </fields>
+    <fields>
+        <help>Pflichtfeld für diese Art von Billing Account (wenn es eine Stammdatenänderung ist)</help>
+        <label>Billing Account 2</label>
+        <name>LG_Billing_Account_2__c</name>
+        <relationshipLabel>Fälle (Billing Account 2)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Billing Account</label>
+        <name>LG_Billing_Account__c</name>
+        <relationshipLabel>Fälle</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Down Time in Minutes --></label>
+        <name>LG_Care_Down_Time_in_Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Sent to Customer On --></label>
+        <name>LG_Care_Email_Sent_to_Customer_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- USMS Service --></label>
+        <name>LG_Care_USMS_Service__c</name>
+    </fields>
+    <fields>
+        <label>Kontaktgrund</label>
+        <name>LG_Case_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Access</masterLabel>
+            <translation>Breitband</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account Structure</masterLabel>
+            <translation>Account Struktur</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Address</masterLabel>
+            <translation>Adresse</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advertisement</masterLabel>
+            <translation>Werbung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Applications</masterLabel>
+            <translation>Applikatioinen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attitude</masterLabel>
+            <translation>Verhalten Mitarbeiter</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Availability</masterLabel>
+            <translation>Verfügbarkeit</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bankruptcy</masterLabel>
+            <translation>Insolvenz</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing Accuracy</masterLabel>
+            <translation>Rechnungsgenauigkeit</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing Details</masterLabel>
+            <translation>Abrechnungsdetails</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing Information</masterLabel>
+            <translation>Rechnungsinformation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cable/Fibre</masterLabel>
+            <translation>Kabel / Fiber</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call Feature</masterLabel>
+            <translation>Telefonie-Einstellungen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call Noise</masterLabel>
+            <translation>Störgeräusche</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Payment</masterLabel>
+            <translation>Kartenzahlung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central Platform</masterLabel>
+            <translation>Zentrale Plattform</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change date</masterLabel>
+            <translation><!-- Change date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cleanliness</masterLabel>
+            <translation>Sauberkeit</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commission</masterLabel>
+            <translation>Vermittlungsgebühr</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competence</masterLabel>
+            <translation>Kompetenz</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complaint Resolution</masterLabel>
+            <translation>Lösung Beschwerdefall</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact</masterLabel>
+            <translation>Kontakt</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Bereavement</masterLabel>
+            <translation>Kunde verstorben</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTV</masterLabel>
+            <translation>DTV</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Damaged Device</masterLabel>
+            <translation>Beschädigtes Gerät</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Protection</masterLabel>
+            <translation>Datenschutz</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Device Error</masterLabel>
+            <translation>Gerätefehler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Device not in portal</masterLabel>
+            <translation><!-- Device not in portal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disable</masterLabel>
+            <translation>deaktivieren</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disabled</masterLabel>
+            <translation>deaktiviert</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Driving</masterLabel>
+            <translation><!-- Driving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate Invoice</masterLabel>
+            <translation>Doppelte Rechnung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Echo</masterLabel>
+            <translation>Echo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement</masterLabel>
+            <translation>Erweiterung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ethernet</masterLabel>
+            <translation>Ethernet</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extra Charges</masterLabel>
+            <translation>Zusatzkosten</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fault Resolution</masterLabel>
+            <translation>Entstörung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISDN</masterLabel>
+            <translation>ISDN</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Charges</masterLabel>
+            <translation>Inkorrekte Abrechnung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ingress</masterLabel>
+            <translation><!-- Ingress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installation</masterLabel>
+            <translation>Installation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installation incomplete</masterLabel>
+            <translation><!-- Installation incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet</masterLabel>
+            <translation>Internet</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation>Rechnung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoice Address &amp; Contact</masterLabel>
+            <translation>Rechnungsadresse und - Kontakt</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost/Stolen</masterLabel>
+            <translation>Verloren / gestolen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miscellaneous</masterLabel>
+            <translation>Sonstiges</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Device</masterLabel>
+            <translation>Fehlendes Gerät</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Payment</masterLabel>
+            <translation>Fehlende Zahlung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation>Mobil</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-site Voice</masterLabel>
+            <translation>Multsite Voice</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Name/Registration</masterLabel>
+            <translation>Name / Registrierung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Natural Disaster</masterLabel>
+            <translation>Naturkatastrope</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New SIM Activation Request</masterLabel>
+            <translation><!-- New SIM Activation Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No portal access</masterLabel>
+            <translation><!-- No portal access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No product portal access</masterLabel>
+            <translation><!-- No product portal access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No technician</masterLabel>
+            <translation><!-- No technician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Node</masterLabel>
+            <translation>Node</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nodesplit</masterLabel>
+            <translation>Nodesplit</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not received</masterLabel>
+            <translation><!-- Not received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not working</masterLabel>
+            <translation>Funktioniert nicht</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nuisance Calls</masterLabel>
+            <translation>Unerwünschte Anrufe</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parking</masterLabel>
+            <translation><!-- Parking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Eligibility</masterLabel>
+            <translation>Partnerqualifikation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment Method &amp; Details</masterLabel>
+            <translation>Zahlungsart &amp; Details</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance</masterLabel>
+            <translation>Performance</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Affecting</masterLabel>
+            <translation>Performance beeinträchtigend</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Porting</masterLabel>
+            <translation>Portierung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provide</masterLabel>
+            <translation>Bereitstellung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punctuality</masterLabel>
+            <translation>Pünktlichkeit</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality Affecting</masterLabel>
+            <translation>Qualität beeinflussend</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reduction</masterLabel>
+            <translation>Verringerung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reminder</masterLabel>
+            <translation>Erinnerung/Mahnung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restart</masterLabel>
+            <translation>Neustart</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SIM Swap Request</masterLabel>
+            <translation><!-- SIM Swap Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schedule date</masterLabel>
+            <translation><!-- Schedule date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Installation support</masterLabel>
+            <translation>Support Selbstinstallation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Affecting</masterLabel>
+            <translation>Service beeinflussend</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Availability</masterLabel>
+            <translation>Service-Verfügbarkeit</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Degraded</masterLabel>
+            <translation>Service-Beeinträchtigung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Down</masterLabel>
+            <translation>Service-Ausfall</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Downgrade</masterLabel>
+            <translation>Service Herabstufung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Performance</masterLabel>
+            <translation>Service Performance</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service never worked</masterLabel>
+            <translation><!-- Service never worked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service provider change</masterLabel>
+            <translation>Anbieterwechselservice</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Severe</masterLabel>
+            <translation>&gt;50%</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shippment incomplete</masterLabel>
+            <translation><!-- Shippment incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slight</masterLabel>
+            <translation>&lt;50%</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Setting</masterLabel>
+            <translation>Internet Einstellungen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Usage</masterLabel>
+            <translation>Usage</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VPN</masterLabel>
+            <translation>VPN</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VoIP</masterLabel>
+            <translation>VoIP</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voice</masterLabel>
+            <translation>Voice</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Website</masterLabel>
+            <translation>Website</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wifi</masterLabel>
+            <translation>Wifi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong advice</masterLabel>
+            <translation>Falsche Beratung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong device</masterLabel>
+            <translation><!-- Wrong device --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong service</masterLabel>
+            <translation><!-- Wrong service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong shipping address</masterLabel>
+            <translation><!-- Wrong shipping address --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Änderungsdatum</label>
+        <name>LG_Change_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label>Bitte Rolle auswählen</label>
+        <name>LG_Choose_Specific_Role__c</name>
+        <picklistValues>
+            <masterLabel>Business User</masterLabel>
+            <translation>Entscheidungsträger</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Contact</masterLabel>
+            <translation>Finance Kontakt</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Contact</masterLabel>
+            <translation>Technischer Ansprechpartner</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Account Balance --></label>
+        <name>LG_CustomerAccountBalance__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Bezahlt am</label>
+        <name>LG_Date_Paid__c</name>
+    </fields>
+    <fields>
+        <label>Geschätzte Startzeit</label>
+        <name>LG_Estimated_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label>Geschätzte Lösungszeit</label>
+        <name>LG_Estimated_resolution_time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Full Address details of Service of the Account Selected --></help>
+        <label>Vollständige Adresse</label>
+        <name>LG_Full_address__c</name>
+    </fields>
+    <fields>
+        <label>Fälligkeitsdatum der Zahlung</label>
+        <name>LG_Invoice_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Record Type is Billing Query then this field is required for Type Charge dispute and Case reason Missing payment or Extra charges. --></help>
+        <label>Rechnung</label>
+        <name>LG_Invoice_Header__c</name>
+        <relationshipLabel>Fälle</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Rechnungsdatum</label>
+        <name>LG_Invoice_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is not required for the type Account(If Record Type is Admin Change request). If Record Type is Billing Query then this field not required for type Request and Case reason Duplicate Invoice. --></help>
+        <label>Verbundene Anpassung</label>
+        <name>LG_Linked_Adjustment__c</name>
+        <relationshipLabel>Fälle</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select a date to send the mail. --></help>
+        <label>Versanddatum</label>
+        <name>LG_Mailing_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select Yes if you want to notify the customers about the maintenance activity. --></help>
+        <label>Kunden benachrichtigen</label>
+        <name>LG_Notify_Customers__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation>Nein</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation>Ja</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Online Rechnung - Name</label>
+        <name>LG_Online_Billing_Contact_Name__c</name>
+        <relationshipLabel>Fälle</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>LG_Opportunity__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>LG_Order__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Geschätzte Dauer</label>
+        <name>LG_PM_Estimated_Duration__c</name>
+    </fields>
+    <fields>
+        <label>Zahlungsart</label>
+        <name>LG_Payment_Type__c</name>
+    </fields>
+    <fields>
+        <help>Gebäudenummer der Adresse</help>
+        <label>Gebäudenummer</label>
+        <name>LG_Premise_Number__c</name>
+    </fields>
+    <fields>
+        <label>Produktbeschreibung</label>
+        <name>LG_Product_Description__c</name>
+    </fields>
+    <fields>
+        <label>Empfangende IBAN</label>
+        <name>LG_Receiving_IBAN__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checkbox Check for overriding infrastructure SLA --></help>
+        <label>SLA überschrieben</label>
+        <name>LG_SLA_Overridden__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA/OLA Resume Date --></label>
+        <name>LG_SLA_Resume_Date__c</name>
+    </fields>
+    <fields>
+        <help>SLA Typ</help>
+        <label>SLA Typ</label>
+        <name>LG_SLA__c</name>
+    </fields>
+    <fields>
+        <label>Email an Entscheider senden</label>
+        <name>LG_Send_Email_To_Decision_Maker__c</name>
+    </fields>
+    <fields>
+        <label>Service</label>
+        <name>LG_Service__c</name>
+        <relationshipLabel>Fälle</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Solution --></label>
+        <name>LG_Solution__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Suborder Number --></label>
+        <name>LG_SuborderNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suborder Jeopardy Reason --></label>
+        <name>LG_Suborder_Jeopardy_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- account ID --></label>
+        <name>LG_accountID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>Order_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Queue Name --></label>
+        <name>QueueNam__c</name>
+    </fields>
+    <fields>
+        <label>SLA überschritten</label>
+        <name>SLA_Breached__c</name>
+    </fields>
+    <fields>
+        <label>Gesamtzeit bis zur Lösung</label>
+        <name>Total_Resolution_Time__c</name>
+    </fields>
+    <fields>
+        <help>Bei Rechnungsfragen ist dieses Feld optional bei Rechnungswiderspruch wegen fehlender Zahlung</help>
+        <label><!-- Linked Adjustment 2 --></label>
+        <name>UM_Linked_Adjustment_2__c</name>
+        <relationshipLabel>Fälle (Verknüpfte Gutschrift 2)</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Comment Prior value --></label>
+        <name>UM_Order_Comment_Prior_value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Comment from CaMa --></label>
+        <name>UM_Order_Comment_from_CaMa__c</name>
+    </fields>
+    <fields>
+        <label>USMS Ticket ID</label>
+        <name>USMS_Ticket_ID__c</name>
+    </fields>
+    <layouts>
+        <layout>Admin Change Request</layout>
+        <sections>
+            <label>Weitere Informationen</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>Frei konfigurierbare Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Felder</label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Billing Query Request</layout>
+        <sections>
+            <label>Weitere Informationen</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>Frei konfigurierbare Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Felder</label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CaMA Ticket Layout</layout>
+        <sections>
+            <label>Weitere Informationen</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>CaMa Ticket Details</label>
+            <section>CaMa Ticket Details</section>
+        </sections>
+        <sections>
+            <label>Falldetails</label>
+            <section>Case Details</section>
+        </sections>
+        <sections>
+            <label>Frei konfigurierbare Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Zeitleiste</label>
+            <section>Timeline</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Cancel Order Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Complaint Request</layout>
+        <sections>
+            <label>Weitere Informationen</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>Frei konfigurierbare Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Felder</label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Coordinate layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>General Query Request</layout>
+        <sections>
+            <label>Weitere Informationen</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>Frei konfigurierbare Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Felder</label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Manage Logistics Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Manage Tenants</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Mass Outage Request</layout>
+        <sections>
+            <label>Weitere Informationen</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>Frei konfigurierbare Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Felder</label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Online Billing Request</layout>
+        <sections>
+            <label>Weitere Informationen</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>Frei konfigurierbare Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Felder</label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Planned Maintenance Request</layout>
+        <sections>
+            <label>Weitere Informationen</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>Frei konfigurierbare Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Felder</label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label>Benachrichtigungsoptionen</label>
+            <section>Notification Options</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Provisioning One Step Case Layout</layout>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Provisoning Case Layout</layout>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SLA Breach Request</layout>
+        <sections>
+            <label>Weitere Informationen</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>Frei konfigurierbare Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Felder</label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Service Change Request</layout>
+        <sections>
+            <label>Weitere Informationen</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>Frei konfigurierbare Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Felder</label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Technical Request</layout>
+        <sections>
+            <label>Weitere Informationen</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>Frei konfigurierbare Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Felder</label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label>Zeitleiste</label>
+            <section>Timeline</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>USMS Ticket Layout</layout>
+        <sections>
+            <label>Weitere Informationen</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>Frei konfigurierbare Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Felder</label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label>USMS Ticket Details</label>
+            <section>USMS Ticket Details</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Child Case --></label>
+        <name>Child_Case</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Event --></label>
+        <name>Event</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Log a Call --></label>
+        <name>Log_a_Call</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewChildCase --></label>
+        <name>NewChildCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <quickActions>
+        <label>Aufgabe</label>
+        <name>Task</name>
+    </quickActions>
+    <recordTypes>
+        <label>Rechnungsanfrage</label>
+        <name>B2B_Care_Billing_Query_Request_UM</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Cama Customer Type --></label>
+        <name>Cama_Customer_Type</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Coordinate --></label>
+        <name>Coordinate</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Default --></label>
+        <name>Default</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Access Planning --></label>
+        <name>LG_AccessPlanning</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Activate Service --></label>
+        <name>LG_ActivateService</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Ad-Hoc Line Items --></label>
+        <name>LG_AdHocLineItems</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Assign Order Owner --></label>
+        <name>LG_AssignOrderOwner</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Assign Owner --></label>
+        <name>LG_AssignOwner</name>
+    </recordTypes>
+    <recordTypes>
+        <label>USMS Ticket - Nicht benutzen!</label>
+        <name>LG_B2B_CARE_USMS_Ticket_UM</name>
+    </recordTypes>
+    <recordTypes>
+        <label>CaMa Ticket - Nicht benutzen!</label>
+        <name>LG_B2B_CaMa_Ticket_Request_UM</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Administrative Änderung</label>
+        <name>LG_B2B_Care_Admin_Change_Request_UM</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Beschwerde</label>
+        <name>LG_B2B_Care_Complaint_Request_UM</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Allgemeine Frage</label>
+        <name>LG_B2B_Care_General_Query_Request_UM</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Großstörung/Netzwerkproblem</label>
+        <name>LG_B2B_Care_Mass_Outage_Request_UM</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Online Rechnungsanfrage</label>
+        <name>LG_B2B_Care_Online_Billing_Request_UM</name>
+    </recordTypes>
+    <recordTypes>
+        <label>geplante Wartungsarbeiten</label>
+        <name>LG_B2B_Care_Planned_Maintenance_Request_UM</name>
+    </recordTypes>
+    <recordTypes>
+        <label>SLA Überschreitung</label>
+        <name>LG_B2B_Care_SLA_Breach_Request_UM</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Serviceänderungsanfrage</label>
+        <name>LG_B2B_Care_Service_Change_Request_UM</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Technischer Fall</label>
+        <name>LG_B2B_Care_Technical_Request_UM</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Contact Customer --></label>
+        <name>LG_ContactCustomer</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Directory --></label>
+        <name>LG_Directory</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Follow-On Order --></label>
+        <name>LG_FollowOnOrder</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Inflight Cancel --></label>
+        <name>LG_InflightCancel</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Inflight Change --></label>
+        <name>LG_InflightChange</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Inflight Configuration --></label>
+        <name>LG_InflightConfiguration</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Install --></label>
+        <name>LG_Install</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Jeopardy --></label>
+        <name>LG_JeopardyA</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Manage Numbers --></label>
+        <name>LG_ManageNumbers</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Manage Subscriptions --></label>
+        <name>LG_ManageSubscriptions</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Number Port --></label>
+        <name>LG_NumberPort</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Provision --></label>
+        <name>LG_Provision</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Schedule Appointment --></label>
+        <name>LG_ScheduleAppointment</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Legacy Fulfilment --></label>
+        <name>Legacy_Fulfilment</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Manage Tenant --></label>
+        <name>Manage_Tenant</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Order Cancel Request --></label>
+        <name>Order_Cancel_Request</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Provision One Step --></label>
+        <name>Provision_One_Step</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Support --></label>
+        <name>Support</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Terminate --></label>
+        <name>Terminate</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Cama PendingOrder --></label>
+        <name>UM_Cama_PendingOrder</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Manage Logistics --></label>
+        <name>UM_ManageLogistics</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>Bitte einen Wert eingeben für verknüpfte Rechnungs ID.</errorMessage>
+        <name>LG_B2BCare_LinkedInvoice_mandatory_Field</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte einen Billing Account für diesen Eintrag auswählen.</errorMessage>
+        <name>LG_B2B_Care_Admin_LinkedBillingAccount2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Die geschätzte Startzeit sollte größer sein als heute und die geschätzte Lösungszeit sollte größer sein als die Startzeit.</errorMessage>
+        <name>LG_B2B_Care_EstimatedStartResolutionTime</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Das Versandrdatum darf nicht leer oder vor der Lösungszeit liegen.</errorMessage>
+        <name>LG_B2B_Care_Mailing_Date_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Das SLA Pause Datum kann nicht während der Fallbearbeitung verändert werden</errorMessage>
+        <name>LG_B2B_Care_SLA_Pausetill_ReadOnly</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte ein Pausierungsdatum größer als das heutige Datum auswählen.</errorMessage>
+        <name>LG_B2B_SLAPausedTill_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill in the fields “Work Info Type” and “Work Info Notes”, in order to update the USMS Ticket. --></errorMessage>
+        <name>LG_Care_USMS_Update_Check_Workinfo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Follow-On order cannot be closed before it was addressed. Please change the status from New to On-Hold once you are finished with capturing the follow-on instructions. --></errorMessage>
+        <name>LG_FollowOnOrderCloseCase</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are restricted to move a case to this queue --></errorMessage>
+        <name>UM_Queue_Assignment_Assisted_Care</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Conga_Composer_OAuth --></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Mail_Merge --></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label>CaMa Ticket löschen überflüssig</label>
+        <name>B2B_Care_Cancel_CaMa_Ticket</name>
+    </webLinks>
+    <webLinks>
+        <label>CaMa Ticket erstellen</label>
+        <name>B2B_Care_Create_CaMa_Ticket_UM</name>
+    </webLinks>
+    <webLinks>
+        <label>SLA überschreiben</label>
+        <name>B2B_SLA_Override</name>
+    </webLinks>
+    <webLinks>
+        <label>CaMa Ticket löschen</label>
+        <name>Cancel_CaMa_Ticket_VF</name>
+    </webLinks>
+    <webLinks>
+        <label>USMS Ticket erstellen</label>
+        <name>Create_USMS_Ticket</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LG_CloseCase_Detail --></label>
+        <name>LG_CloseCase_Detail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LG_ComplexChange --></label>
+        <name>LG_ComplexChange</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LG_ManageNumbers --></label>
+        <name>LG_ManageNumbers</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Public_Listing --></label>
+        <name>Public_Listing</name>
+    </webLinks>
+    <webLinks>
+        <label>SLA Bruch Fall</label>
+        <name>SLA_Breach_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Welcome_Pack_Email --></label>
+        <name>Send_Welcome_Pack_Email</name>
+    </webLinks>
+    <workflowTasks>
+        <name>B2B_Call_Customer_To_Apologies</name>
+        <subject>Kunden telefonisch um Entschuldigung bitten</subject>
+    </workflowTasks>
+</CustomObjectTranslation>

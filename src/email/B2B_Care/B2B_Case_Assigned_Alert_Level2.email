@@ -1,0 +1,3 @@
+Hallo {!Case.OwnerFirstName}, 
+
+der Fall {!Case.CaseNumber} wurde dir vor 30 Minuten zugewiesen, aber noch nicht bearbeitet.

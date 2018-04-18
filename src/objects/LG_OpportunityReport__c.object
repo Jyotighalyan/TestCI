@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Table to be filled with line items for reporting purposes</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>LG_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <referenceTo>cscrm__Address__c</referenceTo>
+        <relationshipLabel>Opportunity Report</relationshipLabel>
+        <relationshipName>Opportunity_Report</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_Attribute__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Attribute</label>
+        <referenceTo>cscfga__Attribute__c</referenceTo>
+        <relationshipLabel>Opportunity Report</relationshipLabel>
+        <relationshipName>Opportunity_Report</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_ContractTerm__c</fullName>
+        <description>Can contain the contract term in months</description>
+        <externalId>false</externalId>
+        <label>Contract Term</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_OneOff__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Contains the One-Off charge</description>
+        <externalId>false</externalId>
+        <label>One-Off</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LG_Opportunity__c</fullName>
+        <description>Lookup from Product Overview object to opportunity</description>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>Product_Overview</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>LG_ProductCategoryLookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product Category</label>
+        <referenceTo>cscfga__Product_Category__c</referenceTo>
+        <relationshipLabel>Opportunity Report</relationshipLabel>
+        <relationshipName>Opportunity_Report</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_ProductConfiguration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product Configuration</label>
+        <referenceTo>cscfga__Product_Configuration__c</referenceTo>
+        <relationshipLabel>Opportunity Report</relationshipLabel>
+        <relationshipName>Opportunity_Report</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_ProductDefinitionLookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product Definition</label>
+        <referenceTo>cscfga__Product_Definition__c</referenceTo>
+        <relationshipLabel>Opportunity Report</relationshipLabel>
+        <relationshipName>Opportunity_Report</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_ProductDetails__c</fullName>
+        <description>Can contain details about a product configuration</description>
+        <externalId>false</externalId>
+        <label>Product Details</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Product_Basket__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product Basket</label>
+        <referenceTo>cscfga__Product_Basket__c</referenceTo>
+        <relationshipLabel>Opportunity Report</relationshipLabel>
+        <relationshipName>Opportunity_Report</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_Recurring__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Contains the Recurring charge for a product</description>
+        <externalId>false</externalId>
+        <label>Recurring</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LG_Sequence__c</fullName>
+        <description>Contains the order sequence</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_CarrierName__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ContractTermText__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Term Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Cancellation__c</fullName>
+        <defaultValue>&quot;Not Applicable&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Cancellation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ContractType__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(OR(contains(LG_ProductConfiguration__r.cscfga__Root_Configuration__r.Name,&apos;Virtual Phone&apos;), LG_ProductConfiguration__r.cscfga__Product_Family__c=&apos;Virtual Phone&apos;), if(UM_Cancellation__c=&apos;Daily&apos;,&apos;Täglich&apos;,if(UM_Cancellation__c=&apos;Monthly&apos;,&apos;1&apos;,&apos;Nicht anwendbar&apos;)),NULL)</formula>
+        <label>Contract Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_DiscountDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_DiscountDuration__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_DiscountPrice__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_DiscountValue__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_LastNameCompany__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name/Company</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_NumberOfChannels__c</fullName>
+        <label>Number Of Channels</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>UM_NumberOfNewPhoneNumbers__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Of New Phone Numbers</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_One_Off_Unit__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_OneOff__c/UM_QuantityRef__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>One-Off Unit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UM_PhoneNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_QuantityRef__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(OR(AND(UM_Quantity__c &gt;1,ISBLANK(LG_ContractTerm__c)),AND(LG_ProductConfiguration__r.cscfga__Recurring_Charge__c &gt;= 0,LG_ProductConfiguration__r.cscfga__One_Off_Charge__c &gt;= 0, OR(ISNULL(LG_ContractTerm__c),LG_ContractTerm__c=0),ISNULL(UM_DiscountValue__c))),UM_Quantity__c/2, IF(UM_DiscountValue__c&gt;0,UM_Quantity__c,0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>QuantityRef</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Quantity__c</fullName>
+        <defaultValue>1</defaultValue>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Recurring_Unit__c</fullName>
+        <formula>if(UM_NumberOfChannels__c&gt;0,(LG_Recurring__c*2)/UM_NumberOfChannels__c,LG_Recurring__c/UM_QuantityRef__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Recurring Unit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UM_State_Code__c</fullName>
+        <description>State codes to set the state preferences in case of multiple states in a basket</description>
+        <externalId>false</externalId>
+        <formula>CASE(UM_State__c,&apos;Out of UM foot Print&apos;,NULL,&apos;BW&apos;,1,&apos;HSN&apos;,2,&apos;NRW&apos;,3,NULL)</formula>
+        <label>State Code</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_StreetAndNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Street And Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ZIPCodeAndCity__c</fullName>
+        <externalId>false</externalId>
+        <label>ZIP Code And City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Opportunity Report</label>
+    <nameField>
+        <label>Label</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Opportunity Report</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

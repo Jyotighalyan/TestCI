@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Invoice Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Invoice Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Invoice Header --></label>
+        <name>InvoiceHeader__c</name>
+        <relationshipLabel><!-- Invoice Headers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Invoice Number --></label>
+        <name>InvoiceNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice --></label>
+        <name>Invoice__c</name>
+        <relationshipLabel><!-- Invoice Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Maximum Amount --></label>
+        <name>Maximum_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Minimum Amount --></label>
+        <name>Minimum_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <relationshipLabel><!-- Invoice Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- stateTax --></label>
+        <name>State_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account External Id Type --></label>
+        <name>accountExternalIdType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account External Id --></label>
+        <name>accountExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Internal Id --></label>
+        <name>accountInternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Account Type --></label>
+        <name>acctExternalIdType__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Billing Account Related to this Invoice. This is used for Invoice Search --></help>
+        <label><!-- Billing Account --></label>
+        <name>acctExternalId__c</name>
+        <relationshipLabel><!-- Invoice Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- aggrUsageId --></label>
+        <name>aggrUsageId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount Reduction Id --></label>
+        <name>amountReductionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount Reduction --></label>
+        <name>amountReduction__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annotation --></label>
+        <name>annotation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Archive Flag --></label>
+        <name>archFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Aux Tax Info --></label>
+        <name>auxTaxInfo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill Class --></label>
+        <name>billClass__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill Invoice Row --></label>
+        <name>billInvoiceRow__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill Ref Number --></label>
+        <name>billRefNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill Ref Resets --></label>
+        <name>billRefResets__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill Sequence Number --></label>
+        <name>billSequenceNum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Category --></label>
+        <name>billingCategory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Level --></label>
+        <name>billingLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- B Rev Rcv Cost Ctr --></label>
+        <name>brevRcvCostCtr__c</name>
+    </fields>
+    <fields>
+        <label><!-- City Tax --></label>
+        <name>cityTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Component Id --></label>
+        <name>componentId__c</name>
+    </fields>
+    <fields>
+        <label><!-- County Tax --></label>
+        <name>countyTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency Code --></label>
+        <name>currencyCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description Code --></label>
+        <name>descriptionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description Group --></label>
+        <name>descriptionGroup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description Text --></label>
+        <name>descriptionText__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Id --></label>
+        <name>discountId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount --></label>
+        <name>discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Element Id --></label>
+        <name>elementId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Equip Status --></label>
+        <name>equipStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Federal Tax --></label>
+        <name>federalTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Date --></label>
+        <name>fromDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geocode --></label>
+        <name>geocode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inclusive Tax --></label>
+        <name>inclusiveTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Language Code --></label>
+        <name>languageCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- lobId --></label>
+        <name>lobId__c</name>
+    </fields>
+    <fields>
+        <label><!-- miscNumber1 --></label>
+        <name>miscNumber1__c</name>
+    </fields>
+    <fields>
+        <label><!-- miscNumber2 --></label>
+        <name>miscNumber2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Item Id --></label>
+        <name>openItemId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Tax --></label>
+        <name>otherTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Id --></label>
+        <name>packageId__c</name>
+    </fields>
+    <fields>
+        <label><!-- pcmActiveDt --></label>
+        <name>pcmActiveDt__c</name>
+    </fields>
+    <fields>
+        <label><!-- prepSequence --></label>
+        <name>prepSequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- processNum --></label>
+        <name>processNum__c</name>
+    </fields>
+    <fields>
+        <label><!-- productLineId --></label>
+        <name>productLineId__c</name>
+    </fields>
+    <fields>
+        <label><!-- profileId --></label>
+        <name>profileId__c</name>
+    </fields>
+    <fields>
+        <label><!-- prorateCode --></label>
+        <name>prorateCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- providerId --></label>
+        <name>providerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate Currency Code --></label>
+        <name>rateCurrencyCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate Period --></label>
+        <name>ratePeriod__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate Type --></label>
+        <name>rateType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rated Amount --></label>
+        <name>ratedAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- revRcvCostCtr --></label>
+        <name>revRcvCostCtr__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Amount --></label>
+        <name>secondaryAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- serverId --></label>
+        <name>serverId__c</name>
+    </fields>
+    <fields>
+        <label><!-- serviceExternalIdType --></label>
+        <name>serviceExternalIdType__c</name>
+    </fields>
+    <fields>
+        <label><!-- serviceExternalId --></label>
+        <name>serviceExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- serviceInternalIdResets --></label>
+        <name>serviceInternalIdResets__c</name>
+    </fields>
+    <fields>
+        <label><!-- serviceInternalId --></label>
+        <name>serviceInternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Short Description Text --></label>
+        <name>shortDescriptionText__c</name>
+    </fields>
+    <fields>
+        <label><!-- Statement Date --></label>
+        <name>statementDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Type Code --></label>
+        <name>subtypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- taxPkgInstId --></label>
+        <name>taxPkgInstId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Rate --></label>
+        <name>taxRate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Type Code --></label>
+        <name>taxTypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax --></label>
+        <name>tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Date --></label>
+        <name>toDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tracking Date --></label>
+        <name>trackingDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- trackingIdServ --></label>
+        <name>trackingIdServ__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tracking Id --></label>
+        <name>trackingId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trans Date --></label>
+        <name>transDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge Type --></label>
+        <name>typeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Units --></label>
+        <name>units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone Class --></label>
+        <name>zoneClass__c</name>
+    </fields>
+    <layouts>
+        <layout>Invoice Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

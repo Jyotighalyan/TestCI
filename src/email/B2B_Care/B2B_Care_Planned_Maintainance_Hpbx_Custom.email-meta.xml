@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Planned Maintainance Email Alert for Hpbx Services</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>B2B Care Planned Maintainance Hpbx Custom</name>
+    <style>none</style>
+    <subject>Unitymedia | Geplante Wartungsarbeiten</subject>
+    <textOnly>Ihre Rahmenvertragsnummer: $AccountNumber$
+
+
+Ihre Kundennummer: $BillingAccNumber$
+
+
+
+Guten Tag $Salutation$ $LastName$,
+
+
+
+In der Zeit von $StartTime$ Uhr bis $EndTime$ Uhr finden Wartungsarbeiten statt. Daher kann es für Ihre Virtual Voice  Produkte am Standort  $FullAddress$ zu Beeinträchtigungen oder Ausfällen von ca. $EstimatedDuration$  Minuten kommen.Während der Unterbrechungen können Sie ggf. keine Telefondienste nutzen, dies bedeutet, dass ab- und eingehende Anrufe möglicherweise nicht funktionieren. Notrufe können dann nur mobil abgesetzt werden..
+
+
+
+Wir bedauern die Unannehmlichkeiten und bitten um Ihr Verständnis.
+
+
+Sollten Sie Fragen haben, rufen Sie uns einfach an. Sie erreichen uns jederzeit unter der Rufnummer 0800 141 299 99. Sie erreichen uns auch per E-Mail an Enterprise.BusinessVoice@unitymedia.de.
+
+
+Mit freundlichen Grüßen
+
+
+
+Unitymedia Business Team
+
+
+
+
+Tel.: 0800 141 299 99
+
+
+
+www.unitymedia.de/business
+
+
+
+
+Unitymedia NRW GmbH
+
+Unitymedia Hessen GmbH &amp; Co. KG
+
+Unitymedia BW GmbH
+
+Unitymedia Business Service
+
+Postfach 45 12 04
+
+50887 Köln
+
+Unitymedia Business Service
+
+Postfach 45 12 04
+
+50887 Köln
+
+Unitymedia Business Service
+
+Postfach 90 01 31
+
+75090 Pforzheim
+
+Handelsregister:
+
+Amtsgericht Köln HRB 55984
+
+Sitz der Gesellschaft: Köln
+
+USt-ID DE 813 243 353
+
+Handelsregister:
+
+Amtsgericht Köln HRA 24116
+
+Sitz der Gesellschaft: Köln
+
+USt-ID DE 213 891 500
+
+Geschäftsführende Gesellschafterin
+
+Unitymedia Hessen Verwaltung GmbH
+
+Amtsgericht Köln
+
+HRB 58137
+
+Sitz der Gesellschaft: Köln
+
+Handelsregister:
+
+Amtsgericht Köln HRB 83533
+
+Sitz der Gesellschaft: Köln
+
+USt-ID DE 251 338 951
+
+
+Geschäftsführer: Lutz Schüler (Vorsitzender) | Gudrun Scharler | Christian Hindennach | Dr. Herbert Leifker | Winfried Rapp</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

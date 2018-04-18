@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[Dear Approver,<br>&nbsp;<br>For Billing Level Adjustment {!UM_BillingAccountItem__c.Name}, an approval is requested.<br><br>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" face="arial"><span style="font-size: 12pt;">Please find the details of the request below:</span></font><br><br><div>Status of Request :{!UM_BillingAccountItem__c.UM_Approval_Status__c}</div><div>Item Type:{!UM_BillingAccountItem__c.UM_ItemType__c}</div><div>Billing Account Number: {!UM_BillingAccountItem__c.UM_Billing_Account_Number__c}<br><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" face="arial">NRC Reason: {!UM_BillingAccountItem__c.UM_NRC_Reason__c}</font><br><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" face="arial">Description: {!UM_BillingAccountItem__c.UM_Description__c}</font><br><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" face="arial">Start Date : {!UM_BillingAccountItem__c.UM_StartDate__c}</font><br><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" face="arial">Total Amount: {!UM_BillingAccountItem__c.UM_Total_Amount__c}</font></div><div>Created By: {!UM_BillingAccountItem__c.CreatedBy}<br><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" face="arial">Created Date: </font><span style="color: rgb(0, 0, 0); font-family: arial; font-size: medium;"><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" face="arial"><span style="font-size: 12pt;">{!UM_BillingAccountItem__c.CreatedDate}<br></span></font></span><br><br><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" face="arial"><span style="font-size: 12pt;">Adjustment Details:&nbsp;{!UM_BillingAccountItem__c.Link}</span></font><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br>Please click on below link to Approve/Reject the request:<br>{!ApprovalRequest.Internal_URL}<br><br>Regards.<br><br><div><font face="arial"><br></font></div><br><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial"><br></font></div></div></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

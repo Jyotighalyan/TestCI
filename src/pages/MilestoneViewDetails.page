@@ -1,0 +1,132 @@
+<apex:page controller="Milestone_ServiceUIController">
+
+    <apex:stylesheet value="{!URLFOR($Resource.milestone_slds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.milestone_widget, 'styles/main.css')}" />
+
+    <div class="slds ui-view" ng-app="ProcessWidgetApp" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        {!$Label.Milestone_Loading}
+    </div> 
+
+    <apex:includeScript value="{!$Resource.jquery}" />
+    <apex:includeScript value="{!URLFOR($Resource.milestone_widget, '/scripts/vendor.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.angular_i18n, 'angular-locale_' + userAngularLocale + '.js')}" />
+    <apex:includeScript value="{!$Resource.underscore}" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/json-formatter/0.6.0/json-formatter.min.css" />
+
+    <script type="text/javascript" src="{!URLFOR($Resource.milestone_common, '/scripts/scripts-dev.js')}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/json-formatter/0.6.0/json-formatter.min.js"></script>
+    <c:Milestone_ProcessView />
+    <c:Milestone_CSS />
+
+    <script type="text/javascript">
+        angular.module('ProcessWidgetApp')
+            .constant('Context', {
+                recordId: '{!JSENCODE($CurrentPage.parameters.Id)}',
+                type: '{!JSENCODE(recordType)}',
+                user: {
+                    userId: '{!JSENCODE($User.id)}',
+                    themeDisplayed: '{!JSENCODE($User.uiTheme)}',
+                    currencyCode: '{!JSENCODE(userCurrencyCode)}',
+                    currencySymbol: '{!JSENCODE(userCurrencySymbol)}',
+                    profileId: '{!JSENCODE($User.profileId)}',
+                    profileName: '{!JSENCODE($Profile.name)}',
+                    roleId: '{!JSENCODE($UserRole.id)}',
+                    roleName: '{!JSENCODE($UserRole.name)}',
+                    userType: '{!JSENCODE(TEXT($User.userType))}',
+                    locale: '{!JSENCODE(userAngularLocale)}'
+                },
+                account: {
+                    id: '{!JSENCODE(account.id)}',
+                    name: '{!JSENCODE(account.name)}'
+                },
+                getType: function() {
+                    if (this.type && this.type.length) {
+                        return this.type [0].toUpperCase() + this.type .slice(1).toLowerCase();
+                    } else {
+                        return '';
+                    }
+                }
+            })
+        	.constant('labels', {
+                'MilestoneView' : '{!$Label.Milestone_MilestoneView}',
+                'CriticalPathView' : '{!$Label.Milestone_CriticalPathView}',
+                'TaskView' : '{!$Label.Milestone_TaskView}',
+                'CaseView' : '{!$Label.Milestone_CaseView}',
+                'OpenSuborderDetails' : '{!$Label.Milestone_OpenSuborderDetails}',
+                'NoProcessToDisplay' : '{!$Label.Milestone_NoProcessToDisplay}',
+                'OpenSuborderDetails' : '{!$Label.Milestone_OpenSuborderDetails}',
+                'NoSubordersToDisplay' : '{!$Label.Milestone_NoSubordersToDisplay}',
+                'CaseName' : '{!$Label.Milestone_CaseName}',
+                'Assignee' : '{!$Label.Milestone_Assignee}',
+                'Service' : '{!$Label.Milestone_Service}',
+                'Status' : '{!$Label.Milestone_Status}',
+                'DueDate' : '{!$Label.Milestone_DueDate}',
+                'NoProcessToDisplay' : '{!$Label.Milestone_NoProcessToDisplay}',
+                'OpenSuborderDetails' : '{!$Label.Milestone_OpenSuborderDetails}',
+                'NoSubordersToDisplay' : '{!$Label.Milestone_NoSubordersToDisplay}',
+                'InFlightChange' : '{!$Label.Milestone_InFlightChange}',
+                'NoData' : '{!$Label.Milestone_NoData}',
+                'TaskName' : '{!$Label.Milestone_TaskName}',
+                'First' : '{!$Label.Milestone_First}',
+                'Next' : '{!$Label.Milestone_Next}',
+                'Previous' : '{!$Label.Milestone_Previous}',
+                'Suborders' : '{!$Label.Milestone_Suborders}'
+            });
+
+        var resourceURLs = {
+            order_navigator: '{!$Resource.milestone_navigator}',
+            process_widget: '{!$Resource.milestone_widget}',
+            service_console: '{!$Resource.milestone_console}'
+        }    
+    </script>
+
+    <script type="text/javascript">
+        angular.module('ProcessWidgetApp')
+            .service('RemoteSvc', ['$q', function($q) {
+                return {
+                    getProcessesForOrder: wrapVFRemote('{!$RemoteAction.Milestone_ServiceUIController.getProcesses}'),
+                    getProcessesForSuborders: wrapVFRemote('{!$RemoteAction.Milestone_ServiceUIController.getSuborders}'),
+                    getConfig: wrapVFRemote('{!$RemoteAction.Milestone_ServiceUIController.getConfig}'),
+                    startPauseProcess: wrapVFRemote('{!$RemoteAction.Milestone_ServiceUIController.startPauseProcess}')
+                };
+
+                function wrapVFRemote(action) {
+                    return function(params, config) {
+                        var invokeActionArgs = [];
+                        var deferred = $q.defer();
+
+                        invokeActionArgs.push(action);
+                        
+                        if (!angular.isString(params) && !angular.isFunction(params)) {
+                            angular.forEach(params, function (v,k) {
+                                invokeActionArgs.push(v);
+                            });
+                        } else {
+                            invokeActionArgs.push(params);
+                        }
+
+                        //callback
+                        invokeActionArgs.push(function(result, event) {
+                            if (event.status) {
+                                if (result) {
+                                    deferred.resolve(angular.fromJson(result));
+                                } else {
+                                    deferred.resolve();
+                                }
+                            } else {
+                                deferred.reject(event);
+                            }
+                        });
+
+                        invokeActionArgs.push(config || {escape: false, buffer:false});
+
+                        Visualforce.remoting.Manager.invokeAction.apply(Visualforce.remoting.Manager, invokeActionArgs);
+
+                        return deferred.promise;
+                    }
+                }
+            }]);
+    </script>
+
+</apex:page>

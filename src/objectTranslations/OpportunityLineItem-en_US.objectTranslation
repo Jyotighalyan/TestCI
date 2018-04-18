@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Recurring Price</value>
+        </caseValues>
+        <name>sales_price_opportunitylineitem</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <help><!-- This is the TOTAL usage value as opposed to the annual figure --></help>
+        <label><!-- Usage Value --></label>
+        <name>Estimated_Usage_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Excess Construction Charge --></label>
+        <name>Excess_Construction_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Install Value --></label>
+        <name>Install_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>LG_Address__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Conga Address Details --></label>
+        <name>LG_CongaAddressDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conga Bold --></label>
+        <name>LG_CongaBold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conga Extra Details --></label>
+        <name>LG_CongaExtraDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conga Internet Speed --></label>
+        <name>LG_CongaInternetSpeed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Term --></label>
+        <name>LG_ContractTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Amount --></label>
+        <name>LG_DiscountAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Code --></label>
+        <name>LG_DiscountCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Id --></label>
+        <name>LG_DiscountId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Message --></label>
+        <name>LG_DiscountMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Months --></label>
+        <name>LG_DiscountMonths__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsQuantumProduct? --></label>
+        <name>LG_IsQuantumProduct__c</name>
+    </fields>
+    <fields>
+        <label><!-- Main OLI --></label>
+        <name>LG_MainOLI__c</name>
+    </fields>
+    <fields>
+        <label><!-- OLI Type --></label>
+        <name>LG_OLIType__c</name>
+    </fields>
+    <fields>
+        <label><!-- One-Off Price --></label>
+        <name>LG_OneOffPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Detail --></label>
+        <name>LG_ProductDetail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Segment --></label>
+        <name>LG_Segment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>LG_Type__c</name>
+        <picklistValues>
+            <masterLabel>Closing Deal</masterLabel>
+            <translation><!-- Closing Deal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One Off</masterLabel>
+            <translation><!-- One Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Promotional Action</masterLabel>
+            <translation><!-- Promotional Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Promotional Discount</masterLabel>
+            <translation><!-- Promotional Discount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recurring</masterLabel>
+            <translation><!-- Recurring --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is the TOTAL rental value as opposed to an annual figure.  e.g. Ã‚Â£1000 per year rental would be Ã‚Â£3000 if this was a 36 months contract. --></help>
+        <label><!-- Total Rental Value --></label>
+        <name>Rental_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sequence --></label>
+        <name>Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute --></label>
+        <name>cscfga__Attribute__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Opportunity Product Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

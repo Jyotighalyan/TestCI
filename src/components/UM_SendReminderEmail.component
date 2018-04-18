@@ -1,0 +1,30 @@
+<apex:component access="global" controller="UM_SendReminderMailController">
+    <apex:attribute id="oppId" assignTo="{!oppId}" name="IDForEmail" type="ID" description="SF ID"/>
+   
+    <center><apex:image value="{!$Label.UM_Logo_Url_Center}" /></center>
+    <apex:outputLabel value="{!$Label.UM_D2D_EmailReminderSalutation}" escape="false"/> {!salutationContact} {!surnameContact},<apex:outputLabel value="{!$Label.UM_D2D_EmailReminderBody9}" escape="false"/>
+    <br></br><br></br><apex:outputLabel value="{!$Label.UM_D2D_EmailReminderBody1}" escape="false"/> {!quotedate}.<apex:outputLabel value="{!$Label.UM_D2D_EmailReminderBody9}" escape="false"/>
+    <apex:outputLabel value="{!$Label.UM_D2D_EmailReminderBody2}" escape="false"/>
+    <apex:outputLabel value="{!$Label.Um_D2D_EmailReminderBody3}" escape="false"/> 
+    <apex:outputLabel value="{!$Label.UM_D2D_EmailReminder4}"     escape="false"/> {!orderdateCA}<apex:outputLabel value="{!$Label.UM_D2D_EmailReminderBody8}" escape="false"/>  
+    
+    <a style="color:blue" href="{!$Setup.CSCAP__ClickApprove_Constants__c.CSCAP__Site_Address__c}?key={!keyCA}">Eine gute Entscheidung für mehr Geschäftserfolg – Ihr persönliches Unitymedia Business Angebot</a>
+
+    <apex:outputLabel value="{!$Label.Um_D2D_EmailReminderBody6}" escape="false"/> 
+    <apex:outputLabel value="{!$Label.UM_D2D_EmailReminderBody11}" escape="false"/>{!firstNameOppOwner} {!surnameOppOwner} <apex:outputLabel value="{!$Label.UM_D2D_EmailReminderBody10}" escape="false"/>
+    <table >
+        <apex:repeat var="p" value="{!productConfigurationList}"></apex:repeat>
+    </table>
+    <apex:image value="{!$Label.UM_Logo_Url}" /><br/> 
+    T: &nbsp;{!telephoneOppOwner} <br/>    
+    F: &nbsp;{!faxNumberOppOwner} <br/>    
+    M: {!mobNumberOppOwner} <br/><br/>
+    
+    {!emailOppOwner}<!--[<<email address opportunity owner>>]--><br/><br/>
+    
+    <apex:outputLabel value="{!$Label.UM_OrderAcknowlegmentEmailTemplateBody4}" escape="false"/>&nbsp;{!company}.<br/><br/>
+    <apex:outputlabel value="{!address}" escape="false"></apex:outputlabel>
+    <font size="0.7"> <a href="www.unitymediabusiness.de"><u>www.unitymediabusiness.de</u></a></font>
+    
+    
+</apex:component>

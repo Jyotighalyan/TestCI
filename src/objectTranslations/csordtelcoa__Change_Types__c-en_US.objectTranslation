@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- If set to true, the change type will be available for a selection in a Change Type dropdown on the MACD configuration page. --></help>
+        <label><!-- Available on MACD Page --></label>
+        <name>LG_AvailableOnMACDPage__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, a change type will be treated (in the MACD page, or apex code) as a variety of Migrate. --></help>
+        <label><!-- Migrate Variety --></label>
+        <name>LG_MigrateVariety__c</name>
+    </fields>
+    <fields>
+        <help><!-- While doing a MACD, related products will be set to Valid by default --></help>
+        <label><!-- Valid Related Products --></label>
+        <name>ValidRelatedProducts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Add To Existing Subscription --></label>
+        <name>csordtelcoa__Add_To_Existing_Subscription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allow Multiple Subscriptions --></label>
+        <name>csordtelcoa__Allow_Multiple_Subscriptions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Create Bundle --></label>
+        <name>csordtelcoa__Auto_Create_Bundle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoke Process --></label>
+        <name>csordtelcoa__Invoke_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process To Invoke --></label>
+        <name>csordtelcoa__Process_To_Invoke__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Date --></label>
+        <name>csordtelcoa__Request_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Date Label --></label>
+        <name>csordtelcoa__Requested_Date_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sort Order --></label>
+        <name>csordtelcoa__Sort_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription Date Field API Name --></label>
+        <name>csordtelcoa__Subscription_Date_Field_API_Name__c</name>
+    </fields>
+</CustomObjectTranslation>

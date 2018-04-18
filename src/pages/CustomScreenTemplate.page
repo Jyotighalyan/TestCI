@@ -1,0 +1,78 @@
+<apex:page doctype="html-5.0" controller="cscfga.StatelessUIController" action="{!init}" showHeader="false" standardStylesheets="false" sidebar="false">
+    <div>
+        <apex:repeat var="screenSequence" value="{!screenSequences}">
+            <apex:repeat var="layout" value="{!screenSequence.layouts}">
+
+                <apex:outputText escape="false" value="{!'<script type=\"text/html\" data-cs-ref=\"' & layout.ref & '\">'}" />
+
+                    <div class="apexp">
+                        <div class="individualPalette">
+                            <div class="bootstrap-iso">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading clearfix">
+                                        <h2 class="panel-title pull-left">{!layout.definition.Name}</h2>
+                                        <div class="btn-group CS_configButtons pull-right"/>
+                                    </div>
+                                    <div class="panel-body">
+                                    <apex:repeat var="section" value="{!layout.sections}">
+                                        <div class="panel">
+                                            <h4>{!section.name}</h4>
+                                            
+                                                <apex:repeat var="row" value="{!section.rows}">
+                                                    <div class="row">
+                                                    <apex:outputPanel layout="none" rendered="{!NOT(row.hasFirst)}">
+                                                        <apex:outputPanel layout="none" rendered="{!row.hasSecond && NOT(row.second.cscfga__Column_Span__c == 2)}">
+                                                            <div class="col-md-6">
+                                                            </div>
+                                                        </apex:outputPanel>
+                                                    </apex:outputPanel>
+
+                                                    <apex:outputPanel layout="none" rendered="{!row.hasFirst}">
+                                                        <div class="{!IF(row.first.cscfga__Column_Span__c == 2, 'col-md-12', 'col-md-6')}" data-role="fieldcontain">
+                                                            <c:AttributeTemplate2 type="{!row.first.cscfga__Type__c}" domId="{!layout.domSafeScreenName & ':' & row.first.cscfga__reference_name__c}" flavour="standard" ref="{!row.first.cscfga__reference_name__c}" definition="{!row.first}" />
+                                                        </div>
+                                                    </apex:outputPanel>
+
+                                                    <apex:outputPanel layout="none" rendered="{!row.hasSecond}">
+                                                        <div class="{!IF(row.second.cscfga__Column_Span__c == 2, 'col-md-12', 'col-md-6')}">
+                                                                <div data-role="fieldcontain">
+                                                                    <c:AttributeTemplate2 type="{!row.second.cscfga__Type__c}" domId="{!layout.domSafeScreenName & ':' & row.second.cscfga__reference_name__c}" flavour="standard" ref="{!row.second.cscfga__reference_name__c}" definition="{!row.second}" />
+                                                                </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+
+                                                    <apex:outputPanel layout="none" rendered="{!NOT(row.hasSecond)}">
+                                                        <apex:outputPanel layout="none" rendered="{!row.hasFirst && NOT(row.first.cscfga__Column_Span__c == 2)}">
+                                                            <div class="col-md-6">
+                                                            </div>
+                                                        </apex:outputPanel>
+                                                    </apex:outputPanel>
+                                                    </div>
+                                                </apex:repeat>
+                                            
+                                            <!-- .detailList -->
+                                        </div>
+                                        <!-- .pbSubsection -->
+                                    </apex:repeat>
+                                    </div>
+                                    <div class="panel-heading clearfix">
+                                        <h2 class="panel-title pull-left">{!layout.definition.Name}</h2>
+                                        <div class="btn-group CS_configButtons pull-right"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <apex:repeat var="list" value="{!layout.lists}">
+                        <div data-cs-binding="%ctx%{!list.def.cscfga__reference_name__c}_%idx%"></div>
+                        </apex:repeat>
+
+                    </div>
+                <apex:outputText escape="false" value="</script>" />
+            </apex:repeat>
+        </apex:repeat>
+
+        <cscfga:OutputRules />
+
+    </div>
+</apex:page>

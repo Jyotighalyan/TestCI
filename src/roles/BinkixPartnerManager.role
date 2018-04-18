@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Binkix (Agilis) Partner Manager</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Binkix (Agilis) Partner Manager</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>NL_Data_Manager_Binkix</parentRole>
+</Role>

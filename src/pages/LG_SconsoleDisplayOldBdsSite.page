@@ -1,0 +1,19 @@
+<apex:page standardController="Case" extensions="LG_SconsoleDisplayOldBdsSiteExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />   
+    <apex:form >
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:pageBlock title="" mode="{!Mode}">
+    <apex:pageBlockSection title="Suborder" columns="2" collapsible="false" >
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__c}"  rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" rendered="{!Provisioning}"/>
+            <apex:outputText label="Solution" rendered="{!Provisioning}">
+                <apex:outputLink value="/{!Solution.Id}" >{!Solution.Name}</apex:outputLink>   
+            </apex:outputText>
+            <apex:outputfield value="{!Solution.csord__Order__c}" rendered="{!Provisioning}"/> 
+
+            <apex:outputfield value="{!Solution.LG_OldESNNumber__c}" rendered="{!Provisioning}"/>            
+        </apex:pageBlockSection>
+   </apex:pageBlock>
+
+        </apex:form>
+</apex:page>

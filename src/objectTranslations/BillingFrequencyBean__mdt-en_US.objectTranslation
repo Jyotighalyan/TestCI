@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BillingFrequencyBean</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BillingFrequencyBean</value>
+    </caseValues>
+    <fields>
+        <label><!-- BillingFrequency --></label>
+        <name>BillingFrequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- ConfigTagId --></label>
+        <name>ConfigTagId__c</name>
+    </fields>
+    <fields>
+        <label><!-- DisplayValue --></label>
+        <name>DisplayValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsDefault --></label>
+        <name>IsDefault__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsInternal --></label>
+        <name>IsInternal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key --></label>
+        <name>Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- LanguageCode --></label>
+        <name>LanguageCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShortDisplay --></label>
+        <name>ShortDisplay__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

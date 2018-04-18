@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Case Billing Account Number --></label>
+        <name>B2B_Care_Billing_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Billing Number --></label>
+        <name>B2B_Care_Service_Billing_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Snoopy URL Parameter --></label>
+        <name>B2B_Care_Snoopy_URL_Parameter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Account Number --></label>
+        <name>Billing_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Access Technology --></label>
+        <name>LG_Access_Technology__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action --></label>
+        <name>LG_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activate Valid --></label>
+        <name>LG_ActivateValid__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Activate Valid --></label>
+        <name>LG_Activate_Valid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activation Needed --></label>
+        <name>LG_Activationneeded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Add On Price Item Association --></label>
+        <name>LG_AddOnPriceItemAssociation__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Add On --></label>
+        <name>LG_AddOn__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Additional Hour --></label>
+        <name>LG_Additional_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Additional Work Note --></label>
+        <name>LG_Additional_Work_Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>LG_Address__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Area Codes --></label>
+        <name>LG_AreaCodes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute values changed --></label>
+        <name>LG_AttributeValuesChanged__c</name>
+    </fields>
+    <fields>
+        <label><!-- B-number shielding --></label>
+        <name>LG_BNumberShielding__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Frequency --></label>
+        <name>LG_BillingFrequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Block Type --></label>
+        <name>LG_BlockType__c</name>
+    </fields>
+    <fields>
+        <label><!-- COMMAND Service ID --></label>
+        <name>LG_COMMAND_Service_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call barring level --></label>
+        <name>LG_CallBarringLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Caller ID --></label>
+        <name>LG_CallerID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Capability --></label>
+        <name>LG_Capability__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>LG_Care_Full_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Type Code --></label>
+        <name>LG_ChangeTypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Type --></label>
+        <name>LG_ChangeType__c</name>
+        <picklistValues>
+            <masterLabel>Add</masterLabel>
+            <translation><!-- Add --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change</masterLabel>
+            <translation><!-- Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Renewal</masterLabel>
+            <translation><!-- Contract Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Migrate</masterLabel>
+            <translation><!-- Migrate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Move</masterLabel>
+            <translation><!-- Move --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retention</masterLabel>
+            <translation><!-- Retention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminate</masterLabel>
+            <translation><!-- Terminate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LG Charge Group Name --></label>
+        <name>LG_Charge_Group_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>LG_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Connection Required --></label>
+        <name>LG_ConnectionRequired__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract End Date --></label>
+        <name>LG_ContractEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Start Date --></label>
+        <name>LG_ContractStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Term --></label>
+        <name>LG_ContractTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency Code --></label>
+        <name>LG_CurrencyCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deactivation Wish Date --></label>
+        <name>LG_DeactivationWishDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Decomposition Criteria --></label>
+        <name>LG_DecompositionCriteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deviating Billing Date --></label>
+        <name>LG_DeviatingBillingDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount --></label>
+        <name>LG_Discount__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Donor Operator Code --></label>
+        <name>LG_DonorOperatorCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>LG_EffectiveDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Subscription Name --></label>
+        <name>LG_ExternalSubscriptionName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Failure Reason --></label>
+        <name>LG_FailureReason__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Service --></label>
+        <name>LG_From_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG_Gesamt --></label>
+        <name>LG_Gesamt__c</name>
+    </fields>
+    <fields>
+        <label><!-- IP Address Extension (Legacy) --></label>
+        <name>LG_IPAddressExtensionLegacy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ignore Contract Term --></label>
+        <name>LG_IgnoreContractTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Install Date --></label>
+        <name>LG_InstallDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Install Valid --></label>
+        <name>LG_InstallValid__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Install Valid --></label>
+        <name>LG_Install_Valid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Needed --></label>
+        <name>LG_InstallationNeeded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Planned Date --></label>
+        <name>LG_InstallationPlannedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Type --></label>
+        <name>LG_InstallationType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Wish Date --></label>
+        <name>LG_InstallationWishDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internet Security (Legacy) --></label>
+        <name>LG_InternetSecurityLegacy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internet Type (Legacy) --></label>
+        <name>LG_InternetTypeLegacy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Market Segment --></label>
+        <name>LG_MarketSegment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Multi Wifi Access Point --></label>
+        <name>LG_MultiWifiAccessPoint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name Telephony --></label>
+        <name>LG_NameTelephony__c</name>
+    </fields>
+    <fields>
+        <label><!-- Network Type --></label>
+        <name>LG_Network_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Suborder --></label>
+        <name>LG_OldSuborder__c</name>
+        <relationshipLabel><!-- Services (Old Suborder) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>LG_OrderNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Numbers --></label>
+        <name>LG_Phonenumbers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pin (Legacy) --></label>
+        <name>LG_PinLegacy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Porting City --></label>
+        <name>LG_PortingCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Porting House Number Addition --></label>
+        <name>LG_PortingHouseNumberAddition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Porting House Number --></label>
+        <name>LG_PortingHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Porting Initials --></label>
+        <name>LG_PortingInitials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Porting Name --></label>
+        <name>LG_PortingName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Porting Prefix --></label>
+        <name>LG_PortingPrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Porting Street --></label>
+        <name>LG_PortingStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Porting Wish Date --></label>
+        <name>LG_PortingWishDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Porting Zipcode --></label>
+        <name>LG_PortingZipcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Definition Name --></label>
+        <name>LG_ProductDefinitionName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>LG_ProductFamily__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>LG_ProductName__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Category --></label>
+        <name>LG_Product_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provision Valid --></label>
+        <name>LG_ProvisionValid__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provision Valid --></label>
+        <name>LG_Provision_Valid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provisioning Account No --></label>
+        <name>LG_ProvisioningAccountNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provisioning Code --></label>
+        <name>LG_ProvisioningCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cable Master ID --></label>
+        <name>LG_ProvisioningSystemID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provisioning System --></label>
+        <name>LG_ProvisioningSystem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>LG_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Billing Date Deviation --></label>
+        <name>LG_ReasonforBillingDateDeviation__c</name>
+        <picklistValues>
+            <masterLabel>DWH</masterLabel>
+            <translation><!-- DWH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>From</masterLabel>
+            <translation><!-- From --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need</masterLabel>
+            <translation><!-- Need --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Values</masterLabel>
+            <translation><!-- Values --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SLA --></label>
+        <name>LG_SLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Service External Id --></label>
+        <name>LG_ServiceExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Status --></label>
+        <name>LG_ServiceStatus__c</name>
+        <picklistValues>
+            <masterLabel>Activation Completed</masterLabel>
+            <translation><!-- Activation Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Activation Failed</masterLabel>
+            <translation><!-- Activation Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canceled</masterLabel>
+            <translation><!-- Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Replaced</masterLabel>
+            <translation><!-- Closed Replaced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installation Failed</masterLabel>
+            <translation><!-- Installation Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provisioned</masterLabel>
+            <translation><!-- Provisioned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provisioning Failed</masterLabel>
+            <translation><!-- Provisioning Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Billing</masterLabel>
+            <translation><!-- Ready for Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Termination Requested</masterLabel>
+            <translation><!-- Service Termination Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Id --></label>
+        <name>LG_Service_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>LG_Site__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Indicates that the record is not relevant do to the change is active version (newer or older version exists and it is active) --></help>
+        <label><!-- Soft Deleted --></label>
+        <name>LG_SoftDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suborder --></label>
+        <name>LG_Suborder__c</name>
+        <relationshipLabel><!-- Services (Suborder) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Telephony Plus Type (Legacy) --></label>
+        <name>LG_TelephonyPlusTypeLegacy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terminated Service --></label>
+        <name>LG_TerminatedService__c</name>
+        <relationshipLabel><!-- Services (Terminated Service) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Terminated Subscription --></label>
+        <name>LG_TerminatedSubscription__c</name>
+        <relationshipLabel><!-- Services (Terminated Subscription) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Test Result --></label>
+        <name>LG_TestResult__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Service --></label>
+        <name>LG_To_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type Of Phone Range --></label>
+        <name>LG_TypeOfPhoneRange__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type (Telephony) --></label>
+        <name>LG_TypeTelephony__c</name>
+    </fields>
+    <fields>
+        <label><!-- Persistent Id --></label>
+        <name>Persistent_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temp State --></label>
+        <name>Temp_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Contract Value --></label>
+        <name>Total_Contract_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- BGP Autonomous System Number --></help>
+        <label><!-- UM AS Number --></label>
+        <name>UM_AS_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- BGP Title of issue --></help>
+        <label><!-- UM Announced prefix --></label>
+        <name>UM_Announced_prefix__c</name>
+    </fields>
+    <fields>
+        <help><!-- Password for selection of workflow --></help>
+        <label><!-- UM BGP Password --></label>
+        <name>UM_BGP_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Product Id --></label>
+        <name>UM_BillingProductId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cablemaster Date --></label>
+        <name>UM_CablemasterDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cancellatiob periof in Months. --></help>
+        <label><!-- Cancellation Period (In Months) --></label>
+        <name>UM_Cancellation_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost (CAPEX) --></label>
+        <name>UM_CostCAPEX__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost (OPEX) --></label>
+        <name>UM_CostOPEX__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Company --></label>
+        <name>UM_Customer_Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Number --></label>
+        <name>UM_Customer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Region --></label>
+        <name>UM_Customer_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer&apos;s Invoice Grouping Reference --></label>
+        <name>UM_CustomersInvoiceGroupingReference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deactivation Reason --></label>
+        <name>UM_DeactivationReason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Depends On Product Configuration --></label>
+        <name>UM_DependsOnProductConfiguration__c</name>
+        <relationshipLabel><!-- Services (Depends On Product Configuration) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Depends On Service --></label>
+        <name>UM_DependsOnService__c</name>
+        <relationshipLabel><!-- Services (Depends On) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Download Speed --></label>
+        <name>UM_DownloadSpeed__c</name>
+    </fields>
+    <fields>
+        <label><!-- ESN --></label>
+        <name>UM_ESN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Date --></label>
+        <name>UM_EntryDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Price (CAPEX) --></label>
+        <name>UM_EstimatedPriceCAPEX__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Price (OPEX) --></label>
+        <name>UM_EstimatedPriceOPEX__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geolocation --></label>
+        <name>UM_Geolocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Get Current Contract Term --></label>
+        <name>UM_GetCurrentContractTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Help Text --></label>
+        <name>UM_HelpText__c</name>
+    </fields>
+    <fields>
+        <help><!-- BGP IPv4 Address space --></help>
+        <label><!-- UM IPv4 --></label>
+        <name>UM_IPv4__c</name>
+    </fields>
+    <fields>
+        <help><!-- BGP IPv6 Address space --></help>
+        <label><!-- UM IPv6 --></label>
+        <name>UM_IPv6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active Today? --></label>
+        <name>UM_Is_Active_Today__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Inactive Today --></label>
+        <name>UM_Is_Inactive_Today__c</name>
+    </fields>
+    <fields>
+        <label><!-- JiraIssueTypeId --></label>
+        <name>UM_JiraIssueTypeId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contract End Date - Cancellation Period (in Months) --></help>
+        <label><!-- Latest Cancellation Letter Arrival Date --></label>
+        <name>UM_Latest_Cancellation_Letter_Arrival__c</name>
+    </fields>
+    <fields>
+        <label><!-- Logistics Reference --></label>
+        <name>UM_LogisticsReference__c</name>
+    </fields>
+    <fields>
+        <label><!-- MAC Address --></label>
+        <name>UM_MACAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Management --></label>
+        <name>UM_NumberManagement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Open Porting Processes --></label>
+        <name>UM_NumberOfOpenPortingProcesses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>UM_Order_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- PIC Reason --></label>
+        <name>UM_PICReason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Account --></label>
+        <name>UM_PartnerAccount__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Partner Sales Id --></label>
+        <name>UM_PartnerSalesId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Extension --></label>
+        <name>UM_PhoneExtension__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Description --></label>
+        <name>UM_ProductDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provisioning Service External Id --></label>
+        <name>UM_ProvisioningServiceExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales ID --></label>
+        <name>UM_SalesID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Voiceworks External ID --></label>
+        <name>UM_SendVoiceworksExternalID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Status --></label>
+        <name>UM_ServiceStatus__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Replaced</masterLabel>
+            <translation><!-- Closed Replaced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Numbers Ported</masterLabel>
+            <translation><!-- Numbers Ported --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Billing</masterLabel>
+            <translation><!-- Ready for Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent to Provisioning</masterLabel>
+            <translation><!-- Sent to Provisioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated</masterLabel>
+            <translation><!-- Terminated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination Requested</masterLabel>
+            <translation><!-- Termination Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>UM_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Store Order Number --></label>
+        <name>UM_StoreOrderNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscriber Name --></label>
+        <name>UM_SubscriberName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Termination Code --></label>
+        <name>UM_TerminationCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Number Block --></label>
+        <name>UM_TestNumberBlock__c</name>
+    </fields>
+    <fields>
+        <label><!-- Upload Speed --></label>
+        <name>UM_UploadSpeed__c</name>
+    </fields>
+    <fields>
+        <label><!-- VoiceWorks Object Id --></label>
+        <name>UM_VoiceWorksObjectId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wait for Access --></label>
+        <name>UM_WaitForAccess__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workflow Trigger Timer --></label>
+        <name>UM_WorkflowTriggerTimer__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date of activation. --></help>
+        <label><!-- Activation Date --></label>
+        <name>csord__Activation_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- A field for the service owner (client) to store their own unique identifier on the Service Object, for ease of identification to external systems --></help>
+        <label><!-- Client Identifier --></label>
+        <name>csord__Client_Identifier__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date of deactivation. --></help>
+        <label><!-- Deactivation Date --></label>
+        <name>csord__Deactivation_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- A reason to deactivate the service. --></help>
+        <label><!-- Deactivation Reason --></label>
+        <name>csord__Deactivation_Reason__c</name>
+    </fields>
+    <fields>
+        <help><!-- External Id field used for bulk inserts of Orders &amp; Subscriptions objects. --></help>
+        <label><!-- External Identifier --></label>
+        <name>csord__External_Identifier2__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. Use External Identifier2 field instead. --></help>
+        <label><!-- DEPRECATED External Identifier --></label>
+        <name>csord__External_Identifier__c</name>
+    </fields>
+    <fields>
+        <help><!-- E.g. &quot;spokeServiceAmsterdam&quot; in Hub&amp;Spokes scenario. --></help>
+        <label><!-- Identification --></label>
+        <name>csord__Identification__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order Request object which introduced the latest changes to this object. --></help>
+        <label><!-- Order Request --></label>
+        <name>csord__Order_Request__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The parent Order of this Service. --></help>
+        <label><!-- Order --></label>
+        <name>csord__Order__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The address to which this Service will be delivered. --></help>
+        <label><!-- Service Address --></label>
+        <name>csord__Service_Address__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The parent Service of this Service. --></help>
+        <label><!-- Parent Service --></label>
+        <name>csord__Service__c</name>
+        <relationshipLabel><!-- Child Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The parent Solution of this Service --></help>
+        <label><!-- Solution --></label>
+        <name>csord__Solution__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used for state transitions. --></help>
+        <label><!-- Status --></label>
+        <name>csord__Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- The parent Subscription of this Service. --></help>
+        <label><!-- Subscription --></label>
+        <name>csord__Subscription__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Sum of all the one-off charges of the service’s line items --></help>
+        <label><!-- Total One-Off Charges --></label>
+        <name>csord__Total_One_Off_Charges__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sum of all the recurring charges of the service’s line items --></help>
+        <label><!-- Total Recurring Charges --></label>
+        <name>csord__Total_Recurring_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delta Status --></label>
+        <name>csordtelcoa__Delta_Status__c</name>
+        <picklistValues>
+            <masterLabel>Added To Subscription</masterLabel>
+            <translation><!-- Added To Subscription --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Continuing In Subscription</masterLabel>
+            <translation><!-- Continuing In Subscription --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deleted From Subscription</masterLabel>
+            <translation><!-- Deleted From Subscription --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>csordtelcoa__Main_Contact__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent Product Configuration --></label>
+        <name>csordtelcoa__Parent_Product_Configuration__c</name>
+        <relationshipLabel><!-- Services (Parent Product Configuration) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Basket --></label>
+        <name>csordtelcoa__Product_Basket__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Bundle --></label>
+        <name>csordtelcoa__Product_Bundle__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Configuration --></label>
+        <name>csordtelcoa__Product_Configuration__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Replaced Service --></label>
+        <name>csordtelcoa__Replaced_Service__c</name>
+        <relationshipLabel><!-- Replacement Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Product Configuration that will be used for generation of a Service that will replace this Service instance --></help>
+        <label><!-- Replacement Product Configuration --></label>
+        <name>csordtelcoa__Replacement_Product_Configuration__c</name>
+        <relationshipLabel><!-- Replaced Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Replacement Service --></label>
+        <name>csordtelcoa__Replacement_Service__c</name>
+        <relationshipLabel><!-- Replaced Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Number Sequence --></label>
+        <name>csordtelcoa__Service_Number_Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Number --></label>
+        <name>csordtelcoa__Service_Number__c</name>
+    </fields>
+    <layouts>
+        <layout>Custom Service Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Information --></label>
+            <section>Contract Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Discount Information --></label>
+            <section>Discount Information</section>
+        </sections>
+        <sections>
+            <label><!-- Investment --></label>
+            <section>Investment</section>
+        </sections>
+        <sections>
+            <label><!-- Service Information --></label>
+            <section>Service Information</section>
+        </sections>
+        <sections>
+            <label><!-- System information --></label>
+            <section>System information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- ForBusinessVoiceServices --></label>
+        <name>ForBusinessVoiceServices</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Service --></label>
+        <name>Service</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Service Read Only --></label>
+        <name>Service_Read_Only</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Contractual data cannot be changed. --></errorMessage>
+        <name>Fields_Set_To_Read_Only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- It is not possible to return to the previous Service Status --></errorMessage>
+        <name>It_is_not_possible_to_return_to_previous</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please populate Activation Date before setting Service Status to Ready for Billing --></errorMessage>
+        <name>Service_Status_set_to_Active</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please populatePIC Reason before setting Service Status to Cancelled --></errorMessage>
+        <name>Service_Status_set_to_Service_Cancelled</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- B2B_Care_BDS_Partner_Portal --></label>
+        <name>B2B_Care_BDS_Partner_Portal</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- B2B_Care_Check_MK --></label>
+        <name>B2B_Care_Check_MK</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- B2B_Care_Check_Snoopy --></label>
+        <name>B2B_Care_Check_Snoopy</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- B2B_Care_Command --></label>
+        <name>B2B_Care_Command</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- B2B_Care_ITUMA --></label>
+        <name>B2B_Care_ITUMA</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Enter_Cable_Master_ID --></label>
+        <name>Enter_Cable_Master_ID</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Technical_Case --></label>
+        <name>New_Technical_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_email_to_Sipwise --></label>
+        <name>Send_email_to_Sipwise</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Modify_Service_Configuration --></label>
+        <name>csordtelcoa__Modify_Service_Configuration</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- View_Product_Configuration_Attributes --></label>
+        <name>csordtelcoa__View_Product_Configuration_Attributes</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,2 @@
+<apex:page standardController="Case" extensions="LG_CaseLayoutRedirectExtension" action="{!redirect}">
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:component access="global" controller="UM_OrderAcknowlegementEmailController">
+    <apex:attribute id="custApproId" assignTo="{!custApproId}" name="IDForEmail" type="ID" description="SF ID"/>
+     
+   <center><apex:image value="{!$Label.UM_Logo_Url_Center}"/></center>
+    <apex:outputLabel value="{!$Label.UM_OrderRejectionEmailTemplateSalutation}" escape="false"/> {!salutationContact} {!surnameContact},<br/><br/>
+    <apex:outputLabel value="{!$Label.UM_OrderRejectionEmailTemplateBody3}" escape="false"/> 
+    <apex:outputLabel value="{!$Label.UM_OrderRejectionEmailTemplateBody4}" escape="false"/>
+    <apex:outputLabel value="{!$Label.UM_OrderRejectionEmailTemplateBody5}" escape="false"/>
+    <apex:outputLabel value="{!$Label.UM_OrderRejectionEmailTemplateBody6}" escape="false"/>
+    {!firstNameOppOwner} {!surnameOppOwner} <br/><br/>
+    <table >
+        <apex:repeat var="p" value="{!productConfigurationList}"></apex:repeat>
+    </table>
+    <apex:image value="{!$Label.UM_Logo_Url}" /><br/> 
+    T: {!telephoneOppOwner}<br/>      <!--[<<telephone number opportunity owner>>]-->
+    F: {!faxNumberOppOwner}<br/>      <!--[<<fax number opportunity owner>>]-->
+    M: {!mobNumberOppOwner}<br/><br/>       <!--[<<mobile number opportunity owner>>]-->
+    
+    {!emailOppOwner}<!--[<<email address opportunity owner>>]--><br/><br/>
+    
+    <apex:outputLabel value="{!$Label.UM_OrderRejectionEmailTemplateBody7}" escape="false"/><br/><br/>
+    <apex:outputlabel value="{!address}" escape="false"></apex:outputlabel>
+    <apex:outputLabel value="{!$Label.UM_OrderAcknowlegmentEmailTemplateBody5}" escape="false"/>
+</apex:component>

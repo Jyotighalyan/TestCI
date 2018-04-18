@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>URL for REST API call from Service Availability Visualforce Page</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>LG_AddressCheck__c</fullName>
+        <description>Holds the address check endpoint (i.e. NAMED_CREDENTIAL_NAME/peal/api/addresses/</description>
+        <externalId>false</externalId>
+        <label>Address Check</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AvailabilityCheck__c</fullName>
+        <description>Holds the availability check endpoint (i.e. NAMED_CREDENTIAL_NAME/peal/api/addresses/{addressId}/details</description>
+        <externalId>false</externalId>
+        <label>Availability Check</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_LocalizationClass__c</fullName>
+        <description>Holds the name of the implementation class that extends the LG_EndpointResolver class and that holds the overridden getAddressCheckEndpoint and getAvailabilityCheckEndpoint methods responsible for concatenating and creating the complete endpoint url.</description>
+        <externalId>false</externalId>
+        <label>Localization class</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_OrderRequestNew__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Request New</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Url__c</fullName>
+        <externalId>false</externalId>
+        <label>URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <label>Service Request URL</label>
+    <visibility>Public</visibility>
+</CustomObject>

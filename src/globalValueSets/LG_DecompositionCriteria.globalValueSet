@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Set 1 - On-Net</fullName>
+        <default>false</default>
+        <label>Set 1 - On-Net</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 2 - Off-Net</fullName>
+        <default>false</default>
+        <label>Set 2 - Off-Net</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 3 - Mobile</fullName>
+        <default>false</default>
+        <label>Set 3 - Mobile</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 4</fullName>
+        <default>false</default>
+        <label>Set 4</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 6 - CaMa Dependent</fullName>
+        <default>false</default>
+        <label>Set 6 - CaMa Dependent</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 7 - JIRA Fiber</fullName>
+        <default>false</default>
+        <label>Set 7 - JIRA Fiber</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 10 - VoiceWorks</fullName>
+        <default>false</default>
+        <label>Set 10 - VoiceWorks</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 11 - Engineers</fullName>
+        <default>false</default>
+        <label>Set 11 - Engineers</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 5 - CaMa Internet</fullName>
+        <default>false</default>
+        <label>Set 5 - CaMa Internet</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 8 - CS Voice</fullName>
+        <default>false</default>
+        <label>Set 8 - CS Voice</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 9 - CaMa Bearer</fullName>
+        <default>false</default>
+        <label>Set 9 - CaMa Bearer</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 5 - No Grouping</fullName>
+        <default>false</default>
+        <label>Set 5 - No Grouping</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 12 - JIRA Orchestrated</fullName>
+        <default>false</default>
+        <label>Set 12 - JIRA Orchestrated</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 13 - JIRA Bearer</fullName>
+        <default>false</default>
+        <label>Set 13 - JIRA Bearer</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 14 - CaMa Mobile</fullName>
+        <default>false</default>
+        <label>Set 14 - CaMa Mobile</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 15 - CaMa Manual</fullName>
+        <default>false</default>
+        <label>Set 15 - CaMa Manual</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 16 - CaMa OI Manual</fullName>
+        <default>false</default>
+        <label>Set 16 - CaMa OI Manual</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 17 - Charges</fullName>
+        <default>false</default>
+        <label>Set 17 - Charges</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 18 - Direct to Kenan</fullName>
+        <default>false</default>
+        <label>Set 18 - Direct to Kenan</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 22 - Parent/Category Only</fullName>
+        <default>false</default>
+        <label>Set 22 - Parent/Category Only</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 24 - UM JIRA Fiber Bridge Mode</fullName>
+        <default>false</default>
+        <label>Set 24 - UM JIRA Fiber Bridge Mode</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 23 - UM CaMa Bridge Mode</fullName>
+        <default>false</default>
+        <label>Set 23 - UM CaMa Bridge Mode</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 21 - VPN Process</fullName>
+        <default>false</default>
+        <label>Set 21 - VPN Process</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 20 - BDS Site Process</fullName>
+        <default>false</default>
+        <label>Set 20 - BDS Site Process</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 19 - Additional Charges</fullName>
+        <default>false</default>
+        <label>Set 19 - Additional Charges</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 25 - Business Anywhere</fullName>
+        <default>false</default>
+        <label>Set 25 - Business Anywhere</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 17 - HBPX Charges</fullName>
+        <default>false</default>
+        <label>Set 17 - HBPX Charges</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 26 - UM Managed WLAN</fullName>
+        <default>false</default>
+        <label>Set 26 - UM Managed WLAN</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 17 - BDS Charges</fullName>
+        <default>false</default>
+        <label>Set 17 - BDS Charges</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 10 - SIPWISE</fullName>
+        <default>false</default>
+	<label>Set 10 - SIPWISE</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 10 - SIPWISE Entry Services</fullName>
+        <default>false</default>
+	<label>Set 10 - SIPWISE Entry Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Set 10 - INFPORT</fullName>
+        <default>false</default>
+	<label>Set 10 - INFPORT</label>
+    </customValue>
+    <description>Used as a criteria for grouping the services to the suborders</description>
+    <masterLabel>Decomposition Criteria</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

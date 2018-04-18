@@ -1,0 +1,87 @@
+<apex:component controller="LG_ServiceAvailabilityController" selfClosing="true">
+    <!-- Attributes -->
+    <apex:attribute name="postalCode" assignTo="{!postalCodeAttribute}" type="String" description="Postal/ZIP code part of the address."/>
+    <apex:attribute name="houseNumber" assignTo="{!houseNumberAttribute}" type="String" description="House number part of the address."/>
+    <apex:attribute name="houseNumberExtension" assignTo="{!extensionAttribute}" type="String" description="House number extension part of the address."/>
+    <!-- GUI -->
+    <apex:outputPanel id="serviceAvailabilityChecker">
+        <apex:form id="addressForm" style="margin-bottom: 1em;">
+            <div style="display: table-cell;">
+                <div style="display: inline-block; vertical-align: text-top; margin-right: 0.5em; ">
+                    <apex:inputText value="{!postalCode}" id="postalCode" style="display: block; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; border: 1px solid #ccc; padding-left: 6px; padding-right: 6px;" onkeypress="if (event.keyCode == 13) document.getElementById('{!$Component.submitButton}').click();" html-readonly="readonly" html-data-select="OnClick"/>
+                    <apex:outputLabel style="font-weight: bold; margin-bottom: 0.5em; color: gray;" for="postalCode" value="{!$Label.LG_PostalCode}"/>
+                </div>
+                <div style="display: inline-block; vertical-align: text-top; margin-right: 0.5em;">
+                    <apex:inputText value="{!houseNumber}" id="houseNumber" style="display: block; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; border: 1px solid #ccc; padding-left: 6px; padding-right: 6px;" onkeypress="if (event.keyCode == 13) document.getElementById('{!$Component.submitButton}').click();" html-readonly="readonly"  html-data-select="OnClick"/>
+                    <apex:outputLabel style="font-weight: bold; margin-bottom: 0.5em; color: gray;" for="houseNumber" value="{!$Label.LG_HouseNumber}"/>
+                </div>
+                <div style="display: inline-block; vertical-align: text-top; margin-right: 0.5em;">
+                    <apex:inputText value="{!extension}" id="extension" style="display: block; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; border: 1px solid #ccc; padding-left: 6px; padding-right: 6px;" onkeypress="if (event.keyCode == 13) document.getElementById('{!$Component.submitButton}').click();" html-readonly="readonly" html-data-select="OnClick"/>
+                    <apex:outputLabel style="font-weight: bold; margin-bottom: 0.5em; color: gray;" for="extension" value="{!$Label.LG_HouseNumberExtension}"/>
+                </div>
+                <div style="display: inline-block; vertical-align: text-top; margin-right: 0.5em;">
+                    <apex:commandButton id="submitButton" value="{!$Label.LG_Update}" action="{!updateServiceAvailability}" reRender="resultDisplay" status="updateStatus"/>&nbsp;
+                    <apex:actionStatus startText="{!$Label.LG_RequestInProgress}" stopText="" id="updateStatus" onstart="document.getElementById('{!$Component.resultDisplay}').innerHTML = ''; document.getElementById('{!$Component.submitButton}').disabled = true; document.getElementById('{!$Component.postalCode}').disabled = true; document.getElementById('{!$Component.houseNumber}').disabled = true; document.getElementById('{!$Component.extension}').disabled = true;" onstop="document.getElementById('{!$Component.submitButton}').disabled = false; document.getElementById('{!$Component.postalCode}').disabled = false; document.getElementById('{!$Component.houseNumber}').disabled = false; document.getElementById('{!$Component.extension}').disabled = false;"/>
+                </div>
+            </div>
+        </apex:form>
+        <script type="text/javascript">
+            // HACK: This is a JavaScript hack to prevent the browser from jumping to the first input when the page is loaded.
+            document.getElementById('{!$Component.addressForm.postalCode}').addEventListener('focus', function() {
+                document.getElementById('{!$Component.addressForm.postalCode}').readOnly = false;
+            }, true);
+            document.getElementById('{!$Component.addressForm.houseNumber}').addEventListener('focus', function() {
+                document.getElementById('{!$Component.addressForm.houseNumber}').readOnly = false;
+            }, true);
+            document.getElementById('{!$Component.addressForm.extension}').addEventListener('focus', function() {
+                document.getElementById('{!$Component.addressForm.extension}').readOnly = false;
+            }, true);
+            // HACK: This is a JavaScript hack to prevent IE 9 from jumping back to previous page when input has focus and backspace is pressed.
+            document.getElementById('{!$Component.addressForm.postalCode}').addEventListener('click', function() {
+                var element = document.getElementById('{!$Component.addressForm.postalCode}');
+                if (element.getAttribute('data-select') === 'OnClick') {
+                    element.setAttribute('data-select', '');
+                    element.select();
+                }
+            }, true);
+            document.getElementById('{!$Component.addressForm.houseNumber}').addEventListener('click', function() {
+                var element = document.getElementById('{!$Component.addressForm.houseNumber}');
+                if (element.getAttribute('data-select') === 'OnClick') {
+                    element.setAttribute('data-select', '');
+                    element.select();
+                }
+            }, true);
+            document.getElementById('{!$Component.addressForm.extension}').addEventListener('click', function() {
+                var element = document.getElementById('{!$Component.addressForm.extension}');
+                if (element.getAttribute('data-select') === 'OnClick') {
+                    element.setAttribute('data-select', '');
+                    element.select();
+                }
+            }, true);
+        </script>
+        <apex:outputPanel id="resultDisplay">
+            <apex:outputPanel rendered="{!errorMessage == null}" style="margin-top: 1em;" id="serviceAvailabilityDisplay">
+                <apex:repeat value="{!serviceAvailabilityInformation}" var="serviceAvailability">
+                    <div style="display: inline-block; margin-right: 1em">
+                        <span style="font-weight: bold;"><apex:outputText value="{!serviceAvailability.serviceName}"/></span><br/>
+                        <span>
+                            <apex:image url="{!IF(serviceAvailability.available,URLFOR($Resource.SiteSamples,'/img/ico_V.png'),URLFOR($Resource.SiteSamples,'/img/ico_X.png'))}" style="display: block; margin-left: auto; margin-right: auto;"/>
+                        </span>
+                    </div>
+                </apex:repeat>
+            </apex:outputPanel>
+            <apex:outputPanel id="errorDisplay" rendered="{!errorMessage != null}">
+                <apex:outputText style="color: red; font-weight: bold;" value="{!errorMessage}"/>
+                <apex:outputPanel id="extensionSuggestionsDisplay" layout="inline" rendered="{!extensionSuggestionCount > 0}">
+                    <apex:outputText value=" "/>
+                    <apex:outputText style="color: red; font-weight: bold;" value="{!$Label.LG_SuggestedHouseNumberExtensionsAvailable}"/><br/>
+                    <apex:repeat value="{!extensionSuggestions}" var="extensionSuggestion">
+                        <div style="display: inline-block; margin: 0.4em 0.8em 0.4em 0em; cursor: pointer; padding: 0.5em; border: 1px solid red; user-select: none;" onclick="document.getElementById('{!$Component.addressForm.extension}').value = '{!extensionSuggestion.escapedSuggestion}'; document.getElementById('{!$Component.addressForm.submitButton}').click();">
+                            <apex:outputText style="color: {!IF(LEN(extensionSuggestion.suggestion) > 0, 'black', 'lightgray')}" value="{!IF(LEN(extensionSuggestion.suggestion) > 0, extensionSuggestion.suggestion, $Label.LG_NoHouseNumberExtension)}"/>
+                        </div>
+                    </apex:repeat>
+                </apex:outputPanel>
+            </apex:outputPanel>
+        </apex:outputPanel>
+    </apex:outputPanel>
+</apex:component>

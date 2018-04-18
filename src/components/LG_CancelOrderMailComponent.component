@@ -1,0 +1,10 @@
+<apex:component controller="LG_OrderCancelReqMailExtension" access="global">
+    <apex:attribute name="order" type="Id" description="Order Id" assignTo="{!orderId}"/>
+    The previous request to cancel the order <b>"{!OrderName}"</b> and its suborders "<b>(
+    <apex:variable var="listSize" value="{!RelatedProdList.size}"/>
+    <apex:variable var="i" value="{!1}"/>
+    <apex:repeat value="{!RelatedProdList}" var="suborders">
+        {!suborders.Name} <apex:outputText rendered="{!i < listSize}">, </apex:outputText>
+        <apex:variable var="i" value="{!i+1}"/>
+    </apex:repeat>)</b>" has now been cancelled. Please resume fulfilment.
+</apex:component>

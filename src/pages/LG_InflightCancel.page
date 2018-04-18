@@ -1,0 +1,67 @@
+<apex:page showheader="False" sidebar="False" controller="LG_InflightCancel" >
+ <apex:includeScript value="/support/console/26.0/integration.js"/>
+<script type="text/javascript">
+ function closeWindow() 
+    { 
+        //window.top.location='/console';
+        window.top.close();
+        //below will refresh the parent page
+      window.opener.location.href="/{!$CurrentPage.parameters.id}";
+    }  
+    function refreshParent()
+    {
+        //window.top.location='/console';
+        window.opener.location.href="/{!$CurrentPage.parameters.id}";
+    }
+    function closePopup()
+    {
+         self.close();   
+    }
+</script>
+ <style>
+    .btnWidth{
+        width:80px;
+    }
+</style>
+<body onunload="refreshParent()">
+<apex:form >
+<apex:pageMessages />
+
+<apex:pageBlock >
+<apex:pageBlockSection > 
+
+<apex:outputtext escape="false"  value="{!$Label.LG_InflightCancel}"  />
+
+     
+</apex:pageBlockSection>
+</apex:pageblock>
+<apex:pageBlock >
+
+<apex:pageBlockSection > 
+Cancellation Reason
+<apex:selectList size="1" id="intext1" value="{!statusOptions}"  >
+                <apex:selectOptions value="{!items}"/>
+            </apex:selectList>
+</apex:pageBlockSection>
+<!--apex:selectList size="1" id="intext2" value="{!opp.UM_PICReasons__c}">
+                <apex:selectOptions value="{!opp.UM_PICReasons__c}"-->
+            
+
+
+
+<div align="right" draggable="false" >
+
+
+<apex:pageBlockButtons >
+<apex:commandButton value="Confirm"  action="{!ConfirmCancel}"  />
+
+<input type="button" value="Cancel" onclick="closeWindow()" class="btn btnWidth" />
+</apex:pageBlockButtons>
+</div>
+
+
+</apex:pageblock>
+
+</apex:form> 
+</body>        
+</apex:page>

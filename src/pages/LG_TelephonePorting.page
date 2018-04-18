@@ -1,0 +1,138 @@
+<apex:page controller="LG_TelephonePortingController" sidebar="false">
+	<apex:form >
+		<apex:actionFunction name="updatetableImport" action="{!UploadValidateFile}" />
+		<apex:pageBlock >
+			<apex:pageMessages />
+			
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="Upload and Validate File" action="{!UploadValidateFile}" rendered="{!UploadButtonVisible}"/>
+				
+				<apex:commandButton value="Insert Uploaded Records" action="{!InsertRecords}" rendered="{!InsertButtonVisible}" onclick="if(!confirm('Are you sure? Inserting will delete previous records!')){return};"/>
+				
+				<apex:commandButton value="Discard Uploaded Records" action="{!DiscardUploadedRecords}" rendered="{!DiscardButtonVisible}"/>
+				
+			</apex:pageBlockButtons>			
+			
+			<apex:pageBlockSection title="General Information" columns="2" collapsible="false">
+				<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Product Basket" />
+                    <apex:outputLink value="/{!PBId}" id="lnkPB">{!PBName}</apex:outputLink>   	 
+                </apex:pageBlockSectionItem>
+    			<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Product Configuration" />
+                    <apex:outputLink value="/{!PCId}" id="lnkPC">{!PCName}</apex:outputLink>   			
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			
+			
+			<apex:pageBlockSection title="Existing Porting Numbers" columns="1" collapsible="false">
+    			<apex:dataTable value="{!lstPortedNumbers}" var="PortedNumbers" id="tabPortedNumbers" cellspacing="1" border="1" cellPadding="1"> 
+                    
+                    <apex:column >
+                        <apex:facet name="header">Wish Port Date</apex:facet>
+                        <apex:outputText value="{0,date,dd/MM/yyyy}">
+                        	<apex:param value="{!PortedNumbers.LG_PortingDate__c}"/>
+                        </apex:outputText>
+                    </apex:column>    
+					
+                   <apex:column >
+                        <apex:facet name="header">Primary Number</apex:facet>
+                        <apex:outputText value="{0}">
+                        	<apex:param value="{!PortedNumbers.LG_PrimaryNumber__c}"/>
+                        </apex:outputText>
+                    </apex:column>    
+                    			
+                    
+                   <apex:column >
+                        <apex:facet name="header">Telecom Operator</apex:facet>
+                        <apex:outputText value="{!PortedNumbers.LG_Operator__c}"/>
+                    </apex:column>      
+                     
+					 
+                    <apex:column >
+                        <apex:facet name="header">Telephone Number</apex:facet>
+                        <apex:outputText value="{0}">
+                        	<apex:param value="{!PortedNumbers.LG_PhoneNumber__c}"/>
+                        </apex:outputText>
+                    </apex:column>    
+
+
+                   <apex:column >
+                        <apex:facet name="header">First Phone Number</apex:facet>
+                        <apex:outputText value="{!PortedNumbers.LG_FirstPhoneNumber__c}"/>
+                    </apex:column>    
+                    
+					<apex:column >
+                        <apex:facet name="header">Last Phone Number</apex:facet>
+                        <apex:outputText value="{0}">
+                        	<apex:param value="{!PortedNumbers.LG_LastPhoneNumber__c}"/>
+                        </apex:outputText>
+                    </apex:column>                            
+                    
+                                               
+    			</apex:dataTable>
+    		</apex:pageBlockSection>
+    		
+
+    		
+    		<apex:pageBlockSection title="Uploaded Porting Numbers" columns="1" collapsible="false">
+				<apex:dataTable value="{!lstImportFileRow}" var="ImportFileRow" id="tabImportFileRow" cellspacing="1" border="1" cellPadding="1"> 
+                    
+                    <apex:column >
+                        <apex:facet name="header">Wish Port Date</apex:facet>
+                        <apex:outputText value="{0}">
+                        	<apex:param value="{!ImportFileRow.PortingDate}"/>
+                        </apex:outputText>
+                    </apex:column>    
+					
+                   <apex:column >
+                        <apex:facet name="header">Primary Number</apex:facet>
+                        <apex:outputText value="{0}">
+                        	<apex:param value="{!ImportFileRow.PrimaryNumber}"/>
+                        </apex:outputText>
+                    </apex:column>    
+                    			
+                    
+                   <apex:column >
+                        <apex:facet name="header">Telecom Operator</apex:facet>
+                        <apex:outputText value="{!ImportFileRow.Operator}"/>
+                    </apex:column>      
+                     
+					 
+                    <apex:column >
+                        <apex:facet name="header">Telephone Number</apex:facet>
+                        <apex:outputText value="{0}">
+                        	<apex:param value="{!ImportFileRow.PhoneNumber}"/>
+                        </apex:outputText>
+                    </apex:column>    
+
+
+                   <apex:column >
+                        <apex:facet name="header">First Phone Number</apex:facet>
+                        <apex:outputText value="{!ImportFileRow.FirstPhoneNumber}"/>
+                    </apex:column>    
+                    
+					<apex:column >
+                        <apex:facet name="header">Last Phone Number</apex:facet>
+                        <apex:outputText value="{0}">
+                        	<apex:param value="{!ImportFileRow.LastPhoneNumber}"/>
+                        </apex:outputText>
+                    </apex:column>                                                                 
+    			</apex:dataTable>    			
+    			
+    		</apex:pageBlockSection>
+			
+			
+			<apex:pageBlockSection title="Upload Porting Numbers" columns="2" collapsible="false">
+    			<apex:pageBlockSectionItem >
+    				<apex:inputFile id="fileToUpload" value="{!fileBody}" filename="{!fileName}" style="width:75%"/>
+    			</apex:pageBlockSectionItem>
+    			
+    			<apex:pageBlockSectionItem >
+	    			<label for="InsertHeader">Insert Header Row</label>
+	    			<apex:inputCheckbox id="InsertHeader" value="{!InsertHeaderRow}" onchange="updatetableImport()"/>
+    			</apex:pageBlockSectionItem>
+    		</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

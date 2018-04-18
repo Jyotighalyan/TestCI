@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Add</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>DisplayUrl</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ExternalDataSourceId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ExternalId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Family</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>IsActive</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ProductCode</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Family</controllingField>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Adsl Netgear Router</fullName>
+                    <default>false</default>
+                    <label>Adsl Netgear Router</label>
+                </value>
+                <value>
+                    <fullName>Arqiva WiFi</fullName>
+                    <default>false</default>
+                    <label>Arqiva WiFi</label>
+                </value>
+                <value>
+                    <fullName>Broadband</fullName>
+                    <default>false</default>
+                    <label>Broadband</label>
+                </value>
+                <value>
+                    <fullName>Broadband &amp; Phone</fullName>
+                    <default>false</default>
+                    <label>Broadband &amp; Phone</label>
+                </value>
+                <value>
+                    <fullName>Broadband + BEL</fullName>
+                    <default>false</default>
+                    <label>Broadband + BEL</label>
+                </value>
+                <value>
+                    <fullName>Broadband Extra</fullName>
+                    <default>false</default>
+                    <label>Broadband Extra</label>
+                </value>
+                <value>
+                    <fullName>Broadband Power</fullName>
+                    <default>false</default>
+                    <label>Broadband Power</label>
+                </value>
+                <value>
+                    <fullName>Bt Bes</fullName>
+                    <default>false</default>
+                    <label>Bt Bes</label>
+                </value>
+                <value>
+                    <fullName>Bt Megast Enet Novation</fullName>
+                    <default>false</default>
+                    <label>Bt Megast Enet Novation</label>
+                </value>
+                <value>
+                    <fullName>Bt Megastream Ethernet</fullName>
+                    <default>false</default>
+                    <label>Bt Megastream Ethernet</label>
+                </value>
+                <value>
+                    <fullName>Bt Pc Novation</fullName>
+                    <default>false</default>
+                    <label>Bt Pc Novation</label>
+                </value>
+                <value>
+                    <fullName>Bt Wees</fullName>
+                    <default>false</default>
+                    <label>Bt Wees</label>
+                </value>
+                <value>
+                    <fullName>Bt Wes</fullName>
+                    <default>false</default>
+                    <label>Bt Wes</label>
+                </value>
+                <value>
+                    <fullName>Cctv</fullName>
+                    <default>false</default>
+                    <label>Cctv</label>
+                </value>
+                <value>
+                    <fullName>Cloud &amp; Data Services</fullName>
+                    <default>false</default>
+                    <label>Cloud &amp; Data Services</label>
+                </value>
+                <value>
+                    <fullName>Connectivity</fullName>
+                    <default>false</default>
+                    <label>Connectivity</label>
+                </value>
+                <value>
+                    <fullName>Connectivity Combinations</fullName>
+                    <default>false</default>
+                    <label>Connectivity Combinations</label>
+                </value>
+                <value>
+                    <fullName>Contact Centre</fullName>
+                    <default>false</default>
+                    <label>Contact Centre</label>
+                </value>
+                <value>
+                    <fullName>Data Centre</fullName>
+                    <default>false</default>
+                    <label>Data Centre</label>
+                </value>
+                <value>
+                    <fullName>Enterprise Connect</fullName>
+                    <default>false</default>
+                    <label>Enterprise Connect</label>
+                </value>
+                <value>
+                    <fullName>Ethernet Extension</fullName>
+                    <default>false</default>
+                    <label>Ethernet Extension</label>
+                </value>
+                <value>
+                    <fullName>Ethernet Extensions+</fullName>
+                    <default>false</default>
+                    <label>Ethernet Extensions+</label>
+                </value>
+                <value>
+                    <fullName>Ethernet Vpn</fullName>
+                    <default>false</default>
+                    <label>Ethernet Vpn</label>
+                </value>
+                <value>
+                    <fullName>Fibre/Duct</fullName>
+                    <default>false</default>
+                    <label>Fibre/Duct</label>
+                </value>
+                <value>
+                    <fullName>Frame Relay</fullName>
+                    <default>false</default>
+                    <label>Frame Relay</label>
+                </value>
+                <value>
+                    <fullName>High Capacity Services</fullName>
+                    <default>false</default>
+                    <label>High Capacity Services</label>
+                </value>
+                <value>
+                    <fullName>Ip Host Connect</fullName>
+                    <default>false</default>
+                    <label>Ip Host Connect</label>
+                </value>
+                <value>
+                    <fullName>Ip Lan Phone</fullName>
+                    <default>false</default>
+                    <label>Ip Lan Phone</label>
+                </value>
+                <value>
+                    <fullName>Ip Multimedia</fullName>
+                    <default>false</default>
+                    <label>Ip Multimedia</label>
+                </value>
+                <value>
+                    <fullName>Ipt</fullName>
+                    <default>false</default>
+                    <label>Ipt</label>
+                </value>
+                <value>
+                    <fullName>Ipvpn</fullName>
+                    <default>false</default>
+                    <label>Ipvpn</label>
+                </value>
+                <value>
+                    <fullName>Lan</fullName>
+                    <default>false</default>
+                    <label>Lan</label>
+                </value>
+                <value>
+                    <fullName>Lan Audit</fullName>
+                    <default>false</default>
+                    <label>Lan Audit</label>
+                </value>
+                <value>
+                    <fullName>Lan Book Ship</fullName>
+                    <default>false</default>
+                    <label>Lan Book Ship</label>
+                </value>
+                <value>
+                    <fullName>Lan Maintenance</fullName>
+                    <default>false</default>
+                    <label>Lan Maintenance</label>
+                </value>
+                <value>
+                    <fullName>Lan Services</fullName>
+                    <default>false</default>
+                    <label>Lan Services</label>
+                </value>
+                <value>
+                    <fullName>Lan Uc (Prem)</fullName>
+                    <default>false</default>
+                    <label>Lan Uc (Prem)</label>
+                </value>
+                <value>
+                    <fullName>Lan Value Add</fullName>
+                    <default>false</default>
+                    <label>Lan Value Add</label>
+                </value>
+                <value>
+                    <fullName>Leased Lines</fullName>
+                    <default>false</default>
+                    <label>Leased Lines</label>
+                </value>
+                <value>
+                    <fullName>Managed Security Services</fullName>
+                    <default>false</default>
+                    <label>Managed Security Services</label>
+                </value>
+                <value>
+                    <fullName>Metro Ethernet Vpn</fullName>
+                    <default>false</default>
+                    <label>Metro Ethernet Vpn</label>
+                </value>
+                <value>
+                    <fullName>Mia</fullName>
+                    <default>false</default>
+                    <label>Mia</label>
+                </value>
+                <value>
+                    <fullName>Mobile</fullName>
+                    <default>false</default>
+                    <label>Mobile</label>
+                </value>
+                <value>
+                    <fullName>National Ethernet</fullName>
+                    <default>false</default>
+                    <label>National Ethernet</label>
+                </value>
+                <value>
+                    <fullName>Non Standard Cpe</fullName>
+                    <default>false</default>
+                    <label>Non Standard Cpe</label>
+                </value>
+                <value>
+                    <fullName>Non Standard Data</fullName>
+                    <default>false</default>
+                    <label>Non Standard Data</label>
+                </value>
+                <value>
+                    <fullName>Non Standard Internet</fullName>
+                    <default>false</default>
+                    <label>Non Standard Internet</label>
+                </value>
+                <value>
+                    <fullName>Prof Services</fullName>
+                    <default>false</default>
+                    <label>Prof Services</label>
+                </value>
+                <value>
+                    <fullName>Ras</fullName>
+                    <default>false</default>
+                    <label>Ras</label>
+                </value>
+                <value>
+                    <fullName>Retail Voice</fullName>
+                    <default>false</default>
+                    <label>Retail Voice</label>
+                </value>
+                <value>
+                    <fullName>Security</fullName>
+                    <default>false</default>
+                    <label>Security</label>
+                </value>
+                <value>
+                    <fullName>SIP - Partner</fullName>
+                    <default>false</default>
+                    <label>SIP - Partner</label>
+                </value>
+                <value>
+                    <fullName>SMB Bundle</fullName>
+                    <default>false</default>
+                    <label>SMB Bundle</label>
+                </value>
+                <value>
+                    <fullName>Third Party Pc</fullName>
+                    <default>false</default>
+                    <label>Third Party Pc</label>
+                </value>
+                <value>
+                    <fullName>Travel</fullName>
+                    <default>false</default>
+                    <label>Travel</label>
+                </value>
+                <value>
+                    <fullName>VMB Cloud Voice</fullName>
+                    <default>false</default>
+                    <label>VMB Cloud Voice</label>
+                </value>
+                <value>
+                    <fullName>Voice + Pbx</fullName>
+                    <default>false</default>
+                    <label>Voice + Pbx</label>
+                </value>
+                <value>
+                    <fullName>Wholesale Voice</fullName>
+                    <default>false</default>
+                    <label>Wholesale Voice</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <controllingFieldValue>Broadband Solutions</controllingFieldValue>
+                <valueName>Broadband</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Broadband Power</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Bt Bes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Bt Megast Enet Novation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Bt Megastream Ethernet</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Bt Pc Novation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Bt Wees</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Bt Wes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Cctv</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Cloud &amp; Data Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Enterprise Connect</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Ethernet Extension</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Ethernet Extensions+</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Ethernet Vpn</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Fibre/Duct</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Frame Relay</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>High Capacity Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Ip Host Connect</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Ip Multimedia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Ipvpn</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Leased Lines</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Metro Ethernet Vpn</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <controllingFieldValue>Internet</controllingFieldValue>
+                <valueName>Mia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>National Ethernet</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Non Standard Data</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Ras</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Third Party Pc</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data</controllingFieldValue>
+                <valueName>Travel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data &amp; Voice</controllingFieldValue>
+                <valueName>Broadband + BEL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data &amp; Voice</controllingFieldValue>
+                <valueName>Connectivity Combinations</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Data &amp; Voice</controllingFieldValue>
+                <controllingFieldValue>Mobile</controllingFieldValue>
+                <controllingFieldValue>Voice</controllingFieldValue>
+                <valueName>SMB Bundle</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Inbound</controllingFieldValue>
+                <controllingFieldValue>Mobile</controllingFieldValue>
+                <controllingFieldValue>New Voice</controllingFieldValue>
+                <controllingFieldValue>Traditional Voice</controllingFieldValue>
+                <controllingFieldValue>Voice</controllingFieldValue>
+                <valueName>Retail Voice</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Inbound</controllingFieldValue>
+                <controllingFieldValue>Mobile</controllingFieldValue>
+                <controllingFieldValue>New Voice</controllingFieldValue>
+                <controllingFieldValue>Traditional Voice</controllingFieldValue>
+                <controllingFieldValue>Voice</controllingFieldValue>
+                <valueName>Wholesale Voice</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Internet</controllingFieldValue>
+                <valueName>Arqiva WiFi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Internet</controllingFieldValue>
+                <valueName>Managed Security Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Internet</controllingFieldValue>
+                <valueName>Non Standard Internet</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>LAN</controllingFieldValue>
+                <valueName>Lan Audit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>LAN</controllingFieldValue>
+                <valueName>Lan Book Ship</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>LAN</controllingFieldValue>
+                <valueName>Lan Maintenance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>LAN</controllingFieldValue>
+                <valueName>Lan Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>LAN</controllingFieldValue>
+                <valueName>Lan Uc (Prem)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>LAN</controllingFieldValue>
+                <valueName>Lan Value Add</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Voice</controllingFieldValue>
+                <valueName>SIP - Partner</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Voice</controllingFieldValue>
+                <valueName>VMB Cloud Voice</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Partner Product</controllingFieldValue>
+                <valueName>Connectivity</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Partner Product</controllingFieldValue>
+                <valueName>Contact Centre</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Partner Product</controllingFieldValue>
+                <valueName>Data Centre</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Partner Product</controllingFieldValue>
+                <valueName>Ipt</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Partner Product</controllingFieldValue>
+                <valueName>Lan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Partner Product</controllingFieldValue>
+                <valueName>Mobile</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Partner Product</controllingFieldValue>
+                <valueName>Prof Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Partner Product</controllingFieldValue>
+                <valueName>Security</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Partner Product</controllingFieldValue>
+                <valueName>Voice + Pbx</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Broadband Solutions</controllingFieldValue>
+                <valueName>Broadband &amp; Phone</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Broadband Solutions</controllingFieldValue>
+                <valueName>Broadband Extra</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CPE</controllingFieldValue>
+                <valueName>Adsl Netgear Router</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CPE</controllingFieldValue>
+                <valueName>Ip Lan Phone</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CPE</controllingFieldValue>
+                <valueName>Non Standard Cpe</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>QuantityUnitOfMeasure</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StockKeepingUnit</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <listViews>
+        <fullName>AllProducts</fullName>
+        <columns>PRODUCT2.NAME</columns>
+        <columns>PRODUCT2.FAMILY</columns>
+        <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+        <columns>PRODUCT2.DESCRIPTION</columns>
+        <columns>PRODUCT2.CREATED_DATE</columns>
+        <columns>PRODUCT2.LAST_UPDATE</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <columns>PRODUCT2.ACTIVE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Products</label>
+        <language>en_US</language>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>PRODUCT2.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PRODUCT2.DESCRIPTION</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>PRODUCT2.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PRODUCT2.DESCRIPTION</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PRODUCT2.FAMILY</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PRODUCT2.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PRODUCT2.DESCRIPTION</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PRODUCT2.FAMILY</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.DESCRIPTION</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.FAMILY</searchResultsAdditionalFields>
+    </searchLayouts>
+</CustomObject>

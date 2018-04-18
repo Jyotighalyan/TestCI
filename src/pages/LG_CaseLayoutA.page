@@ -1,0 +1,82 @@
+<!--
+** SFOM-536
+** Record types using this layout,
+    * Activate Service
+    * Inflight Configuration
+    * Install
+    * Manage Subscriptions
+    * Number Port
+    * Provision
+-->
+<apex:page standardController="Case" extensions="LG_CaseLytRecordTypeExtension">
+
+<apex:sectionHeader title="{!case.CaseNumber}" />
+    <link rel="stylesheet" href="/apex/sfLigtningOverride" />
+    <apex:includeScript value="/support/console/20.0/integration.js"/>
+    <style>
+        /**
+        *SFOM-1043 - Style added to display Link as button.
+        */
+    .linkbutton{border-radius: 0;
+                margin-left: 3px;
+                font-family: Arial,Helvetica,sans-serif;
+                font-size: .75rem;
+                line-height: 1.875rem;
+                text-decoration: none !important;
+                color: #0070d2;
+                white-space: normal;
+                text-align: center;
+                vertical-align: middle;
+                border: 1px solid #d8dde6;
+                font-weight: 400;
+                background-color: #fff;
+                padding:4px;
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer */
+                -webkit-user-select: none;
+                }
+        .linkbutton:hover, span.linkbutton{background-color: #f4f6f9;}
+        input.btnDisabled{background-color: #f4f6f9 !important;cursor:default !important;}
+    </style>
+    <script type="text/javascript">
+        function testSetTabTitle() {
+            //Set the current tab's title
+            sforce.console.setTabTitle('{!case.CaseNumber}');
+            sforce.console.setCustomConsoleComponentWidth(100);
+        }
+        var pageLoad = window.onload;
+          window.onload = function() {
+                if (pageLoad) {
+                        pageLoad();
+                }
+                testSetTabTitle();
+          }
+    </script>
+    <apex:form >
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock >
+            <!--<chatter:feedWithFollowers entityId="{!case.Id}"/>
+            <br /> -->
+            <apex:pageBlockSection columns="1" title="Case Detail" collapsible="false">
+             <apex:outputField value="{!case.Subject}"/>
+             <apex:pageBlockSectionItem >
+                <apex:outputLabel >Owner</apex:outputLabel>
+                <apex:outputPanel >
+                <apex:outputField value="{!case.OwnerId}"/>&nbsp;&nbsp;
+                <apex:outputLink value="{!'/'+case.id+'/a'}" rendered="{!!CaseClosed}">[Change Owner]</apex:outputLink>
+                </apex:outputPanel>
+             </apex:pageBlockSectionItem> 
+             <apex:inputField value="{!case.Reason}" rendered="{!!CaseClosed && ! NoCaseReason}"/>
+             <apex:outputField value="{!case.Reason}" rendered="{!CaseClosed && ! NoCaseReason}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Close" action="{!CloseCase}" disabled="{!CaseClosed}"/>
+                <!--SFOM-936 - Number management popup should open in a new tab-->
+                <!--SFOM-1043 - Command button is replaced with Outputlink to resolve button submit issue(Firefox).-->
+              <!--  <apex:outputLink styleClass="linkbutton" value="{!URLFOR(ManageNumbers, null)}" disabled="{!CaseClosed}">Manage Numbers</apex:outputLink>
+                <apex:commandButton value="Public Listing" action="{!PublicListing}" disabled="{!CaseClosed}" rendered="{!!NoPublicListing}"/>-->
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    <c:LG_CaseRelatedListComponent CaseId="{!case.Id}" rendered="{!caseProvision}"/>
+</apex:page>

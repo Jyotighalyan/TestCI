@@ -1,0 +1,11 @@
+Hi , 
+
+This is a reminder for your appointment scheduled with our Engineer for installation of your product .Please make yourself available at the time of appointment. Below are the details: 
+
+Installation Address: {!LG_ScheduleAppointment__c.LG_AddressName__c}
+
+Date of visit : {!LG_ScheduleAppointment__c.LG_AgreedInstallDate__c}
+
+Time Slot: {!LG_ScheduleAppointment__c.LG_Slot__c}
+
+Thanks.

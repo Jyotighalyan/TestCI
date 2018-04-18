@@ -1,0 +1,104 @@
+<apex:page showHeader="true" sidebar="true" standardController="InvoiceItem__x" extensions="KenanInvoiceSearchController" title="{!$Label.KenanInvoiceSearchPageTitle}">
+    <apex:stylesheet value="{!URLFOR($Resource.kenanInvoice, 'css/main.css')}"/>
+    <apex:form >
+    
+        <apex:actionStatus id="loading" onstart="loading(true)" onstop="loading(false)" />
+
+        <apex:sectionHeader title="{!$Label.KenanInvoiceSearchPageTitle}" subtitle="{!$Label.KenanInvoiceSearchPageSubtitle}" />
+        
+        <apex:pageBlock >
+            <apex:pageMessages id="msgs"/>
+
+            <apex:PageBlockButtons >
+                <apex:commandButton action="{!searchInvoices}" value="{!$Label.KenanInvoiceSearchPageSearchButton}" styleClass="action-button" rerender="searchResults, msgs" status="loading" />
+                <apex:commandButton action="{!clearOptions}" immediate="true" value="{!$Label.KenanInvoiceSearchPageClearButton}" styleClass="action-button" rerender="searchResults,searchOptions,msgs" /> 
+            </apex:PageBlockButtons>
+            <apex:outputPanel id="searchOptions" layout="block">
+                <apex:pageBlockSection title="{!$Label.KenanInvoiceSearchPageSearchOptionsTitle}" collapsible="false" columns="2">
+                    <apex:repeat value="{!$ObjectType.InvoiceItem__x.FieldSets.kenan_invoice_search}" var="f">
+                        <apex:inputField value="{!SearchParams[f]}" rendered="{!f.fieldPath !='typeCode__c'}" required="{!OR(f.required, f.dbrequired)}"/>
+                        <apex:selectList value="{!SearchParams[f]}" rendered="{!f.fieldPath =='typeCode__c'}" multiselect="false" size="1" required="{!OR(f.required, f.dbrequired)}">
+                            <apex:selectOptions value="{!typeCodes}"/>
+                        </apex:selectList>
+                        
+                    </apex:repeat>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+
+            <apex:outputPanel id="searchResults" layout="block">
+                <apex:pageBlockSection title="{!$Label.KenanInvoiceSearchPageSearchResultsTitle}" collapsible="false" columns="1">
+                    <apex:outputPanel rendered="{!invoiceSearchResults.size == 0}" layout="block" styleClass="no-results-message">
+                        <div id="no-results">{!$Label.KenanInvoiceSearchPageNoInvoiceResultsMessage}</div>
+                        <div id="no-waiting-results">
+                            {!$Label.KenanInvoiceSearchPageRetrievingResultsText}
+                        </div>
+                    </apex:outputPanel> 
+                    <apex:outputPanel rendered="{!invoiceSearchResults.size != 0}">
+                        <div id="results-list">
+                            <apex:pageBlockTable value="{!invoiceSearchResults}" var="invoiceSearchResult">
+                                <apex:column headerValue="Action" headerClass="align-center action-column" styleClass="align-center">
+                                    <apex:commandLink action="{!viewInvoice}" value="{!$Label.KenanInvoiceSearchViewLabel}" reRender="msgs">
+                                        <apex:param name="billRefNo" assignTo="{!billRefNo}" value="{!invoiceSearchResult.billRefNo__c}"/>
+                                        <apex:param name="billRefResets" assignTo="{!billRefResets}" value="{!invoiceSearchResult.billRefResets__c}"/>
+                                    </apex:commandLink>
+                                </apex:column>
+                                <apex:repeat var="f" value="{!$ObjectType.InvoiceItem__x.FieldSets.KenanInvoiceSearchResults}">
+                                    <apex:column headerValue="{!f.Label}">
+                                        <apex:outputField value="{!invoiceSearchResult[f.fieldPath]}"/>
+                                    </apex:column>
+                                </apex:repeat>
+                            </apex:pageBlockTable>
+                        </div>
+                        <div id="have-waiting-results">
+                            {!$Label.KenanInvoiceSearchPageRetrievingResultsText}
+                        </div>
+                    </apex:outputPanel>
+                    
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+
+    <script type="text/javascript">
+        function loading(val) {
+            var noResultsWaiting = document.getElementById('no-waiting-results');
+            var haveResultsWaiting = document.getElementById('have-waiting-results');
+            var noResults = document.getElementById('no-results');
+            var resultsList = document.getElementById('results-list');
+            
+            if (val) {
+                if (noResultsWaiting) {
+                    noResultsWaiting.style.display = 'block';
+                }
+
+                if (haveResultsWaiting) {
+                    haveResultsWaiting.style.display = 'block';
+                }
+
+                if (noResults) {
+                    noResults.style.display = 'none';
+                }
+
+                if (resultsList) {
+                    resultsList.style.display = 'none';
+                }
+            } else {
+                if (noResultsWaiting) {
+                    noResultsWaiting.style.display = 'none';
+                }
+
+                if (haveResultsWaiting) {
+                    haveResultsWaiting.style.display = 'none';
+                }
+
+                if (noResults) {
+                    noResults.style.display = 'block';
+                }
+
+                if (resultsList) {
+                    resultsList.style.display = 'block';
+                }
+            }
+        }
+    </script>
+</apex:page>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Adjustment approval request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CSCAP__FormalApprovalEmailLetterHead</letterhead>
+    <name>Adjustment approval</name>
+    <style>formalLetter</style>
+    <subject>Please approve this Adjustment</subject>
+    <textOnly>For adjustment {!Kenan_Adjustment__c.Name} an approval is requested
+Type of request: {!Kenan_Adjustment__c.Adjustment_Type__c}
+Status of request: {!Kenan_Adjustment__c.requestStatus__c}
+created by: {!Kenan_Adjustment__c.CreatedBy}
+Created date: {!Kenan_Adjustment__c.CreatedDate}
+
+{!Kenan_Adjustment__c.Adjustment_Reason__c}
+
+Account: {!Kenan_Adjustment__c.accountExternalId__c}
+
+Invoice information
+{!Kenan_Adjustment__c.billRefNo__c}
+{!Kenan_Adjustment__c.Invoice_Header__c} {!Kenan_Adjustment__c.Invoice_HeaderId__c}
+{!Kenan_Adjustment__c.Invoice_Item__c}
+{!Kenan_Adjustment__c.currencyCode__c}{!Kenan_Adjustment__c.Total_Amount__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,23 @@
+<!-- This page is used to edit the User's Outgoing Email Settings. -->
+<apex:page standardController="User" extensions="LG_UserOutgoingEmailSettingsExtension" >
+  <apex:form id="userOutgoingEmailSettingsForm">
+  <apex:pageBlock mode="detail" id="userOutgoingEmailSettingsBlock">
+      <apex:pageBlockButtons location="top">      
+          <apex:commandButton rendered="{!editing}" action="{!confirm}" value="{!$Label.LG_ConfirmOutgoingEmailSettings}" reRender="userOutgoingEmailSettingsForm"/>
+          <apex:commandButton rendered="{!editing}"  action="{!cancelEditing}" value="{!$Label.LG_CancelOutgoingEmailSettings}" reRender="userOutgoingEmailSettingsBlock"/>
+          <apex:commandButton rendered="{!AND(NOT(editing), canEditRecord)}" action="{!startEditing}" value="{!$Label.LG_EditOutgoingEmailSettings}" reRender="userOutgoingEmailSettingsBlock"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection rendered="{!editing}" columns="2">
+          <apex:inputField label="{!$ObjectType.User.fields.SenderName.Label}" value="{!selectedUser.SenderName}"/>
+          <apex:inputField label="{!$ObjectType.User.fields.SenderEmail.Label}" value="{!selectedUser.SenderEmail}"/>
+      </apex:pageBlockSection>
+      <apex:pageBlockSection rendered="{!NOT(editing)}" columns="2">
+          <apex:outputField label="{!$ObjectType.User.fields.SenderName.Label}" value="{!selectedUser.SenderName}" />
+          <apex:outputField title="Test" label="{!$ObjectType.User.fields.SenderEmail.Label}" id="userOutgoingEmailAddressOutput" value="{!selectedUser.SenderEmail}"/>
+      </apex:pageBlockSection>
+      <apex:facet name="footer">
+          <apex:outputText rendered="{!infoMessage <> null}" value="{!infoMessage}" style="display: block; color: blue; text-align: center;"/>
+      </apex:facet>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

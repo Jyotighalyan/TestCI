@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Holds the variable related to the Termination MACD process.
+Used for calculating the penalty fees, etc.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>LG_AllowedDiscountPercentage__c</fullName>
+        <description>If the Discount on Penalty Fee is more then a set Percentage here, Termination Opportunity will be eligible for the approval process.</description>
+        <externalId>false</externalId>
+        <label>Allowed Discount Percentage</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>LG_MinLeadTime__c</fullName>
+        <description>Holds the minimum lead time for the termination (a user cannot select the termination wish date that is less then today+value in this field).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Holds the minimum lead time for the termination (a user cannot select the termination wish date that is less then today+value in this field).</inlineHelpText>
+        <label>Min Lead Time</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MinimumThreshold__c</fullName>
+        <description>Discount on Penalty Fee should not be less then the Minimum Threshold set here.</description>
+        <externalId>false</externalId>
+        <label>Minimum Threshold</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_NumberOfToleratedDays__c</fullName>
+        <description>Holds the value of tolerated days. Users who have a contract that expires in less then the number of days set on this field, will not be eligible for a penalty fee.</description>
+        <externalId>false</externalId>
+        <label>Number of Tolerated Days</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PenaltyFeeCalculationClass__c</fullName>
+        <description>Holds a name for penalty fee calculation country specific class.
+Used for calculating the penalty fees and creating product configurations and PCRs in the Termination MACD scenario i.e.</description>
+        <externalId>false</externalId>
+        <label>Penalty Fee Calculation Class</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Termination Specific Variables</label>
+    <visibility>Public</visibility>
+</CustomObject>

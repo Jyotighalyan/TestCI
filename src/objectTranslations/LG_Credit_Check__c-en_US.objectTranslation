@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Credit Check</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Credit Checks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application Date --></label>
+        <name>LG_ApplicationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application ID --></label>
+        <name>LG_ApplicationID__c</name>
+        <relationshipLabel><!-- Credit Checks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Case Reason --></label>
+        <name>LG_CaseReason__c</name>
+        <picklistValues>
+            <masterLabel>Company not found and no consent for principal.</masterLabel>
+            <translation><!-- Company not found and no consent for principal. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company not found.</masterLabel>
+            <translation><!-- Company not found. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit check expired with previous mitigation.</masterLabel>
+            <translation><!-- Credit check expired with previous mitigation. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Ltd Company not found and no consent for principal.</masterLabel>
+            <translation><!-- Non Ltd Company not found and no consent for principal. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Ltd Company not found.</masterLabel>
+            <translation><!-- Non Ltd Company not found. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous application was accepted and Total exp.&gt;Credit limit.</masterLabel>
+            <translation><!-- Previous application was accepted and Total exp.&gt;Credit limit. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous application was not accepted.</masterLabel>
+            <translation><!-- Previous application was not accepted. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect or Customer appeals mitigation.</masterLabel>
+            <translation><!-- Prospect or Customer appeals mitigation. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Consent Given --></label>
+        <name>LG_ConsentGivenAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consent Given --></label>
+        <name>LG_ConsentGivenContact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>LG_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Execution Date --></label>
+        <name>LG_CreditCheck_ExecutionDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Check Status --></label>
+        <name>LG_CreditCheck_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not completed</masterLabel>
+            <translation><!-- Not completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referred</masterLabel>
+            <translation><!-- Referred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Started</masterLabel>
+            <translation><!-- Started --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Credit Limit --></label>
+        <name>LG_Credit_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Decision --></label>
+        <name>LG_Decision__c</name>
+        <picklistValues>
+            <masterLabel>Accept</masterLabel>
+            <translation><!-- Accept --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Decline</masterLabel>
+            <translation><!-- Decline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitigation</masterLabel>
+            <translation><!-- Mitigation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refer</masterLabel>
+            <translation><!-- Refer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Equifax Company Addressline1 --></label>
+        <name>LG_EquifaxCompanyAddressline1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Equifax Company Addressline2 --></label>
+        <name>LG_EquifaxCompanyAddressline2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Equifax Company Addressline3 --></label>
+        <name>LG_EquifaxCompanyAddressline3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Equifax Company Addressline4 --></label>
+        <name>LG_EquifaxCompanyAddressline4__c</name>
+    </fields>
+    <fields>
+        <label><!-- EquifaxOrganisationType --></label>
+        <name>LG_EquifaxOrganisationType__c</name>
+        <picklistValues>
+            <masterLabel>Business Partnership</masterLabel>
+            <translation><!-- Business Partnership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charity</masterLabel>
+            <translation><!-- Charity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Co-operative</masterLabel>
+            <translation><!-- Co-operative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Community Interest Company</masterLabel>
+            <translation><!-- Community Interest Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Ltd by Guarantee</masterLabel>
+            <translation><!-- Company Ltd by Guarantee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Ltd by Shares</masterLabel>
+            <translation><!-- Company Ltd by Shares --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Limited</masterLabel>
+            <translation><!-- Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Limited Liability Partnership</masterLabel>
+            <translation><!-- Limited Liability Partnership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Limited Partnership</masterLabel>
+            <translation><!-- Limited Partnership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non UK entity</masterLabel>
+            <translation><!-- Non UK entity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Sector</masterLabel>
+            <translation><!-- Public Sector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Religious Organisation</masterLabel>
+            <translation><!-- Religious Organisation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sole Trader</masterLabel>
+            <translation><!-- Sole Trader --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unincorporated Association</masterLabel>
+            <translation><!-- Unincorporated Association --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Equifax Organisation ID --></label>
+        <name>LG_Equifax_Organisation_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>LG_Opportunity__c</name>
+        <relationshipLabel><!-- Credit Checks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payment Type --></label>
+        <name>LG_Payment_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Exposure --></label>
+        <name>LG_Total_Exposure_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiry Date --></label>
+        <name>LG_applicationExpiryDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consumer Bureau --></label>
+        <name>LG_bureauType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Amount --></label>
+        <name>LG_businessTermValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Check Application Reference --></label>
+        <name>LG_creditApplicationReference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Check Decision Reason --></label>
+        <name>LG_decisionReasons__c</name>
+    </fields>
+    <fields>
+        <label><!-- decision Code --></label>
+        <name>LG_decision_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- postcode --></label>
+        <name>LG_postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- principalIdentifier --></label>
+        <name>LG_principalIdentifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- underwrittersNotes --></label>
+        <name>LG_underwrittersNotes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Duration --></label>
+        <name>Lg_businessTerm__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,13 @@
+Dear {!Approval_Requesting_User.Name},
+
+
+The requested approval is Approved
+
+With the following comments: {!ApprovalRequest.Comments}
+
+Link to opportunity: {!Opportunity.Link}
+
+
+Regards,
+
+{!ApprovalRequest.Process_Approver}

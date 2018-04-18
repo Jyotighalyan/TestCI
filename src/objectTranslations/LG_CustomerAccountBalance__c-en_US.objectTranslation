@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Customer Account Balance</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Account Balances</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>LG_Account__c</name>
+        <relationshipLabel><!-- Customer Account Balances --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>LG_DebitStatus__c</name>
+        <picklistValues>
+            <masterLabel>Clearing Debts</masterLabel>
+            <translation><!-- Clearing Debts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debt information COMET updated</masterLabel>
+            <translation><!-- Debt information COMET updated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debts cleared</masterLabel>
+            <translation><!-- Debts cleared --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debts found</masterLabel>
+            <translation><!-- Debts found --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debts not cleared</masterLabel>
+            <translation><!-- Debts not cleared --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mismatch found</masterLabel>
+            <translation><!-- Mismatch found --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Querying Debts</masterLabel>
+            <translation><!-- Querying Debts --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>LG_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>LG_Opportunity__c</name>
+        <relationshipLabel><!-- Customer Account Balances --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Total Current Billing Charges --></label>
+        <name>LG_TotalCurrentBillingCharges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Debt Balance --></label>
+        <name>LG_TotalDebtBalance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Deposit Amount --></label>
+        <name>LG_TotalDepositAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Payable Debt --></label>
+        <name>LG_TotalPayableDebt__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

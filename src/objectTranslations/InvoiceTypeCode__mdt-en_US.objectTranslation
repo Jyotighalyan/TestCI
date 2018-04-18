@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>InvoiceTypeCode</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>InvoiceTypeCodes</value>
+    </caseValues>
+    <fields>
+        <label><!-- LanguageCode --></label>
+        <name>LanguageCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- TypeCodeId --></label>
+        <name>TypeCodeId__c</name>
+    </fields>
+    <layouts>
+        <layout>InvoiceTypeCode Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

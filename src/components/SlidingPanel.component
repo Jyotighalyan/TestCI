@@ -1,0 +1,243 @@
+<apex:component controller="BasketEditorController">
+
+    <style type="text/css">
+        .slidingPanel {
+            height: 700px;
+            position: fixed;
+            /*overflow-x: scroll;*/
+            top: 25%;
+            right: -800px;
+            width: 840px;
+            z-index:200;
+            overflow-x:hidden;
+            overflow-y:auto;
+            max-height:70%;
+        }
+        .slidingPanel > .slidingHandle {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            margin-top: 0px;
+        }
+        .slidingPanel > .slidingContainer {
+            width: 800px;
+            /*height: 700px;*/
+            padding: 0px;
+            position: absolute;
+            left: 40px;
+        }
+
+        .slidingPanel > .slidingContainer > .tableContainer {
+            padding: 10px;
+        }
+        .transition-right {
+            transition: right 1s ease-out;
+            webkit-transition: right 1s ease-out;
+        }
+
+        #tabsContainer {
+            height: 40px;
+            overflow: hidden;
+            position: absolute;
+            left: 40px;
+            z-index:200;
+        }
+
+        #tabsContainer button {
+            margin-left: 0px;
+            margin-right: 0px;
+            float: left;
+            border-radius: 0px;
+        }
+
+        #tabsContainer button:last-child {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .tableContainer {
+            margin-top:40px;
+            margin-bottom:20px;
+            max-height: 660px;
+            overflow:auto;
+        }
+
+    </style>
+    <div class="bootstrap-iso">
+        <div class="slidingPanel transition-right" style="display: none;z-index:300;height:40px;">
+            <div class="slidingHandle btn btn-primary"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></div>
+            <div id="tabsContainer">
+                <button id="btn-feature" class="btn btn-primary" onClick="showOnlyThisContainer($('#featureTableContainer'))">Features</button>
+                <button id="btn-addon" class="btn btn-primary" onClick="showOnlyThisContainer($('#addOnTableContainer'))">Erweiterungen</button>
+                <button id="btn-ratecard" class="btn btn-primary" onClick="showOnlyThisContainer($('#rateCardTableContainer'))">RateCard</button>
+            </div>
+        </div>
+        <div class="slidingPanel transition-right" style="display: none">
+            <div class="slidingContainer bg-success">
+                <div id="featureTableContainer" class="tableContainer" style="font-size: 0.6em;">
+                    <c:FeatureWidget />
+                </div>
+                <div id="addOnTableContainer" class="tableContainer" style="font-size: 0.6em; display: none;">
+                    <c:AddOnWidget />
+                </div>
+                <div id="rateCardTableContainer" class="tableContainer" style="font-size: 0.6em; display: none;">
+                    <c:RateCardWidget />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var addOnCategory = '';
+    var featureCategory = '';
+    var rateCardCategory = '';
+    var priceItemAttribute = '';
+    var oldPriceItemValue;
+    var flag = true;
+    var saveNotTriggered = true;
+
+    function loadProductTemplates() {
+        for (key in addOnCategory) {
+            if (key != undefined) {
+                var cat = addOnCategory[key];
+                if (cat.ParentAttribute != undefined && cat.ParentAttribute != '') {
+                    var parentAtt = cat.ParentAttribute.split(' ').join('_') + '_0';
+                    parentAtt = getConfigRef() + parentAtt;
+                    var defId = CS.Service.getAvailableProducts(parentAtt)[0].cscfga__Product_Definition__c;
+                    if (CS.Service.getProductIndex(defId) == undefined) {
+                        CS.Service.loadProduct(defId, function () {
+                            productIndex = CS.Service.getProductIndex(defId);
+                            CS.Service.loadProductTemplateHtml(defId, 'DefaultScreenFlow', function () {
+                              jQuery.extend(CS.screens, CS.DataBinder.prepareScreenTemplates(productIndex));
+                          });
+                        });
+                    }
+                }
+            }
+        }
+    }
+
+    function getConfigRef() {
+        return CS.Service.getCurrentConfigRef() != '' ? CS.Service.getCurrentConfigRef() + ':' : '';
+    }
+
+    function initializeWidgets() {
+        //TB added the next line
+        $('#addon-save').removeAttr('disabled').addClass('btn-save');
+        Visualforce.remoting.Manager.invokeAction(
+            'BasketEditorController.getCategoriesAndPriceItemAttributeName',
+            CS.Service.getCurrentProductId(),
+            function (result, event) {
+                var parsedJSON = JSON.parse(result);
+                addOnCategory = parsedJSON.AddOn;
+                featureCategory = parsedJSON.Feature;
+                rateCardCategory = parsedJSON.RateCard;
+                priceItemAttribute = parsedJSON.PriceItemAttribute;
+                if (priceItemAttribute != '' && priceItemAttribute != undefined) {
+                //priceItemAttribute = getConfigRef() + priceItemAttribute;
+                $('.slidingPanel').show();
+                //TB commented out - loadWidgetData();
+                CS.binding.getBindings(getConfigRef() + priceItemAttribute + '_0')[0].dataBinder.on('afterupdate', function() {
+                    if (CS.getAttributeValue(getConfigRef() + priceItemAttribute + '_0') != oldPriceItemValue) {
+                        //TB commented out - loadWidgetData();
+                        oldPriceItemValue = CS.getAttributeValue(getConfigRef() + priceItemAttribute + '_0');
+                    }
+                });
+            }
+            loadProductTemplates();
+            jQuery('.slidingHandle').on('click', function() {
+                //TB added the next line
+                $('#addon-save').removeAttr('disabled').addClass('btn-save');
+                if (jQuery('.slidingPanel').css('right') != "0px")
+                {
+                    //TB always re-set addon widget data.
+                    loadWidgetData();    
+                }
+                toggleWidget();    
+            });
+        },
+        {escape: false}
+        );
+    }
+
+    function loadWidgetData() {
+        if(typeof Widget != 'undefined') {
+            if(typeof Widget.Feature != 'undefined') {
+                Widget.Feature.getInput();
+            }
+            if(typeof Widget.AddOn != 'undefined') {
+                Widget.AddOn.getInput();
+            }
+            if(typeof Widget.RateCard != 'undefined') {
+                Widget.RateCard.getInput();
+            }
+        }
+    }
+
+    function disableAddOnCheckboxIfIncluded() {
+        var vals = Widget.AddOn.preSelected;
+        $('table.table-addon tbody input[type=checkbox]').filter(function() {
+            return vals.indexOf($(this).val()) >= 0;
+        }).attr('disabled','disabled').attr('checked','checked');
+    }
+
+    function saveBtnToggle() {
+        if($('table.table-addon tbody input[type=checkbox]').is(':checked')) {
+            $('#addon-save').removeAttr('disabled').addClass('btn-save');
+        } else {
+            $('#addon-save').attr('disabled', true).removeClass('btn-save');
+        }
+    }
+
+    function enableSaveIfStateChange() {
+        $(this).change(function() {
+            $('#addon-save').removeAttr('disabled').addClass('btn-save');
+        });
+    }
+
+    function toggleWidget() {
+        // removes buttons from DOM if Widget Feature/AddOn/RateCard is empty
+        (typeof Widget.Feature === 'undefinded' || !Widget.Feature.hasOwnProperty('receivedJSONs')) ? $('#btn-feature').remove() : $('#btn-feature').addClass('in-use');
+        (typeof Widget.AddOn === 'undefinded' || !Widget.AddOn.hasOwnProperty('receivedJSONs')) ? $('#btn-addon').remove() : $('#btn-addon').addClass('in-use');
+        (typeof Widget.RateCard === 'undefinded' || !Widget.RateCard.hasOwnProperty('receivedJSONs')) ? $('#btn-ratecard').remove() : $('#btn-ratecard').addClass('in-use');
+
+        // show container for full table containers
+        if(!Widget.Feature.hasOwnProperty('receivedJSONs') && (Widget.AddOn.hasOwnProperty('receivedJSONs') || Widget.RateCard.hasOwnProperty('receivedJSONs'))) {
+            if(Widget.AddOn.hasOwnProperty('receivedJSONs')) {
+                showOnlyThisContainer($('#addOnTableContainer'));
+            } else if (Widget.RateCard.hasOwnProperty('receivedJSONs')) {
+                showOnlyThisContainer($('#rateCardTableContainer'));
+            }
+        }
+
+        var w = jQuery('.slidingPanel>.slidingContainer').outerWidth();
+        if (flag) {
+            jQuery('.slidingPanel').css('right', 0);
+        }
+        else {
+            jQuery('.slidingPanel').css('right', -w);
+        }
+        flag = !flag;
+
+        disableAddOnCheckboxIfIncluded();
+        //saveBtnToggle();       
+
+        if(saveNotTriggered) {
+            Widget.AddOn.saveData();
+            saveNotTriggered = false;
+        }
+    }
+
+    function showOnlyThisContainer(ContainerId) {
+        $('.tableContainer').hide();
+        $(ContainerId).show();
+    }
+
+    $('.btn-select-addon').click(function() {
+        $(this).attr('aria-expanded') == "false" ? $(this).css('background-color','#f6f6f6').css('color','#002c77') : $(this).css('background-color', '#002c77').css('color','#f6f6f6');
+    });
+
+    </script>
+</apex:component>

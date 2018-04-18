@@ -1,0 +1,28 @@
+<apex:page standardController="Case" extensions="UM_ManageLogisticsExtension" >
+    <apex:includeScript value="/soap/ajax/30.0/connection.js"/>
+    <apex:includeScript value="/support/console/30.0/integration.js"/>
+    <link rel="stylesheet" href="/apex/sfLigtningOverride" />
+   <apex:form >
+    <apex:pageBlock >
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlockSection title="{!$Label.LG_SuborderDetails}" rendered="{!!Edit}">
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" />
+            <apex:outputfield value="{!Solution.csord__Order__c}" />
+            <apex:outputField value="{!Solution.LG_Address__r.LG_TechnicalContact__r.Name}" label="{!$Label.LG_Technical_Contact}"/>
+            <apex:outputField value="{!Solution.LG_Address__r.LG_FullAddressDetails__c}" label="{!$Label.LG_Site}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="{!$Label.LG_ServiceDetails}" columns="1" >
+            <apex:pageBlockTable value="{!ProvisioningDetails}"  var="provObj">
+               <apex:column headerValue="{!$Label.LG_Services}">
+                    <apex:outputText >
+                        <apex:outputLink value="{!URLFOR($Action.csord__Service__c.View, provObj.service.Id)}" >{!provObj.service.name}</apex:outputLink>
+                        <apex:outputText >{!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                    </apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Logistics Reference" Value="{!provObj.service.UM_LogisticsReference__c}" />
+                <apex:column headerValue="ESN" value="{!provObj.service.UM_ESN__c}"/>
+        </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

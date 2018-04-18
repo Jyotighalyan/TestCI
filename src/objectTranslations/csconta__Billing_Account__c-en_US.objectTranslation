@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- ADDTT URL --></label>
+        <name>ADDTTURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Balance --></label>
+        <name>Account_Balance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Accounts --></label>
+        <name>Billing_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Contact First Name --></label>
+        <name>Billing_Contact_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Contact Last Name --></label>
+        <name>Billing_Contact_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Contact --></label>
+        <name>Billing_Contact__c</name>
+        <relationshipLabel><!-- Billing Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cable master ID --></label>
+        <name>Cable_master_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conga_AccountID --></label>
+        <name>Conga_AccountID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name Extension --></label>
+        <name>Conga_AccountNameExtension__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Conga_AccountName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conga_salutation --></label>
+        <name>Conga_salutation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Encrypted ID --></label>
+        <name>EncryptedID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full address --></label>
+        <name>Full_address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Infonova ID --></label>
+        <name>Infonova__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Account Holder --></label>
+        <name>LG_BankAccountHolder__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Account Number (IBAN) --></label>
+        <name>LG_BankAccountNumberIBAN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Account Identifier --></label>
+        <name>LG_BillingAccountIdentifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Account Name --></label>
+        <name>LG_BillingAccountName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Account Number --></label>
+        <name>LG_BillingAccountNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>LG_BillingContact__c</name>
+        <relationshipLabel><!-- Billing Account --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billing Email Address --></label>
+        <name>LG_BillingEmailAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Contact FirstName --></label>
+        <name>LG_Billing_Contact_FirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Contact LastName --></label>
+        <name>LG_Billing_Contact_LastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Contact --></label>
+        <name>LG_Billing_Contact__c</name>
+        <relationshipLabel><!-- Billing Accounts (Billing Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contractual Organization --></label>
+        <name>LG_ContractualOrganization__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Reference --></label>
+        <name>LG_CustomerReference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default --></label>
+        <name>LG_Default__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Method --></label>
+        <name>LG_DeliveryMethod__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post</masterLabel>
+            <translation><!-- Post --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Direct Debit Mandate --></label>
+        <name>LG_DirectDebitMandate__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>LG_ExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- External System --></label>
+        <name>LG_ExternalSystem__c</name>
+        <picklistValues>
+            <masterLabel>ICOMS</masterLabel>
+            <translation><!-- ICOMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kenan</masterLabel>
+            <translation><!-- Kenan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RBM</masterLabel>
+            <translation><!-- RBM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>LG_FirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- House Number Extension --></label>
+        <name>LG_HouseNumberExtension__c</name>
+    </fields>
+    <fields>
+        <label><!-- House Number --></label>
+        <name>LG_HouseNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- mark if an account is in debt or not --></help>
+        <label><!-- In Collections --></label>
+        <name>LG_In_Collections__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>LG_LastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Logical Billing Account --></label>
+        <name>LG_LogicalBillingAccount__c</name>
+        <relationshipLabel><!-- Billing Accounts (Logical Billing Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Mandate End Date --></label>
+        <name>LG_MandateEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mandate Start Date --></label>
+        <name>LG_MandateStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- MyBill Account Name --></label>
+        <name>LG_MyBillAccount__c</name>
+        <relationshipLabel><!-- Billing Accounts (Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- MyBill Address --></label>
+        <name>LG_MyBillAddress__c</name>
+        <relationshipLabel><!-- Billing Accounts (MyBill Address) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billing System Account Id --></label>
+        <name>LG_MyBillBillingSysAccId__c</name>
+    </fields>
+    <fields>
+        <label><!-- MyBill Billing Contact First Name --></label>
+        <name>LG_MyBillContactFirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- MyBill Billing Contact Last Name --></label>
+        <name>LG_MyBillContactLastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- MyBill Email --></label>
+        <name>LG_MyBillEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- MyBill Exists? --></label>
+        <name>LG_MyBillExists__c</name>
+    </fields>
+    <fields>
+        <label><!-- MyBill Mobile --></label>
+        <name>LG_MyBillMobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- MyBill Phone --></label>
+        <name>LG_MyBillPhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- MyBill Customer Id --></label>
+        <name>LG_MyBill_Customer_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Override Billing Contact --></label>
+        <name>LG_Override_Billing_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Paper DD Mandate --></label>
+        <name>LG_PaperDDMandate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Type --></label>
+        <name>LG_PaymentType__c</name>
+        <picklistValues>
+            <masterLabel>Direct Debit</masterLabel>
+            <translation><!-- Direct Debit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self-payer</masterLabel>
+            <translation><!-- Self-payer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Previous Master Account --></label>
+        <name>LG_PreviousMasterAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing State --></label>
+        <name>LG_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>LG_Type__c</name>
+        <picklistValues>
+            <masterLabel>ICOMS</masterLabel>
+            <translation><!-- ICOMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation><!-- Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RBM</masterLabel>
+            <translation><!-- RBM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mandate reference number --></label>
+        <name>Mandate_reference_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Billing Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payment Method --></label>
+        <name>PaymentMethods__c</name>
+        <picklistValues>
+            <masterLabel>BACS</masterLabel>
+            <translation><!-- BACS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHAPS</masterLabel>
+            <translation><!-- CHAPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Debit</masterLabel>
+            <translation><!-- Direct Debit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Giro</masterLabel>
+            <translation><!-- Giro --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This choice triggers an email with the request as chosen to the back-office to process in Kenan --></help>
+        <label><!-- Collection request --></label>
+        <name>Picklist_request__c</name>
+        <picklistValues>
+            <masterLabel>Collection freeze</masterLabel>
+            <translation><!-- Collection freeze --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Collection re-continue</masterLabel>
+            <translation><!-- Collection re-continue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- BIC code --></label>
+        <name>UM_BankAccountNumberBic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Account Type --></label>
+        <name>UM_BankAccountType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Name --></label>
+        <name>UM_BankName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill Format Option --></label>
+        <name>UM_BillFormatOptions__c</name>
+        <picklistValues>
+            <masterLabel>Summary</masterLabel>
+            <translation><!-- Summary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>With itemized bill - full unmasked numbers</masterLabel>
+            <translation><!-- With itemized bill - full unmasked numbers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>With itemized bill - masked last 3 digits</masterLabel>
+            <translation><!-- With itemized bill - masked last 3 digits --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Billing Account withPaymentInfo --></label>
+        <name>UM_Billing_Account_withPaymentInfo__c</name>
+    </fields>
+    <fields>
+        <label><!-- State/Province --></label>
+        <name>UM_Billing_State_Province__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Hold Reason --></label>
+        <name>UM_Collection_Hold_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Charge in invoice unclear</masterLabel>
+            <translation><!-- Charge in invoice unclear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer contact required</masterLabel>
+            <translation><!-- Customer contact required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer has paid to incorect account</masterLabel>
+            <translation><!-- Customer has paid to incorect account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer rejects the correctness of the invoice</masterLabel>
+            <translation><!-- Customer rejects the correctness of the invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freeze request for any other reason</masterLabel>
+            <translation><!-- Freeze request for any other reason --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In contract negotiations</masterLabel>
+            <translation><!-- In contract negotiations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Letter from laywer or consumer protection received</masterLabel>
+            <translation><!-- Letter from laywer or consumer protection received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment term in invoice different than what was agreed</masterLabel>
+            <translation><!-- Payment term in invoice different than what was agreed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Situation to be decided by Unitymedia&apos;s managing director</masterLabel>
+            <translation><!-- Situation to be decided by Unitymedia&apos;s managing director --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Collection Hold Remaining Days --></label>
+        <name>UM_Collection_Hold_Remaining_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collection Reason Change Date --></label>
+        <name>UM_Collection_Reason_Change_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conga UM Entity --></label>
+        <name>UM_CongaUMEntity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Create Payment Profile in Billing --></label>
+        <name>UM_Create_Payment_Profile_in_Billing__c</name>
+    </fields>
+    <fields>
+        <label><!-- IBAN Validated --></label>
+        <name>UM_IBANValidated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Account Synced --></label>
+        <name>UM_IsAccountSynced__c</name>
+    </fields>
+    <fields>
+        <label><!-- Kenan Sync Message --></label>
+        <name>UM_Kenan_Sync_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Synced with Billing --></label>
+        <name>UM_LastSyncedwithBilling__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mandate reference number --></label>
+        <name>UM_MandateReferenceNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Print TVO Info --></label>
+        <name>UM_Print_TVO_Info__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales ID --></label>
+        <name>UM_SalesId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>csconta__Account__c</name>
+        <relationshipLabel><!-- Billing Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>csconta__Address__c</name>
+        <relationshipLabel><!-- Billing Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billing Channel --></label>
+        <name>csconta__Billing_Channel__c</name>
+        <picklistValues>
+            <masterLabel>E-Mail PDF</masterLabel>
+            <translation><!-- E-Mail PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paper</masterLabel>
+            <translation><!-- Paper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paper + E-Mail PDF</masterLabel>
+            <translation><!-- Paper + E-Mail PDF --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Billing City --></label>
+        <name>csconta__Billing_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Country --></label>
+        <name>csconta__Billing_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Cycle --></label>
+        <name>csconta__Billing_Cycle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Language --></label>
+        <name>csconta__Billing_Language__c</name>
+        <picklistValues>
+            <masterLabel>English</masterLabel>
+            <translation><!-- English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finnish</masterLabel>
+            <translation><!-- Finnish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swedish</masterLabel>
+            <translation><!-- Swedish --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Billing Postcode --></label>
+        <name>csconta__Billing_Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Street --></label>
+        <name>csconta__Billing_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>csconta__City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>csconta__Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Account Number --></label>
+        <name>csconta__Financial_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Format Type --></label>
+        <name>csconta__Format_Type__c</name>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unused --></label>
+        <name>csconta__Order__c</name>
+        <relationshipLabel><!-- Billing Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Override Account Address --></label>
+        <name>csconta__Override_Account_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Billing Account --></label>
+        <name>csconta__Parent_Billing_Account__c</name>
+        <relationshipLabel><!-- Billing Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms --></label>
+        <name>csconta__Payment_Terms__c</name>
+        <picklistValues>
+            <masterLabel>M02 - Test</masterLabel>
+            <translation><!-- M02 - Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M09 - Test</masterLabel>
+            <translation><!-- M09 - Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly 1st - 30 days payment term</masterLabel>
+            <translation><!-- Monthly 1st - 30 days payment term --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Postcode --></label>
+        <name>csconta__Postcode__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is not used --></help>
+        <label><!-- Unused --></label>
+        <name>csconta__Service__c</name>
+        <relationshipLabel><!-- Unused --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>csconta__Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disconnected</masterLabel>
+            <translation><!-- Disconnected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending activation</masterLabel>
+            <translation><!-- Pending activation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending disconnection</masterLabel>
+            <translation><!-- Pending disconnection --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>csconta__Street__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is not used --></help>
+        <label><!-- Unused --></label>
+        <name>csconta__Subscription__c</name>
+        <relationshipLabel><!-- Unused --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Billing Account Layout - Custom</layout>
+        <sections>
+            <label><!-- Billing Address Details --></label>
+            <section>Billing Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Details --></label>
+            <section>Payment Details</section>
+        </sections>
+        <sections>
+            <label><!-- Transaction Overview --></label>
+            <section>Transaction Overview</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Billing Account Layout - Custom</layout>
+        <sections>
+            <label><!-- Billing Address Details --></label>
+            <section>Billing Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Details --></label>
+            <section>Payment Details</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>Account_Holder_Required_for_Direct_Debit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>Account_IBAN_Required_for_Direct_Debit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>BIC_Required_for_Direct_Debit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>Mandate_Ref_Required_For_Direct_Debit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>Mandate_Start_Date_Required_for_DD</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If status is set to “In collection”, reason should be empty --></errorMessage>
+        <name>UM_Collection_Reason_Empty</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If status is set to “hold for collection”, reason is mandatory --></errorMessage>
+        <name>UM_Collection_Reason_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The address lookup must be cleared if &quot;Override Account Address&quot; is unchecked --></errorMessage>
+        <name>csconta__Override_Account_Billing_Address</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Conga_Composer --></label>
+        <name>Conga_Composer</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_SEPA_Mandate --></label>
+        <name>Create_SEPA_Mandate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Billing_Account --></label>
+        <name>New_Billing_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Synchronise_with_Billing --></label>
+        <name>Synchronise_with_Billing</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Validate_IBAN --></label>
+        <name>Validate_IBAN</name>
+    </webLinks>
+</CustomObjectTranslation>

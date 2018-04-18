@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Porting Number</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Porting Numbers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contract Type --></label>
+        <name>LG_ContractType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Name --></label>
+        <name>LG_CustomerName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Number --></label>
+        <name>LG_CustomerNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Directory Listing Name --></label>
+        <name>LG_DirectoryListingName__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Phone Number --></label>
+        <name>LG_FirstPhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Directory --></label>
+        <name>LG_InDirectory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Phone Number --></label>
+        <name>LG_LastPhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operator --></label>
+        <name>LG_Operator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>LG_Opportunity__c</name>
+        <relationshipLabel><!-- Porting Numbers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Phone Number --></label>
+        <name>LG_PhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Porting Date --></label>
+        <name>LG_PortingDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Number --></label>
+        <name>LG_PrimaryNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Configuration --></label>
+        <name>LG_ProductConfiguration__c</name>
+        <relationshipLabel><!-- Porting Numbers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SIM card number --></label>
+        <name>LG_SIMcardnumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tariff --></label>
+        <name>LG_Tariff__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>LG_Type__c</name>
+        <picklistValues>
+            <masterLabel>Mobile Telephony</masterLabel>
+            <translation><!-- Mobile Telephony --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SB Telephony</masterLabel>
+            <translation><!-- SB Telephony --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOHO Telephony</masterLabel>
+            <translation><!-- SOHO Telephony --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- New --></label>
+        <name>LG_New</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Port In --></label>
+        <name>LG_PortIn</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

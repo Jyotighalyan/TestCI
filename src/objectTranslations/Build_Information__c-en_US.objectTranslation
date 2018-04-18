@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Build Information</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Build Information</value>
+    </caseValues>
+    <fields>
+        <label><!-- Build Cause --></label>
+        <name>Build_Cause__c</name>
+    </fields>
+    <fields>
+        <label><!-- Build Id --></label>
+        <name>Build_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Build Url --></label>
+        <name>Build_Url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Log --></label>
+        <name>Change_Log__c</name>
+    </fields>
+    <fields>
+        <label><!-- Git Branch --></label>
+        <name>Git_Branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Git Commit --></label>
+        <name>Git_Commit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Git Link --></label>
+        <name>Git_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Git Url --></label>
+        <name>Git_Url__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Jenkins job --></help>
+        <label><!-- Job Name --></label>
+        <name>Job_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Result --></label>
+        <name>Result__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

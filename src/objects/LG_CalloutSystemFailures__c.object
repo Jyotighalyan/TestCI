@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object will have all the technical failures of services in ESS journey</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>LG_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Callout System Failures</relationshipLabel>
+        <relationshipName>LG_CalloutSystemFailures</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_ErrorCode__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Service Call System Error Code</inlineHelpText>
+        <label>Error Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ErrorDescription__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Service Callout System error code description</inlineHelpText>
+        <label>Error Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_NotificationDateToOpportunityOwner__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Refers to the Date when the Opportunity Owner was Notified</inlineHelpText>
+        <label>Notification Date To Opportunity Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LG_NotifyOwner__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Yes for Notification
+No for No Notification</description>
+        <externalId>false</externalId>
+        <label>Notify Owner</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_OpportunityName__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Opportunity__r.Name</formula>
+        <label>Opportunity Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_OpportunityOwnerEmail__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Opportunity Owner Email</inlineHelpText>
+        <label>Opportunity Owner Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_OpportunityOwner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>LG_CalloutSystemFailures</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_OpportunityStage__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(LG_Opportunity__r.StageName)</formula>
+        <label>Opportunity Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Callout System Failures</relationshipLabel>
+        <relationshipName>LG_CalloutSystemFailures</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_RequestMessage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Refers to the request message of the service call</inlineHelpText>
+        <label>Request Message</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_ResponseMessage__c</fullName>
+        <externalId>false</externalId>
+        <label>Response Message</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_ServiceName__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_TypeOfService__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Refers to identifying the service which has failed</inlineHelpText>
+        <label>Type of Service</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Debt Check</fullName>
+                    <default>false</default>
+                    <label>Debt Check</label>
+                </value>
+                <value>
+                    <fullName>Equifax Company Lookup</fullName>
+                    <default>false</default>
+                    <label>Equifax Company Lookup</label>
+                </value>
+                <value>
+                    <fullName>Equifax Address Lookup</fullName>
+                    <default>false</default>
+                    <label>Equifax Address Lookup</label>
+                </value>
+                <value>
+                    <fullName>DNA Address</fullName>
+                    <default>false</default>
+                    <label>DNA Address</label>
+                </value>
+                <value>
+                    <fullName>Credit Check Result</fullName>
+                    <default>false</default>
+                    <label>Credit Check Result</label>
+                </value>
+                <value>
+                    <fullName>Credit Check Business</fullName>
+                    <default>false</default>
+                    <label>Credit Check Business</label>
+                </value>
+                <value>
+                    <fullName>Payment Direct Debit</fullName>
+                    <default>false</default>
+                    <label>Payment Direct Debit</label>
+                </value>
+                <value>
+                    <fullName>Initiate Card Payment</fullName>
+                    <default>false</default>
+                    <label>Initiate Card Payment</label>
+                </value>
+                <value>
+                    <fullName>Card Payment Result</fullName>
+                    <default>false</default>
+                    <label>Card Payment Result</label>
+                </value>
+                <value>
+                    <fullName>Refund Card Payment</fullName>
+                    <default>false</default>
+                    <label>Refund Card Payment</label>
+                </value>
+                <value>
+                    <fullName>Reverse Card Payment</fullName>
+                    <default>false</default>
+                    <label>Reverse Card Payment</label>
+                </value>
+                <value>
+                    <fullName>Fraud Check</fullName>
+                    <default>false</default>
+                    <label>Fraud Check</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Callout System Failure</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>LG_ServiceName__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LG_TypeOfService__c</columns>
+        <columns>LG_ErrorCode__c</columns>
+        <columns>LG_ErrorDescription__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CFR-{000000000}</displayFormat>
+        <label>Callout Failure Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Callout System Failures</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>LG_Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LG_OpportunityName__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LG_OpportunityOwner__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LG_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LG_ServiceName__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LG_TypeOfService__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LG_ErrorCode__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LG_ErrorDescription__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>NotifyOppOwnerOnlyWhenCompleted</fullName>
+        <active>true</active>
+        <description>Validation to notify user only when Status changes to &apos;Completed&apos;</description>
+        <errorConditionFormula>IF(LG_NotifyOwner__c,IF(!ISPICKVAL(LG_Status__c,&apos;Completed&apos;),true,false),false)</errorConditionFormula>
+        <errorDisplayField>LG_NotifyOwner__c</errorDisplayField>
+        <errorMessage>You cannot notify user without  changing the Status to &apos;Completed&apos;</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

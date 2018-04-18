@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DecompositionSequence</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DecompositionSequences</value>
+    </caseValues>
+    <fields>
+        <label><!-- ChangeType --></label>
+        <name>ChangeType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExecutionSequence --></label>
+        <name>ExecutionSequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- GroupByCriteria --></label>
+        <name>GroupByCriteria__c</name>
+        <picklistValues>
+            <masterLabel>All Together</masterLabel>
+            <translation><!-- All Together --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Child Different from Parent</masterLabel>
+            <translation><!-- Child Different from Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group by Post Code wild character</masterLabel>
+            <translation><!-- Group by Post Code wild character --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group by Site</masterLabel>
+            <translation><!-- Group by Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group by WishDate</masterLabel>
+            <translation><!-- Group by WishDate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group with Depends On</masterLabel>
+            <translation><!-- Group with Depends On --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Grouping</masterLabel>
+            <translation><!-- No Grouping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Override</masterLabel>
+            <translation><!-- Override --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ReGroup with Running Service</masterLabel>
+            <translation><!-- ReGroup with Running Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>groupwithFromLink</masterLabel>
+            <translation><!-- groupwithFromLink --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- GroupKey --></label>
+        <name>GroupKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- OverrideDecompostionCriteria --></label>
+        <name>OverrideDecompostionCriteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- ServiceDecompositionCriteria --></label>
+        <name>ServiceDecompositionCriteria__c</name>
+    </fields>
+    <layouts>
+        <layout>DecompositionSequence Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

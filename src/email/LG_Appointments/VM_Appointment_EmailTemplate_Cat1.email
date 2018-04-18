@@ -1,0 +1,44 @@
+<messaging:emailTemplate subject="Install Date Confirmation" recipientType="Contact" relatedToType="LG_ScheduleAppointment__c">
+<messaging:htmlEmailBody >
+
+<h1><font color="red">Install Date Confirmation</font></h1>
+
+{!relatedTo.LG_solution__r.csord__order__r.csordtelcoa__Opportunity__r.Opportunity_ID__c} {!relatedTo.LG_Solution__r.LG_AccountName__c}
+<br></br>
+Address: {!relatedTo.LG_Address__r.cscrm__Address_Details__c}
+<br></br>
+Hi {!relatedTo.LG_InstallationContact__r.FirstName},
+<br></br><br></br>
+Thanks for your time earlier.  As discussed, I’d like to confirm the next steps for your order.
+<br></br><br></br>
+<b>ORDER DETAILS</b>
+<br></br>
+Information relating to your order can be found in your signed contract. Please take a look at this to double check that the details are correct. If you need to discuss anything, please contact me.
+<br></br>
+<br></br>
+<b>WHAT WE ARE DOING NOW</b>
+<br></br>
+We’ve got some good news! It looks like your building’s already connected to the UK’s most advanced national fibre optic network. So we’re going to send out an engineer to double-check. If they confirm everything’s in place, your service will be installed the same day – currently planned for <apex:outputText value="{0, date, EEEE',' MMM d}">
+    <apex:param value="{!relatedTo.LG_AgreedInstallDate__c}" />
+</apex:outputText>, between 8am and 5pm.
+<br></br><br></br>
+When they arrive, they’ll need to meet you, or someone else you’ve authorised, so they know where to locate the install. We’ll be in touch the day before to confirm the details. But let us know as soon as possible if the day doesn’t suit.
+<br></br><br></br>
+If we can’t complete installation in a single visit because more prep work is needed on site, our engineer will explain and pass the information back so we can create a new plan. We’ll then let you know what that looks like. That doesn’t happen often, but we reckon it’s better to be forewarned. 
+<br></br><br></br>
+Did you know that you can see the latest updates and track your <apex:outputLink value="http://www.virginmediabusiness.co.uk/help/s/trackorder"> order online</apex:outputLink>?  You will need your Order ID, which was supplied to you on your confirmation email, but if you don't have one, just let our team know.
+<br></br><br></br>
+I’ll be in touch again after the survey has taken place to update you on the outcome.  If you have any questions or comments in the meantime, please don't hesitate to contact me – my details are below.  
+<br></br><br></br>
+Thanks for choosing Virgin Media Business. We’re very much looking forward to getting you up and running.
+<br></br><br></br>
+Kind regards,
+<br></br> 
+{!relatedTo.LG_solution__r.csord__order__r.Owner.Name}  | Order Manager | Business Customer Operations (BCO)
+<br></br>
+Virgin Media Business | T: 0333 000 5922
+<br></br>
+T: 0800 052 0800 Option 1     
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

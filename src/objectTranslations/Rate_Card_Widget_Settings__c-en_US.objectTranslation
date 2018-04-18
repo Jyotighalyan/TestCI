@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Rate Card Widget Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Rate Card Widget Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Editable Rate Card Line Fields --></label>
+        <name>Editable_Rate_Card_Line_Fields__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate Card Fields --></label>
+        <name>Rate_Card_Fields__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate Card Line Fields --></label>
+        <name>Rate_Card_Line_Fields__c</name>
+    </fields>
+    <fields>
+        <help><!-- Custom rate card will be saved as JSON attachment --></help>
+        <label><!-- Save as JSON --></label>
+        <name>Save_as_JSON__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

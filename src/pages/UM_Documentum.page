@@ -1,0 +1,21 @@
+<apex:page controller="UM_DocumentumController" sidebar="false" showHeader="false" docType="html-5.0" action="{!fetchInvoivesPDF}" >
+    
+    <style type="text/css">
+        body {
+        overflow:hidden !important;
+        }
+
+    </style>
+    <apex:pageMessages ></apex:pageMessages>    
+    <apex:outputPanel rendered="{! NOT(isError)}">    
+        <iframe id="iframe-pdf" src="data:application/pdf;base64,{!url}" width="100%" />
+        <script>
+            window.setTimeout("setHeight();",1000);
+            function setHeight(){
+                var frame = document.getElementById('iframe-pdf');
+                frame.height = window.screen.availHeight - 100;
+            }
+        </script>
+    </apex:outputPanel>
+    
+</apex:page>

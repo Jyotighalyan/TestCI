@@ -1,0 +1,62 @@
+<!-- This page is created part of QNT-441 to show the status of the prod config save-->
+
+<apex:page sidebar="false" showHeader="false" controller="CloseProductConfigurationController">
+<apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'jquery.min.js')}" />
+<apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, 'sfdcBootstrap.css')}"/>
+<script>
+    $(document).ready(function() {
+        parent.completeSection("{!configID}", 'products',"{!siteID}");
+        //window.parent.location.reload();
+        //window.opener.location.reload(true);
+        //window.parent.document.getElementById('panelBGP').innerHTML = "testData"; 
+        
+    });
+    
+</script>
+
+<style>
+        .displayFormateFailure{
+            width: 100%;
+            font-weight: bold;
+            font-size :15px;
+            color:red;
+            
+        }
+        .displayFormateSuccess{
+            width: 100%;
+            font-weight: bold;
+            font-size :15px;
+            
+            
+        }
+        
+</style>
+
+    <div class="sfdcBootstrap">
+        <div class="container">
+            <div id="msgContainer" class="well">
+                <div class="row">
+                  
+                    <!-- <div class="col-xsn-3">
+                        Journey Completed
+                    </div>  -->
+
+                    <apex:outputPanel rendered="{!completed}">  
+                        <div class ="displayFormateSuccess">    
+                        <img src=" /img/msg_icons/confirm32.png"/>
+                             Completed
+                        </div> 
+                    </apex:outputPanel>
+                    
+                    <apex:outputpanel rendered="{!!completed}">
+                        <div class="displayFormateFailure"> 
+                           <img src="/img/msg_icons/error32.png"/>
+                                Mandatory planning details are not complete. You will not be able to generate the contract pack until all details are completed.     
+                        </div>  
+                    </apex:outputpanel>
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</apex:page>

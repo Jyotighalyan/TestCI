@@ -1,0 +1,71 @@
+<apex:page standardController="Case" extensions="LG_SConsoleContactCustomerExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+    <apex:form id="Form">
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock id="Solutiondetail" mode="{!Mode}">
+            <apex:pageBlockSection id="SolutionSection" title="Solution Details" columns="2" collapsible="false" >
+                <!--<apex:outputField value="{!Solution.csord__Order__r.Name}" rendered="{!CaseType}" /-->
+                <apex:outputText Label="Order Name">
+                    <apex:outputLink value="{!URLFOR($Action.csord__Order__c.View, Solution.csord__Order__r.id)}" >{!Solution.csord__Order__r.Name}</apex:outputLink>
+                </apex:outputText>
+                <apex:outputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!CaseType}"/>
+                <!--<apex:outputField value="{!Solution.Name}" rendered="{!CaseType}"/-->
+                <apex:outputText Label="Sub-Order Name">
+                    <apex:outputLink value="{!URLFOR($Action.csord__Solution__c.View, Solution.id)}" >{!Solution.Name}</apex:outputLink>
+                </apex:outputText>
+                <apex:outputField value="{!Solution.csord__Order__r.csord__Account__r.Name}" rendered="{!CaseType}" />
+                <apex:outputField value="{!Solution.LG_TargetDate__c}" rendered="{!CaseType}"/>
+                <apex:outputField value="{!Solution.LG_Address__r.LG_FullAddressDetails__c}" rendered="{!CaseType}"/>
+                <apex:outputField value="{!Solution.LG_Address__r.LG_TechnicalContact__c}" rendered="{!CaseType}"/>
+                <apex:outputField value="{!Solution.csord__Order__r.csord__Order_Type__c}" rendered="{!CaseType}" />
+                <apex:outputField value="{!Solution.LG_Jeopardy__c}" rendered="{!CaseType}"/>
+                <apex:outputField value="{!Solution.Jeopardy_Reason__c}" rendered="{!CaseType}"/>
+            </apex:pageBlockSection>
+            `
+<!--<apex:repeat value="{!Solution.csord__Order__r}" var="field">
+   <apex:inputField value="{!field.Name}"/>
+    <apex:inputField value="{!field.csord__Order_Number__c}"/>
+</apex:repeat>-->
+            <apex:pageBlockSection id="ContactDetails" title="Contacts Details" columns="1" collapsible="false" >
+                 <!--Provisioning table display only -->
+                <apex:pageBlockTable value="{!contactList}"  var="contactObj"  >
+                     <apex:column headerValue="Contact Name">
+                        <apex:outputText >{!contactObj.FirstName}&nbsp;{!contactObj.LastName}</apex:outputText>
+                    </apex:column>
+                    <apex:column value="{!contactObj.Email}" />
+                    <apex:column value="{!contactObj.Phone}" />
+                </apex:pageBlockTable>
+                <br/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="ProvisioningSection" title="Provisioning Details" columns="1" collapsible="false" >
+                 <!--Provisioning table display only -->
+                <apex:pageBlockTable value="{!ProvisioningDetails}"  var="provObj"  >
+                     <apex:column headerValue="Services">
+                         <apex:outputText >
+                          <!--  <apex:outputLink value="{!provObj.screenFlowPath}" rendered="{!provObj.screenFlowPath!=null}">{!provObj.service.Name}</apex:outputLink>
+                            <apex:outputText rendered="{!provObj.screenFlowPath==null}">{!provObj.service.Name}</apex:outputText>-->
+                             <apex:outputLink value="{!URLFOR($Action.csord__Service__c.View, provObj.service.id)}" >{!provObj.service.Name}</apex:outputLink>
+                            , {!provObj.address} ({!provObj.keyAttribute})
+                         </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Status" >
+                       <apex:outputField value="{!provObj.service.LG_ServiceStatus__c}" />
+                    </apex:column>
+                    <!-- SFOM - 647 Added by : Ankur Gupta -- Start -->
+                    <apex:column headerValue="Delta Status" value="{!provObj.service.csordtelcoa__Delta_Status__c}"/>
+                    <!-- SFOM - 647 Added by : Ankur Gupta -- End -->
+                </apex:pageBlockTable>
+                <br/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons rendered="{!!caseClosed}">
+                <!--<apex:commandButton value="Send Email" onclick="window.open('{!CongaURLPath}&sessionId={!$API.Session_ID}&serverUrl={!$API.Partner_Server_URL_290}&id={!AccountId}','_blank','height=600,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1',1); return false;" /> -->
+                <!--<apex:commandButton value="Send Email" action="{!sendEmail}" rendered="{!typeweeklycall}"/>-->
+                <input type="button" rendered="{!typeweeklycall}" value="Send Email" onClick="window.open('/_ui/core/email/author/EmailAuthor?p3_lkid={!solution.id}&p5=&p2_lkid={!relatedcontact}');"/>
+                <!--<apex:commandButton value="Send Welcome Pack" action="{!sendEmail}"/>-->
+                <apex:commandButton value="ReSend Welcome Pack" onclick="window.open('{!CongaURLPath}&sessionId={!$Api.Session_ID}&serverUrl={!$Api.Partner_Server_URL_290}&id={!Solution.Id}&QueryId=[caseorder]a2c6E0000004jzj?pv0={!RelatedOrder}&QueryId=[contact]a2c6E0000004jzK?pv0={!relatedcontact}&QueryId=[service]a2c6E0000004k0w?pv0={!Solution.Id}&TemplateId=a2k6E0000004DIy','_blank','height=600,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1',1); return false;" />
+                <!--<apex:commandButton value="Send Welcome Pack2" onclick="window.open('{!CongaURLPath}&sessionId={!$Api.Session_ID}&serverUrl={!$Api.Partner_Server_URL_290}&id={!Solution.Id}&QueryId=[productbasket]a2c6E0000004jz0?pv0={!Solution.csord__Order__c.OpportunityId__c}','_blank','height=600,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1',1); return false;" rendered="{!typecourtesy}&CETID=a2b6E0000004FP4&DS7=2"/>
+            --></apex:pageBlockButtons>
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

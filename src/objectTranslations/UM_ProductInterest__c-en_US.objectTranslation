@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Interest</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Interest</value>
+    </caseValues>
+    <fields>
+        <label><!-- Capex --></label>
+        <name>UM_Capex__c</name>
+    </fields>
+    <fields>
+        <help><!-- 0% - LOSS
+10% - Lead, Interessent, Kontakt mit Kunden
+30% - Bedarfsanalyse
+40% - ON HOLD
+60% - Termin vor Ort, Angebotsphase, Capex-Kosten ermittelt, Angebot in schriftlicher Form liegt vor
+90% - Commitment des Kunden vorhanden
+100% - WIN --></help>
+        <label><!-- Chance --></label>
+        <name>UM_Chance__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contract term in months --></help>
+        <label><!-- Contract Term --></label>
+        <name>UM_ContractTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast --></label>
+        <name>UM_Forecast__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>UM_Lead__c</name>
+        <relationshipLabel><!-- Product Interest --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- MRR --></label>
+        <name>UM_MRR__c</name>
+    </fields>
+    <fields>
+        <label><!-- OTC --></label>
+        <name>UM_OTC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opex --></label>
+        <name>UM_Opex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>UM_Opportunity__c</name>
+        <relationshipLabel><!-- Product Interest --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Free text field to capture details about the product interest --></help>
+        <label><!-- Product Details --></label>
+        <name>UM_ProductDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>UM_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Load (Total) --></label>
+        <name>UM_ProjectLoadTotal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Load (Weighted) --></label>
+        <name>UM_ProjectLoadWeighted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>UM_Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- ROI in months --></help>
+        <label><!-- ROI --></label>
+        <name>UM_ROI__c</name>
+    </fields>
+    <layouts>
+        <layout>Product Interest Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Product Details --></label>
+            <section>Product Details</section>
+        </sections>
+        <sections>
+            <label><!-- Product Information --></label>
+            <section>Product Information</section>
+        </sections>
+        <sections>
+            <label><!-- Record Information --></label>
+            <section>Record Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Product Interest layout oppty</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Product Details --></label>
+            <section>Product Details</section>
+        </sections>
+        <sections>
+            <label><!-- Product Information --></label>
+            <section>Product Information</section>
+        </sections>
+        <sections>
+            <label><!-- Record Information --></label>
+            <section>Record Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Lead --></label>
+        <name>Lead</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Oppty --></label>
+        <name>Oppty</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Forecast must be in the future --></errorMessage>
+        <name>UM_ForecastInFuture</name>
+    </validationRules>
+</CustomObjectTranslation>

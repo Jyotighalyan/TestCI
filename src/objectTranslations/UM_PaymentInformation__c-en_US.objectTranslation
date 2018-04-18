@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Payment Information</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Payment Information</value>
+    </caseValues>
+    <fields>
+        <label><!-- Billing Account Number --></label>
+        <name>Billing_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliate Identifier --></label>
+        <name>UM_Affiliate_Identifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Account --></label>
+        <name>UM_Billing_Location__c</name>
+        <relationshipLabel><!-- Payment Information --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>UM_Customer_SF_ID__c</name>
+        <relationshipLabel><!-- Payment Information --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Original Transaction ID --></label>
+        <name>UM_Original_Transaction_ID__c</name>
+        <relationshipLabel><!-- Payment Information --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account Balance --></label>
+        <name>UM_Overpayments_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Balance --></label>
+        <name>UM_Overpayments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Method --></label>
+        <name>UM_Payment_Method_Translation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Method (N) --></label>
+        <name>UM_Payment_Method__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rejections originated by the customer need to extracted and identified --></help>
+        <label><!-- UM Rejection Reason --></label>
+        <name>UM_Rejection_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retry Count --></label>
+        <name>UM_Retry_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Amount --></label>
+        <name>UM_Transaction_Amount_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Amount --></label>
+        <name>UM_Transaction_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Date --></label>
+        <name>UM_Transaction_Date_Converted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Date --></label>
+        <name>UM_Transaction_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction ID --></label>
+        <name>UM_Transaction_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Name --></label>
+        <name>UM_Transaction_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Transaction --></label>
+        <name>UM_Transaction_Parent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Status --></label>
+        <name>UM_Transaction_Status_Translation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Status (N) --></label>
+        <name>UM_Transaction_Status__c</name>
+    </fields>
+    <layouts>
+        <layout>Payment Information Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

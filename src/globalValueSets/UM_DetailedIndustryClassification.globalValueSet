@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Landwirtschaft_Jagd_und_damit_verbundene_Tatigkeiten</fullName>
+        <default>false</default>
+        <label>01 Landwirtschaft, Jagd und damit verbundene Tätigkeiten</label>
+    </customValue>
+    <customValue>
+        <fullName>Forstwirtschaft_und_Holzeinschlag</fullName>
+        <default>false</default>
+        <label>02 Forstwirtschaft und Holzeinschlag</label>
+    </customValue>
+    <customValue>
+        <fullName>Fischerei_und_Aquakultur</fullName>
+        <default>false</default>
+        <label>03 Fischerei und Aquakultur</label>
+    </customValue>
+    <customValue>
+        <fullName>Kohlenbergbau</fullName>
+        <default>false</default>
+        <label>05 Kohlenbergbau</label>
+    </customValue>
+    <customValue>
+        <fullName>Gewinnung_von_Erdol_und_Erdgas</fullName>
+        <default>false</default>
+        <label>06 Gewinnung von Erdöl und Erdgas</label>
+    </customValue>
+    <customValue>
+        <fullName>Erzbergbau</fullName>
+        <default>false</default>
+        <label>07 Erzbergbau</label>
+    </customValue>
+    <customValue>
+        <fullName>Gewinnung_von_Steinen_und_Erden_sonstiger_Bergbau</fullName>
+        <default>false</default>
+        <label>08 Gewinnung von Steinen und Erden, sonstiger Bergbau</label>
+    </customValue>
+    <customValue>
+        <fullName>Erbringung_von_Dienstleistungen_fur_den_Bergbau_und_fur_die_Gewinnung_von_Steinen_und_Erden</fullName>
+        <default>false</default>
+        <label>09 Erbringung von Dienstleistungen für den Bergbau und für die Gewinnung von Steinen und Erden</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Nahrungs_und_Futtermitteln</fullName>
+        <default>false</default>
+        <label>10 Herstellung von Nahrungs- und Futtermitteln</label>
+    </customValue>
+    <customValue>
+        <fullName>Getrankeherstellung</fullName>
+        <default>false</default>
+        <label>11 Getränkeherstellung</label>
+    </customValue>
+    <customValue>
+        <fullName>Tabakverarbeitung</fullName>
+        <default>false</default>
+        <label>12 Tabakverarbeitung</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Textilien</fullName>
+        <default>false</default>
+        <label>13 Herstellung von Textilien</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Bekleidung</fullName>
+        <default>false</default>
+        <label>14 Herstellung von Bekleidung</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Leder_Lederwaren_und_Schuhen</fullName>
+        <default>false</default>
+        <label>15 Herstellung von Leder, Lederwaren und Schuhen</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Holz_Flecht_Korb_und_Korkwaren_ohne_Mobel</fullName>
+        <default>false</default>
+        <label>16 Herstellung von Holz-, Flecht-, Korb- und Korkwaren (ohne Möbel)</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Papier_Pappe_und_Waren_daraus</fullName>
+        <default>false</default>
+        <label>17 Herstellung von Papier, Pappe und Waren daraus</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Druckerzeugnissen_Vervielfaltigung_von_bespielten_Ton_Bild_und_Datentragern</fullName>
+        <default>false</default>
+        <label>18 Herstellung von Druckerzeugnissen, Vervielfältigung von bespielten Ton-, Bild- und Datenträgern</label>
+    </customValue>
+    <customValue>
+        <fullName>Kokerei_und_Mineralolverarbeitung</fullName>
+        <default>false</default>
+        <label>19 Kokerei und Mineralölverarbeitung</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_chemischen_Erzeugnissen</fullName>
+        <default>false</default>
+        <label>20 Herstellung von chemischen Erzeugnissen</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_pharmazeutischen_Erzeugnissen</fullName>
+        <default>false</default>
+        <label>21 Herstellung von pharmazeutischen Erzeugnissen</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Gummi_und_Kunststoffwaren</fullName>
+        <default>false</default>
+        <label>22 Herstellung von Gummi- und Kunststoffwaren</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Glas_und_Glaswaren_Keramik_Verarbeitung_von_Steinen_und_Erden</fullName>
+        <default>false</default>
+        <label>23 Herstellung von Glas und Glaswaren, Keramik, Verarbeitung von Steinen und Erden</label>
+    </customValue>
+    <customValue>
+        <fullName>Metallerzeugung_und_bearbeitung</fullName>
+        <default>false</default>
+        <label>24 Metallerzeugung und -bearbeitung</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Metallerzeugnissen</fullName>
+        <default>false</default>
+        <label>25 Herstellung von Metallerzeugnissen</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Datenverarbeitungsgeraten_elektronischen_und_optischen_Erzeugnissen</fullName>
+        <default>false</default>
+        <label>26 Herstellung von Datenverarbeitungsgeräten, elektronischen und optischen Erzeugnissen</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_elektrischen_Ausrustungen</fullName>
+        <default>false</default>
+        <label>27 Herstellung von elektrischen Ausrüstungen</label>
+    </customValue>
+    <customValue>
+        <fullName>Maschinenbau</fullName>
+        <default>false</default>
+        <label>28 Maschinenbau</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Kraftwagen_und_Kraftwagenteilen</fullName>
+        <default>false</default>
+        <label>29 Herstellung von Kraftwagen und Kraftwagenteilen</label>
+    </customValue>
+    <customValue>
+        <fullName>Sonstiger_Fahrzeugbau</fullName>
+        <default>false</default>
+        <label>30 Sonstiger Fahrzeugbau</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Mobeln</fullName>
+        <default>false</default>
+        <label>31 Herstellung von Möbeln</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_sonstigen_Waren</fullName>
+        <default>false</default>
+        <label>32 Herstellung von sonstigen Waren</label>
+    </customValue>
+    <customValue>
+        <fullName>Reparatur_und_Installation_von_Maschinen_und_Ausrustungen</fullName>
+        <default>false</default>
+        <label>33 Reparatur und Installation von Maschinen und Ausrüstungen</label>
+    </customValue>
+    <customValue>
+        <fullName>Energieversorgung</fullName>
+        <default>false</default>
+        <label>35 Energieversorgung</label>
+    </customValue>
+    <customValue>
+        <fullName>Wasserversorgung</fullName>
+        <default>false</default>
+        <label>36 Wasserversorgung</label>
+    </customValue>
+    <customValue>
+        <fullName>Abwasserentsorgung</fullName>
+        <default>false</default>
+        <label>37 Abwasserentsorgung</label>
+    </customValue>
+    <customValue>
+        <fullName>Sammlung_Behandlung_und_Beseitigung_von_Abfallen_Ruckgewinnung</fullName>
+        <default>false</default>
+        <label>38 Sammlung, Behandlung und Beseitigung von Abfällen, Rückgewinnung</label>
+    </customValue>
+    <customValue>
+        <fullName>Beseitigung_von_Umweltverschmutzungen_und_sonstige_Entsorgung</fullName>
+        <default>false</default>
+        <label>39 Beseitigung von Umweltverschmutzungen und sonstige Entsorgung</label>
+    </customValue>
+    <customValue>
+        <fullName>Hochbau</fullName>
+        <default>false</default>
+        <label>41 Hochbau</label>
+    </customValue>
+    <customValue>
+        <fullName>Tiefbau</fullName>
+        <default>false</default>
+        <label>42 Tiefbau</label>
+    </customValue>
+    <customValue>
+        <fullName>Vorbereitende_Baustellenarbeiten_Bauinstallation_und_sonstiges_Ausbaugewerbe</fullName>
+        <default>false</default>
+        <label>43 Vorbereitende Baustellenarbeiten, Bauinstallation und sonstiges Ausbaugewerbe</label>
+    </customValue>
+    <customValue>
+        <fullName>Handel_mit_Kraftfahrzeugen_Instandhaltung_und_Reparatur_von_Kraftfahrzeugen</fullName>
+        <default>false</default>
+        <label>45 Handel mit Kraftfahrzeugen, Instandhaltung und Reparatur von Kraftfahrzeugen</label>
+    </customValue>
+    <customValue>
+        <fullName>Grobhandel_ohne_Handel_mit_Kraftfahrzeugen</fullName>
+        <default>false</default>
+        <label>46 Großhandel (ohne Handel mit Kraftfahrzeugen)</label>
+    </customValue>
+    <customValue>
+        <fullName>Einzelhandel_ohne_Handel_mit_Kraftfahrzeugen</fullName>
+        <default>false</default>
+        <label>47 Einzelhandel (ohne Handel mit Kraftfahrzeugen)</label>
+    </customValue>
+    <customValue>
+        <fullName>Landverkehr_und_Transport_in_Rohrfernleitungen</fullName>
+        <default>false</default>
+        <label>49 Landverkehr und Transport in Rohrfernleitungen</label>
+    </customValue>
+    <customValue>
+        <fullName>Schifffahrt</fullName>
+        <default>false</default>
+        <label>50 Schifffahrt</label>
+    </customValue>
+    <customValue>
+        <fullName>Luftfahrt</fullName>
+        <default>false</default>
+        <label>51 Luftfahrt</label>
+    </customValue>
+    <customValue>
+        <fullName>Lagerei_sowie_Erbringung_von_sonstigen_Dienstleistungen_fur_den_Verkehr</fullName>
+        <default>false</default>
+        <label>52 Lagerei sowie Erbringung von sonstigen Dienstleistungen für den Verkehr</label>
+    </customValue>
+    <customValue>
+        <fullName>Post_Kurier_und_Expressdienste</fullName>
+        <default>false</default>
+        <label>53 Post-, Kurier- und Expressdienste</label>
+    </customValue>
+    <customValue>
+        <fullName>Beherbergung</fullName>
+        <default>false</default>
+        <label>55 Beherbergung</label>
+    </customValue>
+    <customValue>
+        <fullName>Gastronomie</fullName>
+        <default>false</default>
+        <label>56 Gastronomie</label>
+    </customValue>
+    <customValue>
+        <fullName>Verlagswesen</fullName>
+        <default>false</default>
+        <label>58 Verlagswesen</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_Verleih_und_Vertrieb_von_Filmen_und_Fernsehprogrammen_Kinos_Tonstudios_und_Verlegen_von_Musik</fullName>
+        <default>false</default>
+        <label>59 Herstellung, Verleih und Vertrieb von Filmen und Fernsehprogrammen, Kinos, Tonstudios und Verlegen von Musik</label>
+    </customValue>
+    <customValue>
+        <fullName>Rundfunkveranstalter</fullName>
+        <default>false</default>
+        <label>60 Rundfunkveranstalter</label>
+    </customValue>
+    <customValue>
+        <fullName>Telekommunikation</fullName>
+        <default>false</default>
+        <label>61 Telekommunikation</label>
+    </customValue>
+    <customValue>
+        <fullName>Erbringung_von_Dienstleistungen_der_Informationstechnologie</fullName>
+        <default>false</default>
+        <label>62 Erbringung von Dienstleistungen der Informationstechnologie</label>
+    </customValue>
+    <customValue>
+        <fullName>Informationsdienstleistungen</fullName>
+        <default>false</default>
+        <label>63 Informationsdienstleistungen</label>
+    </customValue>
+    <customValue>
+        <fullName>Erbringung_von_Finanzdienstleistungen</fullName>
+        <default>false</default>
+        <label>64 Erbringung von Finanzdienstleistungen</label>
+    </customValue>
+    <customValue>
+        <fullName>Versicherungen_Ruckversicherungen_und_Pensionskassen_ohne_Sozialversicherung</fullName>
+        <default>false</default>
+        <label>65 Versicherungen, Rückversicherungen und Pensionskassen (ohne Sozialversicherung)</label>
+    </customValue>
+    <customValue>
+        <fullName>Mit_Finanz_und_Versicherungsdienstleistungen_verbundene_Tatigkeiten</fullName>
+        <default>false</default>
+        <label>66 Mit Finanz- und Versicherungsdienstleistungen verbundene Tätigkeiten</label>
+    </customValue>
+    <customValue>
+        <fullName>Grundstucks_und_Wohnungswesen</fullName>
+        <default>false</default>
+        <label>68 Grundstücks- und Wohnungswesen</label>
+    </customValue>
+    <customValue>
+        <fullName>Rechts_und_Steuerberatung_Wirtschaftsprufung</fullName>
+        <default>false</default>
+        <label>69 Rechts- und Steuerberatung, Wirtschaftsprüfung</label>
+    </customValue>
+    <customValue>
+        <fullName>Verwaltung_und_Fuhrung_von_Unternehmen_und_Betrieben_Unternehmensberatung</fullName>
+        <default>false</default>
+        <label>70 Verwaltung und Führung von Unternehmen und Betrieben, Unternehmensberatung</label>
+    </customValue>
+    <customValue>
+        <fullName>Architektur_und_Ingenieurburos_technische_physikalische_und_chemische_Untersuchung</fullName>
+        <default>false</default>
+        <label>71 Architektur- und Ingenieurbüros, technische, physikalische und chemische Untersuchung</label>
+    </customValue>
+    <customValue>
+        <fullName>Forschung_und_Entwicklung</fullName>
+        <default>false</default>
+        <label>72 Forschung und Entwicklung</label>
+    </customValue>
+    <customValue>
+        <fullName>Werbung_und_Marktforschung</fullName>
+        <default>false</default>
+        <label>73 Werbung und Marktforschung</label>
+    </customValue>
+    <customValue>
+        <fullName>Sonstige_freiberufliche_wissenschaftliche_und_technische_Tatigkeiten</fullName>
+        <default>false</default>
+        <label>74 Sonstige freiberufliche, wissenschaftliche und technische Tätigkeiten</label>
+    </customValue>
+    <customValue>
+        <fullName>Veterinarwesen</fullName>
+        <default>false</default>
+        <label>75 Veterinärwesen</label>
+    </customValue>
+    <customValue>
+        <fullName>Vermietung_von_beweglichen_Sachen</fullName>
+        <default>false</default>
+        <label>77 Vermietung von beweglichen Sachen</label>
+    </customValue>
+    <customValue>
+        <fullName>Vermittlung_und_Uberlassung_von_Arbeitskraften</fullName>
+        <default>false</default>
+        <label>78 Vermittlung und Überlassung von Arbeitskräften</label>
+    </customValue>
+    <customValue>
+        <fullName>Reiseburos_Reiseveranstalter_und_Erbringung_sonstiger_Reservierungsdienstleistungen</fullName>
+        <default>false</default>
+        <label>79 Reisebüros, Reiseveranstalter und Erbringung sonstiger Reservierungsdienstleistungen</label>
+    </customValue>
+    <customValue>
+        <fullName>Wach_und_Sicherheitsdienste_sowie_Detekteien</fullName>
+        <default>false</default>
+        <label>80 Wach- und Sicherheitsdienste sowie Detekteien</label>
+    </customValue>
+    <customValue>
+        <fullName>Gebaudebetreuung_Garten_und_Landschaftsbau</fullName>
+        <default>false</default>
+        <label>81 Gebäudebetreuung, Garten- und Landschaftsbau</label>
+    </customValue>
+    <customValue>
+        <fullName>Erbringung_von_wirtschaftlichen_Dienstleistungen_fur_Unternehmen_und_Privatpersonen_a_n_g</fullName>
+        <default>false</default>
+        <label>82 Erbringung von wirtschaftlichen Dienstleistungen für Unternehmen und Privatpersonen a. n. g.</label>
+    </customValue>
+    <customValue>
+        <fullName>Offentliche_Verwaltung_Verteidigung_Sozialversicherung</fullName>
+        <default>false</default>
+        <label>84 Öffentliche Verwaltung, Verteidigung, Sozialversicherung</label>
+    </customValue>
+    <customValue>
+        <fullName>Erziehung_und_Unterricht</fullName>
+        <default>false</default>
+        <label>85 Erziehung und Unterricht</label>
+    </customValue>
+    <customValue>
+        <fullName>Gesundheitswesen</fullName>
+        <default>false</default>
+        <label>86 Gesundheitswesen</label>
+    </customValue>
+    <customValue>
+        <fullName>87	Heime (ohne Erholungs- und Ferienheime)</fullName>
+        <default>false</default>
+        <label>87	Heime (ohne Erholungs- und Ferienheime)</label>
+    </customValue>
+    <customValue>
+        <fullName>Sozialwesen_ohne_Heime</fullName>
+        <default>false</default>
+        <label>88 Sozialwesen (ohne Heime)</label>
+    </customValue>
+    <customValue>
+        <fullName>Kreative_kunstlerische_und_unterhaltende_Tatigkeiten</fullName>
+        <default>false</default>
+        <label>90 Kreative, künstlerische und unterhaltende Tätigkeiten</label>
+    </customValue>
+    <customValue>
+        <fullName>Bibliotheken_Archive_Museen_botanische_und_zoologische_Garten</fullName>
+        <default>false</default>
+        <label>91 Bibliotheken, Archive, Museen, botanische und zoologische Gärten</label>
+    </customValue>
+    <customValue>
+        <fullName>Spiel_Wett_und_Lotteriewesen</fullName>
+        <default>false</default>
+        <label>92 Spiel-, Wett- und Lotteriewesen</label>
+    </customValue>
+    <customValue>
+        <fullName>Erbringung_von_Dienstleistungen_des_Sports_der_Unterhaltung_und_der_Erholung</fullName>
+        <default>false</default>
+        <label>93 Erbringung von Dienstleistungen des Sports, der Unterhaltung und der Erholung</label>
+    </customValue>
+    <customValue>
+        <fullName>Interessenvertretungen_sowie_kirchliche_und_sonstige_religiose_Vereinigungen_ohne_Sozialwesen_und_Sport</fullName>
+        <default>false</default>
+        <label>94 Interessenvertretungen sowie kirchliche und sonstige religiöse Vereinigungen (ohne Sozialwesen und Sport)</label>
+    </customValue>
+    <customValue>
+        <fullName>Reparatur_von_Datenverarbeitungsgeraten_und_Gebrauchsgutern</fullName>
+        <default>false</default>
+        <label>95 Reparatur von Datenverarbeitungsgeräten und Gebrauchsgütern</label>
+    </customValue>
+    <customValue>
+        <fullName>Erbringung_von_sonstigen_uberwiegend_personlichen_Dienstleistungen</fullName>
+        <default>false</default>
+        <label>96 Erbringung von sonstigen überwiegend persönlichen Dienstleistungen</label>
+    </customValue>
+    <customValue>
+        <fullName>Private_Haushalte_mit_Hauspersonal</fullName>
+        <default>false</default>
+        <label>97 Private Haushalte mit Hauspersonal</label>
+    </customValue>
+    <customValue>
+        <fullName>Herstellung_von_Waren_und_Erbringung_von_Dienstleistungen_durch_private_Haushalte_fur_den_Eigenbedarf_ohne_ausgepragten_Schwerpunkt</fullName>
+        <default>false</default>
+        <label>98 Herstellung von Waren und Erbringung von Dienstleistungen durch private Haushalte für den Eigenbedarf ohne ausgeprägten Schwerpunkt</label>
+    </customValue>
+    <customValue>
+        <fullName>Exterritoriale_Organisationen_und_Korperschaften</fullName>
+        <default>false</default>
+        <label>99 Exterritoriale Organisationen und Körperschaften</label>
+    </customValue>
+    <masterLabel>Detailed Industry Classification</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

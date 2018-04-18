@@ -1,0 +1,38 @@
+<apex:page >
+
+    <!--
+    
+	/*
+	 * Used for closing Service Console tab
+	 *
+	 * @author Petar Miletic
+	 * @ticket SFOM-263
+	 * @since  31/01/2017
+	*/
+    
+    -->
+    <apex:includeScript value="/support/console/20.0/integration.js"/>
+    <script type="text/javascript">
+    
+        function closeTab() {
+            //First find the ID of the current tab to close it
+            sforce.console.getEnclosingTabId(closeSubtab);
+        }
+        
+        var closeSubtab = function closeSubtab(result) {
+            //Now that we have the tab ID, we can close it
+            var tabId = result.id;
+            sforce.console.closeTab(tabId);
+        };
+        
+        window.onload = function() { 
+            closeTab(); 
+            return false; 
+        };
+        
+    </script>
+
+    <div style="padding: 5px;">
+        <p>Please wait...</p>
+    </div>
+</apex:page>

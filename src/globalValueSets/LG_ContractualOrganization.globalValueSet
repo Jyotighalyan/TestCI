@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Baden-Württemberg (BAW)</fullName>
+        <default>false</default>
+        <label>Baden-Württemberg (BAW)</label>
+    </customValue>
+    <customValue>
+        <fullName>Hessen (HSN)</fullName>
+        <default>false</default>
+        <label>Hessen (HSN)</label>
+    </customValue>
+    <customValue>
+        <fullName>Nordrhein-Westfalen (NRW)</fullName>
+        <default>false</default>
+        <label>Nordrhein-Westfalen (NRW)</label>
+    </customValue>
+    <customValue>
+        <fullName>Hessen</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Hessen</label>
+    </customValue>
+    <customValue>
+        <fullName>BW</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>BW</label>
+    </customValue>
+    <customValue>
+        <fullName>NRW</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>NRW</label>
+    </customValue>
+    <masterLabel>Contractual Organization</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

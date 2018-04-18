@@ -1,0 +1,161 @@
+<apex:page standardController="Case" extensions="LG_ActivateServiceExtn">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" /> 
+     <script type="text/javascript">
+    
+        window.onload = function(){
+            setPanelWidth();
+        };
+    
+        window.onresize = function() {
+            setPanelWidth();
+        };
+        
+        function setPanelWidth(){
+            var panelWidth = document.getElementById('{!$Component.Form.pb1.servicedetailssection.tableContent}');
+            panelWidth.style.width = (tableSize()-50) + 'px';
+        }
+        
+        function tableSize() {
+          var myWidth = 0, myHeight = 0;
+          if( typeof( window.innerWidth ) == 'number' ) {
+            //Non-IE
+            myWidth = window.innerWidth;
+              //myHeight = window.innerHeight;
+          } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+            //IE 6+ in 'standards compliant mode'
+            myWidth = document.documentElement.clientWidth;
+              //myHeight = document.documentElement.clientHeight;
+          } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+            //IE 4 compatible
+            myWidth = document.body.clientWidth;
+              //myHeight = document.body.clientHeight;
+          }
+            //window.alert( 'Width = ' + myWidth );
+            //window.alert( 'Height = ' + myHeight );
+            return myWidth;
+        }
+      </script>
+   
+    <apex:form id="Form">
+    
+     <apex:pageMessages />
+       
+    <apex:pageBlock title="" mode="{!Mode}">
+        
+        <!-- SFOM-1822-- Added as aprt of SFOM-1822 -->
+        <apex:pageBlockSection title="Suborder" columns="2" collapsible="true" >
+             <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" rendered="{!ActService}"/>
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__c}" rendered="{!ActService}"/>
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__r.LG_Huawei_Tenant_ID__c}" rendered="{!ActService}"/>
+            <apex:outputfield value="{!Solution.LG_Address__r.LG_FullAddressDetails__c}" label="Service Address" rendered="{!ActService}"/>
+            <apex:outputfield value="{!Solution.csord__Order__c}" rendered="{!ActService}"/>
+            <apex:outputText label="Solution" rendered="{!ActService}">
+                <apex:outputLink value="/{!Solution.Id}" >{!Solution.LG_Solution_Name__c}</apex:outputLink>
+            </apex:outputText>
+             <apex:outputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!ActService}"/>
+             <apex:outputField value="{!Solution.LG_Jeopardy__c}" rendered="{!ActService}"/>
+            <apex:outputField value="{!Solution.LG_LatestPortingWishDate__c }" rendered="{!ActService}"/>
+            <apex:outputField value="{!Solution.LG_JeopardyExplanation__c}" rendered="{!ActService}"/>
+            <apex:outputField value="{!Solution.LG_EarliestPortingWishDate__c}" rendered="{!ActService}"/>
+            <apex:outputField value="{!ProcessRequests[0].LG_PortingAgreedDate__c}" rendered="{!ActService}"/>
+       
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="Provisioning Details" columns="1" collapsible="true" rendered="{!!Edit}">
+        <apex:pageBlockTable value="{!ProvisioningDetails}"  var="provObj" rendered="true" >
+            <apex:column headerValue="Activate Service Flag" width="35" style="text-align:center;">
+                <apex:image value="{!URLFOR($Resource.TrafficSignal, '/'+provObj.provisionFlag)}" height="16" width="16" />
+            </apex:column>
+            <apex:column headerValue="Services">
+                <apex:outputText ><apex:outputLink value="{!provObj.screenFlowPath}">{!provObj.service.Name}</apex:outputLink>{!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+            </apex:column>
+                <!-- added as part of SFOM-1962-->
+               <!--SFOM-1822<apex:column headerValue="Provisioning Code" value="{!provObj.service.LG_ProvisioningCode__c}" /> -->
+                <apex:column headerValue="Action" >
+                    <apex:outputField value="{!provObj.service.LG_Action__c}" />
+                </apex:column>
+               <apex:column headerValue="Activation Date">
+                    <apex:outputField value="{!provObj.service.csord__Activation_Date__c}" />
+                </apex:column>
+                <apex:column headerValue="Deactivation Date">
+                <apex:outputField value="{!provObj.service.csord__Deactivation_Date__c}" />
+            </apex:column>
+                         <!-- added as part of SFOM-1962 end-->
+        </apex:pageBlockTable>
+            
+            
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Provisioning Details" columns="1" collapsible="true" rendered="{!Edit}">
+          <apex:pageBlockTable value="{!ProvisioningDetails}"  var="provObj" rendered="true" id="Provisiondetails">
+              <apex:column headerValue="Activate Service Flag" width="35" style="text-align:center;">
+                  <apex:image value="{!URLFOR($Resource.TrafficSignal, '/'+provObj.provisionFlag)}" height="16" width="16" />
+              </apex:column>
+              <apex:column headerValue="Services">
+                  <apex:outputText ><apex:outputLink value="{!provObj.screenFlowPath}">{!provObj.service.Name}</apex:outputLink>{!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+              </apex:column>
+                 <!--SFOM-1822<apex:column headerValue="Provisioning Code" value="{!provObj.service.LG_ProvisioningCode__c}" /> -->
+                 
+            <apex:column headerValue="Action" >
+                <apex:outputField id="servicestatus" value="{!provObj.service.LG_Action__c}" />
+            </apex:column>
+            <apex:column headerValue="Activation Date">
+                <apex:inputField id="activationdate" value="{!provObj.service.csord__Activation_Date__c}" rendered="{!!provObj.deactivationrequired}" />
+                <apex:inputField value="{!provObj.service.csord__Activation_Date__c}" html-disabled="{!provObj.deactivationrequired}" rendered="{!provObj.deactivationrequired}" />
+            </apex:column>
+            <apex:column headerValue="Deactivation Date">
+                <apex:inputField value="{!provObj.service.csord__Deactivation_Date__c}" rendered="{!provObj.deactivationrequired}" />
+                <apex:inputField id="deactivationdate" value="{!provObj.service.csord__Deactivation_Date__c}" rendered="{!!provObj.deactivationrequired}" html-disabled="{!!provObj.deactivationrequired}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+            
+            
+        </apex:pageBlockSection>
+      
+     
+        <!-- SFOM-1822<apex:pageBlockSection title="Suborder" columns="2" collapsible="true" >
+             <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" rendered="{!ActService}"/>
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__c}" rendered="{!ActService}"/>
+            <apex:outputfield value="{!Solution.csord__Order__c}" rendered="{!ActService}"/>
+            <apex:outputText label="Solution" rendered="{!ActService}">
+                <apex:outputLink value="/{!Solution.Id}" >{!Solution.Name}</apex:outputLink>
+            </apex:outputText>
+             <apex:outputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!ActService}"/>
+             <apex:outputField value="{!Solution.LG_Jeopardy__c}" rendered="{!ActService}"/>
+            <apex:outputField value="{!Solution.LG_LatestPortingWishDate__c }" rendered="{!ActService}"/>
+            <apex:outputField value="{!Solution.LG_JeopardyExplanation__c}" rendered="{!ActService}"/>
+            <apex:outputField value="{!Solution.LG_EarliestPortingWishDate__c}" rendered="{!ActService}"/>
+            <apex:outputField value="{!ProcessRequests[0].LG_PortingAgreedDate__c}" rendered="{!ActService}"/>
+       
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="Suborder" columns="2" collapsible="true" rendered="{!Edit}" id="pg"> 
+           <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" rendered="{!ActService}"/>
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__c}" rendered="{!ActService}"/>
+            <apex:outputfield value="{!Solution.csord__Order__c}" rendered="{!ActService}"/>
+            <apex:outputText label="Solution" rendered="{!ActService}">
+                <apex:outputLink value="/{!Solution.Id}" >{!Solution.Name}</apex:outputLink>
+            </apex:outputText>
+           <apex:outputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!ActService}"/>
+           <apex:inputCheckbox value="{!jeopardy}" label="Jeopardy" rendered="{!ActService}" disabled="{!ActServiceAndType==true}"/>
+                          
+             <apex:outputField value="{!Solution.LG_EarliestPortingWishDate__c}" rendered="{!ActService}"/>
+           
+           <apex:inputText value="{!Solution.LG_JeopardyExplanation__c}" rendered="{!ActService}" disabled="{!jeopardy}"/>
+            <apex:outputField value="{!Solution.LG_LatestPortingWishDate__c  }" rendered="{!ActService}" />
+           
+            <apex:outputPanel style="text-align:center;color:red;font-weight:bold;" layout="block" rendered="{!jeoExpMsg}">
+                    Jeopardy Explanation is mandatory.
+                </apex:outputPanel>
+            
+        </apex:pageBlockSection>-->
+        
+        <apex:pageBlockButtons rendered="{!!caseClosed}">
+            <apex:commandButton action="{!save}" value="Save" rendered="{!Edit}" />
+            <apex:commandButton action="{!cancel}" value="Cancel" rendered="{!Edit}" />
+            <apex:commandButton action="{!edit}" value="Edit" rendered="{!!Edit}" />
+            <apex:commandButton value="Refresh" onclick="window.location.reload();return false;" rendered="{!!Edit}"/>
+        </apex:pageBlockButtons>
+               
+        </apex:pageBlock>
+        </apex:form>
+</apex:page>

@@ -1,0 +1,64 @@
+<apex:component controller="LG_ServiceAvailabilityController" selfClosing="true">
+    <!-- Attributes -->
+    <apex:attribute name="postalCode" assignTo="{!postalCodeAttribute}" type="String" description="Postal/ZIP code part of the address."/>
+    <apex:attribute name="houseNumber" assignTo="{!houseNumberAttribute}" type="String" description="House number part of the address."/>
+    <apex:attribute name="houseNumberExtension" assignTo="{!extensionAttribute}" type="String" description="House number extension part of the address."/>
+    <!-- GUI -->
+    <apex:outputPanel id="serviceAvailabilityChecker" styleClass="bootstrap-sf1">
+        <apex:form id="addressForm">
+            <div style="text-align: center; margin-bottom: 3%;">
+                <apex:inputText value="{!postalCode}" id="postalCode" onkeypress="if (event.keyCode == 13) document.getElementById('{!$Component.submitButton}').click();" styleClass="form-control" style="display: inline-block; width: 32.66%; margin-right: 1%; font-size: inherit; box-sizing: border-box; -webkit-box-sizing: border-box;" html-placeholder="{!$Label.LG_PostalCode}"/>
+                <apex:inputText value="{!houseNumber}" id="houseNumber" onkeypress="if (event.keyCode == 13) document.getElementById('{!$Component.submitButton}').click();"  styleClass="form-control" style="display: inline-block; width: 32.66%; margin-right: 1%; font-size: inherit; box-sizing: border-box; -webkit-box-sizing: border-box;" html-placeholder="{!$Label.LG_HouseNumber}"/>
+                <apex:inputText value="{!extension}" id="extension" onkeypress="if (event.keyCode == 13) document.getElementById('{!$Component.submitButton}').click();"  styleClass="form-control" style="display: inline-block; width: 32.66%; font-size: inherit; margin-bottom: 1.5%; box-sizing: border-box; -webkit-box-sizing: border-box;" html-placeholder="{!$Label.LG_HouseNumberExtension}"/>
+                <apex:commandButton id="submitButton" value="{!$Label.LG_Update}" action="{!updateServiceAvailability}" styleClass="btn btn-lg btn-primary" style="display: block; width: 100%; font-size: inherit; background-color: LightSlateGray; border: 1px solid transparent;" reRender="resultDisplay" status="updateStatus"/>
+                <apex:actionStatus id="updateStatus" onstart="document.getElementById('{!$Component.resultDisplay}').innerHTML = ''; document.getElementById('{!$Component.submitButton}').disabled = true; document.getElementById('{!$Component.postalCode}').disabled = true; document.getElementById('{!$Component.houseNumber}').disabled = true; document.getElementById('{!$Component.extension}').disabled = true;" onstop="document.getElementById('{!$Component.submitButton}').disabled = false; document.getElementById('{!$Component.postalCode}').disabled = false; document.getElementById('{!$Component.houseNumber}').disabled = false; document.getElementById('{!$Component.extension}').disabled = false; document.getElementById('{!$Component.postalCode}').blur(); document.getElementById('{!$Component.houseNumber}').blur(); document.getElementById('{!$Component.extension}').blur();"/>
+            </div>
+        </apex:form>
+        <script type="text/javascript">
+            window.addEventListener('load', function() {
+                document.getElementById('{!$Component.addressForm.submitButton}').click();
+            }, true);
+        </script>
+        <apex:outputPanel id="resultDisplay" styleClass="lg-fadeIn">
+            <apex:outputPanel rendered="{!errorMessage == null}" id="serviceAvailabilityDisplay">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="text-align: left; vertical-align: top; width: 50%;">
+                            <apex:repeat value="{!serviceAvailabilityInformation}" var="serviceAvailability">
+                                <apex:outputPanel rendered="{!serviceAvailability.available}" style="display: block; padding: 0.4em; margin-bottom: 0.4em; white-space: nowrap;">
+                                    <span style="display: inline-block; border: 1px solid LightGreen; border-radius: 4px;">
+                                        <apex:image url="{!IF(serviceAvailability.available,URLFOR($Resource.SiteSamples,'/img/ico_V.png'),URLFOR($Resource.SiteSamples,'/img/ico_X.png'))}" style="margin-left: auto; margin-right: auto;"/>
+                                    </span>
+                                    <span style="font-weight: bold;"><apex:outputText value="{!serviceAvailability.serviceName}"/></span>
+                                </apex:outputPanel>
+                            </apex:repeat>
+                        </td>
+                        <td></td>
+                        <td style="text-align: left; vertical-align: top;">
+                            <apex:repeat value="{!serviceAvailabilityInformation}" var="serviceAvailability">
+                                <apex:outputPanel rendered="{!NOT(serviceAvailability.available)}" style="display: block; padding: 0.4em; margin-bottom: 0.4em; white-space: nowrap;">
+                                    <span style="display: inline-block; border: 1px solid IndianRed; border-radius: 4px;">
+                                        <apex:image url="{!IF(serviceAvailability.available,URLFOR($Resource.SiteSamples,'/img/ico_V.png'),URLFOR($Resource.SiteSamples,'/img/ico_X.png'))}" style="margin-left: auto; margin-right: auto;"/>
+                                    </span>
+                                    <span style="font-weight: bold;"><apex:outputText value="{!serviceAvailability.serviceName}"/></span>
+                                </apex:outputPanel>
+                            </apex:repeat>
+                        </td>
+                    </tr>
+                </table>
+            </apex:outputPanel>
+            <apex:outputPanel id="errorDisplay" rendered="{!errorMessage != null}">
+                <apex:outputText styleClass="text-danger" value="{!errorMessage}"/>
+                <apex:outputPanel id="extensionSuggestionsDisplay" layout="inline" rendered="{!extensionSuggestionCount > 0}">
+                    <apex:outputText value=" "/>
+                    <apex:outputText styleClass="text-danger" value="{!$Label.LG_SuggestedHouseNumberExtensionsAvailable}"/><br/>
+                    <apex:repeat value="{!extensionSuggestions}" var="extensionSuggestion">
+                        <div style="display: inline-block; margin: 0.4em 0.8em 0.4em 0em; cursor: pointer; padding: 0.5em; border: 1px solid red; user-select: none;" onclick="document.getElementById('{!$Component.addressForm.extension}').value = '{!extensionSuggestion.escapedSuggestion}'; document.getElementById('{!$Component.addressForm.submitButton}').click();">
+                            <apex:outputText style="color: {!IF(LEN(extensionSuggestion.suggestion) > 0, 'black', 'lightgray')}" value="{!IF(LEN(extensionSuggestion.suggestion) > 0, extensionSuggestion.suggestion, $Label.LG_NoHouseNumberExtension)}"/>
+                        </div>
+                    </apex:repeat>
+                </apex:outputPanel>
+            </apex:outputPanel>
+        </apex:outputPanel>
+    </apex:outputPanel>
+</apex:component>

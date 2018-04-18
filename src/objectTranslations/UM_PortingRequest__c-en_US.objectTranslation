@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Porting Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Porting Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- DateTime Of Request --></label>
+        <name>UM_DateTimeOfRequest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date/Time Of Response --></label>
+        <name>UM_DateTimeOfResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>UM_ExternalID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Message --></label>
+        <name>UM_RequestMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Message --></label>
+        <name>UM_ResponseMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>UM_Type__c</name>
+        <picklistValues>
+            <masterLabel>Automatic (WBCI)</masterLabel>
+            <translation><!-- Automatic (WBCI) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation><!-- Fax --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Porting Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

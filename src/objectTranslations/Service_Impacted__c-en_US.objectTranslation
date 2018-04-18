@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service Impacted</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Services Impacted</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case Number --></label>
+        <name>B2B_Case_Number__c</name>
+        <relationshipLabel><!-- Services Impacted --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>B2B_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- External case number --></label>
+        <name>B2B_External_case_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postcode --></label>
+        <name>B2B_Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type --></label>
+        <name>B2B_Record_Type__c</name>
+        <picklistValues>
+            <masterLabel>Address</masterLabel>
+            <translation><!-- Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Type</masterLabel>
+            <translation><!-- Service Type --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Type --></label>
+        <name>B2B_Service_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Id --></label>
+        <name>B2B_Service_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>B2B_Status__c</name>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved</masterLabel>
+            <translation><!-- Resolved --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>B2B_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Equipment Type --></label>
+        <name>LG_B2B_Care_Equipment_Type__c</name>
+        <picklistValues>
+            <masterLabel>Amplifier</masterLabel>
+            <translation><!-- Amplifier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CMTS</masterLabel>
+            <translation><!-- CMTS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HUB</masterLabel>
+            <translation><!-- HUB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NODE</masterLabel>
+            <translation><!-- NODE --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Equipment Id --></label>
+        <name>LG_B2B_Care_Equipment_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Number --></label>
+        <name>LG_Care_Customer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Type --></label>
+        <name>LG_Care_Customer_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- House Number Extension --></label>
+        <name>LG_Care_House_Number_Extension__c</name>
+    </fields>
+    <fields>
+        <label><!-- House Number --></label>
+        <name>LG_Care_House_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>LG_Care_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Affected --></label>
+        <name>LG_Care_Service_Affected__c</name>
+        <relationshipLabel><!-- Services Impacted --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Address and Service Type Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Equipment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SBC Topology Data Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Service Id Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Address and Service Type --></label>
+        <name>LG_B2B_Care_Address_and_Service_Type</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Service Id --></label>
+        <name>LG_B2B_Care_Service_Id</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Equipment --></label>
+        <name>LG_B2B_Crae_Equipment</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Topology Data from SBC --></label>
+        <name>LG_Care_Topology_Data_from_SBC</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Create_Records --></label>
+        <name>Create_Records</name>
+    </webLinks>
+</CustomObjectTranslation>

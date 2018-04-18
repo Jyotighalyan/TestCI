@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This custom metadata is used to store the status codes along with Status and error message for each status code. These status codes can be used by webservices developed by SFDC.</description>
+    <fields>
+        <fullName>UM_Error_Message__c</fullName>
+        <description>Error message in detail</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Error Message</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>UM_Status_Code__c</fullName>
+        <description>3 Digit status code, should be unique in the list</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Status Code</label>
+        <length>3</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Status__c</fullName>
+        <description>Actual status, Success / Fail / any other</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Status</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>WebService Status Code</label>
+    <pluralLabel>WebService Status Codes</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

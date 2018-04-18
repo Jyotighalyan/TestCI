@@ -1,0 +1,5 @@
+Hallo {!Case.OwnerFirstName}, 
+
+der Fall {!Case.CaseNumber} mit dem SLA = Gold wurde vor 6 Stunden erstellt und noch nicht abschließend bearbeitet. Bitte informiere den Kunden über den aktuellen Status.
+
+Danke.

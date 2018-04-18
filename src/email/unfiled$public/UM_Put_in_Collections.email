@@ -1,0 +1,4 @@
+Please put the following account in collections again:
+
+Account: {!csconta__Billing_Account__c.csconta__Account__c}
+Kenan ID: {!csconta__Billing_Account__c.LG_ExternalId__c}

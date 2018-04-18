@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>getting list of leads and account for country &apos;NL&apos; via custom fields
+   enter fields name in same order in both fields of Custom settings.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Account_Fields__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Fields</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Fields__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Fields</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Account Lead Mapping</label>
+    <visibility>Public</visibility>
+</CustomObject>

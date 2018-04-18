@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>An accessibility model to a Service (or Services). Governs the rights to access and use a Service.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+   <fields>
+        <fullName>Address_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.LG_AddressID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Address Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.cscrm__City__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.cscrm__Country__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HouseNumberExtension__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.LG_HouseNumberExtension__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HouseNumberExtension</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>House_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.LG_HouseNumber__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>House Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+     <fields>
+        <fullName>Premise_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Premise Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Premise_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.LG_PremiseNumber__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Premise Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State_Province__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.cscrm__State_Province__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>State/Province</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.cscrm__Street__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Street</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+     <fields>
+        <fullName>Zip_Postal_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.cscrm__Zip_Postal_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Zip/Postal Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; csconta__Billing_Account__r.Id ,csconta__Billing_Account__r.LG_BillingAccountNumber__c,&quot;_blank&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Account Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Termination_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Termination Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Kenan_Response__c</fullName>
+        <externalId>false</externalId>
+        <label>Kenan Response</label>
+        <length>131072</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_AccountCountry__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(csord__Account__r.LG_VisitCountry__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AddressDetails__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(LG_Address__r.cscrm__Street__c ) , &apos;&apos;, LG_Address__r.cscrm__Street__c + &apos;,&apos;) + 
+IF( ISBLANK(LG_Address__r.LG_HouseNumber__c) , &apos;&apos;,  &apos; &apos; + LG_Address__r.LG_HouseNumber__c) + 
+IF( ISBLANK(LG_Address__r.LG_HouseNumberExtension__c) , &apos;,&apos;, LG_Address__r.LG_HouseNumberExtension__c +&apos;,&apos;) + 
+IF( ISBLANK(LG_Address__r.cscrm__State_Province__c) , &apos;&apos;, &apos; &apos; + LG_Address__r.cscrm__State_Province__c +&apos;,&apos;) + 
+IF( ISBLANK(LG_Address__r.cscrm__City__c) , &apos;&apos;, &apos; &apos; + LG_Address__r.cscrm__City__c +&apos;,&apos;) + 
+IF( ISBLANK(LG_Address__r.cscrm__Zip_Postal_Code__c) , &apos;&apos;, &apos; &apos; + LG_Address__r.cscrm__Zip_Postal_Code__c +&apos;,&apos;) + 
+IF( ISBLANK(LG_Address__r.cscrm__Country__c) , &apos;&apos;, &apos; &apos; + LG_Address__r.cscrm__Country__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Address Details</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <referenceTo>cscrm__Address__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_ChangeTypeCode__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( csordtelcoa__Change_Type__c , &quot;Add&quot;, &quot;401&quot;, &quot;Terminate&quot;, &quot;402&quot;, &quot;Change&quot;,&quot;403&quot;,&quot;Migrate&quot;,&quot;403&quot;, &quot;Contract Renewal&quot;, &quot;403&quot;, &quot;Retention&quot;, &quot;403&quot;,&quot;Move&quot;,&quot;404&quot;,&quot;401&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Change Type Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contract</label>
+        <referenceTo>csconta__Contract__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_ReplacementSubChangeType__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(csordtelcoa__Replacement_Subscription__r.csordtelcoa__Change_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LG_ReplacementSubChangeType</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Site__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Site</label>
+        <referenceTo>cscrm__Site__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_SoftDeleted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for versioning and tracking</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates that the record is not relevant do to the change is active version (newer or older version exists and it is active)</inlineHelpText>
+        <label>Soft Deleted</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_SubRootOrder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is an order lookup field and will be populated with the primary order value.</description>
+        <externalId>false</externalId>
+        <label>Root Order</label>
+        <referenceTo>csord__Order__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_SubscriptionExternalId__c</fullName>
+        <externalId>false</externalId>
+        <label>Subscription External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remaining_Contract_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>csord__Total_Recurring_Charges__c  *  LG_Contract__r.Remaining_Contract_Days__c * (12/365)</formula>
+        <label>Remaining Contract Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Partner_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(csord__Order__c == null &amp;&amp; CONTAINS(Name,&apos;Virtual Voice&apos;), UM_HPBXSalesPartnerId__c, 
+if(UM_State__c == &apos;NRW&apos; || UM_State__c == &apos;HSN&apos;, csord__Order__r.csordtelcoa__Opportunity__r.UM_PartnerAccount__r.UM_P_Sales_ID_NRW_HSN__c, 
+csord__Order__r.csordtelcoa__Opportunity__r.UM_PartnerAccount__r.UM_P_Sales_ID_BW__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sales Partner Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SkipTriggerToggle__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Boolean to check if code needs to be skipped in the trigger. Only acts on a change not on the value itself.
+Also no need to actually store this value.</description>
+        <externalId>false</externalId>
+        <label>SkipTriggerToggle</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_CloneWhenMigrating__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Clone When Migrating</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_HPBXSalesPartnerId__c</fullName>
+        <description>This field is only used for HPBX. Currently this is been used only for Voiceworks HPBX. This will be populated only if the services are being created from VW data.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is only used for HPBX.</inlineHelpText>
+        <label>HPBX Sales Partner Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_State1__c</fullName>
+        <externalId>false</externalId>
+        <label>UM State1</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(csord__Order__r.csord__Related_Service__c) , &apos;&apos;,csord__Order__r.csord__Related_Service__r.UM_State__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>UM State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_SubscriberId__c</fullName>
+        <externalId>true</externalId>
+        <label>Subscriber ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_VoiceworksAccountID__c</fullName>
+        <description>for storing voiceworks account id</description>
+        <externalId>false</externalId>
+        <label>Voiceworks Account ID</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_VoiceworksExternalID__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (CONTAINS(Name, &apos;Virtual Voice&apos;),
+csconta__Billing_Account__r.LG_BillingAccountNumber__c &amp; &apos;|&apos; &amp; LG_Address__r.LG_PremiseNumber__c &amp; &apos;|&apos; &amp;
+ CASE( LG_Address__r.cscrm__State_Province__c , &apos;BW&apos;, &apos;BW&apos;, &apos;HSN&apos;, &apos;HSN&apos;,&apos;NRW&apos;),&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Voiceworks External ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csconta__Billing_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Billing Account to use for this Subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Billing Account to use for this Subscription.</inlineHelpText>
+        <label>Billing Account</label>
+        <referenceTo>csconta__Billing_Account__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Account that governs this Subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account that governs this Subscription.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__External_Identifier2__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</inlineHelpText>
+        <label>External Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>csord__External_Identifier__c</fullName>
+        <deprecated>false</deprecated>
+        <description>DEPRECATED. External Id field used for bulk inserts of Orders &amp; Subscriptions objects.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>DEPRECATED. Use External Identifier2 field instead.</inlineHelpText>
+        <label>DEPRECATED External Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Identification__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Identification string for the object, used as the reference from external systems.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. &quot;spokeServiceAmsterdam&quot; in Hub&amp;Spokes scenario.</inlineHelpText>
+        <label>Identification</label>
+        <length>255</length>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Order_Request__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Order Request object which introduced the latest changes to this object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Order Request object which introduced the latest changes to this object.</inlineHelpText>
+        <label>Order Request</label>
+        <referenceTo>csord__Order_Request__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The parent Order of this Subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent Order of this Subscription.</inlineHelpText>
+        <label>Order</label>
+        <referenceTo>csord__Order__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Solution__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The parent Solution of this Subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent Solution of this Subscription.</inlineHelpText>
+        <label>Solution</label>
+        <referenceTo>csord__Solution__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csord__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the Subscription in the fulfillment process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for state transitions.</inlineHelpText>
+        <label>Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>csord__Total_One_Off_Charges__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>csord__Total_Service_One_Off_Charges__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total One-Off Charges</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>csord__Total_Recurring_Charges__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>csord__Total_Service_Recurring_Charges__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Recurring Charges</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>csord__Total_Service_One_Off_Charges__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sum of all the one off charges on all of the subscription’s services</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of all the one off charges on all of the subscription’s services</inlineHelpText>
+        <label>Total Service One-Off Charges</label>
+        <summarizedField>csord__Service__c.csord__Total_One_Off_Charges__c</summarizedField>
+        <summaryForeignKey>csord__Service__c.csord__Subscription__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>csord__Total_Service_Recurring_Charges__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sum of all the recurring charges on all of the subscription’s services</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of all the recurring charges on all of the subscription’s services</inlineHelpText>
+        <label>Total Service Recurring Charges</label>
+        <summarizedField>csord__Service__c.csord__Total_Recurring_Charges__c</summarizedField>
+        <summaryForeignKey>csord__Service__c.csord__Subscription__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Change_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Change Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Upgrade</fullName>
+                    <default>false</default>
+                    <label>Upgrade</label>
+                </value>
+                <value>
+                    <fullName>Downgrade</fullName>
+                    <default>false</default>
+                    <label>Downgrade</label>
+                </value>
+                <value>
+                    <fullName>Relocation</fullName>
+                    <default>false</default>
+                    <label>Relocation</label>
+                </value>
+                <value>
+                    <fullName>Cease</fullName>
+                    <default>false</default>
+                    <label>Cease</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Closed_Replaced__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Closed Replaced</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Product_Configuration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product Configuration</label>
+        <referenceTo>cscfga__Product_Configuration__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Replaced_Subscription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Replaced Subscription</label>
+        <referenceTo>csord__Subscription__c</referenceTo>
+        <relationshipLabel>Replacement Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Replacement_Subscription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Replacement Subscription</label>
+        <referenceTo>csord__Subscription__c</referenceTo>
+        <relationshipLabel>Replaced Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Subscription_Number_Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <displayFormat>{000000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Subscription Number Sequence</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>csordtelcoa__Subscription_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Subscription Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Subscription</label>
+    <listViews>
+        <fullName>csord__All</fullName>
+        <columns>NAME</columns>
+        <columns>csord__Account__c</columns>
+        <columns>LG_Address__c</columns>
+        <columns>csordtelcoa__Subscription_Number__c</columns>
+        <columns>csord__Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Subscription Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Subscriptions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>LG_MACDConfigurationButton</fullName>
+        <availability>online</availability>
+        <description>Used for opening the LG_MACDConfiguration VF page</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Change Subscription(s)</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if (&apos;{!csord__Subscription__c.LG_AccountCountry__c}&apos; == &apos;Germany&apos;){
+window.location = &apos;apex/UM_MACDConfiguration?accountId={!csord__Subscription__c.csord__AccountId__c}&amp;subscriptionId={!csord__Subscription__c.Id}&apos;
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Synchronise_with_Billing</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Synchronise with Billing</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/UM_KenanSubscriptionSync?id={!csord__Subscription__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Terminate_in_Billing</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Terminate in Billing</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/UM_KenanSubscriptionSync?id={!csord__Subscription__c.Id}&amp;terminate=y</url>
+    </webLinks>
+    <webLinks>
+        <fullName>csordtelcoa__Change_Request</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Change Request</masterLabel>
+        <openType>sidebar</openType>
+        <page>csordtelcoa__CreateChangeOrder</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>csordtelcoa__Visualise_Subscription_Delta</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Visualise Subscription Delta</masterLabel>
+        <openType>sidebar</openType>
+        <page>csordtelcoa__SubscriptionDeltaViewer</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

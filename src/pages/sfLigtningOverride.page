@@ -1,0 +1,823 @@
+<apex:page showHeader="false" sidebar="false" contentType="text/css">
+@font-face {
+  font-family: "Salesforce";
+  src:url("{!URLFOR($Resource.slds, '/assets/fonts/webfonts/SalesforceSans-Regular.eot')}");
+  src:url("{!URLFOR($Resource.slds, '/assets/fonts/webfonts/SalesforceSans-Regular.eot#iefix')}") format("embedded-opentype"),
+    url("{!URLFOR($Resource.slds, '/assets/fonts/webfonts/SalesforceSans-Regular.woff')}") format("woff"),
+    url("{!URLFOR($Resource.slds, '/assets/fonts/webfonts/SalesforceSans-Regular.ttf')}") format("truetype"),
+    url("{!URLFOR($Resource.slds, '/assets/fonts/webfonts/SalesforceSans-Regular.svg')}../fonts/ecommerce.svg#Salesforce") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+  
+.hasMotif {
+    margin: 0;
+}
+    
+.bFilterView {
+    border: 1px solid #e2e8ed;
+    padding: 0;
+    margin: 7px 7px 0;
+    border-radius: 5px;
+}
+
+span.bFilter {
+    margin: 0;
+}
+
+.bFilterView label {
+    display: none;
+}
+
+span.fBody {
+    font-size: 13px;
+    font-weight: bold;
+    font-family: 'Salesforce Sans',Helvetica,Arial,sans-serif;
+    color: #16325c;
+    margin-right: 4px;
+}
+
+.bFilterView select {
+    padding: 5px 30px 5px 8px;
+    box-shadow: none;
+    border: none;
+    border-right: 1px solid #e2e8ed;
+    background: #fff url("/img/support/servicedesk/console_sprite.png") right -44px no-repeat;
+    height: auto;
+    width: auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin: 0;
+    font-size: 13px;
+    font-family: 'Salesforce Sans',Helvetica,Arial,sans-serif;
+}
+
+.bFilter .fFooter {
+    margin: 6px 0 0 0;
+    display: inline-block;
+    margin-left: 8px;
+    padding: 0;
+    color: #000;
+    font-size: 100%;
+    font-family: 'Salesforce Sans',Helvetica,Arial,sans-serif;
+}
+
+body .bFilter .fFooter a {
+    color: #006cb5;
+    text-decoration: none;
+    font-size: 12.5px;
+    vertical-align: middle;
+    font-weight: normal;
+}
+
+body .bFilter .fFooter a:hover {
+    text-decoration: underline;
+}
+
+body .bPageBlock {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.bPageBlock .pbHeader .listHeader {
+    margin-top: 0;
+    padding: 7px;
+    text-align: left;
+}
+
+.bPageBlock .pbHeader .listHeader span {
+    margin: 0 1px 5px 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.bPageBlock .pbHeader .listHeader span input {
+    background-color: #f4f5f7;
+    color: #16325c;
+    background-image: none;
+    font-weight: normal;
+    font-family: 'Salesforce Sans',Helvetica,Arial,sans-serif;
+    font-size: 12.5px;
+    padding: 5px 10px;
+    border: 1px solid #e0e5ee;
+    margin: 0 !important;
+}
+
+.bPageBlock .pbHeader .listHeader span input:hover {
+    background-color: #e7edf4;
+    cursor: pointer;
+}
+
+.bPageBlock .pbHeader .listHeader span:first-child input {
+    border-color: #0070d2;
+    background-color: #0070d2;
+    color: #fff;
+}
+
+.bPageBlock .pbHeader .listHeader span:first-child input:hover {
+    background-color: #005fb2;
+}
+
+tr.headerRow {
+    position: relative;
+    z-index: 0;
+    background: #fff;
+    border-color: transparent;
+    border: 0;
+    border-top: 1px solid #e2e8ed;
+    border-bottom: 1px solid #e2e8ed;
+    border-right: 1px solid #e2e8ed;
+}
+
+body .pbBody table.list tr.headerRow td, body .pbBody table.list tr.headerRow th {
+    background: #fff;
+    font-family: 'Salesforce Sans',Helvetica,Arial,sans-serif;
+    font-size: 12.5px;
+    font-weight: normal;
+    color: #54698d;
+    vertical-align: middle;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    text-transform: uppercase;
+}
+
+body .pbBody table.list tr.headerRow td:not(:first-child):hover, body .pbBody table.list tr.headerRow th:not(:first-child):hover {
+    background: #e6eaea;
+    cursor: pointer;
+}
+
+body .pbBody table.list tr.headerRow td a, body .pbBody table.list tr.headerRow th a {
+    color: #54698d;
+}
+
+body .pbBody table.list tr.headerRow .actionColumn input {
+    vertical-align: baseline;
+    margin: 0 10px 0 3px;
+}
+
+body .pbBody table.list tr.headerRow td:not(:first-child), body .pbBody table.list tr.headerRow th:not(:first-child) {
+    padding: 8px 5px 8px 10px;
+}
+
+body .pbBody table.list tr.dataRow th, body .pbBody table.list tr.dataRow td {
+    font-family: 'Salesforce Sans',Helvetica,Arial,sans-serif;
+    font-size: 12.5px;
+    color: #16325c;
+    font-weight: normal;
+    padding: 10px 10px;
+    border-bottom: 1px solid #e2e8ed;
+}
+
+body .pbBody table.list tr.dataRow th a, body .pbBody table.list tr.dataRow td a {
+    color: #006cb5;
+    text-decoration: none;
+}
+
+body .pbBody table.list tr.dataRow th a:hover, body .pbBody table.list tr.dataRow td a:hover {
+    text-decoration: underline;
+}
+
+body .pbBody table.list tr.dataRow:hover, body .pbBody table.list tr.dataRow:hover {
+    outline: #e2e8ed solid 1px;
+}
+
+body .pbBody table.list tr.dataRow:hover th, body .pbBody table.list tr.dataRow:hover td {
+    background-color: #f4f6f9;
+}
+
+body .pbBody table.list tr.headerRow th.actionColumn, body .pbBody table.list tr.dataRow td.actionColumn {
+    padding-left: 3px;
+}
+
+body .pbBody table.list tr.dataRow td.actionColumn {
+    color: transparent;
+    font-size: 0;
+}
+
+.listViewportWrapper .listViewport .x-grid3-td-ACTION_COLUMN a, body .pbBody table.list td.actionColumn .actionLink {
+    background-image: url("/img/support/servicedesk/serviceDeskListReskin-sprite.png");
+    height: 20px;
+    width: 20px;
+    background-size: 20px;
+    color: transparent;
+    background-repeat: no-repeat;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.listViewportWrapper .listViewport .x-grid3-td-ACTION_COLUMN a:nth-child(2), body .pbBody table.list td.actionColumn .actionLink:nth-child(2) {
+    background-position: 0px -280px;
+}
+
+.listViewportWrapper .listViewport .x-grid3-td-ACTION_COLUMN a:nth-child(2):hover, body .pbBody table.list td.actionColumn .actionLink:nth-child(2):hover {
+    background-position: 0 -40px;
+}
+
+.listViewportWrapper .listViewport .x-grid3-td-ACTION_COLUMN a:nth-child(3), body .pbBody table.list td.actionColumn .actionLink:nth-child(3) {
+    background-position: 0 -320px;
+}
+
+.list .actionColumn input {
+    vertical-align: middle;
+    margin: 0 10px 0 3px;
+}
+
+a.chatterFollowUnfollowAction, img.chatterFollowUnfollowAction {
+    vertical-align: middle;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0 4px;
+    background-image: url("/img/support/servicedesk/serviceDeskListReskin-sprite.png");
+    background-position: 0 -360px;
+}
+
+a.chatterFollowUnfollowAction.unfollow {
+    background-image: url("/img/support/servicedesk/serviceDeskListReskin-sprite.png");
+    background-position: 0 -400px;
+}
+
+a.chatterFollowUnfollowAction.unfollow:hover {
+    background-image: url("/img/support/servicedesk/serviceDeskListReskin-sprite.png");
+    background-position: 0 -420px;
+}
+
+.listViewportWrapper .listViewport .x-grid3-td-ACTION_COLUMN a:nth-child(3):hover, body .pbBody table.list td.actionColumn .actionLink:nth-child(3):hover {
+    background-position: 0 -340px;
+}
+
+a.chatterFollowUnfollowAction:hover, img.chatterFollowUnfollowAction:hover {
+    background-position: 0 -380px;
+}
+
+body a {
+    color: #0070d2;
+    text-decoration: none;
+    transition: color .1s linear;
+}
+
+body a:focus, body a:hover {
+    text-decoration: underline;
+    color: #005fb2;
+}
+
+.pbHeader table tr,
+.pbBottomButtons table tr {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.pbHeader table tr .pbTitle,
+.pbBottomButtons table tr .pbTitle {
+    flex: 1;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    margin: 0;
+    padding: 0;
+}
+
+body.overviewPage .bPageBlock .pbTitle, body.overviewPage .bRelatedList .bPageBlock .pbTitle,
+body.homeTab .bPageBlock .pbTitle, body.homeTab .bRelatedList .bPageBlock .pbTitle {
+    padding: 0.75rem 1.5rem 0 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.pbHeader table tr .pbTitle h2,
+.pbBottomButtons table tr .pbTitle h2 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #16325c;
+}
+
+.pbHeader table tr .pbButton,
+.pbBottomButtons table tr .pbButtonb {
+    margin-left: .25rem;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+}
+
+.pbHeader table tr .pbButton input,
+.pbHeader table tr .pbButton button,
+.pbBottomButtons table tr .pbButtonb input,
+.pbBottomButtons table tr .pbButtonb button {
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem !important;
+    margin: 0;
+    background: 0 0;
+    background-clip: border-box;
+    border: 1px solid transparent;
+    border-radius: 0;
+    font-size: .75rem;
+    line-height: 1.875rem;
+    text-decoration: none;
+    color: #0070d2;
+    -webkit-appearance: none;
+    white-space: normal;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: color 50ms linear,background-color 50ms linear;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #d8dde6;
+    background-color: #fff;
+    font-weight: 400;
+}
+
+.pbHeader table tr .pbButton input:not([style]):first-child,
+.pbHeader table tr .pbButton button:not([style]):first-child,
+.pbBottomButtons table tr .pbButtonb input:not([style]):first-child,
+.pbBottomButtons table tr .pbButtonb button:not([style]):first-child {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem; 
+}
+
+.pbHeader table tr .pbButton input:not([style]):not(:last-child),
+.pbHeader table tr .pbButton button:not([style]):not(:last-child),
+.pbBottomButtons table tr .pbButtonb input:not(:last-child),
+.pbBottomButtons table tr .pbButtonb button:not(:last-child) {
+    border-right-width: 0;
+}
+
+.pbHeader table tr .pbButton input:not([style]):last-child,
+.pbHeader table tr .pbButton button:not([style]):last-child,
+.pbBottomButtons table tr .pbButtonb input:not([style]):last-child,
+.pbBottomButtons table tr .pbButtonb button:not([style]):last-child {
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    border-right-width: 1px;
+}
+
+.pbHeader table tr .pbButton input:hover,
+.pbHeader table tr .pbButton button:hover,
+.pbBottomButtons table tr .pbButtonb input:hover,
+.pbBottomButtons table tr .pbButtonb button:hover {
+    background-color: #f4f6f9;
+    cursor: pointer;
+}
+
+.pbHeader table tr .pbButton input:focus,
+.pbHeader table tr .pbButton button:focus,
+.pbBottomButtons table tr .pbButtonb input:focus,
+.pbBottomButtons table tr .pbButtonb button:focus {
+    outline: 0;
+    box-shadow: 0 0 3px #0070D2;
+}
+
+body .bDetailBlock.bPageBlock .pbBody .labelCol, body .bDetailBlock.bPageBlock .pbBody .dataCol,
+body .bDetailBlock.bPageBlock .pbBody .data2Col, body .bPageBlock.bEditBlock .pbBody .labelCol,
+body .bPageBlock.bEditBlock .pbBody .dataCol, body .bPageBlock.bEditBlock .pbBody .data2Col {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+body .bPageBlock .pbBody .labelCol, body .print .topics-label {
+    font-size: .8rem;
+    line-height: 1.25;
+    color: #54698d;
+}
+
+.detailList .inlineEditWriteOn {
+    background: #f4f6f9 url("{!URLFOR($Resource.slds, '/assets/icons/utility/edit_60.png')}") no-repeat right center / auto 0.75rem;
+}
+
+.detailList .inlineEditLockOn {
+    background: #f4f6f9 url("{!URLFOR($Resource.slds, '/assets/icons/utility/lock_60.png')}") no-repeat right center / auto 0.75rem;
+}
+
+.detailList .helpOrb {
+    right: -1.05rem;
+    top: 0.05rem;
+    height: 0.8rem;
+    width: 0.8rem;
+    cursor: pointer;
+}
+
+.helpOrb {
+    background: url("{!URLFOR($Resource.slds,'/assets/icons/utility/info_60.png')}") no-repeat center / 100%;
+    background-position: 0 0 !important;
+}
+
+.helpOrb:hover {
+    opacity: 0.75;
+}
+
+.helpText {
+    font-size: .75rem;
+    color: #fff;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    padding: .5rem .75rem;
+    max-width: 20rem;
+    background: #16325c;
+    border: 0;
+    border-radius: .25rem;
+    min-height: 2rem;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.16);
+    z-index: 60;
+}
+
+.assistiveText {
+    position: relative !important;
+    color: #c23934;
+    margin: 0 .125rem;
+}
+
+.lookupHoverDetail {
+    z-index: 60;
+}
+
+body .bRelatedList .bPageBlock, body .listRelatedObject .bPageBlock, body.lookupTab .listRelatedObject .bPageBlock, body.popupTab .listRelatedObject .bPageBlock {
+    padding: 0;
+    border-radius: .25rem;
+    background-clip: padding-box;
+    background-color: #f4f6f9;
+    border: 1px solid #d8dde6;
+}
+
+body .bRelatedList .pbTitle h3, body .bPageBlock .pbTitle h2, body .bPageBlock .pbTitle h3, body .bSubBlock h3.lbHeader {
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #16325c;
+    font-weight: 400;
+}
+
+tr.headerRow {
+    position: relative;
+    z-index: 0;
+    background: #fff;
+    border-color: transparent;
+    border: 0;
+    border-top: 1px solid #e2e8ed;
+    border-bottom: 1px solid #e2e8ed;
+    border-right: 1px solid #e2e8ed;
+}
+
+body .pbBody table.list tr.headerRow td, body .pbBody table.list tr.headerRow th {
+    background: #fff;
+    font-family: 'Salesforce Sans',Helvetica,Arial,sans-serif;
+    font-size: 12.5px;
+    font-weight: normal;
+    color: #54698d;
+    vertical-align: middle;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    text-transform: uppercase;
+}
+
+body .pbBody table.list tr.headerRow td:not(:first-child):hover, body .pbBody table.list tr.headerRow th:not(:first-child):hover {
+    background: #e6eaea;
+    cursor: pointer;
+}
+
+body .pbBody table.list tr.headerRow td a, body .pbBody table.list tr.headerRow th a {
+    color: #54698d;
+}
+
+body .pbBody table.list tr.headerRow .actionColumn input {
+    vertical-align: baseline;
+    margin: 0 10px 0 3px;
+}
+
+body .pbBody table.list tr.headerRow td:not(:first-child), body .pbBody table.list tr.headerRow th:not(:first-child) {
+    padding: 8px 5px 8px 10px;
+}
+
+body .pbBody table.list tr.dataRow th, body .pbBody table.list tr.dataRow td {
+    font-family: 'Salesforce Sans',Helvetica,Arial,sans-serif;
+    font-size: 12.5px;
+    color: #16325c;
+    font-weight: normal;
+    padding: 10px 10px;
+    border-bottom: 1px solid #e2e8ed;
+}
+
+body .pbBody table.list tr.headerRow th.actionColumn, body .pbBody table.list tr.dataRow td:first-child {
+    padding-left: 1.5rem;
+}
+
+body .pbBody table.list tr.dataRow th a, body .pbBody table.list tr.dataRow td a {
+    color: #006cb5;
+    text-decoration: none;
+}
+
+body .pbBody table.list tr.dataRow th a:hover, body .pbBody table.list tr.dataRow td a:hover {
+    text-decoration: underline;
+}
+
+body .pbBody table.list tr.dataRow:hover, body .pbBody table.list tr.dataRow:hover {
+    outline: #e2e8ed solid 1px;
+}
+
+body .pbBody table.list tr.dataRow:hover th, body .pbBody table.list tr.dataRow:hover td {
+    background-color: #f4f6f9;
+}
+
+.message {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  position: relative;
+  font-weight: 300;
+  background-image: linear-gradient(45deg,rgba(0,0,0,.025) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.025) 50%,rgba(0,0,0,.025) 75%,transparent 75%,transparent);
+  background-size: 64px 64px;
+  border: none;
+  border-radius: 0;
+  background-color:rgba(255,0,0,0.7);
+}
+
+.message .messageText {
+  font-size: 0.8rem;
+}
+
+.message .messageText h4 {
+  display: inline-block;
+  padding-right: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.infoM6, .infoM4, .infoM3, .infoM2, .infoS1 {
+  color: #fff;
+  background: #54698d;
+}
+
+.infoM6 .messageText, .infoM4 .messageText, .infoM3 .messageText, .infoM2 .messageText, .infoS1 .messageText {
+  color: #fff;
+}
+
+.infoM3 .msgIcon, .infoMedium {
+  background-image: url("{!URLFOR($Resource.slds, '/assets/icons/utility/info.svg')}");
+  background-size: 100%;
+}
+
+.confirmM6, .confirmM4, .confirmM3, .confirmM2, .confirmS1 {
+  color: #fff;
+  background-color: #04844b;
+}
+
+.confirmM6 .messageText, .confirmM4 .messageText, .confirmM3 .messageText, .confirmM2 .messageText, .confirmS1 .messageText {
+  color: #fff;
+}
+
+.confirmM3 .msgIcon, .confirmMedium {
+  background-image: url({"!URLFOR($Resource.slds, '/assets/icons/utility/success.svg')}");
+  background-size: 100%;
+}
+
+.warningM6, .warningM4, .warningM3, .warningM2, .warningS1 {
+  background-color: #ffb75d;
+  color: #16325c;
+}
+
+.warningM6 .messageText, .warningM4 .messageText, .warningM3 .messageText, .warningM2 .messageText, .warningS1 .messageText {
+  color: #16325c;
+}
+
+.warningM3 .msgIcon, .warningMedium {
+  background-image: url({"!URLFOR($Resource.slds, '/assets/icons/utility/warning.svg')}");
+  background-size: 100%;
+}
+
+.errorM6, .errorM4, .errorM3, .errorM2, .errorS1 {
+  color: #fff;
+  background-color: #c23934;
+}
+
+.errorM6 .messageText, .errorM4 .messageText, .errorM3 .messageText, .errorM2 .messageText, .errorS1 .messageText {
+  color: #fff;
+}
+
+.errorM3 .msgIcon, .errorMedium {
+  background-image: url("{!URLFOR($Resource.slds, '/assets/icons/utility/ban.svg')}");
+  background-size: 100%;
+}
+
+.apexp .bPageBlock.apexDefaultPageBlock .pbBody {
+    margin: 0.5rem;
+}
+
+.bEditBlock .pbHeader>table, .apexp .bPageBlock.apexDefaultPageBlock .pbHeader>table, #ep.bLayoutBlock .pbHeader>table,
+body .bEditBlock .pbBottomButtons>table, body .apexp .bPageBlock.apexDefaultPageBlock .pbBottomButtons>table,
+body .bEditBlock .pbBottomButtons, body .apexp .bPageBlock.apexDefaultPageBlock .pbBottomButtons {
+    border: none;
+    margin: 0;
+}
+
+.bPageBlock .pbHeader table tbody tr,
+.bPageBlock .pbBottomButtons table tbody tr {
+    display: flex;
+    background: #f7f9fb;
+    padding: 1rem 1.5rem;
+}
+
+.bPageBlock .pbHeader table tbody tr {
+    border-bottom: 1px solid #d8dde6;
+}
+
+.bPageBlock .pbBottomButtons table tbody tr {
+    border-top: 1px solid #d8dde6;
+}
+
+.bPageBlock .pbTitle {
+    flex: 1;
+    padding: 0;
+}
+
+body .bRelatedList .pbTitle h3, body .bPageBlock .pbTitle h2, body .bPageBlock .pbTitle h3, body .bSubBlock h3.lbHeader {
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75;
+    vertical-align: middle;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    margin: 0;
+    margin-right: .75rem;
+    color: #16325c;
+}
+
+.bEditBlock .pbHeader>table>tbody>tr>td, .bPageBlock .pbHeader>table>tbody>tr>td,
+.bLayoutBlock .pbHeader>table>tbody>tr>td, .bEditBlock .pbBottomButtons>table>tbody>tr>td,
+.bPageBlock .pbBottomButtons>table>tbody>tr>td, .bLayoutBlock .pbBottomButtons>table>tbody>tr>td {
+    padding: 0;
+}
+
+body .bPageBlock, body #bodyCell .bResource .secondaryPalette, body .secondaryPalette.bPageBlock, body .individualPalette .secondaryPalette.bPageBlock, body .bodyDiv .genericTable, body .genericPageBlockTable, body .bodyDiv .bSubBlock, body .bComponentBlock .bPageBlock, body .bMyDashboard .bPageBlock, body.rlHoverFrame .bPageBlock, body.subjectSelectionPopup div.choicesBox, body.lookupTab .secondaryPalette.bPageBlock, body.popupTab .secondaryPalette.bPageBlock, body.UserTagStatsPage .secondaryPalette.bPageBlock {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    border: 1px solid #d8dde6 !important;
+}
+
+body .bRelatedList .pbBody table.list, body .apexp .pbBody table.list {
+    border: none;
+}
+
+.apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader h3 {
+    display: inline-block;
+}
+
+.apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader img {
+    vertical-align: baseline;
+    margin-left: 0.25rem;
+}
+
+.apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader {
+    background: #54698d;
+}
+
+body .bPageBlock .pbBody .labelCol, body .print .topics-label {
+    vertical-align: middle;
+    color: #54698d;
+    font-size: .75rem;
+    line-height: 1.5;
+    margin-right: .75rem;
+    margin-bottom: .25rem;
+}
+
+/* form elements, input, select, textarea */
+
+.bPageBlock .detailList .dataCol input[type="text"],
+.bPageBlock .detailList .dataCol input[type="number"],
+.bPageBlock .detailList .dataCol .select2-container,
+.bPageBlock .detailList .dataCol .lookupInput input,
+.bPageBlock .detailList .data2Col input[type="text"],
+.bPageBlock .detailList .data2Col input[type="number"],
+.bPageBlock .detailList .data2Col .select2-container,
+.bPageBlock .detailList .data2Col .lookupInput input {
+    background-color: #fff;
+    color: #16325c;
+    border: 1px solid #d8dde6;
+    border-radius: .25rem;
+    width: 250px;
+    transition: border .1s linear,background-color .1s linear;
+    display: inline-block;
+    padding: 0 1rem 0 .75rem;
+    line-height: 1.875rem;
+    min-height: calc(1.875rem + (1px * 2));
+}
+.bPageBlock .detailList .dataCol .lookupInput input,
+.bPageBlock .detailList .data2Col .lookupInput input {
+    width: calc(250px - 32px);
+}
+.bPageBlock .detailList .dataCol input[type="checkbox"],
+.bPageBlock .detailList .dataCol input[type="radio"],
+.bPageBlock .detailList .data2Col input[type="checkbox"],
+.bPageBlock .detailList .data2Col input[type="radio"] {
+    width: auto;
+    line-height: auto;
+    min-height: auto;
+}
+.bPageBlock .detailList .dataCol select,
+.bPageBlock .detailList .data2Col select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding-left: .5rem;
+    padding-right: 1.5rem;
+    background-color: #fff;
+    color: #16325c;
+    border: 1px solid #d8dde6;
+    border-radius: .25rem;
+    width: 250px;
+    transition: border .1s linear,background-color .1s linear;
+    height: calc(1.875rem + (1px * 2));
+}
+.bPageBlock .detailList .dataCol textarea,
+.bPageBlock .detailList .data2Col textarea {
+    background-color: #fff;
+    color: #16325c;
+    border: 1px solid #d8dde6;
+    border-radius: .25rem;
+    width: 250px;
+    transition: border .1s linear,background-color .1s linear;
+    resize: vertical;
+    padding: .5rem .75rem;
+    box-sizing: border-box;
+}
+.bPageBlock .detailList .dataCol input:active,
+.bPageBlock .detailList .dataCol input:focus,
+.bPageBlock .detailList .dataCol .select2-container.select2-container--focus,
+.bPageBlock .detailList .dataCol select:active,
+.bPageBlock .detailList .dataCol select:focus,
+.bPageBlock .detailList .dataCol textarea:active,
+.bPageBlock .detailList .dataCol textarea:focus,
+.bPageBlock .detailList .data2Col input:active,
+.bPageBlock .detailList .data2Col input:focus,
+.bPageBlock .detailList .data2Col .select2-container.select2-container--focus,
+.bPageBlock .detailList .data2Col select:active,
+.bPageBlock .detailList .data2Col select:focus,
+.bPageBlock .detailList .data2Col textarea:active,
+.bPageBlock .detailList .data2Col textarea:focus {
+    outline: 0;
+    border-color: #1589ee;
+    background-color: #fff;
+    box-shadow: 0 0 3px #0070D2;
+}
+.bPageBlock .detailList .dataCol .select2-container--default .select2-selection--multiple,
+.bPageBlock .detailList .data2Col .select2-container--default .select2-selection--multiple {
+    border: none;
+    line-height: 1.75;
+    padding-bottom: 5px;
+}
+.bPageBlock .detailList .dataCol .select2-container--default .select2-selection--multiple .select2-selection__rendered,
+.bPageBlock .detailList .data2Col .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+    padding: 0;
+}
+.bPageBlock .detailList .dataCol .select2-container--default .select2-selection--single .select2-selection__rendered,
+.bPageBlock .detailList .data2Col .select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding: 0;
+    color: #16325c;
+}
+.bPageBlock .detailList .dataCol .select2-container .select2-results .select2-results__option,
+.bPageBlock .detailList .data2Col .select2-container .select2-results .select2-results__option {
+    margin: 0;
+}
+.bPageBlock .detailList .dataCol .select2-container--default .select2-selection--multiple .select2-selection__choice,
+.bPageBlock .detailList .data2Col .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #e0e5ee;
+    padding: .25rem .5rem;
+    border-radius: 15rem;
+    font-size: .625rem;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: .0625em;
+    color: #16325c;
+    vertical-align: middle;
+    white-space: nowrap;
+    border: none;
+}
+.bPageBlock .detailList .dataCol .select2-container--default .select2-selection--single,
+.bPageBlock .detailList .data2Col .select2-container--default .select2-selection--single {
+    border: none;
+    outline: none;
+}
+.bPageBlock .detailList .dataCol .select2-container--default .select2-results__option[aria-selected=true],
+.bPageBlock .detailList .data2Col .select2-container--default .select2-results__option[aria-selected=true] {
+    background-color: #e0e5ee;
+}
+
+</apex:page>

@@ -1,0 +1,39 @@
+<apex:page showHeader="false" sidebar="false" controller="LG_TerminateSubDetailsController" id="LG_TerminateSubDetails">
+	<link rel="stylesheet" href="/apex/sfLigtningOverride"/>
+
+	<apex:form >
+		<apex:pageBlock title="Services">
+
+			<apex:pageBlockTable value="{!ServiceItems}" var="data" rendered="{!ServiceItems.size > 0}">
+
+				<apex:column value="{!data.service.Name}"/>
+				<apex:column value="{!data.service.LG_ServiceExternalId__c}"/>
+				<apex:column value="{!data.service.csord__Status__c}"/>
+				<apex:column value="{!data.numbers}" breakBefore="true" rendered="{!data.numbers != null}"/>
+
+			</apex:pageBlockTable>
+
+			<apex:outputpanel rendered="{!ServiceItems.size == 0}">
+				{!$Label.LG_NoRecordsToDisplay}
+			</apex:outputpanel>
+
+		</apex:pageBlock>
+
+		<apex:pageBlock title="Service Line Items">
+
+			<apex:pageBlockTable value="{!ServiceLineItems}" var="data" rendered="{!ServiceLineItems.size > 0}">
+
+				<apex:column value="{!data.Name}"/>
+				<apex:column value="{!data.csord__Start_Date__c}"/>
+				<apex:column value="{!data.csord__End_Date__c}"/>
+
+			</apex:pageBlockTable>
+
+			<apex:outputpanel rendered="{!ServiceLineItems.size == 0}">
+				{!$Label.LG_NoRecordsToDisplay}
+			</apex:outputpanel>
+
+		</apex:pageBlock>
+
+	</apex:form>
+</apex:page>

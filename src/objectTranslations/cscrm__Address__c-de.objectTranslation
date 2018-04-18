@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Lokation</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Lokation</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Lokation</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Lokation</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Lokation</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Lokation</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Lokation</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Lokation</value>
+    </caseValues>
+    <fields>
+        <help><!-- Consulting ID --></help>
+        <label><!-- Consulting-ID --></label>
+        <name>Consulting_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Type --></label>
+        <name>Delivery_Type__c</name>
+        <picklistValues>
+            <masterLabel>FTTP</masterLabel>
+            <translation><!-- FTTP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HFC</masterLabel>
+            <translation><!-- HFC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LG_EstimatedICOMSID --></label>
+        <name>Estimated_ICOMS_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- GNV --></label>
+        <name>GNV__c</name>
+        <picklistValues>
+            <masterLabel>Erforderlich</masterLabel>
+            <translation><!-- Erforderlich --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nicht erforderlich</masterLabel>
+            <translation><!-- Nicht erforderlich --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wird nachgereicht</masterLabel>
+            <translation><!-- Wird nachgereicht --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Adress ID</label>
+        <name>LG_AddressID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address String --></label>
+        <name>LG_AddressString__c</name>
+    </fields>
+    <fields>
+        <label>Lokation Übergabepunkt/Service (Coax)</label>
+        <name>LG_COAXConnectionLocation__c</name>
+    </fields>
+    <fields>
+        <label>Externe ID DWH</label>
+        <name>LG_DWHExternalID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Footprint --></label>
+        <name>LG_Footprint__c</name>
+        <picklistValues>
+            <masterLabel>UPC</masterLabel>
+            <translation><!-- UPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ziggo</masterLabel>
+            <translation><!-- Ziggo --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>vollständige Adressdetails</label>
+        <name>LG_FullAddressDetails__c</name>
+    </fields>
+    <fields>
+        <label>Hausnummerzusatz</label>
+        <name>LG_HouseNumberExtension__c</name>
+    </fields>
+    <fields>
+        <label>Hausnummer</label>
+        <name>LG_HouseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- ICOMS Premise ID --></label>
+        <name>LG_Icomms_Premise_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- ICOMS Site ID --></label>
+        <name>LG_Icomms_Site_ID__c</name>
+    </fields>
+    <fields>
+        <label>Lokation nummer</label>
+        <name>LG_PremiseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantum Site Name --></label>
+        <name>LG_Quantum_Site_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- SUNIDADDRESSMAP --></label>
+        <name>LG_SUNIDADDRESSMAP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serviceability Copper Category --></label>
+        <name>LG_ServiceabilityCopperCategory__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Serviceability HFC Category --></label>
+        <name>LG_ServiceabilityHFCCategory__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Mehrfachbelegter Bürokomplex</label>
+        <name>LG_SharedOfficeBuilding__c</name>
+    </fields>
+    <fields>
+        <label>Technischer Kontakt</label>
+        <name>LG_TechnicalContact__c</name>
+        <relationshipLabel>Lokationen</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- UPRN --></label>
+        <name>LG_UPRN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Key Formula --></label>
+        <name>LG_UniqueKeyForm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique key --></label>
+        <name>LG_Uniquekey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Validated --></label>
+        <name>UM_AddressValidated__c</name>
+    </fields>
+    <fields>
+        <label><!-- ONU Number --></label>
+        <name>VM_ONUNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>cscrm__Account__c</name>
+        <relationshipLabel>Lokation</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Adressen Details</label>
+        <name>cscrm__Address_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Type --></label>
+        <name>cscrm__Address_Type__c</name>
+        <picklistValues>
+            <masterLabel>Rural</masterLabel>
+            <translation><!-- Rural --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Street</masterLabel>
+            <translation><!-- Street --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Building Name --></label>
+        <name>cscrm__Building_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Building Number --></label>
+        <name>cscrm__Building_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Building Type --></label>
+        <name>cscrm__Building_Type__c</name>
+        <picklistValues>
+            <masterLabel>Block</masterLabel>
+            <translation><!-- Block --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Building</masterLabel>
+            <translation><!-- Building --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>cscrm__City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>cscrm__Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Address Id --></label>
+        <name>cscrm__External_Address_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The ID of this Address in an external address database. --></help>
+        <label><!-- External ID --></label>
+        <name>cscrm__External_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The latitude/longitude coordinates of this address. --></help>
+        <label><!-- Geolocation --></label>
+        <name>cscrm__Geolocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Billing Address --></label>
+        <name>cscrm__Is_Billing_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Installation Address --></label>
+        <name>cscrm__Is_Installation_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Registered Office Address --></label>
+        <name>cscrm__Is_Registered_Office_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Shipping Address --></label>
+        <name>cscrm__Is_Shipping_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level Number --></label>
+        <name>cscrm__Level_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level Type --></label>
+        <name>cscrm__Level_Type__c</name>
+        <picklistValues>
+            <masterLabel>Floor</masterLabel>
+            <translation><!-- Floor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level</masterLabel>
+            <translation><!-- Level --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Plan Number --></label>
+        <name>cscrm__Plan_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Property Name --></label>
+        <name>cscrm__Property_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- State/Province --></label>
+        <name>cscrm__State_Province__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Name --></label>
+        <name>cscrm__Street_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Number End --></label>
+        <name>cscrm__Street_Number_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Number Start --></label>
+        <name>cscrm__Street_Number_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Type --></label>
+        <name>cscrm__Street_Type__c</name>
+        <picklistValues>
+            <masterLabel>Avenue</masterLabel>
+            <translation><!-- Avenue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Road</masterLabel>
+            <translation><!-- Road --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Street</masterLabel>
+            <translation><!-- Street --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Straße</label>
+        <name>cscrm__Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Number --></label>
+        <name>cscrm__Unit_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Type --></label>
+        <name>cscrm__Unit_Type__c</name>
+        <picklistValues>
+            <masterLabel>Office</masterLabel>
+            <translation><!-- Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Room</masterLabel>
+            <translation><!-- Room --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suite</masterLabel>
+            <translation><!-- Suite --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Zip/Postal Code --></label>
+        <name>cscrm__Zip_Postal_Code__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Custom Address Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Address Name --></nameFieldLabel>
+    <webLinks>
+        <label><!-- Validate_Address --></label>
+        <name>Validate_Address</name>
+    </webLinks>
+</CustomObjectTranslation>

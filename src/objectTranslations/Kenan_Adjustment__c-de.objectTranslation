@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- Adjustment --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Adjustment --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Adjustment --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Adjustment --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Adjustment --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Adjustment --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Adjustment --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Adjustment --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Adjustment Reason --></label>
+        <name>Adjustment_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Cancellation / Termination</masterLabel>
+            <translation><!-- Cancellation / Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>False entry in the system (correction)</masterLabel>
+            <translation><!-- False entry in the system (correction) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goodwill credit counseling</masterLabel>
+            <translation><!-- Goodwill credit counseling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goodwill credit invoice Complaints</masterLabel>
+            <translation><!-- Goodwill credit invoice Complaints --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goodwill credited Installation</masterLabel>
+            <translation><!-- Goodwill credited Installation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goodwill credited disorder</masterLabel>
+            <translation><!-- Goodwill credited disorder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non provided SLA Entstֲfrist</masterLabel>
+            <translation><!-- Non provided SLA Entstֲfrist --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Adjustment Type --></label>
+        <name>Adjustment_Type__c</name>
+        <picklistValues>
+            <masterLabel>adjustment against an adjustment</masterLabel>
+            <translation><!-- adjustment against an adjustment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>adjustment against non-recurring charge</masterLabel>
+            <translation><!-- adjustment against non-recurring charge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>adjustment against nondistributed taxes</masterLabel>
+            <translation><!-- adjustment against nondistributed taxes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>adjustment against recurring charge</masterLabel>
+            <translation><!-- adjustment against recurring charge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>adjustment against usage charge</masterLabel>
+            <translation><!-- adjustment against usage charge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>miscellaneous adjustment</masterLabel>
+            <translation><!-- miscellaneous adjustment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>APPROVE</masterLabel>
+            <translation><!-- APPROVE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CANCEL</masterLabel>
+            <translation>Abbrechen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DENY</masterLabel>
+            <translation><!-- DENY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In approval</masterLabel>
+            <translation><!-- In approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>disputed</masterLabel>
+            <translation><!-- disputed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>requested</masterLabel>
+            <translation><!-- requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Rechnungskontonummer</label>
+        <name>Billing_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice --></label>
+        <name>Invoice_Header__c</name>
+        <relationshipLabel><!-- Adjustments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Invoice Item --></label>
+        <name>Invoice_Item__c</name>
+        <relationshipLabel><!-- Adjustments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Open Item --></label>
+        <name>Open_Item__c</name>
+        <picklistValues>
+            <masterLabel>Cable Item</masterLabel>
+            <translation><!-- Cable Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet Item</masterLabel>
+            <translation><!-- Internet Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoice total</masterLabel>
+            <translation><!-- Invoice total --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leased Line Item</masterLabel>
+            <translation><!-- Leased Line Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telephony Item</masterLabel>
+            <translation><!-- Telephony Item --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Amount --></label>
+        <name>Total_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Type --></label>
+        <name>Unit_Type__c</name>
+        <picklistValues>
+            <masterLabel>Date range</masterLabel>
+            <translation><!-- Date range --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Days</masterLabel>
+            <translation><!-- Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Explicit amount</masterLabel>
+            <translation><!-- Explicit amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation><!-- Percent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Units</masterLabel>
+            <translation><!-- Units --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- accountExternalIdType --></label>
+        <name>accountExternalIdType__c</name>
+    </fields>
+    <fields>
+        <label><!-- accountExternalId --></label>
+        <name>accountExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- billRefNo --></label>
+        <name>billRefNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- billRefResets --></label>
+        <name>billRefResets__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency Code --></label>
+        <name>currencyCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- fraudIndicator --></label>
+        <name>fraudIndicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- primaryUnitsType --></label>
+        <name>primaryUnitsType__c</name>
+    </fields>
+    <fields>
+        <label><!-- primaryUnits --></label>
+        <name>primaryUnits__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>requestStatus__c</name>
+        <picklistValues>
+            <masterLabel>Disputed</masterLabel>
+            <translation><!-- Disputed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- revRcvCostCtr --></label>
+        <name>revRcvCostCtr__c</name>
+    </fields>
+    <fields>
+        <label><!-- sendtoKenan --></label>
+        <name>sendtoKenan__c</name>
+    </fields>
+    <fields>
+        <label><!-- trackingIdServ --></label>
+        <name>trackingIdServ__c</name>
+    </fields>
+    <fields>
+        <label><!-- trackingId --></label>
+        <name>trackingId__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <layouts>
+        <layout>Adjustment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Adjustment Number --></nameFieldLabel>
+</CustomObjectTranslation>

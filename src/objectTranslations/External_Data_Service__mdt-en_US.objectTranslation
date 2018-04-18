@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>External Data Service</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>External Data Services</value>
+    </caseValues>
+    <fields>
+        <label><!-- Apex Service Class --></label>
+        <name>Apex_Service_Class__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comma Separated list of the Key Field Names --></help>
+        <label><!-- KeyFields --></label>
+        <name>KeyFields__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

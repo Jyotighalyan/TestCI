@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Extract from Kenan</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Billing_Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; UM_Billing_Location__r.Id,UM_Billing_Location__r.LG_BillingAccountNumber__c,&quot;_blank&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Account Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Billing_Location__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Billing Account</label>
+        <referenceTo>csconta__Billing_Account__c</referenceTo>
+        <relationshipLabel>Collections</relationshipLabel>
+        <relationshipName>Collections</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Amount_Currency__c</fullName>
+        <description>Field to show real value of Collection Amount sent by Kenan</description>
+        <externalId>false</externalId>
+        <label>Collection Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Amount__c</fullName>
+        <description>Balance due amount; equals the total of the new_charges value plus the total_adj value and the total_paid value and new_charge_credits.</description>
+        <externalId>false</externalId>
+        <label>Collection Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Hold_Status_Translation__c</fullName>
+        <description>Translation of values from Collection Hold Status from Kenan</description>
+        <externalId>false</externalId>
+        <label>Collection Hold Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Hold_Status__c</fullName>
+        <description>0 or 1. 1=ON HOLD</description>
+        <externalId>false</externalId>
+        <label>Collection Hold Status</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_ID__c</fullName>
+        <description>Unique collection ID: Unique identifier of the collectable + Server identifier to uniquely identify collectable_id.</description>
+        <externalId>false</externalId>
+        <label>Collection ID</label>
+        <length>14</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Indicator_Translation__c</fullName>
+        <description>Translation of values from Collection Indicator from Kenan</description>
+        <externalId>false</externalId>
+        <label>Collection Indicator</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Indicator__c</fullName>
+        <description>Indicates whether an account is in collections:
+0 = not in collections
+1 = automatically placed into collections</description>
+        <externalId>false</externalId>
+        <label>Collection Indicator</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Letter_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Collection Letter</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Level__c</fullName>
+        <description>Current level/event</description>
+        <externalId>false</externalId>
+        <label>Next Collection Status</label>
+        <length>60</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Method_Translation__c</fullName>
+        <description>Translation of values from Collection Method from Kenan</description>
+        <externalId>false</externalId>
+        <label>Collection Method</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Method__c</fullName>
+        <description>Account credit rating, used to determine collections scenario
+0 - manual
+1 - automatic</description>
+        <externalId>false</externalId>
+        <label>Collection Method</label>
+        <length>6</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Path__c</fullName>
+        <externalId>false</externalId>
+        <label>Collection Path</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Start_Date_Converted__c</fullName>
+        <externalId>false</externalId>
+        <label>Collection Start-Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Start_Date__c</fullName>
+        <description>Date the account entered collections</description>
+        <externalId>false</externalId>
+        <label>Collection Start-Date</label>
+        <length>14</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Collection_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(UM_Collection_Level__c, 
+&apos;0&apos;, &apos;Nicht in Mahnung&apos;, 
+&apos;1&apos;, &apos;1. Mahnung&apos;, 
+&apos;2&apos;, &apos;2. Mahnung&apos;, 
+&apos;3&apos;, &apos;Downgrade&apos;, 
+&apos;4&apos;, &apos;Kündigung&apos;, 
+&apos;5&apos;, &apos;Inkasso&apos;, 
+&apos;6&apos;, &apos;Schlussrechnung&apos;, 
+&apos;7&apos;, &apos;Wiederherstellung Service&apos;, 
+NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Collection Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Customer_SF_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Collections</relationshipLabel>
+        <relationshipName>Collections</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UM_Days_left_to_next_collection_event__c</fullName>
+        <description>Num of days are remaining until the current event is completed and the account is processed to the next event</description>
+        <externalId>false</externalId>
+        <label>Days to next collection status</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Last_Event_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Collection Date</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Last_Event_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Collection Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Manual_Release__c</fullName>
+        <externalId>false</externalId>
+        <label>Manual Release</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Name_Counter__c</fullName>
+        <externalId>false</externalId>
+        <label>Name Counter</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Open_Dunning_Letter__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(UM_Collection_Letter_ID__c != null, HYPERLINK(&quot;/apex/UM_Documentum_Dunning?letterno=&quot; +UM_Collection_Letter_ID__c, &quot;Open Dunning Letter&quot;), &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open Dunning Letter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_UNIQUE_REC_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Unique Rec Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Collection</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>UM_Collection_Indicator_Translation__c</columns>
+        <columns>UM_Customer_SF_ID__c</columns>
+        <columns>UM_Billing_Location__c</columns>
+        <columns>UM_Collection_Method_Translation__c</columns>
+        <columns>UM_Collection_Amount_Currency__c</columns>
+        <columns>UM_Collection_Start_Date_Converted__c</columns>
+        <columns>UM_Collection_Hold_Status_Translation__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Collection Cycle</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Collections</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,1286 @@
+<apex:component controller="AddOnWidgetController">
+<div class="container-fluid margin-bot">
+        <div class="row row-no-margin margin-bot padding-left-small">
+            <div class="col-md-8">
+                <div id="addon-btn-holder" class="btn-group" role="group" aria-label="addon-type-select">
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <button type="button" id="addon-save" class="btn btn-default btn-save" style="float:right" onclick="Widget.AddOn.saveData()" aria-label="addon-save">Speichern</button>
+            </div>
+            <div class="col-md-12">
+                <div id="table-addon" class="table-title text-center"></div>
+            </div>
+        </div>
+        <div class="row row-no-margin margin-bot padding-left-small">
+
+        </div>
+        <div class="row row-no-margin margin-bot padding-left-small">
+                <div class="col-md-12">
+                        <div id='message' style="display: none;" class="table-title">
+                <span><b>&#10004;</b>    Add-ons saved successfully. </span>
+                </div>
+         </div></div>
+</div>
+<style>
+    body {
+        background-color: transparent;
+        font-family: "Arial", "helvetica", "sans-serif";
+        font-size: 12px;
+        font-weight: 400;
+        text-rendering: optimizeLegibility;
+    }
+    .margin-bot{
+            margin-bottom:20px;
+    }
+    .padding-left-small{
+            padding-left:5px;
+    }
+    .row-no-margin{
+            margin-left:0px;
+            margin-right:0px;
+    }
+    .table-title {
+        display: block;
+        margin: auto;
+        padding:5px;
+        margin-bottom:10px;
+        margin-top:10px;
+    }
+
+    .table-title h3 {
+         /*margin-left:10%;*/
+         color: black;
+         font-size: 18px;
+         font-weight: 400;
+         font-style:normal;
+         font-family: "Arial", "helvetica", "sans-serif";
+         text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    }
+    /*** Table Styles **/
+    .container-fluid .row #table-addon td {
+            vertical-align:middle;
+    }
+
+    .col-md-12 td:nth-child(2) {
+        text-align: left;
+    }
+    
+    .col-md-12 td:nth-child(3) {
+        text-align: right;
+    }
+    
+    .col-md-12 td:nth-child(4) {
+        text-align: right;
+    }
+    
+    .table-addon {
+        background: white;
+        border-radius:3px;
+        border-collapse: collapse;
+        margin: auto;
+        padding:5px;
+        color:#6d706f;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        animation: float 5s infinite;
+        margin-bottom: 10px;
+    }
+
+    .table-addon th {
+        color:white;
+        background: {!$Setup.WidgetStyle__c.dark__c};
+        border-bottom:4px solid #9ea7af;
+        border-right: 1px solid white;
+        font-size: 0.8rem;
+        font-family:'Arial';
+        font-weight: 300;
+        padding: 4px 0 !important;
+        text-align: center;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        vertical-align :middle;
+    }
+    
+    .table-addon th[data-sort] {
+        cursor: pointer;
+    }
+
+    .table-addon tr {
+        border-top: 1px solid #C1C3D1;
+        border-bottom: 1px solid #C1C3D1;
+        color:#6d706f;
+        font-size: 0.8rem;
+        font-weight:normal;
+        text-align: center;
+        text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+        vertical-align :middle;
+    }
+
+    .table-hover tr:hover td {
+        background: {!$Setup.WidgetStyle__c.hover__c};
+        color:#FFFFFF;
+    }
+
+    .captionText {
+        color: white;
+        text-align:center;
+        vertical-align:middle;
+        font-size:17px;
+        font-family:'Arial';
+        font-weight: 100;
+    }
+
+    button#addon-save {
+        border-radius:4px;
+        border: 1px solid transparent; 
+        color:#ffffff;
+        cursor:pointer;
+        float:right;
+        font-family:Arial;
+        font-size:14px;
+        padding: 6px 12px;       
+    }
+
+    button#addon-save:disabled,
+    button#addon-save:disabled:focus,
+    button#addon-save:disabled:active,
+    button#addon-save:disabled:hover {
+        border-radius:4px;
+        border: 1px solid transparent; 
+        color:#ffffff;
+        cursor:pointer;
+        float:right;
+        font-family:Arial;
+        font-size:14px;
+        padding: 6px 12px;
+    }
+
+    .btn.btn-default.btn-save {
+            background-color: #002c77; 
+    }
+
+    .btn.btn-default.btn-save:active,
+    .btn.btn-default.btn-save:focus,
+    .btn.btn-default.btn-save:hover
+    .btn.btn-default.btn-save:not(disabled) {
+            background:#1797c0;
+            border:1px solid #1797c0;
+            border-color: #1797c0;
+    }
+    .header-name{
+            text-align:center;
+    }
+    .header-image{
+            vertical-align:middle;
+    }
+    #message {
+            display:table;
+            font-family:Arial,Helvetica,sans-serif;
+            margin: auto;
+            padding:8px;
+            width: 20%;
+            color:#fafafa;
+            margin-top:5px;
+            background-color:#51A351;
+            border-radius:3px;
+            font-size:18px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    #message span {
+            text-align: center;
+            width: 100%;
+            display:table-cell;
+            vertical-align:middle;
+    }
+
+    .btn.btn-primary.btn-select-addon {
+        border: 1px solid transparent;     
+        font-size: 14px;
+        padding: 7px 12px;
+    }
+
+    .btn.btn-primary.btn-select-addon:hover,
+    .btn.btn-primary.btn-select-addon:active,
+    .btn.btn-primary.btn-select-addon:focus {
+        background-color: #226b86;
+        border: 1px solid transparent; 
+    }
+
+    .btn.btn-primary.btn.btn-select-addon[aria-expanded="false"] {
+        background-color: #002c77;
+        color: #f6f6f6;
+    }
+
+    .btn.btn-primary.btn.btn-select-addon[aria-expanded="true"] {
+        background-color: #f6f6f6;
+        color: #002C77;
+    }
+
+    .btn.btn-primary.btn-select-addon:not(.collapsed) {
+        background-color: #f6f6f6;
+        color: #002C77;      
+    }
+    </style>
+<script>
+    Visualforce.remoting.timeout = 120000;
+
+    if(typeof Widget == 'undefined') {
+            Widget = {};
+    } else {
+            Widget = Widget || {};
+    }
+
+    Widget.AddOn = {
+
+        configId: "configId",
+
+        receivedJSON: '',
+
+        receivedJSONs: [],
+
+        addOnAttribute: {},
+
+        getAttributeByName: function(name) {
+            return CS.getAttributeValue(getConfigRef() + name + '_0');
+        },
+
+        getConfigRef: function() {
+            return CS.Service.getCurrentConfigRef() != '' ? CS.Service.getCurrentConfigRef() + ':' : '';
+        },
+
+        getURLParameter: function(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+        },
+
+        getInput: function () {
+            try {
+                if(priceItemAttribute === '' || addOnCategory === '') {
+                    throw 'Please load categories and price item attribute name';
+                }
+                $('#table-addon').empty();
+                Widget.AddOn.receivedJSONs = [];
+                var priceItemId = Widget.AddOn.getAttributeByName(priceItemAttribute);
+                var categories = [];
+                for (key in addOnCategory) {
+                    if (key != undefined) {
+                        categories.push(key);
+                    }
+                }
+
+                var configId = Widget.AddOn.getURLParameter(Widget.AddOn.configId);
+                for(var i = 0; i < categories.length; i++) {
+                    var category = categories[i];
+                    
+                    // This remoting call will use the page's timeout value
+                    Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.AddOnWidgetController.getAvaialbleAddOns}',
+                            priceItemId,
+                            category,
+                            configId,
+                            Widget.AddOn.handleInput,
+                            {escape: false}
+                    );
+                }
+
+            } catch(err) {
+                Widget.AddOn.emptyTable("#table-addon","No available Add-ons.");
+                Widget.AddOn.toggleTableVisibility();
+            }
+        },
+
+        handleInput: function (result, event) {
+            var data2;
+            if (result != undefined && result != '') {
+                Widget.AddOn.receivedJSON = result;
+                Widget.AddOn.receivedJSONs.push(result);
+                data2 = JSON.parse(result);
+                Widget.AddOn.preSelected = $(JSON.parse(Widget.AddOn.receivedJSON)).last()[0]['incAddOns'].join();
+            }
+
+            if(data2 == undefined || (data2 != undefined && data2.length==0)){
+                Widget.AddOn.removeTableButtons();
+                Widget.AddOn.emptyTable("#table-addon","No available Add-ons.");
+                Widget.AddOn.toggleTableVisibility();
+                Widget.AddOn.tableCreated = false;
+            }
+            else{
+                Widget.AddOn.drawTable(data2,"#table-addon");
+                Widget.AddOn.createTableButtons();
+                Widget.AddOn.toggleTableVisibility();
+                Widget.AddOn.tableCreated = true;    
+        
+            }
+            var category = addOnCategory;
+            Widget.AddOn.getSelectedAddOns();
+            //TB had to re-fire this call
+            disableAddOnCheckboxIfIncluded();
+        },
+
+        drawTable: function(data,div) {
+            var table = $('<table/>').addClass('table table-condensed table-addon table-striped');
+            var columnCount = data[0].length;
+            var counter = data.length - 1;
+
+            var colNames=Widget.AddOn.GetHeaders(data);
+            //Draw table's header
+            var row = $("<thead/>");
+            row.append($("<th>{!$Label.LG_Quantity}</th>"));
+            row.append($("<th>Name</th>"));
+
+            for (var i = 0; i < colNames.length; i++) {
+                if(colNames[i]!="Id" && colNames[i]!="Quantity" && colNames[i]!="Image" && colNames[i]!="Name" && colNames[i]!="Selected" && colNames[i]!="category") {
+                    row.append($("<th>").html(colNames[i]));       
+                }
+            }
+            row.append($('</tr>'));
+            table.append(row);
+
+            var isQuantity = data[0]["Quantity"] === "true" ? true : false;
+            var tableName = '';
+            var tableBody = $('<tbody/>');
+            //Draw table's data
+            for (var i = 0; i < counter ; i++){
+                row = $("<tr/>");
+                if(isQuantity) {
+                    row.append($('<td><input type="number" value="' + data[i].Selected + '" min="0" name="'+data[i].Id+'"></input></td>'));
+                } else {
+                    row.append($('<td><input type="checkbox" onclick="enableSaveIfStateChange()" value="' + data[i].Id + '"'+ (data[i].Selected !== "0" ? ' checked' : ' ') + '></input></td>'));
+                }
+                  if(data[i]["Image"]==undefined || data[i]["Image"]==""){ // ZD
+                    row.append($('<td>'+data[i].Name+'</td>'));
+                } else {
+                    if(isQuantity) {
+                        row.append($('<td><div class="header-name"><span>'+data[i].Name+'</span></div><div class="header-image"><img alt="' + data[i].Image + '" src="' + data[i].Image + '" style="width:50px;height:50px;"></div></td>')); // ZD
+                    } else {
+                      row.append($('<td><div class="header-name"><span>'+data[i].Name+'</span></div><div class="header-image"><img src="' + data[i].Image + '" style="width:50px;height:50px;"></div></td>'));
+                  }
+              }
+
+              for (var j = 0; j < colNames.length; j++) {
+                if(colNames[j]!="Id" && colNames[j]!="Quantity" && colNames[j]!="Image" && colNames[j]!="Name" && colNames[j]!="Selected" && colNames[j]!="category"){
+
+                    if(colNames[j] != "Recurring Charge" && colNames[j] != "One-Off Charge") {
+                        row.append($('<td>' + data[i][colNames[j]] + '</td>'));
+                    } else {
+                        var charge = data[i][colNames[j]];
+                        if (charge) {
+                            charge = charge.replace(".", ",");
+                        }
+                        row.append($('<td>' + charge + '</td>'));
+                    }
+                }
+                if (colNames[j] == "Parent_Attribute") {
+                        //console.log(data[i][colNames[j]]);
+                        var inputs = data[i][colNames[j]].split('-');
+                        this.addOnAttribute[inputs[0]] = inputs[1];
+                    }
+                    if (colNames[j] == "category") {
+                      tableName = data[i][colNames[j]];
+                  }
+              }
+
+              tableBody.append(row);
+          }
+          table.append(tableBody);
+          // wrap table to be used as a section
+          var tabId = tableName.replace(" ","-").toLowerCase();
+          // create section pane
+          var pane = $('<div id="' + tabId + '-container" class="collapse"></div>').append(table);
+          $(div).append(pane);
+          $(table).attr('id', tabId).attr('name', tableName);
+        },
+
+        emptyTable: function(div,txt){
+            var table = $('<table></table>').addClass('table table-addon table-mar');
+            var row = $("<tr/>");
+            table.append(row);
+            row.append($("<th>"));
+            row = $("<tr/>");
+            row.append($('<td>'+txt+'</td>'));
+            table.append(row);
+            $(div).append(table);
+        },
+
+        toggleTableVisibility: function() {
+          ($('.table-title .table').hasClass('table-mar')) ? $('.table-title table.table-mar').hide() : '';
+          ($('.table-title .table').hasClass('table-hover')) ? $('.table-title table.table-hover').show() : '';
+        },
+
+        removeTableButtons: function() {
+          $('.btn-select-addon').remove();
+        },
+
+        createTableButtons: function() {
+          $('button.btn-select-addon').remove();
+          var bn = [],
+            btns = [],
+            cap = $('table.table-addon').not('.table-mar');
+          $(cap).map(function() {
+            bn.push($(this).attr('name'));
+          });
+
+          $(bn).each(function (i) {
+            if (bn[i] != '') {
+                var btn = $('<button class="btn btn-primary collapsed btn-select-addon" type="button" data-toggle="collapse" data-target="#' + bn[i].replace(" ","-").toLowerCase() + '-container" aria-controls= ' + bn[i].toLowerCase() + '>' + bn[i] + '</button>');
+                $('#addon-btn-holder').append(btn[0]);
+            }
+          });
+        },
+
+        GetHeaders: function(obj) {
+            var cols = new Array();
+            for (var key in obj[0]) {
+                cols.push(key);
+            }
+            return cols;
+        },
+
+        createButton: function(divID,func,txt,cls){
+            var button=$('<button/>',
+                {
+                    text: txt,
+                    click: func
+                }).addClass(cls);
+            $(divID).append(button);
+        },
+
+        addOnAttributeContains: function(obj) {
+            var i = this.addOnAttribute.length;
+            while (i--) {
+                if (this.addOnAttribute[i] == obj) {
+                        return true;
+                }
+            }
+            return false;
+        },
+
+        removeRelatedProduct: function(addOnId) {
+            for (key in addOnCategory) {
+                if (key != undefined) {
+                    var att1 = addOnCategory[key].ParentAttribute.split(' ').join('_');
+                    att1 = getConfigRef() + att1;
+                    console.warn("removeRelatedProduct att1 :" + att1);
+                    var att2 = addOnCategory[key].AddOnAttribute.split(' ').join('_');
+                    console.warn("removeRelatedProduct att2 :" + att2);
+                    var cnt = CS.countRelatedProducts(att1 + '_0');
+                    var deleted = false;
+                    if (cnt > 0) {
+                        for (var i=0; i < cnt; i++) {
+                            if (CS.getAttributeValue(att1 + '_' + i + ':' + att2 + '_0') === addOnId) {
+                                CS.Service.removeRelatedProduct(att1 + '_' + i);
+                                deleted = true;
+                                break;
+                            }
+                        }
+                        if (deleted) {
+                            break;
+                        }
+                    }
+                }
+            }
+        },
+
+        getSelectedAddOns: function() {
+            var selectedAddOns = [];
+            var processed = [];
+            for (key in addOnCategory) {
+                if (key != undefined) {
+                    var att1 = addOnCategory[key].ParentAttribute.split(' ').join('_');
+                    att1 = getConfigRef() + att1;
+                    var att2 = addOnCategory[key].AddOnAttribute.split(' ').join('_');
+                    var cnt = CS.countRelatedProducts(att1 + '_0');
+                    if (jQuery.inArray(att1, processed) == -1) {
+                        processed.push(att1);
+
+                        if (cnt > 0) {
+                            for (var i=0; i < cnt; i++) {
+                                selectedAddOns.push(CS.getAttributeValue(att1 + '_' + i + ':' + att2 + '_0'));
+                            }
+                        }
+                    }
+                }
+            }
+            var countedSelectedAddOns = {};
+            selectedAddOns.forEach(function(x) { countedSelectedAddOns[x] = (countedSelectedAddOns[x] || 0)+1; });
+
+            for (key in countedSelectedAddOns) {
+                $('#table-addon input[name="' + key + '"]').val(countedSelectedAddOns[key]);
+                var x = $('#table-addon input[value="' + key + '"]');
+                if (x.length > 0) {
+                    $('#table-addon input[value="' + key + '"]').get(0).checked = true;
+                }
+
+            }
+
+            return countedSelectedAddOns;
+        },
+
+        /**
+         * No longer used
+         */
+        addRelatedProduct: function(item, addOnAttribute, addOnId) {
+
+            var synchroniser = CS.Util.callbackSynchroniser({
+                success : function () {
+                    CS.Service.addRelatedProduct(item.attributeReference, item.productId, function () {
+                        afterDisplay();
+                        var validationResult = CS.Service.validateCurrentConfig(true);
+
+                        if (validationResult.isValid) {
+                            var ref = CS.Service.getCurrentConfigRef(),
+                                currentConfig = CS.Service.config[ref].config;
+
+                            currentConfig[CS.Util.configuratorPrefix+'Configuration_Status__c'] = 'Valid';
+                        }
+                        CS.setAttribute(ref + ':' + addOnAttribute, addOnId);
+                        CS.Service.saveAndContinue(function () {
+                            afterDisplay();
+                        });
+                    });
+                }
+            });
+
+            //Load
+            var productIndex = CS.Service.getProductIndex(item.productId);
+            if (!productIndex) {
+                synchroniser.register('Load Product Model ' + item.productId, function () {
+                    CS.Service.loadProduct(item.productId, function () {
+                        productIndex = CS.Service.getProductIndex(item.productId);
+                        synchroniser.register('Load Product Templates ' + item.productId, function () {
+                            CS.Service.loadProductTemplateHtml(item.productId, function () {
+                                jQuery.extend(CS.screens, CS.DataBinder.prepareScreenTemplates(productIndex));
+                                synchroniser.complete('Load Product Templates ' + item.productId);
+                            });
+                        });
+                        synchroniser.complete('Load Product Model ' + item.productId);
+                    });
+                });
+            }
+
+            synchroniser.start('Loading products');
+        },
+
+        saveData: function() {
+            var data = JSON.parse(Widget.AddOn.receivedJSON);
+            var saveDiffer = this.saveDifference();
+            for (var i = 0; i < saveDiffer.addOnsToRemove.length; i++) {
+                this.removeRelatedProduct(saveDiffer.addOnsToRemove[i]);
+            }
+            this.createRelatedProducts(saveDiffer.addOnsToCreate);
+
+            // disable save button after save until state change on checkbox
+            $('#addon-save').removeClass('btn-save').attr('disabled', true);
+        },
+
+        saveDifference: function() {
+            var selectedAddOns = [];
+            var processed = [];
+            for (key in addOnCategory) {
+                if (key != undefined) {
+                    var att1 = addOnCategory[key].ParentAttribute.split(' ').join('_');
+                    att1 = getConfigRef() + att1;
+                    var att2 = addOnCategory[key].AddOnAttribute.split(' ').join('_');
+                    var cnt = CS.countRelatedProducts(att1 + '_0');
+                    if (jQuery.inArray(att1, processed) == -1) {
+                        processed.push(att1);
+                        if (cnt > 0) {
+                            for (var i=0; i < cnt; i++) {
+                                selectedAddOns.push(CS.getAttributeValue(att1 + '_' + i + ':' + att2 + '_0'));
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            var countedSelectedAddOns = {};
+            selectedAddOns.forEach(function(x) { countedSelectedAddOns[x] = (countedSelectedAddOns[x] || 0) + 1; });
+
+            var list2=[];
+            $('#table-addon input[type=checkbox]').each(function(index, value) {
+                if (this.checked) {
+                    list2.push(this.value);
+                }
+            });
+            $('#table-addon input[type=number]').each(function(index, value) {
+                if (this.value > 0) {
+                    for(var i = 0; i < this.value; i++){
+                        list2.push(this.name)
+                    }
+                }
+            });
+            var countNewSelectedAddOns = {};
+            list2.forEach(function(x) { countNewSelectedAddOns[x] = (countNewSelectedAddOns[x] || 0)+1; });
+            var addOnsToRemove = [];
+            var addOnsToCreate = [];
+            for (var key in countNewSelectedAddOns) {
+                if (key != undefined) {
+                    if (key in countedSelectedAddOns) {
+                        var diff = countNewSelectedAddOns[key] - countedSelectedAddOns[key];
+                        if (diff > 0) {
+                            for (var i = 0; i < diff; i++) {
+                                addOnsToCreate.push(key);
+                            }
+                        } else if (diff < 0) {
+                            for (var i = 0; i < (diff * (-1)); i++) {
+                                addOnsToRemove.push(key);
+                            }
+                        }
+                    } else {
+                        var diff = countNewSelectedAddOns[key];
+                        for (var i = 0; i < diff; i++) {
+                            addOnsToCreate.push(key);
+                        }
+                    }
+                }
+            }
+            for (var key in countedSelectedAddOns) {
+                if (key != undefined) {
+                    if (key in countNewSelectedAddOns) {
+                    } else {
+                        var diff = countedSelectedAddOns[key];
+                        for (var i = 0; i < diff; i++) {
+                            addOnsToRemove.push(key);
+                        }
+                    }
+                }
+            }
+            var retVal = {};
+            retVal.addOnsToCreate = addOnsToCreate;
+            retVal.addOnsToRemove = addOnsToRemove;
+            return retVal;
+        },
+
+        /**
+         * No longer used
+         */
+        handleSave: function (result, event) {
+            var category = addOnCategory;
+            $("#message").fadeIn("slow");
+        },
+
+        /**
+         * No longer used
+         */
+        cancel: function(){
+            //cancel
+        },
+
+        createRelatedProducts: function(addOns) {
+            function populateScreens(productId, config) {
+                var productIndex = CS.Service.getProductIndex(productId),
+                    screensByProduct = productIndex.screensByProduct[productId],
+                    configScreens = [],
+                    idx = 0,
+                    attrRefsByDef = {},
+                    newAttrDefs = productIndex.attributeDefsByProduct[productId],
+                    defId,
+                    attrContext = {ref: '', index: 0};
+
+                for (defId in newAttrDefs) {
+                    ref = CS.Util.generateReference(newAttrDefs[defId].Name, attrContext);
+                    attrRefsByDef[defId] = ref;
+                }
+
+                for (idx in screensByProduct) {
+                    var screen = screensByProduct[idx],
+                        attrs = productIndex.attributeDefsByScreen[screen.Id],
+                        attrRefs = [];
+
+                    for (var attrId in attrs) {
+                        attrRefs.push(attrRefsByDef[attrId]);
+                    }
+
+                    configScreens[idx] = {
+                        id: screen.Id,
+                        reference: screen._reference,
+                        attrs: attrRefs
+                    };
+                }
+
+                config.screens = configScreens;
+            }
+
+            function validateScreens(data, spec, highlight) {
+                var index = CS.Service.getProductIndex(),
+                    result = {
+                        isValid: true,
+                        fieldErrors: {},
+                        screens: {}
+                    },
+                    configRef = typeof spec === 'object' ? spec.reference : spec,
+                    screenIndex = typeof spec === 'object' ? spec.index : undefined,
+                    wrapper = data[configRef],
+                    screens = wrapper ? wrapper.screens : undefined;
+
+                if (highlight === undefined) {
+                    highlight = true;
+                }
+
+                if (!screens) {
+                    CS.Log.error('No screens found for validation');
+                    return result;
+                }
+
+                if (screenIndex || screenIndex === 0) {
+                    result = doScreenValidation(data, screens[screenIndex], highlight, configRef);
+                    if (highlight) {
+                        wrapper.screens[screenIndex].validation = result;
+                    }
+                } else {
+                    jQuery.each(screens, function (i, screen) {
+                        var r = doScreenValidation(data, screen, highlight, configRef);
+                        if (highlight) {
+                            wrapper.screens[i].validation = r;
+                        }
+                        jQuery.extend(result.screens, r.screens);
+                        if (!r.isValid) {
+                            result.isValid = false;
+                            if (highlight) {
+                                jQuery.extend(result.fieldErrors, r.fieldErrors);
+                            }
+                        }
+                    });
+                }
+
+                return result;
+            }
+
+            function doScreenValidation(data, screen, highlight, configRef) {
+                var result = {
+                        isValid: true,
+                        fieldErrors: {},
+                        screens: {}
+                    };
+
+                if (highlight === undefined) {
+                    highlight = true;
+                }
+
+                result.screens[screen.id] = true;
+                if (typeof configRef === 'undefined') {
+                    configRef = CS.Service.getCurrentConfigRef();
+                }
+
+                var prefix = CS.Util.configuratorPrefix;
+                jQuery.each(screen.attrs, function (i, ref) {
+                    var attrRef = (configRef === '' ? ref : configRef+':'+ref),
+                        it = data[attrRef],
+                        valueField = prefix + 'Value__c',
+                        fieldError = {validationError: false, validationMessage: undefined};
+
+                    if (it && it.attr) {
+                        var isRequiredActiveVisible = (it.attr[prefix + 'Is_Required__c'] && it.attr[prefix + 'is_active__c'] && ! it.attr[prefix + 'Hidden__c']);
+                        if (isRequiredActiveVisible && isValueBlank(it)) {
+                            fieldError.validationError = true;
+                            fieldError.validationMessage = 'This value is required';
+                        } else if (it.definition[prefix + 'Type__c'] === 'Related Product' &&
+                                (it.relatedProducts instanceof Array) &&
+                                it.relatedProducts.length > 0
+                            ) {
+                            for (var c = 0; c < it.relatedProducts.length; c++) {
+                                var relatedConfig = it.relatedProducts[c].config;
+                                if (relatedConfig[prefix + 'Configuration_Status__c'] !== 'Valid') {
+                                    fieldError.validationError = true;
+                                    fieldError.validationMessage = 'Related product attribute contains incomplete configurations';
+                                    break;
+                                }
+                            }
+                        }
+
+                        result.fieldErrors[attrRef] = fieldError;
+                        if (fieldError.validationError) {
+                            result.screens[screen.id] = false;
+                            result.isValid = false;
+                        }
+                        if (highlight) {
+                            CS.binding.update(attrRef, result.fieldErrors[attrRef]);
+                        }
+                    }
+                });
+
+                return result;
+
+                function isValueBlank(item) {
+                    var valueField = prefix + 'Value__c';
+                    var retValue = (item.attr[valueField] === null || item.attr[valueField] === '');
+
+                    if (item.definition) {
+                        if (item.definition[prefix + 'Type__c'] in {'Select List':'','Radio Button':''}) {
+                            retValue = retValue || (item.attr[valueField] === CS.NULL_OPTION_VALUE);
+                        } else if (item.definition[prefix + 'Type__c'] === 'Related Product') {
+                            // Ignore the Value field contents, check only related products array's size
+                            retValue = (item.relatedProducts.length < 1);
+                        }
+                    }
+
+                    return retValue;
+                }
+            }
+
+            function loadRulesForConfig(reference, productDef) {
+                if (!CS.Rules.hasRules(reference)) {
+                    var referenceField = CS.Util.configuratorPrefix + 'reference__c';
+                    if (!productDef.hasOwnProperty(referenceField)) {
+                        CS.Log.error('Could not find the field reference__c in the current product definition', productDef);
+                        return;
+                    }
+                    if (productDef[referenceField] === null) {
+                        CS.Log.error('Current product definition\'s reference is null ', productDef);
+                        return;
+                    }
+
+                    var tpl = jQuery('#' + CS.Util.generateId(productDef[CS.Util.configuratorPrefix + 'reference__c']) + '__rules'),
+                        rules,
+                        idx = 0; // this will be for 'leaf' Attributes which presently will always be index 0 (this will change if attribute arrays are introduced using the leaf node index)
+
+                    if (tpl.size() === 0) {
+                        CS.Log.warn('Could not find rules template with reference: ' + productDef[referenceField]);
+                    } else {
+                        var ref = reference ? reference + ':' : '';
+                        rules = tpl.get(0).innerHTML.replace(/%idx%/g, idx).replace(/(['"])%ctx%\1/g, function(match, $1) { return ($1 + reference + $1); }).replace(/%ctx%/g, ref);
+                        CS.Rules.addRules(reference, rules);
+                    }
+                }
+            }
+
+            function updateAttribute(input) {
+                var wrapper = CS.getAttributeWrapper(input.name);
+                wrapper.attr['cscfga__Value__c'] = input.value;
+                if (input.type === 'select-one') {
+                    // CS.setAttributeValue(input.name, jQuery(input).find('option:selected').text(), false);
+                    var value = jQuery(input).find('option:selected').text();
+                    wrapper.attr['cscfga__Display_Value__c'] = value;
+                } else {
+                    // CS.setAttributeValue(input.name, input.value, false);
+                    wrapper.attr['cscfga__Display_Value__c'] = input.value;
+                }
+            }
+
+            function buildAttribute(def, context, selectOptions, attributeFields, addOnId, addOnName) {
+                context = context || {};
+                var prefix = CS.Util.configuratorPrefix;
+                var wrapper = {
+                    "attr": {
+                        "attributes": {
+                            "type": prefix + "Attribute__c"
+                        }
+                    },
+                    "attributeFields": {},
+                    "definitionId": def.Id,
+                    "displayInfo": context.displayInfo || def[prefix + 'Type__c'],
+                    "reference": CS.Util.generateReference(def.Name, context),
+                    "relatedProducts": [],
+                    "selectOptions": selectOptions
+                };
+                var typeInfo = {
+                    'type': def[prefix + 'Data_Type__c'],
+                    'scale': def[prefix + 'Scale__c']
+                };
+
+                wrapper.attr[prefix + "Attribute_Definition__c"] = def.Id;
+                wrapper.attr[prefix + 'Cascade_value__c'] = def[prefix + 'Cascade_value__c'];
+                wrapper.attr[prefix + 'Display_Value__c'] = (
+                    def[prefix + 'Type__c'] === 'Calculation'
+                        ? null
+                        : CS.DataConverter.localizeValue(def[prefix + 'Default_Value__c'], typeInfo)
+                );
+                wrapper.attr[prefix + 'Hidden__c'] = def[prefix + 'Hidden__c'];
+                wrapper.attr[prefix + 'is_active__c'] = true;
+                wrapper.attr[prefix + 'Is_Line_Item__c'] = def[prefix + 'Is_Line_Item__c'];
+                wrapper.attr[prefix + 'Is_Required__c'] = def[prefix + 'Required__c'];
+                wrapper.attr[prefix + 'Line_Item_Sequence__c'] = def[prefix + 'Line_Item_Sequence__c'];
+                wrapper.attr[prefix + 'Line_Item_Description__c'] = def[prefix + 'Line_Item_Description__c'];
+                wrapper.attr.Name = def.Name;
+                wrapper.attr[prefix + 'Price__c'] = def[prefix + 'Base_Price__c'] || 0;
+
+                wrapper.attr[prefix + 'Value__c'] = (
+                    def[prefix + 'Type__c'] === 'Calculation'
+                        ? ''
+                        : CS.DataConverter.normalizeValue(def[prefix + 'Default_Value__c'], typeInfo)
+                );
+                if (def.Name === addOnName) {
+                    wrapper.attr[prefix + 'Value__c'] = addOnId;
+                }
+                wrapper.attr[prefix + 'Recurring__c'] = def[prefix + 'Recurring__c'];
+
+                if (def[prefix + 'Type__c'] === 'Select List' && def[prefix + 'Default_Value__c'] && selectOptions) {
+                    for (var i = 0; i < selectOptions.length; i++) {
+                        if (selectOptions[i] == def[prefix + 'Default_Value__c']) {
+                            wrapper.attr[prefix + 'Display_Value__c'] = selectOptions[i].Name;
+                            break;
+                        }
+                    }
+                }
+
+                _.each(attributeFields, function(a) {
+                    CS.Service.setAttributeField(wrapper, a.Name, a[prefix + 'Default_Value__c']);
+                });
+
+
+                return wrapper;
+            }
+
+            function getContext(ref, attrName, idx, parent) {
+                return {ref: ref, attrName: attrName, index: (idx || 0), parent: parent};
+            }
+
+            function buildConfig(def, reference, context) {
+                var wrapper = {
+                    "reference": reference,
+                    "config": {
+                        "attributes": {
+                            "type": "Product_Configuration__c"
+                        }
+                    }
+                };
+                var prefix = CS.Util.configuratorPrefix;
+                wrapper.config[prefix + 'Attribute_Name__c'] = context.attrName;
+                wrapper.config[prefix + 'Billing_Frequency__c'] = CS.getFrequencyValueForName(def[prefix + 'Default_Billing_Frequency__c']);
+                wrapper.config[prefix + 'Contract_Term__c'] = def[prefix + 'Default_Contract_Term__c'];
+                wrapper.config[prefix + 'Contract_Term_Period__c'] = CS.getPeriodValueForName(def[prefix + 'Default_Contract_Term_Period__c']);
+                wrapper.config[prefix + 'Description__c'] = def[prefix + 'Description__c'];
+                wrapper.config[prefix + 'Index__c'] = context.index;
+                wrapper.config[prefix + 'Last_Screen_Index__c'] = 0;
+                wrapper.config.Name = CS.Util.getFirstDefinedValue([def.Name, def[prefix + 'Description__c']]);
+                wrapper.config[prefix + 'Product_Definition__c'] = def.Id;
+                wrapper.config[prefix + 'Recurrence_Frequency__c'] = CS.getFrequencyValueForName(def[prefix + 'Default_Frequency__c']);
+                wrapper.config[prefix + 'Configuration_Status__c'] = 'Incomplete';
+                wrapper.config[prefix + 'Validation_Message__c'] = '';
+                wrapper.config[prefix + 'Product_Family__c'] = (def.Name.length > 40) ? def.Name.substr(0, 40) : def.Name;
+
+                return wrapper;
+            }
+
+            function createConfiguration(configData, anchorRef, newProductId, parent, addOnId, addOnName) {
+                var ROOT_REFERENCE = '';
+                var productIndex = CS.Service.getProductIndex(newProductId);
+
+                if (!productIndex) {
+                    throw 'Product index for ' + newProductId + ' not found';
+                }
+
+                var productDef = productIndex.productsById[newProductId],
+                    wrapper = configData[anchorRef],
+                    newAttrDefs = productIndex.attributeDefsByProduct[newProductId],
+                    screensByProduct = productIndex.screensByProduct[newProductId],
+                    configScreens = [],
+                    idx = 0,
+                    name,
+                    newConfig = {},
+                    context,
+                    attr,
+                    defId,
+                    ref;
+
+                if (anchorRef !== ROOT_REFERENCE && !wrapper) {
+                    return error('Could not locate reference ', anchorRef, configData);
+                }
+
+                if (!productDef) {
+                    return error('Could not find product definition for id', newProductId);
+                }
+
+                if (!newAttrDefs) {
+                    return error('Could not find attribute definitions for product id', newProductId);
+                }
+
+                if (anchorRef === ROOT_REFERENCE) {
+                    // root config
+                    ref = anchorRef;
+                } else {
+                    // attaching a related product configuration to an attribute on the parent
+                    idx = wrapper.relatedProducts.length;
+                    name = wrapper.attr.Name;
+                    ref = CS.Util.stripReference(anchorRef) + idx;
+                }
+                context = getContext(ref, name, idx, parent);
+
+                newConfigWrapper = buildConfig(productDef, ref, context);
+
+                CS.Log.info('Creating configuration for reference ' + ref);
+
+                if (anchorRef !== ROOT_REFERENCE) {
+                    // Link related product to parent and mark as unsaved
+                    newConfigWrapper.parent = parent;
+                    newConfigWrapper.unsaved = true;
+                    var relatedProducts = wrapper.relatedProducts.slice(0);
+                    relatedProducts[idx] = newConfigWrapper;
+                    CS.binding.update(anchorRef, {
+                        relatedProducts: relatedProducts
+                    });
+                }
+
+                var attrContext = {
+                    ref: context.ref,
+                    index: 0
+                };
+
+                for (defId in newAttrDefs) {
+                    attr = buildAttribute(newAttrDefs[defId], attrContext, productIndex.find('selectOptionsByAttribute', defId), productIndex.find('attributeFieldDefsByAttributeDef', defId), addOnId, addOnName);
+                    attr.definition = productIndex.all[attr.definitionId];
+                    configData[attr.reference] = attr;
+                }
+
+                populateScreens(newProductId, newConfigWrapper);
+
+                if (configData[ref]) {
+                    // Overlay config on parent attribute node in configuration for related product #0
+                    jQuery.extend(configData[anchorRef], newConfigWrapper);
+                } else {
+                    configData[ref] = newConfigWrapper;
+                }
+
+                /*
+                var linkedObjectPropertiesCacheKey = CS.Service.getLinkedObjectId() + '|' + newProductId;
+
+                var linkedObjectPropertiesExist = CS.Util.isObject(configData[ref]['linkedObjectProperties']);
+                var linkedObjectApiExists = (
+                    CS.Service['loadLinkedObjectProperties'] instanceof Function
+                    && CS.Service['getLinkedObjectId'] instanceof Function
+                );
+
+                if (linkedObjectPropertiesExist) {
+                    // If cache key doesn't exist... (mind the negation operator)
+                    if(!linkedObjectPropertiesCache.hasOwnProperty(linkedObjectPropertiesCacheKey)) {
+                    linkedObjectPropertiesCache[linkedObjectPropertiesCacheKey] =
+                        configData[ref]['linkedObjectProperties'];
+                    }
+                }
+
+                // If there are no linked object properties... (mind the negation operator)
+                if (!linkedObjectPropertiesExist && linkedObjectApiExists) {
+                    function _loadLinkedObjectProperties() {
+                    CS.Log.info('***** Loading linked object properties (deferred)...');
+
+                    var deferred = Q.defer();
+
+                    CS.Service.loadLinkedObjectProperties(
+                        CS.Service.getLinkedObjectId(), newProductId,
+                        function(linkedObjectProperties) {
+                        if (!CS.Util.isObject(linkedObjectProperties)) {
+                            linkedObjectProperties = {};
+                        }
+                        linkedObjectPropertiesCache[linkedObjectPropertiesCacheKey] =
+                            configData[ref]['linkedObjectProperties'] =
+                            linkedObjectProperties;
+                        deferred.resolve();
+                        }
+                    );
+
+                    return deferred.promise;
+                    }
+
+                    function _loadRulesForConfig() {
+                    CS.Log.info('***** Loading rules for configuration (deferred)...');
+
+                    var deferred = Q.defer();
+
+                    loadRulesForConfig(ref, productDef);
+
+                    return deferred.promise;
+                    }
+
+                    if (Util.isObject(linkedObjectPropertiesCache[linkedObjectPropertiesCacheKey])) {
+                    CS.Log.info('***** Linked object properties cache hit, cache key: ', linkedObjectPropertiesCacheKey);
+                    configData[ref]['linkedObjectProperties'] =
+                        linkedObjectPropertiesCache[linkedObjectPropertiesCacheKey];
+                    loadRulesForConfig(ref, productDef);
+                    } else {
+                    _loadLinkedObjectProperties()
+                    .then(_loadRulesForConfig)
+                    .fail(CS.Log.error);
+                    }
+                } else {
+
+                */
+                loadRulesForConfig(ref, productDef);
+                // }
+
+                return newConfigWrapper;
+            }
+
+            function relatedProductsRendered() {
+                if (typeof CS.Service.config[''].bound !== 'undefined' && !CS.Service.config[''].bound) {
+                    CS.Log.debug('Rebinding');
+                    CS.binding = CS.DataBinder.bind(CS.Service.config, CS.Service.getProductIndex(), jQuery('#configurationContainer'));
+                    CS.binding.on('beforeupdate', function(ref, properties, event) {
+                        CS.Log.debug('Before Update', ref, properties, event);
+                        if (!CS.rulesTimer) {
+                            CS.rulesTimer = window.setTimeout(function() {
+                                CS.Rules.evaluateAllRules('after update: ' + ref);
+                                CS.rulesTimer = undefined;
+                            }, 400);
+                        }
+                    });
+                    CS.Service.config[''].bound = true;
+                }
+            }
+
+            function addRelatedProductInline(anchorRef, definitionId) {
+
+                var params = {
+                    ref: anchorRef,
+                    id: definitionId
+                };
+
+                var availableProductOptions,
+                    availableProducts = [],
+                    index = CS.Service.getProductIndex();
+
+                CS.Log.debug('Add related product...', params.ref);
+
+                var availableProductOptions = CS.RPUtils.getSelectProductOptionsForAttrId(definitionId);
+                var successFired = false;
+                var synchroniser = CS.Util.callbackSynchroniser({
+                    success: function() {
+                        if(!successFired){
+                            successFired = true;
+                            console.log('prepareSelectProduct success call - availableProducts: ' + availableProducts)
+                            prepareSelectProduct(params, availableProducts);
+                        }
+                    }
+                });
+
+                var productId = (availableProductOptions['ProductCategories'].length === 0 && availableProductOptions['ProductDefinitions'].length === 1) ? availableProductOptions["ProductDefinitions"][0]['Id'] : params.Id;
+                var productIndex = CS.Service.getProductIndex(productId);
+                if (!productIndex) {
+                    synchroniser.register('Load Product Model ' + productId, function() {
+                        CS.Service.loadProduct(productId, function() {
+                            productIndex = CS.Service.getProductIndex(productId);
+                            availableProducts.push(productIndex.all[productId]);
+
+                            synchroniser.register('Load Product Templates ' + productId, function() {
+                                CS.delegate.loadProductTemplateHtml(productId, function() {
+                                    jQuery.extend(CS.screens, CS.DataBinder.prepareScreenTemplates(productIndex));
+                                    synchroniser.complete('Load Product Templates ' + productId);
+                                    console.log('prepareSelectProduct call - availableProducts: ' + availableProducts);
+                                    if(!successFired){
+                                        successFired = true;
+                                        prepareSelectProduct(params, availableProducts);
+                                    }
+                                });
+                            });
+
+                            synchroniser.complete('Load Product Model ' + productId);
+                            prepareSelectProduct(params, availableProducts);
+                        });
+                    });
+                } else {
+                    availableProducts.push(productIndex.all[productId]);
+                }
+
+                synchroniser.start('Loading products');
+
+                function prepareSelectProduct(params, availableProducts) {
+                    CS.Log.debug('availableProducts:', availableProducts);
+
+                    if (availableProducts.length === 1) {
+                        params.Id = availableProducts[0].Id;
+                        doAddRelatedProductInline(params.ref, params.Id);
+                    } else {
+                        doAddRelatedProductInline(params.ref, params.Id);
+                    }
+                }
+            }
+
+            function doAddRelatedProductInline(anchorRef, productId, addOnId, addOnName, callback, containerSelector) {
+                var products,
+                    productDef,
+                    parent = CS.Service.config[CS.Service.getCurrentConfigRef()],
+                    anchorWrapper = CS.Service.config[anchorRef],
+                    attrDef = CS.Service.getAttributeDefinitionForReference(anchorRef);
+
+                if (!attrDef) {
+                    return;
+                }
+
+                var prefix = CS.Util.configuratorPrefix;
+
+                if (attrDef[prefix + 'Type__c'] != 'Related Product') {
+                    CS.Log.error('Cannot add related product on Attribute of type ', attrDef[prefix + 'Type__c']);
+                    return;
+                }
+
+                var min = attrDef[prefix + 'Min__c'];
+                var max = attrDef[prefix + 'Max__c'];
+                if (max == anchorWrapper.relatedProducts.length) {
+                    CS.displayInfo('New item cannot be added - the maximum number of ' + anchorWrapper.definition.Name + ' records is ' + max);
+                    return;
+                }
+
+                if (!productId) {
+                    products = CS.Service.getAvailableProducts(anchorRef);
+                    productId = products[0][prefix + 'Product_Definition__c'];
+                }
+
+                /*
+                if (CS.UI) {
+                    CS.UI.suspendUpdates();
+                }
+                */
+
+                var initialAttrs = [];
+                jQuery.each(CS.Service.config, function(key, value) {
+                    initialAttrs.push(key);
+                });
+
+                var configWrapper = createConfiguration(CS.Service.config, anchorRef, productId, parent, addOnId, addOnName);
+
+                // set proper config name for related product BUG-01451
+                var numRelatedProducts = anchorWrapper.relatedProducts.length;
+                var maxIndex = 0;
+                var rpAttrName = attrDef['Name'];
+                for (var i = 0; i < numRelatedProducts; i++) {
+                    var rpPcName = anchorWrapper.relatedProducts[i].config['Name'];
+                    if (rpPcName.indexOf(rpAttrName) === 0) {
+                        rpPcName = rpPcName.substring(rpAttrName.length - 1);
+                    }
+                    var tokens = rpPcName.split(' ');
+                    var lastToken = tokens[tokens.length - 1];
+                    if (jQuery.isNumeric(lastToken)) {
+                        var sufixIndex = parseInt(lastToken);
+                        if (maxIndex < sufixIndex) {
+                            maxIndex = sufixIndex;
+                        }
+                    }
+                }
+                maxIndex++;
+
+
+                configWrapper.config.Name = attrDef['Name'] + ' ' + maxIndex;
+                anchorWrapper.attr[prefix + 'Display_Value__c'] = configWrapper.config.Name;
+                configWrapper.config[CS.Util.configuratorPrefix + 'Configuration_Status__c'] = 'Valid';
+                CS.Service.config[''].bound = false;
+
+                /*
+                if (CS.UI) {
+                    CS.UI.resumeUpdates();
+                }
+                */
+            }
+
+            ;
+            for (var i = 0; i < addOns.length; i++) {
+                for (var j = 0; j < Widget.AddOn.receivedJSONs.length; j++) {
+                    var data = JSON.parse(Widget.AddOn.receivedJSONs[j]);
+                    for (var k = 0; k < data.length; k++) {
+                        if (data[k].Id == addOns[i]) {
+                            var cat = addOnCategory[data[k].category];
+                            var parentAtt = cat.ParentAttribute.split(' ').join('_') + '_0';
+                            parentAtt = Widget.AddOn.getConfigRef() + parentAtt;
+                            var childAtt = cat.AddOnAttribute;
+                            var defId = CS.Service.getAvailableProducts(parentAtt)[0].cscfga__Product_Definition__c;
+                            doAddRelatedProductInline(parentAtt, defId, addOns[i], childAtt, function() {}, {} )
+                        }
+                    }
+                }
+            }
+            CS.Rules.evaluateAllRules();
+            relatedProductsRendered();
+            //doAddRelatedProductInline('Add_On_0', 'a0b24000001tWoe', 'a0p24000000v8LR', 'Add On Price Item Id', function() {}, {} );
+        },
+
+    }
+</script>
+</apex:component>

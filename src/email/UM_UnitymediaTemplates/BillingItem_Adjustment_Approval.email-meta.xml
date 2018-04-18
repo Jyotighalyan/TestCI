@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BillingItem Adjustment approval request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CSCAP__FormalApprovalEmailLetterHead</letterhead>
+    <name>Billing Item approval email</name>
+    <style>formalLetter</style>
+    <subject>Please Approve the Billing Level Adjustment</subject>
+    <textOnly>Hi {!Receiving_User.Name},
+
+For Billing Level Adjustment {!UM_BillingAccountItem__c.Name}, an approval is requested.
+Please find the details of the request below:
+
+Status of Request: {!UM_BillingAccountItem__c.UM_Approval_Status__c}
+Item Type: {!UM_BillingAccountItem__c.UM_ItemType__c}
+Billing Account: {!UM_BillingAccountItem__c.UM_BillingAccount__c}
+NRC Reason: {!UM_BillingAccountItem__c.UM_NRC_Reason__c}
+Description: {!UM_BillingAccountItem__c.UM_Description__c}
+Start Date : {!UM_BillingAccountItem__c.UM_StartDate__c}
+Total Amount: {!UM_BillingAccountItem__c.UM_Total_Amount__c}
+Created By: {!UM_BillingAccountItem__c.CreatedBy}
+Created Date: {!UM_BillingAccountItem__c.CreatedDate}
+
+Adjustment Details: {!UM_BillingAccountItem__c.Link}
+
+Please click on below link to Approve/Reject the request:
+{!ApprovalRequest.Internal_URL}
+
+Regards.</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,10 @@
+{!Today}
+
+Hallo {!User.Manager},
+
+{!User.Name} hat Ihre Genehmigung für folgendes Element angefordert: {!Opportunity.Link}
+
+Bitte klicken Sie auf diesen Link, um den betreffenden Datensatz zu genehmigen bzw. abzulehnen.
+
+Vielen Dank!
+Ihr B2B Functional Management

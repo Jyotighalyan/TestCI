@@ -1,0 +1,10 @@
+Please find a signed contract in the attachment.
+
+Account Name: {!Opportunity.Account}
+Account Number: {!Account.LG_AccountNumber__c}
+
+Link to opportunity: {!Opportunity.Link}
+
+Regards,
+
+{!User.Name}

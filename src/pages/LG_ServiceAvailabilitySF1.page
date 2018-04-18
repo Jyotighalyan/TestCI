@@ -1,0 +1,4 @@
+<apex:page docType="html-5.0" standardStylesheets="false">
+    <apex:stylesheet value="{!URLFOR($Resource.LG_BootstrapSF1, 'css/bootstrap-namespaced.css')}"/>
+    <c:LG_ServiceAvailabilityComponentSF1 postalCode="{!$CurrentPage.parameters.postalCode}" houseNumber="{!$CurrentPage.parameters.houseNumber}" houseNumberExtension="{!$CurrentPage.parameters.houseNumberExtension}"/>
+</apex:page>

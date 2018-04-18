@@ -1,0 +1,1660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AddToCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CallHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EmailHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EnableCustomerPortal</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EnablePartnerPortalUser</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EnableSelfService</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ListClean</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Merge</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewContact</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SmsHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewCustomerPortal</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewPartnerPortalUser</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewSelfService</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AssistantName</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>AssistantPhone</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LG_Care_Survey_OptOutDate__c</fullName>
+        <externalId>false</externalId>
+        <label>SurveyOptOutDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>B2B_Incomplete_Contact__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( AND (
+      OR(  
+      OR(ISBLANK(Email), ISNULL(Email)),       
+      OR(ISBLANK( Phone ), ISNULL(Phone))  
+      ),
+      ISPICKVAL( B2B_Bounced_Category_pklst__c , &apos;Hard Bounce&apos;)
+        ), 
+      IMAGE($Label.B2B_Bounced_Incomplete_Contact , &quot;!&quot;, 30,30) ,
+	  ( IF( 
+			OR(  
+			OR(ISBLANK(Email), ISNULL(Email)), 
+			OR(ISBLANK( Phone ), ISNULL(Phone))  
+		   ), 
+      IMAGE($Label.B2B_Exclamation_Mark_Bounce , &quot;!&quot;, 30,30) ,
+	  
+        (IF(ISPICKVAL( B2B_Bounced_Category_pklst__c , &apos;Hard Bounce&apos;), 
+      IMAGE($Label.B2B_Bounced_Contact , &quot;!&quot;, 30,30) , NULL))
+)
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Please Note</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>B2B_Bounced_Category_pklst__c</fullName>
+        <externalId>false</externalId>
+        <label>Bounced Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hard Bounce</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>B2B_Activation_Code__c</fullName>
+        <description>Placeholder to store the code generated</description>
+        <externalId>false</externalId>
+        <label>Activation Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>B2B_Care_Email_Sent_On__c</fullName>
+        <externalId>false</externalId>
+        <label>Activation Code Email Sent On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>B2B_Expiration_Date__c</fullName>
+        <description>To store the validity till date of activation code</description>
+        <externalId>false</externalId>
+        <label>Activation Code Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>B2B_Link_to_Self_Care_Portal__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK($Label.B2B_Self_Care_redirection_Url, &quot;Self Care Portal&quot; , &quot;_blank&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ULM Self Care Portal</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>B2B_Self_Care_Redirection_Url__c</fullName>
+        <externalId>false</externalId>
+        <formula>$Label.B2B_Self_Care_redirection_Url</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Self Care Redirection Url</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>B2B_Self_Care_User_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Self Care User Status</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>B2B_ULM_User_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>ULM User Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Birthdate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CSCAP__Approval_PIN__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Approval PIN</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>DoNotCall</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Fax</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Generate_Activation_Code__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box to track the if activation code was successfully generated for Self Care User or not</description>
+        <externalId>false</externalId>
+        <label>Generate Activation Code</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfEmail</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfFax</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>HomePhone</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Jigsaw</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LG_AccountContact_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Principal contact</fullName>
+                    <default>false</default>
+                    <label>Principal contact</label>
+                </value>
+                <value>
+                    <fullName>Customer Contact</fullName>
+                    <default>false</default>
+                    <label>Customer Contact</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Care_Relationship_Survey_Sent_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Relationship Survey Sent Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LG_Care_Survey_Opt_Out__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Survey Opt Out</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_Contact_Account_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.LG_AccountNumber__c</formula>
+        <label>Contact Account No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_DecisionMaker__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>if the Contact is Decision Maker in the Company</description>
+        <externalId>false</externalId>
+        <label>Decision Maker</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_ExternalID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LG_IsFinContact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To check whether the contact is Finance Contact or not.</description>
+        <externalId>false</externalId>
+        <label>Is Finance Contact?</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_LastInteractionDate__c</fullName>
+        <description>defining Last Interaction Day of Contact</description>
+        <externalId>false</externalId>
+        <label>Last Interaction Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_LastInteractionTopic__c</fullName>
+        <description>defining Last Interaction Topic of Contact</description>
+        <externalId>false</externalId>
+        <label>Last Interaction Topic</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MobileOptOut__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Mobile Opt Out</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_Password__c</fullName>
+        <description>SFOM-2202 -- Created as part of the Manage Tenant process</description>
+        <externalId>false</externalId>
+        <label>Password</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PhoneOptOut__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Phone Opt Out</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_PostOptOut__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Post Opt Out</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_PreferredCommunication__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Communication</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Call</fullName>
+                    <default>false</default>
+                    <label>Call</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Face to Face</fullName>
+                    <default>false</default>
+                    <label>Face to Face</label>
+                </value>
+                <value>
+                    <fullName>Letter</fullName>
+                    <default>false</default>
+                    <label>Letter</label>
+                </value>
+                <value>
+                    <fullName>Sms</fullName>
+                    <default>false</default>
+                    <label>Sms</label>
+                </value>
+                <value>
+                    <fullName>Opt out all</fullName>
+                    <default>false</default>
+                    <label>Opt out all</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_PreviousMasterAccount__c</fullName>
+        <externalId>false</externalId>
+        <label>Previous Master Account</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Business User</fullName>
+                    <default>false</default>
+                    <label>Business User</label>
+                </value>
+                <value>
+                    <fullName>Financial Contact</fullName>
+                    <default>false</default>
+                    <label>Financial Contact</label>
+                </value>
+                <value>
+                    <fullName>Technical Contact</fullName>
+                    <default>false</default>
+                    <label>Technical Contact</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_SalesforceNotDataMaster__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Salesforce not Data Master</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_SalutationLocal__c</fullName>
+        <description>Translates the standard Salutation field into a local salutation for communication purposes</description>
+        <externalId>false</externalId>
+        <formula>CASE( Salutation , 
+&quot;Mr.&quot;, &quot;Herr&quot;, 
+&quot;Mr&quot;, &quot;Herr&quot;, 
+&quot;Dhr.&quot;, &quot;Herr&quot;, 
+&quot;Dhr&quot;, &quot;Herr&quot;,
+&quot;Herr&quot;, &quot;Herr&quot;,
+&quot;Frau&quot;,&quot;Frau&quot;,  
+&quot;Ms.&quot;,&quot;Frau&quot;, 
+&quot;Mevr.&quot;,&quot;Frau&quot;, 
+&quot;Ms&quot;,&quot;Frau&quot;, 
+&quot;Mevr&quot;,&quot;Frau&quot;, 
+&quot;Herr oder Frau&quot;)</formula>
+        <label>Salutation Local</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Username__c</fullName>
+        <description>SFOM-2202 -- Created as part of the Manage Tenant process</description>
+        <externalId>false</externalId>
+        <label>Username</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_VisitAddressID__c</fullName>
+        <externalId>false</externalId>
+        <label>LG VisitAddressID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_VisitCity__c</fullName>
+        <externalId>false</externalId>
+        <label>LG VisitCity</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_VisitCountry__c</fullName>
+        <externalId>false</externalId>
+        <label>LG_VisitCountry</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Countries</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_VisitHouseNumberExtension__c</fullName>
+        <externalId>false</externalId>
+        <label>LG VisitHouseNumberExtension</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_VisitHouseNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>LG VisitHouseNumber</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_VisitPostalCode__c</fullName>
+        <externalId>false</externalId>
+        <label>LG VisitPostalCode</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_VisitStreet__c</fullName>
+        <externalId>false</externalId>
+        <label>LG VisitStreet</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LastCURequestDate</fullName>
+    </fields>
+    <fields>
+        <fullName>LastCUUpdateDate</fullName>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MailingAddress</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>MobilePhone</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OtherAddress</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OtherPhone</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ReportsToId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SalutationTranslation__c</fullName>
+        <externalId>false</externalId>
+        <label>SalutationTranslation</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>UM_VisitGeolocation__c</fullName>
+        <displayLocationInDecimal>false</displayLocationInDecimal>
+        <externalId>false</externalId>
+        <label>UM VisitGeolocation</label>
+        <required>false</required>
+        <scale>6</scale>
+        <trackHistory>false</trackHistory>
+        <type>Location</type>
+    </fields>
+    <fields>
+        <fullName>UM_VisitStateProvince__c</fullName>
+        <externalId>false</externalId>
+        <label>UM VisitStateProvince</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Address__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The address of this Contact. Used for the Contact&apos;s residential or default address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The address of this Contact. Used for the Contact&apos;s residential or default address.</inlineHelpText>
+        <label>Address</label>
+        <referenceTo>cscrm__Address__c</referenceTo>
+        <relationshipLabel>Contacts</relationshipLabel>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cscrm__Birth_Certificate_Authority__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The issuing authority for this Contact&apos;s birth certificate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The issuing authority for this Contact&apos;s birth certificate.</inlineHelpText>
+        <label>Birth Certificate Authority</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Birth_Certificate_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The country of issue for this Contact&apos;s birth certificate. Two-letter country code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The country of issue for this Contact&apos;s birth certificate. Two-letter country code.</inlineHelpText>
+        <label>Birth Certificate Country</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Birth_Certificate_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date of issue for this Contact&apos;s birth certificate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date of issue for this Contact&apos;s birth certificate.</inlineHelpText>
+        <label>Birth Certificate Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>cscrm__Birth_Certificate_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The ID number for this Contact&apos;s birth Certificate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The ID number for this Contact&apos;s birth Certificate.</inlineHelpText>
+        <label>Birth Certificate Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Concession_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The reference number of the document under which this Contact is eligible for a concession.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The reference number of the document under which this Contact is eligible for a concession.</inlineHelpText>
+        <label>Concession Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Concession_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of concession this Contact is eligible for.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The type of concession this Contact is eligible for.</inlineHelpText>
+        <label>Concession Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pensioner</fullName>
+                    <default>false</default>
+                    <label>Pensioner</label>
+                </value>
+                <value>
+                    <fullName>Child</fullName>
+                    <default>false</default>
+                    <label>Child</label>
+                </value>
+                <value>
+                    <fullName>Student</fullName>
+                    <default>false</default>
+                    <label>Student</label>
+                </value>
+                <value>
+                    <fullName>Carer</fullName>
+                    <default>false</default>
+                    <label>Carer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cscrm__Concession__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, this Contact is entitled to a concession (e.g. old age etc.).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, this Contact is entitled to a concession (e.g. old age etc.).</inlineHelpText>
+        <label>Concession</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cscrm__Current_Employer_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of this Contact&apos;s current Employer.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of this Contact&apos;s current Employer.</inlineHelpText>
+        <label>Current Employer Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Current_Employer_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The phone number for this Contact&apos;s current employer.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The phone number for this Contact&apos;s current employer.</inlineHelpText>
+        <label>Current Employer Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>cscrm__Drivers_License_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Country of issue for this Contact&apos;s driver&apos;s license. Two-letter country code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Country of issue for this Contact&apos;s driver&apos;s license. Two-letter country code.</inlineHelpText>
+        <label>Driver&apos;s License Country</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Drivers_License_Expiry_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Expiry date of this Contact&apos;s driver&apos;s license.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Expiry date of this Contact&apos;s driver&apos;s license.</inlineHelpText>
+        <label>Driver&apos;s License Expiry Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>cscrm__Drivers_License_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The driver number on this Contact&apos;s driving license.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The driver number on this Contact&apos;s driving license.</inlineHelpText>
+        <label>Driver&apos;s License Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__External_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ID for this Contact from an external system.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>ID for this Contact from an external system.</inlineHelpText>
+        <label>External ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__National_Health_Card_Expiry_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The expiry date for this Contact&apos;s national health insurance card.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The expiry date for this Contact&apos;s national health insurance card.</inlineHelpText>
+        <label>National Health Card Expiry Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>cscrm__National_Health_Card_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This Contact&apos;s ID number in the national health insurance program.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Contact&apos;s ID number in the national health insurance program.</inlineHelpText>
+        <label>National Health Card Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Occupation__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This Contact&apos;s occupation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Contact&apos;s occupation.</inlineHelpText>
+        <label>Occupation</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Paperless_Billing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, this Contact prefers paperless billing (bill by email).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, this Contact prefers paperless billing (bill by email).</inlineHelpText>
+        <label>Paperless Billing</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cscrm__Pasport_Expiry_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Expiry date of this Contact&apos;s passport.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Expiry date of this Contact&apos;s passport.</inlineHelpText>
+        <label>Pasport Expiry Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>cscrm__Passport_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The country of issue for this Contact&apos;s passport. Two-letter country code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The country of issue for this Contact&apos;s passport. Two-letter country code.</inlineHelpText>
+        <label>Passport Country</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Passport_Issue_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date of issue of this Contact&apos;s passport.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date of issue of this Contact&apos;s passport.</inlineHelpText>
+        <label>Passport Issue Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>cscrm__Passport_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The passport number for this Contact.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The passport number for this Contact.</inlineHelpText>
+        <label>Passport Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Previous_Address__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The previous address of this Contact.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The previous address of this Contact.</inlineHelpText>
+        <label>Previous Address</label>
+        <referenceTo>cscrm__Address__c</referenceTo>
+        <relationshipLabel>Contacts (Previous Address)</relationshipLabel>
+        <relationshipName>Contacts_Previous_Address</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cscrm__Residential_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The residential status of this Contact (owner, tenant etc).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The residential status of this Contact (owner, tenant etc).</inlineHelpText>
+        <label>Residential Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Owner</fullName>
+                    <default>false</default>
+                    <label>Owner</label>
+                </value>
+                <value>
+                    <fullName>Tenant</fullName>
+                    <default>false</default>
+                    <label>Tenant</label>
+                </value>
+                <value>
+                    <fullName>Living with parents</fullName>
+                    <default>false</default>
+                    <label>Living with parents</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cscrm__Social_Security_Card_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This Contact&apos;s ID number in the social security program.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Contact&apos;s ID number in the social security program.</inlineHelpText>
+        <label>Social Security Card Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Student_Card_Authority__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The issuing authority of this Contact&apos;s student card.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The issuing authority of this Contact&apos;s student card.</inlineHelpText>
+        <label>Student Card Authority</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Student_Card_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The issuing country of this Contact&apos;s student card. Two letter country code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The issuing country of this Contact&apos;s student card. Two letter country code.</inlineHelpText>
+        <label>Student Card Country</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Student_Card_Expiry_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The expiry date for this Contact&apos;s student card.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The expiry date for this Contact&apos;s student card.</inlineHelpText>
+        <label>Student Card Expiry Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>cscrm__Student_Card_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This Contact&apos;s student card ID number.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Contact&apos;s student card ID number.</inlineHelpText>
+        <label>Student Card Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cscrm__Time_at_Current_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The time this Contact has lived at their current address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The time this Contact has lived at their current address.</inlineHelpText>
+        <label>Time at Current Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Less than 6 months</fullName>
+                    <default>false</default>
+                    <label>Less than 6 months</label>
+                </value>
+                <value>
+                    <fullName>6-12 months</fullName>
+                    <default>false</default>
+                    <label>6-12 months</label>
+                </value>
+                <value>
+                    <fullName>1-2 years</fullName>
+                    <default>false</default>
+                    <label>1-2 years</label>
+                </value>
+                <value>
+                    <fullName>2-5 years</fullName>
+                    <default>false</default>
+                    <label>2-5 years</label>
+                </value>
+                <value>
+                    <fullName>5+ years</fullName>
+                    <default>false</default>
+                    <label>5+ years</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cscrm__Time_at_Current_Employment__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The time this Contact has been in their current employment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The time this Contact has been in their current employment.</inlineHelpText>
+        <label>Time at Current Employment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Less than 6 months</fullName>
+                    <default>false</default>
+                    <label>Less than 6 months</label>
+                </value>
+                <value>
+                    <fullName>6-12 months</fullName>
+                    <default>false</default>
+                    <label>6-12 months</label>
+                </value>
+                <value>
+                    <fullName>1 year</fullName>
+                    <default>false</default>
+                    <label>1 year</label>
+                </value>
+                <value>
+                    <fullName>2 years</fullName>
+                    <default>false</default>
+                    <label>2 years</label>
+                </value>
+                <value>
+                    <fullName>3 years</fullName>
+                    <default>false</default>
+                    <label>3 years</label>
+                </value>
+                <value>
+                    <fullName>5+ years</fullName>
+                    <default>false</default>
+                    <label>5+ years</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cscrm__Time_at_Previous_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The length of time this Contact lived at their previous address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The length of time this Contact lived at their previous address.</inlineHelpText>
+        <label>Time at Previous Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Less than 1 year</fullName>
+                    <default>false</default>
+                    <label>Less than 1 year</label>
+                </value>
+                <value>
+                    <fullName>1-2 years</fullName>
+                    <default>false</default>
+                    <label>1-2 years</label>
+                </value>
+                <value>
+                    <fullName>2-3 years</fullName>
+                    <default>false</default>
+                    <label>2-3 years</label>
+                </value>
+                <value>
+                    <fullName>3-4 years</fullName>
+                    <default>false</default>
+                    <label>3-4 years</label>
+                </value>
+                <value>
+                    <fullName>4-5 years</fullName>
+                    <default>false</default>
+                    <label>4-5 years</label>
+                </value>
+                <value>
+                    <fullName>5+ years</fullName>
+                    <default>false</default>
+                    <label>5+ years</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cscrm__Time_at_Previous_Employment__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The time this Contact spent at their previous employment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The time this Contact spent at their previous employment.</inlineHelpText>
+        <label>Time at Previous Employment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Less than 1 year</fullName>
+                    <default>false</default>
+                    <label>Less than 1 year</label>
+                </value>
+                <value>
+                    <fullName>1-2 years</fullName>
+                    <default>false</default>
+                    <label>1-2 years</label>
+                </value>
+                <value>
+                    <fullName>2-3 years</fullName>
+                    <default>false</default>
+                    <label>2-3 years</label>
+                </value>
+                <value>
+                    <fullName>3-4 years</fullName>
+                    <default>false</default>
+                    <label>3-4 years</label>
+                </value>
+                <value>
+                    <fullName>4-5 years</fullName>
+                    <default>false</default>
+                    <label>4-5 years</label>
+                </value>
+                <value>
+                    <fullName>5+ years</fullName>
+                    <default>false</default>
+                    <label>5+ years</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <listViews>
+        <fullName>AllContacts</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>LG_Role__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.PHONE3</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CONTACT.ADDRESS2_CITY</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Contacts</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>MyContacts</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>LG_Role__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.PHONE3</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CONTACT.ADDRESS2_CITY</columns>
+        <columns>LG_PreferredCommunication__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Contacts</label>
+        <language>en_US</language>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.TITLE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LG_Role__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.PHONE1</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.PHONE3</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.EMAIL</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.ADDRESS2_CITY</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LG_PreferredCommunication__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.TITLE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LG_Role__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.PHONE1</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.PHONE3</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.EMAIL</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.ADDRESS2_CITY</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LG_PreferredCommunication__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>FULL_NAME</lookupFilterFields>
+        <lookupFilterFields>CONTACT.TITLE</lookupFilterFields>
+        <lookupFilterFields>ACCOUNT.NAME</lookupFilterFields>
+        <lookupFilterFields>CONTACT.PHONE1</lookupFilterFields>
+        <lookupFilterFields>CONTACT.EMAIL</lookupFilterFields>
+        <lookupFilterFields>CONTACT.ADDRESS2_CITY</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>FULL_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.TITLE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LG_Role__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE1</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE3</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.EMAIL</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.ADDRESS2_CITY</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LG_PreferredCommunication__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>CONTACT.FIRST_NAME</searchFilterFields>
+        <searchFilterFields>CONTACT.LAST_NAME</searchFilterFields>
+        <searchFilterFields>CONTACT.TITLE</searchFilterFields>
+        <searchFilterFields>LG_Role__c</searchFilterFields>
+        <searchFilterFields>ACCOUNT.NAME</searchFilterFields>
+        <searchFilterFields>CONTACT.PHONE1</searchFilterFields>
+        <searchFilterFields>CONTACT.PHONE3</searchFilterFields>
+        <searchFilterFields>CONTACT.EMAIL</searchFilterFields>
+        <searchFilterFields>CONTACT.ADDRESS2_CITY</searchFilterFields>
+        <searchFilterFields>LG_PreferredCommunication__c</searchFilterFields>
+        <searchResultsAdditionalFields>FULL_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LG_Role__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.PHONE3</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.EMAIL</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>LG_Contact_Information</fullName>
+        <active>true</active>
+        <description>Phone or Mobile or Email or Address is required.</description>
+        <errorConditionFormula>AND (
+ ISBLANK( Phone ),
+ ISBLANK( MobilePhone ),
+ ISBLANK( Email ),
+ OR (ISBLANK( MailingCity ),
+     ISBLANK( MailingCountry ),
+     ISBLANK( MailingStreet ),
+     ISBLANK( MailingPostalCode ) ) ,
+ $Setup.LG_ProfileExtensions__c.LG_DWHUser__c  &lt;&gt; 1
+)</errorConditionFormula>
+        <errorDisplayField>Phone</errorDisplayField>
+        <errorMessage>Phone or Mobile or Email or Address is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LG_Contact_Salutation_Mandatory</fullName>
+        <active>false</active>
+        <description>Check if the Salutation is filled in</description>
+        <errorConditionFormula>ISPICKVAL(Salutation, &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Salutation</errorDisplayField>
+        <errorMessage>Please select the Salutation</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LG_SalesforceNotDataMaster_AccountName</fullName>
+        <active>true</active>
+        <description>When Salesforce is not  Data Master, some fields are Read-Only.</description>
+        <errorConditionFormula>AND(
+    LG_SalesforceNotDataMaster__c = TRUE,
+    ISCHANGED ( AccountId ),
+    $Setup.LG_ProfileExtensions__c.LG_DWHUser__c  &lt;&gt; 1
+    )</errorConditionFormula>
+        <errorDisplayField>AccountId</errorDisplayField>
+        <errorMessage>You are not allowed to change Account Name.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LG_SalesforceNotDataMaster_DecisionMak</fullName>
+        <active>true</active>
+        <description>When Salesforce is not  Data Master, some fields are Read-Only.</description>
+        <errorConditionFormula>AND(
+    LG_SalesforceNotDataMaster__c = TRUE,
+    ISCHANGED( LG_DecisionMaker__c ),
+    $Setup.LG_ProfileExtensions__c.LG_DWHUser__c  &lt;&gt; 1
+    )</errorConditionFormula>
+        <errorDisplayField>LG_DecisionMaker__c</errorDisplayField>
+        <errorMessage>You are not allowed to change Decision Maker checbox.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LG_SalesforceNotDataMaster_Email</fullName>
+        <active>false</active>
+        <description>When Salesforce is not  Data Master, some fields are Read-Only.</description>
+        <errorConditionFormula>AND(
+    LG_SalesforceNotDataMaster__c = TRUE,
+    ISCHANGED( Email ),
+    $Setup.LG_ProfileExtensions__c.LG_DWHUser__c  &lt;&gt; 1
+    )</errorConditionFormula>
+        <errorDisplayField>Email</errorDisplayField>
+        <errorMessage>You are not allowed to change Email Address.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LG_SalesforceNotDataMaster_FirstName</fullName>
+        <active>true</active>
+        <description>When Salesforce is not  Data Master, some fields are Read-Only.</description>
+        <errorConditionFormula>AND(
+    LG_SalesforceNotDataMaster__c = TRUE,
+    ISCHANGED( FirstName ),
+    $Setup.LG_ProfileExtensions__c.LG_DWHUser__c  &lt;&gt; 1
+    )</errorConditionFormula>
+        <errorDisplayField>FirstName</errorDisplayField>
+        <errorMessage>You are not allowed to change First Name.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LG_SalesforceNotDataMaster_LastName</fullName>
+        <active>true</active>
+        <description>When Salesforce is not  Data Master, some fields are Read-Only.</description>
+        <errorConditionFormula>AND(
+    LG_SalesforceNotDataMaster__c = TRUE,
+    ISCHANGED( LastName ),
+    $Setup.LG_ProfileExtensions__c.LG_DWHUser__c  &lt;&gt; 1
+    )</errorConditionFormula>
+        <errorDisplayField>LastName</errorDisplayField>
+        <errorMessage>You are not allowed to change Last Name.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LG_SalesforceNotDataMaster_Mobile</fullName>
+        <active>true</active>
+        <description>When Salesforce is not  Data Master, some fields are Read-Only.</description>
+        <errorConditionFormula>AND(
+    LG_SalesforceNotDataMaster__c = TRUE,
+    ISCHANGED( MobilePhone ),
+    $Setup.LG_ProfileExtensions__c.LG_DWHUser__c  &lt;&gt; 1
+    )</errorConditionFormula>
+        <errorDisplayField>MobilePhone</errorDisplayField>
+        <errorMessage>You are not allowed to change Mobile.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LG_SalesforceNotDataMaster_Phone</fullName>
+        <active>true</active>
+        <description>When Salesforce is not  Data Master, some fields are Read-Only.</description>
+        <errorConditionFormula>AND(
+    LG_SalesforceNotDataMaster__c = TRUE,
+    ISCHANGED( Phone ),
+    $Setup.LG_ProfileExtensions__c.LG_DWHUser__c  &lt;&gt; 1
+    )</errorConditionFormula>
+        <errorDisplayField>Phone</errorDisplayField>
+        <errorMessage>You are not allowed to change Phone.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LG_SalesforceNotDataMaster_Role</fullName>
+        <active>true</active>
+        <description>When Salesforce is not  Data Master, some fields are Read-Only.</description>
+        <errorConditionFormula>AND(
+    LG_SalesforceNotDataMaster__c = TRUE,
+    ISCHANGED( LG_Role__c ),
+    $Setup.LG_ProfileExtensions__c.LG_DWHUser__c  &lt;&gt; 1
+    )</errorConditionFormula>
+        <errorDisplayField>LG_Role__c</errorDisplayField>
+        <errorMessage>You are not allowed to change Role.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LG_SalesforceNotDataMaster_Salutation</fullName>
+        <active>true</active>
+        <description>When Salesforce is not  Data Master, some fields are Read-Only.</description>
+        <errorConditionFormula>AND(
+    LG_SalesforceNotDataMaster__c = TRUE,
+    ISCHANGED( Salutation ),
+    $Setup.LG_ProfileExtensions__c.LG_DWHUser__c  &lt;&gt; 1
+    )</errorConditionFormula>
+        <errorDisplayField>Salutation</errorDisplayField>
+        <errorMessage>You are not allowed to change Salutation.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LG_SalesforceNotDataMaster_Title</fullName>
+        <active>true</active>
+        <description>When Salesforce is not  Data Master, some fields are Read-Only.</description>
+        <errorConditionFormula>AND(
+    LG_SalesforceNotDataMaster__c = TRUE,
+    ISCHANGED( Title ),
+    $Setup.LG_ProfileExtensions__c.LG_DWHUser__c  &lt;&gt; 1
+    )</errorConditionFormula>
+        <errorDisplayField>Title</errorDisplayField>
+        <errorMessage>You are not allowed to change Job Title.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>APXTConga4__Conga_Composer_OAuth</fullName>
+        <availability>online</availability>
+        <description>*** DO NOT USE THIS BUTTON ON A PAGE LAYOUT *** 
+
+OAuth buttons require additional setup. Please see the Composer Installation Guide for more details.
+
+COPY THE URL FROM THIS BUTTON and paste it into your own custom button or link. Then add optional parameters to finely tune the button&apos;s behavior. See the Composer Configuration Guide for details.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>660</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Conga Composer (OAuth)</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/APXTConga4__Conga_Composer
+?id={!Contact.Id}</url>
+        <width>900</width>
+    </webLinks>
+    <webLinks>
+        <fullName>APXTConga4__Conga_Mail_Merge</fullName>
+        <availability>online</availability>
+        <description>*** DO NOT USE THIS BUTTON ON A PAGE LAYOUT *** 
+
+COPY THE URL FROM THIS BUTTON and paste it into your own custom button or link. Then add optional parameters to finely tune the button&apos;s behavior. See the Conga Configuration Guide for details.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>660</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Conga Composer</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://composer.congamerge.com
+?sessionId={!API.Session_ID}
+&amp;serverUrl={!API.Partner_Server_URL_290}
+&amp;id={!Contact.Id}</url>
+        <width>900</width>
+    </webLinks>
+    <webLinks>
+        <fullName>B2B_Generate_Activation_Code</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Generate Activation Code</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/connection.js&quot;)} 
+
+//declare the varaiable that will hold all the information 
+
+var newRecords = [];
+var cs = new sforce.SObject(&quot;Contact&quot;); 
+cs.Id = &apos;{!Contact.Id}&apos;;
+
+cs.Generate_Activation_Code__c = true; 
+newRecords.push(cs);
+
+//save the change 
+result = sforce.connection.update(newRecords); 
+
+//refresh the page 
+window.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Contact_MailingStreet}+{!Contact_MailingCity}+{!Contact_MailingState}&amp;om=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleSearch</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Search</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/search?q={!Contact_FirstName} {!Contact_LastName}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_Data</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Portal Sync</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/12.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/12.0/apex.js&quot;)}  
+
+if (&apos;{!Contact.B2B_ULM_User_Id__c}&apos; == &apos;&apos;){
+ alert (&apos;ULM User Id should not be blank&apos;)
+}
+else if(&apos;{!Contact.B2B_Self_Care_User_Status__c}&apos; != &apos;Active&apos;){
+alert (&apos;Self Care User Status is not Active&apos;)
+}
+else{
+var result = sforce.apex.execute(&quot;SendDataToULM&quot;,&quot;sendData&quot;,{ulmUserId:&quot;{!Contact.B2B_ULM_User_Id__c}&quot;}); 
+if(result == 200){
+alert(&quot;Self care portal data synced&quot;); 
+}
+else{
+alert(&quot;Self care portal data not synced&quot;); 
+}
+}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>B2B_Care</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>B2B Care</label>
+        <sharedTo>
+            <group>Care_Agents</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CaMa Ticket,Technical Case,SLA Breach Case,Billing Query,Planned Maintenance Case,Outage/Network Incident,Service Change Request,Complaint,Online Billing Query,Admin Change Request,General Query</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

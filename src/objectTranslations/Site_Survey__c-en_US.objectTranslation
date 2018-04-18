@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Site Survey</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Site Surveys</value>
+    </caseValues>
+    <fields>
+        <label><!-- Access Technology --></label>
+        <name>Access_Technology__c</name>
+        <picklistValues>
+            <masterLabel>Cloud</masterLabel>
+            <translation><!-- Cloud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coax</masterLabel>
+            <translation><!-- Coax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copper</masterLabel>
+            <translation><!-- Copper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FTTP</masterLabel>
+            <translation><!-- FTTP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fibre</masterLabel>
+            <translation><!-- Fibre --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+        <relationshipLabel><!-- Site Surveys --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Budget/Estimate --></label>
+        <name>Budget_Estimate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earliest Comp --></label>
+        <name>Earliest_Comp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jeopardy --></label>
+        <name>Jeopardy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cabling Capex --></label>
+        <name>LG_CablingCapex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cabling Opex --></label>
+        <name>LG_CablingOpex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Civils Capex --></label>
+        <name>LG_CivilsCapex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Civils Opex --></label>
+        <name>LG_CivilsOpex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Cabling Capex --></label>
+        <name>LG_InternalCablingCapex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Cabling Opex --></label>
+        <name>LG_InternalCablingOpex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- UM Consulting-ID --></label>
+        <name>UM_Consulting_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- UM GNV --></label>
+        <name>UM_GNV__c</name>
+        <picklistValues>
+            <masterLabel>Erforderlich</masterLabel>
+            <translation><!-- Erforderlich --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nicht erforderlich</masterLabel>
+            <translation><!-- Nicht erforderlich --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wird nachgereicht</masterLabel>
+            <translation><!-- Wird nachgereicht --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Wish Date --></label>
+        <name>Wish_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cable (m) : --></label>
+        <name>cabling_cable_m__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details : --></label>
+        <name>cabling_details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration (days) : --></label>
+        <name>cabling_duration_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notice (days) : --></label>
+        <name>cabling_notice_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type : --></label>
+        <name>cabling_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details --></label>
+        <name>civils_details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duct (m) : --></label>
+        <name>civils_duct_m__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration (days) : --></label>
+        <name>civils_duration_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hand-holes (qty) --></label>
+        <name>civils_hand_hole__c</name>
+    </fields>
+    <fields>
+        <label><!-- Man holes (qty) --></label>
+        <name>civils_man_holes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notice (days) : --></label>
+        <name>civils_notice_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type : --></label>
+        <name>civils_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cable (m) : --></label>
+        <name>internal_cable_m__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details : --></label>
+        <name>internal_details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration (days) : --></label>
+        <name>internal_duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notice (days) : --></label>
+        <name>internal_notice_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type : --></label>
+        <name>internal_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details : --></label>
+        <name>total_details__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

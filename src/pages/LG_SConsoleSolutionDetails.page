@@ -1,0 +1,93 @@
+<apex:page standardController="Case" extensions="LG_SConsoleSolutionDetailsExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+
+    <!--
+        * Custom SF Service Console
+        *
+        * @author Petar Miletic
+        * @story SFOM-29
+        * @since  03/11/2016
+    -->
+
+    <apex:form >
+
+    <apex:pageBlock title="" mode="{!Mode}">
+
+        <apex:pageBlockSection title="" columns="2" collapsible="true" rendered="{!!Edit}">
+
+            <!--apex:outputField value="{!Solution.Id}" rendered="{!!assignOrder}" /-->
+            <apex:outputField value="{!Solution.Name}" rendered="{!!assignOrder}"/>
+            <apex:outputField value="{!Solution.OwnerId}" rendered="{!!assignOrder}"/>
+            <apex:outputField value="{!Order.Name}" rendered="{!assignOrder}"/>
+            <apex:outputField value="{!Order.csord__Account__c}" rendered="{!assignOrder}"/>
+            <apex:outputField value="{!Order.csordtelcoa__Opportunity__c}" rendered="{!assignOrder}"/>
+            <apex:outputField value="{!Order.csordtelcoa__Opportunity__r.owner.name}" rendered="{!assignOrder}"/>
+            <apex:outputField value="{!Order.OwnerId}" rendered="{!assignOrder}"/>
+            <!--      <apex:outputField value="{!Solution.csord__Account__c}" rendered="{!Provisoning}"/>
+            <apex:outputField value="{!Solution.csord__Identification__c}" rendered="{!Provisoning}"/>
+            <apex:outputField value="{!Solution.csord__Order__c}" rendered="{!Provisoning}"/>
+            <apex:outputField value="{!Solution.csord__Order_Request__c}" rendered="{!Provisoning}"/>
+            <apex:outputField value="{!Solution.csord__Status__c}" rendered="{!Provisoning}"/>
+
+            <apex:outputField value="{!Solution.LG_Jeopardy__c}" rendered="{!Provisoning}"/>
+            <apex:outputField value="{!Solution.LG_JeopardyExplanation__c}" rendered="{!Provisoning}"/>
+            <apex:outputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!Provisoning}"/>
+            <apex:outputField value="{!Solution.LG_TargetDate__c}" rendered="{!Provisoning}"/>
+            <apex:outputField value="{!Solution.LG_EarliestInstallDate__c}" rendered="{!Provisoning}"/>
+            <apex:outputField value="{!Solution.CreatedById}" rendered="{!Provisoning}"/>  -->
+
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="" columns="2" collapsible="true" rendered="{!Edit}">
+
+            <apex:inputField value="{!Solution.Name}" rendered="{!!assignOrder}"/>
+            <apex:inputField value="{!Solution.OwnerId}" rendered="{!!assignOrder}"/>
+            <apex:outputField value="{!Order.Name}" rendered="{!assignOrder}"/>
+            <apex:outputField value="{!Order.csord__Account__c}" rendered="{!assignOrder}"/>
+            <apex:outputField value="{!Order.csordtelcoa__Opportunity__c}" rendered="{!assignOrder}"/>
+            <apex:outputField value="{!Order.csordtelcoa__Opportunity__r.owner.name}" rendered="{!assignOrder}"/>
+	        <apex:inputField value="{!Order.OwnerId}" rendered="{!assignOrder}"/>
+            <!--      <apex:inputField value="{!Solution.csord__Account__c}" rendered="{!Provisoning}"/>
+            <apex:inputField value="{!Solution.csord__Identification__c}" rendered="{!Provisoning}"/>
+            <apex:inputField value="{!Solution.csord__Order__c}" rendered="{!Provisoning}"/>
+            <apex:inputField value="{!Solution.csord__Order_Request__c}" rendered="{!Provisoning}"/>
+            <apex:inputField value="{!Solution.csord__Status__c}" rendered="{!Provisoning}"/>
+
+            <apex:inputField value="{!Solution.LG_Jeopardy__c}" rendered="{!Provisoning}"/>
+            <apex:inputField value="{!Solution.LG_JeopardyExplanation__c}" rendered="{!Provisoning}"/>
+            <apex:inputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!Provisoning}"/>
+            <apex:inputField value="{!Solution.LG_TargetDate__c}" rendered="{!Provisoning}"/>
+            <apex:inputField value="{!Solution.LG_EarliestInstallDate__c}" rendered="{!Provisoning}"/>
+            <apex:inputField value="{!Solution.CreatedById}" rendered="{!Provisoning}"/> -->
+
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="" columns="1" collapsible="true" rendered="{!assignOrder}">
+
+        	<apex:pageBlockTable value="{!solutionList}" var="data" width="100%">
+
+                <apex:column value="{!data.Name}"/>
+                <apex:column value="{!data.OwnerId}"/>
+                <apex:column value="{!data.LG_TargetDate__c}"/>
+                <apex:column headerValue="{!$Label.LG_Site}" value="{!data.LG_Address__r.LG_FullAddressDetails__c}"/>
+
+            </apex:pageBlockTable>
+
+        </apex:pageBlockSection>
+
+        <apex:pageBlockButtons rendered="{!!caseClosed}">
+            <apex:commandButton action="{!edit}" value="{!$Label.LG_ButtonEdit}" rendered="{!!Edit}" />
+            <apex:commandButton action="{!save}" value="{!$Label.LG_ButtonSave}" rendered="{!Edit}" />
+            <apex:commandButton action="{!cancel}" value="{!$Label.LG_ButtonCancel}" rendered="{!Edit}" />
+        </apex:pageBlockButtons>
+
+    </apex:pageBlock>
+
+    </apex:form>
+
+    <!--<ul>
+        <li>Display mode: {!Mode}</li>
+        <li>Edit: {!Edit}</li>
+        <li>Record Type: {!RecordType}</li>
+    </ul>-->
+</apex:page>

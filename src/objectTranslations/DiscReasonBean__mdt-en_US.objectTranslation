@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DiscReasonBean</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DiscReasonBean</value>
+    </caseValues>
+    <fields>
+        <label><!-- ConfigTagId --></label>
+        <name>ConfigTagId__c</name>
+    </fields>
+    <fields>
+        <label><!-- DisconnectReason --></label>
+        <name>DisconnectReason__c</name>
+    </fields>
+    <fields>
+        <label><!-- DisplayValue --></label>
+        <name>DisplayValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsDefault --></label>
+        <name>IsDefault__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsInternal --></label>
+        <name>IsInternal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key --></label>
+        <name>Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- LanguageCode --></label>
+        <name>LanguageCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShortDisplay --></label>
+        <name>ShortDisplay__c</name>
+    </fields>
+    <layouts>
+        <layout>DiscReasonBean Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

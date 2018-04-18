@@ -1,0 +1,46 @@
+<apex:page standardController="Case" extensions="LG_InflightConfigurationController">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+    
+
+<apex:form >
+    <apex:pageBlock title="" >
+        <!--<apex:commandButton action="{!closeCase}" rendered="true" id="closecasebtn" value="Close Case"/>-->
+        <!-- Showing Solution Details -->
+        
+        <apex:pageBlockSection title="Solution" columns="2" collapsible="false" >
+            <!--<apex:outputField value="{!relatedSolution.Id}" label="Id:"/>-->
+            <apex:outputField value="{!relatedSolution.csord__Order__c}" label="Order:"/>
+            <apex:outputField value="{!relatedSolution.Name}" label="Solution:"/>
+            <apex:outputField value="{!relatedSolution.LG_ProvisioningWorkOrder__c}" label="Provisioning Work Order:"/>
+            <apex:outputField value="{!relatedSolution.LG_TargetDate__c}" label="Target Date:"/>
+            
+            
+            <apex:outputField value="{!relatedSolution.LG_EarliestPortingWishDate__c}" label="Earliest Porting Wish Date:"/>
+            <apex:outputField value="{!relatedSolution.LG_LatestPortingWishDate__c}" label="Latest Porting Wish Date:"/>
+            
+            
+        </apex:pageBlockSection>
+        
+        <!-- Showing Service Details -->
+     <apex:pageBlockSection title="Services" columns="1" collapsible="false" >
+           <apex:pageBlockTable value="{!relatedServices}"  var="d" rendered="true">
+                <apex:column headerValue="Provisioning" width="50">
+                    <apex:outputlink value="/{!d.service.Id}">{!d.service.Name}</apex:outputlink>,{!d.address},{!d.keyAttribute}
+                </apex:column>
+                <apex:column headerValue="Status" width="25">
+                    <apex:outputText value="{!d.status}"/>
+                </apex:column>
+                  <apex:column headerValue="Start Date" width="25">
+                    <apex:outputText value="{0,date,MM/dd/yy}"> <apex:param value="{!d.startDate}" /> </apex:outputText>
+                </apex:column>
+               <apex:column headerValue="Configure" width="25">
+                    <apex:outputlink value="{!d.screenFlowUri}">Configure</apex:outputlink>
+                    <!--<apex:commandButton onclick="window.location='/{!d.screenFlowUri}'" rendered="true" id="closecasebtn" value="Configure"/>-->
+               </apex:column>
+            </apex:pageBlockTable>
+     </apex:pageBlockSection>
+         
+                    
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

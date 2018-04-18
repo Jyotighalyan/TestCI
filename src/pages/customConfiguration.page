@@ -1,0 +1,1241 @@
+<apex:page doctype="html-5.0" standardcontroller="cscfga__Product_Basket__c" extensions="cscfga.UISupport"
+    showHeader="true" sidebar="true" title="Edit Product Configuration" action="{!checkRuntimeVersion}">
+    <cscfga:FixUIStyles />
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <link rel="stylesheet" href="{!URLFOR($Resource.slds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:stylesheet value="{!URLFOR($Resource.cscfga__select2,'select2.min.css')}" />
+        <apex:stylesheet value="{!$Resource.cscfga__Configuration_css}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.cscfga__Indicator,'css/indicator.css')}"></apex:stylesheet>
+        <style type="text/css">
+            html {
+                height: auto !important;
+            }
+            body {
+                margin: 0;
+            }
+            /* Icon Font reference */
+            @charset "UTF-8";
+            @font-face {
+                font-family: "cs-lightning";
+                src:url("{!URLFOR($Resource.csLightning,'fonts/cs-lightning.eot')}");
+                src:url("{!URLFOR($Resource.csLightning,'fonts/cs-lightning.eot?#iefix')}") format("embedded-opentype"),
+                url("{!URLFOR($Resource.csLightning,'fonts/cs-lightning.woff')}") format("woff"),
+                url("{!URLFOR($Resource.csLightning,'fonts/cs-lightning.ttf')}") format("truetype"),
+                url("{!URLFOR($Resource.csLightning,'fonts/cs-lightning.svg#cs-lightning')}") format("svg");
+                font-weight: normal;
+                font-style: normal;
+            }
+            /* Hiding spacers for the purposes of IPVPN demo, if spacers are required on layout, remove display none below */
+            .slds-col--padded.slds-size--1-of-1.slds-medium-size--1-of-2>div {
+
+            }
+            .slds .slds-button.hidden {
+                display: none;
+            }
+            .slds .slds-modal__header {
+                padding: 16px;
+            }
+            /* Breadcrumbs */
+            #screensList {
+                color: #0070d2;
+                text-transform: uppercase;
+                margin-top: 8px;
+                font-size: 13px;
+            }
+            #screensList a {
+                color: #16325c;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+            #screensList a:hover {
+                color: #0070d2;
+                text-decoration: underline;
+            }
+            #screensList .screenStatusIcon {
+                background-image: none;
+            }
+            #screensList .screenStatusIcon:before {
+                font-family: "cs-lightning" !important;
+                font-style: normal !important;
+                font-weight: normal !important;
+                font-variant: normal !important;
+                text-transform: none !important;
+                speak: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            #screensList .screenStatusIcon.ok:before {
+                content: "\61";
+                color: #04844b;
+            }
+            #screensList .screenStatusIcon.warning:before {
+                content: "\62";
+                color: #ffb75d;
+            }
+            .slds-select {
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI3LjYgMjEiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI3LjYgMjEiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KICA8Zz4NCiAgICA8ZGVmcz4NCiAgICAgIDxwYXRoIGlkPSJTVkdJRF8xXyIgZD0iTTUuNiA1aDE2LjRjMC40IDAgMC44IDAuNiAwLjQgMWwtOCA5LjhjLTAuMyAwLjMtMC45IDAuMy0xLjIgMGwtOC05LjhDNC44IDUuNiA1LjEgNSA1LjYgNXoiLz4NCiAgICA8L2RlZnM+DQogICAgPGNsaXBQYXRoIGlkPSJTVkdJRF8yXyI+DQogICAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVkdJRF8xXyIgb3ZlcmZsb3c9InZpc2libGUiLz4NCiAgICA8L2NsaXBQYXRoPg0KICAgIDxyZWN0IHg9IjAiIHk9IjAiIGNsaXAtcGF0aD0idXJsKCNTVkdJRF8yXykiIGZpbGw9IiM1NTY5OEQiIHdpZHRoPSIyNy42IiBoZWlnaHQ9IjIxIi8+DQogIDwvZz4NCjwvc3ZnPg0K);
+                background-position: 97.5% 50%;
+                background-repeat: no-repeat;
+                background-size: .875rem .875rem, 100% 100%;
+                padding: 4px 8px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+            /* select2 styling to match lightning select */
+            .select2-container .select2-choice,
+            .select2-container .select2-choices {
+                background-color: white;
+                color: #16325c;
+                border: 1px solid #d8dde6;
+                border-radius: 4px;
+                width: 100%;
+                -webkit-transition: border 0.1s linear, background-color 0.1s linear;
+                transition: border 0.1s linear, background-color 0.1s linear;
+                height: 34px;
+                background-image: none;
+                line-height: 30px;
+            }
+            .select2-container.select2-dropdown-open .select2-choice,
+            .select2-container.select2-dropdown-open .select2-choices {
+                border-radius: 4px 4px 0 0;
+            }
+            .select2-container.select2-dropdown-open.select2-drop-above .select2-choice,
+            .select2-container.select2-dropdown-open.select2-drop-above .select2-choices {
+                border-radius: 0 0 4px 4px;
+                background-image: none;
+                border-top: none;
+            }
+            .select2-dropdown-open.select2-drop-above .select2-choice,
+            .select2-dropdown-open.select2-drop-above .select2-choices {
+            /*    background-image: none; */
+            }
+            .select2-container .select2-choice .select2-arrow,
+            .select2-container .select2-choices .select2-arrow {
+                background-color: white;
+                background-image: none;
+                border: none;
+            }
+            .select2-container .select2-choice .select2-arrow b,
+            .select2-container .select2-choices .select2-arrow b {
+                background-position: 0px 2px;
+            }
+            .select2-container .select2-choice .select2-search-choice-close,
+            .select2-container .select2-choices .select2-search-choice-close {
+                margin-top: 4px;
+            }
+            .select2-container.select2-container-active .select2-choice,
+            .select2-container.select2-container-active .select2-choices {
+                border-color: #5897fb;
+            }
+            .select2-drop.select2-drop-above.select2-drop-active {
+                border-bottom: 1px solid #ebebeb;
+            }
+            .select2-drop.select2-drop-above.select2-drop-active.select2-bigdrop {
+                min-height: 305px;
+            }
+            /*.slds-form-element__control {
+                height: 34px;
+            }*/
+            .slds .slds-form--stacked .slds-form-element {
+                min-height: 64px;
+            }
+            .slds .slds-form-element__static {
+                min-height: 34px;
+            }
+            .select2-container{
+                height: 34px;
+            }
+            .deleteIcon {
+                display: inline-block;
+            }
+            .slds a {
+                float: none !important;
+            }
+            .slds .slds-form--stacked .slds-form-element .slds-checkbox,
+            .slds .slds-form--stacked .slds-form-element .slds-radio {
+                margin-top: 22px;
+            }
+            .slds-radiobutton-div{
+                line-height: 34px;
+            }
+            .slds-radiobutton-label label{
+                padding: 5px;
+                vertical-align: middle !important;
+            }
+            .slds .slds-button-group .slds-button[data-cs-group="Finish"],
+            .slds .slds-button-group .slds-button[data-cs-group="ForceFinish"]:last-child {
+                border-radius: 0 4px 4px 0;
+            }
+            .rpHeader {
+                padding-bottom: 5px;
+                padding-top: 10px;
+                border-bottom: 1px solid rgb(224, 227, 229);
+            }
+            .rpBody {
+                padding: 5px;
+            }
+            .h2Center{
+                width: 40%;
+            }
+            .headerRowNew{
+
+            }
+            .list .headerRowNew th{
+                white-space: nowrap;
+            }
+            .dataCell{
+                padding: 5px !important;
+            }
+            .relatedProductContainer {
+                margin-top: 45px;
+                padding-top: 5px;
+                border-top: 1px solid rgb(8, 116, 211);
+            }
+            .h2Border {
+                padding-bottom: 5px !important;
+                border-bottom: 1px solid rgb(8, 116, 211);
+            }
+            .required, .requiredOn {
+                /* color: #FF4F00 !important; */
+                border-left: 1px solid rgb(194, 57, 52);
+                padding-left: 3px;
+            }
+            .required:after, .requiredOn:after {
+                content: "*";
+                color: rgb(194, 57, 52);
+                font-weight: bold;
+                padding-left: 2px;
+            }
+            .message{
+                border-style: none;
+                border-width: 0px;
+            }
+            .massageText {
+                font-weight: normal;
+                font-size: 15px;
+                line-height: 1;
+                font-family: "Salesforce Sans", Arial, sans-serif !important;
+            }
+            .message1 {
+                background-color: #fff !important;
+                border-bottom: 1px solid #ECECEC !important;
+                padding: 5px !important;
+            }
+            h2.massageText {
+                display: block;
+                padding: 1rem;
+                border-radius: 0.25rem;
+            }
+            .errorMessage .massageText{
+                color: rgb(194, 57, 52);
+            }
+            .errorMessage h2.massageText {
+                background: rgb(194, 57, 52);
+                color: #fff;
+            }
+            .infoMessage .massageText {
+                color: #0070d2;
+            }
+            .infoMessage h2.massageText {
+                background: #0070d2;
+                color: #fff;
+            }
+            table.messageTable {
+                width: 100%;
+            }
+            p.attributeErrorMessage {
+                color: rgb(194, 57, 52);
+            }
+            .slds .attributeError .slds-select,
+            .slds .attributeError .slds-input,
+            .slds .attributeError .slds-checkbox--faux {
+                border: 1px solid rgb(194, 57, 52);
+            }
+            .lookupInput img.deleteIcon, .lookupInput div.deleteIcon {
+                background-image: url({!URLFOR($Resource.cscfga__delete_icon)});
+            }
+            label.requiredOn {
+                font-weight: bold;
+            }
+            label.requiredOn:after {
+                color: #e32;
+                content: ' *';
+                display:inline;
+            }
+            .lato tr td {
+                font-family: Lato;
+            }
+            p.attributeErrorMessage {
+                margin: 0;
+                margin-top: 3px;
+                color: #C00;
+                position: relative;
+                right: -40%;
+            }
+            .form-control.form-control-date {
+                width: inherit;
+                display:inline-block;
+            }
+
+            .form-control.form-control-date[readOnly] {
+                color: #34495e;
+                background-color: #fff;
+                opacity: 1;
+                border-color: #bdc3c7;;
+            }
+
+            .form-control.form-control-lookup {
+                width: inherit;
+                display:inline-block;
+            }
+
+            .form-control.form-control-lookup[readOnly] {
+                color: #34495e;
+                background-color: #fff;
+                opacity: 1;
+                border-color: #bdc3c7;;
+            }
+
+            .form-control.form-control-select-lookup {
+                padding: 0px;
+            }
+
+            .select2-container.select2-allowclear {
+                width: 100%;
+                height: 100%;
+            }
+
+            .select2-choice {
+                width: 100% !important;
+                height: 100% !important;
+                padding: 0px !important;
+                background-image: none !important;
+                background-color: #fff !important;
+            }
+
+            .select2-chosen {
+                padding:  8px 12px;
+            }
+
+            .select2-search-choice-close {
+                top: 12px !important;
+            }
+
+            .select2-arrow {
+                border-width: 6px 3px !important;
+                right: 4px !important;
+                top: 16px !important;
+                width: auto !important;
+                border-left: 3px solid rgba(0, 0, 0, 0) !important;
+                border-radius: 0px !important;
+                background: #fff !important;
+                background-image: none !important;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="CSValidationMessageBox" class="message message1 errorMessage">
+            <table border="0" cellpadding="0" cellspacing="0" class="messageTable" style="padding:0px;margin:0px;">
+                <tr valign="top">
+                    <td>
+                        <h2 class="massageText" style="font-size: 18px;line-height: 1.25;">Warning:</h2>
+                    </td>
+
+                </tr>
+                <tr>
+                     <td class="messageCell">
+                        <div class="">
+                            <span id="CSValidationMessage" class="massageText" style=""></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="CSInfoMessageBox" class="message message1 infoMessage">
+            <table border="0" cellpadding="0" cellspacing="0" class="messageTable" style="padding:0px;margin:0px;">
+                    <tr valign="top">
+                        <td>
+                            <h2 class="massageText" style="font-size: 18px;line-height: 1.25;">Info:</h2>
+                        </td>
+
+                    </tr>
+                    <tr>
+                         <td class="messageCell">
+                            <div class="">
+                                <span id="CSInfoMessage" class="massageText" style="color:rgb(8, 116, 211);"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+
+
+
+        <div id="configurationContainer" class="slds" />
+        <script type="text/javascript" src="{!URLFOR($Resource.cscfga__jshashtable)}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.jquery112)}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.jquery_migrate_141)}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.cscfga__jquery_numberformatter)}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.cscfga__Underscore)}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.cscfga__select2,'select2.min.js')}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.cscfga__datejs,'date-en-GB.min.js')}"></script>
+        <!--<script type="text/javascript" src="{!URLFOR($Resource.cscfga__datejs,'date-' & userLocale & '.min.js')}" />-->
+        <script type="text/javascript" src="{!URLFOR($Resource.cscfga__cs_online)}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.cscfga__cs_js)}/require.js"/>
+
+        <script type="text/javascript"> require.config({baseUrl: '{!JSENCODE(URLFOR($Resource.cscfga__cs_js))}'});</script>
+
+
+        <script type="text/javascript">
+        var params = {};
+        var UserContext = UserContext || {};
+            UserContext["dateFormat"] = "dd.MM.yyyy.";
+            UserContext["language"] = "en_US";
+            UserContext["locale"] = "hr_HR";
+        if (jQuery.browser.msie) {
+            jQuery(document).ready(function() {
+                jQuery('body').append('<div id="popupOverlay"><div id="lookupContainer"></div></div>');
+            });
+        }
+
+        jQuery(document).ready(function() {
+            window.setTimeout(clearSafariRequireBug, 50);
+        });
+
+        /*
+         * Safari 9.x issue: jam require() will fail on first call
+         * unaffected browsers should log 'Require initialiseation not needed...' and continue as normal
+         * affected browsers should log 'Require initialised...' and continue as normal
+         */
+        function clearSafariRequireBug() {
+            try {
+                require(['./src/cs-full'], function() {
+                    CS.App.Components.Repository.addComponent('configurator', 'MultipleRelatedProduct', jQuery('#CS\\.MultipleRelatedProduct__tpl')[0]);
+                    CS.App.Components.Repository.addComponent('configurator', 'MultiSelectLookup', jQuery('#CS\\.MultiSelectLookup__tpl')[0]);
+
+                    console.log('Require initialisation not needed (Safari 9.x fix)');
+                });
+            } catch (e) {
+                console.log('Require initialised (Safari 9.x fix)');
+            }
+        }
+
+        /*
+         * Returns true if we are in Classic Salesforce view,
+         * or false if we are in either Lightning or Salesforce1 mobile
+         */
+        function isClassicSalesforce() {
+            return (typeof sforce == 'undefined') || !sforce || !sforce.one;
+        }
+
+        var params = {
+            basketId: '{!JSENCODE(basketId)}',
+            configId: '{!JSENCODE(configId)}',
+            definitionId: '{!JSENCODE(definitionId)}',
+            linkedId: '{!JSENCODE(linkedId)}',
+            retURL: '{!JSENCODE(retURL)}',
+            packageSlotId: '{!JSENCODE(packageSlotId)}',
+            isDtp: '{!JSENCODE(isDtp)}',
+            screenflow: '{!JSENCODE(screenFlowName)}'
+        };
+
+        require(['./src/cs-full'], function() {
+            CS.App.Components.Repository.addComponent('configurator', 'MultipleRelatedProduct', jQuery('#CS\\.MultipleRelatedProduct__tpl')[0]);
+            CS.App.Components.Repository.addComponent('configurator', 'MultiSelectLookup', jQuery('#CS\\.MultiSelectLookup__tpl')[0]);
+
+            var delegate = {
+                getLinkedObjectId: function() {
+                    return '{!JSENCODE(linkedId)}';
+                },
+
+                loadConfiguration: function(id, definitionId, callback) {
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.UISupport.getProductConfiguration}',
+                        id,
+                        function(result, event) {
+                            try {
+                                var configData = JSON.parse(result);
+                                callback(definitionId, configData, '{!$RemoteAction.UISupport.loadLookupRecord}');
+                            } catch (e) {
+                                CS.Log.error('Could not load product configuration id ' + id + ': ' + e.message);
+                            }
+                        },
+                        {escape: false}
+                    );
+                },
+
+                loadProductTemplateHtml: function(id, screenFlowName, callback) {
+                  if (typeof screenFlowName === 'function') {
+                      callback = screenFlowName;
+                      screenFlowName = '';
+                  }
+                  var json = Visualforce.remoting.Manager.invokeAction(
+                      '{!$RemoteAction.UISupport.getProductTemplate}',
+                      id, screenFlowName, template,
+                      function(result, event) {
+                          if (event.status) {
+                              callback(JSON.parse(result).html);
+                          } else {
+                              callback(new Error(event.message));
+                          }
+                      },
+                      {escape: false}
+                  );
+                },
+
+                loadDefinition: function(id, callback) {
+                    var json = Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.UISupport.getProductModel}',
+                        id,
+                        function(result, event) {
+                            if (event.status) {
+                                callback(JSON.parse(result));
+                            } else {
+                                customErrorHandler(event.message);
+                            }
+                        },
+                        {escape: false}
+                    );
+                },
+
+                loadLinkedObjectProperties: function(linkedObjectId, productDefinitionId, callback) {
+                    var json = Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.UISupport.getLinkedObjectProperties}',
+                        linkedObjectId, productDefinitionId,
+                        function(result, event) {
+                            callback(JSON.parse(result));
+                        },
+                        {escape: false}
+                    );
+                },
+
+                lookupQuery: {!$RemoteAction.UISupport.lookupQuery},
+
+                loadRelatedProductSelectionData: function(params, callback) {
+                    var json = Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.UISupport.getRelatedProductSelectionData}',
+                        params,
+                        function(result, event) {
+                            callback(result);
+                        },
+                        {escape: false}
+                    );
+                },
+
+                loadLookupRecord: function(params, callback) {
+                    var json = Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.UISupport.loadLookupRecord}',
+                        params,
+                        function(result, event) {
+                            callback(result);
+                        },
+                        {escape: false}
+                    );
+                },
+
+                loadCustomLookupReferencedAttributes: function(productDefinitionId, callback) {
+                    var json = Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.UISupport.loadCustomLookupReferencedAttributes}',
+                        productDefinitionId,
+                        function(result, event) {
+                            callback(JSON.parse(result));
+                        },
+                        {escape: false}
+                    );
+                },
+
+                getSelectListLookup: function(params, callback) {
+                    var json = Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.UISupport.getSelectListLookup}',
+                        JSON.stringify(params), '', '', '',
+                        function(result, event) {
+                            callback(result, event);
+                        },
+                        {escape: false}
+                    );
+                },
+
+                storeConfiguration: function(payload, callback) {
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.UISupport.storeConfigs}',
+                        payload,
+                        function(result, event) {
+                            if (event.status) {
+                                result._success = true;
+                            } else {
+                                if (!result) {
+                                    result = {};
+                                }
+                                result._success = false;
+                                result._message = event.message;
+                            }
+                            callback(result, function redirect() {
+                                window.location.href = CS.params.retURL;
+                            });
+                        }
+                    );
+                }
+            },
+            template = 'CustomOnlineTemplate';
+
+            CS.Settings = {
+                "configAllowsLiveReload" : true,
+                "isProfilingEnabled" : true,
+                "isWarnEnabled" : true,
+                "isInfoEnabled" : true,
+                "isDebugEnabled" : true,
+                "isEntryLoggingEnabled" : true,
+                "isSoqlLoggingEnabled" : false,
+                "isScreenLoggingEnabled" : false,
+                "isBrowserLoggingEnabled" : true,
+                "cascadeDeleteDisabled" : false,
+                "isLoadingOverlayEnabled" : true,
+                "isDocumentLoggingEnabled" : false,
+                "displayTCVColumn" : true,
+                "displayRecurringInvoiceColumn" : false,
+                "copyOppOwnerToConfigs" : true,
+                "showRateLineItemsInSeparateColumn" : false,
+                "showListPriceAndDiscountAmount" : true,
+                "isMultiLingualSupportEnabled" : false,
+                "enableDynamicLookupQueries" : true,
+                "indicatorTimeout" : 1000
+            };
+
+            CS.Labels = {
+                "selectlistlookup_Please_select_value" : "{!$Label.cscfga__selectlistlookup_Please_select_value}",
+                "selectlistlookup_Please_enter_search" : "{!$Label.cscfga__selectlistlookup_Please_enter_search}"
+            };
+
+            params.linkedId = CS.Util.stripIdFromUrl(params.linkedId);
+
+            //AF temp
+            CS.params = params;
+
+            // set user language for number/date formatter
+            if (typeof CS !== 'undefined' && CS['DataConverter'] instanceof Object) {
+                CS.DataConverter.userLanguage = '{!userLanguage}';
+            }
+
+            launchConfigurator(CS, delegate, params, function() {
+                // no op
+                setTimeout(initializeWidgets, 400);
+            });
+
+        });
+
+        var finishWaitData = {
+            elapsedTime: 0,
+            tick: 100,
+            timeout: 5000
+        };
+        function finish() {
+            var _this = this;
+            var _arguments = arguments;
+            if (typeof CS.rulesTimer !== 'undefined') {
+                finishWaitData.elapsedTime += finishWaitData.tick;
+                if (finishWaitData.elapsedTime > finishWaitData.timeout) {
+                    CS.Log.warn('finish() method timed out while waiting for rules to execute, continuing anyway...');
+                } else {
+                    CS.Log.debug('[' + finishWaitData.elapsedTime + '] Waiting for rules to finish... ');
+                    setTimeout(function() { finish.apply(_this, _arguments); }, finishWaitData.tick);
+                    return;
+                }
+            }
+
+            finishWaitData.elapsedTime = 0;
+            var validationResult = CS.Service.validateCurrentConfig(true);
+            var configurationStatus = CS.getConfigurationProperty('', 'status');
+
+            if (configurationStatus === '{!CONFIGURATION_STATUS_INVALID}' || !(validationResult.isValid)) {
+                updateFinishButtonUI(this);
+
+                // There are validation errors within the configuration. The configuration can still be saved but the basket cannot be synchronised with an Opportunity until the errors have been corrected.
+                CS.markConfigurationInvalid('{!$Label.cscfga__configuration_There_are_validation_errors}');
+            } else {
+                saveConfiguration(this);
+            }
+        }
+
+        function saveConfiguration(buttonElement) {
+            var basketSpec = {
+                Id: params.basketId,
+                linkedId: params.linkedId,
+                packageSlotId: params.packageSlotId
+            };
+            if (typeof buttonElement === 'undefined') {
+                buttonElement = this;
+            }
+
+            CS.Log.info('Persisting configuration...');
+            CS.Service.persistConfiguration(basketSpec, (function(p){
+                return function(result, redirectCallback) {
+                    if (result._success) {
+                        CS.Log.info('Configuration persisted');
+                        window.location.assign(buildAfterFinishUrl(p, result));
+                    } else {
+                        CS.markConfigurationInvalid(result._message);
+                        updateFinishButtonUI(buttonElement, true);
+                    }
+                }
+            })(params)
+            );
+        }
+
+        function displayButtons() {
+            var pp = CS.Util.configuratorPrefix;
+            var buttonsHTML = '';
+            var currentScreenIdx = CS.Service.getCurrentScreenIndex();
+            var ref = CS.Service.getCurrentConfigRef();
+            var currentConfig = CS.Service.config[ref].config;
+
+            var rootRef = ref;
+            if (typeof ref === 'string' && ref.indexOf('_') > 0) {
+                var refParts = ref.split(/_/);
+                if (refParts.length > 0 && !isNaN(refParts[refParts.length - 1])) {
+                    refParts[refParts.length - 1] = 0;
+                    rootRef = refParts.join('_');
+                }
+            }
+            var numScreens = CS.Service.config[ref].screens.length;
+
+            var productIndex = CS.Service.getProductIndex(currentConfig[pp + 'Product_Definition__c']);
+            var productId = CS.Service.getCurrentProductId();
+            var productDefinition = productIndex.productsById[productId];
+
+            if (currentScreenIdx > 0) {
+                buttonsHTML += '<button class="slds-button slds-button--neutral" data-cs-group="Previous" onclick="clickAction(this, displayScreen, ' + (currentScreenIdx - 1) + ')">Previous</button>';
+            }
+
+            if (currentScreenIdx < numScreens - 1) {
+                buttonsHTML += '<button class="slds-button slds-button--neutral" data-cs-group="Next" onclick="clickAction(this, displayScreen, ' + (currentScreenIdx + 1) + ')">Next</button>';
+            }
+
+            if (ref === '') {
+                buttonsHTML += '<button class="slds-button slds-button--neutral" data-cs-group="Cancel" onclick="clickAction(this, cancel, buildCancelUrl(params))">Cancel</button>';
+                buttonsHTML += '<button class="slds-button slds-button--neutral" data-cs-group="Finish" onclick="clickAction(this, finish)">Finish</button>';
+                if (productDefinition[pp + 'Allow_progress_from_incomplete_screens__c']) {
+                    buttonsHTML += '<button class="hidden slds-button slds-button--neutral" data-cs-group="ForceFinish" onclick="clickAction(this, saveConfiguration)">Save without Validation</button>';
+                    buttonsHTML += '<button class="hidden slds-button slds-button--neutral" data-cs-group="ForceFinish" onclick="clickAction(this, finish)">Validate and Save</button>';
+                }
+            } else {
+                buttonsHTML += '<button class="slds-button slds-button--neutral" data-cs-group="Cancel" onclick="clickAction(this, cancelRelated)">Cancel</button>';
+                buttonsHTML += '<button class="slds-button slds-button--neutral" data-cs-group="Finish" onclick="clickAction(this, cont)">Continue</button>';
+                if (productDefinition[pp + 'Allow_progress_from_incomplete_screens__c']) {
+                    buttonsHTML += '<button class="hidden slds-button slds-button--neutral" data-cs-group="ForceFinish" onclick="clickAction(this, saveRelated)">Save without Validation</button>';
+                    buttonsHTML += '<button class="hidden slds-button slds-button--neutral" data-cs-group="ForceFinish" onclick="clickAction(this, cont)">Validate and Save</button>';
+                }
+            }
+
+
+            jQuery('.CS_configButtons').html(buttonsHTML);
+        }
+
+        </script>
+        <script type="text/html" id="CS.MultipleRelatedProduct__tpl">
+    <%  var prefix = CS.Util.configuratorPrefix;
+        var disabled = ((definition[prefix + 'Max__c'] && relatedProducts.length >= definition[prefix + 'Max__c']) ? 'disabled="disabled"' : ''),
+            prod,
+            attRef,
+            rowClass;
+        var attr = anchor.attr;
+        var isReadOnly = attr[prefix + 'Is_Read_Only__c'];
+        var isActive = attr[prefix + 'is_active__c'];
+        var isRequired = attr[prefix + 'Is_Required__c'];
+    %>
+        <div class="apexp relatedProductContainer" >
+            <div class="individualPalette">
+                <div class="Custom24Block">
+                    <div class="">
+                        <div class="pbHeader rpHeader">
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="h2Center">
+                                        <h2 class="slds-text-heading--small slds-m-top--large">
+                                            <span><%= definition.Name %></span>
+                                            <% if (isRequired) { %><span class="required">(Required)</span><% } %>
+                                            <% if (isReadOnly) { %><span class="readOnly">(Read Only)</span><% } %>
+                                        </h2>
+                                    </td>
+                                    <td class="pbButton ">
+                                    <% if (isActive && ! isReadOnly) { %>
+                                        <button <%= disabled %> class="slds-button slds-button--neutral" data-cs-control="<%= anchor.reference %>" data-cs-ref="<%= anchor.reference %>" data-cs-action="addRelatedProduct" data-cs-type="add" data-role="none">New <%= definition.Name %></button>
+                                    <% } %>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="rpBody">
+    <% if (relatedProducts.length > 0) { %>
+        <table class="list" data-cs-binding="<%= anchor.reference %>" data-cs-control="<%= anchor.reference %>" data-cs-type="list">
+            <thead class="rich-table-thead">
+                <tr class="headerRowNew">
+                    <th class="headerRowNew" style="width: 10em;">Action</th>
+                    <th class="headerRowNew" style="width: 10em;">Status</th>
+                    <th class="headerRowNew">Name</th>
+    <%  for (var i = 0; i < cols.length; i++) {
+            var spec = colSpecs[cols[i]]; %>
+                <th class="headerRow">
+                    <%= spec.header %>
+                </th>
+    <%  } %>
+                </tr>
+            </thead>
+    <%  for (var i = 0; i < relatedProducts.length; i++) {
+            prod = relatedProducts[i];
+            rowClass = 'dataRow ' + (i/2 == Math.floor(i/2) ? 'even ' : 'odd ') + (i == 0 ? 'first ' : '') + (i >= relatedProducts.length - 1 ? 'last' : '');
+    %>
+            <tr class="<%= rowClass %>" data-cs-ref="<%= prod.reference %>">
+                <td class="dataCell">
+                <% if (isActive && ! isReadOnly) { %>
+                    <span data-cs-action="editRelatedProduct" data-cs-ref="<%= prod.reference %>">Edit</span> |
+                    <span data-cs-action="removeRelatedProduct" data-cs-ref="<%= prod.reference %>">Del</span>
+                <% } %>
+                </td>
+                <td class="dataCell"><%= prod.config[prefix + 'Configuration_Status__c'] %></td>
+                <td class="dataCell"><span data-cs-action="editRelatedProduct" data-cs-ref="<%= prod.reference %>"><%= prod.config.Name %></span></td>
+    <%      for (var j = 0; j < cols.length; j++) {
+                if (colSpecs[cols[j]].ref != undefined) {
+                    attRef = prod.reference + ':' + colSpecs[cols[j]].ref;
+                }
+                if (attRef != undefined) {
+    %>
+                <td><%= CS.getAttributeDisplayValue(attRef) %></td>
+    <%          }
+            } %>
+            </tr>
+    <%  } %>
+        </table>
+    <% } else { %>
+        <table class="list" data-cs-control="<%= anchor.reference %>" data-cs-type="list">
+            <tr class="dataRow even first last">
+                <td class="dataCell">
+                    No items to display
+                </td>
+            </tr>
+        </table>
+    <% } %>
+                    </div>
+                        <div class="pbFooter secondaryPalette">
+                            <div class="bg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+
+    </body>
+    <c:PricingWidgets2 />
+</html>
+<!-- Loading Flat UI -->
+<apex:stylesheet value="{!URLFOR($Resource.FlatUI,'FlatUI/css/flat-ui-iso.css')}"></apex:stylesheet>
+<apex:includeScript value="{!URLFOR($Resource.FlatUI,'FlatUI/js/flat-ui.min.js')}"/>
+<style type="text/css">
+/* Quick and dirty override for Lightning Template */
+    .bootstrap-iso .panel-success {
+        border-color: #d8dde6;
+    }
+    .bootstrap-iso .panel-success > .panel-heading {
+        background-color: #f4f6f9;
+        color: #16325c;
+        border: none;
+    }
+    .bootstrap-iso .panel-success > .panel-heading:first-child {
+        border-bottom: 1px solid #d8dde6;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+    }
+    .bootstrap-iso .panel-success > .panel-heading:last-child {
+        border-top: 1px solid #d8dde6;
+        border-bottom-left-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+    }
+    .bootstrap-iso .panel-title {
+        font-weight: 300;
+        font-size: 1.125rem;
+        line-height: 1.75;
+    }
+    .bootstrap-iso .btn-primary {
+        padding: 0 1rem;
+        font-weight: 400 !important;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #d8dde6;
+        background-color: #fff;
+        line-height: 1.75rem;
+        min-height: 2rem;
+        color: #0070d2;
+        transition: color 50ms linear,background-color 50ms linear;
+    }
+    .bootstrap-iso .btn-primary:not(:first-child) {
+        border-left: none !important;
+    }
+    .bootstrap-iso .btn-primary:hover,
+    .bootstrap-iso .btn-primary:active {
+        background-color: #f4f6f9;
+        color: #005fb2;
+        border: 1px solid #d8dde6;
+    }
+    .bootstrap-iso .btn-primary:focus {
+        background-color: #0070d2;
+        border: 1px solid #0070d2;
+        color: #fff;
+    }
+    .bootstrap-iso .panel {
+        box-shadow: none;
+    }
+    .bootstrap-iso h4, .bootstrap-iso .h4 {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1.25rem;
+        margin: 0 0 1rem 0;
+    }
+    /* removing grid definitions except the half width (col-md-6) */
+    .bootstrap-iso .col-md-1, .bootstrap-iso .col-md-2,
+    .bootstrap-iso .col-md-3, .bootstrap-iso .col-md-4,
+/*    .bootstrap-iso .col-md-5, .bootstrap-iso .col-md-6, */
+    .bootstrap-iso .col-md-7, .bootstrap-iso .col-md-8,
+    .bootstrap-iso .col-md-9, .bootstrap-iso .col-md-10,
+    .bootstrap-iso .col-md-11, .bootstrap-iso .col-md-12 {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+    /* labels */
+    .bootstrap-iso label {
+        display: inline-block;
+        color: #54698d;
+        font-size: .75rem;
+        line-height: 1.5;
+        margin-right: .75rem;
+        margin-bottom: .25rem;
+        font-weight: normal;
+    }
+    label.requiredOn:after {
+        color: #c23934;
+    }
+    /* form elements */
+    .bootstrap-iso .form-control,
+    .bootstrap-iso select,
+    .bootstrap-iso .select2-search input[type="text"] {
+        background-color: #fff;
+        color: #16325c;
+        border: 1px solid #d8dde6;
+        border-radius: .25rem;
+        width: 100%;
+        transition: border .1s linear,background-color .1s linear;
+    }
+    .bootstrap-iso .dateInput .form-control {
+        width: calc(100% - 120px);
+    }
+    .bootstrap-iso label.checkbox,
+    .bootstrap-iso label.radio {
+        padding-left: 0;
+    }
+    .bootstrap-iso .radioOptions label.radio {
+        padding-left: 32px;
+    }
+    .bootstrap-iso .checkbox input[type="checkbox"].custom-checkbox:checked + .icons .icon-checked,
+    .bootstrap-iso .radio input[type="checkbox"].custom-checkbox:checked + .icons .icon-checked,
+    .bootstrap-iso .checkbox input[type="radio"].custom-radio:checked + .icons .icon-checked,
+    .bootstrap-iso .radio input[type="radio"].custom-radio:checked + .icons .icon-checked,
+    .bootstrap-iso .checkbox input[type="checkbox"].custom-checkbox:checked + .icons,
+    .bootstrap-iso .radio input[type="checkbox"].custom-checkbox:checked + .icons,
+    .bootstrap-iso .checkbox input[type="radio"].custom-radio:checked + .icons,
+    .bootstrap-iso .radio input[type="radio"].custom-radio:checked + .icons {
+        color: #0070d2;
+    }
+    .select2-default {
+        color: #16325c !important;
+    }
+    .bootstrap-iso select {
+        padding-left: .5rem;
+        padding-right: 1.5rem;
+    }
+    .bootstrap-iso .form-group.focus .form-control,
+    .bootstrap-iso .form-control:focus,
+    .bootstrap-iso select:focus,
+    .bootstrap-iso .form-group.focus .select2-search input[type="text"],
+    .bootstrap-iso .select2-search input[type="text"]:focus {
+        border-color: #1589ee;
+        background-color: #fff;
+        box-shadow: 0 0 3px #0070D2;
+    }
+    .bootstrap-iso .select2-container a:hover, .bootstrap-iso .select2-container a:focus {
+        color: #16325c;
+    }
+    #select-list label {
+        display: inline-block;
+        color: #54698d;
+        font-size: .75rem;
+        line-height: 1.25;
+        margin-right: 0;
+        margin-bottom: 0;
+        font-weight: normal;
+        vertical-align: middle;
+    }
+    #select-list select {
+        width: auto;
+        display: inline-block;
+        line-height: 1rem;
+        height: 1.5rem;
+    }
+    /* slider */
+    .slidingPanel > .slidingHandle {
+        line-height: 40px;
+        padding: 0;
+    }
+    #tabsContainer button {
+        height: 40px;
+    }
+    .bootstrap-iso .bg-success {
+        background: #f4f6f9;
+        border: 1px solid #d8dde6;
+    }
+    /* tables */
+    .bootstrap-iso .table {
+        border-bottom: 1px solid #d8dde6;
+    }
+    .bootstrap-iso .table > thead > tr > th,
+    .bootstrap-iso .table > tbody > tr > th,
+    .bootstrap-iso .table > tfoot > tr > th,
+    .bootstrap-iso .table > thead > tr > td,
+    .bootstrap-iso .table > tbody > tr > td,
+    .bootstrap-iso .table > tfoot > tr > td {
+        padding: .5rem;
+        position: relative;
+        vertical-align: middle;
+        font-size: .875rem;
+        line-height: 1.25;
+        letter-spacing: .0625em;
+        color: #16325c;
+        background: #fff;
+        border: none;
+        border-top: 1px solid #d8dde6;
+        font-weight: normal;
+        text-shadow: none;
+    }
+    .bootstrap-iso .table > thead > tr:hover > td,
+    .bootstrap-iso .table > tbody > tr:hover > td,
+    .bootstrap-iso .table > tfoot > tr:hover > td {
+        background: #f4f6f9;
+        box-shadow: #d8dde6 0 -1px 0 inset;
+    }
+    .bootstrap-iso .table > thead > tr > th,
+    .bootstrap-iso .table > tbody > tr > th,
+    .bootstrap-iso .table > tfoot > tr > th {
+        text-transform: uppercase;
+        color: #54698d;
+    }
+    .table-feature th {
+        border: none;
+        border-top: 1px solid #d8dde6;
+        font-weight: 400;
+    }
+    .bootstrap-iso .table > tbody > tr > td span[data-cs-action="editRelatedProduct"],
+    .bootstrap-iso .table > tbody > tr > td span[data-cs-action="removeRelatedProduct"] {
+        color: #0070d2;
+    }
+    .bootstrap-iso .table > tbody > tr > td span[data-cs-action="editRelatedProduct"]:hover,
+    .bootstrap-iso .table > tbody > tr > td span[data-cs-action="removeRelatedProduct"]:hover {
+        color: #005fb2;
+    }
+    /* standard SF style override */
+    .Custom24Tab .secondaryPalette, .individualPalette .Custom24Block .secondaryPalette,
+    body .bPageBlock, body #bodyCell .bResource .secondaryPalette,
+    body .secondaryPalette.bPageBlock, body .individualPalette .secondaryPalette.bPageBlock,
+    body .bodyDiv .genericTable, body .genericPageBlockTable, body .bodyDiv .bSubBlock,
+    body .bComponentBlock .bPageBlock, body .bMyDashboard .bPageBlock, body.rlHoverFrame .bPageBlock,
+    body.subjectSelectionPopup div.choicesBox, body.lookupTab .secondaryPalette.bPageBlock,
+    body.popupTab .secondaryPalette.bPageBlock, body.UserTagStatsPage .secondaryPalette.bPageBlock {
+        border: 1px solid #d8dde6;
+    }
+    body .bPageBlock .pbHeader,
+    body .bPageBlock .pbBottomButtons {
+        background: #f4f6f9;
+    }
+    body .bEditBlock .pbBottomButtons, body .apexp .bPageBlock.apexDefaultPageBlock .pbBottomButtons {
+        margin-top: 0;
+    }
+    body .bPageBlock, body .bPageBlock .pbBody {
+        background: #fff;
+    }
+    .bPageBlock .pbTitle,
+    body .bRelatedList .pbTitle h3,
+    body .bPageBlock .pbTitle h2,
+    body .bPageBlock .pbTitle h3,
+    body .bSubBlock h3.lbHeader {
+        color: #16325c;
+        font-weight: 300;
+        font-size: 1.125rem;
+        line-height: 1.75;
+    }
+    body .pbButton.CS_configButtons button,
+    body .pbButtonb.CS_configButtons button {
+        padding: 0 1rem;
+        font-weight: 400 !important;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #d8dde6;
+        background-color: #fff;
+        line-height: 1.75rem;
+        min-height: 2rem;
+        color: #0070d2;
+        transition: color 50ms linear,background-color 50ms linear;
+        background-image: none;
+        cursor: pointer;
+        font-size: 0.75rem;
+    }
+    body .pbButton.CS_configButtons button:hover,
+    body .pbButton.CS_configButtons button:active,
+    body .pbButtonb.CS_configButtons button:hover,
+    body .pbButtonb.CS_configButtons button:active {
+        background-color: #f4f6f9;
+        color: #005fb2;
+    }
+    body .bEditBlock .pbBottomButtons>table, body .apexp .bPageBlock.apexDefaultPageBlock .pbBottomButtons>table {
+        border-top: none;
+    }
+    .Custom24Tab .tertiaryPalette, .individualPalette .Custom24Block .tertiaryPalette,
+    .layoutEdit .individualPalette .Custom24Block .tertiaryPalette {
+        background: #d8dde6;
+        border-color: #d8dde6;
+    }
+    .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader {
+        background-image: none;
+        color: #16325c;
+        margin: 0;
+    }
+    body .bPageBlock .pbBody .pbSubheader .hideListButton {
+        background-position: 1px -11px;
+    }
+    body .bPageBlock .pbBody .labelCol, body .print .topics-label {
+        color: #54698d;
+        font-size: .75rem;
+        line-height: 1.5;
+        margin-right: .75rem;
+        margin-bottom: .25rem;
+        font-weight: normal;
+    }
+    /* tabs */
+    .bootstrap-iso .btn-group.btn-breadcrumb {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        border-bottom: 1px solid #d8dde6;
+        margin-bottom: 0.5rem;
+    }
+    .bootstrap-iso .btn-group.btn-breadcrumb .btn {
+        background: transparent;
+        font-size: .75rem;
+        line-height: 1.25;
+        text-transform: uppercase;
+        letter-spacing: .0625em;
+        color: #54698d;
+        padding: 0 1rem;
+        font-weight: normal;
+        border-radius: 0;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+        height: 3rem;
+        line-height: 3rem;
+        border-bottom: 2px solid transparent;
+    }
+    .bootstrap-iso .btn-group.btn-breadcrumb .btn.active {
+        border-bottom: 2px solid #0070d2;
+        color: #16325c;
+    }
+    .btn-breadcrumb .btn:not(:last-child):before,
+    .btn-breadcrumb .btn:not(:last-child):after {
+        display: none;
+    }
+    /* links */
+    .bootstrap-iso a {
+        color: #0070d2;
+    }
+    .bootstrap-iso a:hover {
+        color: #005fb2;
+    }
+    .dateFormat {
+        vertical-align: middle;
+        font-size: 0.9rem;
+    }
+    /* error and info message styling */
+    .message{
+        border-style: none;
+        border-width: 0px;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+    }
+    .messageText {
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 1;
+        font-family: "Salesforce Sans", Arial, sans-serif !important;
+    }
+    .message .messageText {
+        background-color: #fff !important;
+        padding: 5px !important;
+        margin: 0;
+    }
+    .messageText h4 {
+        display: block;
+        padding: 1rem;
+        border-radius: 0.25rem;
+    }
+    .warningM3 .messageText {
+        color: rgb(194, 57, 52);
+    }
+    .warningM3 .messageText h4 {
+        background: rgb(194, 57, 52);
+        color: #fff;
+    }
+    .infoM3 .messageText {
+        color: #0070d2;
+    }
+    .infoM3 .messageText h4 {
+        background: #0070d2;
+        color: #fff;
+    }
+    table.messageTable {
+        width: 100%;
+    }
+    table.messageTable tbody tr td:first-child {
+        display: none;
+    }
+    p.attributeErrorMessage {
+        color: rgb(194, 57, 52);
+        right: 0;
+        font-size: 80%;
+    }
+    .attributeError select,
+    .attributeError input,
+    .attributeError .form-control {
+        border: 1px solid rgb(194, 57, 52) !important;
+    }
+</style>
+<apex:form style="width: 0; height: 0; position: absolute; left: -1000px;">
+    <!--
+        This inputField initializes the SFDC DatePicker JS widget.
+        The form is hidden due to recent changes in SFDC VF rendering engine
+        which started displaying this inputField (it was previously hidden due
+        to referencing the read-only SObject field)
+    -->
+    <apex:inputField value="{!cscfga__Product_Basket__c.CreatedDate}"/>
+</apex:form>
+</apex:page>

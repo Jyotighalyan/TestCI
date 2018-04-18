@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Address</value>
+        </caseValues>
+        <name>address_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Contact Visit Access</value>
+        </caseValues>
+        <name>contact_access</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Contact Email Address</value>
+        </caseValues>
+        <name>contact_email</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Country</value>
+        </caseValues>
+        <name>country_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Email Address</value>
+        </caseValues>
+        <name>email_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Address</value>
+        </caseValues>
+        <name>mailing_address_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit City</value>
+        </caseValues>
+        <name>mailing_city_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Country Code</value>
+        </caseValues>
+        <name>mailing_country_code_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Country</value>
+        </caseValues>
+        <name>mailing_country_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Latitude</value>
+        </caseValues>
+        <name>mailing_latitude_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Longitude</value>
+        </caseValues>
+        <name>mailing_longitude_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit State/Province Code</value>
+        </caseValues>
+        <name>mailing_state_code_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit State/Province</value>
+        </caseValues>
+        <name>mailing_state_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Street</value>
+        </caseValues>
+        <name>mailing_street_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Visit Zip/Postal Code</value>
+        </caseValues>
+        <name>mailing_zip_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Job Title</value>
+        </caseValues>
+        <name>title_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <label><!-- Activation Code --></label>
+        <name>B2B_Activation_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activation Code Email Sent On --></label>
+        <name>B2B_Care_Email_Sent_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activation Code Expiration Date --></label>
+        <name>B2B_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ULM Self Care Portal --></label>
+        <name>B2B_Link_to_Self_Care_Portal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Self Care Redirection Url --></label>
+        <name>B2B_Self_Care_Redirection_Url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Self Care User Status --></label>
+        <name>B2B_Self_Care_User_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- ULM User Id --></label>
+        <name>B2B_ULM_User_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval PIN --></label>
+        <name>CSCAP__Approval_PIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Generate Activation Code --></label>
+        <name>Generate_Activation_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Type --></label>
+        <name>LG_AccountContact_Type__c</name>
+        <picklistValues>
+            <masterLabel>Customer Contact</masterLabel>
+            <translation><!-- Customer Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Principal contact</masterLabel>
+            <translation><!-- Principal contact --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Relationship Survey Sent Date --></label>
+        <name>LG_Care_Relationship_Survey_Sent_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Survey Opt Out --></label>
+        <name>LG_Care_Survey_Opt_Out__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Account No --></label>
+        <name>LG_Contact_Account_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Decision Maker --></label>
+        <name>LG_DecisionMaker__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>LG_ExternalID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Finance Contact? --></label>
+        <name>LG_IsFinContact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Interaction Date --></label>
+        <name>LG_LastInteractionDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Interaction Topic --></label>
+        <name>LG_LastInteractionTopic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile Opt Out --></label>
+        <name>LG_MobileOptOut__c</name>
+    </fields>
+    <fields>
+        <label><!-- Password --></label>
+        <name>LG_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Opt Out --></label>
+        <name>LG_PhoneOptOut__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Opt Out --></label>
+        <name>LG_PostOptOut__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preferred Communication --></label>
+        <name>LG_PreferredCommunication__c</name>
+        <picklistValues>
+            <masterLabel>Call</masterLabel>
+            <translation><!-- Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Face to Face</masterLabel>
+            <translation><!-- Face to Face --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Letter</masterLabel>
+            <translation><!-- Letter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opt out all</masterLabel>
+            <translation><!-- Opt out all --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sms</masterLabel>
+            <translation><!-- Sms --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Previous Master Account --></label>
+        <name>LG_PreviousMasterAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>LG_Role__c</name>
+        <picklistValues>
+            <masterLabel>Business User</masterLabel>
+            <translation><!-- Business User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Contact</masterLabel>
+            <translation><!-- Financial Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Contact</masterLabel>
+            <translation><!-- Technical Contact --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Salesforce not Data Master --></label>
+        <name>LG_SalesforceNotDataMaster__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salutation Local --></label>
+        <name>LG_SalutationLocal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Username --></label>
+        <name>LG_Username__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG VisitAddressID --></label>
+        <name>LG_VisitAddressID__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG VisitCity --></label>
+        <name>LG_VisitCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG_VisitCountry --></label>
+        <name>LG_VisitCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG VisitHouseNumberExtension --></label>
+        <name>LG_VisitHouseNumberExtension__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG VisitHouseNumber --></label>
+        <name>LG_VisitHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG VisitPostalCode --></label>
+        <name>LG_VisitPostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG VisitStreet --></label>
+        <name>LG_VisitStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- SalutationTranslation --></label>
+        <name>SalutationTranslation__c</name>
+    </fields>
+    <fields>
+        <label><!-- UM VisitGeolocation --></label>
+        <name>UM_VisitGeolocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- UM VisitStateProvince --></label>
+        <name>UM_VisitStateProvince__c</name>
+    </fields>
+    <fields>
+        <help><!-- The address of this Contact. Used for the Contact&apos;s residential or default address. --></help>
+        <label><!-- Address --></label>
+        <name>cscrm__Address__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The issuing authority for this Contact&apos;s birth certificate. --></help>
+        <label><!-- Birth Certificate Authority --></label>
+        <name>cscrm__Birth_Certificate_Authority__c</name>
+    </fields>
+    <fields>
+        <help><!-- The country of issue for this Contact&apos;s birth certificate. Two-letter country code. --></help>
+        <label><!-- Birth Certificate Country --></label>
+        <name>cscrm__Birth_Certificate_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date of issue for this Contact&apos;s birth certificate. --></help>
+        <label><!-- Birth Certificate Date --></label>
+        <name>cscrm__Birth_Certificate_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The ID number for this Contact&apos;s birth Certificate. --></help>
+        <label><!-- Birth Certificate Number --></label>
+        <name>cscrm__Birth_Certificate_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The reference number of the document under which this Contact is eligible for a concession. --></help>
+        <label><!-- Concession Number --></label>
+        <name>cscrm__Concession_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The type of concession this Contact is eligible for. --></help>
+        <label><!-- Concession Type --></label>
+        <name>cscrm__Concession_Type__c</name>
+        <picklistValues>
+            <masterLabel>Carer</masterLabel>
+            <translation><!-- Carer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Child</masterLabel>
+            <translation><!-- Child --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pensioner</masterLabel>
+            <translation><!-- Pensioner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student</masterLabel>
+            <translation><!-- Student --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If checked, this Contact is entitled to a concession (e.g. old age etc.). --></help>
+        <label><!-- Concession --></label>
+        <name>cscrm__Concession__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of this Contact&apos;s current Employer. --></help>
+        <label><!-- Current Employer Name --></label>
+        <name>cscrm__Current_Employer_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The phone number for this Contact&apos;s current employer. --></help>
+        <label><!-- Current Employer Phone --></label>
+        <name>cscrm__Current_Employer_Phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Country of issue for this Contact&apos;s driver&apos;s license. Two-letter country code. --></help>
+        <label><!-- Driver&apos;s License Country --></label>
+        <name>cscrm__Drivers_License_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Expiry date of this Contact&apos;s driver&apos;s license. --></help>
+        <label><!-- Driver&apos;s License Expiry Date --></label>
+        <name>cscrm__Drivers_License_Expiry_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The driver number on this Contact&apos;s driving license. --></help>
+        <label><!-- Driver&apos;s License Number --></label>
+        <name>cscrm__Drivers_License_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID for this Contact from an external system. --></help>
+        <label><!-- External ID --></label>
+        <name>cscrm__External_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The expiry date for this Contact&apos;s national health insurance card. --></help>
+        <label><!-- National Health Card Expiry Date --></label>
+        <name>cscrm__National_Health_Card_Expiry_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This Contact&apos;s ID number in the national health insurance program. --></help>
+        <label><!-- National Health Card Number --></label>
+        <name>cscrm__National_Health_Card_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- This Contact&apos;s occupation. --></help>
+        <label><!-- Occupation --></label>
+        <name>cscrm__Occupation__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, this Contact prefers paperless billing (bill by email). --></help>
+        <label><!-- Paperless Billing --></label>
+        <name>cscrm__Paperless_Billing__c</name>
+    </fields>
+    <fields>
+        <help><!-- Expiry date of this Contact&apos;s passport. --></help>
+        <label><!-- Pasport Expiry Date --></label>
+        <name>cscrm__Pasport_Expiry_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The country of issue for this Contact&apos;s passport. Two-letter country code. --></help>
+        <label><!-- Passport Country --></label>
+        <name>cscrm__Passport_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date of issue of this Contact&apos;s passport. --></help>
+        <label><!-- Passport Issue Date --></label>
+        <name>cscrm__Passport_Issue_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The passport number for this Contact. --></help>
+        <label><!-- Passport Number --></label>
+        <name>cscrm__Passport_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The previous address of this Contact. --></help>
+        <label><!-- Previous Address --></label>
+        <name>cscrm__Previous_Address__c</name>
+        <relationshipLabel><!-- Contacts (Previous Address) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The residential status of this Contact (owner, tenant etc). --></help>
+        <label><!-- Residential Status --></label>
+        <name>cscrm__Residential_Status__c</name>
+        <picklistValues>
+            <masterLabel>Living with parents</masterLabel>
+            <translation><!-- Living with parents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owner</masterLabel>
+            <translation><!-- Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tenant</masterLabel>
+            <translation><!-- Tenant --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This Contact&apos;s ID number in the social security program. --></help>
+        <label><!-- Social Security Card Number --></label>
+        <name>cscrm__Social_Security_Card_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The issuing authority of this Contact&apos;s student card. --></help>
+        <label><!-- Student Card Authority --></label>
+        <name>cscrm__Student_Card_Authority__c</name>
+    </fields>
+    <fields>
+        <help><!-- The issuing country of this Contact&apos;s student card. Two letter country code. --></help>
+        <label><!-- Student Card Country --></label>
+        <name>cscrm__Student_Card_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- The expiry date for this Contact&apos;s student card. --></help>
+        <label><!-- Student Card Expiry Date --></label>
+        <name>cscrm__Student_Card_Expiry_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This Contact&apos;s student card ID number. --></help>
+        <label><!-- Student Card Number --></label>
+        <name>cscrm__Student_Card_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The time this Contact has lived at their current address. --></help>
+        <label><!-- Time at Current Address --></label>
+        <name>cscrm__Time_at_Current_Address__c</name>
+        <picklistValues>
+            <masterLabel>1-2 years</masterLabel>
+            <translation><!-- 1-2 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-5 years</masterLabel>
+            <translation><!-- 2-5 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5+ years</masterLabel>
+            <translation><!-- 5+ years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6-12 months</masterLabel>
+            <translation><!-- 6-12 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Less than 6 months</masterLabel>
+            <translation><!-- Less than 6 months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The time this Contact has been in their current employment. --></help>
+        <label><!-- Time at Current Employment --></label>
+        <name>cscrm__Time_at_Current_Employment__c</name>
+        <picklistValues>
+            <masterLabel>1 year</masterLabel>
+            <translation><!-- 1 year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 years</masterLabel>
+            <translation><!-- 2 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 years</masterLabel>
+            <translation><!-- 3 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5+ years</masterLabel>
+            <translation><!-- 5+ years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6-12 months</masterLabel>
+            <translation><!-- 6-12 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Less than 6 months</masterLabel>
+            <translation><!-- Less than 6 months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The length of time this Contact lived at their previous address. --></help>
+        <label><!-- Time at Previous Address --></label>
+        <name>cscrm__Time_at_Previous_Address__c</name>
+        <picklistValues>
+            <masterLabel>1-2 years</masterLabel>
+            <translation><!-- 1-2 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-3 years</masterLabel>
+            <translation><!-- 2-3 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-4 years</masterLabel>
+            <translation><!-- 3-4 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4-5 years</masterLabel>
+            <translation><!-- 4-5 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5+ years</masterLabel>
+            <translation><!-- 5+ years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Less than 1 year</masterLabel>
+            <translation><!-- Less than 1 year --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The time this Contact spent at their previous employment. --></help>
+        <label><!-- Time at Previous Employment --></label>
+        <name>cscrm__Time_at_Previous_Employment__c</name>
+        <picklistValues>
+            <masterLabel>1-2 years</masterLabel>
+            <translation><!-- 1-2 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-3 years</masterLabel>
+            <translation><!-- 2-3 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3-4 years</masterLabel>
+            <translation><!-- 3-4 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4-5 years</masterLabel>
+            <translation><!-- 4-5 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5+ years</masterLabel>
+            <translation><!-- 5+ years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Less than 1 year</masterLabel>
+            <translation><!-- Less than 1 year --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Contact Layout</layout>
+        <sections>
+            <label><!-- Communication Preferences --></label>
+            <section>Communication Preferences</section>
+        </sections>
+        <sections>
+            <label><!-- Self Care Portal Details --></label>
+            <section>Self Care Portal Details</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Case --></label>
+        <name>Case</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Event --></label>
+        <name>Event</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Log a Call --></label>
+        <name>Log_a_Call</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Log A Note --></label>
+        <name>Note</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Task --></label>
+        <name>Task</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- Phone or Mobile or Email or Address is required. --></errorMessage>
+        <name>LG_Contact_Information</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select the Salutation --></errorMessage>
+        <name>LG_Contact_Salutation_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change Account Name. --></errorMessage>
+        <name>LG_SalesforceNotDataMaster_AccountName</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change Decision Maker checbox. --></errorMessage>
+        <name>LG_SalesforceNotDataMaster_DecisionMak</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change Email Address. --></errorMessage>
+        <name>LG_SalesforceNotDataMaster_Email</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change First Name. --></errorMessage>
+        <name>LG_SalesforceNotDataMaster_FirstName</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change Last Name. --></errorMessage>
+        <name>LG_SalesforceNotDataMaster_LastName</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change Mobile. --></errorMessage>
+        <name>LG_SalesforceNotDataMaster_Mobile</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change Phone. --></errorMessage>
+        <name>LG_SalesforceNotDataMaster_Phone</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change Role. --></errorMessage>
+        <name>LG_SalesforceNotDataMaster_Role</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change Salutation. --></errorMessage>
+        <name>LG_SalesforceNotDataMaster_Salutation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change Job Title. --></errorMessage>
+        <name>LG_SalesforceNotDataMaster_Title</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Conga_Composer_OAuth --></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Mail_Merge --></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- B2B_Generate_Activation_Code --></label>
+        <name>B2B_Generate_Activation_Code</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+</CustomObjectTranslation>

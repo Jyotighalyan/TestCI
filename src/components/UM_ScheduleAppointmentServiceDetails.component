@@ -1,0 +1,6 @@
+<apex:component controller="LG_ScheduleAppComponentController" access="Global" >
+     <apex:attribute name="SolutionId" type="Id" description="Id of the Solution" assignTo="{!solId}"/>
+     <apex:attribute name="attributeName" type="String" description="Attribute type" assignTo="{!attribName}"/>
+     <apex:outputText value="{!ProdConfDetails.Name}" rendered="{!attribName = 'Name'}"/> 
+     <apex:outputText value="{!ProdConfDetails.UM_DownloadSpeed__c}" rendered="{!attribName = 'Bandwidth'}"/> 
+</apex:component>

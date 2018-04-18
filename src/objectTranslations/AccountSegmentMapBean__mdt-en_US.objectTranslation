@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AccountSegmentMapBean</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AccountSegmentMapBean</value>
+    </caseValues>
+    <fields>
+        <label><!-- AcctSegId --></label>
+        <name>AcctSegId__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingServiceCenter --></label>
+        <name>BillingServiceCenter__c</name>
+    </fields>
+    <fields>
+        <label><!-- CollectionsCenter --></label>
+        <name>CollectionsCenter__c</name>
+    </fields>
+    <fields>
+        <label><!-- ConfigTagId --></label>
+        <name>ConfigTagId__c</name>
+    </fields>
+    <fields>
+        <label><!-- FranchiseCode --></label>
+        <name>FranchiseCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- InsertGrpId --></label>
+        <name>InsertGrpId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key --></label>
+        <name>Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- MktCode --></label>
+        <name>MktCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- MsgGrpId --></label>
+        <name>MsgGrpId__c</name>
+    </fields>
+    <fields>
+        <label><!-- RateClass --></label>
+        <name>RateClass__c</name>
+    </fields>
+    <fields>
+        <label><!-- RemitServiceCenter --></label>
+        <name>RemitServiceCenter__c</name>
+    </fields>
+    <fields>
+        <label><!-- RevRcvCostCtr --></label>
+        <name>RevRcvCostCtr__c</name>
+    </fields>
+    <fields>
+        <label><!-- ServiceInquiryCenter --></label>
+        <name>ServiceInquiryCenter__c</name>
+    </fields>
+    <fields>
+        <label><!-- VipCode --></label>
+        <name>VipCode__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

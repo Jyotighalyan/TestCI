@@ -1,0 +1,1 @@
+Cancellation request "<b>{!Case.CaseNumber}</b>" was confirmed. Order "<b>{!Case.LG_Order__c}</b>" and its suborders will be cancelled.

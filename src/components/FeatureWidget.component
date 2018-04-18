@@ -1,0 +1,347 @@
+<apex:component controller="FeatureWidgetController">
+<body>
+<div id="feature-main">
+  <div clas="container-fluid margin-bot">
+      <div class="row row-no-margin" >
+          <div class="col-md-12">
+              <div id="table-feature" class="table-title table-responsive">
+                </div>
+          </div>
+      </div>
+      <div class="row row-no-margin">
+          <div class="col-md-12">
+             <div id='message' style="display: none;" class="table-title">
+            <span><b>&#10004;</b>   Features saved successfully. </span>
+            </div>
+            <div id='message2' style="display: none;" class="table-title">
+            <span><b>&#10004;</b>   Features deleted successfully. </span>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+</body>
+<style>
+body {
+  background-color: transparent;
+  font-family: "Arial", "helvetica", "sans-serif";
+  font-size: 16px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+.margin-bot{
+    margin-bottom:20px;
+}
+#feature-main .row-no-margin{
+    margin-left:0px;
+    margin-right:0px;
+}
+.table-title {
+  display: block;
+  margin: auto;
+  padding:5px;
+  margin-bottom:10px;
+  margin-top:10px;
+}
+
+.table-title h3 {
+   /*margin-left:10%;*/
+   color: black;
+   font-size: 18px;
+   font-weight: 400;
+   font-style:normal;
+   font-family: "Arial", "helvetica",  "sans-serif";
+   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+}
+/*** Table Styles **/
+
+.table-feature {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  margin: auto;
+  padding:5px;
+  color:#6d706f;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+
+.table-feature th {
+  color:white;
+  background:{!$Setup.WidgetStyle__c.dark__c};
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid white;
+  font-size:17px;
+  font-weight: 100;
+  padding:14px;
+  font-family:'Arial';
+  text-align:center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+.table-feature th:first-child {
+  border-top-left-radius:3px;
+}
+
+.table-feature th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+
+.table-feature tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#6d706f;
+  font-size:14px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+.table-feature tr:first-child {
+  border-top:none;
+}
+
+.table-feature tr:last-child {
+  border-bottom:none;
+}
+
+.table-feature tr:nth-child(odd) td {
+  background:{!$Setup.WidgetStyle__c.light__c};
+}
+.table-feature tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+
+.table-feature tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+
+.table-feature td {
+  background:#FFFFFF;
+  padding:10px;
+  color:#6d706f;
+  text-align:center;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:14px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+.table-feature td:last-child {
+  border-right: 0px;
+}
+
+.table-feature th.text-left {
+  text-align: left;
+}
+
+.table-feature th.text-center {
+  text-align: center;
+}
+
+.table-feature th.text-right {
+  text-align: right;
+}
+
+.table-feature td.text-left {
+  text-align: left;
+}
+
+.table-feature td.text-center {
+  text-align: center;
+}
+
+.table-feature td.text-right {
+  text-align: right;
+}
+.table-feature tr td:first-child{
+    width:40px;
+}
+
+.table-feature tr td:nth-child(2){
+    width:100px;
+}
+.table-feature input{
+    width: 28px;
+    height: 23px;
+    background: #ffffff;
+    border:1px solid #00adc7;
+    position: relative;
+    padding-left:3px;
+}
+#message {
+    display:table;
+    font-family:Arial,Helvetica,sans-serif;
+    margin: auto;
+    padding:8px;
+    width: 20%;
+    color:#fafafa;
+    margin-top:5px;
+    background-color:#51A351;
+    border-radius:3px;
+    font-size:18px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+#message span {
+    text-align: center;
+    width: 100%;
+    display:table-cell;
+    vertical-align:middle;
+}
+</style>
+<script>
+Visualforce.remoting.timeout = 120000;
+
+if(typeof Widget == 'undefined') {
+    Widget = {};
+} else {
+    Widget = Widget || {};
+}
+
+Widget.Feature = {
+
+    getAttributeByName: function(name) {
+        return CS.getAttributeValue(name + '_0');
+    },
+
+    getURLParameter: function(name) {
+	  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+	},
+
+    getInput: function() {
+        try {
+        if(priceItemAttribute === '' || featureCategory === '') {
+          throw 'Please load categories and price item attribute name';
+        }
+          $('#table-feature').empty();
+          var priceItemId = Widget.Feature.getAttributeByName(priceItemAttribute);
+          var category = featureCategory;
+          // This remoting call will use the page's timeout value
+          Visualforce.remoting.Manager.invokeAction(
+              '{!$RemoteAction.FeatureWidgetController.getAvaialbleFeatures}',
+              priceItemId,
+              category,
+              Widget.Feature.handleInput,
+              {escape: false}
+          );
+      } catch(err) {
+        console.log(err);
+        Widget.Feature.emptyTable("#table-feature","No available Features.");
+      }
+    },
+
+    handleInput: function(result, event) {
+        var data2;
+        var category = featureCategory;
+        if (result != undefined && result != '') {
+            data2 = JSON.parse(result);
+        }
+        if(data2 == undefined || (data2 != undefined && data2.length==0)){
+            Widget.Feature.emptyTable("#table-feature","No available features.");
+        }
+        else{
+           Widget.Feature.drawTable(data2,"#table-feature");
+           $('#table-feature input[type=checkbox]').attr({"checked": true, "disabled": true});
+        }
+    },
+
+    drawTable: function(data,div) {
+        var table = $('<table></table>').addClass('table table-feature');
+        var columnCount = data[0].length;
+
+        var colNames=Widget.Feature.GetHeaders(data);
+
+        var row = $("<tr/>");
+        table.append(row);
+        row.append($("<th>"));
+        for (var i = 0; i < colNames.length; i++) {
+            if(colNames[i]!="Id")
+            row.append($("<th>").html(colNames[i]));
+        }
+        for (var i = 0; i < data.length; i++){
+            row = $("<tr/>");
+            row.append($('<td><input type="checkbox" value="'+data[i].Id+'"></input></td>'));
+            for (var j = 0; j < colNames.length; j++) {
+                if(colNames[j]!="Id"){
+                row.append($('<td>' + data[i][colNames[j]] + '</td>'));
+                }
+            }
+            table.append(row);
+        }
+        $(div).append(table);
+
+    },
+    emptyTable: function(div,txt){
+        var table = $('<table></table>').addClass('table table-feature table-mar');
+        var row = $("<tr/>");
+        table.append(row);
+        row.append($("<th>"));
+        row = $("<tr/>");
+        row.append($('<td>'+txt+'</td>'));
+        table.append(row);
+        $(div).append(table);
+    },
+    GetHeaders: function(obj) {
+         var cols = new Array();
+         for (var key in obj[0]) {
+                cols.push(key);
+         }
+         return cols;
+    },
+    createButton: function(divID,func,txt,cls) {
+        var button=$('<button/>',
+            {
+                text: txt,
+                click: func
+            }).addClass(cls);
+            $(divID).append(button);
+    },
+    saveData: function() {
+        var configId = Widget.Feature.getURLParameter('configId');
+        var category = featureCategory;
+
+        var list=[];
+        $('#table-feature input[type=checkbox]').each(function(index, value) {
+            if (this.checked) {
+                list.push(this.value);
+            }
+        });
+        console.log(list);
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.FeatureWidgetController.saveFeatures}',
+            configId,
+            list,
+            category,
+            Widget.Feature.handleSave,
+            {escape: false}
+        );
+    },
+    deleteData: function() {
+    	var configId = Widget.Feature.getURLParameter('configId');
+        var category = featureCategory;
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.FeatureWidgetController.deletefeatures}',
+            configId,
+            category,
+            Widget.Feature.handleDelete,
+            {escape: false}
+        );
+    },
+    handleDelete: function() {
+        $("#message2").fadeIn("slow");
+    },
+    handleSave: function (result, event) {
+        var category = featureCategory;
+        $("#message").fadeIn("slow");
+
+        console.log(result);
+    },
+    cancel: function(){
+        //cancel
+    }
+}
+
+</script>
+
+</apex:component>

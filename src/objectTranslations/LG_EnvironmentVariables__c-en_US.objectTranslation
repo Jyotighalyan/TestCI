@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Environment Variables</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Environment Variables</value>
+    </caseValues>
+    <fields>
+        <label><!-- IdFIeld Postal City --></label>
+        <name>IdFIeld_PostalCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Billing City --></label>
+        <name>IdField_BillingCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Billing Country --></label>
+        <name>IdField_BillingCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Billing House Number Extension --></label>
+        <name>IdField_BillingHouseNumberExtension__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Billing House Number --></label>
+        <name>IdField_BillingHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Billing Postal Code --></label>
+        <name>IdField_BillingPostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Billing Street --></label>
+        <name>IdField_BillingStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Installation City --></label>
+        <name>IdField_InstallationCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Installation Country --></label>
+        <name>IdField_InstallationCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Installation House Number Ext --></label>
+        <name>IdField_InstallationHouseNumberExtension__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Installation House Number --></label>
+        <name>IdField_InstallationHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Installation Postal Code --></label>
+        <name>IdField_InstallationPostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Installation Street --></label>
+        <name>IdField_Installation_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Postal Code --></label>
+        <name>IdField_PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Postal Country --></label>
+        <name>IdField_PostalCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Postal House Number Ext --></label>
+        <name>IdField_PostalHouseNumberExt__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Postal House Number --></label>
+        <name>IdField_PostalHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- IdField Postal Street --></label>
+        <name>IdField_PostalStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Search Local --></label>
+        <name>LG_AddressSearchLocal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Admin Emails --></label>
+        <name>LG_Admin_Emails__c</name>
+    </fields>
+    <fields>
+        <label><!-- CloudSence Anywhere Icon ID --></label>
+        <name>LG_CloudSenceAnywhereIconID__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaQueryID10 --></label>
+        <name>LG_CongaQueryID10__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaQueryID11 --></label>
+        <name>LG_CongaQueryID11__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaQueryID1 --></label>
+        <name>LG_CongaQueryID1__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaQueryID2 --></label>
+        <name>LG_CongaQueryID2__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaQueryID3 --></label>
+        <name>LG_CongaQueryID3__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaQueryID4 --></label>
+        <name>LG_CongaQueryID4__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaQueryID5 --></label>
+        <name>LG_CongaQueryID5__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaQueryID6 --></label>
+        <name>LG_CongaQueryID6__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaQueryID7 --></label>
+        <name>LG_CongaQueryID7__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaQueryID8 --></label>
+        <name>LG_CongaQueryID8__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaQueryID9 --></label>
+        <name>LG_CongaQueryID9__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaTemplateID --></label>
+        <name>LG_CongaTemplateID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Email Address A --></label>
+        <name>LG_OrderEmailAddressA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Email Address B --></label>
+        <name>LG_OrderEmailAddressB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Email Address C --></label>
+        <name>LG_OrderEmailAddressC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Email Address D --></label>
+        <name>LG_OrderEmailAddressD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Peal Address Service URL --></label>
+        <name>LG_PealAddressServiceURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Base URL --></label>
+        <name>LG_SalesforceBaseURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Partner Base URL --></label>
+        <name>LG_SalesforcePartnerBaseURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sandbox Instance --></label>
+        <name>LG_SandboxInstance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Availability Icon ID --></label>
+        <name>LG_ServiceAvailabilityIconID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tracy App URL --></label>
+        <name>LG_TracyAppURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- VisualForce Base URL --></label>
+        <name>LG_VisualForceBaseURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visual Force Partner Base URL --></label>
+        <name>LG_VisualForcePartnerBaseURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongaTemplateId02 --></label>
+        <name>UM_CongaTemplateId02__c</name>
+    </fields>
+    <fields>
+        <label><!-- UM_CongaTemplateId03 --></label>
+        <name>UM_CongaTemplateId03__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Interest COAX Email --></label>
+        <name>UM_ProductInterestCOAXEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Interest Fiber Email --></label>
+        <name>UM_ProductInterestFiberEmail__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

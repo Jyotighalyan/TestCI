@@ -1,0 +1,3 @@
+<apex:page standardController="cscfga__Product_Basket__c" extensions="UM_NewBasketRedirectController" action="{!createNewBasketAndRedirect}">
+    <h2>Please wait, creating basket...</h2>
+</apex:page>

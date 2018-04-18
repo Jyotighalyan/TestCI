@@ -1,0 +1,99 @@
+<apex:component controller="UM_PaymentOverviewController" allowDML="true">
+
+    <!-- Attributes -->
+    <apex:attribute name="recordId" type="Id" description="Billing account Id" assignTo="{!recordIdAttribute}"/>
+
+    <!-- include css -->
+    <apex:stylesheet value="{!URLFOR($Resource.DataTablesExt, 'Foundation-5.5.2/css/foundation.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.DataTablesExt, 'DataTables-1.10.12/css/dataTables.foundation.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.DataTablesExt, 'FixedColumns-3.2.2/css/fixedColumns.foundation.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.DataTablesExt, 'FixedHeader-3.1.2/css/fixedHeader.foundation.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.DataTablesExt, 'Responsive-2.1.0/css/responsive.foundation.min.css')}"/>
+
+    <!-- include javascripts jquery, datatables -->
+    <apex:includeScript value="{!URLFOR($Resource.DataTablesExt, 'jQuery-2.2.3/jquery-2.2.3.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.DataTablesExt, 'Foundation-5.5.2/js/foundation.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.DataTablesExt, 'DataTables-1.10.12/js/jquery.dataTables.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.DataTablesExt, 'DataTables-1.10.12/js/dataTables.foundation.min.js')}" />     
+    <apex:includeScript value="{!URLFOR($Resource.DataTablesExt, 'FixedColumns-3.2.2/js/dataTables.fixedColumns.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.DataTablesExt, 'FixedHeader-3.1.2/js/dataTables.fixedHeader.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.DataTablesExt, 'Responsive-2.1.0/js/dataTables.responsive.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.DataTablesExt, 'Responsive-2.1.0/js/responsive.foundation.min.js')}" />
+
+    <style>
+        table#paymentsTable {border-spacing:0 !important; margin:0 !important;}
+        table#paymentsTable tr th,
+        table#paymentsTable tr td {font-family:Arial,Helvetica,sans-serif !important; padding:4px 2px 4px 5px !important;}
+        table#paymentsTable tr td {font-size:12px !important; color:#222 !important;}
+        table#paymentsTable tr td a {color:#015ba7 !important;}
+        table#paymentsTable th {
+            background-color:#f2f3f3 !important;
+            border-width:0 0 1px 1px !important;
+            border-color:#e0e3e5 !important;
+            color:#000 !important;
+            font-size:11px !important;
+            font-weight:bold !important;
+            padding:5px 2px 4px 5px !important;
+        }
+        table#paymentsTable .curr {text-align:left !important;} /*right*/ 
+
+        #paymentsTable_wrapper .row {display:none !important;}
+    </style>
+
+    <table id="paymentsTable" class="display" cellspacing="0" width="100%">
+
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Transaction</th>
+            <th style="width:20%">Received from Billing System</th>
+            <th>Affects Balance</th>
+            <th>Transaction Status</th>
+            <th class="curr">Credit</th>
+            <th class="curr">Debit</th>
+            <th class="curr">Balance</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <apex:form >
+        <apex:repeat var="payment" value="{!paymentsList}" >
+            <tr>
+                <td>{!payment.paymentDate}</td>
+                <td><apex:outputLink value="/{!payment.paymentId}" target="_parent" title="{!payment.paymentDescription}" id="pDescription">{!payment.paymentDescription}</apex:outputLink></td>
+                <td><apex:inputCheckbox value="{!payment.receivedFromBilling}" disabled="true"/></td>
+                <td><apex:inputCheckbox value="{!payment.affectsBalance}" disabled="true"/></td>
+                <td>{!payment.paymentStatus}</td>
+                <td class="curr">
+                    <apex:outputText value="{0,number,###,##0.00} {!$Label.KenanInvoicePageCurrencySymbol}" rendered="{!payment.credit != 0 && payment.credit != null}">
+                        <apex:param value="{!payment.credit}"/>
+                    </apex:outputText>
+                </td>
+                <td class="curr">
+                    <apex:outputText value="{0,number,###,##0.00} {!$Label.KenanInvoicePageCurrencySymbol}" rendered="{!payment.debit != 0 && payment.debit != null}">
+                        <apex:param value="{!payment.debit}"/>
+                    </apex:outputText>
+                </td>
+                <td class="curr">
+                    <apex:outputText value="{0,number,###,##0.00} {!$Label.KenanInvoicePageCurrencySymbol}">
+                        <apex:param value="{!payment.balance}"/>
+                    </apex:outputText>  
+                </td>
+            </tr>
+        </apex:repeat> 
+        </apex:form>
+        </tbody>
+
+    </table>
+
+    <script>
+    $(document).ready(function(){
+        $('#paymentsTable').DataTable();
+    });
+    
+    $('#paymentsTable').dataTable({
+   paging:false
+   )};
+    </script>
+
+</apex:component>

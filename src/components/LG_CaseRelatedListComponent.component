@@ -1,0 +1,40 @@
+<apex:component controller="LG_CaseRelatedListController" allowDML="true">
+<!-- Attribute Definition -->
+<apex:attribute name="CaseId" description="Salesforce Id of the Case whose Case Comments needs to be rendered" type="Id" required="true" assignTo="{!caseIdVal}" />
+
+<!-- Component Body -->
+<apex:componentBody >
+    <apex:form >
+        <apex:pageBlock title="Case Comments" >
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!NewComment}" value="New"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!Comments}" var="comment"> 
+                <apex:column headerValue="Action"> 
+                <apex:outputLink value="/{!comment.cComment.Id}/e?parent_id={!caseId}&retURL=/{!caseId}">Edit</apex:outputLink>&nbsp; | &nbsp;
+                <apex:commandLink action="{!deleteComment}" value="Del">
+                <apex:param name="CommentId_del" value="{!comment.cComment.Id}"/>
+                </apex:commandLink>&nbsp; | &nbsp; 
+                <apex:commandLink action="{!makePublicPrivate}" value="{!comment.PublicPrivateAction}">
+                <apex:param name="CommentId_p" value="{!comment.cComment.Id}" />
+                </apex:commandLink>
+                </apex:column>
+                <apex:column headerValue="Public" value="{!comment.cComment.IsPublished}" />
+                <apex:column headerValue="Comments">
+                <apex:outputText escape="false" value="{!comment.commentText}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <apex:pageBlock title="Case History" >
+            <apex:pageBlockTable value="{!caseHistory}" var="history">
+                <apex:column headerValue="Date" value="{!history.history.CreatedDate}" />
+                <apex:column headerValue="User" value="{!history.history.CreatedById}" />
+                <apex:column headerValue="Action" >
+                    <apex:outputText escape="false" value="{!history.Action}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+            
+    </apex:form>	
+</apex:componentBody>
+</apex:component>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Appointment Reminder</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Appointment Reminder</value>
+    </caseValues>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Before First Email Notification --></label>
+        <name>Days_Before_First_Email_Notification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Before First SMS notification --></label>
+        <name>Days_Before_First_SMS_notification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Before Second Email Notification --></label>
+        <name>Days_Before_Second_Email_Notification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Before Second SMS notification --></label>
+        <name>Days_Before_Second_SMS_notification__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmailTemplateId --></label>
+        <name>EmailTemplateId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Template Id --></label>
+        <name>SMSTemplateId__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Produkt Interesse</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Produkt Interesse</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Produkt Interesse</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Produkt Interesse</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Produkt Interesse</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Produkt Interesse</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Produkt Interesse</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Produkt Interesse</value>
+    </caseValues>
+    <fields>
+        <label><!-- Capex --></label>
+        <name>UM_Capex__c</name>
+    </fields>
+    <fields>
+        <help><!-- 0% - LOSS
+10% - Lead, Interessent, Kontakt mit Kunden
+30% - Bedarfsanalyse
+40% - ON HOLD
+60% - Termin vor Ort, Angebotsphase, Capex-Kosten ermittelt, Angebot in schriftlicher Form liegt vor
+90% - Commitment des Kunden vorhanden
+100% - WIN --></help>
+        <label><!-- Chance --></label>
+        <name>UM_Chance__c</name>
+    </fields>
+    <fields>
+        <help>Vertragsdauer in Monaten</help>
+        <label>Vertragsdauer</label>
+        <name>UM_ContractTerm__c</name>
+    </fields>
+    <fields>
+        <label>Forecast / Vorhersage</label>
+        <name>UM_Forecast__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>UM_Lead__c</name>
+        <relationshipLabel>Interesse Produkt</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- MRR --></label>
+        <name>UM_MRR__c</name>
+    </fields>
+    <fields>
+        <label><!-- OTC --></label>
+        <name>UM_OTC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opex --></label>
+        <name>UM_Opex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>UM_Opportunity__c</name>
+        <relationshipLabel>Interesse Produkt</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Free text field to capture details about the product interest --></help>
+        <label><!-- Product Details --></label>
+        <name>UM_ProductDetails__c</name>
+    </fields>
+    <fields>
+        <label>Produkt</label>
+        <name>UM_Product__c</name>
+    </fields>
+    <fields>
+        <label>Project Load (total)</label>
+        <name>UM_ProjectLoadTotal__c</name>
+    </fields>
+    <fields>
+        <label>Project Load (gewichtet)</label>
+        <name>UM_ProjectLoadWeighted__c</name>
+    </fields>
+    <fields>
+        <label>Anzahl</label>
+        <name>UM_Quantity__c</name>
+    </fields>
+    <fields>
+        <help>ROI in Monaten</help>
+        <label><!-- ROI --></label>
+        <name>UM_ROI__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Product Interest Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Produkt Details</label>
+            <section>Product Details</section>
+        </sections>
+        <sections>
+            <label>Produkt Information</label>
+            <section>Product Information</section>
+        </sections>
+        <sections>
+            <label>Datensatz</label>
+            <section>Record Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Product Interest layout oppty</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Product Details --></label>
+            <section>Product Details</section>
+        </sections>
+        <sections>
+            <label><!-- Product Information --></label>
+            <section>Product Information</section>
+        </sections>
+        <sections>
+            <label><!-- Record Information --></label>
+            <section>Record Information</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Nummer Produkt Interesse</nameFieldLabel>
+    <recordTypes>
+        <label><!-- Lead --></label>
+        <name>Lead</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Oppty --></label>
+        <name>Oppty</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>Forecast muss in der Zukunft sein</errorMessage>
+        <name>UM_ForecastInFuture</name>
+    </validationRules>
+</CustomObjectTranslation>

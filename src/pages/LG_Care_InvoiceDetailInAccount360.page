@@ -1,0 +1,63 @@
+<apex:page standardController="Account" extensions="LG_Care_InvoiceInfoAccount360_Controller">
+
+<div style="background-color: #F4F6F9">
+<apex:outputLabel style="font-family:verdana;font-weight:bold;font-size: 15px;" value="{!$Label.B2B_Care_Invoice_Details_Header }:"></apex:outputLabel>
+<apex:outputText >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</apex:outputText>
+<apex:outputLabel style="font-family:verdana;font-weight:bold;color:red;font-size: 13px;" rendered="{!Account.B2B_Bankruptcy_Warning__c ==TRUE}" value="{!$Label.B2B_Care_Bankruptcy_Details} {!Account.B2B_Bankruptcy_Date__c} )"></apex:outputLabel>
+<apex:outputText ><br> </br></apex:outputText>
+    
+    <table border="1px" style="border-collapse: collapse;">
+        
+        <tr> 
+             <th >{!$Label.B2B_Care_Billing_Account_Number}</th>
+             <!--<th >{!$Label.B2B_Care_Account_Balance}</th>-->
+             <th >{!$Label.B2B_Care_Account_Invoice}</th>
+             <th >{!$Label.B2B_Care_Account_Amount}</th>
+             <th >{!$Label.B2B_Care_Account_Due_Date}</th>
+             <th>{!$Label.B2B_Care_Account_Status}</th>           
+         </tr>
+        
+         <apex:repeat value="{!wrapperList}" var="bill">
+             <tr>
+                 <td style="vertical-align: middle;"><apex:outputLink value="/{!bill.billingId}" style="color: blue;">{!bill.billingNumber}</apex:outputLink></td>
+               
+                 <!--<td style="vertical-align: middle;">
+                     <apex:outputText value="{!bill.balance} {!$Label.KenanInvoicePageCurrencySymbol}" rendered="{!bill.balance !=NULL && bill.balance >= 0}"></apex:outputText>
+                     <apex:outputText value="{!bill.balance} {!$Label.KenanInvoicePageCurrencySymbol}" style="color: red;" rendered="{!bill.balance !=NULL && bill.balance < 0}"></apex:outputText>
+                 </td>-->
+                 
+                 <td>
+                 <apex:repeat value="{!bill.invoiceList}" var="invoice">
+                     <table>
+                         <td><apex:outputLink value="/{!Invoice.id}" style="color: blue;">{!invoice.Name}</apex:outputLink></td>
+                     </table>
+                 </apex:repeat>
+                 </td>
+                 <td>
+                 <apex:repeat value="{!bill.invoiceList}" var="invoice">
+                     <table>
+                         <td><apex:outputField value="{!invoice.UM_Invoice_Amount_Gross_Currency__c}"/></td>
+                     </table>
+                 </apex:repeat>
+                 </td>
+                 
+                 <td>
+                 <apex:repeat value="{!bill.invoiceList}" var="invoice">
+                     <table>
+                         <td><apex:outputField value="{!invoice.UM_Payment_Due_Date__c}"/></td>
+                     </table>
+                 </apex:repeat>
+                 </td>
+                 
+                 <td>
+                 <apex:repeat value="{!bill.invoiceList}" var="invoice">
+                     <table>
+                         <td><apex:outputText value="{!if(AND(invoice.UM_Invoice_Amount_Gross_Currency__c!=Null,invoice.UM_Invoice_Amount_Gross_Currency__c == 0), $Label.B2B_Care_Invoice_Status_Paid,if(AND(invoice.UM_Payment_Due_Date__c!=Null,invoice.UM_Payment_Due_Date__c>= Today()), $Label.B2B_Care_Invoice_Status_Due, $Label.B2B_Care_Invoice_Status_Overdue))}"></apex:outputText></td>
+                     </table>
+                 </apex:repeat>
+                 </td>
+             </tr>
+         </apex:repeat>
+    </table>
+</div>
+</apex:page>

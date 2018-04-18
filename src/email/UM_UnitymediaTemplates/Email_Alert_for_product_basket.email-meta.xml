@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template for product basket approval</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Email Alert for product basket</name>
+    <style>none</style>
+    <subject>Genehmigungsanfrage</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

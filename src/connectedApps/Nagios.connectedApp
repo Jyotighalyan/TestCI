@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>shashank.i.shekhar@accenture.com</contactEmail>
+    <label>Nagios</label>
+    <oauthConfig>
+        <callbackUrl>https://test</callbackUrl>
+        <consumerKey>3MVG9sSN_PMn8tjSodyD28jSJp48mLjJ2Zceer.XC27MGqF4TBqGqSM0ytzjtM1sOdu1HEcSYdsI_CMr_hFvs</consumerKey>
+        <scopes>Api</scopes>
+    </oauthConfig>
+</ConnectedApp>

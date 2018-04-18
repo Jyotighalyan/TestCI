@@ -1,0 +1,5 @@
+<messaging:emailTemplate subject="Bestellbestätigung zu Ihrem Auftrag an Unitymedia Business" recipientType="Contact" relatedToType="CSCAP__Customer_Approval__c">
+    <messaging:htmlEmailBody >
+        <c:UM_OrderAcknowlegementEmail IDForEmail="{!relatedTo.id}"/>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

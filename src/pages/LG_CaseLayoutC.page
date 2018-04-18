@@ -1,0 +1,55 @@
+<!--
+** SFOM-536
+** Record types using this layout,
+    * Contact Customer
+-->
+<apex:page standardController="Case" extensions="LG_CaseLytRecordTypeExtension">
+
+<apex:sectionHeader title="{!case.CaseNumber}" />
+    <link rel="stylesheet" href="/apex/sfLigtningOverride" />
+    <apex:includeScript value="/support/console/20.0/integration.js"/>
+    <style>
+        input.btnDisabled{background-color: #f4f6f9 !important;cursor:default !important;}
+    </style>
+    <script type="text/javascript">
+        function testSetTabTitle() {
+            //Set the current tab's title
+            sforce.console.setTabTitle('{!case.CaseNumber}');
+            sforce.console.setCustomConsoleComponentWidth(100);
+        }
+        var pageLoad = window.onload;
+          window.onload = function() {
+                if (pageLoad) {
+                        pageLoad();
+                }
+                testSetTabTitle();
+          }
+    </script>
+    <apex:form >
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock >
+            <!--<chatter:feedWithFollowers entityId="{!case.Id}"/>
+            <br /> -->
+            <apex:pageBlockSection columns="1" title="Case Detail" collapsible="false">
+             <apex:outputField value="{!case.Subject}"/>
+             <apex:outputField value="{!case.Description}"/>
+             <apex:pageBlockSectionItem >
+                <apex:outputLabel >Owner</apex:outputLabel>
+                <apex:outputPanel >
+                <apex:outputField value="{!case.OwnerId}"/>&nbsp;&nbsp;
+                <apex:outputLink value="{!'/'+case.id+'/a'}" rendered="{!!CaseClosed}">[Change Owner]</apex:outputLink>
+                </apex:outputPanel>
+             </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem >
+                <apex:outputLabel >Suborder Owner</apex:outputLabel>
+                <apex:outputPanel >
+                <apex:outputField value="{!case.LG_Solution__r.Owner.Name}"/>
+                </apex:outputPanel>
+             </apex:pageBlockSectionItem>             
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Close" action="{!CloseCase}" disabled="{!CaseClosed}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,35 @@
+<messaging:emailTemplate subject="Ihr neuer Unitymedia-Glasfaseranschluss" recipientType="Contact" relatedToType="csord__Service__c">
+<messaging:htmlEmailBody >
+Sehr geehrte {!relatedTo.LG_Address__r.LG_TechnicalContact__r.LG_SalutationLocal__c} {!relatedTo.LG_Address__r.LG_TechnicalContact__r.Name},<br/>
+<br/>
+wir freuen uns, dass Sie sich für Unitymedia entschieden haben und danken Ihnen für Ihr Vertrauen. Mit dieser E-Mail erhalten Sie alle wichtigen Informationen zu Ihrem zukünftigen Glasfaseranschluss an der folgenden Adresse: <br/>
+<br/>
+{!relatedTo.LG_Address__r.cscrm__Street__c} {!relatedTo.LG_Address__r.LG_HouseNumber__c}, {!relatedTo.LG_Address__r.cscrm__Zip_Postal_Code__c} {!relatedTo.LG_Address__r.cscrm__City__c}<br/>
+<br/>
+Der voraussichtliche Bereitstellungstermin für Ihr Produkt ist der <apex:outputText value="{0, date, dd.MM.yyyy}"><apex:Param value="{!relatedTo.LG_Suborder__r.LG_TargetDate__c}" /></apex:OutputText> (unverbindlicher Termin).<br/>
+<br/>
+Bitte beachten Sie, dass dieser Termin von verschiedenen Faktoren im Planungsverlauf beeinflusst werden kann und sich entsprechend ändern kann.<br/>
+<br/>
+&#8195;&#8195;<u>Inbetriebnahme</u><br/>
+&#8195;&#8195;Aufbau der Endgeräte und Übergabe des betriebsbereiten Anschlusses.<br/>
+<br/>
+Ihr Ansprechpartner bei Unitymedia ist Herr/Frau {!relatedTo.LG_Suborder__r.UM_JiraAssigneeName__c}, er betreut Sie bis zur endgültigen Inbetriebnahme.<br/>
+<br/>
+<br/>
+Mit freundlichen Grüßen<br/>
+<br/>
+{!relatedTo.LG_Suborder__r.UM_JiraAssigneeName__c}<br/>
+Projektmanager B2B <br/>
+<br/>
+E2E Solution Integration<br/>
+B2B Technology &#38; Innovation<br/>
+<br/>
+<c:UM_JiraEmailTemplateDetails attributeName="Logo"/><br/>
+M &nbsp;<c:UM_JiraEmailTemplateDetails SolId="{!relatedTo.LG_Suborder__c}" attributeName="Mobile"/><br/>
+F &nbsp;<c:UM_JiraEmailTemplateDetails SolId="{!relatedTo.LG_Suborder__c}" attributeName="Phone"/><br/>
+<c:UM_JiraEmailTemplateDetails SolId="{!relatedTo.LG_Suborder__c}" attributeName="Email"/><br/>
+<apex:outputLink value="www.unitymedia.de">www.unitymedia.de</apex:outputLink><br/>
+<c:UM_JiraEmailTemplateDetails SolId="{!relatedTo.LG_Suborder__c}" attributeName="Address"/><br/>
+<apex:outputText value="Bitte prüfen Sie der Umwelt zuliebe, ob der Ausdruck dieser Mail erforderlich ist." style="font-size: 9pt; line-height: 1.1; color:#81ba31; font-weight: bold;"></apex:outputText>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

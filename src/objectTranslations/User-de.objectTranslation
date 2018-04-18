@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Address Area --></label>
+        <name>Address_Area__c</name>
+    </fields>
+    <fields>
+        <label>externe ID</label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Sales Id --></label>
+        <name>Internal_Sales_Id__c</name>
+    </fields>
+    <fields>
+        <label>Datenupload Duplikat</label>
+        <name>LG_DataUploadDuplicate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Channel --></label>
+        <name>LG_SalesChannel__c</name>
+        <picklistValues>
+            <masterLabel>Account Management</masterLabel>
+            <translation><!-- Account Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B2B</masterLabel>
+            <translation><!-- B2B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Service</masterLabel>
+            <translation>Kundenservice</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D2D</masterLabel>
+            <translation><!-- D2D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MDU</masterLabel>
+            <translation><!-- MDU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation>trifft nicht zu</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retention</masterLabel>
+            <translation><!-- Retention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shops</masterLabel>
+            <translation><!-- Shops --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telesales Inbound</masterLabel>
+            <translation><!-- Telesales Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telesales Outbound</masterLabel>
+            <translation><!-- Telesales Outbound --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Unterschrift</label>
+        <name>LG_Signature__c</name>
+    </fields>
+    <layouts>
+        <layout>User Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Outgoing Email Settings --></label>
+            <section>Outgoing Email Settings</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Profile Layout</layout>
+        <layoutType>UserAlt</layoutType>
+        <sections>
+            <label><!-- About --></label>
+            <section>About</section>
+        </sections>
+        <sections>
+            <label><!-- Contact --></label>
+            <section>Contact</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage>Bitte Firmennamen eintragen</errorMessage>
+        <name>Company_name_not_blank</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Conga_Composer_OAuth --></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Mail_Merge --></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks>
+</CustomObjectTranslation>

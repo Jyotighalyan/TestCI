@@ -1,0 +1,78 @@
+<apex:page standardController="csconta__Billing_Account__c" extensions="LG_SConsoleBillingAccDetailsExtension">
+    <link rel="stylesheet" href="/apex/sfLigtningOverride" /> 
+    <style type="text/css">
+        th.vfLabelColTextWrap {white-space:nowrap !important;}
+        .detailList{white-space:nowrap !important;}
+        .errorM3 .messageText, .errorS1 .messageText{color:#222;}
+    </style>
+    <apex:form >
+    <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock title="">
+            <apex:pageBlockSection title="Billing Account" columns="2" collapsible="false" rendered="{!!Edit}">
+                
+                <apex:outputField value="{!billingAccountDetail.Name}" label="Billing Account No."/>
+                <apex:outputField value="{!billingAccountDetail.LG_ExternalId__c}" />
+                
+                <apex:outputField value="{!billingAccountDetail.csconta__Account__r.LG_CustomAccountNumber__c}" label="SF Customer ID"/>
+                <apex:outputField value="{!billingAccountDetail.LG_ExternalSystem__c}" label="External System" />
+                
+                <apex:outputField value="{!billingAccountDetail.csconta__Account__r.Name}" label="Customer Name"/>
+                <apex:outputText label="Customer Address">{!billingAccountDetail.csconta__Account__r.BillingStreet}, {!billingAccountDetail.csconta__Account__r.BillingPostalCode}, {!billingAccountDetail.csconta__Account__r.BillingCity}</apex:outputText>
+                <apex:outputText label="Invoice Contact" rendered="{!billingAccountDetail.LG_Override_Billing_Contact__c == false}">
+                    {!billingAccountDetail.LG_FirstName__c} {!billingAccountDetail.LG_LastName__c}
+                </apex:outputText>
+                <apex:outputText label="Invoice Contact" rendered="{!billingAccountDetail.LG_Override_Billing_Contact__c == true}">
+                    {!billingAccountDetail.LG_Billing_Contact_FirstName__c} {!billingAccountDetail.LG_Billing_Contact_LastName__c}
+                </apex:outputText>
+                <!-- SFOM-538 - Start -->
+                <apex:outputText label="Invoice Address" rendered="{!billingAccountDetail.csconta__Override_Account_Address__c == true}">
+                    {!billingAccountDetail.csconta__Street__c}, {!billingAccountDetail.csconta__Postcode__c}, {!billingAccountDetail.csconta__City__c}
+                </apex:outputText>
+                <apex:outputText label="Invoice Address" rendered="{!billingAccountDetail.csconta__Override_Account_Address__c == false}">
+                    {!billingAccountDetail.csconta__Account__r.BillingStreet}, {!billingAccountDetail.csconta__Account__r.BillingPostalCode}, {!billingAccountDetail.csconta__Account__r.BillingCity}
+                </apex:outputText>
+                <!-- SFOM-538 End -->
+                
+                <apex:outputField value="{!billingAccountDetail.PaymentMethods__c}" />
+                <apex:outputLink value="{!billingAccountDetail.ADDTTURL__c}" rendered="{!billingAccountDetail.PaymentMethods__c == 'Direct Debit'}" >{!billingAccountDetail.ADDTTURL__c}</apex:outputLink>
+                
+            </apex:pageBlockSection>
+            
+            
+            <apex:pageBlockSection title="Billing Account" columns="2" collapsible="false" rendered="{!Edit}">
+                
+                <apex:outputField value="{!billingAccountDetail.Name}" label="Billing Account No."/>
+                <apex:inputField value="{!billingAccountDetail.LG_ExternalId__c}" />
+                
+                <apex:outputField value="{!billingAccountDetail.csconta__Account__r.LG_CustomAccountNumber__c}" label="SF Customer ID"/>
+                <apex:inputField value="{!billingAccountDetail.LG_ExternalSystem__c}" label="External System" />
+                
+                <apex:outputField value="{!billingAccountDetail.csconta__Account__r.Name}" label="Customer Name"/>
+                <apex:outputText label="Customer Address">{!billingAccountDetail.csconta__Account__r.BillingStreet}, {!billingAccountDetail.csconta__Account__r.BillingPostalCode}, {!billingAccountDetail.csconta__Account__r.BillingCity}</apex:outputText>
+                
+                <apex:outputText label="Invoice Contact" rendered="{!billingAccountDetail.LG_Override_Billing_Contact__c == false}">
+                    {!billingAccountDetail.LG_FirstName__c} {!billingAccountDetail.LG_LastName__c}
+                </apex:outputText>
+                <apex:outputText label="Invoice Contact" rendered="{!billingAccountDetail.LG_Override_Billing_Contact__c == true}">
+                    {!billingAccountDetail.LG_Billing_Contact_FirstName__c} {!billingAccountDetail.LG_Billing_Contact_LastName__c}
+                </apex:outputText>
+                <!-- SFOM-538 - Start -->
+                <apex:outputText label="Invoice Address" rendered="{!billingAccountDetail.csconta__Override_Account_Address__c == true}">{!billingAccountDetail.csconta__Street__c}, {!billingAccountDetail.csconta__Postcode__c}, {!billingAccountDetail.csconta__City__c}</apex:outputText>
+                <apex:outputText label="Invoice Address" rendered="{!billingAccountDetail.csconta__Override_Account_Address__c == false}">{!billingAccountDetail.csconta__Account__r.BillingStreet}, {!billingAccountDetail.csconta__Account__r.BillingPostalCode}, {!billingAccountDetail.csconta__Account__r.BillingCity}</apex:outputText>
+                <!-- SFOM-538 End -->
+                
+                <apex:outputField value="{!billingAccountDetail.PaymentMethods__c}" />
+                <apex:outputLink value="{!billingAccountDetail.ADDTTURL__c}" rendered="{!billingAccountDetail.PaymentMethods__c == 'Direct Debit'}" >{!billingAccountDetail.ADDTTURL__c}</apex:outputLink>
+                
+                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!edit}" value="Edit" rendered="{!!Edit}" />
+                <apex:commandButton action="{!save}" value="Save" rendered="{!Edit}" />
+                <apex:commandButton action="{!cancel}" value="Cancel" rendered="{!Edit}" />
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

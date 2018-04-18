@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- COAX Connection Location --></label>
+        <name>LG_COAXConnectionLocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>cscrm__Account__c</name>
+        <relationshipLabel><!-- Sites --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Floor --></label>
+        <name>cscrm__Floor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Address Details --></label>
+        <name>cscrm__Installation_Address_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Address --></label>
+        <name>cscrm__Installation_Address__c</name>
+        <relationshipLabel><!-- Sites --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Position --></label>
+        <name>cscrm__Position__c</name>
+        <picklistValues>
+            <masterLabel>Floor Mounted</masterLabel>
+            <translation><!-- Floor Mounted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rack Mounted</masterLabel>
+            <translation><!-- Rack Mounted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shelf Mounted</masterLabel>
+            <translation><!-- Shelf Mounted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Power Sockets --></label>
+        <name>cscrm__Power_Sockets__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact Details --></label>
+        <name>cscrm__Primary_Contact_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact --></label>
+        <name>cscrm__Primary_Contact__c</name>
+        <relationshipLabel><!-- Sites --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rack Location --></label>
+        <name>cscrm__Rack_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Contact Details --></label>
+        <name>cscrm__Secondary_Contact_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Contact --></label>
+        <name>cscrm__Secondary_Contact__c</name>
+        <relationshipLabel><!-- Sites (Secondary Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Spare Network Port --></label>
+        <name>cscrm__Spare_Network_Port__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suite/Room --></label>
+        <name>cscrm__Suite_Room__c</name>
+    </fields>
+</CustomObjectTranslation>

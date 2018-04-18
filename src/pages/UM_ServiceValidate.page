@@ -1,0 +1,18 @@
+<apex:page standardController="csord__Service__c" extensions="ErrorMessageInVfController" >
+    <apex:pageMessages rendered="{!csord__Service__c.csord__Status__c == 'Active'}" id="showmsg"></apex:pageMessages>
+    <apex:detail inlineEdit="{!csord__Service__c.csord__Status__c != 'Active'}" rendered="{!csord__Service__c.csord__Status__c == 'Active'}" relatedList="true"/>    
+    <script>
+    var winLoad = window.onload();
+    window.onload = function(){
+        if(winLoad){
+            winLoad();
+        }
+        if ({!csord__Service__c.csord__Status__c != 'Active'}) {
+            window.parent.location.href = "{!URLFOR($Action.csord__Service__c.Edit, csord__Service__c.Id, [retURL=URLFOR($Action.csord__Service__c.View, csord__Service__c.Id)], true)}";
+        }else{
+            //window.parent.location.href = "{!URLFOR($Action.csord__Service__c.View, csord__Service__c.Id, null, true)}";
+        }
+    }
+    </script>
+    
+</apex:page>

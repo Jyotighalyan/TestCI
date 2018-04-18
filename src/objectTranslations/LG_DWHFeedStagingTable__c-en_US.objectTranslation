@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DWH Feed Staging Table</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DWH Feed Staging Table</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Address Search Text --></label>
+        <name>LG_AccountAddressSearchText__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Chamber of Commerce Number --></label>
+        <name>LG_AccountChamberOfCommerceNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Commercially Active --></label>
+        <name>LG_AccountCommerciallyActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Competitor Contract End Date --></label>
+        <name>LG_AccountCompetitorContractEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Competitor Name --></label>
+        <name>LG_AccountCompetitorName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Competitor Product --></label>
+        <name>LG_AccountCompetitorProduct__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Credit Risk --></label>
+        <name>LG_AccountCreditRisk__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Date of Establishment --></label>
+        <name>LG_AccountDateofEstablishment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Detailed Industry --></label>
+        <name>LG_AccountDetailedIndustry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Economically Active --></label>
+        <name>LG_AccountEconomicallyActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account ExternalId --></label>
+        <name>LG_AccountExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Footprint --></label>
+        <name>LG_AccountFootprint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Id --></label>
+        <name>LG_AccountId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Industry --></label>
+        <name>LG_AccountIndustry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Internet Customer --></label>
+        <name>LG_AccountInternetCustomer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Last Billed Price --></label>
+        <name>LG_AccountLastBilledPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Legal Form --></label>
+        <name>LG_AccountLegalForm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Mobile Comp Cont End Date --></label>
+        <name>LG_AccountMobileCompContEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Mobile Competitor Name --></label>
+        <name>LG_AccountMobileCompetitorName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Mobile Customer --></label>
+        <name>LG_AccountMobileCustomer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>LG_AccountName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Number --></label>
+        <name>LG_AccountNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Number of Desktops --></label>
+        <name>LG_AccountNumberofDesktops__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Number of Employees --></label>
+        <name>LG_AccountNumberofEmployees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Number of Laptops --></label>
+        <name>LG_AccountNumberofLaptops__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account OwnerId --></label>
+        <name>LG_AccountOwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account ParentId --></label>
+        <name>LG_AccountParentId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Phone --></label>
+        <name>LG_AccountPhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Primary Location --></label>
+        <name>LG_AccountPrimaryLocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Ready for Service --></label>
+        <name>LG_AccountReadyforService__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Reason for Registration --></label>
+        <name>LG_AccountReasonforRegistration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Sales Channel --></label>
+        <name>LG_AccountSalesChannel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Segment --></label>
+        <name>LG_AccountSegment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Source --></label>
+        <name>LG_AccountSource__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account TV Customer --></label>
+        <name>LG_AccountTVCustomer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Telephony Customer --></label>
+        <name>LG_AccountTelephonyCustomer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Type --></label>
+        <name>LG_AccountType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Visit City --></label>
+        <name>LG_AccountVisitCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Visit Country --></label>
+        <name>LG_AccountVisitCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Visit House Number Extension --></label>
+        <name>LG_AccountVisitHouseNumberExtension__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Visit House Number --></label>
+        <name>LG_AccountVisitHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Visit Postal Code --></label>
+        <name>LG_AccountVisitPostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Visit Street --></label>
+        <name>LG_AccountVisitStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Website --></label>
+        <name>LG_AccountWebsite__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Area Code --></label>
+        <name>LG_AttributeAreaCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute B-Number Shielding --></label>
+        <name>LG_AttributeBNumberShielding__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Billing Account --></label>
+        <name>LG_AttributeBillingAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Block Type --></label>
+        <name>LG_AttributeBlockType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Cable Access --></label>
+        <name>LG_AttributeCableAccess__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Call Barring Level --></label>
+        <name>LG_AttributeCallBarringLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Caller ID --></label>
+        <name>LG_AttributeCallerID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Contract Term --></label>
+        <name>LG_AttributeContractTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Discount --></label>
+        <name>LG_AttributeDiscount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute IP Address Extension --></label>
+        <name>LG_AttributeIPAddressExtension__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Installation Type --></label>
+        <name>LG_AttributeInstallationType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Internet Security --></label>
+        <name>LG_AttributeInternetSecurity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Multi Wifi Type --></label>
+        <name>LG_AttributeMultiWifiType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute One Off Charge --></label>
+        <name>LG_AttributeOneOffCharge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Phone Numbers --></label>
+        <name>LG_AttributePhoneNumbers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Pin Type --></label>
+        <name>LG_AttributePinType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Product Category --></label>
+        <name>LG_AttributeProductCategory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Product Name --></label>
+        <name>LG_AttributeProductName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Quantity --></label>
+        <name>LG_AttributeQuantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Recurring Charge --></label>
+        <name>LG_AttributeRecurringCharge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute SLA --></label>
+        <name>LG_AttributeSLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Service External Id --></label>
+        <name>LG_AttributeServiceExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Telephonie Type --></label>
+        <name>LG_AttributeTelephonieType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Type Of Phone Range --></label>
+        <name>LG_AttributeTypeOfPhoneRange__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Bank Account Holder --></label>
+        <name>LG_BillingAccountBankAccountHolder__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount BillFormat --></label>
+        <name>LG_BillingAccountBillFormat__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Billing Channel --></label>
+        <name>LG_BillingAccountBillingChannel__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Billing City --></label>
+        <name>LG_BillingAccountBillingCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Billing Country --></label>
+        <name>LG_BillingAccountBillingCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Billing Email Address --></label>
+        <name>LG_BillingAccountBillingEmailAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Billing House Number Ext --></label>
+        <name>LG_BillingAccountBillingHouseNumberExt__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Billing House Number --></label>
+        <name>LG_BillingAccountBillingHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Billing Language --></label>
+        <name>LG_BillingAccountBillingLanguage__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Billing Postcode --></label>
+        <name>LG_BillingAccountBillingPostcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Billing Street --></label>
+        <name>LG_BillingAccountBillingStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Customer Reference --></label>
+        <name>LG_BillingAccountCustomerReference__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Default --></label>
+        <name>LG_BillingAccountDefault__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Delivery Method --></label>
+        <name>LG_BillingAccountDeliveryMethod__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Direct Debit Mandate --></label>
+        <name>LG_BillingAccountDirectDebitMandate__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount ExternalId --></label>
+        <name>LG_BillingAccountExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount IBAN --></label>
+        <name>LG_BillingAccountIBAN__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Mandate End Date --></label>
+        <name>LG_BillingAccountMandateEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Mandate Start Date --></label>
+        <name>LG_BillingAccountMandateStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Name --></label>
+        <name>LG_BillingAccountName__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Payment Terms --></label>
+        <name>LG_BillingAccountPaymentTerms__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Payment Type --></label>
+        <name>LG_BillingAccountPaymentType__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingAccount Status --></label>
+        <name>LG_BillingAccountStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact City --></label>
+        <name>LG_ContactCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Country Code --></label>
+        <name>LG_ContactCountryCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Country --></label>
+        <name>LG_ContactCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact EmailOptOut --></label>
+        <name>LG_ContactEmailOptOut__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Email --></label>
+        <name>LG_ContactEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact ExternalID --></label>
+        <name>LG_ContactExternalID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact FaxOptOut --></label>
+        <name>LG_ContactFaxOptOut__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Fax --></label>
+        <name>LG_ContactFax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact First Name --></label>
+        <name>LG_ContactFirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact IsDecisionMaker --></label>
+        <name>LG_ContactIsDecisionMaker__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Last Interaction Date --></label>
+        <name>LG_ContactLastInteractionDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Last Interaction Topic --></label>
+        <name>LG_ContactLastInteractionTopic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Last Name --></label>
+        <name>LG_ContactLastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact MobileOptOut --></label>
+        <name>LG_ContactMobileOptOut__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Mobile Phone --></label>
+        <name>LG_ContactMobilePhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact OwnerId --></label>
+        <name>LG_ContactOwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact PhoneOptOut --></label>
+        <name>LG_ContactPhoneOptOut__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Phone --></label>
+        <name>LG_ContactPhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact PostOptOut --></label>
+        <name>LG_ContactPostOptOut__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact PostalCode --></label>
+        <name>LG_ContactPostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Preferred Communication --></label>
+        <name>LG_ContactPreferredCommunication__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact ReportsTo --></label>
+        <name>LG_ContactReportsTo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Role --></label>
+        <name>LG_ContactRole__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Salutation --></label>
+        <name>LG_ContactSalutation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact State Code --></label>
+        <name>LG_ContactStateCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact State --></label>
+        <name>LG_ContactState__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Street --></label>
+        <name>LG_ContactStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Title --></label>
+        <name>LG_ContactTitle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract End Date --></label>
+        <name>LG_ContractEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Expiration Date --></label>
+        <name>LG_ContractExpirationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Number --></label>
+        <name>LG_ContractNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Start Date --></label>
+        <name>LG_ContractStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Status --></label>
+        <name>LG_ContractStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- DWH TransactionId --></label>
+        <name>LG_DWHTransactionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Date --></label>
+        <name>LG_ErrorDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>LG_ErrorMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise City --></label>
+        <name>LG_PremiseCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise Country --></label>
+        <name>LG_PremiseCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise ExternalId --></label>
+        <name>LG_PremiseExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise Footprint --></label>
+        <name>LG_PremiseFootprint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise House Number Extension --></label>
+        <name>LG_PremiseHouseNumberExtension__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise House Number --></label>
+        <name>LG_PremiseHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise Name --></label>
+        <name>LG_PremiseName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise Postal Code --></label>
+        <name>LG_PremisePostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise State/Province --></label>
+        <name>LG_PremiseStateProvince__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise Street --></label>
+        <name>LG_PremiseStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premise Technical Contact --></label>
+        <name>LG_PremiseTechnicalContact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processed Date --></label>
+        <name>LG_ProcessedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Contract Term --></label>
+        <name>LG_ServiceContractTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service ExternalId --></label>
+        <name>LG_ServiceExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Line Item Billing AccountId --></label>
+        <name>LG_ServiceLineItemBillingAccountId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Line Item ExternalId --></label>
+        <name>LG_ServiceLineItemExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Line Item Name --></label>
+        <name>LG_ServiceLineItemName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Name --></label>
+        <name>LG_ServiceName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service New Data from DWH --></label>
+        <name>LG_ServiceNewDatafromDWH__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Number --></label>
+        <name>LG_ServiceNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service PremiseId --></label>
+        <name>LG_ServicePremiseId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Quantity --></label>
+        <name>LG_ServiceQuantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Status --></label>
+        <name>LG_ServiceStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Subscription ExternalId --></label>
+        <name>LG_ServiceSubscriptionExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Total Price --></label>
+        <name>LG_ServiceTotalPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Unit Price --></label>
+        <name>LG_ServiceUnitPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>LG_Status__c</name>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed Successfully</masterLabel>
+            <translation><!-- Processed Successfully --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subscription Contract Number --></label>
+        <name>LG_SubscriptionContractNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription ExternalId --></label>
+        <name>LG_SubscriptionExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription Name --></label>
+        <name>LG_SubscriptionName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription New Data from DWH --></label>
+        <name>LG_SubscriptionNewDatafromDWH__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription Number --></label>
+        <name>LG_SubscriptionNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription Status --></label>
+        <name>LG_SubscriptionStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription Termination Date --></label>
+        <name>LG_SubscriptionTerminationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- TransactionIdAccountId --></label>
+        <name>LG_TransactionIdAccountId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Record --></label>
+        <name>LG_TypeofRecord__c</name>
+        <picklistValues>
+            <masterLabel>Account</masterLabel>
+            <translation><!-- Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attribute</masterLabel>
+            <translation><!-- Attribute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing Account</masterLabel>
+            <translation><!-- Billing Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact</masterLabel>
+            <translation><!-- Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract</masterLabel>
+            <translation><!-- Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premise</masterLabel>
+            <translation><!-- Premise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subscription</masterLabel>
+            <translation><!-- Subscription --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>DWH Feed Layout</layout>
+        <sections>
+            <label><!-- Account --></label>
+            <section>Account</section>
+        </sections>
+        <sections>
+            <label><!-- Attribute --></label>
+            <section>Attribute</section>
+        </sections>
+        <sections>
+            <label><!-- Billing Account --></label>
+            <section>Billing Account</section>
+        </sections>
+        <sections>
+            <label><!-- Contact --></label>
+            <section>Contact</section>
+        </sections>
+        <sections>
+            <label><!-- Contract --></label>
+            <section>Contract</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Premise --></label>
+            <section>Premise</section>
+        </sections>
+        <sections>
+            <label><!-- Processing Information --></label>
+            <section>Processing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Service --></label>
+            <section>Service</section>
+        </sections>
+        <sections>
+            <label><!-- Service Line Item --></label>
+            <section>Service Line Item</section>
+        </sections>
+        <sections>
+            <label><!-- Subscription --></label>
+            <section>Subscription</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- DWH Feed --></label>
+        <name>LG_DWHFeed</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- LG_SyncManually --></label>
+        <name>LG_SyncManually</name>
+    </webLinks>
+</CustomObjectTranslation>

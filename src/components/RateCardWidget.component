@@ -1,0 +1,544 @@
+<apex:component controller="RateCardWidgetController">
+<div class="container-fluid">
+<div id="body">
+<div id="select-list">
+</div>
+<div id="product" class="table-title table-mar">
+</div>
+ <div id="table-rate-card" class="table-responsive" >
+</div>
+<div id="buttons">
+</div>
+</div>
+</div>
+<style>
+#body {
+  background-color: transparent;
+  font-family: "arial", helvetica, sans-serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+.row-no-margin{
+    margin-left:0px;
+    margin-right:0px;
+}
+.table-title {
+  display: block;
+  margin: auto;
+  padding:5px;
+  margin: auto;
+}
+
+.table-title h3 {
+   margin: 0px;
+   display:block;
+   color: #666B85;
+   font-size: 18px;
+   font-weight: 400;
+   font-style:normal;
+   font-family: "arial", helvetica, arial, sans-serif;
+   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+}
+.div-margin{
+  width:80%;
+  margin: auto;
+  padding:0px;
+}
+.table-rate-card {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  margin: auto;
+  padding:5px;
+  color:#6d706f;
+  width: 80%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+ 
+.table-rate-card th {
+  color:#ffffff;;
+  background: {!$Setup.WidgetStyle__c.dark__c};
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid white;
+  font-size:17px;
+  font-family:'Arial';  
+  font-weight: 100;
+  padding:15px;
+  text-align:center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+.table-rate-card th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+.table-rate-card th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+.table-rate-card tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom: 1px solid #C1C3D1;
+  color:#6d706f;
+  font-size:14px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+.table-rate-card tr:first-child {
+  border-top:none;
+}
+
+.table-rate-card tr:last-child {
+  border-bottom:none;
+}
+ 
+.table-rate-card tr:nth-child(odd) td {
+  background:{!$Setup.WidgetStyle__c.light__c};
+}
+
+.table-rate-card tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+.table-rate-card tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+.table-rate-card td {
+  background:#FFFFFF;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+  color:#6d706f;
+  font-weight:300;
+  font-size:14px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+#table-rate-card{
+  margin-top:10px;
+}
+
+.table-rate-card td:last-child {
+  border-right: 0px;
+}
+
+.table-rate-card th.text-left {
+  text-align: left;
+}
+
+.table-rate-card th.text-center {
+  text-align: center;
+}
+
+.table-rate-card th.text-right {
+  text-align: right;
+}
+
+.table-rate-card td.text-left {
+  text-align: left;
+}
+
+.table-rate-card td.text-center {
+  text-align: center;
+}
+
+.table-rate-card td.text-right {
+  text-align: right;
+}
+.table-rate-card tr td:first-child{
+  width:40px;
+}
+
+#buttons {
+    margin: auto;
+    margin-top: 10px;
+}
+
+#select-list {
+  margin: auto;
+  padding-left:5px;
+}
+
+#select-list label {
+  font-size: 91%;
+  font-weight: bold;
+  padding: 3px 16px 3px 0px;
+  color: #4a4a56;
+}
+
+</style>
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"/>
+<script>
+Visualforce.remoting.timeout = 120000;
+
+if(typeof Widget == 'undefined') {
+  Widget = {};
+} else {
+  Widget = Widget || {};
+}
+
+Widget.RateCard = Widget.RateCard || {
+
+    configId: "configId",
+
+    rateCardTable: ".table-rate-card",
+
+    receivedJSON: '',
+    retrievedRateCards: {},
+
+    STATES: Object.freeze({
+      VIEW: "View",
+      CLONE: "Clone",
+      EDIT: "Edit"
+    }),
+
+    stateMachine: {
+      state: "View",
+      setToView: function() {
+        this.state = Widget.RateCard.STATES.VIEW;
+        $("#saveButton").hide();
+        $("#cancelButton").hide();
+      },
+      setToClone: function() {
+        this.state = Widget.RateCard.STATES.CLONE;
+        Widget.RateCard.editableTable($(Widget.RateCard.rateCardTable));
+        $("#cloneButton").hide();
+        $("#saveButton").show();
+        $("#cancelButton").show();
+      },
+      setToEdit: function() {
+        this.state = Widget.RateCard.STATES.EDIT;
+        Widget.RateCard.editableTable($(Widget.RateCard.rateCardTable));
+        $("#editButton").hide();
+        $("#deleteButton").hide();
+        $("#saveButton").show();
+        $("#cancelButton").show();
+      },
+      getState: function() {return this.state}
+    },
+
+    getAttributeByName: function(name) {
+      return CS.getAttributeValue(name + '_0');
+    },
+
+    getURLParameter: function(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+    },
+
+    getInput: function () {
+      try {
+        if(priceItemAttribute === '' || rateCardCategory === '') {
+          throw 'Please load categories and price item attribute name';
+        }
+          $('#body').children().empty();
+          // This remoting call will use the page's timeout value
+          Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.RateCardWidgetController.getAvailableRateCards}',
+            Widget.RateCard.getURLParameter(Widget.RateCard.configId),
+            Widget.RateCard.getAttributeByName(priceItemAttribute),
+            //Widget.RateCard.getAttributeByName('AccountId'),
+            null,
+            rateCardCategory,
+            Widget.RateCard.handleInput,
+            {escape: false}
+          );
+      } catch(err) {
+        console.log(err);
+        Widget.RateCard.emptyTable("#table-rate-card","No available Rate Cards.");
+      }
+    },
+
+
+    handleInput: function (result, event) {
+      try {
+        var currentRateCardLines;
+        if (result == undefined || result == '') {
+            throw 'Received JSON is blank or undefined';
+        }
+        Widget.RateCard.receivedJSON = result;
+        Widget.RateCard.retrievedRateCards = JSON.parse(Widget.RateCard.receivedJSON);
+        if(Widget.RateCard.retrievedRateCards == undefined || Widget.RateCard.retrievedRateCards.length == 0) {
+            throw 'Parsed retrievedRateCards are undefined or emtpy';
+        }
+        Widget.RateCard.drawSelector(Widget.RateCard.retrievedRateCards, '#select-list');
+      } catch(err) {
+        $("#select-line").hide();
+        $("#product").hide();
+        Widget.RateCard.emptyTable('#table-rate-card','No available Rate Cards.');
+        $("#buttons").hide();
+        console.dir(err);
+      }
+    },
+
+    drawSelector: function(rateCards, divId) {
+      var label = $('<label>Rate Card</label>');
+      var selector = $('<select id="selector" onChange="Widget.RateCard.drawDetails(this.value)" />');
+      for(var i = 0; i < rateCards.length; i++) {
+        if(rateCards[i].Custom === 'false') {
+          selector.append($('<option value="' + i +'">' + rateCards[i].Name + ' - Default</option>'));
+        } else if(rateCards[i].Custom === 'account') {
+          selector.append($('<option value="' + i +'">' + rateCards[i].Name + ' - Account</option>'));
+        } else if(rateCards[i].Custom === 'config') {
+          selector.append($('<option value="' + i +'">' + rateCards[i].Name + ' - Custom</option>'));
+        }
+      }
+
+      $(divId).append(label).append(selector);
+      Widget.RateCard.drawDetails(0);
+    },
+
+    //tableNumber is index of selected table in picklist
+    drawDetails: function(tableNumber) {
+      $('#product').empty();
+      $('#table-rate-card').empty();
+      $('#buttons').empty();
+      Widget.RateCard.getProperties(Widget.RateCard.retrievedRateCards[tableNumber], '#product');
+      Widget.RateCard.drawTable(Widget.RateCard.retrievedRateCards[tableNumber].rateCardLines, '#table-rate-card');
+      Widget.RateCard.drawTablesButtons('#buttons', tableNumber);
+    },
+
+    //data is rateCardLines
+    getProperties: function(data, divId) {
+      var colNames=Widget.RateCard.GetHeaders(data);
+      $(divId).append($("<h3>" + "Name: " + data.Name + "</h3>"));
+      for(var i = 0; i < colNames.length; i++){
+        if(colNames[i]!="Id" && colNames[i]!="rateCardLines" && colNames[i]!="Name" && colNames[i]!="Editable" && colNames[i]!="Custom") {
+          $(divId).append($("<h3>"+colNames[i]+": "+data[colNames[i]]+"</h3>"));
+        }
+      }
+    },
+
+    //data is rateCardLines
+    drawTable: function(data, divId) { 
+      var table = $('<table></table>').addClass('table table-rate-card');
+      var columnCount = data[0].length;
+      
+      var colNames=Widget.RateCard.GetHeaders(data[0]);
+
+      var row = $("<tr/>");
+      table.append(row);
+      row.append($("<th>"));
+      for (var i = 0; i < colNames.length; i++) {
+        if(colNames[i]!="Id")
+          row.append($("<th>").html(colNames[i]));
+        } 
+      for (var i = 0; i < data.length; i++){
+        row = $("<tr/>");
+        row.append($('<td>' +(i+1)+ '.</td>'));
+        for (var j = 0; j < colNames.length; j++) {
+          if(colNames[j]!="Id"){
+            row.append($('<td>' + data[i][colNames[j]] + '</td>'));
+          }
+        }
+        table.append(row);
+      }
+      $('#table-rate-card').append(table);
+    },
+
+    //tableNumber is index of selected table in picklist
+    drawTablesButtons: function(divId, tableNumber) {
+      var table = $('<table></table>').attr({
+        "border" : 0,
+        "cellpadding" : 0,
+        "cellspacing" : 0
+      });
+      var row = $("<tr/>");
+      var buttons = $("<td/>");
+      var cloneButton = $('<button type="button"/>').addClass('btn btn-primary').attr({"id" : "cloneButton", "onClick" : 'Widget.RateCard.stateMachine.setToClone()'}).append("Clone");
+      var editButton = $('<button type="button"/>').addClass('btn btn-primary').attr({"id" : "editButton", "onClick" : 'Widget.RateCard.stateMachine.setToEdit()'}).append("Edit");
+      var deleteButton = $('<button type="button"/>').addClass('btn btn-primary').attr({"id" : "deleteButton", "onClick" : 'Widget.RateCard.deleteTable()'}).append("Delete");
+      var saveButton = $('<button type="button"/>').addClass('btn btn-primary').attr({"id" : "saveButton", "onClick" : 'Widget.RateCard.saveTable($(Widget.RateCard.rateCardTable))'}).append("Save").css("display", "none");
+      var cancelButton = $('<button type="button"/>').addClass('btn btn-primary').attr({"id" : "cancelButton", "onClick" : 'Widget.RateCard.cancelTable($(Widget.RateCard.rateCardTable))'}).append("Cancel").css("display", "none");
+
+      if(Widget.RateCard.retrievedRateCards[tableNumber].Custom === "config") {
+        cloneButton.css("display", "none");
+      } else {
+        editButton.css("display", "none");
+        deleteButton.css("display", "none");
+      }
+
+      buttons.append(cloneButton);
+      buttons.append(editButton);
+      buttons.append(saveButton).append('&nbsp;');
+      buttons.append(deleteButton);
+      buttons.append(cancelButton);
+      row.append(buttons);
+      table.append(row);
+      $(divId).append(table);
+    },
+
+    emptyTable: function(div,txt){
+      var table = $('<table></table>').addClass('table table-rate-card table-mar');
+      var row = $("<tr/>");
+      table.append(row);
+      row.append($("<th>"));
+      row = $("<tr/>");
+      row.append($('<td>'+txt+'</td>'));
+      table.append(row);
+      $(div).append(table); 
+    },
+
+    GetHeaders: function(obj) {
+         var cols = [];
+         for (var key in obj) {
+                cols.push(key);
+         }
+         return cols;
+    },
+
+    //set table to editable state
+    editableTable: function(divId) {
+      var editableColumnIndexes = [];
+      var editableColumnLabels = Widget.RateCard.retrievedRateCards[0].Editable.split(',');
+      $('tr', divId).each(function() {
+        if (editableColumnIndexes.length === 0) {
+          var headers = $('th',this);
+          for (var i = 0; i < headers.length; i++) {
+            if($.inArray(headers[i].textContent, editableColumnLabels) !== -1) {
+              editableColumnIndexes.push(i);
+            }
+          }
+        } else {
+           Widget.RateCard.changeTdToInput(this, editableColumnIndexes);
+        }
+      });
+    },
+
+    changeTdToInput: function(row, editableColumnIndexes) {
+      var cells = $('td',row);
+      editableColumnIndexes.forEach(function(value) {
+        var cell = cells[value];
+        cell.innerHTML = '<input type="text" value="' + cell.textContent + '" />';
+      });
+    },
+
+    //newly created customRateCard (it's global because of handler functions)
+    customRateCard: {},
+
+    saveTable: function(divId) {
+      try {
+        var rows = $('tr', divId);
+        var header = $('th',rows[0]);
+        var rateCardLineObjects = [];
+        for(var i = 1; i < rows.length; i++) {
+          Widget.RateCard.changeInputToTd(rows[i]);
+          rateCardLineObjects.push(Widget.RateCard.createRateCardLineObject(header, rows[i]));
+        }
+        var selectedOption = $('#selector option:selected').get(0).value;
+        customRateCard = {
+          Custom: "config",
+          Editable: Widget.RateCard.retrievedRateCards[selectedOption].Editable,
+          Name: Widget.RateCard.retrievedRateCards[selectedOption].Name,
+          rateCardLines: rateCardLineObjects
+        };
+
+        if(Widget.RateCard.stateMachine.getState() === Widget.RateCard.STATES.CLONE) {
+          //call RemoteAction apex method
+          Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.RateCardWidgetController.cloneRateCard}',
+            Widget.RateCard.getURLParameter(Widget.RateCard.configId),
+            Widget.RateCard.getAttributeByName(priceItemAttribute),
+            //Widget.RateCard.getAttributeByName('accountid'),
+            null,
+            rateCardCategory,
+            JSON.stringify([customRateCard]),
+            Widget.RateCard.handleCloneResponse,
+            {escape: false}
+          );
+
+        } else if(Widget.RateCard.stateMachine.getState() === Widget.RateCard.STATES.EDIT) {
+          customRateCard.Id = Widget.RateCard.retrievedRateCards[selectedOption].Id;
+          //call RemoteAction apex method
+          Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.RateCardWidgetController.editRateCard}',
+            Widget.RateCard.getURLParameter(Widget.RateCard.configId),
+            Widget.RateCard.getAttributeByName(priceItemAttribute),
+            //Widget.RateCard.getAttributeByName('accountid'),
+            null,
+            rateCardCategory,
+            JSON.stringify([customRateCard]),
+            Widget.RateCard.handleEditResponse,
+            {escape: false}
+          );
+        }
+        
+      } catch(err) {
+        window.alert(err);
+      }
+    },
+
+    handleCloneResponse: function (result, event) {
+      customRateCard.Id = result;
+      Widget.RateCard.retrievedRateCards.push(customRateCard);
+      var customObjectIndex = Widget.RateCard.retrievedRateCards.length-1;
+      $('#selector').append($('<option value="' + customObjectIndex +'">' + Widget.RateCard.retrievedRateCards[customObjectIndex].Name + ' - Custom</option>')).val(customObjectIndex);
+
+      $("#editButton").show();
+      $("#deleteButton").show();
+      Widget.RateCard.stateMachine.setToView();
+      console.log(result);
+    },
+
+    handleEditResponse: function (result, event) {
+      var selectedOption = $('#selector option:selected').get(0).value;
+      Widget.RateCard.retrievedRateCards[selectedOption] = customRateCard;
+
+      $("#editButton").show();
+      $("#deleteButton").show();
+      Widget.RateCard.stateMachine.setToView();
+      console.log(result);
+    },
+
+    changeInputToTd: function(row) {
+      var inputs = $('input',row);
+      for(var i = 0; i < inputs.length; i++) {
+        var cell = inputs[i];
+        cell.outerHTML = parseFloat(cell.value).toFixed(2);
+      }; 
+    },
+
+    createRateCardLineObject: function(header, row) {
+      var obj = {};
+      var cells = $('td',row);
+      for(var i = 1; i < header.length; i++) {
+        obj[header[i].textContent] = cells[i].textContent;
+      }
+      return obj;
+    },
+
+    deleteTable: function() {
+      var selectedOption = $('#selector option:selected').get(0).value;
+      Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.RateCardWidgetController.deleteRateCard}',
+        rateCardCategory,
+        Widget.RateCard.retrievedRateCards[selectedOption].Id,
+        Widget.RateCard.handleDeleteResponse,
+        {escape: false}
+      );
+    },
+
+    handleDeleteResponse: function(result, event) {
+      console.log(result);
+
+      var selectedOption = $('#selector option:selected').get(0).value;
+      //delete rate card at index selectedOption
+      Widget.RateCard.retrievedRateCards.splice(selectedOption, 1);
+      $('#select-list').empty();
+      Widget.RateCard.drawSelector(Widget.RateCard.retrievedRateCards, '#select-list');
+    },
+
+    cancelTable: function(divId) {
+      var selectedOption = $('#selector option:selected').get(0).value;
+      Widget.RateCard.drawDetails(selectedOption);
+    }
+
+}
+
+</script>
+
+</apex:component>

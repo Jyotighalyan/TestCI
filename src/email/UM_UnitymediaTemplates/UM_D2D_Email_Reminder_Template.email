@@ -1,0 +1,5 @@
+<messaging:emailTemplate subject="Erinnerung: Ihr Auftrag an Unitymedia Business" recipientType="Contact" relatedToType="Opportunity">
+    <messaging:htmlEmailBody >
+        <c:UM_SendReminderEmail IDForEmail="{!relatedTo.id}"/>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

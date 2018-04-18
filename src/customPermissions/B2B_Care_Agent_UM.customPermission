@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a custom permission will be attached to Care Agent UM permission set.</description>
+    <label>Care Agent UM</label>
+</CustomPermission>

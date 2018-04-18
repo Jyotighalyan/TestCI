@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Email Template for emails send when Planned Maintenance Case Occurs</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>B2B_Care_Unity_Media_Email</letterhead>
+    <name>B2B Care Unity Media Planned Maintenance Email</name>
+    <style>freeForm</style>
+    <subject>Unitymedia | Geplante Wartungsarbeiten</subject>
+    <textOnly>Guten Tag &lt;Salutation&gt; &lt;Lastname&gt;,
+
+
+
+In der Zeit von {!Case.LG_Estimated_Start_Time__c} Uhr {!Case.LG_Estimated_resolution_time__c}Uhr finden Wartungsarbeiten statt. Daher kann es an Ihrem Anschluss zu einem Totalausfall von ca. &lt;Estimated Duration in Hours „HH“)&gt; Stunden bei Ihren Diensten kommen. Während der Unterbrechungen können Sie keine Telefon- und Internetdienste nutzen. Notrufe können dann nur mobil abgesetzt werden.
+
+Wir bedauern die Unannehmlichkeiten und bitten um Ihr Verständnis.
+
+Sollten Sie Fragen haben, rufen Sie uns einfach an. Sie erreichen uns unter der Rufnummer 0800 141 299 99 – Mo - Fr von 8 bis 20 Uhr und Sa 8 bis 16 Uhr. Sie erreichen uns auch per E-Mail an Enterprise.Service@unitymedia.de.
+
+
+Mit freundlichen Grüßen
+
+
+Unitymedia Business Team
+
+
+
+
+Tel.: 0800 141 299 99
+
+Fax: 0800 888 87 10
+
+
+www.unitymedia.de/business
+
+
+
+
+
+
+Unitymedia NRW GmbH
+
+Unitymedia Hessen GmbH &amp; Co. KG
+
+Unitymedia BW GmbH
+
+Unitymedia Business Service
+
+Postfach 45 12 04
+
+50887 Köln
+
+Unitymedia Business Service
+
+Postfach 45 12 04
+
+50887 Köln
+
+Unitymedia Business Service  Postfach 90 01 31
+
+75090 Pforzheim
+
+Handelsregister:
+
+Amtsgericht Köln HRB 83533
+
+Handelsregister:
+
+Amtsgericht Köln HRA 24116
+
+Handelsregister:
+
+Amtsgericht Köln HRB 83533
+
+
+Geschäftsführer: Lutz Schüler (Vorsitzender) | Dr. Herbert Leifker | Winfried Rapp</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

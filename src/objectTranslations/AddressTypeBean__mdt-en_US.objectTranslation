@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AddressTypeBean</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AddressTypeBean</value>
+    </caseValues>
+    <fields>
+        <label><!-- AddressLine1FormatString --></label>
+        <name>AddressLine1FormatString__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine2FormatString --></label>
+        <name>AddressLine2FormatString__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine3FormatString --></label>
+        <name>AddressLine3FormatString__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine4FormatString --></label>
+        <name>AddressLine4FormatString__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressTypeId --></label>
+        <name>AddressTypeId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ConfigTagId --></label>
+        <name>ConfigTagId__c</name>
+    </fields>
+    <fields>
+        <label><!-- DisplayValue --></label>
+        <name>DisplayValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsCityRequired --></label>
+        <name>IsCityRequired__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsCsrEnterable --></label>
+        <name>IsCsrEnterable__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsDefault --></label>
+        <name>IsDefault__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsFreeform --></label>
+        <name>IsFreeform__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsFxgeocodeRequired --></label>
+        <name>IsFxgeocodeRequired__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsHousenumberRequired --></label>
+        <name>IsHousenumberRequired__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsInternal --></label>
+        <name>IsInternal__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsPostalcodeRequired --></label>
+        <name>IsPostalcodeRequired__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsServiceable --></label>
+        <name>IsServiceable__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsStateRequired --></label>
+        <name>IsStateRequired__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsStreetnameRequired --></label>
+        <name>IsStreetnameRequired__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key --></label>
+        <name>Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- LanguageCode --></label>
+        <name>LanguageCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShortDisplay --></label>
+        <name>ShortDisplay__c</name>
+    </fields>
+    <layouts>
+        <layout>AddressTypeBean Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Broadband Solutions</masterLabel>
+        <translation><!-- Broadband Solutions --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Business Network Services</masterLabel>
+        <translation><!-- Business Network Services --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CPE</masterLabel>
+        <translation><!-- CPE --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Data</masterLabel>
+        <translation><!-- Data --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Data &amp; Voice</masterLabel>
+        <translation><!-- Data &amp; Voice --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Inbound</masterLabel>
+        <translation><!-- Inbound --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Internet</masterLabel>
+        <translation><!-- Internet --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>LAN</masterLabel>
+        <translation><!-- LAN --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mobile</masterLabel>
+        <translation><!-- Mobile --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New Voice</masterLabel>
+        <translation><!-- New Voice --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>None</masterLabel>
+        <translation>kein/keine/keiner</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Partner Product</masterLabel>
+        <translation><!-- Partner Product --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Traditional Voice</masterLabel>
+        <translation><!-- Traditional Voice --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Voice</masterLabel>
+        <translation><!-- Voice --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Voice Additional Elements</masterLabel>
+        <translation><!-- Voice Additional Elements --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

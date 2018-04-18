@@ -1,0 +1,18 @@
+Hallo  {!User.Manager}, 
+
+eine Lead-Konvertierung ist aufgrund des Duplikats-Checks fehlgeschlagen.
+
+Ihnen wurde folgende Anfrage zur Freigabe zugeteilt:
+{!Lead.Company}
+Link to record: {!Lead.Link}
+{!Lead.UM_PartnerAccount__c}
+{!User.Manager}
+
+Bereits bestehende Accounts:
+https://eu6.salesforce.com/{!Lead.Dulpicate_Set__c}
+
+Bitte intern prüfen und ggfs. freigeben oder zurückweisen.
+
+Vielen Dank.
+
+Ihr B2B Functional Management

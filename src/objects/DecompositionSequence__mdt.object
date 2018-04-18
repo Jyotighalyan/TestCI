@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ChangeType__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>ChangeType</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExecutionSequence__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>ExecutionSequence</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GroupByCriteria__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>GroupByCriteria</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All Together</fullName>
+                    <default>true</default>
+                    <label>All Together</label>
+                </value>
+                <value>
+                    <fullName>Child Different from Parent</fullName>
+                    <default>false</default>
+                    <label>Child Different from Parent</label>
+                </value>
+                <value>
+                    <fullName>Group by Post Code wild character</fullName>
+                    <default>false</default>
+                    <label>Group by Post Code wild character</label>
+                </value>
+                <value>
+                    <fullName>Group by Site</fullName>
+                    <default>false</default>
+                    <label>Group by Site</label>
+                </value>
+                <value>
+                    <fullName>Group by WishDate</fullName>
+                    <default>false</default>
+                    <label>Group by WishDate</label>
+                </value>
+                <value>
+                    <fullName>Group with Depends On</fullName>
+                    <default>false</default>
+                    <label>Group with Depends On</label>
+                </value>
+                <value>
+                    <fullName>No Grouping</fullName>
+                    <default>false</default>
+                    <label>No Grouping</label>
+                </value>
+                <value>
+                    <fullName>Override</fullName>
+                    <default>false</default>
+                    <label>Override</label>
+                </value>
+                <value>
+                    <fullName>ReGroup with Running Service</fullName>
+                    <default>false</default>
+                    <label>ReGroup with Running Service</label>
+                </value>
+                <value>
+                    <fullName>groupwithFromLink</fullName>
+                    <default>false</default>
+                    <label>groupwithFromLink</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>GroupKey__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>GroupKey</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OverrideDecompostionCriteria__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>OverrideDecompostionCriteria</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ServiceDecompositionCriteria__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>ServiceDecompositionCriteria</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>DecompositionSequence</label>
+    <pluralLabel>DecompositionSequences</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

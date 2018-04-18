@@ -1,0 +1,154 @@
+<apex:page id="LG_InstallationInformation" controller="LG_SeparateInvoicesController" showHeader="true" sidebar="true" docType="html-5.0" title="Billing Account Assignment" tabStyle="Account">
+    <apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, 'sfdcBootstrap.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'bootstrap.min.js')}" />
+    <script>
+        $( document ).ready(function()
+        {
+            preselectBillAccount();
+        });
+        
+        //preselect the newly created billing account based on newid parameter
+        function preselectBillAccount()
+        {
+            var newIdParam = "{!$CurrentPage.parameters.newid}";
+            if (newIdParam != '')
+            {
+                var fullId = '';
+                
+                $("#mainSelectList option").each(function()
+                {
+                   if (this.value.indexOf(newIdParam) >= 0)
+                   {
+                       fullId = this.value;
+                   }
+                });
+                
+                $('#mainSelectList').val(fullId);
+            }
+        }
+        
+        function checkAll(cb)
+        {
+            var inputElem = document.getElementsByTagName("input");
+            
+            for(var i=0; i<inputElem.length; i++)
+            {
+                if(inputElem[i].id.indexOf("headerCheckBox")==-1)
+                {
+                    inputElem[i].checked = cb.checked;
+                }
+            }
+        }
+        
+        function setSelectedBillAccountOnCheckedItems()
+        {
+            var mainSelectedBillAccId = $('select[id=mainSelectList]').val();
+            
+            //for each selected checkbox, find the next cell dropdown list and set the value
+            //from the main select list dropdown
+            //
+            //when reenabling the individual billing splits, uncomment the
+            //following lines and delete lines beetween DELETE START and DELETE END comments
+              $('input:checkbox:checked[id^=cbSelected-]').each(function()
+                {
+              $(this).closest('td').next('td').find('select').val(mainSelectedBillAccId);
+                });
+            //DELETE START
+           // $('select[id$=lineItemSelect]').each(function()
+           // {
+            //    $(this).val(mainSelectedBillAccId);
+           // });
+            //$('input:hidden[id$=hiddenLineItemSelect]').each(function()
+            //{
+             //   $(this).val(mainSelectedBillAccId);
+            //});
+            //DELETE END
+        }
+    </script>
+    <apex:form >
+        <div class="sfdcBootstrap">
+            <div class="container">
+                <br/>
+                <h2>{!$Label.LG_Billing_Assignment_Screen_Header}</h2>
+                <br/>
+                <br/>
+                <div class="well">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <select class="form-control " id="mainSelectList">
+                              <apex:repeat value="{!items}" var="item" id="billAccRepeat" >
+                                  <option value="{!item.value}" >{!item.label}</option>
+                              </apex:repeat>
+                            </select>
+                        </div>
+                        <div class="col-sm-9">
+                            <button onclick="setSelectedBillAccountOnCheckedItems();return false;" type="button" id="btnSetBillAccounts" class="btn btn-warning">{!$label.LG_Set_Button}</button>
+                            <button onclick="createNewBillAccountAct()" type="button" id="btnCreateNewBillAcc" class="btn btn-warning">{!$label.LG_New_Billing_Account_Button}</button>
+                        </div>
+                    </div>
+                </div>
+                <!--  //Modified for BU-59-- start-->
+                <div>
+					<apex:outputLabel id="errlbl" rendered="{!NOT(isValid)}" style="color: RGB(204,0,0);">{!$Label.LG_Selected_BillingAccounts} {!accList} {!$Label.LG_Billing_Validation_Error}</apex:outputLabel>
+                    <br/>
+                    <br/>
+                </div>
+                <!--  //Modified for BU-59-- end-->
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <!--Uncomment the following line(s) when reenabling the individual billing splits-->
+                                <th>
+                                    <input  type="checkbox" value="" onclick="checkAll(this)" id="headerCheckBox"/>
+                                </th>
+                                <th class="col-sm-2">{!$label.LG_Billing_Account}</th>
+                                <th>{!$label.LG_Billing_Account_Number}</th>
+                                <th>{!$label.LG_Address}</th>
+                                <th>{!$label.LG_Product_Name}</th>
+                                <th>{!$label.LG_One_Off_Charge}</th>
+                                <th>{!$label.LG_Recurring_Charge}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <apex:repeat value="{!pcwrappers}" var="PCwrap" id="tblLineItems">
+                                <tr>
+                                    <!--Uncomment the following line(s) when reenabling the individual billing splits-->
+                                    <td>
+                                        <input id="cbSelected-{!PCwrap.lineItem.Id}" type="checkbox" value="{!PCwrap.selected}"/>
+                                    </td>
+                                    <td>
+                                        <!--Remove the following inputHidden element when reenabling the individual billing splits-->
+                                        <apex:inputHidden value="{!PCwrap.selValBill}" id="hiddenLineItemSelect"/>
+                                        <!--Remove the disabled="true" when reenabling the individual billing splits-->
+                                        <apex:selectList size="1" styleClass="form-control" value="{!PCwrap.selValBill}" id="lineItemSelect">
+                                            <apex:selectOptions value="{!items}"/>
+                                        </apex:selectList>
+                                    </td>
+                                    <td>{!PCwrap.lineItem.Billing_Account_Number__c}</td> 
+                             
+                                    <td>{!PCwrap.lineItem.LG_Address__r.cscrm__Address_Details__c}</td>
+                                    <td>{!PCwrap.lineItem.name}</td>
+                                     <td>
+                                        <apex:outputField value="{!PCwrap.objPCR.csbb__Total_OC__c}"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!PCwrap.objPCR.csbb__Total_MRC__c}"/>
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="text-align: center">
+                    <apex:actionFunction name="save" action="{!save}"/>
+                    <apex:actionFunction name="redirectToBasket" action="{!redirectToBasket}"/>
+                    <apex:actionFunction name="createNewBillAccountAct" action="{!createNewBillAccount}"/>
+                    <button type="button" class="btn btn-warning" onclick="save()">{!$label.LG_Save}</button>
+                    <button type="button" class="btn btn-default" onclick="redirectToBasket()">{!$label.LG_Cancel}</button>
+                </div>
+            </div>
+        </div>
+    </apex:form>
+</apex:page>

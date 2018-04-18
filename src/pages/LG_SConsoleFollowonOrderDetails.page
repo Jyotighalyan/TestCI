@@ -1,0 +1,54 @@
+<apex:page standardController="Case" extensions="LG_SConsoleFollowonOrderExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+
+    <!--
+        * Custom SF Service Console
+        *
+        * @author Ganesh
+        * @story SFOM-390
+        * @since  04/02/2017
+    -->
+
+    <apex:form >
+
+    <apex:pageBlock >
+
+        <apex:pageBlockSection title="Order Details" columns="2" collapsible="true" >
+
+        <!--    <apex:outputField value="{!Order.Name}"/> --->
+            <apex:outputfield value="{!Order.csord__Account__c}" />             <!--Added for SFOM 1637-->
+            <apex:outputfield value="{!Order.csordtelcoa__Opportunity__c}" />   <!--Added for SFOM 1637-->
+            <apex:outputText label="Order">
+                <apex:outputLink value="/{!Order.ID}" >{!Order.Name}</apex:outputLink>   <!--Added for SFOM 1637-->
+            </apex:outputText>
+            <apex:outputField value="{!Order.OwnerId}"/>
+            <apex:outputField value="{!Order.csord__Order_Type__c}"/>
+            <apex:outputField value="{!Order.csord__Status2__c}"/>
+
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="Related Sub-Order Details" collapsible="true" columns="1">
+
+               <apex:pageBlockTable value="{!Solution}"  var="Sol" width="100%">
+                 <!--   <apex:column headerValue="Suborder" value="{!Sol.Name}"/> -->
+                   <apex:column headerValue="Suborder">
+                      <apex:outputLink value="/{!Sol.ID}"> {!Sol.Name} </apex:outputLink>  
+                    </apex:column> 
+                    <apex:column headerValue="Status" value="{!Sol.csord__Status__c}"/>
+                    <apex:column headerValue="Assigned To" value="{!Sol.Ownerid}"/>
+                    <apex:column headerValue="Work Order" value="{!Sol.LG_ProvisioningWorkOrder__c}"/>
+                    <apex:column headerValue="Address" value="{!Sol.LG_Address__c}"/>
+                    <apex:column headerValue="In Jeopardy?" value="{!Sol.LG_Jeopardy__c}"/>
+                    <apex:column headerValue="Jeopardy Raised by" value="{!Sol.LG_JeopardyRaisedBy__c}"/>
+                    <apex:column headerValue="Jeopardy Reason" value="{!Sol.Jeopardy_Reason__c}"/>
+                    <apex:column headerValue="Order Cancelled?" value="{!Sol.LG_OrderCancelled__c}"/>
+                    <apex:column headerValue="Order Changed?" value="{!Sol.LG_OrderChanged__c}"/>
+            </apex:pageBlockTable>
+
+        </apex:pageBlockSection>
+
+    </apex:pageBlock>
+
+    </apex:form>
+
+ </apex:page>

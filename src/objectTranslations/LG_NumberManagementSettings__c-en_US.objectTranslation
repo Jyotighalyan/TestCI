@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Number Management Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Number Management Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- Holds the CSV list of available Number Range Block Sizes (i.e. 1,10,100,1000). --></help>
+        <label><!-- Block Sizes --></label>
+        <name>LG_BlockSizes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the name of the  Block Type  (New, Port-In) Attribute of the (optional) Number Range Product Definition. --></help>
+        <label><!-- Block Type Attribute --></label>
+        <name>LG_BlockTypeAttribute__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the name of the End Number Attribute of the (optional) Number Range Product Definition. --></help>
+        <label><!-- End Number Attribute --></label>
+        <name>LG_EndNumberAttribute__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max Number Length --></label>
+        <name>LG_MaxNumberLength__c</name>
+    </fields>
+    <fields>
+        <label><!-- Min Number Length --></label>
+        <name>LG_MinNumberLength__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Details Field Set --></label>
+        <name>LG_NewDetailsFieldSet__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the name of the Number Range Attribute of the (optional) Number Range Product Definition. --></help>
+        <label><!-- Number Range Attribute --></label>
+        <name>LG_NumberRangeAttribute__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, a number range product configuration for New numbers would be created (while creating the assets for numbers). --></help>
+        <label><!-- Number Range Prod.Conf. for New --></label>
+        <name>LG_NumberRangeProdConfForNew__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, a number range product configuration for Port-In numbers would be created (while creating the assets for numbers). --></help>
+        <label><!-- Number Range Prod.Conf. for Port-In --></label>
+        <name>LG_NumberRangeProdConfForPortIn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number Range Product Configuration&apos;s Product Definition Name --></help>
+        <label><!-- Number Range Product Definition Name --></label>
+        <name>LG_NumberRangeProductDefinitionName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Port In Details Field Set --></label>
+        <name>LG_PortInDetailsFieldSet__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the name of a specific global picklist that holds the list of Port In Operators - currently a CSV list --></help>
+        <label><!-- Port-In Operators --></label>
+        <name>LG_PortInOperators__c</name>
+    </fields>
+    <fields>
+        <help><!-- If unchecked, validations won&apos;t be fired for new number blocks during sales process. Only Number Block Type (New or Port In) and Number Block Size fields will be required. --></help>
+        <label><!-- Require Details for New --></label>
+        <name>LG_RequireDetailsForNew__c</name>
+    </fields>
+    <fields>
+        <help><!-- If unchecked, validations won&apos;t be fired for port-in number blocks during sales process. Only Number Block Type (New or Port In) and Number Block Size fields will be required. --></help>
+        <label><!-- Require Details for Port In --></label>
+        <name>LG_RequireDetailsForPortIn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the name of the Size Attribute of the (optional) Number Range Product Definition. --></help>
+        <label><!-- Size Attribute --></label>
+        <name>LG_SizeAttribute__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the name of the Start Number Attribute of the (optional) Number Range Product Definition. --></help>
+        <label><!-- Start Number Attribute --></label>
+        <name>LG_StartNumberAttribute__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the name of the Number Range attribute of the Telephony product definition. This attribute is a related product attribute. --></help>
+        <label><!-- Telephony Number Range Attribute --></label>
+        <name>LG_TelephonyNumberRangeAttribute__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

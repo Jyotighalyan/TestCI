@@ -1,0 +1,560 @@
+<apex:page standardController="Opportunity" extensions="LG_SubmitOrder" >
+
+ <apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, 'sfdcBootstrap.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.essbs, 'essbs/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.essbs, 'essbs/bootstrap.min.js')}"/>
+      
+
+<apex:form >
+    <apex:sectionHeader title="{!$Label.LG_QuotetoOrderJourney}: {!oppName}" subtitle="{!$Label.LG_SubmitOrder}">
+    </apex:sectionHeader>
+    <apex:pageMessages />
+    <style>
+    .btn-default.btn-circle{
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+        table {width: 100%;height: }
+        th, td { padding: 5px; }
+        th{background: #B2D9E5;} 
+         
+         #box
+{
+  font-size: 12px;
+  font-style: arial:bold;
+  vertical-align: top;
+  text-align: left;
+  line-height: normal;  
+  padding: 10px;
+}
+.box_tab {
+    border:2px solid green;
+    outline-color:red;  
+    outline-style:groove;
+}   
+         #box1
+{
+  font-size: 12px;
+  font-style: arial:bold;
+  vertical-align: top;
+  text-align: left;
+  line-height: normal;  
+  padding: 10px;
+   background: white;
+    border:2px #B2D9E5;
+    outline-color:#B2D9E5;  
+}
+
+    </style>
+
+    <Center><apex:outputLabel value="{!$Label.LG_PMS_SUB_OPP}" style="font-size:12px;color:#FF0000;font-weight: bold;" rendered="{!submittedOpp}"/></center>
+
+    <apex:pageBlock >
+
+     <html>
+                <body>
+        <div class="sfdcBootstrap"> 
+     
+         <!-- Validate order --> 
+         
+
+              <div class="boxed">
+<!-- Contract Pack Table Starts --> 
+            <table width="100%" border="0" style="display:{!IF($Setup.LG_ValidateOpportunity__c.Org_Name__c!='UM',"table","none")}">
+                <tr>
+                   <th width="40%" id="box"><table border="0"><tr><td width="5%"></td><td><b>Tasks</b></td></tr></table></th>
+                    <th width="20%"></th>
+                    <th width="10%">    </th>
+                    <th width="30%">
+                    <table border ="0">
+                    <tr>
+                    <td  width="25%">{!$Label.LG_Status}</td>  <td width="55%"></td><td>{!$Label.LG_Info}</td>
+                    </tr>
+                    </table>
+                    </th>
+                </tr>
+                
+                 <!-- Debt Check TR Starts --> 
+                <tr>
+                 <td style="padding: 5px;"><table border="0"><tr>   <!--<td width="15%"><apex:image url="{!URLFOR($Resource.Arrows, '/Arrow/Green.png')}" width="30px" height="35px" /></td> -->
+                    <td Id="box">{!$Label.LG_DebtCheck}</td></tr></table></td>
+                    <td></td>
+                    <td></td>
+                    <td style="padding: 5px;">
+                  
+                       <table border="0">
+                       <tr>
+                                                   <td width="20%"><apex:outputText value="{!OppObj.LG_DebitCheckStatus__c}"/></td>
+                          <td width="10%">&nbsp;</td>
+                     
+                       <td width="25%"><apex:commandLink action="{!debtCheckAction}" ><div data-toggle="tooltip" data-placement="right" title="{!$Label.LG_DebtCheck}">
+                            <apex:commandButton style="width:35px;padding: 5px;" styleClass="btn-default" image="{!URLFOR($Resource.Flags, '/Flags/')}{!debitCheckFlag}" disabled="{!submittedOpp}"/></div>
+                        </apex:commandLink></td>
+                        <td width="25%">&nbsp;</td>
+                        <td style='align: center;'><div data-toggle="tooltip" data-placement="top" title="{!debtCheckInfo }">
+                            <apex:commandButton style="width:35px;padding: 5px;" styleClass="btn btn-default btn-circle" image="{!$Resource.moreinfo}"/></div>
+                       </td></tr>
+                       </table>
+                    </td>
+
+                </tr>
+                <!-- Debt Check TR Ends --> 
+                 
+                <!-- Credit Check  TR Starts --> 
+                  <tr>
+                    <td style="padding: 5px;"><table border="0"><tr><!--<td width="15%"><apex:image url="{!URLFOR($Resource.Arrows, '/Arrow/Red.png')}" width="30px" height="35px" /></td>--><td Id="box">{!$Label.LG_CreditCheck}</td></tr></table></td>
+                    <td></td>
+                    <td></td>
+                    <td style="padding: 5px;">
+                        <table border="0">
+                       <tr>
+                       
+                      <td width="20%"><apex:outputText value="{!creditCheckStatus}"/></td>
+                      
+                        <td width="10%">&nbsp;</td>
+                       <td width="25%"> <apex:commandLink action="{!creditCheckAction}" ><div  data-toggle="tooltip" data-placement="right" title="{!$Label.LG_CreditCheck}">
+                            <apex:commandButton style="width:35px;padding: 5px;"  styleClass="btn-default" image="{!URLFOR($Resource.Flags, '/Flags/')}{!creditCheckFlag }" disabled="{!submittedOpp}"/></div>
+                        </apex:commandLink></td>
+                        <td width="25%">&nbsp;</td>
+                        <td style='align: center;'><div data-toggle="tooltip" data-placement="top" title="{!debtCheckInfo }">
+                            <apex:commandButton style="width:35px;padding: 5px;" styleClass="btn btn-default btn-circle" image="{!$Resource.moreinfo}" /></div>
+                       </td></tr>
+                       </table>
+                        
+                    </td>
+                </tr>
+                <!-- Credit Check  TR Ends --> 
+                 
+                 
+                <!-- Quote status Starts --> 
+                      <tr>
+                    <td style="padding: 5px;"><table border="0"><tr><!--<td width="15%"><apex:image url="{!URLFOR($Resource.Arrows, '/Arrow/Green.png')}" width="30px" height="35px" /></td>--><td Id="box">{!$Label.LG_QuoteStatus}</td></tr></table></td>
+                      <td></td>
+                    <td></td>
+                  
+                    <td style="padding: 5px;">
+                     <table border="0">
+                       <tr>
+                      <td width="20%"><apex:outputText value="{!quoteStatus}"/></td>   <td width="10%">&nbsp;</td>
+                     
+                       <td width="25%">                       <apex:commandLink action="{!gotobasket}" ><div data-toggle="tooltip" data-placement="right" title="{!$Label.LG_QuoteStatus}">
+                            <apex:commandButton style="width:35px;padding: 5px;"  styleClass="btn-default" image="{!URLFOR($Resource.Flags, '/Flags/')}{!quoteFlag}" disabled="{!submittedOpp}"/></div>
+                        </apex:commandLink></td>
+                        <td width="25%">&nbsp;</td>
+                        <td style='align: center;'><div data-toggle="tooltip" data-placement="top" title="{!debtCheckInfo }">
+                            <apex:commandButton style="width:35px;padding: 5px;" styleClass="btn btn-default btn-circle" image="{!$Resource.moreinfo}" /></div>
+                       </td></tr>
+                       </table>
+                        </td>
+                        </tr>
+                       
+              <!-- Contract Starts --> 
+                  <tr>
+                     <apex:outputpanel rendered="{!not(contractMandatory)}">  
+                              <td style="padding: 5px;"><table border="0"><tr><!--<td width="15%"><apex:image url="{!URLFOR($Resource.Arrows, '/Arrow/Green.png')}" width="30px" height="35px"/></td>--><td Id="box">{!$Label.LG_ContractStatus}</td></tr></table>
+                              </td>
+                    <td></td>
+                    <td></td>
+                    <td style="padding: 5px;">
+                       <table border="0">
+                       <tr>
+                       
+                       <td width="20%"><apex:outputText value="{!contStatus}"/></td>  <td width="10%">&nbsp;</td>
+                       <td width="25%"> <apex:commandLink action="{!sendContract}" >
+                       <div data-toggle="tooltip" data-placement="right" title="{!$Label.LG_ContractStatus}">
+                            <apex:commandButton style="width:35px;padding: 5px;" styleClass="btn-default" image="{!URLFOR($Resource.Flags, '/Flags/')}{!contStatusFlag}" disabled="{!submittedOpp}"/>
+                          </div > </apex:commandLink>
+                          </td>
+                        <td width="25%">&nbsp;</td>
+                        <td style="align: center;">
+                        <div data-toggle="tooltip" data-placement="top" title="{!debtCheckInfo }">
+                            <apex:commandButton style="width:35px;padding: 5px;" styleClass="btn btn-default btn-circle" image="{!$Resource.moreinfo}" />
+                            </div>
+                       </td>
+                       </tr>
+                       </table>
+                        
+                    </td>
+                        </apex:outputpanel>
+                    </tr>
+               <!-- contract status ends--> 
+               
+              
+               
+               
+               
+</table>
+
+  <!-- task block for VMB ends-->
+  <!-- task block for uM starts-->
+
+  <table width="100%" border="0"  style="display:{!IF($Setup.LG_ValidateOpportunity__c.Org_Name__c='UM',"table","none")}">
+                  <!-- Validate order --> 
+         
+<!-- Contract Pack Table Starts --> 
+                <tr>
+                   <th width="40%" id="box"><table border="0"><tr><td width="5%"></td><td><b>Tasks</b></td></tr></table></th>
+                    <th width="10%">   
+                    <table border ="0">
+                    <tr>
+                    <td  width="25%">Status</td>
+                    <td width="55%"></td>
+                    </tr>
+                    </table>   
+                    </th>
+                    <th width="20%"></th>
+                    <th width="30%"></th>
+                </tr>
+
+                 <!-- Debt Check TR Starts --> 
+      			<!-- Credit Check, Debit Check & COntract Status are removed as a part of OMB-664 -->
+                 <!--<tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+                    <tr> 
+                    <td   width="30%" style="padding-left: 10px;" ><apex:outputText value="Debt Check"/></td> 
+                    <td width="20%"  style="padding-left: 20px;"> <apex:inputCheckbox value="{!dcChecked}" id="dc2"  /></td>
+                 </tr>
+       
+            
+                <!-- Debt Check TR Ends --> 
+                 
+                <!-- Credit Check  TR Starts --> 
+                 <!--<tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+                    <tr> 
+                    <td   width="30%" style="padding-left: 10px;" ><apex:outputText value="Credit Check"/></td> 
+                    <td width="20%"  style="padding-left: 20px;"> <apex:inputCheckbox value="{!ccChecked}" id="cc2"  /></td>
+                </tr> -->
+                <!-- Credit Check  TR Ends --> 
+                 
+                 
+                <!-- Contract status Starts --> 
+                                <!--   <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+                            <tr>
+                    <td   width="30%" style="padding-left: 10px;" ><apex:outputText value="Contract Status"/></td> 
+                     <td style="padding: 5px;">
+                     <table border="0">
+                       <tr>
+        <td width="20%"  style="padding-left: 20px;"> <apex:inputCheckbox value="{!contractChecked}" id="sc2"  /></td>
+                                 
+                    </tr>
+                       </table>
+                        </td>
+                        </tr> -->
+              <!--End - OMB-664 -->
+                <!-- COntract status ends --> 
+                                <!-- DDMandate status Starts --> 
+                 <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+
+                      <tr>
+                    <td   width="30%" style="padding-left: 10px;" ><apex:outputText value="DD Mandate"/></td> 
+                     <td style="padding: 5px;">
+                     <table border="0">
+                       <tr>
+                      <td width="20%"><apex:outputText value="{!PaymentType}" id="mandatory1"/></td>   <td width="10%">&nbsp;</td>
+                     
+                    </tr>
+                       </table>
+                        </td>
+                        </tr>
+                        
+                                <!-- Quote status Starts ; Added for SFOM-1308 -->
+                           <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+                           
+                      <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+
+                      <tr>
+                    <td   width="30%" style="padding-left: 10px;" ><apex:outputText value="Quote Status"/></td> 
+                     <td style="padding: 5px;">
+                     <table border="0">
+                       <tr>
+                      <td width="20%">
+                          <apex:outputText value="{!oppQuoteStatus}" id="mandatory111" rendered="{!oppQuoteStatus != null}"/>
+                          <div data-toggle="tooltip" data-placement="right"  disabled="true">
+                      <apex:commandButton style="width:35px;padding: 5px;"  styleClass="btn-default" image="{!URLFOR($Resource.Flags, '/Flags/')}{!oppQuoteStatusFlag}" disabled="true" rendered="{!oppQuoteStatus == null}"/></div>
+                        
+                      </td>   <td width="10%">&nbsp;</td>
+                      
+                     
+                    </tr>
+                       </table>
+                        </td>
+                        </tr> 
+                        
+            
+                           <tr> <td>&nbsp;</td><td>&nbsp; </td></tr> <!-- End of code for SFOM-1308   -->
+                           
+                           
+                     <!-- Technical Contact details --sfom 1123 -->
+                     
+                 <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+
+                      <tr>
+                    <td   width="30%" style="padding-left: 10px;" ><apex:outputText value="Technical Contact"/></td> 
+                     <td style="padding: 5px;">
+                     <table border="0">
+                       <tr>
+                      <td width="20%"><apex:outputText value="{!IF(techContactDetails!='','Present','Not Present')}" id="mandatory11"/></td>   <td width="10%">&nbsp;</td>
+                     
+                    </tr>
+                       </table>
+                        </td>
+                        </tr>
+                        
+            
+                           <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+
+                          
+
+  </table>
+  <!-- task block for uM ends-->
+
+<!--Servicability Check-->
+                          <apex:outputPanel rendered="{!IF(CONTAINS(OrgaName, 'VMB') ,True, False)}" >
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th width="20%" id="box">
+                                    <table border="0">
+                                        <tr>
+                                            <td width="20%"><b>Serviceability Case Check</b></td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                </tr>
+                              </table>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr><td>&nbsp;</td>
+                                      <td>&nbsp; </td>
+                                  </tr>
+                              </table>
+                              <table border="0">
+                                  <tr style="border: 2px #B2D9E5;">
+                                      <td >
+                                          <div class="panel panel-info">
+                                              <table width="100%">
+                                                <tr><td>&nbsp;</td>
+                                                    <td>&nbsp; </td>
+                                                </tr>
+                                                    <tr style="outline: thin solid ;outline-color:#B2D9E5;" class="table-header"   >
+                                                        <thead>
+                                                            <td  style="padding-top:10px;font-weight:bold;padding-left:5px">CaseNumber</td>
+                                                            <td style="padding-top:10px;font-weight:bold" >Status</td> 
+                                                            <td style="padding-top:10px;font-weight:bold">Info</td>
+                                                        </thead>
+                                                  </tr>
+                                                  <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+                                                  <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+                                                    <apex:repeat value="{!SCcaselist}" var="c">
+                                                        <tr><td style="padding-left:10px">
+                                                                <apex:outputLink value="/{!c.id}">{!c.CaseNumber}</apex:outputLink>
+                                                            </td>
+                                                            <td >{!c.Status}</td>
+                                                            <td style='align: center;'>
+                                                                <div data-toggle="tooltip" data-placement="top" title="{!SCCheckInfo }">
+                                                                    <apex:commandButton style="width:35px;padding: 5px;" styleClass="btn btn-default btn-circle" image="{!$Resource.moreinfo}"/>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                  </apex:repeat>
+                                                <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+                                              </table>
+                                          </div>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </apex:outputPanel>
+
+
+                        
+             
+             <!-- <table width="100%" border="0">
+                
+                
+                      
+                    </table>-->
+                         
+                         
+                         
+                         
+              <!--Supporting information / documents-->
+             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th width="20%" id="box"><table border="0"><tr><td width="20%"><b>{!$Label.LG_SupportingInformation} / {!$Label.LG_Documents}</b></td></tr></table></th>
+                                        
+                </tr>
+              </table>   
+           
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                          <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+
+              </table>   
+                         
+                        <table border="0">
+                    
+                        <tr style="border: 2px #B2D9E5;">
+                            <td >   
+                             <div class="panel panel-info">
+            <table width="100%">   
+            <thead>
+                <tr style="outline: thin solid ;outline-color:#B2D9E5;" class="table-header">
+                    <th width="30%" id="box1">{!$Label.LG_DocumentType}</th>
+                    <th width="20%" id="box1" >{!$Label.LG_Mandatory}</th>
+                    <th width="30%" id="box1">{!$Label.LG_AttachedDocument}</th>
+                    <th width="20%" id="box1">{!$Label.LG_Checked}</th>
+                     <th width="20%" id="box1" ></th>
+                  
+                   <!-- <th>Planning Details</th>-->
+                   
+                </tr>
+                </thead>
+                 
+                  <tr> <td>&nbsp;</td><td>&nbsp; </td></tr> 
+                    
+                    <tr  style="padding-left: 10px;display:{!IF($Setup.LG_ValidateOpportunity__c.Org_Name__c!='UM',"table-row","none")}">
+                
+                    <td width="30%" style="padding-left: 10px;"><apex:outputText value="{!$Label.LG_DDMandate}"/>  </td> 
+                    <!--<td width="20%" style="padding-left: 20px;"><apex:outputText value="{!IF(DDMandateMandatory='Direct Debit','Y','N')} " id="mandatory1"/></td>-->
+                    <td  width="30%" style="padding-left: 20px;" >
+                    <apex:outputpanel rendered="{!DDmandateDocPresent}">   
+                    <apex:outputText >{!DDMandateDocName}</apex:outputText>
+                    </apex:outputPanel>
+                    </td>
+                 <!--  <apex:outputpanel rendered="{!not(DDmandateDocPresent)}">
+                    <td width="15%"  > <apex:inputFile style="width:100%" id="fileToUpload1" value="{!fileBody}" filename="{!fileName}" />    </td>
+                               <td  width="15%"> <apex:commandButton styleClass="btn-default"  value="Upload File" action="{!UploadFile}"/></td></apex:outputPanel>
+            -->
+                <td   width="20%"  style="padding-left: 20px;">   <apex:inputCheckbox value="{!DDMandateChecked}" id="doc1"/>
+                </td>
+
+            </tr> 
+       
+            
+           
+                    <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+                    <tr> 
+                    <td   width="30%" style="padding-left: 10px;" ><apex:outputText value="{!$Label.LG_TenantLandlordAuthorization}"/></td> 
+            <td  width="20%" style="padding-left: 20px;"><apex:outputText value="{!IF(LandlordAuthMandatory=true,'Y','N')} " id="mandatory2"/></td>
+              
+           <apex:outputpanel rendered="{!WayLeaveDocPresent}">    
+           <td  width="30%" style="padding-left: 20px;">
+           <apex:outputLink value="/{!WayLeaveDocId}" target="_blank">{!WayLeaveDocName}</apex:outputLink></td>
+            </apex:outputpanel> 
+               <apex:outputpanel rendered="{!not(WayLeaveDocPresent)}">                         
+            <td width="30%">    
+                            <apex:inputFile id="fileToUpload2" value="{!fileBody}" filename="{!fileName}" />
+                         &nbsp;
+                         <apex:commandButton styleClass="btn-default"  value="{!$Label.LG_UploadFile}" action="{!UploadWayleaveFile}"/></td> </apex:outputpanel> 
+      
+            <td width="20%"  style="padding-left: 20px;"> <apex:inputCheckbox value="{!LLAuthChecked}" id="doc2"  /></td>
+
+            </tr>
+       
+            
+                    <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+                    <tr> 
+
+                    <td   width="30%" style="padding-left: 10px;" ><apex:outputText value="{!$Label.LG_PortingAuth}"/>  </td> 
+                   
+  <td  width="20%" style="padding-left: 20px;"><apex:outputText value="{!IF(PortingMandatory=true,'Y','N')} " id="mandatory3"/></td>
+            <apex:outputpanel rendered="{!PortingDocPresent}">
+             <td  width="30%" style="padding-left: 20px;"><apex:outputLink value="/{!portingDocId}" target="_blank">{!PortingDocName}</apex:outputLink> </td></apex:outputpanel>
+            <apex:outputpanel rendered="{!not(PortingDocPresent)}">
+                        
+            <td width="30%">    
+                            <apex:inputFile id="fileToUpload3" value="{!fileBody}" filename="{!fileName}" />
+                        <apex:commandButton styleClass="btn-default" value="{!$Label.LG_UploadFile}" action="{!UploadPortingFile}"/></td> </apex:outputpanel> 
+             <td width="20%"  style="padding-left: 20px;"> <apex:inputCheckbox value="{!PortAuthChecked}" id="doc3" /></td>
+
+            </tr>
+           
+             
+           
+                      <tr> <td>&nbsp;</td><td>&nbsp; </td></tr>
+                      <tr> 
+                        <td   width="30%" style="padding-left: 10px;" ><apex:outputText value="{!$Label.LG_SignedContract}"/>  </td> 
+                        <td  width="20%" style="padding-left: 20px;"><apex:outputText value="{!IF(contractMandatory=true,'Y','N')}"  id="mandatory5"/></td>
+                        <apex:outputpanel rendered="{!ContractDocPresent}">
+                        <td width="30%" style="padding-left: 20px;">
+                            <apex:outputLink value="/{!ContractDocId}" target="_blank">{!ContractDocName}</apex:outputLink>
+                         </td>
+                        </apex:outputpanel>  
+                        <apex:outputpanel rendered="{!not(ContractDocPresent)}">
+                        <td width="30%"> <apex:inputFile style="width:100%" id="fileToUpload5" value="{!fileBody}" filename="{!fileName}" />
+                            <apex:commandButton styleClass="btn-default"  value="{!$Label.LG_UploadFile}" action="{!UploadContractFile}"/></td></apex:outputpanel>  
+                         <td width="20%"  style="padding-left: 20px;"> <apex:inputCheckbox value="{!SignedContractChecked}"  id="doc5"  /></td>
+                     </tr>  
+                              
+
+                              
+                     <tr> <td>&nbsp;</td><td>&nbsp; </td></tr> 
+                </table>
+            </div>
+
+                      </td>
+            </tr>
+            </table>
+                         
+          
+    
+   
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th width="20%" id="box"><table border="0"><tr><td width="20%"><b></b></td></tr></table></th>
+                </tr>
+        </table>
+        <table>
+                <tr> 
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td  width="1%">&nbsp;</td>
+                    <td width="40%">
+                        <apex:inputCheckbox value="{!oppTermsNcondition}" rendered="{!IF($Setup.LG_ValidateOpportunity__c.Org_Name__c='UM',false,true)}"/>
+                        <apex:outputText value="{!$Label.LG_Opportunity_Terms_and_Condition}"  rendered="{!IF($Setup.LG_ValidateOpportunity__c.Org_Name__c='UM',false,true)}"/>  
+                          
+                    </td>
+                    <td align="left" width="60%" >                          
+                        <apex:commandButton styleClass="btn-default"  value="{!$Label.LG_SubmitOrder}" action="{!submitOrder}"/>
+                    </td>
+                    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td> 
+                </tr>
+                <tr>
+                    <td>&nbsp;</td><td>&nbsp;</td>
+                </tr>
+       
+           </table>
+   
+
+
+
+
+
+            <!--Quick Linkx --> 
+ 
+                <table width="100%">
+                                <tr>
+                                    <th id="box">&nbsp;</th>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                </table>
+                <div class='wrapper text-center'><label for="basic-url">{!$Label.LG_QuickLinks}:</label>
+                    <div class="btn-group" style="text-align:center">
+                        <!-- Blocked as a part of SFOM-2069 -->
+                         <!--<apex:commandButton styleClass="btn-default" value="{!$Label.LG_Account}" action="{!gotoAccount}"/>   
+                        <apex:commandButton styleClass="btn-default" value="{!$Label.LG_Opportunity}" action="{!Backtoopportunity}" /> &nbsp;&nbsp; -->
+                        <apex:outputLink target="_blank" styleClass="btn btn-default" value="{!URLFOR('/'+accid, null)}">{!$Label.LG_Account}</apex:outputLink>
+                        <apex:outputLink target="_blank" styleClass="btn btn-default" value="{!URLFOR('/'+oppid, null)}">{!$Label.LG_Opportunity}</apex:outputLink>
+                      </div>
+                </div>
+                           </div>
+           <!-- Bootstrap Div ends --> 
+    </div>
+     </body>
+    </html>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

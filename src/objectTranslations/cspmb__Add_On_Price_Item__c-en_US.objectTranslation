@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Image URL --></label>
+        <name>Image_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Image --></label>
+        <name>Image__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active Formula --></label>
+        <name>LG_Active_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Description --></label>
+        <name>LG_ExternalDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Price Name --></label>
+        <name>LG_ExternalPriceName__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Service Name --></label>
+        <name>LG_ExternalServiceName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Product Formula --></label>
+        <name>LG_LegacyProductFormula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Product --></label>
+        <name>LG_LegacyProduct__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Definition Type --></label>
+        <name>LG_ProductDefinitionType__c</name>
+        <picklistValues>
+            <masterLabel>BDS Standort Hardware</masterLabel>
+            <translation><!-- BDS Standort Hardware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CF Add On</masterLabel>
+            <translation><!-- CF Add On --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company VPN Anywhere</masterLabel>
+            <translation><!-- Company VPN Anywhere --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extended Services</masterLabel>
+            <translation><!-- Extended Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flat</masterLabel>
+            <translation><!-- Flat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hardware</masterLabel>
+            <translation><!-- Hardware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Implementation Services</masterLabel>
+            <translation><!-- Implementation Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet Service</masterLabel>
+            <translation><!-- Internet Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minutes</masterLabel>
+            <translation><!-- Minutes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Option</masterLabel>
+            <translation><!-- Option --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Numbers</masterLabel>
+            <translation><!-- Phone Numbers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Gebühren</masterLabel>
+            <translation><!-- Service Gebühren --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hPBX Devices</masterLabel>
+            <translation><!-- hPBX Devices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hPBX Phone Numbers</masterLabel>
+            <translation><!-- hPBX Phone Numbers --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>LG_ProductFamily__c</name>
+        <picklistValues>
+            <masterLabel>Connection</masterLabel>
+            <translation><!-- Connection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTV</masterLabel>
+            <translation><!-- DTV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HPBX</masterLabel>
+            <translation><!-- HPBX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet</masterLabel>
+            <translation><!-- Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation><!-- Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIN</masterLabel>
+            <translation><!-- PIN --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Technical Details --></label>
+        <name>LG_ProductTechnicalDetails__c</name>
+        <relationshipLabel><!-- Add On Price Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>LG_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type Of Phone Range --></label>
+        <name>LG_TypeOfPhoneRange__c</name>
+        <picklistValues>
+            <masterLabel>088</masterLabel>
+            <translation><!-- 088 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Port In</masterLabel>
+            <translation><!-- Port In --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provisioning ID --></label>
+        <name>Provisioning_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provisioning System --></label>
+        <name>Provisioning_System__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Product Id --></label>
+        <name>UM_BillingProductId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Code --></label>
+        <name>UM_CancellationCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Create Additional Line Item --></label>
+        <name>UM_Create_Additional_Line_Item__c</name>
+    </fields>
+    <fields>
+        <label><!-- Do Not Decompose --></label>
+        <name>UM_DoNotDecompose__c</name>
+    </fields>
+    <fields>
+        <label><!-- JiraIssueTypeId --></label>
+        <name>UM_JiraIssueTypeId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Limits --></label>
+        <name>UM_Limits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Only OTC Code --></label>
+        <name>UM_OTCCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- One Off Contract ID --></label>
+        <name>UM_OneOffContractID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Product Type --></label>
+        <name>UM_ParentProductType__c</name>
+        <picklistValues>
+            <masterLabel>BDS Standort</masterLabel>
+            <translation><!-- BDS Standort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Mobile</masterLabel>
+            <translation><!-- Business Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCC200-15</masterLabel>
+            <translation><!-- CCC200-15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCC200-25</masterLabel>
+            <translation><!-- CCC200-25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCC400-15</masterLabel>
+            <translation><!-- CCC400-15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCC400-25</masterLabel>
+            <translation><!-- CCC400-25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCC400-40</masterLabel>
+            <translation><!-- CCC400-40 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCF100-100</masterLabel>
+            <translation><!-- CCF100-100 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCF1000-1000</masterLabel>
+            <translation><!-- CCF1000-1000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCF15-15</masterLabel>
+            <translation><!-- CCF15-15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCF200-200</masterLabel>
+            <translation><!-- CCF200-200 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCF25-25</masterLabel>
+            <translation><!-- CCF25-25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCF300-300</masterLabel>
+            <translation><!-- CCF300-300 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCF35-35</masterLabel>
+            <translation><!-- CCF35-35 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCF50-50</masterLabel>
+            <translation><!-- CCF50-50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCF500-500</masterLabel>
+            <translation><!-- CCF500-500 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCF750-750</masterLabel>
+            <translation><!-- CCF750-750 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CI15</masterLabel>
+            <translation><!-- CI15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CI25</masterLabel>
+            <translation><!-- CI25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CI40</masterLabel>
+            <translation><!-- CI40 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>City WiFi</masterLabel>
+            <translation><!-- City WiFi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Fiber</masterLabel>
+            <translation><!-- Company Fiber --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Internet</masterLabel>
+            <translation><!-- Company Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company VPN</masterLabel>
+            <translation><!-- Company VPN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dark Fiber</masterLabel>
+            <translation><!-- Dark Fiber --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DigitalTV</masterLabel>
+            <translation><!-- DigitalTV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E-Line (P2P)</masterLabel>
+            <translation><!-- E-Line (P2P) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IP Transit</masterLabel>
+            <translation><!-- IP Transit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISDN</masterLabel>
+            <translation><!-- ISDN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LTE Backhaul</masterLabel>
+            <translation><!-- LTE Backhaul --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Managed Wlan Solution</masterLabel>
+            <translation><!-- Managed Wlan Solution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Managed Wlan Solutions</masterLabel>
+            <translation><!-- Managed Wlan Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation><!-- Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OI 150</masterLabel>
+            <translation><!-- OI 150 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OI 200</masterLabel>
+            <translation><!-- OI 200 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OI 250</masterLabel>
+            <translation><!-- OI 250 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OI 400</masterLabel>
+            <translation><!-- OI 400 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OI 50</masterLabel>
+            <translation><!-- OI 50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OI&amp;P 150</masterLabel>
+            <translation><!-- OI&amp;P 150 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OI&amp;P 200</masterLabel>
+            <translation><!-- OI&amp;P 200 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OI&amp;P 250</masterLabel>
+            <translation><!-- OI&amp;P 250 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OI&amp;P 400</masterLabel>
+            <translation><!-- OI&amp;P 400 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OI&amp;P 50</masterLabel>
+            <translation><!-- OI&amp;P 50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office Internet</masterLabel>
+            <translation><!-- Office Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid Peering</masterLabel>
+            <translation><!-- Paid Peering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Spot</masterLabel>
+            <translation><!-- Power Spot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PowerSpot</masterLabel>
+            <translation><!-- PowerSpot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PowerSpot II</masterLabel>
+            <translation><!-- PowerSpot II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Servicepakete</masterLabel>
+            <translation><!-- Servicepakete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SipTrunk</masterLabel>
+            <translation><!-- SipTrunk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WLAN</masterLabel>
+            <translation><!-- WLAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wholesale Fiber</masterLabel>
+            <translation><!-- Wholesale Fiber --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Only Recurring Code --></label>
+        <name>UM_RecurringCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Contrac ID --></label>
+        <name>UM_RecurringContractID__c</name>
+    </fields>
+    <fields>
+        <label><!-- UM SLA --></label>
+        <name>UM_SLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Contract Id --></label>
+        <name>UM_ServiceContractId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Company Fibre Addon Service Info --></help>
+        <label><!-- UM Service --></label>
+        <name>UM_Service__c</name>
+        <picklistValues>
+            <masterLabel>Access</masterLabel>
+            <translation><!-- Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BGP</masterLabel>
+            <translation><!-- BGP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Cloud Fiber</masterLabel>
+            <translation><!-- Company Cloud Fiber --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>UM_State__c</name>
+        <picklistValues>
+            <masterLabel>BW</masterLabel>
+            <translation><!-- BW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HES</masterLabel>
+            <translation><!-- HES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HSN</masterLabel>
+            <translation><!-- HSN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NRW</masterLabel>
+            <translation><!-- NRW --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Variable Price --></label>
+        <name>UM_VariablePrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Voiceworks More Services --></label>
+        <name>UM_VoiceworksMoreServices__c</name>
+    </fields>
+    <fields>
+        <label><!-- Voiceworks One Off Charge ID --></label>
+        <name>UM_VoiceworksOneOffChargeID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Voiceworks Product ID --></label>
+        <name>UM_VoiceworksProductID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Voiceworks Recurring Charge ID --></label>
+        <name>UM_VoiceworksRecurringChargeID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>cspmb__Account__c</name>
+        <relationshipLabel><!-- Add On Price Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Add On Price Item Code --></label>
+        <name>cspmb__Add_On_Price_Item_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Add On Price Item_Description --></label>
+        <name>cspmb__Add_On_Price_Item_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apply One-Off Charge Account Discount --></label>
+        <name>cspmb__Apply_One_Off_Charge_Account_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apply Recurring Charge Account Discount --></label>
+        <name>cspmb__Apply_Recurring_Charge_Account_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Authorization Level --></label>
+        <name>cspmb__Authorization_Level__c</name>
+        <relationshipLabel><!-- Add On Price Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billing Frequency --></label>
+        <name>cspmb__Billing_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annually</masterLabel>
+            <translation><!-- Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Term --></label>
+        <name>cspmb__Contract_Term__c</name>
+        <picklistValues>
+            <masterLabel>12 Months</masterLabel>
+            <translation><!-- 12 Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24 Months</masterLabel>
+            <translation><!-- 24 Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36 Months</masterLabel>
+            <translation><!-- 36 Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>48 Months</masterLabel>
+            <translation><!-- 48 Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Months</masterLabel>
+            <translation><!-- 60 Months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Currency Code --></label>
+        <name>cspmb__Currency_Code__c</name>
+        <picklistValues>
+            <masterLabel>Sample Code</masterLabel>
+            <translation><!-- Sample Code --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The current version of this Add On Price Item. If blank, this record is the current version. --></help>
+        <label><!-- Current Version --></label>
+        <name>cspmb__Current_Version__c</name>
+        <relationshipLabel><!-- Versions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Discount Type --></label>
+        <name>cspmb__Discount_Type__c</name>
+        <picklistValues>
+            <masterLabel>Amount</masterLabel>
+            <translation><!-- Amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Negative Line Item</masterLabel>
+            <translation><!-- Negative Line Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Effective End Date --></label>
+        <name>cspmb__Effective_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Start Date --></label>
+        <name>cspmb__Effective_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>cspmb__Is_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Authorization Required --></label>
+        <name>cspmb__Is_Authorization_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is One-Off Discount Allowed --></label>
+        <name>cspmb__Is_One_Off_Discount_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Recurring Discount Allowed --></label>
+        <name>cspmb__Is_Recurring_Discount_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- One-Off Charge Code --></label>
+        <name>cspmb__One_Off_Charge_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- One-Off Charge External Id --></label>
+        <name>cspmb__One_Off_Charge_External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- One-Off Charge --></label>
+        <name>cspmb__One_Off_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- One-Off Cost --></label>
+        <name>cspmb__One_Off_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Definition Name --></label>
+        <name>cspmb__Product_Definition_Name__c</name>
+        <picklistValues>
+            <masterLabel>Auslandsrufnummer</masterLabel>
+            <translation><!-- Auslandsrufnummer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BDS Standort Hardware</masterLabel>
+            <translation><!-- BDS Standort Hardware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CF Add On</masterLabel>
+            <translation><!-- CF Add On --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dienstleistungen</masterLabel>
+            <translation><!-- Dienstleistungen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flat</masterLabel>
+            <translation><!-- Flat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HW</masterLabel>
+            <translation><!-- HW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet Service</masterLabel>
+            <translation><!-- Internet Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minutes</masterLabel>
+            <translation><!-- Minutes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Option</masterLabel>
+            <translation><!-- Option --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Numbers</masterLabel>
+            <translation><!-- Phone Numbers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Gebühren</masterLabel>
+            <translation><!-- Service Gebühren --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zusatzdienste</masterLabel>
+            <translation><!-- Zusatzdienste --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Recurring Charge Code --></label>
+        <name>cspmb__Recurring_Charge_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Charge External Id --></label>
+        <name>cspmb__Recurring_Charge_External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Charge --></label>
+        <name>cspmb__Recurring_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Cost --></label>
+        <name>cspmb__Recurring_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the sorting order for this Add On Price Item. --></help>
+        <label><!-- Sequence --></label>
+        <name>cspmb__Sequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- The version number of this Add On Price Item. --></help>
+        <label><!-- Version Number --></label>
+        <name>cspmb__Version_Number__c</name>
+    </fields>
+    <layouts>
+        <layout>Custom Add On Price Item Layout</layout>
+        <sections>
+            <label><!-- Charges --></label>
+            <section>Charges</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Discounts --></label>
+            <section>Discounts</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is used to capture the Appointment details during Order management orchestration process</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>LG_AddressName__c</fullName>
+        <externalId>false</externalId>
+        <formula>LG_Address__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Address Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <referenceTo>cscrm__Address__c</referenceTo>
+        <relationshipLabel>Schedule Appointment</relationshipLabel>
+        <relationshipName>Schedule_Appointment</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_AgreedInstallDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Agreed Install Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LG_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Schedule Appointment</relationshipLabel>
+        <relationshipName>Schedule_Appointment</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_DateofFirstEmailNotification__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of First Email Notification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LG_DateofFirstSMSNotification__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of First SMS Notification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LG_DateofSecondEmailNotification__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Second Email Notification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LG_DateofSecondSMSNotification__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Second SMS Notification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationComments__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_InstallationContact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Installation Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Schedule Appointment</relationshipLabel>
+        <relationshipName>Schedule_Appointment</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_JobReference__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Reference</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Reasons__c</fullName>
+        <externalId>false</externalId>
+        <label>Reasons</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Blockage</fullName>
+                    <default>false</default>
+                    <label>Blockage</label>
+                </value>
+                <value>
+                    <fullName>Civils/Cabling completed early</fullName>
+                    <default>false</default>
+                    <label>Civils/Cabling completed early</label>
+                </value>
+                <value>
+                    <fullName>Civils/Cabling Delay</fullName>
+                    <default>false</default>
+                    <label>Civils/Cabling Delay</label>
+                </value>
+                <value>
+                    <fullName>Customer delay</fullName>
+                    <default>false</default>
+                    <label>Customer delay</label>
+                </value>
+                <value>
+                    <fullName>Embargo</fullName>
+                    <default>false</default>
+                    <label>Embargo</label>
+                </value>
+                <value>
+                    <fullName>Escalation/Expedite</fullName>
+                    <default>false</default>
+                    <label>Escalation/Expedite</label>
+                </value>
+                <value>
+                    <fullName>Failed Install</fullName>
+                    <default>false</default>
+                    <label>Failed Install</label>
+                </value>
+                <value>
+                    <fullName>Force Majeure</fullName>
+                    <default>false</default>
+                    <label>Force Majeure</label>
+                </value>
+                <value>
+                    <fullName>Initial Date set</fullName>
+                    <default>false</default>
+                    <label>Initial Date set</label>
+                </value>
+                <value>
+                    <fullName>Landlord Restrictions/Site specific RAMS required</fullName>
+                    <default>false</default>
+                    <label>Landlord Restrictions/Site specific RAMS required</label>
+                </value>
+                <value>
+                    <fullName>Network Issue</fullName>
+                    <default>false</default>
+                    <label>Network Issue</label>
+                </value>
+                <value>
+                    <fullName>Noticing/Traffic Management</fullName>
+                    <default>false</default>
+                    <label>Noticing/Traffic Management</label>
+                </value>
+                <value>
+                    <fullName>OLO Delay</fullName>
+                    <default>false</default>
+                    <label>OLO Delay</label>
+                </value>
+                <value>
+                    <fullName>Other Dependant Order</fullName>
+                    <default>false</default>
+                    <label>Other Dependant Order</label>
+                </value>
+                <value>
+                    <fullName>Project Roll Out</fullName>
+                    <default>false</default>
+                    <label>Project Roll Out</label>
+                </value>
+                <value>
+                    <fullName>Re-plan required</fullName>
+                    <default>false</default>
+                    <label>Re-plan required</label>
+                </value>
+                <value>
+                    <fullName>Resource Issues</fullName>
+                    <default>false</default>
+                    <label>Resource Issues</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Remarks__c</fullName>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_Slot__c</fullName>
+        <externalId>false</externalId>
+        <label>Slot</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Morning Slot</fullName>
+                    <default>false</default>
+                    <label>Morning Slot</label>
+                </value>
+                <value>
+                    <fullName>Afternoon Slot</fullName>
+                    <default>false</default>
+                    <label>Afternoon Slot</label>
+                </value>
+                <value>
+                    <fullName>Evening Slot</fullName>
+                    <default>false</default>
+                    <label>Evening Slot</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Solution__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Solution</label>
+        <referenceTo>csord__Solution__c</referenceTo>
+        <relationshipLabel>Schedule Appointment</relationshipLabel>
+        <relationshipName>Schedule_Appointment</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_Status__c</fullName>
+        <description>To capture status of appointment</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Scheduled</fullName>
+                    <default>true</default>
+                    <label>Scheduled</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Schedule Appointment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Appointment Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Schedule Appointment</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Agreed_Installed_Date_validation</fullName>
+        <active>true</active>
+        <description>to validate Agreed install date field with Earliest install date field.</description>
+        <errorConditionFormula>LG_AgreedInstallDate__c  &lt;  LG_Solution__r.LG_EarliestInstallDate__c</errorConditionFormula>
+        <errorDisplayField>LG_AgreedInstallDate__c</errorDisplayField>
+        <errorMessage>Agreed Install date cannot be before Earliest Install dates</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

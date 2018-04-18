@@ -1,0 +1,40 @@
+<apex:page id="LG_PortingNumbers" controller="LG_PortingNumbersController" showHeader="true" sidebar="true" docType="html-5.0" title="Upload Porting Numbers">
+    <apex:stylesheet value="{!$Resource.PortingNumbersBillingAcc_css}"/>
+	<br/><br/><br/><br/>
+    <apex:form >
+        <div align="center">
+            <apex:outputPanel layout="block" styleClass="container">
+                <apex:pageBlock >
+                    <br/>
+                    
+                    <apex:facet name="header"> Upload Porting Numbers per Site </apex:facet>
+                    
+					<apex:pageBlockSection >
+						<apex:pageBlockSectionItem >
+							<apex:outputLabel value="Product Basket" />
+	                    	<apex:outputLink value="/{!basket.Id}" id="lnkProdBasket">{!basket.Name}</apex:outputLink>
+						</apex:pageBlockSectionItem>
+					</apex:pageBlockSection>
+
+                    <apex:repeat value="{!sites}" var="site">
+                        <apex:outputPanel styleClass="orangePageBlock" layout="block">
+                            <apex:pageBlockSection title="{!site.Name} {!site.cscfga__Serial_Number__c}" collapsible="true">
+                                <c:LG_PortingNmbrsSiteComponent mainPageController="{!pageController}" productConfigId="{!site.Id}" productConfigMaxQuantity="{!site.LG_MaximumQuantity__c}" />
+                            </apex:pageBlockSection>
+                        </apex:outputPanel>
+                    </apex:repeat>
+                    
+                    <apex:pageBlockButtons location="both">
+                        <apex:commandButton style="background:#ab1e24;color:white" value="Upload and Validate Files" action="{!uploadValidateFile}" rendered="{!uploadButtonVisible}"/>
+                        
+                        <apex:commandButton style="background:#ab1e24;color:white" value="Insert Uploaded Valid Records" action="{!insertRecords}" rendered="{!insertButtonVisible}" onclick="if(!confirm('Are you sure? Inserting will delete previous records!')){return};"/>
+                        
+                        <apex:commandButton style="background:#ab1e24;color:white" value="Discard Uploaded Records" action="{!discardUploadedRecords}" rendered="{!discardButtonVisible}"/>
+                        
+                        <apex:commandButton style="background:#ab1e24;color:white" action="{!redirectToBasket}" value="Cancel"/>
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+            </apex:outputPanel>
+        </div>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,8 @@
+Please put the following account on hold for collections:
+
+Account: {!csconta__Billing_Account__c.csconta__Account__c}
+Kenan ID: {!csconta__Billing_Account__c.LG_ExternalId__c}
+Reason: {!csconta__Billing_Account__c.UM_Collection_Hold_Reason__c}
+Duration: {!csconta__Billing_Account__c.UM_Collection_Hold_Remaining_Days__c} days
+
+{!csconta__Billing_Account__c.Comments__c}

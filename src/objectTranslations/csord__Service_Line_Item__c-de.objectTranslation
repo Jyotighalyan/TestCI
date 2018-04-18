@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- Service Line Item --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Service Line Item --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Service Line Item --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Service Line Item --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Service Line Item --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Service Line Item --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Service Line Item --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Service Line Item --></value>
+    </caseValues>
+    <fields>
+        <label>Rechnungskontonummer</label>
+        <name>Billing_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Do Not Sync with Billing --></label>
+        <name>Do_Not_Sync_with_Billing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action --></label>
+        <name>LG_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Add On Type --></label>
+        <name>LG_AddOnType__c</name>
+        <picklistValues>
+            <masterLabel>SLA</masterLabel>
+            <translation><!-- SLA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Rechnungsaccount</label>
+        <name>LG_BillingAccount__c</name>
+        <relationshipLabel>Auftragsposition Service</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LG Billing Product Id --></label>
+        <name>LG_BillingProductId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commitment --></label>
+        <name>LG_Commitment__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract ID --></label>
+        <name>LG_ContractId__c</name>
+    </fields>
+    <fields>
+        <label>externe Beschreibung / Bezeichnung</label>
+        <name>LG_ExternalDescription__c</name>
+    </fields>
+    <fields>
+        <label>externer Preisname</label>
+        <name>LG_ExternalPriceName__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG_ExternalServiceName --></label>
+        <name>LG_ExternalServiceName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Penalty Fee --></label>
+        <name>LG_IsPenaltyFee__c</name>
+    </fields>
+    <fields>
+        <label>Anzahl</label>
+        <name>LG_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Line Item External Id --></label>
+        <name>LG_ServiceLineItemExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Be Sent --></label>
+        <name>LG_ToBeSent__c</name>
+    </fields>
+    <fields>
+        <label>Typ</label>
+        <name>LG_Type__c</name>
+        <picklistValues>
+            <masterLabel>Add On</masterLabel>
+            <translation>Zusatz / hinzufügen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discount</masterLabel>
+            <translation>Rabatt</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product</masterLabel>
+            <translation>Produkt</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Produkt ID</label>
+        <name>UM_BillingProductId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Id --></label>
+        <name>UM_ContractId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deactivation Reason --></label>
+        <name>UM_DeactivationReason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount End Date --></label>
+        <name>UM_DiscountEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>UM_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- KenanServiceLineId --></label>
+        <name>UM_KenanServiceLineId__c</name>
+    </fields>
+    <fields>
+        <label>Anzahl Einheiten</label>
+        <name>UM_NumberOfUnits__c</name>
+    </fields>
+    <fields>
+        <label><!-- One Off Price Discount (%) --></label>
+        <name>UM_OneOffPriceDiscount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Override --></label>
+        <name>UM_Price_Override__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Recurring Price Discount (%) --></label>
+        <name>UM_RecurringPriceDiscount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Item Type --></label>
+        <name>UM_ServiceItemType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Status --></label>
+        <name>UM_ServiceStatus__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready For Billing</masterLabel>
+            <translation><!-- Ready For Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated</masterLabel>
+            <translation><!-- Terminated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination Requested</masterLabel>
+            <translation><!-- Termination Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Kenan Id --></label>
+        <name>UM_Service_Kenan_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Pack --></label>
+        <name>UM_UnitPack__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Type --></label>
+        <name>UM_UnitType__c</name>
+    </fields>
+    <fields>
+        <help>Typ Discount</help>
+        <label>Rabattart</label>
+        <name>csord__Discount_Type__c</name>
+        <picklistValues>
+            <masterLabel>Amount</masterLabel>
+            <translation>Betrag</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation>Prozentsatz</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>abhänging vom Rabatt Typ Feld entweder Prozent oder Betrag</help>
+        <label>Rabattwert</label>
+        <name>csord__Discount_Value__c</name>
+    </fields>
+    <fields>
+        <label>Rabattbetrag</label>
+        <name>csord__Discounted_Amount__c</name>
+    </fields>
+    <fields>
+        <label>Enddatum</label>
+        <name>csord__End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- External Id field used for bulk inserts of Orders &amp; Subscriptions objects. --></help>
+        <label>externes Identifizierungszeichen</label>
+        <name>csord__External_Identifier2__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. Use External Identifier2 field instead. --></help>
+        <label><!-- DEPRECATED External Identifier --></label>
+        <name>csord__External_Identifier__c</name>
+    </fields>
+    <fields>
+        <help><!-- E.g. &quot;spokeServiceAmsterdam&quot; in Hub&amp;Spokes scenario. --></help>
+        <label>Identifizierung</label>
+        <name>csord__Identification__c</name>
+    </fields>
+    <fields>
+        <help>anzeigen wenn das Produkt aktiv ist</help>
+        <label>ist aktiv</label>
+        <name>csord__Is_Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the Service Line Item as an Adhoc Line Item. Default value of &quot;false&quot;/&quot;unchecked&quot; represents a normal Service Line Item. --></help>
+        <label>ist adhoc</label>
+        <name>csord__Is_Adhoc__c</name>
+    </fields>
+    <fields>
+        <label>ist wiederkehrend</label>
+        <name>csord__Is_Recurring__c</name>
+    </fields>
+    <fields>
+        <label>Leitungsbeschreibung</label>
+        <name>csord__Line_Description__c</name>
+    </fields>
+    <fields>
+        <label>Leitungsnummer</label>
+        <name>csord__Line_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order Request object which introduced the latest changes to this object. --></help>
+        <label>Bestellanfrage</label>
+        <name>csord__Order_Request__c</name>
+        <relationshipLabel>Auftragsposition Service</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Preis ohne Discount</label>
+        <name>csord__Price_Before_Discount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The parent Service of this ServiceLineItem. --></help>
+        <label><!-- Service --></label>
+        <name>csord__Service__c</name>
+        <relationshipLabel>Auftragsposition Service</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Startdatum</label>
+        <name>csord__Start_Date__c</name>
+    </fields>
+    <fields>
+        <label>Gesamtpreis</label>
+        <name>csord__Total_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delta Status --></label>
+        <name>csordtelcoa__Delta_Status__c</name>
+        <picklistValues>
+            <masterLabel>Added</masterLabel>
+            <translation>hinzugefügt</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deleted</masterLabel>
+            <translation>gelöscht</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price Change</masterLabel>
+            <translation>Preisänderung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unchanged</masterLabel>
+            <translation>unverändert</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Leitungsbeschreibung Referenz ID</label>
+        <name>csordtelcoa__Line_Item_Reference_Id__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <layouts>
+        <layout>Custom Service Line Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Discount Information --></label>
+            <section>Discount Information</section>
+        </sections>
+        <sections>
+            <label><!-- Service Line Item Information --></label>
+            <section>Service Line Item Information</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Service Line Item Name --></nameFieldLabel>
+</CustomObjectTranslation>

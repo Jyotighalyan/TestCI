@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Country specific Order Decomposition Settings</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>LG_AllTogetherDecompositionCriteria__c</fullName>
+        <description>Holds the name of the All together Decomposition Criteria, regardless of site and product</description>
+        <externalId>false</externalId>
+        <label>All Together Decomposition Criteria</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_CombineInternetDecompositionCriteria__c</fullName>
+        <externalId>false</externalId>
+        <label>CombineInternetDecompositionCriteria</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_GroupDependentWithParent__c</fullName>
+        <externalId>false</externalId>
+        <label>Group Dependent With Parent</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_LegacyDecompositionCriteria__c</fullName>
+        <description>Holds the name of the Legacy Decomposition Criteria</description>
+        <externalId>false</externalId>
+        <label>Legacy Decomposition Criteria</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MacdDecompositionCriteria__c</fullName>
+        <externalId>false</externalId>
+        <label>MacdDecompositionCriteria</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_NoGroupingDecompositionCriteria__c</fullName>
+        <description>Holds the name of the No Grouping Decomposition Criteria</description>
+        <externalId>false</externalId>
+        <label>No Grouping Decomposition Criteria</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_OverrideNogroupingCriteria__c</fullName>
+        <externalId>false</externalId>
+        <label>Override No grouping Criteria</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_PerSiteDecompositionCriteria__c</fullName>
+        <externalId>false</externalId>
+        <label>Per Site Decomposition Criteria</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_SiteAgnosticProductFamilies__c</fullName>
+        <description>Holds the comma separated list of product families that are site-agnostic. Site/Address will not be taken into account when grouping the services under the same solution.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Holds the comma separated list of product families that are site-agnostic. Site/Address will not be taken into account when grouping the services under the same solution.</inlineHelpText>
+        <label>Site Agnostic Product Families</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Order Decomposition Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

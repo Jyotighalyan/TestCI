@@ -1,0 +1,6 @@
+Hi {!Case.OwnerFirstName}, 
+
+der Fall #{!Case.CaseNumber} wurde aktualisiert mit "in Bearbeitung" und der SLA läuft weiter.
+Der Fall kann jetzt bearbeitet werden.
+
+Danke.

@@ -1,0 +1,10 @@
+<apex:page standardController="Account" showheader="false" sidebar="false" applyBodyTag="false">  
+<html>    
+<head>    
+<meta http-equiv="refresh" content="0; URL=cloudsenseanywhere://entity/viewDetails?id={!Id}">    </meta>    
+</head>    
+<body>    
+<center><h1>Launching CS Anywhere</h1></center>    
+</body>  
+</html>
+</apex:page>

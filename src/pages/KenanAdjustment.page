@@ -1,0 +1,42 @@
+<apex:page showHeader="true" sidebar="true" standardController="Kenan_Adjustment__c" extensions="KenanAdjustmentControllerExt" title="{!$Label.KenanAdjustmentPageTitle}">
+    <apex:form >
+    <apex:outputPanel id="msgs">
+        <apex:pageMessages />
+    </apex:outputPanel>
+    <apex:sectionHeader title="{!$Label.KenanAdjustmentPageTitle}" subtitle="" />
+    
+    <apex:pageBlock title="{!$Label.KenanAdjustmentPageHeaderInfo}" mode="maindetail">
+        <apex:pageBlockButtons location="top">
+            <apex:commandButton action="{!saveAdjustment}" value="Save" reRender="msgs"/>
+            <apex:commandButton action="{!cancel}" immediate="true" value="Cancel"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="{!$Label.KenanInvoicePageHeaderInfo}" collapsible="false">
+            <apex:repeat var="f" value="{!InvoiceFields}">
+                <apex:outputField value="{!InvoiceHeader[f.fieldPath]}" styleClass="{!IF(f.Type == 'double' , 'align-right', 'align-center')}"/>            
+            </apex:repeat>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="{!$Label.KenanInvoicePageDetailInfo}" collapsible="false" rendered="{!!IsNull(InvoiceItem)}">
+            <apex:repeat var="f" value="{!InvoiceItemFields}">
+                <apex:outputField value="{!InvoiceItem[f.fieldPath]}" styleClass="{!IF(f.Type == 'double' , 'align-right', 'align-center')}"/>
+            </apex:repeat>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="{!$Label.KenanAdjustmentDetailInfo}" collapsible="false">
+            <apex:repeat var="f" value="{!AdjustmentFields}">
+                <apex:inputField value="{!Adjustment[f.fieldPath]}" styleClass="{!IF(f.Type == 'double' , 'align-right', 'align-center')}" required="{!OR(f.required, f.dbrequired)}"/>
+            </apex:repeat>
+            <!-- <apex:inputField value="{!adjustment.Invoice_Header__c}" />
+            <apex:inputField value="{!adjustment.Invoice_Item__c}" rendered="{!!IsNull(InvoiceItem)}"/>
+            <apex:inputField value="{!adjustment.Adjustment_Reason__c}" />
+            <apex:inputField value="{!adjustment.Adjustment_Type__c}" />
+            <apex:inputField value="{!adjustment.Effective_Date__c}" />
+            <apex:inputField value="{!adjustment.requestStatus__c}" />
+            <apex:inputField value="{!adjustment.Total_Amount__c}" />
+            <apex:inputField value="{!adjustment.Unit_Type__c}" />
+            <apex:inputField value="{!adjustment.Open_Item__c}" rendered="{!IsNull(InvoiceItem)}"/>
+            <apex:inputField value="{!adjustment.currencyCode__c}" /> -->
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

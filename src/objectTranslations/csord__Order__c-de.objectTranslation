@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Bestellung</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address --></label>
+        <name>LG_Address__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LG_BDS --></label>
+        <name>LG_BDS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Planned Date --></label>
+        <name>LG_InstallationPlannedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Wish Date --></label>
+        <name>LG_InstallationWishDate__c</name>
+    </fields>
+    <fields>
+        <label>Marktsegment</label>
+        <name>LG_MarketSegment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for history tracking during complex changes --></help>
+        <label><!-- New Order Version --></label>
+        <name>LG_NewOrderVersion__c</name>
+        <relationshipLabel><!-- Orders (New Order Version) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>LG_OrderNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG_PICReason --></label>
+        <name>LG_PICReason__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for history tracking during complex changes --></help>
+        <label><!-- Previous Order Version --></label>
+        <name>LG_PreviousOrderVersion__c</name>
+        <relationshipLabel><!-- Orders (Previous Order Version) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>LG_Site__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Indicates that the record is not relevant do to the change is active version (newer or older version exists and it is active) --></help>
+        <label><!-- Soft Deleted --></label>
+        <name>LG_SoftDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terminated Subscription --></label>
+        <name>LG_TerminatedSubscription__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Wait for New Provide --></label>
+        <name>LG_WaitForNewProvide__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Partner Id --></label>
+        <name>Sales_Partner_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- UM State1 --></label>
+        <name>UM_State1__c</name>
+    </fields>
+    <fields>
+        <label><!-- UM State --></label>
+        <name>UM_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>csord__Account__c</name>
+        <relationshipLabel>Bestellungen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. Select the main category for the service cease --></help>
+        <label><!-- Cease Category --></label>
+        <name>csord__Cease_Category__c</name>
+        <picklistValues>
+            <masterLabel>Financial / Admin</masterLabel>
+            <translation>Finance / Admin</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-renewal - Preferred Supplier</masterLabel>
+            <translation><!-- Non-renewal - Preferred Supplier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-renewal - Product Not Required</masterLabel>
+            <translation>Storno - Produkt wird nicht benötigt</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-renewal - Service Issues</masterLabel>
+            <translation>Storno - Serviceprobleme</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation>kein/keine/keiner</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Withdrawn</masterLabel>
+            <translation>Produkt zurückgezogen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regrade</masterLabel>
+            <translation>Neueinstufung</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. Enter a short comment about why the cease order has been raised --></help>
+        <label><!-- Cease Reason Comment --></label>
+        <name>csord__Cease_Reason_Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. Select the main reason for ceasing the service --></help>
+        <label><!-- Cease Reason --></label>
+        <name>csord__Cease_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Admin Error</masterLabel>
+            <translation>Admin Fehler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ceased Trading / Liquidation / Merged</masterLabel>
+            <translation><!-- Ceased Trading / Liquidation / Merged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consolidation to Major Supplier</masterLabel>
+            <translation>Zusammenführung zum Großvertreiber</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Amendment</masterLabel>
+            <translation>Vertragsänderung / Vertragsneufassung / Vertragskorrektur</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Service - Lack of update</masterLabel>
+            <translation>Kundenservice - Fehlendes Update</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation>kein/keine/keiner</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office Closed</masterLabel>
+            <translation>Büro geschlossen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation>Preis</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price Renegotiation</masterLabel>
+            <translation>Preis Neuverhandlung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Withdrawn</masterLabel>
+            <translation>Produkt zurückgezogen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Services now In-House</masterLabel>
+            <translation><!-- Services now In-House --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support - resolution took too long</masterLabel>
+            <translation>Support - Lösung dauert zu lang.</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Write-off</masterLabel>
+            <translation>Abschreiben</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. --></help>
+        <label><!-- Cease Stage --></label>
+        <name>csord__Cease_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Customer Cancellation Authorised</masterLabel>
+            <translation>Kundenkündigung authorisiert</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Cancellation Confirmed</masterLabel>
+            <translation>Kundenkündigung bestätigt</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Cancellation Request</masterLabel>
+            <translation>Kundenkündigung beantragt</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Cancellation Stopped</masterLabel>
+            <translation>Kundenkündigung gestoppt</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation>kein/keine/keiner</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replacement Active</masterLabel>
+            <translation><!-- Replacement Active --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- A customer-facing order number to identify this Order --></help>
+        <label>Bestellnummer Kunde</label>
+        <name>csord__Customer_Order_Number__c</name>
+    </fields>
+    <fields>
+        <label>Bereitstellungsdatum</label>
+        <name>csord__Delivered_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. Enter the date the customer would like the service to be ceased --></help>
+        <label>gewünschtes Kündigungsdatum</label>
+        <name>csord__Desired_Cease_Date__c</name>
+    </fields>
+    <fields>
+        <label>Enddatum</label>
+        <name>csord__End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- External Id field used for bulk inserts of Orders &amp; Subscriptions objects. --></help>
+        <label>externes Identifizierungszeichen</label>
+        <name>csord__External_Identifier2__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. Use External Identifier2 field instead. --></help>
+        <label><!-- DEPRECATED External Identifier --></label>
+        <name>csord__External_Identifier__c</name>
+    </fields>
+    <fields>
+        <help><!-- E.g. &quot;spokeServiceAmsterdam&quot; in Hub&amp;Spokes scenario. --></help>
+        <label>Identifizierung</label>
+        <name>csord__Identification__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. --></help>
+        <label><!-- Order Group --></label>
+        <name>csord__Order_Group__c</name>
+        <relationshipLabel>Bestellungen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- An auto number defining the Order. --></help>
+        <label>Bestellnummer</label>
+        <name>csord__Order_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Order Request which introduced the latest changes to this Order. --></help>
+        <label>Bestellanfrage</label>
+        <name>csord__Order_Request__c</name>
+        <relationshipLabel>Bestellungen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Type of the order. The value should be one of: Subscription Creation, Subscription Change or Product Delivery --></help>
+        <label>Bestelltyp</label>
+        <name>csord__Order_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used if the Order is introducing changes/additions to a solution created by a previous, primary Order. --></help>
+        <label>Hauptbestellung</label>
+        <name>csord__Primary_Order__c</name>
+        <relationshipLabel>Zweitbestellung</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Produkt</label>
+        <name>csord__Product_Type__c</name>
+    </fields>
+    <fields>
+        <label>Referenz</label>
+        <name>csord__Reference__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the service for which the Product Delivery order is attached to. Note that the related service might be the placeholder for child services that actually use the item that has been order. --></help>
+        <label><!-- Related Service --></label>
+        <name>csord__Related_Service__c</name>
+        <relationshipLabel>Lieferauftrag</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The parent Solution of this Order --></help>
+        <label>Lösung</label>
+        <name>csord__Solution__c</name>
+        <relationshipLabel>Bestellungen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Startdatum</label>
+        <name>csord__Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for state transitions. --></help>
+        <label><!-- Status --></label>
+        <name>csord__Status2__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. --></help>
+        <label>Grund Status</label>
+        <name>csord__Status_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Account Manager Confirms Cease</masterLabel>
+            <translation><!-- Account Manager Confirms Cease --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Backup (to primary order)</masterLabel>
+            <translation>Auftrag zurücksetzen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Cease Actioned</masterLabel>
+            <translation><!-- Customer Cease Actioned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Requests Cease</masterLabel>
+            <translation>Kunde erbittet Kündigung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Retained</masterLabel>
+            <translation>Kunde gesichert</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer cancellation - no longer required</masterLabel>
+            <translation>Kunde kündigt - wird nicht länger benötigt</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer site not suitable</masterLabel>
+            <translation>Kundenadresse unbrauchbar/nicht verwendbar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Down-grade (Same product)</masterLabel>
+            <translation>Downgrade (gleiches Produkt)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Excess charges not agreed by the Customer</masterLabel>
+            <translation>Kunde ist mit Nachberechnung nicht einverstanden</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Quote</masterLabel>
+            <translation>falsches Angebot</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installed</masterLabel>
+            <translation>installiert</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Business</masterLabel>
+            <translation>neues Geschäft</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Supplier capacity available</masterLabel>
+            <translation>Lieferant hat keine Kapazitäten zur Verfügung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-payment</masterLabel>
+            <translation>Nichtzahler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Novation</masterLabel>
+            <translation>Schuldumwandlung - Abgabe an Inkasso?</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price Change / Contract Amendment</masterLabel>
+            <translation>Preisänderung / Anpassung Vertrag</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price Change / Contract Renewal</masterLabel>
+            <translation>Preisänderung / Vertragsverlängerung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regrade Down (Lesser product)</masterLabel>
+            <translation>do you mean downsell?</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regrade Up (Higher product)</masterLabel>
+            <translation>do you mean upsell?</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relocation</masterLabel>
+            <translation>Standortwechsel</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replaced</masterLabel>
+            <translation>ersetzen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speed not available</masterLabel>
+            <translation>Speed nicht verfügbar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplier cannot deliver order</masterLabel>
+            <translation>Lieferant kann Bestellung nicht liefern.</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspension lifted</masterLabel>
+            <translation><!-- Suspension lifted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Up-grade (Same product)</masterLabel>
+            <translation>Upgrade (gleiches Produkt)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wayleave permission denied</masterLabel>
+            <translation><!-- Wayleave permission denied --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. Use Status2__c. --></help>
+        <label><!-- Status --></label>
+        <name>csord__Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation>aktiv</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation>geschlossen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Provisioning</masterLabel>
+            <translation>im Provisioning</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Provisioned</masterLabel>
+            <translation>nicht provisioniert</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation>on Hold</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Closure</masterLabel>
+            <translation>ausstehender Abschluß</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspended</masterLabel>
+            <translation>Verschoben</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Sum of all the charges on all of the delivery order’s line items --></help>
+        <label>Total einmalige Entgelte</label>
+        <name>csord__Total_One_Off_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>csordtelcoa__Opportunity__c</name>
+        <relationshipLabel>Bestellungen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Konfiguration Hauptprodukt</label>
+        <name>csordtelcoa__Parent_Product_Configuration__c</name>
+        <relationshipLabel>Bestellungen (Hauptproduktkonfiguration)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Product Configuration lookup for Product Delivery typed orders --></help>
+        <label>Produktkonfiguration</label>
+        <name>csordtelcoa__Product_Configuration__c</name>
+        <relationshipLabel>Bestellungen</relationshipLabel>
+    </fields>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Custom Order Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dashboard --></label>
+            <section>Dashboard</section>
+        </sections>
+        <sections>
+            <label><!-- Order Information --></label>
+            <section>Order Information</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Order Name --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- Cease Order --></label>
+        <name>Cease_Order</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Change Order --></label>
+        <name>Change_Order</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- New Order --></label>
+        <name>New_Order</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- LG_CancelOrder --></label>
+        <name>LG_CancelOrder</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LG_ComplexChange --></label>
+        <name>LG_ComplexChange</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LG_FollowonOrder --></label>
+        <name>LG_FollowonOrder</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LG_StartOrchProcess --></label>
+        <name>LG_StartOrchProcess</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LG_Suborders --></label>
+        <name>LG_Suborders</name>
+    </webLinks>
+</CustomObjectTranslation>

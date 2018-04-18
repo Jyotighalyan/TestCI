@@ -1,0 +1,14 @@
+<apex:component controller="UM_JiraEmailTemplateDetailsExtn" access="global" >
+    <apex:attribute name="SolId" type="Id" description="Suborder Id" assignTo="{!suborderId}"/>
+    <apex:attribute name="attributeName" type="String" description="Attribute type" assignTo="{!attrName}"/>
+    
+    <apex:outputText value="{!AssigneeDetails.AssigneePhone__c}" rendered="{!attrName = 'Phone'}"/>
+    <apex:outputText value="{!AssigneeDetails.AssigneeMobile__c}" rendered="{!attrName = 'Mobile'}"/> 
+    <apex:outputLink value="mailto:{!AssigneeDetails.AssigneeEmail__c}" rendered="{!attrName = 'Email'}" >{!AssigneeDetails.AssigneeEmail__c}</apex:outputLink>   
+    <apex:outputText value="{!AddressDetails}" escape="false" rendered="{!attrName = 'Address'}"/>
+    
+    <apex:outputText value="{!ServiceDetails.Name}" rendered="{!attrName = 'SrvcName'}"/> 
+    <apex:outputText value="{!ServiceDetails.UM_DownloadSpeed__c}" rendered="{!attrName = 'Bandwidth'}"/> 
+    
+    <apex:image id="UMLogo" value="{!LogoUrl}" width="209" height="62" alt="Unitymedia-Logo" rendered="{!attrName = 'Logo'}"/>
+</apex:component>

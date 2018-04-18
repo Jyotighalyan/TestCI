@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Inflight Change Step</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Inflight Change Step</value>
+    </caseValues>
+    <fields>
+        <help><!-- Orchestration process step where access planning Jeopardy case is created --></help>
+        <label><!-- Access Planning loop --></label>
+        <name>LG_Access_Planningloop__c</name>
+    </fields>
+    <fields>
+        <help><!-- Orchestration process step where Install Jeopardy case is created --></help>
+        <label><!-- Install Loop --></label>
+        <name>LG_InstallLoop__c</name>
+    </fields>
+    <fields>
+        <help><!-- Orchestration process step where Install Number Port case is created --></help>
+        <label><!-- Number Port Loop --></label>
+        <name>LG_NumberPortLoop__c</name>
+    </fields>
+    <fields>
+        <help><!-- Orchestration process for which parameters to be set --></help>
+        <label><!-- Orchestration Process --></label>
+        <name>LG_OrchestrationProcess__c</name>
+    </fields>
+    <fields>
+        <help><!-- Minimum days required for porting window after which number port has to be retried --></help>
+        <label><!-- Porting Window --></label>
+        <name>LG_PortingWindow__c</name>
+    </fields>
+    <fields>
+        <help><!-- Orchestration process step where Porivison Jeopardy case is created --></help>
+        <label><!-- Provision Loop --></label>
+        <name>LG_ProvisionLoop__c</name>
+    </fields>
+    <fields>
+        <help><!-- Orchestration process step for wait till installation target date --></help>
+        <label><!-- Retry Install --></label>
+        <name>LG_RetryInstall__c</name>
+    </fields>
+    <fields>
+        <help><!-- Orchestration process step for number porting request --></help>
+        <label><!-- Retry Number Port --></label>
+        <name>LG_RetryNumberPort__c</name>
+    </fields>
+    <fields>
+        <help><!-- Orchestration process step for provision request --></help>
+        <label><!-- Retry Provision --></label>
+        <name>LG_RetryProvision__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,752 @@
+<apex:component >
+
+    <script type="text/javascript">
+    
+    'use strict';
+    
+    /**
+  	 * @ngdoc overview
+  	 * @name processWidgetApp
+  	 * @description
+  	 * # processWidgetApp
+  	 *
+  	 * Main module of the application.
+  	*/
+    angular
+    .module('ProcessWidgetApp', ['ngSanitize', 'ui.router', 'Common', 'jsonFormatter'])
+    .constant('TimeUnits', {
+        Day: {
+            label: 'day',
+            labelPlural: 'days',
+            duration: 24 * 60 * 60 * 1000
+        }
+    })
+    .config(['$stateProvider', '$urlRouterProvider',
+             function($stateProvider, $urlRouterProvider) {
+                 
+                 $urlRouterProvider.otherwise('/');
+                 
+                 $stateProvider
+                 .state('main', {
+                     url: '/',
+                     templateUrl: 'views/process-view.html',
+                     abstract: true
+                 })
+                 .state('main.tabs', {
+                     url: '',
+                     views: {
+                         'milestone-tab': {
+                             templateUrl: 'views/milestone-tab.html'
+                         }
+                     }
+                 });
+             }
+            ]);
+    
+    'use strict';
+    
+    /**
+  	 * @ngdoc function
+  	 * @name processWidgetApp.controller:MainCtrl
+  	 * @description
+  	 * # MainCtrl
+  	 * Controller of the processWidgetApp
+  	*/
+    angular.module('ProcessWidgetApp').filter('exclude', function() {
+        return function(objs, excludes, start, end) {
+            
+            if (!excludes) {
+                return [];
+            }
+            
+            var retval = [];
+            var excludeArray = excludes.split(';');
+            
+            angular.forEach(objs, function(obj){
+                
+                angular.forEach(excludeArray, function(name) {
+                    if (obj.action == name) {
+                        retval.push(obj);
+                    } 
+                });
+            });
+            
+            return retval.slice(start, end);
+        }
+    })
+    .controller('ProcessWidgetCtrl', ["$scope", "$window", "$document", "$filter", "$q", "Context", "labels", "TimeUnits", "RemoteSvc", "Util",
+        function($scope, $window, $document, $filter, $q, Context, labels, TimeUnits, RemoteSvc, Util) {
+            var processList;
+            var suborderList;
+            
+            $scope.ctx = Context;
+            $scope.details = false;
+            $scope.suborders = [];
+            
+            $scope.currentObject = {};
+            
+            $scope.activeTab = 'MilestoneTab';
+            
+            $scope.suborderPaging = {
+                pageOffset: 0,
+                pageLimit: 5
+            }
+            
+            $scope.objectType = $scope.ctx.getType();
+            
+            $scope.changeView = function($event) {
+                var el = $event.currentTarget;
+                $scope.activeTab = el.id;
+                $scope.updateProcessList;
+            }
+            
+            $scope.loadConfig = function loadConfig() {
+                return RemoteSvc.getConfig('Milestone View Config')
+                .then(function(config) {
+                    if (config) {
+                        
+                        var str = window.location.href.toLowerCase();
+                        
+                        $scope.config = Util.convertKeysToLowerCase(config);
+                        $scope.details = (str.indexOf("milestoneviewdetails") != -1 && $scope.config.subordersettings.enabled);
+                        
+                        $scope.config.translations = Util.convertKeysToLowerCase(labels);
+                        
+                    } else {
+                        $scope.config = {};
+                    }
+                });
+            }
+            
+            $scope.toggleMenu = function($event) {
+                var el = $event.currentTarget;
+                angular.element(el).parent().find('.slds-dropdown').toggleClass('slds-hide');
+            }
+            
+            $scope.isAccountView = function() {
+                return !!Context.recordId.match(/001.+/);
+            }
+            
+            $scope.getStorageKey = function(key) {
+                var userId = Context.user.id;
+                return userId + '.cs.orderSubsServicesNavigator.' + key;
+            }
+            
+            /*
+             * Suborder actions
+            */
+            $scope.orderActions = function() {
+                
+                if (!$scope.config) {
+                    return false;
+                }
+                
+                var setup = $scope.config.inflight[Context.type];
+                return setup.enabled;
+            }
+            
+            $scope.getOrderButtonsAndActions = function() {
+                
+                if (!$scope.config || !$scope.config.inflight[Context.type]) {
+                    return [];
+                }
+                
+                var setup = $scope.config.inflight[Context.type];
+                return setup.buttonsandactions;
+            }
+            
+            /********************************************************************/
+            
+            $scope.getRecordId = function() {
+                return Context.recordId;
+            }
+            
+            $scope.suborderActions = function() {
+                
+                if (!$scope.config) {
+                    return false;
+                }
+                
+                return $scope.config.subordersettings.suborderactions.enabled;
+            }
+            
+            $scope.pauseResumeButton = function() {
+                
+                if (!$scope.config) {
+                    return false;
+                }
+                
+                return $scope.config.subordersettings.suborderactions.pauseresumebutton;
+            }
+            
+            $scope.getInflightButtonsAndActionsFiltered = function(take, end) {
+                
+                if (!$scope.config) {
+                    return [];
+                }
+                
+                var keys = $scope.config.inflight[Context.type].buttonsandactionslookup.split('.');
+                
+                var item = $scope.currentObject[keys[0]];
+                var key = $scope.config.inflight[Context.type].buttonsandactionsfield;
+                var actions = $scope.config.inflight[Context.type].buttonsandactions;
+                var filtered = $filter('exclude')(actions, $scope.getObjectPropertyValue(item, key), take, end);
+                
+                return filtered;
+            }
+            
+            $scope.showAdditionalInlineActions = function() {
+                
+                if (!$scope.config) {
+                    return false;
+                }
+                
+                var keys = $scope.config.inflight[Context.type].buttonsandactionslookup.split('.');
+                
+                var item = $scope.currentObject[keys[0]];
+                var key = $scope.config.inflight[Context.type].buttonsandactionsfield;
+                var actions = $scope.config.inflight[Context.type].buttonsandactions;
+                var filtered = $filter('exclude')(actions, $scope.getObjectPropertyValue(item, key), 3, 99);
+                
+                return filtered.length > 0;         
+            }
+            
+            $scope.getButtonsAndActionsFiltered = function(obj, take, end) {
+                
+                if (!$scope.config) {
+                    return [];
+                }
+                
+                var type = $scope.config
+                var key = $scope.config.subordersettings.suborderactions.buttonsandactionsfield;
+                var actions = $scope.config.subordersettings.suborderactions.buttonsandactions;
+                var filtered = $filter('exclude')(actions, $scope.getObjectPropertyValue(obj, key), take, end);
+                
+                return filtered;
+            }
+            
+            $scope.showAdditionalActions = function(obj) {
+                
+                if (!$scope.config) {
+                    return [];
+                }
+                
+                var key = $scope.config.subordersettings.suborderactions.buttonsandactionsfield;
+                var actions = $scope.config.subordersettings.suborderactions.buttonsandactions;
+                var filtered = $filter('exclude')(actions, $scope.getObjectPropertyValue(obj, key), 3, 99);
+                
+                return filtered.length > 0;
+            }
+            
+            $scope.startPauseProcess = function(item) {
+                var promise = RemoteSvc.startPauseProcess([item.Id]);
+                
+                promise.then(function(success) {
+                    console.log('-> ' + success);
+                    if (success == 'Success') {
+                        item.onhold = !item.onhold;
+                    }
+                });
+            }
+            
+            $scope.getInitialRecords = function() {
+                
+                $scope.suborderPaging.pageOffset = 0;
+                $scope.getSuborders();
+            }
+            
+            $scope.getPreviousRecords = function() {
+                
+                if ($scope.suborderPaging.pageOffset > 0) {
+                    $scope.suborderPaging.pageOffset = ($scope.suborderPaging.pageOffset - 1) - $scope.suborderPaging.pageLimit;    
+                }
+                
+                $scope.getSuborders();
+            }
+            
+            $scope.getNextRecords = function() {
+                
+                $scope.suborderPaging.pageOffset = ($scope.suborderPaging.pageOffset + 1) + $scope.suborderPaging.pageLimit;
+                $scope.getSuborders();
+            }
+            
+            // * Suborder actions
+            
+            $scope.topRecordId = '';
+                $scope.statejson = '';
+                $scope.storageKey = $scope.getStorageKey('tabState');
+                
+                $scope.changeView = function($event) {
+                    var el = $event.currentTarget;
+                    $scope.activeTab = el.id;
+                    $scope.updateProcessList;
+                }
+                
+                $scope.getProcesses = function() {
+                    return RemoteSvc.getProcessesForOrder([Context.recordId]).then(function(result) {
+                        console.log('Loading processes...');
+                        if (result && result.length) {
+                            _.forEach(result, function(it) {
+                                if (it.CSPOFA__Orchestration_Steps__r && it.CSPOFA__Orchestration_Steps__r.length) {
+                                    it.CSPOFA__Orchestration_Steps__r.sort(function(x, y) {
+                                        try {
+                                            var a = parseInt(x.CSPOFA__Milestone_Label__c, 10);
+                                            var b = parseInt(y.CSPOFA__Milestone_Label__c, 10);
+                                            return a - b;
+                                        } catch (e) {
+                                            console.log(e);
+                                            return 0;
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                        $window.processList = processList = result;
+                    });
+                }
+                
+                $scope.getSuborders = function() {
+                    
+                    var pageOffset = $scope.suborderPaging.pageOffset;
+                    var pageLimit = $scope.suborderPaging.pageLimit;
+                    
+                    return RemoteSvc.getProcessesForSuborders([Context.recordId, pageOffset, pageLimit]).then(function(result) {
+                        console.log('Loading suborders...');
+                        $window.suborderList = [];
+                        $scope.suborders = [];
+                        
+                        if (result && result.length) {
+                            _.forEach(result, function(it) {
+                                if (it.CSPOFA__Orchestration_Steps__r && it.CSPOFA__Orchestration_Steps__r.length) {
+                                    it.CSPOFA__Orchestration_Steps__r.sort(function(x, y) {
+                                        try {
+                                            var a = parseInt(x.CSPOFA__Milestone_Label__c, 10);
+                                            var b = parseInt(y.CSPOFA__Milestone_Label__c, 10);
+                                            return a - b;
+                                        } catch (e) {
+                                            console.log(e);
+                                            return 0;
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                        $window.suborderList = suborderList = result;
+                        
+                        if ($window.suborderList) {
+                            
+                            $window.suborderList.forEach(function(it) {
+                                updateSuborders(it);
+                            });
+                        }
+                    });
+                }
+                
+                $scope.updateProcessList = function() {
+                    
+                    if (processList && processList[0]) {
+                        updateMilestones(processList[0]);
+                        
+                        $scope.currentObject = Util.convertKeysToLowerCase(processList[0]);
+                    }
+                    
+                    var d = $q.defer();
+                    d.resolve();
+                    return d.promise;
+                }
+                
+                $scope.navigateToSObject = Util.navigateToSObject;
+                
+                $scope.getObjectPropertyValue = function (objInstance, objKey) {
+                    
+                    var tmp = '';
+                    
+                    if (typeof objInstance === 'object') {
+
+                      Object.keys(objInstance).forEach(function(key) {
+                          
+                          if (key.toLowerCase() == objKey) {
+                              tmp = objInstance[key];
+                          }
+                      });
+                    }
+                    
+                    return tmp;
+                }
+                
+                $scope.getActions = function(objInstance, objKey) {
+                    return $scope.getObjectPropertyValue(objInstance, objKey);
+                }
+                
+                $scope.loadConfig().then(function() {
+                    return $scope.getProcesses();
+                }).then(function() {
+                    return $document.ready($scope.updateProcessList)
+                }).then(function() {
+                    return $scope.getSuborders();
+                });
+                
+                /*.then(function() {
+                    if ($window.suborderList) {
+                        
+                        $window.suborderList.forEach(function(it) {
+                            updateSuborders(it);
+                        });
+                    }
+                })*/
+                
+                function updateMilestones(process) {
+                    var milestoneList = [];
+                    var milestoneSteps = process.CSPOFA__Orchestration_Steps__r.filter(function(it) {
+                        return it.CSPOFA__Milestone__c;
+                    });
+                    var stepJeopardy = false;
+                    process.CSPOFA__Orchestration_Steps__r.forEach(function(it) {
+                        stepJeopardy = stepIsInJeopardy(it);
+                    });
+                    var config = $scope.config[process.Name.toLowerCase()] || $scope.config['wildcard'] || {};
+                    var jeopardyStepHighlighted = false;
+                    var segmentWidth = (100 / (milestoneSteps.length - 1));
+                    
+                    milestoneSteps.forEach(function(it, i) {
+                        var statusMap = getStepStatus(it);
+                        
+                        if (!jeopardyStepHighlighted && it.CSPOFA__Status__c != 'Complete' && (stepJeopardy || it.CSPOFA__Jeopardy_Created_Flag__c || it.CSPOFA__Status__c == 'Error')) {
+                            jeopardyStepHighlighted = true;
+                        }
+                        var label = it.CSPOFA__Milestone_Description__c || it.Name || '';
+                        var iconName = (config[label.toLowerCase()] || 'system-task-completed') + '.png';
+                        var iconPath = $filter('resource')('/images/icons/' + iconName, 'process_widget');
+                        var iconUrl = "url('" + iconPath + "')";
+                        var left = segmentWidth * i;
+                        var segmentLeft = segmentWidth * (i - 1);
+                        
+                        var title = 'Status:\t' + statusMap.status;
+                        if (statusMap.reason) {
+                            title += '\nMessage:\t' + statusMap.reason; 
+                        } 
+                        
+                        milestoneList.push(_.extend({
+                            "icon": iconName,
+                            "label": label,
+                            "left": left,
+                            "iconUrl": iconUrl,
+                            "id": it.Id,
+                            "segmentLeft": segmentLeft,
+                            "segmentWidth": segmentWidth,
+                            "status": statusMap.status,
+                            "statusReason": statusMap.reason,
+                            "title": title
+                        }, it));
+                    });
+
+                    $scope.milestoneList = milestoneList;
+                }
+                
+                function updateSuborders(process) {
+                    
+                    var suborder = {};
+                    suborder.Id = process.Name;
+                    suborder.status = process.CSPOFA__Status__c;
+                    suborder.onhold = process.CSPOFA__Process_On_Hold__c;
+                    suborder.miletones = [];
+                    
+                    // Details will equal to true if Suborders are enabled and in detail view
+
+                    if ($scope.details) {
+                        
+                        var objKey = $scope.config.subordersettings.orchestratorrelatedsuborderinfo;
+                        suborder.info = $scope.getObjectPropertyValue(process, objKey);
+                    }
+                    
+                    var subordersSteps = process.CSPOFA__Orchestration_Steps__r.filter(function(it) {
+                        return it.CSPOFA__Milestone__c;
+                    });
+                    var stepJeopardy = false;
+                    process.CSPOFA__Orchestration_Steps__r.forEach(function(it) {
+                        stepJeopardy = stepIsInJeopardy(it);
+                    });
+                    var config = $scope.config[process.Name.toLowerCase()] || $scope.config['*'] || {};
+                    var jeopardyStepHighlighted = false;
+                    var segmentWidth = (100 / (subordersSteps.length - 1));
+                    
+                    subordersSteps.forEach(function(it, i) {
+                        var statusMap = getStepStatus(it);
+                        
+                        if (!jeopardyStepHighlighted && it.CSPOFA__Status__c != 'Complete' && (stepJeopardy || it.CSPOFA__Jeopardy_Created_Flag__c || it.CSPOFA__Status__c == 'Error')) {
+                            jeopardyStepHighlighted = true;
+                        }
+                        var label = it.CSPOFA__Milestone_Description__c || it.Name || '';
+                        var iconName = (config[label.toLowerCase()] || 'system-task-completed') + '.png';
+                        var iconPath = $filter('resource')('/images/icons/' + iconName, 'process_widget');
+                        var iconUrl = "url('" + iconPath + "')";
+                        var left = segmentWidth * i;
+                        var segmentLeft = segmentWidth * (i - 1);
+                        
+                        var title = 'Status:\t' + statusMap.status;
+                        if (statusMap.reason) {
+                            title += '\nMessage:\t' + statusMap.reason; 
+                        } 
+                        
+                        suborder.miletones.push(_.extend({
+                            "icon": iconName,
+                            "label": label,
+                            "left": left,
+                            "iconUrl": iconUrl,
+                            "id": it.Id,
+                            "segmentLeft": segmentLeft,
+                            "segmentWidth": segmentWidth,
+                            "status": statusMap.status,
+                            "statusReason": statusMap.reason,
+                            "title": title
+                        }, it));
+                    });
+                    
+                    $scope.suborders.push(suborder);
+                }
+                
+                function stepIsInJeopardy(it) {
+                    return (it.CSPOFA__Jeopardy_Created_Flag__c || it.CSPOFA__Status__c == 'Error');
+                }
+                
+                function getStepStatus(it) {
+                    var statusMap = {
+                        status: it.CSPOFA__Status__c,
+                        reason: it.CSPOFA__Message__c || ''
+                    };
+                    
+                    if (stepIsInJeopardy(it)) {
+                        statusMap.status = 'Error';
+                        statusMap.reason = 'OLA Exceeded';
+                    }
+                    
+                    if (it.RAG_Status__c == 'Red' || it.cssvc1__RAG_Status__c == 'Red') {
+                        statusMap.status = 'Error';
+                        statusMap.reason = it.RAG_Status_Message__c || it.cssvc1__RAG_Status_Message__c;
+                    }
+                    
+                    if (it.RAG_Status__c == 'Amber' || it.cssvc1__RAG_Status__c == 'Amber') {
+                        statusMap.status = 'Warning';
+                        statusMap.reason = it.RAG_Status_Message__c || it.cssvc1__RAG_Status_Message__c;
+                    }
+                    
+                    return statusMap;
+                }
+                
+                function updateCriticalPath(process) {
+                    var steps = process.CSPOFA__Orchestration_Steps__r.filter(function(it) {
+                        return (it.cssvc1__Start_Date_Time__c != null || it.Start_Date_Time__c != null) && (it.cssvc1__End_Date_Time__c != null || it.End_Date_Time__c != null);
+                    });
+                    
+                    var criticalPath = {};
+                    var cols = [];
+                    var rows = [];
+                    
+                    var resolution = TimeUnits.Day;
+                    var processStartTime = process.cssvc1__Start_Date_Time__c || process.Start_Date_Time__c;
+                    //processStartTime -= processStartTime % TimeUnits.Day.duration;
+                    var processEndTime = process.cssvc1__End_Date_Time__c || process.End_Date_Time__c;
+                    
+                    var span = Math.ceil((processEndTime - processStartTime) / resolution.duration);
+                    var interval = span < 90 ? 7 : 14;
+                    
+                    for (var i = 1; i <= span && i < 120; i++) {
+                        var label = i + (i == span ? ' ' + resolution.labelPlural : '');
+                        var start = processStartTime + ((i - 1) * resolution.duration);
+                        var end = processStartTime + (i * resolution.duration);
+                        var date = new Date(start);
+                        
+                        var showDateLabel = i == 1 || (interval === 7 ? date.getDay() == 1 && i > 3 : (span > interval) ? ((i - 1) % interval == 0 || i == span) : true);
+                        
+                        var colspan = (i == 1 && interval == 7) ? (8 - date.getDay()) + (date.getDay() > 5 ? interval : 0) : ((span - i > interval) ? interval : (i == span - 1) ? 1 : span - i);
+                        
+                        cols.push({
+                            label: label,
+                            resolution: resolution,
+                            showDateLabel: showDateLabel,
+                            interval: interval,
+                            _span: span,
+                            span: colspan,
+                            timespan: {
+                                start: (processStartTime - (processStartTime % TimeUnits.Day.duration)) + ((i - 1) * resolution.duration),
+                                end: (processStartTime - (processStartTime % TimeUnits.Day.duration)) + (i * resolution.duration)
+                            }
+                        })
+                    }
+                    
+                    for (i = 0; i < steps.length; i++) {
+                        var step = steps[i];
+                        
+                        if (!(step.cssvc1__Start_Date_Time__c || step.Start_Date_Time__c || step.cssvc1__End_Date_Time__c || step.End_Date_Time__c)) {
+                            console.log('Step has missing start/end data, skipping', step);
+                            continue;
+                        }
+                        
+                        var statusMap = getStepStatus(step);
+                        var rowStart = step.cssvc1__Start_Date_Time__c || step.Start_Date_Time__c;
+                        var rowEnd = step.cssvc1__End_Date_Time__c || step.End_Date_Time__c;
+                        var title = "Start:\t" + $filter('date')(rowStart, 'short') + '\nEnd:\t\t' + $filter('date')(rowEnd, 'short') + '\nStatus:\t' + statusMap.status;
+                        if (statusMap.reason) {
+                            title += '\nMessage:\t' + statusMap.reason; 
+                        } 
+                        
+                        rows.push({
+                            "label": step.Name,
+                            "id": step.Id,
+                            "start": rowStart,
+                            "end": rowEnd,
+                            "status": statusMap.status,
+                            "statusReason": statusMap.reason,
+                            "title": title
+                        })
+                    }
+                    
+                    $scope.criticalPath = {
+                        "cols": cols,
+                        "rows": rows
+                    };
+                }
+                
+                function updateTaskList(process) {
+                    var steps = process.CSPOFA__Orchestration_Steps__r.filter(function(it) {
+                        return it.CSPOFA__Type__c == 'Create Task';
+                    });
+                    
+                    var list = [];
+                    
+                    steps.forEach(function(it) {
+                        var entry = {};
+                        var jeopardy = it.CSPOFA__Status__c == 'Error' || it.CSPOFA__Status__c == 'Warning' || it.CSPOFA__Jeopardy_Created_Flag__c;
+                        var inactive = it.CSPOFA__Status__c == 'Complete' || it.CSPOFA__Status__c == 'Initializing';// || it.CSPOFA__Status__c == 'In Progress';
+                        entry.class = inactive ? "inactive" : jeopardy ? "jeopardy" : '';
+                        entry.checked = it.CSPOFA__Status__c == 'Complete' ? 'checked' : '';
+                        entry.name = it.Name.startsWith('Create Task: ') ? it.Name.substring(13) : it.Name;
+                        entry.id = it.Id;
+                        entry.assignee = it.CSPOFA__Task_Assigned_To__c;
+                        entry.serviceId = process.csordtelcoa__Service__r ? process.csordtelcoa__Service__r.Id : undefined;
+                        entry.serviceName = process.csordtelcoa__Service__r ? process.csordtelcoa__Service__r.Name : undefined;
+                        entry.status = it.CSPOFA__Jeopardy_Created_Flag__c ? 'Jeopardy' : it.CSPOFA__Status__c;
+                        entry.dueDate = it.CSPOFA__Task_Due_Date__c ?
+                            $filter('date')(new Date(it.CSPOFA__Task_Due_Date__c), 'yyyy-MM-dd') : 'n/a';
+                        list.push(entry);
+                    });
+                    
+                    $scope.taskList = list;
+                }
+                
+                function updateCaseList(process) {
+                    var steps = process.CSPOFA__Orchestration_Steps__r.filter(function(it) {
+                        return it.CSPOFA__Type__c == 'Create Case';
+                    });
+                    
+                    var list = [];
+                    
+                    steps.forEach(function(it) {
+                        var entry = {};
+                        var jeopardy = it.CSPOFA__Status__c == 'Error' || it.CSPOFA__Status__c == 'Warning' || it.CSPOFA__Jeopardy_Created_Flag__c;
+                        var inactive = it.CSPOFA__Status__c == 'Complete' || it.CSPOFA__Status__c == 'Initializing';
+                        entry.class = inactive ? "inactive" : jeopardy ? "jeopardy" : '';
+                        entry.checked = it.CSPOFA__Status__c == 'Complete' ? 'checked' : '';
+                        entry.name = it.Name.startsWith('Create Case: ') ? it.Name.substring(13) : it.Name;
+                        entry.id = it.Id;
+                        entry.assignee = it.CSPOFA__Case_Assigned_To__c;
+                        entry.serviceId = process.csordtelcoa__Service__r ? process.csordtelcoa__Service__r.Id : undefined;
+                        entry.serviceName = process.csordtelcoa__Service__r ? process.csordtelcoa__Service__r.Name : undefined;
+                        entry.status = it.CSPOFA__Jeopardy_Created_Flag__c ? 'Jeopardy' : it.CSPOFA__Status__c;
+                        entry.dueDate = it.CSPOFA__Task_Due_Date__c ?
+                            $filter('date')(new Date(it.CSPOFA__Task_Due_Date__c), 'yyyy-MM-dd') : 'n/a';
+                        list.push(entry);
+                    });
+                    
+                    $scope.caseList = list;
+                }
+                
+            }]);
+    
+    'use strict';
+    
+  /**
+	  * @ngdoc function
+	  * @name OrderNavigatorApp.filter: resource
+	  * @description
+	  * # resource
+	  * filter of the OrderNavigatorApp
+	 */
+    angular.module('ProcessWidgetApp')
+    .filter('cssStatusClass', function() {
+        var STATUS_CLASSES = {
+            "In Progress": "in-progress",
+            "Waiting": "waiting",
+            "Complete": "completed",
+            'Error': 'error',
+            'Warning': 'warning'
+        };
+        
+        return function(status) {
+            return STATUS_CLASSES[status];
+        };
+    });
+    
+    'use strict';
+    
+   /**
+	  * @ngdoc function
+	  * @name OrderNavigatorApp.filter: resource
+	  * @description
+	  * # resource
+	  * filter of the OrderNavigatorApp
+	 */
+    angular.module('ProcessWidgetApp')
+    .filter('partOfDay', function() {
+        return function(time, boundaryName, timespan) {
+            if (!time || !timespan) {
+                console.warn('All parameters are required for partOfDay filter', time, boundaryName, timespan);
+                return boundaryName == 'end' ? '100%' : '0';
+            }
+            if (boundaryName != 'start' && boundaryName != 'end') {
+                console.warn('BoundaryName parameter must be either \'start\' or \'end\' for partOfDay filter', time, boundaryName, timespan);
+                return '0';
+            }
+            if (time < timespan.start || time > timespan.end) {
+                return boundaryName == 'end' ? '100%' : '0';
+            }
+            var period = timespan.end - timespan.start;
+            var relativeTime = time - timespan.start;
+            var percent = (relativeTime/period) * 100;
+            
+            return percent + '%';
+        };
+    });
+    
+    'use strict';
+    
+  /**
+	  * @ngdoc function
+	  * @name OrderNavigatorApp.filter: resource
+	  * @description
+	  * # resource
+	  * filter of the OrderNavigatorApp
+	 */
+    angular.module('ProcessWidgetApp')
+    .filter('resource', function() {
+        return function(path, resource) {
+            var base = resourceURLs[resource] || '';
+            return base + path;
+        }
+    });
+    
+    angular.module('ProcessWidgetApp').run(['$templateCache', function($templateCache) {
+        'use strict';
+               
+        $templateCache.put('views/milestone-tab.html',
+                           "<div ng-cloack><div ng-if=\"!milestoneList.length\" style=\"height: 300px\" class=\"slds-scrollable--y\"> <h2>{{ config.translations.noprocesstodisplay }}</h2> </div> <div ng-if=\"milestoneList.length\" style=\"height: 300px\" class=\"slds-scrollable--y\">    <h1 style=\"padding-left: 10px; color: #4f70d2;font-size: 20px;\">{{ objectType }}</h1>    <div ng-if=\"orderActions()\"> <a href=\"{{ item.url }}{{ ctx.recordId }}&action={{ item.action }}\" target=\"{{ item.target }}\" ng-repeat=\"item in getInflightButtonsAndActionsFiltered(0, 3)\" class=\"slds-button slds-button--neutral\" type=\"button\">{{ item.action }} </a>       <div ng-if=\"showAdditionalInlineActions()\" ng-class=\"{'slds-is-open' : showDropdown}\" class=\"slds-dropdown-trigger slds-dropdown-trigger--click slds-button--last\">      <button ng-click=\"showDropdown=!showDropdown\" class=\"slds-button slds-button--icon-border-filled\"> <svg class=\"slds-button__icon\" aria-hidden=\"true\"> <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"{!URLFOR($Resource.slds, '/assets/icons/utility-sprite/svg/symbols.svg#down')}\"></use> </svg> </button>        <div class=\"slds-dropdown slds-dropdown--right\">      <ul class=\"slds-dropdown__list\" role=\"menu\"> <li class=\"slds-dropdown__item\" role=\"presentation\" ng-repeat=\"item in getInflightButtonsAndActionsFiltered(3, 99)\"> <a href=\"{{ item.url }}\" target=\"{{ item.target }}\" ng-click=\"showDropdown=false\" role=\"menuitem\"><span class=\"slds-truncate\">{{ item.action }}</span></a></li> </ul> </div> </div>     <a ng-if=\"suborders.length && !details\" class=\"slds-button slds-button--neutral\" href=\"/apex/procesviewdetails?Id={{ getRecordId() }}\" target=\"_blank\">{{ config.translations.opensuborderdetails }}</a> <div  class=\"slds-button-group navigation-btns\"> <button class=\"slds-button slds-button--neutral icon-first\" target=\"_blank\" ng-click=\"getInitialRecords()\">{{ config.translations.first }}</button> <button class=\"slds-button slds-button--neutral icon-chevronleft\" target=\"_blank\" ng-click=\"getPreviousRecords()\">{{ config.translations.previous }}</button> <button class=\"slds-button slds-button--neutral icon-chevronright\" target=\"_blank\" ng-click=\"getNextRecords()\">{{ config.translations.next }}</button></div> <div style=\"clear: both;\"></div> <hr /> </div> <div class=\"milestone-timeline\"> <div ng-repeat=\"step in milestoneList\" ng-if=\"$index > 0 && milestoneList.length > 1\" class=\"segment {{step.status | cssStatusClass}}\" ng-style=\"{'left': step.segmentLeft + '%', 'margin-left': '60px', 'width': step.segmentWidth + '%'}\">&nbsp;</div> <div ng-repeat=\"step in milestoneList\" class=\"milestone {{step.status | cssStatusClass}}\" ng-style=\"{'left': step.left + '%'}\"> <div class=\"marker\" title=\"{{step.title}}\" ng-click=\"navigateToSObject(step.id, $event)\" ng-style=\"{'background-image': step.iconUrl, 'cursor': 'pointer'}\">&nbsp;</div> <div ng-click=\"navigateToSObject(step.id, $event)\" class=\"label\" style=\"cursor: pointer\">{{step.label}}</div> </div> </div> </div> <div ng-if=\"milestoneList.length\"> <div ng-if=\"details && milestoneList.length\"> <div ng-if=\"!suborders.length\" class=\"slds-scrollable--y\"> <h2>{{ config.translations.nosuborderstodisplay }}</h2> </div> <div ng-if=\"suborders.length\">    <h1 style=\"clear:both; padding-left: 10px; color: #4f70d2;font-size: 20px;\">{{ config.translations.suborders }}</h1>   <div ng-repeat=\"obj in suborders track by $index\" class=\"suborder\"> <div class=\"slds-page-header slds-grid\"> <div class=\"slds-col slds-has-flexi-truncate\">    <h1 class=\"slds-page-header__title slds-m-right--small slds-align-middle slds-truncate\"><a href=\"/{{ obj.info.Id }}\" target=\"_blank\">{{ ($index + 1) + suborderPaging.pageOffset }}: {{ obj.info.Name }}</a></h1> </div> <div class=\"slds-col slds-no-flex slds-grid slds-align-top\"> <span ng-if=\"config.subordersettings.suborderactions.pauseresumebutton\"> <button ng-if=\"!obj.onhold\" ng-disabled=\"obj.status == 'Complete'\" class=\"slds-button slds-button--neutral icon-pause\" type=\"button\" ng-click=\"startPauseProcess(obj)\"></button> <button ng-if=\"obj.onhold\" ng-disabled=\"obj.status == 'Complete'\" class=\"slds-button slds-button--neutral icon-play\" type=\"button\" ng-click=\"startPauseProcess(obj)\"></button> </span> <div ng-if=\"suborderActions()\" ng-init=\"itemData = getButtonsAndActionsFiltered(obj.info, 0, 3)\" class=\"btns-wrapper\"> <span ng-if=\"itemData.length\" class=\"slds-form-element__label\">{{ config.translations.inflightchange }}:</span> <div ng-if=\"itemData.length\" class=\"slds-button-group\"> <a href=\"{{ item.url }}{{ obj.info.Id }}&action={{ item.action }}\" target=\"{{ item.target }}\" ng-repeat=\"item in itemData\" class=\"slds-button slds-button--neutral\" type=\"button\">{{ item.action }} </a> <div ng-if=\"showAdditionalActions(obj.info)\" ng-class=\"{'slds-is-open' : showDropdown}\" class=\"slds-dropdown-trigger slds-dropdown-trigger--click slds-button--last\"> <button ng-click=\"showDropdown=!showDropdown\" class=\"slds-button slds-button--icon-border-filled\"> <svg class=\"slds-button__icon\" aria-hidden=\"true\"> <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"{!URLFOR($Resource.slds, '/assets/icons/utility-sprite/svg/symbols.svg#down')}\"></use> </svg> </button> <div class=\"slds-dropdown slds-dropdown--right\"> <ul class=\"slds-dropdown__list\" role=\"menu\"> <li class=\"slds-dropdown__item\" role=\"presentation\" ng-repeat=\"item in getButtonsAndActionsFiltered(obj.info, 3, 99)\"> <a href=\"{{ item.url }}\" target=\"{{ item.target }}\" ng-click=\"showDropdown=false\" role=\"menuitem\"><span class=\"slds-truncate\">{{ item.action }}</span></a></li> </ul> </div> </div> </div> </div> </div> </div> <div ng-if=\"obj.miletones.length\" class=\"milestone-timeline\"> <div ng-repeat=\"step in obj.miletones track by $index\" ng-if=\"$index > 0 && obj.miletones.length > 1\" class=\"segment {{step.status | cssStatusClass}}\" ng-style=\"{'left': step.segmentLeft + '%', 'margin-left': '60px', 'width': step.segmentWidth + '%'}\">&nbsp;</div> <div ng-repeat=\"step in obj.miletones\" class=\"milestone {{step.status | cssStatusClass}}\" ng-style=\"{'left': step.left + '%'}\"> <div class=\"marker\" title=\"{{step.title}}\" ng-click=\"navigateToSObject(step.id, $event)\" ng-style=\"{'background-image': step.iconUrl, 'cursor': 'pointer'}\">&nbsp;</div> <div ng-click=\"navigateToSObject(step.id, $event)\" class=\"label\" style=\"cursor: pointer\">{{step.label}}</div> </div> </div> </div> </div> </div></div></div>"
+                          );
+        
+        $templateCache.put('views/process-view.html',
+                           "<div ng-cloack><div class=\"slds-tabs--scoped\" ng-controller=\"ProcessWidgetCtrl\"> <ul class=\"slds-tabs--scoped__nav\" role=\"tablist\" style=\"position: relative\"> <li id=\"MilestoneTab\" title=\"Milestone View\" role=\"presentation\" ng-click=\"changeView($event)\" class=\"slds-tabs--scoped__item slds-text-heading--label {{activeTab == 'MilestoneTab' ? 'slds-active' : ''}}\"> <a class=\"slds-tabs--scoped__link\" href=\"#\" role=\"tab\" tabindex=\"0\" aria-selected=\"true\" aria-controls=\"tab-scoped-1\">{{ config.translations.milestoneview }}</a> </li> </ul> <img ng-src=\"{{'/images/powered-by-cs.png' | resource:'process_widget'}}\" style=\"height: 20px; width: 140px; display: block; position: absolute; right: 12px; top: 22px\"> <div id=\"MilestoneTabContent\" ui-view=\"milestone-tab\" class=\"slds-tabs--scoped__content {{activeTab == 'MilestoneTab' ? 'slds-show' : 'slds-hide'}}\" role=\"tabpanel\"></div></div></div>"
+                          );
+    }]);
+    
+    </script>
+    
+</apex:component>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>A_LAND_UND_FORSTWIRTSCHAFT_FISCHEREI</fullName>
+        <default>false</default>
+        <label>A LAND- UND FORSTWIRTSCHAFT, FISCHEREI</label>
+    </customValue>
+    <customValue>
+        <fullName>B_BERGBAU_UND_GEWINNUNG_VON_STEINEN_UND_ERDEN</fullName>
+        <default>false</default>
+        <label>B BERGBAU UND GEWINNUNG VON STEINEN UND ERDEN</label>
+    </customValue>
+    <customValue>
+        <fullName>C_VERARBEITENDES_GEWERBE</fullName>
+        <default>false</default>
+        <label>C VERARBEITENDES GEWERBE</label>
+    </customValue>
+    <customValue>
+        <fullName>D_ENERGIEVERSORGUNG</fullName>
+        <default>false</default>
+        <label>D ENERGIEVERSORGUNG</label>
+    </customValue>
+    <customValue>
+        <fullName>E_WASSERVERSORGUNG_ABWASSER_UND_ABFALLENTSORGUNG_UND_BESEITIGUNG_VON_UMWELTVERSCHMUTZUNGEN</fullName>
+        <default>false</default>
+        <label>E WASSERVERSORGUNG, ABWASSER- UND ABFALLENTSORGUNG UND BESEITIGUNG VON UMWELTVERSCHMUTZUNGEN</label>
+    </customValue>
+    <customValue>
+        <fullName>F BAUGEWERBE</fullName>
+        <default>false</default>
+        <label>F BAUGEWERBE</label>
+    </customValue>
+    <customValue>
+        <fullName>G_HANDEL_INSTANDHALTUNG_UND_REPARATUR_VON_KRAFTFAHRZEUGEN</fullName>
+        <default>false</default>
+        <label>G HANDEL, INSTANDHALTUNG UND REPARATUR VON KRAFTFAHRZEUGEN</label>
+    </customValue>
+    <customValue>
+        <fullName>H_VERKEHR_UND_LAGEREI</fullName>
+        <default>false</default>
+        <label>H VERKEHR UND LAGEREI</label>
+    </customValue>
+    <customValue>
+        <fullName>I_GASTGEWERBE</fullName>
+        <default>false</default>
+        <label>I GASTGEWERBE</label>
+    </customValue>
+    <customValue>
+        <fullName>J_INFORMATION_UND_KOMMUNIKATION</fullName>
+        <default>false</default>
+        <label>J INFORMATION UND KOMMUNIKATION</label>
+    </customValue>
+    <customValue>
+        <fullName>K_ERBRINGUNG_VON_FINANZ_UND_VERSICHERUNGSDIENSTLEISTUNGEN</fullName>
+        <default>false</default>
+        <label>K ERBRINGUNG VON FINANZ- UND VERSICHERUNGSDIENSTLEISTUNGEN</label>
+    </customValue>
+    <customValue>
+        <fullName>L_GRUNDSTUCKS_UND_WOHNUNGSWESEN</fullName>
+        <default>false</default>
+        <label>L GRUNDSTÜCKS- UND WOHNUNGSWESEN</label>
+    </customValue>
+    <customValue>
+        <fullName>M_ERBRINGUNG_VON_FREIBERUFLICHEN_WISSENSCHAFTLICHEN_UND_TECHNISCHEN_DIENSTLEISTUNGEN</fullName>
+        <default>false</default>
+        <label>M ERBRINGUNG VON FREIBERUFLICHEN, WISSENSCHAFTLICHEN UND TECHNISCHEN DIENSTLEISTUNGEN</label>
+    </customValue>
+    <customValue>
+        <fullName>N_ERBRINGUNG_VON_SONSTIGEN_WIRTSCHAFTLICHEN_DIENSTLEISTUNGEN</fullName>
+        <default>false</default>
+        <label>N ERBRINGUNG VON SONSTIGEN WIRTSCHAFTLICHEN DIENSTLEISTUNGEN</label>
+    </customValue>
+    <customValue>
+        <fullName>O_OFFENTLICHE_VERWALTUNG_VERTEIDIGUNG_SOZIALVERSICHERUNG</fullName>
+        <default>false</default>
+        <label>O ÖFFENTLICHE VERWALTUNG, VERTEIDIGUNG, SOZIALVERSICHERUNG</label>
+    </customValue>
+    <customValue>
+        <fullName>P_ERZIEHUNG_UND_UNTERRICHT</fullName>
+        <default>false</default>
+        <label>P ERZIEHUNG UND UNTERRICHT</label>
+    </customValue>
+    <customValue>
+        <fullName>Q_GESUNDHEITS_UND_SOZIALWESEN</fullName>
+        <default>false</default>
+        <label>Q GESUNDHEITS- UND SOZIALWESEN</label>
+    </customValue>
+    <customValue>
+        <fullName>R_KUNST_UNTERHALTUNG_UND_ERHOLUNG</fullName>
+        <default>false</default>
+        <label>R KUNST, UNTERHALTUNG UND ERHOLUNG</label>
+    </customValue>
+    <customValue>
+        <fullName>S_ERBRINGUNG_VON_SONSTIGEN_DIENSTLEISTUNGEN</fullName>
+        <default>false</default>
+        <label>S ERBRINGUNG VON SONSTIGEN DIENSTLEISTUNGEN</label>
+    </customValue>
+    <customValue>
+        <fullName>T_PRIVATE_HAUSHALTE_MIT_HAUSPERSONAL_HERSTELLUNG_VON_WAREN_UND_ERBRINGUNG_VON_DIENSTLEISTUNGEN_DURCH_PRIVATE_HAUSHALTE_FUR_DEN_EIGENBEDARF_OHNE_AUSGEPRAGTEN_SCHWERPUNKT</fullName>
+        <default>false</default>
+        <label>T PRIVATE HAUSHALTE MIT HAUSPERSONAL, HERSTELLUNG VON WAREN UND ERBRINGUNG VON DIENSTLEISTUNGEN DURCH PRIVATE HAUSHALTE FÜR DEN EIGENBEDARF OHNE AUSGEPRÄGTEN SCHWERPUNKT</label>
+    </customValue>
+    <customValue>
+        <fullName>U_EXTERRITORIALE_ORGANISATIONEN_UND_KORPERSCHAFTEN</fullName>
+        <default>false</default>
+        <label>U EXTERRITORIALE ORGANISATIONEN UND KÖRPERSCHAFTEN</label>
+    </customValue>
+    <masterLabel>Industry Classification</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

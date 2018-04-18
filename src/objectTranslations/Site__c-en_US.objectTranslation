@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Site</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sites</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address Line 1 --></label>
+        <name>Address_Line_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Line 2 --></label>
+        <name>Address_Line_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- House Number Extension --></label>
+        <name>House_Number_Extension__c</name>
+    </fields>
+    <fields>
+        <label><!-- House Number --></label>
+        <name>House_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Address --></label>
+        <name>Installation_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postcode --></label>
+        <name>Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Id --></label>
+        <name>Site_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Type --></label>
+        <name>Site_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Town --></label>
+        <name>Town__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

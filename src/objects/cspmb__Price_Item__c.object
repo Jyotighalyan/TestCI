@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Describes the pricing and commercial aspects of any product, service, tariff, price plan etc. which can be sold.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>LG_Active_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( cspmb__Is_Active__c, 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Active Formula</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_AvailableForSalesChannels__c</fullName>
+        <externalId>false</externalId>
+        <label>Available For Sales Channels__c</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Telesales Inbound</fullName>
+                    <default>false</default>
+                    <label>Telesales Inbound</label>
+                </value>
+                <value>
+                    <fullName>Telesales Outbound</fullName>
+                    <default>false</default>
+                    <label>Telesales Outbound</label>
+                </value>
+                <value>
+                    <fullName>Door-to-door</fullName>
+                    <default>false</default>
+                    <label>Door-to-door</label>
+                </value>
+                <value>
+                    <fullName>Partner</fullName>
+                    <default>false</default>
+                    <label>Partner</label>
+                </value>
+                <value>
+                    <fullName>Account Management</fullName>
+                    <default>false</default>
+                    <label>Account Management</label>
+                </value>
+                <value>
+                    <fullName>Customer Service</fullName>
+                    <default>false</default>
+                    <label>Customer Service</label>
+                </value>
+                <value>
+                    <fullName>Shops</fullName>
+                    <default>false</default>
+                    <label>Shops</label>
+                </value>
+                <value>
+                    <fullName>Retention</fullName>
+                    <default>false</default>
+                    <label>Retention</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LG_DecompositionCriteria__c</fullName>
+        <description>Used as a criteria for grouping the services to the suborders</description>
+        <externalId>false</externalId>
+        <label>Decomposition Criteria</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>LG_DecompositionCriteria</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Discount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Discount</label>
+        <referenceTo>LG_Discount__c</referenceTo>
+        <relationshipLabel>Price Items</relationshipLabel>
+        <relationshipName>Price_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_DownloadSpeed__c</fullName>
+        <externalId>false</externalId>
+        <label>Download Speed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ExternalPriceName__c</fullName>
+        <externalId>false</externalId>
+        <label>External Price Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ExternalServiceName__c</fullName>
+        <externalId>false</externalId>
+        <label>External Service Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_MarketSegment__c</fullName>
+        <externalId>false</externalId>
+        <label>Market Segment</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SoHo</fullName>
+                    <default>false</default>
+                    <label>SoHo</label>
+                </value>
+                <value>
+                    <fullName>Small</fullName>
+                    <default>false</default>
+                    <label>Small</label>
+                </value>
+                <value>
+                    <fullName>Additional Charges</fullName>
+                    <default>false</default>
+                    <label>Additional Charges</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_NumberOfIPAddresses__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of IP addresses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_ProductFamily__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Family</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Internet</fullName>
+                    <default>false</default>
+                    <label>Internet</label>
+                </value>
+                <value>
+                    <fullName>HPBX</fullName>
+                    <default>false</default>
+                    <label>HPBX</label>
+                </value>
+                <value>
+                    <fullName>PIN</fullName>
+                    <default>false</default>
+                    <label>PIN</label>
+                </value>
+                <value>
+                    <fullName>DTV</fullName>
+                    <default>false</default>
+                    <label>DTV</label>
+                </value>
+                <value>
+                    <fullName>Mobile</fullName>
+                    <default>false</default>
+                    <label>Mobile</label>
+                </value>
+                <value>
+                    <fullName>Connection</fullName>
+                    <default>false</default>
+                    <label>Connection</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_ProductTechnicalDetails__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product Technical Details</label>
+        <referenceTo>LG_ProductTechnicalDetails__c</referenceTo>
+        <relationshipLabel>Price Items</relationshipLabel>
+        <relationshipName>Price_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LG_UploadSpeed__c</fullName>
+        <externalId>false</externalId>
+        <label>Upload Speed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Provisioning_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Provisioning ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Provisioning_System__c</fullName>
+        <description>Hold the provisioning system value for the product</description>
+        <externalId>false</externalId>
+        <label>Provisioning System</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_BillingProductId__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Product Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+  <fields>
+        <fullName>UM_Cancellation__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                    <label>Daily</label>
+                </value>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                </valueSetDefinition>
+        </valueSet>
+    </fields>
+    
+    <fields>
+        <fullName>UM_Create_Additional_Line_Item__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is currently used by VW data processing. If checked, system will create additional Service Line Item on Service</description>
+        <externalId>false</externalId>
+        <label>Create Additional Line Item</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_DoNotDecompose__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag to check if a record needs to decomposed to subscriptions and services</description>
+        <externalId>false</externalId>
+        <label>Do Not Decompose</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_DownloadLimit__c</fullName>
+        <externalId>false</externalId>
+        <label>Download Limit</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1GB/Monat</fullName>
+                    <default>false</default>
+                    <label>1GB/Monat</label>
+                </value>
+                <value>
+                    <fullName>5GB/Monat</fullName>
+                    <default>false</default>
+                    <label>5GB/Monat</label>
+                </value>
+                <value>
+                    <fullName>500MB/Tag</fullName>
+                    <default>false</default>
+                    <label>500MB/Tag</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_Gateway__c</fullName>
+        <externalId>false</externalId>
+        <label>Gateway</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_GuidingProductCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Guiding Product Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_JiraIssueTypeId__c</fullName>
+        <externalId>false</externalId>
+        <label>JiraIssueTypeId</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_MaximalAmountOfNumbers__c</fullName>
+        <externalId>false</externalId>
+        <label>Maximal Amount Of Numbers</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_NumberOfChannels__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Of Channels</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_OTCCode__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this is checked means only one time code is present for item and create recurring service line item.</description>
+        <externalId>false</externalId>
+        <label>Only OTC Code</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_OneOffContractID__c</fullName>
+        <externalId>false</externalId>
+        <label>One Off Contract ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_RecurringCode__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>if this is selected means only recurring code is present and create one time service line item.</description>
+        <externalId>false</externalId>
+        <label>Only Recurring Code</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_RecurringContractID__c</fullName>
+        <externalId>false</externalId>
+        <label>Recurring Contract ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_ShippingCost__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_StandardAmountOfNumbers__c</fullName>
+        <externalId>false</externalId>
+        <label>Standard Amount Of Numbers</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_TerminationCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Termination Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_UnitType__c</fullName>
+        <externalId>false</externalId>
+        <label>Unit Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_VariablePrice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This checkbox will be used to decide if the Price item is of type variable price. If variable price, the price will be decided and entered by the user (handled at Product Configuration level)</description>
+        <externalId>false</externalId>
+        <label>Variable Price</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_VoiceworksMoreServices__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this is checked and quantity is more than 1 in VW staging record, then create service equivalent to quantity</description>
+        <externalId>false</externalId>
+        <label>Voiceworks More Services</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_NumberOfUnitsRequired__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Number Of Units Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_VoiceworksOneOffChargeID__c</fullName>
+        <externalId>false</externalId>
+        <label>Voiceworks One Off Charge ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_VoiceworksProductID__c</fullName>
+        <externalId>false</externalId>
+        <label>Voiceworks Product ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_VoiceworksRecurringChargeID__c</fullName>
+        <externalId>false</externalId>
+        <label>Voiceworks Recurring Charge ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cspmb__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Account for which this Price Item is available. If blank, the Price Item is available to all Accounts. If set, the Price Item should only be used for the linked Account.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Price Items</relationshipLabel>
+        <relationshipName>Price_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cspmb__Apply_One_Off_Charge_Account_Discount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, the Discount Level associated via the linked Account should be applied to the One-Off Charge of this Price Item.</description>
+        <externalId>false</externalId>
+        <label>Apply One-Off Charge Account Discount</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cspmb__Apply_Recurring_Charge_Account_Discount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, the Discount Level associated via the linked Account should be applied to the Recurring Charge of this Price Item.</description>
+        <externalId>false</externalId>
+        <label>Apply Recurring Charge Account Discount</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cspmb__Authorization_Level__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Specifies the Authorization Level to be applied to this Price Item. If there is no Discount Threshold linked to the Authorization Level, then the Authorization Level should always be applied for this Price Item. Otherwise, the Authorization Level applies only if the sales price exceeds the specified Discount Threshold compared with the price of this Price Item.</description>
+        <externalId>false</externalId>
+        <label>Authorization Level</label>
+        <referenceTo>cspmb__Authorization_Level__c</referenceTo>
+        <relationshipLabel>Price Items</relationshipLabel>
+        <relationshipName>Price_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>cspmb__Billing_Frequency__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The billing frequency which applies to this Price Item.</description>
+        <externalId>false</externalId>
+        <label>Billing Frequency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Annually</fullName>
+                    <default>false</default>
+                    <label>Annually</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cspmb__Contract_Term__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The contract term which applies to this Price Item.</description>
+        <externalId>false</externalId>
+        <label>Contract Term</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>12 Months</fullName>
+                    <default>false</default>
+                    <label>12 Months</label>
+                </value>
+                <value>
+                    <fullName>24 Months</fullName>
+                    <default>false</default>
+                    <label>24 Months</label>
+                </value>
+                <value>
+                    <fullName>36 Months</fullName>
+                    <default>false</default>
+                    <label>36 Months</label>
+                </value>
+                <value>
+                    <fullName>48 Months</fullName>
+                    <default>false</default>
+                    <label>48 Months</label>
+                </value>
+                <value>
+                    <fullName>60 Months</fullName>
+                    <default>false</default>
+                    <label>60 Months</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cspmb__Currency_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Specifies the currency of this Price Item as an ISO currency code.</description>
+        <externalId>false</externalId>
+        <label>Currency Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sample Code</fullName>
+                    <default>false</default>
+                    <label>Sample Code</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cspmb__Discount_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of discount (an amount or a percentage).</description>
+        <externalId>false</externalId>
+        <label>Discount Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Amount</fullName>
+                    <default>false</default>
+                    <label>Amount</label>
+                </value>
+                <value>
+                    <fullName>Percentage</fullName>
+                    <default>false</default>
+                    <label>Percentage</label>
+                </value>
+                <value>
+                    <fullName>Negative Line Item</fullName>
+                    <default>false</default>
+                    <label>Negative Line Item</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cspmb__Effective_End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date after which this Price Item ceases to be effective.</description>
+        <externalId>false</externalId>
+        <label>Effective End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>cspmb__Effective_Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date from which this Price Item is effective.</description>
+        <externalId>false</externalId>
+        <label>Effective Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>cspmb__Is_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If unchecked, this Price Item is not in effect (overrides start/end dates).</description>
+        <externalId>false</externalId>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cspmb__Is_Authorization_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>A convenience flag which if checked implies that the linked Authorisation Level should always be applied, in which case it is assumed that there is no Discount Threshold associated with the Authorisation Level.</description>
+        <externalId>false</externalId>
+        <label>Is Authorization Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cspmb__Is_One_Off_Discount_Allowed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, a lower sales one-off price can be offered than the one-off price of this Price Item. If an Authorisation Level is associated, approval may be required subject to a linked Discount Threshold.</description>
+        <externalId>false</externalId>
+        <label>Is One-Off Discount Allowed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cspmb__Is_Recurring_Discount_Allowed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, a lower sales recurring price can be offered than the recurring price of this Price Item. If an Authorisation Level is associated, approval may be required subject to a linked Discount Threshold.</description>
+        <externalId>false</externalId>
+        <label>Is Recurring Discount Allowed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cspmb__One_Off_Charge_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A code representing the one-off charge for this Price Item. Typically used to pass through to billing and finance systems.</description>
+        <externalId>false</externalId>
+        <label>One-Off Charge Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cspmb__One_Off_Charge_External_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>An external identifier for the one-off charge for this Price Item. Typically used for integration with external finance and billing systems.</description>
+        <externalId>true</externalId>
+        <label>One-Off Charge External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cspmb__One_Off_Charge__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The one-off amount to be charged for this Price Item. E.g. an installation charge.</description>
+        <externalId>false</externalId>
+        <label>One-Off Charge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cspmb__One_Off_Cost__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The one-off (i.e. not recurring) cost associated with this Price Item. Typically used to provide margin calculation.</description>
+        <externalId>false</externalId>
+        <label>One-Off Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cspmb__Price_Item_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A code identifying this Price Item.</description>
+        <externalId>false</externalId>
+        <label>Price Item Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cspmb__Price_Item_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A free text description of this Price Item.</description>
+        <externalId>false</externalId>
+        <label>Price Item Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cspmb__Product_Definition_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If set, the name of the Product Definition with which this price item should be used.</description>
+        <externalId>false</externalId>
+        <label>Product Definition Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sample Product</fullName>
+                    <default>false</default>
+                    <label>Sample Product</label>
+                </value>
+                <value>
+                    <fullName>Digitales Schwarzes Brett</fullName>
+                    <default>false</default>
+                    <label>Digitales Schwarzes Brett</label>
+                </value>
+                <value>
+                    <fullName>PowerSpot II</fullName>
+                    <default>false</default>
+                    <label>PowerSpot II</label>
+                </value>
+                <value>
+                    <fullName>Managed Wlan Solution</fullName>
+                    <default>false</default>
+                    <label>Managed Wlan Solution</label>
+                </value>
+                <value>
+                    <fullName>BDS Standort</fullName>
+                    <default>false</default>
+                    <label>BDS Standort</label>
+                </value>
+                <value>
+                    <fullName>Servicepakete</fullName>
+                    <default>false</default>
+                    <label>Servicepakete</label>
+                </value>
+                <value>
+                    <fullName>Company VPN Verbindung</fullName>
+                    <default>false</default>
+                    <label>Company VPN Verbindung</label>
+                </value>
+                <value>
+                    <fullName>Business Anywhere</fullName>
+                    <default>false</default>
+                    <label>Business Anywhere</label>
+                </value>
+                <value>
+                    <fullName>CCF15-15</fullName>
+                    <default>false</default>
+                    <label>CCF15-15</label>
+                </value>
+                <value>
+                    <fullName>CCF25-25</fullName>
+                    <default>false</default>
+                    <label>CCF25-25</label>
+                </value>
+                <value>
+                    <fullName>CCF35-35</fullName>
+                    <default>false</default>
+                    <label>CCF35-35</label>
+                </value>
+                <value>
+                    <fullName>CCF50-50</fullName>
+                    <default>false</default>
+                    <label>CCF50-50</label>
+                </value>
+                <value>
+                    <fullName>CCF100-100</fullName>
+                    <default>false</default>
+                    <label>CCF100-100</label>
+                </value>
+                <value>
+                    <fullName>CCF200-200</fullName>
+                    <default>false</default>
+                    <label>CCF200-200</label>
+                </value>
+                <value>
+                    <fullName>CCF300-300</fullName>
+                    <default>false</default>
+                    <label>CCF300-300</label>
+                </value>
+                <value>
+                    <fullName>CCF500-500</fullName>
+                    <default>false</default>
+                    <label>CCF500-500</label>
+                </value>
+                <value>
+                    <fullName>CCF750-750</fullName>
+                    <default>false</default>
+                    <label>CCF750-750</label>
+                </value>
+                <value>
+                    <fullName>CCF1000-1000</fullName>
+                    <default>false</default>
+                    <label>CCF1000-1000</label>
+                </value>
+                <value>
+                    <fullName>CCC200-15</fullName>
+                    <default>false</default>
+                    <label>CCC200-15</label>
+                </value>
+                <value>
+                    <fullName>CCC200-25</fullName>
+                    <default>false</default>
+                    <label>CCC200-25</label>
+                </value>
+                <value>
+                    <fullName>CCC400-15</fullName>
+                    <default>false</default>
+                    <label>CCC400-15</label>
+                </value>
+                <value>
+                    <fullName>CCC400-25</fullName>
+                    <default>false</default>
+                    <label>CCC400-25</label>
+                </value>
+                <value>
+                    <fullName>CCC400-40</fullName>
+                    <default>false</default>
+                    <label>CCC400-40</label>
+                </value>
+                <value>
+                    <fullName>VPN Services</fullName>
+                    <default>false</default>
+                    <label>VPN Services</label>
+                </value>
+                <value>
+                    <fullName>Company Fiber</fullName>
+                    <default>false</default>
+                    <label>Company Fiber</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cspmb__Recurring_Charge_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A code identifying the recurring charge for this Price Item. Typically sent on to billing and finance systems.</description>
+        <externalId>false</externalId>
+        <label>Recurring Charge Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cspmb__Recurring_Charge_External_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>An external identifier for the recurring charge of this Price Item. Typically used for integration to billing and finance systems.</description>
+        <externalId>true</externalId>
+        <label>Recurring Charge External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cspmb__Recurring_Charge__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The recurring (e.g. monthly) amount that should be charged for this Price Item.</description>
+        <externalId>false</externalId>
+        <label>Recurring Charge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cspmb__Recurring_Cost__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The recurring (e.g. monthly) cost for this Price Item. Typically used to enable margin calculation.</description>
+        <externalId>false</externalId>
+        <label>Recurring Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields> 
+    <label>Price Item</label>
+    <listViews>
+        <fullName>WLAN</fullName>
+        <columns>NAME</columns>
+        <columns>UM_Gateway__c</columns>
+        <columns>LG_DecompositionCriteria__c</columns>
+        <columns>cspmb__Is_Active__c</columns>
+        <columns>UM_NumberOfChannels__c</columns>
+        <columns>cspmb__Recurring_Charge__c</columns>
+        <columns>cspmb__One_Off_Charge__c</columns>
+        <columns>cspmb__Contract_Term__c</columns>
+        <columns>cspmb__Product_Definition_Name__c</columns>
+        <columns>LG_MarketSegment__c</columns>
+        <columns>LG_ProductTechnicalDetails__c</columns>
+        <columns>LG_DownloadSpeed__c</columns>
+        <columns>UM_GuidingProductCode__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LG_ProductTechnicalDetails__c</field>
+            <operation>equals</operation>
+            <value>WLAN</value>
+        </filters>
+        <label>WLAN</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>cspmb__All</fullName>
+        <columns>NAME</columns>
+        <columns>cspmb__Price_Item_Description__c</columns>
+        <columns>UM_VoiceworksMoreServices__c</columns>
+        <columns>UM_DoNotDecompose__c</columns>
+        <columns>UM_RecurringContractID__c</columns>
+        <columns>Provisioning_ID__c</columns>
+        <columns>LG_DecompositionCriteria__c</columns>
+        <columns>Provisioning_System__c</columns>
+        <columns>LG_ProductTechnicalDetails__c</columns>
+        <columns>UM_OneOffContractID__c</columns>
+        <columns>UM_TerminationCode__c</columns>
+        <columns>cspmb__Recurring_Charge__c</columns>
+        <columns>cspmb__One_Off_Charge__c</columns>
+        <columns>cspmb__Product_Definition_Name__c</columns>
+        <columns>LG_MarketSegment__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Price Item Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Price Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SalesChannelBean</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SalesChannelBean</value>
+    </caseValues>
+    <fields>
+        <label><!-- CommissionId --></label>
+        <name>CommissionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ConfigTagId --></label>
+        <name>ConfigTagId__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateActive --></label>
+        <name>DateActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateInactive --></label>
+        <name>DateInactive__c</name>
+    </fields>
+    <fields>
+        <label><!-- DealerPin --></label>
+        <name>DealerPin__c</name>
+    </fields>
+    <fields>
+        <label><!-- DisplayValue --></label>
+        <name>DisplayValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsDefault --></label>
+        <name>IsDefault__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsInternal --></label>
+        <name>IsInternal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key --></label>
+        <name>Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- LanguageCode --></label>
+        <name>LanguageCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- NumThreshold --></label>
+        <name>NumThreshold__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParentSalesChannelId --></label>
+        <name>ParentSalesChannelId__c</name>
+    </fields>
+    <fields>
+        <label><!-- SalesChannelId --></label>
+        <name>SalesChannelId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScAddress1 --></label>
+        <name>ScAddress1__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScAddress2 --></label>
+        <name>ScAddress2__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScAddress3 --></label>
+        <name>ScAddress3__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScCity --></label>
+        <name>ScCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScContactFname --></label>
+        <name>ScContactFname__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScContactLname --></label>
+        <name>ScContactLname__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScContactMinit --></label>
+        <name>ScContactMinit__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScContactNameGen --></label>
+        <name>ScContactNameGen__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScContactNamePre --></label>
+        <name>ScContactNamePre__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScCountryCode --></label>
+        <name>ScCountryCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScName --></label>
+        <name>ScName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScNumber --></label>
+        <name>ScNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScPhone --></label>
+        <name>ScPhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScState --></label>
+        <name>ScState__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScZipCode --></label>
+        <name>ScZipCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- SecurityWord --></label>
+        <name>SecurityWord__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShortDisplay --></label>
+        <name>ShortDisplay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <layouts>
+        <layout>SalesChannelBean Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

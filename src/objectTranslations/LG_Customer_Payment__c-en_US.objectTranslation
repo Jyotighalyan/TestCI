@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Customer Payment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Payments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address Verification Response Code --></label>
+        <name>AVSResponseCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Record Identifier (Fraud Record ID --></label>
+        <name>Fraud_Record_Identifier_Fraud_Record_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- ACI Payment Transaction ID --></label>
+        <name>LG_ACIPaymentTransactionID__c</name>
+    </fields>
+    <fields>
+        <label><!-- ACI Refund Reverse Transaction ID --></label>
+        <name>LG_ACI_Refund_Reverse_Transaction_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- ACQ ID --></label>
+        <name>LG_ACQID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>LG_Account__c</name>
+        <relationshipLabel><!-- Customer Payments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Acquirer Response Code --></label>
+        <name>LG_Acquirer_Response_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Validated --></label>
+        <name>LG_Address_DNA_Validated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Authorization Number Response --></label>
+        <name>LG_AuthorizationNumberResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Account --></label>
+        <name>LG_BillingAccount__c</name>
+        <relationshipLabel><!-- Customer Payments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Required Mitigation Term --></label>
+        <name>LG_BusinessTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- ACI Transaction ID --></label>
+        <name>LG_CP_Transaction_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card Expiry Date --></label>
+        <name>LG_Card_Expiry_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>LG_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>LG_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- County --></label>
+        <name>LG_County__c</name>
+    </fields>
+    <fields>
+        <label><!-- DNAResponse --></label>
+        <name>LG_DNAResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Amount --></label>
+        <name>LG_DepositAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Duration --></label>
+        <name>LG_DepositDuration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used as key for Fraud Matrix --></help>
+        <label><!-- Fraud Matrix Key --></label>
+        <name>LG_FraudMatrixKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Neural (Score) Response --></label>
+        <name>LG_FraudNeuralScoreResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Response Code --></label>
+        <name>LG_FraudResponseCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Rule Category Flag Response --></label>
+        <name>LG_FraudRuleCategoryFlagResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Status Code --></label>
+        <name>LG_FraudStatusCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Use Code Response --></label>
+        <name>LG_FraudUseCodeResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- IP Address --></label>
+        <name>LG_IPAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issuer Response Code --></label>
+        <name>LG_IssuerResponseCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name on Payment Card --></label>
+        <name>LG_NameonPaymentCard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>LG_OrderNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- PartyAccountID --></label>
+        <name>LG_PartyAccountID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Card Number --></label>
+        <name>LG_PaymentCardNumberMasked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Date Time --></label>
+        <name>LG_PaymentDateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment TransactionID --></label>
+        <name>LG_PaymentTransactionID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment URL --></label>
+        <name>LG_PaymentURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Amount --></label>
+        <name>LG_Payment_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Date --></label>
+        <name>LG_Payment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Reason --></label>
+        <name>LG_Payment_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Deposit</masterLabel>
+            <translation><!-- Deposit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deposit &amp; Upfront</masterLabel>
+            <translation><!-- Deposit &amp; Upfront --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upfront</masterLabel>
+            <translation><!-- Upfront --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment Session ID --></label>
+        <name>LG_Payment_Session_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Status --></label>
+        <name>LG_Payment_Status__c</name>
+        <picklistValues>
+            <masterLabel>Not Completed</masterLabel>
+            <translation><!-- Not Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Taken</masterLabel>
+            <translation><!-- Not Taken --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refunded</masterLabel>
+            <translation><!-- Refunded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reversed</masterLabel>
+            <translation><!-- Reversed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taken</masterLabel>
+            <translation><!-- Taken --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment TransactionID --></label>
+        <name>LG_Payment_TransactionID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Type --></label>
+        <name>LG_Payment_Type__c</name>
+        <picklistValues>
+            <masterLabel>BACS</masterLabel>
+            <translation><!-- BACS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card</masterLabel>
+            <translation><!-- Card --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PostalCode --></label>
+        <name>LG_PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- RAW Callback Response --></label>
+        <name>LG_RAWCallbackResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- RWS Response Code --></label>
+        <name>LG_RWSResponseCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refund Order Id --></label>
+        <name>LG_RefundOrderId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Reference Number for Order --></label>
+        <name>LG_RequestID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Type Code (Payment Method, Trans --></label>
+        <name>LG_RequestTypeCodePaymentMethodTrans__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Code (Authorization Response) --></label>
+        <name>LG_ResponseCodeAuthorizationResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- ResponseCodeDescription --></label>
+        <name>LG_ResponseCodeDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- ResponseCode --></label>
+        <name>LG_ResponseCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Date --></label>
+        <name>LG_ResponseDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reverse/Refund Transaction Id --></label>
+        <name>LG_ReverseOrRefundTransactionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reverse/Refund Payment Date --></label>
+        <name>LG_ReverseRefundPaymentDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reverse/Refund Payment Transaction ID --></label>
+        <name>LG_Reverse_Refund_Payment_Transaction_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secure Electronic Commerce Indicator Des --></label>
+        <name>LG_SecureElectronicCommerceIndicatorDes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secure Electronic Commerce Indicator --></label>
+        <name>LG_SecureElectronicCommerceIndicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Response Code --></label>
+        <name>LG_SecurityResponseCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>LG_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- StatusCodeDescription --></label>
+        <name>LG_StatusCodeDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>LG_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Name --></label>
+        <name>LG_SystemName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Token Proc ID --></label>
+        <name>LG_TokenProcID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Reference Number for Order Refund --></label>
+        <name>LG_UniqueReferenceNumberforOrderRefund__c</name>
+    </fields>
+    <fields>
+        <label><!-- Upfront Amount --></label>
+        <name>LG_UpfrontAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- User ID --></label>
+        <name>LG_UserID__c</name>
+    </fields>
+    <fields>
+        <label><!-- VM Transaction ID --></label>
+        <name>LG_VMTransactionID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Verification Response Code --></label>
+        <name>LG_VerificationResponseCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- RWS Response Message --></label>
+        <name>LG_acquirerResponseMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card Transaction ID --></label>
+        <name>LG_cardPaymentTransactionID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Token expiry date --></label>
+        <name>LG_cardTokenExpiryDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Token Status Code --></label>
+        <name>LG_cardTokenStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card Token --></label>
+        <name>LG_cardToken__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card Type --></label>
+        <name>LG_cardTypeCode__c</name>
+        <picklistValues>
+            <masterLabel>AX</masterLabel>
+            <translation><!-- AX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DC</masterLabel>
+            <translation><!-- DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DI</masterLabel>
+            <translation><!-- DI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JC</masterLabel>
+            <translation><!-- JC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MC</masterLabel>
+            <translation><!-- MC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Alternative Payments CA</masterLabel>
+            <translation><!-- Other Alternative Payments CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL</masterLabel>
+            <translation><!-- PL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SW</masterLabel>
+            <translation><!-- SW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TK</masterLabel>
+            <translation><!-- TK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VI</masterLabel>
+            <translation><!-- VI --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Fraud check status --></label>
+        <name>LG_fraudAssessmentStatusCode__c</name>
+        <picklistValues>
+            <masterLabel>ACCEPT</masterLabel>
+            <translation><!-- ACCEPT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHALLENGE</masterLabel>
+            <translation><!-- CHALLENGE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DENY</masterLabel>
+            <translation><!-- DENY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ERROR</masterLabel>
+            <translation><!-- ERROR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SUSPEND</masterLabel>
+            <translation><!-- SUSPEND --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Authorization code --></label>
+        <name>LG_paymentAuthorisationCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Token --></label>
+        <name>LG_paymentCardToken__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Request Type Code --></label>
+        <name>LG_paymentRequestTypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Code --></label>
+        <name>LG_paymentResponseCode__c</name>
+        <picklistValues>
+            <masterLabel>OC_FAIL</masterLabel>
+            <translation><!-- OC_FAIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OC_REQ</masterLabel>
+            <translation><!-- OC_REQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OC_SUCCESS</masterLabel>
+            <translation><!-- OC_SUCCESS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment Date --></label>
+        <name>LG_paymentResponseDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Response --></label>
+        <name>LG_paymentResponseMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Verification code --></label>
+        <name>LG_paymentVerificationCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card Expiration Date --></label>
+        <name>Lg_CardExpirationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Customer Payments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- UPRN --></label>
+        <name>UPRN__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

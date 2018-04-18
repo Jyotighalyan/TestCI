@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Discount</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Discounts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active Formula --></label>
+        <name>LG_Active_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>LG_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>LG_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business --></label>
+        <name>LG_Business__c</name>
+        <picklistValues>
+            <masterLabel>SOHO</masterLabel>
+            <translation><!-- SOHO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOHO Mobile</masterLabel>
+            <translation><!-- SOHO Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small</masterLabel>
+            <translation><!-- Small --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Calculation Type --></label>
+        <name>LG_CalculationType__c</name>
+        <picklistValues>
+            <masterLabel>Discount Amount Off</masterLabel>
+            <translation><!-- Discount Amount Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discount Percentage Off</masterLabel>
+            <translation><!-- Discount Percentage Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discount Reduced Value</masterLabel>
+            <translation><!-- Discount Reduced Value --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Term (months) --></label>
+        <name>LG_ContractTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Discount Formula --></label>
+        <name>LG_DefaultDiscount_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Discount --></label>
+        <name>LG_DefaultDiscount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Code --></label>
+        <name>LG_DiscountCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Message --></label>
+        <name>LG_DiscountMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Type --></label>
+        <name>LG_DiscountType__c</name>
+        <picklistValues>
+            <masterLabel>Closing Deal</masterLabel>
+            <translation><!-- Closing Deal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discount</masterLabel>
+            <translation><!-- Discount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Porting Out</masterLabel>
+            <translation><!-- Porting Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Promotional Action</masterLabel>
+            <translation><!-- Promotional Action --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>LG_EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Months --></label>
+        <name>LG_Months__c</name>
+    </fields>
+    <fields>
+        <label><!-- Running User Sales Channel --></label>
+        <name>LG_RunningUserSalesChannel__c</name>
+        <picklistValues>
+            <masterLabel>Account Management</masterLabel>
+            <translation><!-- Account Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B2B</masterLabel>
+            <translation><!-- B2B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Service</masterLabel>
+            <translation><!-- Customer Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Door-to-door</masterLabel>
+            <translation><!-- Door-to-door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MDU</masterLabel>
+            <translation><!-- MDU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retention</masterLabel>
+            <translation><!-- Retention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shops</masterLabel>
+            <translation><!-- Shops --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telesales Inbound</masterLabel>
+            <translation><!-- Telesales Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telesales Outbound</masterLabel>
+            <translation><!-- Telesales Outbound --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>LG_StartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>LG_Type__c</name>
+        <picklistValues>
+            <masterLabel>Promotion Code</masterLabel>
+            <translation><!-- Promotion Code --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Change Type --></label>
+        <name>UM_ChangeType__c</name>
+        <picklistValues>
+            <masterLabel>Change</masterLabel>
+            <translation><!-- Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Downgrade</masterLabel>
+            <translation><!-- Downgrade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Move</masterLabel>
+            <translation><!-- Move --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Porting-Out</masterLabel>
+            <translation><!-- Porting-Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminate</masterLabel>
+            <translation><!-- Terminate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade</masterLabel>
+            <translation><!-- Upgrade --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>UM_ExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- One Off Price Discount (%) --></label>
+        <name>UM_OneOffPriceDiscount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Definitions Using Discount --></label>
+        <name>UM_ProductDefinitionsUsingDiscount__c</name>
+        <picklistValues>
+            <masterLabel>Company Fiber</masterLabel>
+            <translation><!-- Company Fiber --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Internet</masterLabel>
+            <translation><!-- Company Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Voice</masterLabel>
+            <translation><!-- Company Voice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital TV</masterLabel>
+            <translation><!-- Digital TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobilfunkprodukte</masterLabel>
+            <translation><!-- Mobilfunkprodukte --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office Internet</masterLabel>
+            <translation><!-- Office Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WLAN</masterLabel>
+            <translation><!-- WLAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wholesale Fiber</masterLabel>
+            <translation><!-- Wholesale Fiber --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Recurring Price Discount (%) --></label>
+        <name>UM_RecurringPriceDiscount__c</name>
+    </fields>
+    <layouts>
+        <layout>Discount Layout</layout>
+        <sections>
+            <label><!-- Criteria --></label>
+            <section>Criteria</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

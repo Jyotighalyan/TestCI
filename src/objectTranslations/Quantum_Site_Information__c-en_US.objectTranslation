@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Quantum Site Planning Details</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Quantum Site Planning Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Asbestos Report Available --></label>
+        <name>Asbestos_Report_Available__c</name>
+        <picklistValues>
+            <masterLabel>-None-</masterLabel>
+            <translation><!-- -None- --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Address --></label>
+        <name>Installation_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Inactive? --></label>
+        <name>Is_Inactive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is SiteContact --></label>
+        <name>Is_SiteContact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Wayleave --></label>
+        <name>Is_Wayleave__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Summary Accepted --></label>
+        <name>LG_Order_Summary_Accepted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lease --></label>
+        <name>Lease__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Middle Name --></label>
+        <name>Middle_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Own freehold? --></label>
+        <name>Own_freehold__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Basket --></label>
+        <name>Product_Basket__c</name>
+        <relationshipLabel><!-- Quantum Site Planning Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Planning Details Status --></label>
+        <name>Product_Planning_Details_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In-progress</masterLabel>
+            <translation><!-- In-progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not started</masterLabel>
+            <translation><!-- Not started --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Quantum_Site_Information_Contact__c</name>
+        <relationshipLabel><!-- Quantum Site Planning Details (Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Quantum_Site_Information_Opportunity__c</name>
+        <relationshipLabel><!-- Quantum Site Planning Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SiteId --></label>
+        <name>SiteId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Contact MIA --></label>
+        <name>Site_Contact_MIA__c</name>
+        <relationshipLabel><!-- Quantum Site Planning Details (Site Contact MIA) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Site Contact --></label>
+        <name>Site_Contact__c</name>
+        <relationshipLabel><!-- Quantum Site Planning Details (Site Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- WayLeave Required for Landlord --></label>
+        <name>WayLeave_Required_for_Landlord__c</name>
+    </fields>
+    <fields>
+        <label><!-- WayLeave Required for Tenant --></label>
+        <name>WayLeave_Required_for_Tenant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wayleave Email --></label>
+        <name>Wayleave_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wayleave Phone --></label>
+        <name>Wayleave_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wayleave Saved --></label>
+        <name>Wayleave_Saved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wayleave Status --></label>
+        <name>Wayleave_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In-progress</masterLabel>
+            <translation><!-- In-progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not started</masterLabel>
+            <translation><!-- Not started --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Wayleave for Tanent --></label>
+        <name>Wayleave_for_Tanent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wayleave for landlord --></label>
+        <name>Wayleave_for_landlord__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

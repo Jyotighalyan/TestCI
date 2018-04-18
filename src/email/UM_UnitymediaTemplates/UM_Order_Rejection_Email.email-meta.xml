@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>38.0</apiVersion>
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>UM_Order Rejection Email</name>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>71</minorNumber>
+        <namespace>CSCAP</namespace>
+    </packageVersions>
+    <style>none</style>
+    <subject>Verwerfen Sie Ihre Untitymedia-Bestellung</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

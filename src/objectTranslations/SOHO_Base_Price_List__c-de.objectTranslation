@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- SOHO Base Price List --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- SOHO Base Price List --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- SOHO Base Price List --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- SOHO Base Price List --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- SOHO Base Price List --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- SOHO Base Price List --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- SOHO Base Price List --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- SOHO Base Price List --></value>
+    </caseValues>
+    <fields>
+        <label>Name Bundle</label>
+        <name>Bundle_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internet Name --></label>
+        <name>Internet_Name__c</name>
+    </fields>
+    <fields>
+        <label>Preis</label>
+        <name>Price__c</name>
+    </fields>
+    <fields>
+        <label>TV Name</label>
+        <name>TV_Name__c</name>
+    </fields>
+    <fields>
+        <label>Telefon</label>
+        <name>Telephony__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <nameFieldLabel><!-- Bundle Code --></nameFieldLabel>
+</CustomObjectTranslation>

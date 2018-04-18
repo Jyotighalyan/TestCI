@@ -1,0 +1,316 @@
+<apex:page controller="UM_BillingAccountController" showHeader="true" sidebar="true" docType="html-5.0">
+
+    <apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, 'sfdcBootstrap.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.UM_BillingAccountCSS, 'billingaccount.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'bootstrap.min.js')}" />
+    <apex:includeScript value="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"/>
+
+    <style>
+    .requiredInput{height:26px !important;}
+    </style>
+
+
+    <div class="sfdcBootstrap">
+        <h3>New Billing Account</h3>
+        <apex:form id="billingAccount">
+
+            <apex:pageBlock mode="maindetail">
+            <div class="panel panel-default">
+                    <div class="form-group row">
+                        <div class="col-sm-12"><apex:pageMessages /></div>
+                    </div>
+                <div class="panel-body">
+
+                    <h4>Information</h4>
+
+                    <!-- Left column -->
+                    <div class="row">
+
+                        <!-- div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Billing Account Sequence</label>
+                            <div class="col-xs-7"><apex:outputField value="{!billingAccount.Name}" styleClass="form-control-sm" /></div>
+                        </div -->
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Account</label>
+                            <div class="col-xs-7"><apex:inputField value="{!billingAccount.csconta__Account__c}" styleClass="form-control-sm" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Billing Channel</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.csconta__Billing_Channel__c}" id="billingChannel" required="true"/></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Status</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.csconta__Status__c}" required="true"/></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Bill Format Option</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.UM_BillFormatOptions__c}" id="billingFmtOpt" required="true" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Contractual Organization</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.LG_ContractualOrganization__c}" id="billingMktCode" required="true" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Comments</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.Comments__c}" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Billing Contact</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.Billing_Contact__c}" id="billingContact"/></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Billing Email Address</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.LG_BillingEmailAddress__c}" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Collection Reason Change Date</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.UM_Collection_Reason_Change_Date__c}" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Collection request</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.Picklist_request__c}" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Collection Hold Reason</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.UM_Collection_Hold_Reason__c}" /></div>
+                        </div>
+
+                    </div>
+
+                    <h4>Payment details</h4>
+
+                    <div class="row">
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Payment Type</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.LG_PaymentType__c}" id="paymentType" /></div>
+                        </div>
+                        <apex:inputHidden id="validateIbanNumber" value="{!validateIbanNumber}" />
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Customer Reference</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.LG_CustomerReference__c}" /></div>
+                        </div>
+
+                        <!--<div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Bank Account Type</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.UM_BankAccountType__c}" /></div>
+                        </div>-->
+
+                        <!-- div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Financial Account Number</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.csconta__Financial_Account_Number__c}" /></div>
+                        </div -->
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Bank Account Number (IBAN)</label>
+                            <div class="col-xs-7">
+                               <!--   <div class="requiredInput">
+                                    <div class="requiredBlock"></div> -->
+                                    <apex:inputField id="ibanInput" styleClass="form-control-sm inp" value="{!billingAccount.LG_BankAccountNumberIBAN__c}" />
+                                <!--  /div -->
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Delivery Method</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.LG_DeliveryMethod__c}" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Bank Account Holder</label>
+                            <div class="col-xs-7"><apex:inputField id="inputAccHolder" styleClass="form-control-sm inp" value="{!billingAccount.LG_BankAccountHolder__c}" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Payment Terms</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.csconta__Payment_Terms__c}" id="billingPaymentTerms" required="true" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">BIC code</label>
+                            <div class="col-xs-7"><apex:inputField id="inputBic" value="{!billingAccount.UM_BankAccountNumberBic__c}" /></div>
+                        </div>
+
+                        <!-- div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Direct Debit Mandate</label>
+                            <div class="col-xs-7"><apex:inputCheckbox value="{!billingAccount.LG_DirectDebitMandate__c}" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Mandate Start Date</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm" value="{!billingAccount.LG_MandateStartDate__c}" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Mandate End Date</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm" value="{!billingAccount.LG_MandateEndDate__c}" /></div>
+                        </div -->
+
+                    </div>
+
+                    <h4>Billing Address Details</h4>
+
+                    <div class="row">
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Street</label>
+                            <div class="col-xs-7"><apex:inputField value="{!billingAccount.csconta__Street__c}" required="true"/></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">House Number</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.LG_HouseNumber__c}" required="true"/></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">House Number Extension</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.LG_HouseNumberExtension__c}" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Postcode</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.csconta__Postcode__c}" required="true"/></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">State/Province</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.UM_Billing_State_Province__c}" /></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">City</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.csconta__City__c}" required="true"/></div>
+                        </div>
+
+                        <div class="col-xs-6 form-group">
+                            <label class="col-xs-5 form-control-label">Country</label>
+                            <div class="col-xs-7"><apex:inputField styleClass="form-control-sm inp" value="{!billingAccount.csconta__Country__c}" required="true"/></div>
+                        </div>
+
+                    </div>
+                   
+                    <div class="row" style="padding-bottom:15px;padding-top:5px;border:none;">
+                        <div class="col-xs-offset-5 col-xs-7">
+                            <apex:commandButton action="{!save}" styleClass="btn btn-primary um-btn" value="Save" id="save" />&nbsp;
+                            <apex:commandButton action="{!cancel}" styleClass="btn btn-default" value="Cancel" immediate="true" id="cancel" />
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            </apex:pageBlock>
+
+        </apex:form>
+
+        <script>
+        var j$ = jQuery.noConflict();
+
+        j$(document).ready(function(){
+
+            // turn off validation on cancel
+            j$("input[id$=cancel]").attr('formnovalidate',true);
+        });
+
+        paymentField = j$("select[id$='paymentType']");
+        paymentField.change(function() {
+            ibanField = j$("input[id$='ibanInput']");
+            holderField = j$("input[id$='inputAccHolder']");
+            bicField = j$("input[id$='inputBic']");
+            if(paymentField.val() == 'Self-payer') {
+                if (ibanField.parent().is( "div[class='requiredInput']" )) {
+
+                    // unmark as mandatory
+                    ibanField.prev().remove().end();
+                    ibanField.unwrap();
+                }
+                if (holderField.parent().is( "div[class='requiredInput']" )) {
+
+                    // unmark as mandatory
+                    holderField.prev().remove().end();
+                    holderField.unwrap();
+                }
+                if (bicField.parent().is( "div[class='requiredInput']" )) {
+
+                    // unmark as mandatory
+                    bicField.prev().remove().end();
+                    bicField.unwrap();
+                }
+                j$("input[id$='ibanInput']").val('');
+                j$("input[id$='inputAccHolder']").val('');
+                j$("input[id$='inputBic']").val('');
+            } else {
+                ibanField.wrap( "<div class='requiredInput'></div>" );
+                j$( "<div class='requiredBlock'></div>" ).insertBefore( ibanField );
+
+                holderField.wrap( "<div class='requiredInput'></div>" );
+                j$( "<div class='requiredBlock'></div>" ).insertBefore( holderField );
+                //fix OMB-1172, unmark mandatory for BIC code
+                if (bicField.parent().is( "div[class='requiredInput']" )) {
+
+                    // unmark as mandatory
+                    bicField.prev().remove().end();
+                    bicField.unwrap();
+                }
+
+            }
+        });
+
+        j$("input[id$='save']").on('click', function() {
+
+            // Setup form validation on the #register-form element
+            j$("form[id$='billingAccount']").valid();
+
+            if(paymentField.val() == 'Self-payer') {
+
+                j$("input[id$='ibanInput']").rules("add",{
+                    required: false
+                });
+                j$("input[id$='inputAccHolder']").rules("add",{
+                    required: false
+                });
+                j$("input[id$='inputBic']").rules("add",{
+                    required: false
+                });
+            } else {
+
+                j$("input[id$='ibanInput']").rules("add",{
+                    required: true
+                });
+                j$("input[id$='inputAccHolder']").rules("add",{
+                    required: true
+                });
+                j$("input[id$='inputBic']").rules("add",{
+                    required: false
+                });
+            }
+
+            j$("input[id$='billingChannel']").rules("add",{
+                required: true
+            });
+            j$("input[id$='billingFmtOpt']").rules("add",{
+                required: true
+            });
+            j$("input[id$='billingMktCode']").rules("add",{
+                required: true
+            });
+            j$("select[id$='billingPaymentTerms']").rules("add",{
+                required: true
+            });
+            jQuery.validator.messages.required = "Please enter a value";
+        });
+        </script>
+    </div>
+</apex:page>

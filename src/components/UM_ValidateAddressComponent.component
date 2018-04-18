@@ -1,0 +1,91 @@
+<apex:component id="UM_ValidateAddressComponent" controller="UM_AddressValidationController" allowDML="true">
+<apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, 'sfdcBootstrap.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'jquery.min.js')}" />
+<apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'bootstrap.min.js')}" />
+
+<apex:attribute name="isOutsideAddressValidation" type="Boolean" assignTo="{!outsideAddressValidationpage}" required="true" description="If component is used outside AddressValidation page"/>
+<apex:attribute name="macdConfigurationController" type="UM_MACDConfigurationController" assignTo="{!macdConfController}" description="If used as part of MACD Conf page - the controller should be provided"/>
+<apex:attribute name="compsToRerender" type="String" description="If used as part of MACD Conf page - component to Rerender"/>
+
+<style>
+.sfdcBootstrap .btn-warning {background-color:#675e9d !important; border-color:#675e9d !important;}
+</style>
+
+<div class="sfdcBootstrap">
+    <apex:pageMessage summary="{!$Label.UM_InvalidCountry}" severity="error" strength="3" rendered="{!invalidcountry}"/>
+    <apex:form rendered="{!!invalidSetting}">
+
+        <apex:pageblock mode="maindetail">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <apex:pageMessages id="showmsg"></apex:pageMessages>
+                    <apex:pageBlockSection id="currentAddress" columns="2">      
+                        <apex:repeat value="{!searchFieldS}" var="fieldName">
+                            <apex:inputField style="width:250px" styleClass="form-control" value="{!validationRecord[fieldName]}" required="{!fieldName != 'LG_VisitHouseNumberExtension__c' && fieldName != 'LG_VisitCity__c' && fieldName != 'LG_HouseNumberExtension__c' && fieldName != 'cscrm__City__c'}"/>
+                        </apex:repeat>
+                    </apex:pageBlockSection>
+                </div>
+                <div class="panel-footer" style="text-align: center">
+                    <div class="btn-group">
+                        <apex:commandButton id="btnFindAddress" styleClass="btn-warning" value="{!$Label.Find_Address}" action="{!findAddress}"  rerender="suggection,showmsg" status="stSearch"/>
+                        <apex:commandButton styleClass="btn-default" rendered="{! NOT(outsideAddressValidationpage)}" value="{!$Label.Cancel}" action="{!cancel}" immediate="true" html-formnovalidate="true" />
+                    </div>
+                </div>
+            </div>
+        </apex:pageblock>
+    </apex:form>
+        
+    <apex:actionStatus id="stSearch" stopText="">
+        <apex:facet name="start">
+            <div>
+                <div class="popupBackground" ></div>
+                <div class="PopupPanel">
+                    <table  border="0" bordercolor="red"  width="100%" height="100%">
+                        <tr>
+                            <td align="center"><b>Please Wait</b></td>
+                        </tr>
+                        <tr>
+                            <td valign="center" align="center"><img src="/img/loading32.gif"/></td>
+                        </tr>
+                    </table>
+                    <br/><br/>
+                </div>
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+    <apex:form rendered="{!!invalidSetting}">    
+        <apex:pageblock id="suggection" mode="maindetail">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th/>
+                            <apex:repeat value="{!mapAndDisplaySetting.fieldMap}" var="displayFields">
+                                <apex:variable value="tricky" var="trick" rendered="{!displayFields.resultVisible}">
+                                    <th>{!displayFields.displayLabel}</th>
+                                </apex:variable>
+                            </apex:repeat>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!addressResponse.addressExt}" var="address">
+                            <tr>
+                                <td>
+                                    <apex:commandLink value="{!$Label.Select}" action="{!setAddress}" oncomplete="if ({!outsideAddressValidationpage}) {$('#modalAddressSearch').modal('hide'); if ($('#currentUrl').val()!='') window.location = $('#currentUrl').val(); }" rerender="currentAddress,{!compsToRerender}" >
+                                        <apex:param name="addres" value="{!address.buildingId}" assignTo="{!selectedAddressID}" />
+                                    </apex:commandLink>
+                                </td>
+                                <apex:repeat value="{!mapAndDisplaySetting.fieldMap}" var="displayFields">
+                                    <apex:variable value="tricky" var="trick" rendered="{!displayFields.resultVisible}">
+                                        <td>{!address[displayFields.soapField]}</td>
+                                    </apex:variable>
+                                </apex:repeat>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </div>
+        </apex:pageblock>
+    </apex:form>   
+</div>
+</apex:component>

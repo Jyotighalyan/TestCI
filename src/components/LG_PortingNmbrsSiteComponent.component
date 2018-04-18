@@ -1,0 +1,109 @@
+<apex:component controller="LG_PortingNmbrsSiteComponentController">
+<apex:stylesheet value="{!$Resource.PortingNumbersBillingAcc_css}"/>
+<apex:attribute name="mainPageController" type="LG_PortingNumbersController" assignTo="{!pageController}" required="true" description="The controller for the main page."/>
+<apex:attribute name="productConfigId" type="String" assignTo="{!prodConfigId}" required="true" description="Id of the product configuration"/>
+<apex:attribute name="productConfigMaxQuantity" type="Integer" assignTo="{!prodConfMaxQuantity}" required="true" description="Maximum quantity of the Product Configuration"/>
+
+	<apex:repeat value="{!lstErrorMessage}" var="errorMsg" rendered="{!lstErrorMessage.size!=0}">
+		<apex:outputText value="&bull; {!errorMsg} <br/>" escape="false"/>
+	</apex:repeat>
+	
+    <apex:pageBlockSection title="Existing Porting Numbers" columns="1" collapsible="false">
+        <apex:pageBlockTable value="{!lstPortedNumbers}" var="portedNumbers" id="tabPortedNumbers" cellspacing="1" border="1" cellPadding="1">
+        
+            <apex:column headerClass="TableTitle">
+                <apex:facet name="header">Wish Port Date</apex:facet>
+                <apex:outputText value="{0,date,dd/MM/yyyy}">
+                    <apex:param value="{!portedNumbers.LG_PortingDate__c}"/>
+                </apex:outputText>
+            </apex:column>
+            
+           <apex:column headerClass="TableTitle">
+                <apex:facet name="header">Primary Number</apex:facet>
+                <apex:outputText value="{0}">
+                    <apex:param value="{!portedNumbers.LG_PrimaryNumber__c}"/>
+                </apex:outputText>
+            </apex:column>
+            
+           <apex:column headerClass="TableTitle">
+                <apex:facet name="header">Telecom Operator</apex:facet>
+                <apex:outputText value="{!portedNumbers.LG_Operator__c}"/>
+            </apex:column>
+            
+            <apex:column headerClass="TableTitle">
+                <apex:facet name="header">Telephone Number</apex:facet>
+                <apex:outputText value="{0}">
+                    <apex:param value="{!portedNumbers.LG_PhoneNumber__c}"/>
+                </apex:outputText>
+            </apex:column>
+            
+           <apex:column headerClass="TableTitle">
+                <apex:facet name="header">First Phone Number</apex:facet>
+                <apex:outputText value="{!portedNumbers.LG_FirstPhoneNumber__c}"/>
+            </apex:column>
+            
+            <apex:column headerClass="TableTitle">
+                <apex:facet name="header">Last Phone Number</apex:facet>
+                <apex:outputText value="{0}">
+                    <apex:param value="{!portedNumbers.LG_LastPhoneNumber__c}"/>
+                </apex:outputText>
+            </apex:column>
+            
+        </apex:pageBlockTable>
+    </apex:pageBlockSection>
+
+    <apex:pageBlockSection title="Uploaded Porting Numbers" columns="1" collapsible="false">
+        <apex:pageBlockTable value="{!lstImportFileRow}" var="importFileRow" id="tabImportFileRow" cellspacing="1" border="1" cellPadding="1">
+        
+            <apex:column headerClass="TableTitle">
+                <apex:facet name="header">Wish Port Date</apex:facet>
+                <apex:outputText value="{0}">
+                    <apex:param value="{!importFileRow.portingDate}"/>
+                </apex:outputText>
+            </apex:column>
+            
+           <apex:column headerClass="TableTitle">
+                <apex:facet name="header">Primary Number</apex:facet>
+                <apex:outputText value="{0}">
+                    <apex:param value="{!importFileRow.primaryNumber}"/>
+                </apex:outputText>
+            </apex:column>
+            
+           <apex:column headerClass="TableTitle">
+                <apex:facet name="header">Telecom Operator</apex:facet>
+                <apex:outputText value="{!importFileRow.operator}"/>
+            </apex:column>
+            
+            <apex:column headerClass="TableTitle">
+                <apex:facet name="header">Telephone Number</apex:facet>
+                <apex:outputText value="{0}">
+                    <apex:param value="{!importFileRow.phoneNumber}"/>
+                </apex:outputText>
+            </apex:column>
+            
+           <apex:column headerClass="TableTitle">
+                <apex:facet name="header">First Phone Number</apex:facet>
+                <apex:outputText value="{!importFileRow.firstPhoneNumber}"/>
+            </apex:column>
+            
+            <apex:column headerClass="TableTitle">
+                <apex:facet name="header">Last Phone Number</apex:facet>
+                <apex:outputText value="{0}">
+                    <apex:param value="{!importFileRow.lastPhoneNumber}"/>
+                </apex:outputText>
+            </apex:column>
+                                                                       
+        </apex:pageBlockTable>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="Upload Porting Numbers File" columns="2" collapsible="false">
+        <apex:pageBlockSectionItem >
+            <apex:inputFile id="fileToUpload" value="{!fileBody}" filename="{!fileName}" style="width:75%"/>
+        </apex:pageBlockSectionItem>
+        
+        <apex:pageBlockSectionItem >
+            <label for="insertHeader">Header Row Exists</label>
+            <apex:inputCheckbox id="insertHeader" value="{!insertHeaderRow}"/>
+        </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+</apex:component>

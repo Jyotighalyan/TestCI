@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Area Code --></label>
+        <name>LG_AreaCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asset --></label>
+        <name>LG_Asset__c</name>
+        <relationshipLabel><!-- Assets (Asset) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Vertrags-Typ</label>
+        <name>LG_ContractType__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Number --></label>
+        <name>LG_EndNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Format --></label>
+        <name>LG_Entry_Format__c</name>
+        <picklistValues>
+            <masterLabel>Group Entry</masterLabel>
+            <translation><!-- Group Entry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Entry</masterLabel>
+            <translation><!-- Single Entry --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Ablaufdatum</label>
+        <name>LG_ExpirationDate__c</name>
+    </fields>
+    <fields>
+        <label>externe ID</label>
+        <name>LG_ExternalID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>LG_Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premises --></label>
+        <name>LG_House_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Network IP Address --></label>
+        <name>LG_IPAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG IP Address First Part --></label>
+        <name>LG_IP_Address_First_Part__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG IP Address Fourth Part --></label>
+        <name>LG_IP_Address_Fourth_Part__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG IP Address Second Part --></label>
+        <name>LG_IP_Address_Second_Part__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG IP Address Third Part --></label>
+        <name>LG_IP_Address_Third_Part__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Directory --></label>
+        <name>LG_InDirectory__c</name>
+    </fields>
+    <fields>
+        <label>Installationsadresse</label>
+        <name>LG_InstallationAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Listing Type --></label>
+        <name>LG_ListingType__c</name>
+        <picklistValues>
+            <masterLabel>Ex-directory – number will not be published or given in search results (XD)</masterLabel>
+            <translation><!-- Ex-directory – number will not be published or given in search results (XD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Listed and published (DE)</masterLabel>
+            <translation><!-- Listed and published (DE) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Listed but not published (DQR)</masterLabel>
+            <translation><!-- Listed but not published (DQR) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not listed or published (NQR)</masterLabel>
+            <translation><!-- Not listed or published (NQR) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MAC Address --></label>
+        <name>LG_MACAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Number Activation/Cease --></label>
+        <name>LG_NumberActivationCeaseDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Range Product Configuration --></label>
+        <name>LG_NumberRangeProductConfiguration__c</name>
+        <relationshipLabel><!-- Assets (Number Range Product Configuration) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Number Range Service --></label>
+        <name>LG_NumberRangeService__c</name>
+        <relationshipLabel><!-- Assets (Number Range Service) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Number Range Size --></label>
+        <name>LG_NumberRangeSize__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Range Type --></label>
+        <name>LG_NumberRangeType__c</name>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Port-In</masterLabel>
+            <translation><!-- Port-In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portin</masterLabel>
+            <translation><!-- Portin --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number Range --></label>
+        <name>LG_NumberRange__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Type --></label>
+        <name>LG_Number_Type__c</name>
+        <picklistValues>
+            <masterLabel>Main Entry</masterLabel>
+            <translation><!-- Main Entry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sub Entry</masterLabel>
+            <translation><!-- Sub Entry --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Phone Number --></label>
+        <name>LG_PhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Port-In City --></label>
+        <name>LG_PortInCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Port-In House Number Extension --></label>
+        <name>LG_PortInHouseNumberExtension__c</name>
+    </fields>
+    <fields>
+        <label><!-- Port-In House Number --></label>
+        <name>LG_PortInHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Port-In Initials --></label>
+        <name>LG_PortInInitials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Port-In Name --></label>
+        <name>LG_PortInName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Port-In Operator --></label>
+        <name>LG_PortInOperator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Port-In Prefix --></label>
+        <name>LG_PortInPrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Port-In Street --></label>
+        <name>LG_PortInStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Port-In Type --></label>
+        <name>LG_PortInType__c</name>
+        <picklistValues>
+            <masterLabel>Special</masterLabel>
+            <translation><!-- Special --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Port-In Wish Date --></label>
+        <name>LG_PortInWishDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Port-In Zipcode --></label>
+        <name>LG_PortInZipcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postcode --></label>
+        <name>LG_PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Produktgruppe</label>
+        <name>LG_ProductGroup__c</name>
+    </fields>
+    <fields>
+        <label>Produktvariante</label>
+        <name>LG_ProductVariant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thoroughfare --></label>
+        <name>LG_PublicListingAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Public Listing Company Name --></label>
+        <name>LG_PublicListingCompanyName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Description --></label>
+        <name>LG_PublicListingDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Public Listing Name --></label>
+        <name>LG_PublicListingName__c</name>
+    </fields>
+    <fields>
+        <label><!-- LG_Published --></label>
+        <name>LG_Published__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates that the record is not relevant do to the change is active version (newer or older version exists and it is active) --></help>
+        <label><!-- Soft Deleted --></label>
+        <name>LG_SoftDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Number --></label>
+        <name>LG_StartNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Header --></label>
+        <name>LG_SubHeader__c</name>
+    </fields>
+    <fields>
+        <label><!-- Telephony Product Configuration --></label>
+        <name>LG_TelephonyProductConfiguration__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Telephony Service --></label>
+        <name>LG_TelephonyService__c</name>
+        <relationshipLabel><!-- Assets (Telephony Service) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LG_Unpublished --></label>
+        <name>LG_Unpublished__c</name>
+    </fields>
+    <fields>
+        <label><!-- Area Code --></label>
+        <name>UM_AreaCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Atk-Nr/ITEM-Nr --></label>
+        <name>UM_AtkNrITEMNr__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brand --></label>
+        <name>UM_Brand__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Voice Service --></label>
+        <name>UM_Business_Voice_Service__c</name>
+        <relationshipLabel><!-- Assets (Business Voice Service) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CDR ID Number --></label>
+        <name>UM_CDRIDNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Site ID --></label>
+        <name>UM_CustomerSiteID__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Number --></label>
+        <name>UM_EndNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Historical Name --></label>
+        <name>UM_Historical_Name__c</name>
+        <picklistValues>
+            <masterLabel>37th Lord of Brackley</masterLabel>
+            <translation><!-- 37th Lord of Brackley --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Altgraf und Altgräfin</masterLabel>
+            <translation><!-- Altgraf und Altgräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Altgräfin</masterLabel>
+            <translation><!-- Altgräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Altgräfin und Altgraf</masterLabel>
+            <translation><!-- Altgräfin und Altgraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baron</masterLabel>
+            <translation><!-- Baron --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baron und Baronin</masterLabel>
+            <translation><!-- Baron und Baronin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baronesse</masterLabel>
+            <translation><!-- Baronesse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baronin</masterLabel>
+            <translation><!-- Baronin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baronin und Baron</masterLabel>
+            <translation><!-- Baronin und Baron --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burggraf</masterLabel>
+            <translation><!-- Burggraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burggraf und Burggräfin</masterLabel>
+            <translation><!-- Burggraf und Burggräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burggräfin</masterLabel>
+            <translation><!-- Burggräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burggräfin und Burggraf</masterLabel>
+            <translation><!-- Burggräfin und Burggraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comtesse</masterLabel>
+            <translation><!-- Comtesse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Earl</masterLabel>
+            <translation><!-- Earl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Edle</masterLabel>
+            <translation><!-- Edle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Edle und Edler</masterLabel>
+            <translation><!-- Edle und Edler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Edler</masterLabel>
+            <translation><!-- Edler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Edler und Edle</masterLabel>
+            <translation><!-- Edler und Edle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erbgraf</masterLabel>
+            <translation><!-- Erbgraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erbgraf und Erbgräfin</masterLabel>
+            <translation><!-- Erbgraf und Erbgräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erbgräfin</masterLabel>
+            <translation><!-- Erbgräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erbgräfin und Erbgraf</masterLabel>
+            <translation><!-- Erbgräfin und Erbgraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erbprinz</masterLabel>
+            <translation><!-- Erbprinz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erbprinz und Erbprinzessin</masterLabel>
+            <translation><!-- Erbprinz und Erbprinzessin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erbprinzessin</masterLabel>
+            <translation><!-- Erbprinzessin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erbprinzessin und Erbprinz</masterLabel>
+            <translation><!-- Erbprinzessin und Erbprinz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erzherzog</masterLabel>
+            <translation><!-- Erzherzog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erzherzog und Erzherzogin</masterLabel>
+            <translation><!-- Erzherzog und Erzherzogin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erzherzogin</masterLabel>
+            <translation><!-- Erzherzogin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erzherzogin und Erzherzog</masterLabel>
+            <translation><!-- Erzherzogin und Erzherzog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freifrau</masterLabel>
+            <translation><!-- Freifrau --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freifrau Vogt</masterLabel>
+            <translation><!-- Freifrau Vogt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freifrau und Freiherr</masterLabel>
+            <translation><!-- Freifrau und Freiherr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freifrauen</masterLabel>
+            <translation><!-- Freifrauen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freiherr</masterLabel>
+            <translation><!-- Freiherr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freiherr und Freifrau</masterLabel>
+            <translation><!-- Freiherr und Freifrau --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freiherren</masterLabel>
+            <translation><!-- Freiherren --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freiherrlich</masterLabel>
+            <translation><!-- Freiherrlich --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freiin</masterLabel>
+            <translation><!-- Freiin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freiin Marschall</masterLabel>
+            <translation><!-- Freiin Marschall --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frfr.</masterLabel>
+            <translation><!-- Frfr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frhr.</masterLabel>
+            <translation><!-- Frhr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fürst</masterLabel>
+            <translation><!-- Fürst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fürst und Fürstin</masterLabel>
+            <translation><!-- Fürst und Fürstin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fürst und Graf</masterLabel>
+            <translation><!-- Fürst und Graf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fürstin</masterLabel>
+            <translation><!-- Fürstin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fürstin und Fürst</masterLabel>
+            <translation><!-- Fürstin und Fürst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Graf</masterLabel>
+            <translation><!-- Graf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Graf und Gräfin</masterLabel>
+            <translation><!-- Graf und Gräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grafen</masterLabel>
+            <translation><!-- Grafen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gräfin</masterLabel>
+            <translation><!-- Gräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gräfin und Graf</masterLabel>
+            <translation><!-- Gräfin und Graf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Herren</masterLabel>
+            <translation><!-- Herren --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Herrn</masterLabel>
+            <translation><!-- Herrn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Herzog</masterLabel>
+            <translation><!-- Herzog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Herzog und Herzogin</masterLabel>
+            <translation><!-- Herzog und Herzogin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Herzogin</masterLabel>
+            <translation><!-- Herzogin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Herzogin und Herzog</masterLabel>
+            <translation><!-- Herzogin und Herzog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Komtesse</masterLabel>
+            <translation><!-- Komtesse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Komtur</masterLabel>
+            <translation><!-- Komtur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lady</masterLabel>
+            <translation><!-- Lady --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lady of Glenmore</masterLabel>
+            <translation><!-- Lady of Glenmore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laird</masterLabel>
+            <translation><!-- Laird --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laird of Camster</masterLabel>
+            <translation><!-- Laird of Camster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laird of Glencairn</masterLabel>
+            <translation><!-- Laird of Glencairn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landgraf</masterLabel>
+            <translation><!-- Landgraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landgraf und Landgräfin</masterLabel>
+            <translation><!-- Landgraf und Landgräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landgräfin</masterLabel>
+            <translation><!-- Landgräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landgräfin und Landgraf</masterLabel>
+            <translation><!-- Landgräfin und Landgraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lehnsgraf</masterLabel>
+            <translation><!-- Lehnsgraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lehnsgraf und Lehnsgräfin</masterLabel>
+            <translation><!-- Lehnsgraf und Lehnsgräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lehnsgräfin</masterLabel>
+            <translation><!-- Lehnsgräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lehnsgräfin und Lehnsgraf</masterLabel>
+            <translation><!-- Lehnsgräfin und Lehnsgraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lord</masterLabel>
+            <translation><!-- Lord --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lord and Lady of Aberdeen</masterLabel>
+            <translation><!-- Lord and Lady of Aberdeen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lord of Brideswell</masterLabel>
+            <translation><!-- Lord of Brideswell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lord of Kerry</masterLabel>
+            <translation><!-- Lord of Kerry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lord of Millington</masterLabel>
+            <translation><!-- Lord of Millington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lord von Kerry</masterLabel>
+            <translation><!-- Lord von Kerry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Markgraf</masterLabel>
+            <translation><!-- Markgraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Markgraf und Markgräfin</masterLabel>
+            <translation><!-- Markgraf und Markgräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Markgräfin</masterLabel>
+            <translation><!-- Markgräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Markgräfin und Markgraf</masterLabel>
+            <translation><!-- Markgräfin und Markgraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marquess</masterLabel>
+            <translation><!-- Marquess --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marquis</masterLabel>
+            <translation><!-- Marquis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marquise</masterLabel>
+            <translation><!-- Marquise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prince</masterLabel>
+            <translation><!-- Prince --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prinz</masterLabel>
+            <translation><!-- Prinz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prinz und Herzog</masterLabel>
+            <translation><!-- Prinz und Herzog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prinz und Landgraf</masterLabel>
+            <translation><!-- Prinz und Landgraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prinz und Prinzessin</masterLabel>
+            <translation><!-- Prinz und Prinzessin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prinzen</masterLabel>
+            <translation><!-- Prinzen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prinzessin</masterLabel>
+            <translation><!-- Prinzessin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prinzessin und Prinz</masterLabel>
+            <translation><!-- Prinzessin und Prinz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reichsfreiherr</masterLabel>
+            <translation><!-- Reichsfreiherr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reichsgraf</masterLabel>
+            <translation><!-- Reichsgraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reichsgraf und Reichsgräfin</masterLabel>
+            <translation><!-- Reichsgraf und Reichsgräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reichsgräfin</masterLabel>
+            <translation><!-- Reichsgräfin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reichsgräfin und Reichsgraf</masterLabel>
+            <translation><!-- Reichsgräfin und Reichsgraf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ritter</masterLabel>
+            <translation><!-- Ritter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ritter und Edler</masterLabel>
+            <translation><!-- Ritter und Edler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ritter und Edler Herr</masterLabel>
+            <translation><!-- Ritter und Edler Herr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ritter von Lazan</masterLabel>
+            <translation><!-- Ritter von Lazan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheich</masterLabel>
+            <translation><!-- Scheich --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schenk Graf</masterLabel>
+            <translation><!-- Schenk Graf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sir</masterLabel>
+            <translation><!-- Sir --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vicomtesse</masterLabel>
+            <translation><!-- Vicomtesse --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Installation Location --></label>
+        <name>UM_InstallationLocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model --></label>
+        <name>UM_Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Range Attribute --></label>
+        <name>UM_Number_Range_Attribute__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Configuration --></label>
+        <name>UM_Product_Configuration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Published --></label>
+        <name>UM_Published__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second MAC Address --></label>
+        <name>UM_SecondMACAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Date --></label>
+        <name>UM_ShippingDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Number --></label>
+        <name>UM_StartNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>UM_Type__c</name>
+        <picklistValues>
+            <masterLabel>Access point</masterLabel>
+            <translation><!-- Access point --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gateway</masterLabel>
+            <translation><!-- Gateway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modem</masterLabel>
+            <translation><!-- Modem --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Switch</masterLabel>
+            <translation><!-- Switch --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- vLAN-ID --></label>
+        <name>UM_vLANID__c</name>
+    </fields>
+    <fields>
+        <help>erklärt den Vorteil detaillierter</help>
+        <label>Buchwert</label>
+        <name>csord__Asset_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- External Id field used for bulk inserts of Orders &amp; Subscriptions objects. --></help>
+        <label>externes Identifizierungszeichen</label>
+        <name>csord__External_Identifier2__c</name>
+    </fields>
+    <fields>
+        <help><!-- External Id field used for bulk inserts of Orders &amp; Subscriptions objects. --></help>
+        <label><!-- DEPRECATED External Identifier --></label>
+        <name>csord__External_Identifier__c</name>
+    </fields>
+    <fields>
+        <help><!-- E.g. &quot;spokeServiceAmsterdam&quot; in Hub&amp;Spokes scenario. --></help>
+        <label>Identifizierung</label>
+        <name>csord__Identification__c</name>
+    </fields>
+    <fields>
+        <help><!-- The parent of this asset. Only one of Order, OrderLineItem, Service or ServiceLineItem can be filled in for any asset. --></help>
+        <label><!-- Order Line Item --></label>
+        <name>csord__Order_Line_Item__c</name>
+        <relationshipLabel><!-- Salesforce Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Order Request object which introduced the latest changes to this object. --></help>
+        <label>Bestellanfrage</label>
+        <name>csord__Order_Request__c</name>
+        <relationshipLabel><!-- Salesforce Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The parent of this asset. Only one of Order, OrderLineItem, Service or ServiceLineItem can be filled in for any asset. --></help>
+        <label>Bestellung</label>
+        <name>csord__Order__c</name>
+        <relationshipLabel><!-- Salesforce Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The parent of this asset. Only one of Order, OrderLineItem, Service or ServiceLineItem can be filled in for any asset. --></help>
+        <label>Auftragsposition Service</label>
+        <name>csord__Service_Line_Item__c</name>
+        <relationshipLabel><!-- Salesforce Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The parent of this asset. Only one of Order, OrderLineItem, Service or ServiceLineItem can be filled in for any asset. --></help>
+        <label><!-- Service --></label>
+        <name>csord__Service__c</name>
+        <relationshipLabel><!-- Salesforce Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Underlying attribute field --></help>
+        <label>Attributfeld</label>
+        <name>csordtelcoa__Attribute_Field__c</name>
+        <relationshipLabel><!-- Salesforce Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Delta Status --></label>
+        <name>csordtelcoa__Delta_Status__c</name>
+        <picklistValues>
+            <masterLabel>Added</masterLabel>
+            <translation><!-- Added --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Changed</masterLabel>
+            <translation><!-- Changed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deleted</masterLabel>
+            <translation><!-- Deleted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unchanged</masterLabel>
+            <translation><!-- Unchanged --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>ersetze HW</label>
+        <name>csordtelcoa__Replaced_Asset__c</name>
+        <relationshipLabel>Austausch-HW</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Austausch-HW</label>
+        <name>csordtelcoa__Replacement_Asset__c</name>
+        <relationshipLabel>ersetze HW</relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Asset Layout</layout>
+        <sections>
+            <label><!-- Business Voice --></label>
+            <section>Business Voice</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- WLAN --></label>
+            <section>WLAN</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Custom Asset Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Number Block --></label>
+        <name>Number_Block</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Phone Number --></label>
+        <name>Phone_Number</name>
+    </recordTypes>
+    <webLinks>
+        <label>Neuer technischer Fall</label>
+        <name>B2B_Asset_Technical_Case</name>
+    </webLinks>
+</CustomObjectTranslation>

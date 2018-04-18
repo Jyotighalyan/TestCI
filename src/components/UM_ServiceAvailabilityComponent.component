@@ -1,0 +1,39 @@
+<apex:component controller="UM_ServiceAvailabilityController" selfClosing="true" allowDML="true">
+    <!-- Attributes -->
+    <apex:attribute name="recordId" type="Id" description="Record Id" assignTo="{!recordIdAttribute}"/>
+    <apex:attribute name="buildingId" assignTo="{!buildingIdAttribute}" type="String" description="Building Id"/>    
+
+    <!-- GUI -->
+    <apex:outputPanel id="serviceAvailibilityChecker" rendered="{!!addrValidated}">
+        <strong style="color:#FF0000;">{!$Label.UM_SAVALIDATE_ADDR}</strong>
+    </apex:outputPanel>
+    <apex:outputPanel id="serviceAvailabilityChecker" rendered="{!addrValidated}">
+        <apex:outputPanel id="resultDisplay" style="float:left;">
+            <apex:outputPanel rendered="{!errorMessage == null}" style="margin-top:1em;" id="serviceAvailabilityDisplay">
+                <apex:repeat value="{!serviceAvailabilityInformation}" var="serviceAvailability">
+                    <div style="display:inline-block; margin-right:1em">
+                        <span style="font-weight: bold;"><apex:outputText value="{!serviceAvailability.serviceName}"/></span><br/>
+                        <span>
+                            <apex:image url="{!IF(serviceAvailability.available,URLFOR($Resource.SiteSamples,'/img/ico_V.png'),URLFOR($Resource.SiteSamples,'/img/ico_X.png'))}" style="display:block; margin-left:auto; margin-right:auto;"/>
+                        </span>
+                    </div>
+                </apex:repeat>
+            </apex:outputPanel>
+            <apex:outputPanel id="errorDisplay" rendered="{!errorMessage != null}">
+                <apex:outputText style="color: red; font-weight: bold;" value="{!errorMessage}"/>
+            </apex:outputPanel>
+        </apex:outputPanel>    
+        <apex:form id="addressForm" style="margin-bottom: 1em; float:left;">
+            <div style="display: table-cell;">
+                <div style="display: inline-block; vertical-align: text-top; margin-right: 0.5em;">
+                    <apex:commandButton id="submitButton" value="{!$Label.LG_Update}" action="{!updateServiceAvailability}" reRender="resultDisplay" status="updateStatus" image="{!URLFOR($Resource.RefreshIco)}"/>&nbsp;
+                    <apex:actionStatus startText="{!$Label.LG_RequestInProgress}" stopText="" id="updateStatus" onstart="document.getElementById('{!$Component.resultDisplay}').innerHTML = ''; document.getElementById('{!$Component.submitButton}').disabled = true; document.getElementById('{!$Component.postalCode}').disabled = true; document.getElementById('{!$Component.houseNumber}').disabled = true; document.getElementById('{!$Component.extension}').disabled = true;" onstop="document.getElementById('{!$Component.submitButton}').disabled = false; document.getElementById('{!$Component.postalCode}').disabled = false; document.getElementById('{!$Component.houseNumber}').disabled = false; document.getElementById('{!$Component.extension}').disabled = false;">
+                        <apex:facet name="start" >
+                            <div style="height:38px; line-height:38px; padding:0; margin:0 0 5px 0; display:inline-block; vertical-align:middle; overflow:auto;"><img src="/img/loading.gif" /></div>
+                        </apex:facet>
+                    </apex:actionStatus>
+                </div>
+            </div>
+        </apex:form>
+    </apex:outputPanel>
+</apex:component>

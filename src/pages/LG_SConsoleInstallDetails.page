@@ -1,0 +1,383 @@
+<apex:page standardController="Case" extensions="LG_SConsoleInstallDetailsExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+<style type="text/css">
+    th.vfLabelColTextWrap {white-space:nowrap !important;}
+    .detailList{white-space:nowrap !important;}
+   #j_id0:Form:ipb1:ProvisioningSection:Provisiondetails{overflow-x: scroll !important;}
+</style>
+<script type="text/javascript">
+
+    window.onload = function(){
+        var jeopardy = document.getElementById('{!$Component.Form.ipb1.SolutionSection.jeopardy}').checked;
+        var jeopardyExplanation = document.getElementById('{!$Component.Form.ipb1.SolutionSection.jeopardyExplanation}');
+        if(!jeopardy){
+            jeopardyExplanation.disabled = true;
+        }
+        setPanelWidth();
+    }
+
+    window.onresize = function() {
+    setPanelWidth();
+    };
+
+    function setPanelWidth(){
+        var panelWidth = document.getElementById('{!$Component.Form.ipb1.ProvisioningSection.tableContent}');
+        panelWidth.style.width = (tableSize()-50) + 'px';
+    }
+
+    function tableSize() {
+      var myWidth = 0, myHeight = 0;
+      if( typeof( window.innerWidth ) == 'number' ) {
+        //Non-IE
+        myWidth = window.innerWidth;
+          //myHeight = window.innerHeight;
+      } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+        //IE 6+ in 'standards compliant mode'
+        myWidth = document.documentElement.clientWidth;
+          //myHeight = document.documentElement.clientHeight;
+      } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+        //IE 4 compatible
+        myWidth = document.body.clientWidth;
+          //myHeight = document.body.clientHeight;
+      }
+        //window.alert( 'Width = ' + myWidth );
+        //window.alert( 'Height = ' + myHeight );
+        return myWidth;
+    }
+
+    function deleteAttachedFile(attachmentId){
+        if(confirm("Are you sure?")){
+            Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.LG_SConsoleInstallDetailsExtension.deleteAttachment}',
+            attachmentId, handleResult);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function handleResult(result, event){
+        if(result){
+            alert('Deleted successfully.');
+        }else{
+            alert('Delete operation falied.');
+        }
+
+    }
+
+    function enableDisableJeopardy(){
+        var jeopardy = document.getElementById('{!$Component.Form.ipb1.SolutionSection.jeopardy}').checked;
+        var jeopardyExplanation = document.getElementById('{!$Component.Form.ipb1.SolutionSection.jeopardyExplanation}');
+        //var jeopardyReason = document.getElementById('{!$Component.Form.ipb1.SolutionSection.jeopardyReason}');
+        //Table Object
+        var ProvisioningTable = document.getElementById('{!$Component.Form.ipb1.ProvisioningSection.Provisiondetails}');
+        //Get row count
+        var ProvTableRowCount = ProvisioningTable.getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
+        //if jeopardy is checked
+        if(jeopardy){
+            //Disable Jeopardy Reason and Explanation
+            jeopardyExplanation.disabled = false;
+            //jeopardyReason.disabled = false;
+
+            for(var x = 0; x < ProvTableRowCount; x ++){
+                var provTableSevice = document.getElementById('j_id0:Form:ipb1:ProvisioningSection:Provisiondetails:'+x+':serviceStatus');
+                //Disabling option[2] - Ready for Billing
+                provTableSevice.options[2].disabled = true;
+            }
+        }else{
+            jeopardyExplanation.value = '';
+            //jeopardyReason.value = '';
+            jeopardyExplanation.disabled = true;
+            //jeopardyReason.disabled = true;
+
+            for(var x = 0; x < ProvTableRowCount; x ++){
+                var provTableSevice = document.getElementById('j_id0:Form:ipb1:ProvisioningSection:Provisiondetails:'+x+':serviceStatus');
+                //Enabling option[2] - Ready for Billing
+                provTableSevice.options[2].disabled = false;
+            }
+        }
+    }
+
+    function validateStatus(idVal, status){
+        var statusVal = document.getElementById(idVal);
+        var jeopardy = document.getElementById('{!$Component.Form.ipb1.SolutionSection.jeopardy}');
+        var jeopardyExplanation = document.getElementById('{!$Component.Form.ipb1.SolutionSection.jeopardyExplanation}');
+        var jeopardyExpDisplay = document.getElementById('{!$Component.Form.ipb1.SolutionSectionDisplay.jeopardyExplanation}');
+        //alert(jeopardyExpDisplay.value);
+        //var jeopardyReason = document.getElementById('{!$Component.Form.ipb1.SolutionSection.jeopardyReason}');
+        var ProvisioningTable = document.getElementById('{!$Component.Form.ipb1.ProvisioningSection.Provisiondetails}');
+        var ProvTableRowCount = ProvisioningTable.getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
+
+        if(status == 'Installation Failed'){
+            jeopardy.checked = true;
+            jeopardy.disabled = true;
+            jeopardyExplanation.disabled = false;
+            //jeopardyReason.disabled = false;
+        }else if(status == 'Ready for Billing'){
+            jeopardy.checked = false;
+            jeopardy.disabled = true;
+            jeopardyExplanation.disabled = true;
+            //jeopardyReason.disabled = true;
+            jeopardyExplanation.value = '';
+            //jeopardyReason.value = '';
+        }else{
+            var checkRFB = false;
+            for(var x = 0; x < ProvTableRowCount; x++){
+                var provTableSevice = document.getElementById('j_id0:Form:ipb1:ProvisioningSection:Provisiondetails:'+x+':serviceStatus').value;
+                if(provTableSevice == 'Ready for Billing'){
+                    checkRFB = true;
+                }
+            }
+
+            if(!checkRFB){
+                jeopardy.disabled = false;
+                jeopardyExplanation.disabled = false;
+                //jeopardyReason.disabled = false;
+            }
+
+        }
+    }
+
+</script>
+
+    <apex:form id="Form">
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock id="ipb1" mode="{!Mode}">
+            <apex:pageBlockSection id="SolutionSection" title="{!$Label.LG_SolutionDetails}" columns="2" collapsible="false" rendered="{!Edit}">
+                <apex:outputField value="{!Solution.csord__Order__r.Name}" rendered="{!Installation}" />
+                <apex:outputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!Installation}"/>
+                <apex:outputField value="{!Solution.Name}" rendered="{!Installation}"/>
+
+                <apex:selectList value="{!Solution.LG_PlanningRequired__c}" multiselect="false" size="1" label="{!$Label.LG_PlanningRequired}" rendered="{!Installation}">
+                    <apex:selectOptions value="{!Slot}"/>
+                </apex:selectList>
+
+                <apex:outputField value="{!Solution.csord__Order__r.csord__Account__r.Name}" rendered="{!Installation}" />
+                <apex:inputCheckbox id="jeopardy" value="{!jeopardy}" label="{!$Label.LG_Jeopardy}" rendered="{!Installation}" onchange="enableDisableJeopardy();"/>
+                <apex:outputField value="{!Solution.csord__Order__r.csord__Order_Type__c}" rendered="{!Installation}" />
+                <apex:inputTextarea id="jeopardyExplanation" value="{!Solution.LG_JeopardyExplanation__c}"/>
+                <apex:outputText value="" rendered="{!jeoExpMsg}"/>
+                <apex:outputPanel style="text-align:center;color:red;font-weight:bold;" layout="block" rendered="{!jeoExpMsg}">
+                    {!$Label.LG_JeopardyExplanationisMandatory}.
+                </apex:outputPanel>
+                <apex:outputText value="" rendered="{!Installation}"/>
+                <!--Blocked on behalf of SFOM-505 -->
+                <!--<apex:selectList id="jeopardyReason" value="{!Solution.Jeopardy_Reason__c}" multiselect="false" size="1" label="Jeopardy Reason" rendered="{!Installation}" disabled="true">
+                    <apex:selectOptions value="{!JeopardyReason}"/>
+                </apex:selectList> -->
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection id="SolutionSectionDisplay" title="{!$Label.LG_SolutionDetails}" columns="2" collapsible="false" rendered="{!!Edit}">
+                <apex:outputField value="{!Solution.csord__Order__r.Name}" rendered="{!Installation}" />
+                <apex:outputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!Installation}"/>
+                <apex:outputField value="{!Solution.Name}" rendered="{!Installation}"/>
+
+                <apex:outputField value="{!Solution.LG_PlanningRequired__c}" label="{!$Label.LG_PlanningRequired}" rendered="{!Installation}" />
+                <apex:outputField value="{!Solution.csord__Order__r.csord__Account__r.Name}" rendered="{!Installation}" />
+                <apex:inputCheckbox value="{!jeopardy}" label="{!$Label.LG_Jeopardy}" rendered="{!Installation}" disabled="true"/>
+                <apex:outputField value="{!Solution.csord__Order__r.csord__Order_Type__c}" rendered="{!Installation}" />
+                <apex:outputText id="jeopardyExplanation" value="{!Solution.LG_JeopardyExplanation__c}"/>
+                <apex:outputText value="" rendered="{!Installation}"/>
+                <!--Blocked on behalf of SFOM-505 -->
+                <!--<apex:outputField value="{!Solution.Jeopardy_Reason__c}" label="Jeopardy Reason" rendered="{!Installation}" /> -->
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="{!$Label.LG_SiteDetails}" columns="1" collapsible="false" >
+                <!--<apex:outputText label="Site" rendered="{!Installation}">
+                    <apex:outputLink value="{!URLFOR($Action.cscrm__Address__c.View, Solution.LG_Address__c)}" rendered="{!Solution.LG_Address__c != null}">{!Solution.LG_Address__r.Name}</apex:outputLink>
+                </apex:outputText> -->
+                <apex:pageBlockSection columns="2" collapsible="false" >
+                    <!--SFOM-662  Start-->
+                    <apex:outputPanel style="color:red;font-weight:bold;" layout="block" rendered="{!FTTPWarning && OrgVal == 'VMB'}">
+                        {!$Label.LG_FTTPWarningMessage}
+                    </apex:outputPanel>
+                    <apex:outputText value="" rendered="{!FTTPWarning && OrgVal == 'VMB'}"/>
+                    <!--SFOM-662  End-->
+                    <apex:outputField label="{!$Label.LG_Site}" value="{!solution.LG_Address__r.LG_FullAddressDetails__c}" rendered="{!Installation}"/>
+                    <!-- SFOM-488 - Start -->
+                    <apex:outputField label="{!$Label.LG_InstallationContact}" value="{!Appointment.LG_InstallationContact__c}" rendered="{!Installation}"/>
+                    <apex:outputField label="{!$Label.LG_ContactNumber}" value="{!Appointment.LG_InstallationContact__r.phone}" rendered="{!Installation}"/>
+                    <!-- SFOM-488 - End -->
+                    <!-- SFOM-662 Start -->
+                    <apex:outputField value="{!solution.LG_Address__r.Delivery_Type__c}" rendered="{!OrgVal == 'VMB'}"/>
+                    <apex:inputField value="{!solution.LG_Address__r.VM_ONUNumber__c}" rendered="{!OrgVal == 'VMB'}"/>
+                    <!-- SFOM-662 End -->
+                </apex:pageBlockSection>
+
+                <apex:pageBlockSection columns="2" collapsible="false" rendered="{!!caseClosed}">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.LG_Attachment}" rendered="{!Installation}" for="file" style="padding-right:50px;"/>
+                        <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" id="file" rendered="{!Installation}" style="padding-left:10px;"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:commandButton value="{!$Label.LG_ButtonAttach}" action="{!upload}" rendered="{!Installation}"/>
+                </apex:pageBlockSection>
+
+                <apex:pageBlockTable value="{!SiteAttachment}"  var="attchObj" rendered="{!siteAttCheck}" >
+                    <apex:column headerValue="{!$Label.LG_Action}">
+                        <apex:commandlink action="{!PageRefresh}" onclick="deleteAttachedFile('{!attchObj.Id}');">Del</apex:commandlink>
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.LG_Attachment}">
+                        <apex:outputText ><apex:outputLink value="{!URLFOR($Action.Attachment.Download, attchObj.Id)}" >{!attchObj.Name}</apex:outputLink></apex:outputText>
+                    </apex:column>
+                    <apex:column value="{!attchObj.LastModifiedDate}" />
+                    <apex:column value="{!attchObj.OwnerId}" />
+
+                </apex:pageBlockTable>
+
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="{!$Label.LG_AppointmentDetails}" columns="1" collapsible="false" rendered="{!Edit}">
+               <!-- <apex:outputPanel style="text-align:center;color:red;font-weight:bold;" layout="block" rendered="{!Appointment.Id == null}">
+                    Error: Appointment Details not found.
+                </apex:outputPanel> -->
+
+                <apex:pageBlockSection columns="2" collapsible="false" >
+                    <apex:outputField value="{!Appointment.LG_AgreedInstallDate__c}" rendered="{!Installation}" />
+                    <apex:outputField value="{!Appointment.LG_Slot__c}" rendered="{!Installation}"/>
+                    <apex:outputField value="{!Appointment.LG_JobReference__c}" rendered="{!Installation}" />
+                    <apex:inputTextarea value="{!Appointment.LG_InstallationComments__c}" rendered="{!Appointment.Id != null}"/>
+                    <apex:outputText value="{!Appointment.LG_InstallationComments__c}" rendered="{!Appointment.Id == null}"/>
+                </apex:pageBlockSection>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="{!$Label.LG_AppointmentDetails}" columns="1" collapsible="false" rendered="{!!Edit}">
+               <!-- <apex:outputPanel style="text-align:center;color:red;font-weight:bold;" layout="block" rendered="{!Appointment.Id == null}">
+                    Error: Appointment Details not found.
+                </apex:outputPanel> -->
+
+                <apex:pageBlockSection columns="2" collapsible="false" >
+                    <apex:outputField value="{!Appointment.LG_AgreedInstallDate__c}" rendered="{!Installation}" />
+                    <apex:outputField value="{!Appointment.LG_Slot__c}" rendered="{!Installation}"/>
+                    <apex:outputField value="{!Appointment.LG_JobReference__c}" rendered="{!Installation}" />
+                    <apex:outputText value="{!Appointment.LG_InstallationComments__c}" rendered="{!Installation}"/>
+                </apex:pageBlockSection>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection id="ProvisioningSection" title="{!$Label.LG_ProvisioningDetails}" columns="1" collapsible="false" >
+                <apex:pageBlockSection columns="2" collapsible="false" rendered="{!!caseClosed}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.LG_TestEvidence}" rendered="{!Installation}" style="padding-right:50px;"/>
+                     <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" id="file" rendered="{!Installation}"/>
+                </apex:pageBlockSectionItem>
+                <apex:commandButton value="{!$Label.LG_ButtonAttach}" action="{!uploadTestEvidence}" rendered="{!Installation}"/>
+                </apex:pageBlockSection>
+                <!--Provisioning table editable -->
+                <apex:outputPanel id="tableContent" layout="block" style="overflow:auto;" >
+                <apex:pageBlockTable value="{!ProvisioningDetails}"  var="provObj" rendered="{!Edit}" id="Provisiondetails">
+                    <!--<apex:column headerValue="Services">
+                        <apex:outputText ><apex:outputLink value="{!URLFOR('/apex/LG_ViewAttributeDefenition?id='+provObj.service.Id, null)}">{!provObj.service.Name}</apex:outputLink>{!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                    </apex:column> -->
+                    <apex:column headerValue="{!$Label.LG_InstallFlag}" width="35" style="text-align:center;">
+                    <apex:image value="{!URLFOR($Resource.TrafficSignal, '/'+provObj.provisionFlag)}" height="16" width="16" />
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.LG_Services}">
+                        <apex:outputText >
+                            <apex:outputLink value="{!provObj.screenFlowPath}" rendered="{!provObj.screenFlowPath != null}">{!provObj.service.Name}</apex:outputLink>
+                            <apex:outputText value="{!provObj.service.Name}" rendered="{!provObj.screenFlowPath == null}"/>{!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                    </apex:column>
+                    <!--SFOM-245  <apex:column headerValue="Service Line Items">
+                        <apex:outputText ><apex:outputLink value="{!URLFOR($Action.csord__Service_Line_Item__c.View, provObj.serviceLineItem.Id)}" rendered="{!provObj.serviceLineItem != null}">{!provObj.serviceLineItem.Name}</apex:outputLink></apex:outputText>
+                    </apex:column> -->
+                    <apex:column headerValue="{!$Label.LG_Status}" >
+                      <apex:selectList id="serviceStatus" value="{!provObj.service.LG_ServiceStatus__c}" onchange="validateStatus(this.id,this.value);" multiselect="false" size="1" rendered="{!Installation}">
+                            <apex:selectOptions value="{!provObj.selectList}"></apex:selectOptions>
+                        </apex:selectList>
+
+                    </apex:column>
+        <!--            <apex:column headerValue="Install Date">
+                        <apex:inputField value="{!provObj.service.LG_InstallDate__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Activation Date" >
+                        <apex:inputField value="{!provObj.service.csord__Activation_Date__c}"/>
+                    </apex:column>  -->
+
+                    <!-- SFOM - 647 Added by : Ankur Gupta -- Start -->
+                     <apex:column headerValue="{!$Label.LG_DeltaStatus}" value="{!provObj.service.csordtelcoa__Delta_Status__c}"/>
+                    <!-- SFOM - 647 Added by : Ankur Gupta -- End -->
+
+                     <apex:column headerValue="{!$Label.LG_EffectiveDate}">
+                        <apex:inputField value="{!provObj.service.LG_EffectiveDate__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.LG_TestResult}" ondblclick="">
+                        <apex:selectList value="{!provObj.service.LG_TestResult__c}" multiselect="false" size="1" rendered="{!Installation}">
+                            <apex:selectOption itemLabel="None" itemValue=""/>
+                            <apex:selectOption itemLabel="Pass" itemValue="Pass"/>
+                            <apex:selectOption itemLabel="Fail" itemValue="Fail"/>
+                        </apex:selectList>
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.LG_Comments}" >
+                        <apex:inputField value="{!provObj.service.LG_Comments__c}"/>
+                    </apex:column>
+                   <!-- <apex:column headerValue="MAC Address" ondblclick=""></apex:column>
+                    <apex:column headerValue="Closure Code" ondblclick=""></apex:column> -->
+                </apex:pageBlockTable>
+                </apex:outputPanel>
+                <!--Provisioning table display only -->
+                <apex:pageBlockTable value="{!ProvisioningDetails}"  var="provObj" rendered="{!!Edit}" >
+                    <!--<apex:column headerValue="Services">
+                        <apex:outputText ><apex:outputLink value="{!URLFOR('/apex/LG_ViewAttributeDefenition?id='+provObj.service.Id, null)}">{!provObj.service.Name}</apex:outputLink>{!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                    </apex:column> -->
+                    <apex:column headerValue="{!$Label.LG_InstallFlag}" width="35" style="text-align:center;">
+                    <apex:image value="{!URLFOR($Resource.TrafficSignal, '/'+provObj.provisionFlag)}" height="16" width="16" />
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.LG_Services}">
+                        <apex:outputText >
+                            <apex:outputLink value="{!provObj.screenFlowPath}" rendered="{!provObj.screenFlowPath != null}">{!provObj.service.Name}</apex:outputLink>
+                            <apex:outputText value="{!provObj.service.Name}" rendered="{!provObj.screenFlowPath == null}"/>{!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                    </apex:column>
+                    <!--<apex:column headerValue="Service Line Items">
+                        <apex:outputText ><apex:outputLink value="{!URLFOR($Action.csord__Service_Line_Item__c.View, provObj.serviceLineItem.Id)}" rendered="{!provObj.serviceLineItem != null}">{!provObj.serviceLineItem.Name}</apex:outputLink></apex:outputText>
+                    </apex:column> -->
+                    <apex:column headerValue="{!$Label.LG_Status}" >
+                       <apex:outputField value="{!provObj.service.csord__Status__c}" rendered="{!!provStatus}"/>
+                    </apex:column>
+                    <!--<apex:column headerValue="Install Date">
+                        <apex:outputField value="{!provObj.service.LG_InstallDate__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Activation Date" >
+                        <apex:outputField value="{!provObj.service.csord__Activation_Date__c}"/>
+                    </apex:column> -->
+
+                    <!-- SFOM - 647 Added by : Ankur Gupta -- Start -->
+                     <apex:column headerValue="{!$Label.LG_DeltaStatus}" value="{!provObj.service.csordtelcoa__Delta_Status__c}"/>
+                    <!-- SFOM - 647 Added by : Ankur Gupta -- End -->
+                    <apex:column headerValue="{!$Label.LG_EffectiveDate}">
+                        <apex:outputField value="{!provObj.service.LG_EffectiveDate__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.LG_TestResult}" >
+                        <apex:outputField value="{!provObj.service.LG_TestResult__c}" rendered="{!Installation}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.LG_Comments}" >
+                        <apex:outputField value="{!provObj.service.LG_Comments__c}"/>
+                    </apex:column>
+                   <!-- <apex:column headerValue="MAC Address" ondblclick=""></apex:column>
+                    <apex:column headerValue="Closure Code" ondblclick=""></apex:column> -->
+                </apex:pageBlockTable>
+                <br/>
+                <apex:outputPanel rendered="{!evidenceAttCheck}"><b>{!$Label.LG_Attachment}s</b></apex:outputPanel>
+
+                <apex:pageBlockTable value="{!EvidenceAttachment}"  var="eviObj" rendered="{!evidenceAttCheck}" >
+                    <apex:column headerValue="{!$Label.LG_Action}">
+                        <apex:commandlink action="{!PageRefresh}" onclick="deleteAttachedFile('{!eviObj.Id}');">Del</apex:commandlink>
+                        <!--<apex:commandlink action="{!deleteAttachment}" value="Delete">
+                            <apex:param name="attachmentId" value="{!eviObj.Id}"/>
+                        </apex:commandlink>-->
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.LG_Attachment}">
+                        <apex:outputText ><apex:outputLink value="{!URLFOR($Action.Attachment.Download, eviObj.Id)}" >{!eviObj.Name}</apex:outputLink></apex:outputText>
+                    </apex:column>
+                    <apex:column value="{!eviObj.LastModifiedDate}" />
+                    <apex:column value="{!eviObj.OwnerId}" />
+
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons rendered="{!!caseClosed}">
+           <apex:commandButton value="{!$Label.LG_ButtonSave}" action="{!save}" rendered="{!Edit}"/>
+           <apex:commandButton value="{!$Label.LG_ButtonCancel}" action="{!cancel}" rendered="{!Edit}"/>
+           <apex:commandButton value="{!$Label.LG_ButtonEdit}" action="{!Edit}" rendered="{!!Edit}"/>
+           <apex:commandButton value="{!$Label.LG_ButtonRefresh}" onclick="window.location.reload();return false;" rendered="{!!Edit}"/>
+        </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

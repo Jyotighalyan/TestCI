@@ -1,0 +1,887 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>UM_Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>UM_Approval_Timestamp__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Timestamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>UM_BillingAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Billing Account</label>
+        <referenceTo>csconta__Billing_Account__c</referenceTo>
+        <relationshipLabel>Billing Account Items</relationshipLabel>
+        <relationshipName>Billing_Account_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UM_BillingCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_BillingType__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>One-Off</fullName>
+                    <default>false</default>
+                    <label>One-Off</label>
+                </value>
+                <value>
+                    <fullName>Recurring</fullName>
+                    <default>false</default>
+                    <label>Recurring</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UM_Billing_Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>UM_BillingAccount__r.LG_BillingAccountNumber__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Account Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Description__c</fullName>
+        <description>description for adjustment type records</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Upto 50 characters are allowed in description</inlineHelpText>
+        <label>Description</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Discount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Discount</label>
+        <referenceTo>LG_Discount__c</referenceTo>
+        <relationshipLabel>Billing Account Items</relationshipLabel>
+        <relationshipName>Billing_Account_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UM_EndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_External_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>Billing External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Is_Future_Dated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Future Dated</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_ItemType__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Discount</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>One-time Charge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>UM_Kenan_Sync_Message__c</fullName>
+        <externalId>false</externalId>
+        <label>Kenan Sync Message</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>UM_Last_Synced_with_Billing__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Synced with Billing</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>UM_NRC_Reason__c</fullName>
+        <description>stores NRC reasons</description>
+        <externalId>false</externalId>
+        <label>NRC Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Kulanz</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retention</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Preisanpassung</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Steuergutschrift (ohne MwSt.)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Falscher Rechnungsbetrag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Falsches Produkt gebucht</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Netzwerkausfall</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Korrektur Kündigung</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Techn. Problem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Portierung</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rechnungskorrektur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beschwerde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Servicegarantie</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interne Korrektur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bereitstellungsentgelte</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Monatliche Entgelte</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Versandkosten</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bankgebühr Belastung (ohne MwSt.)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bankgebühr Gutschrift (ohne MwSt.)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mahngebühren Belastung (ohne MwSt.)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mahngebühren Gutschrift (ohne MwSt.)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inkasso Abschreibung</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Insolvenz Abschreibung</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direktzahlung Inkasso Belastung</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Usage Mobil (GS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Usage Festnetz  (GS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Usage (GS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Usage Mobil (Belastung)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Usage Festnetz (Belastung)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Usage (Belastung)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Portierung (Belastung)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Freitextgutschrift</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Freitextbelastung</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inkasso Abschreibung (ohne MwSt.)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Insolvenz Abschreibung (ohne MwSt.)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>UM_NumberofMonths__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Months</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UM_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <label>Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>UM_Received_from_Billing_System__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is to differentiate whether record got created in SF or came from billing system</description>
+        <externalId>false</externalId>
+        <label>Received from Billing System</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UM_StartDate__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>UM_Total_Amount__c</fullName>
+        <description>used for Adjustment type records</description>
+        <externalId>false</externalId>
+        <label>Total Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Billing Account Item</label>
+    <listViews>
+        <fullName>Adjustments</fullName>
+        <columns>NAME</columns>
+        <columns>UM_NRC_Reason__c</columns>
+        <columns>UM_Description__c</columns>
+        <columns>UM_ItemType__c</columns>
+        <columns>UM_BillingType__c</columns>
+        <columns>UM_StartDate__c</columns>
+        <columns>UM_Total_Amount__c</columns>
+        <columns>UM_BillingCode__c</columns>
+        <columns>UM_External_Id__c</columns>
+        <columns>UM_Received_from_Billing_System__c</columns>
+        <columns>UM_Approval_Status__c</columns>
+        <columns>UM_Approval_Timestamp__c</columns>
+        <columns>UM_Last_Synced_with_Billing__c</columns>
+        <columns>UM_Kenan_Sync_Message__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>UM_BillingAccountItem__c.Adjustment</value>
+        </filters>
+        <label>Adjustments</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>BI-{0000}</displayFormat>
+        <label>Billing Account Item Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Billing Account Items</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Adjustment</fullName>
+        <active>true</active>
+        <label>Adjustment</label>
+        <picklistValues>
+            <picklist>UM_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_BillingType__c</picklist>
+            <values>
+                <fullName>One-Off</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_ItemType__c</picklist>
+            <values>
+                <fullName>One-time Charge</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_NRC_Reason__c</picklist>
+            <values>
+                <fullName>Bankgebühr Belastung %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bankgebühr Gutschrift %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereitstellungsentgelte</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beschwerde</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direktzahlung Inkasso Belastung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Falscher Rechnungsbetrag</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Falsches Produkt gebucht</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freitextbelastung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freitextgutschrift</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inkasso Abschreibung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inkasso Abschreibung %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insolvenz Abschreibung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insolvenz Abschreibung %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interne Korrektur</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Korrektur Kündigung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kulanz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mahngebühren Belastung %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mahngebühren Gutschrift %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monatliche Entgelte</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netzwerkausfall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portierung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portierung %28Belastung%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Preisanpassung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rechnungskorrektur</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Servicegarantie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steuergutschrift %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Techn%2E Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage %28Belastung%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage %28GS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage Festnetz  %28GS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage Festnetz %28Belastung%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage Mobil %28Belastung%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage Mobil %28GS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versandkosten</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Discount</fullName>
+        <active>true</active>
+        <label>Discount</label>
+        <picklistValues>
+            <picklist>UM_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_BillingType__c</picklist>
+            <values>
+                <fullName>One-Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recurring</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_ItemType__c</picklist>
+            <values>
+                <fullName>Discount</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UM_NRC_Reason__c</picklist>
+            <values>
+                <fullName>Bankgebühr Belastung %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bankgebühr Gutschrift %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereitstellungsentgelte</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beschwerde</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direktzahlung Inkasso Belastung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Falscher Rechnungsbetrag</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Falsches Produkt gebucht</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freitextbelastung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freitextgutschrift</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inkasso Abschreibung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inkasso Abschreibung %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insolvenz Abschreibung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insolvenz Abschreibung %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interne Korrektur</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Korrektur Kündigung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kulanz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mahngebühren Belastung %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mahngebühren Gutschrift %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monatliche Entgelte</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netzwerkausfall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portierung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portierung %28Belastung%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Preisanpassung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rechnungskorrektur</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Servicegarantie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steuergutschrift %28ohne MwSt%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Techn%2E Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage %28Belastung%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage %28GS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage Festnetz  %28GS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage Festnetz %28Belastung%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage Mobil %28Belastung%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Usage Mobil %28GS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versandkosten</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <validationRules>
+        <fullName>Cannot_Create_new_BAI_For_Inactive_BA</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(ISPICKVAL(UM_BillingAccount__r.csconta__Status__c, &apos;Deactivation Pending&apos;),ISPICKVAL(UM_BillingAccount__r.csconta__Status__c, &apos;Inactive&apos;),ISPICKVAL(UM_BillingAccount__r.csconta__Status__c, &apos;New&apos;),ISPICKVAL(UM_BillingAccount__r.csconta__Status__c, &apos;Pending activation&apos;),ISPICKVAL(UM_BillingAccount__r.csconta__Status__c, &apos;Pending disconnection&apos;),ISPICKVAL(UM_BillingAccount__r.csconta__Status__c, &apos;Disconnected&apos;))</errorConditionFormula>
+        <errorMessage>You cannot create or edit Billing account items on Billing accounts with status other than &quot;Active&quot; or &quot;Deactivation Requested&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NRC_Reason_Restriction_for_Kenan_Records</fullName>
+        <active>false</active>
+        <description>Restrict User to select  manually NRC Reason &quot;Adjustment from Kenan&quot; . This value is meant to be used form Adjustment records are created in kenan and fed to SF.</description>
+        <errorConditionFormula>AND( UM_Received_from_Billing_System__c == false, ISPICKVAL( UM_NRC_Reason__c , &apos;Adjustment from Kenan&apos;) )</errorConditionFormula>
+        <errorMessage>NRC Reason Value &quot;Adjustment from Kenan&quot;  is not valid unless records are fed from Kenan. Please Select any other Listed reason.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>UM_Manager_cannot_be_empty_for_approval</fullName>
+        <active>true</active>
+        <errorConditionFormula>RecordType.Name==&apos;Adjustment&apos; &amp;&amp;  ISBLANK(Owner:User.ManagerId)&amp;&amp;  UM_Received_from_Billing_System__c ==false</errorConditionFormula>
+        <errorMessage>There is no Manager for the current submitter. Please set the Manager for the current user submitting the record.</errorMessage>
+    </validationRules>
+</CustomObject>

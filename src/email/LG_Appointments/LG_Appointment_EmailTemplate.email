@@ -1,0 +1,22 @@
+<messaging:emailTemplate subject="Appointment Reminder" recipientType="Contact" relatedToType="LG_ScheduleAppointment__c">
+<messaging:plainTextEmailBody >
+
+Hi {!relatedTo.LG_InstallationContact__r.Name} , 
+
+        This is a reminder for your appointment scheduled with our Engineer for installation of your product .Please make yourself available at the time of appointment. Below are the details: 
+
+        Installation Address: {!relatedTo.LG_Address__r.Name} 
+
+        Date of visit : {!relatedTo.LG_AgreedInstallDate__c} 
+
+        Time Slot: {!relatedTo.LG_Slot__c} 
+    
+        Products to be Installed: 
+        <c:LG_ScheduleAppointment_Component SolutionId="{!relatedTo.LG_Solution__c}" />
+
+        Case# :{!relatedTo.LG_Case__r.casenumber} 
+
+
+Thanks.
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

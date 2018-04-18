@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>JiraAttributesMapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>JiraAttributesMappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attribute Name --></label>
+        <name>Attribute_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Constant Value --></label>
+        <name>Constant_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Name --></label>
+        <name>Form_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Mandatory --></label>
+        <name>Is_Mandatory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Service Child --></label>
+        <name>Is_Service_Child__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Value Lookup --></label>
+        <name>Is_Value_Lookup__c</name>
+    </fields>
+    <fields>
+        <label><!-- SF Field --></label>
+        <name>SF_Field__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Sf Field must be pouplated if is Value Lookup is checked --></errorMessage>
+        <name>IsValueLooup_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Either SF Field or Constant Value must be populated, if record is mandatory --></errorMessage>
+        <name>Mandatory_Field_Check</name>
+    </validationRules>
+</CustomObjectTranslation>

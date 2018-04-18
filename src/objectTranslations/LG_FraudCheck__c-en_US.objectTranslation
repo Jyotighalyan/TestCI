@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Fraud Check</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Fraud Check</value>
+    </caseValues>
+    <fields>
+        <label><!-- Fraud Record Identifier (Fraud Record ID --></label>
+        <name>Fraud_Record_Identifier_Fraud_Record_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account ID --></label>
+        <name>LG_AccountID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Account --></label>
+        <name>LG_BillingAccount__c</name>
+        <relationshipLabel><!-- Fraud Check --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dashboard Admin Checks Indicator --></label>
+        <name>LG_DashboardAdminChecksIndicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dashboard Admin Checks Status --></label>
+        <name>LG_DashboardAdminChecksStatus__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed With Blocking Icon</masterLabel>
+            <translation><!-- Completed With Blocking Icon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not completed</masterLabel>
+            <translation><!-- Not completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Fraud Check Date --></label>
+        <name>LG_FraudCheckDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Matrix Key --></label>
+        <name>LG_FraudMatrixKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Neural (Score) Response --></label>
+        <name>LG_FraudNeuralScoreResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Rule Category Flag Response --></label>
+        <name>LG_FraudRuleCategoryFlagResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Use Code Response --></label>
+        <name>LG_FraudUseCodeResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mitigation Payment --></label>
+        <name>LG_MitigationPayment__c</name>
+        <relationshipLabel><!-- Fraud Check --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Owner ID --></label>
+        <name>LG_OpportunityOwner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>LG_Opportunity__c</name>
+        <relationshipLabel><!-- Fraud Check --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Request --></label>
+        <name>LG_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Code (Authorization Response) --></label>
+        <name>LG_ResponseCodeAuthorizationResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response --></label>
+        <name>LG_Response__c</name>
+    </fields>
+    <fields>
+        <label><!-- Severity --></label>
+        <name>LG_Severity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standalone Fraud Check --></label>
+        <name>LG_StandaloneFraudCheck__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>LG_Status__c</name>
+        <picklistValues>
+            <masterLabel>Failure</masterLabel>
+            <translation><!-- Failure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Success</masterLabel>
+            <translation><!-- Success --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>LG_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Mitigation Payment --></label>
+        <name>LG_Type_of_Mitigation_Payment__c</name>
+        <picklistValues>
+            <masterLabel>BACS</masterLabel>
+            <translation><!-- BACS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card</masterLabel>
+            <translation><!-- Card --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Code --></label>
+        <name>LG_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>LG_description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Assessment Reference --></label>
+        <name>LG_fraudAssessmentReference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Response Code --></label>
+        <name>LG_fraudResponseCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Response Description --></label>
+        <name>LG_fraudResponseDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fraud Status Code --></label>
+        <name>LG_fraudStatusCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System Code --></label>
+        <name>LG_sourceSystemCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System Detail --></label>
+        <name>LG_sourceSystemDetail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System --></label>
+        <name>LG_sourceSystem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Code Description --></label>
+        <name>LG_statusCodeDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Code --></label>
+        <name>LG_statusCode__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

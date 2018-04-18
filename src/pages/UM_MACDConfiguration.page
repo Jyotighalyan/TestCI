@@ -1,0 +1,1063 @@
+<apex:page id="UM_MACDConfiguration" controller="UM_MACDConfigurationController" showHeader="true" sidebar="true" docType="html-5.0" title="{!$Label.LG_MACDConfiguration}">
+    <apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, 'sfdcBootstrap.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'bootstrap.min.js')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, 'bootstrap-switch.min.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, 'bootstrap-switch.min.js')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.sfdcBootstrap, '/datepicker/css/bootstrap-datepicker.standalone.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.sfdcBootstrap, '/datepicker/js/bootstrap-datepicker.js')}"/>
+
+    <style>
+      .sfdcBootstrap .btn-warning {background-color:#675e9d !important; border-color:#675e9d !important;}
+      .sfdcBootstrap .progress-bar-warning {background-color:#675e9d !important; border-color:#675e9d !important;}
+    </style>
+    <script>
+        //helper 'classes'
+        function Subscription(id)
+        {
+            this.id = id;
+        }
+         var moveInMoveOutDetails = [];
+
+        //helper 'classes'
+        function Site(id)
+        {
+            this.id = id;
+            this.subs = [];
+            this.rfsResponse = '';
+        }
+        
+        //helper 'classes'
+        function SelectedSites()
+        {
+            this.sites = [];
+        }
+        
+        $(document).ready(function() {
+
+        $('.input-group.date').datepicker({
+                format: 'dd-mm-yyyy',
+                weekStart: 1,
+                autoclose: true,
+                todayHighlight: true,
+                todayBtn: true,
+                clearBtn: true,
+                forceParse: false
+            });
+            $('#siteSelect').on('change', function()
+            {
+                //Iterate over all subscription and site checkboxes and unselect them
+                //Warning - change if some other checkbox is added
+                $(':checkbox').prop('checked', false);
+                
+                var siteSelected = $('#siteSelect').val();
+                $('#site-' + siteSelected).prop('checked', true);
+                
+                if (siteSelected != 'Select')
+                {
+                    //select subscriptions for the site
+                    selectSiteSubscriptions(document.getElementById('site-' + siteSelected));    
+                }
+            });
+
+            //based on the MACD Type selection, disable/enable various fields/options
+            $('#macdTypeSelect').on('change', function()
+            {
+                $('#btnNextError').hide();
+                $('#btnNext').prop('disabled', false);
+                //whatever MACD type is selected, deselect all subscriptions first
+                //basically 'reset' the page
+                $('#siteSelect').val('Select');
+                $(':checkbox').prop('checked', false);
+                
+                var macdType = $('#macdTypeSelect').val();
+
+                showNewSiteForMove();
+
+                //Commented the following code as per now Terminate will also
+                //be done for the whole Site
+                //if (macdType != 'Terminate')
+                //{
+                //    subscriptionCbsDisabled(true);
+                //}
+                //else
+                //{
+                //    subscriptionCbsDisabled(false);
+                //}
+                
+                siteCbsDisabled();
+            });
+            
+            //Commented the following code as per now Terminate will also
+            //be done for the whole Site
+            //initially set subscription cbs
+            //if ($('#macdTypeSelect').val() != 'Terminate')
+            //{
+            //    subscriptionCbsDisabled(true);
+            //}
+            
+            //if the user came from a subscription page, automatically select
+            //the subscription user came from
+            var subscriptionId = '{!subscription.Id}';
+            if (subscriptionId != '')
+            {
+                selectParentSite('subs-' + subscriptionId);
+
+                var item = $('#subs-' + subscriptionId);
+                var site = getParentSite(item);
+
+                var parentSiteId = site.attr('id');
+                selectSiteSubscriptions(document.getElementById(parentSiteId));
+            }
+            
+            siteCbsDisabled();
+            preselectChangeType();
+
+            /**
+             * MACD Migrate
+             *
+             * @author Petar Miletic
+             * @story SFOM-785
+             * @since  22/05/2017
+            */
+            $('.switchChecbox').bootstrapSwitch();
+            $('.discontinued').bootstrapSwitch('disabled', 'disabled');
+        });
+        var services = [];
+
+        /**
+         * MACD Migrate
+         *
+         * @author Petar Miletic
+         * @story SFOM-785
+         * @since  22/05/2017
+        */
+        function propServices() {
+
+            services = [];
+
+            var items = $('.switchChecbox');
+
+            for (var i = 0, len = items.length; i < len; i++) {
+
+                var item = $(items[i]);
+                var subItem = $('[id=' + item.attr('html-data-id') + ']');
+
+                if (!subItem[0].checked){
+                  continue;
+                }
+
+                services.push(
+                    {
+                        "Id": item.attr('id'),
+                        "Change": item.bootstrapSwitch('state'),
+                        "Discontinued": item.hasClass('discontinued')
+                    }
+                );
+            }
+
+            window.console.log('--------------------------');
+            for (var i = 0, len = services.length; i < len; i++) {
+                window.console.log(services[i].Id + ' -> Change: ' + services[i].Change + '; Discuntinued: ' + services[i].Discontinued);
+            }
+        }
+
+        /**
+         * MACD Migrate
+         *
+         * @author Petar Miletic
+         * @story SFOM-785
+         * @since  22/05/2017
+        */
+        function getParentSite(item) {
+            return item.parents('.site').children("input[type='checkbox']:first");
+        }
+
+        //for Move, btn Select All Subscription should be disabled
+        //and search address row should be shown
+        function showNewSiteForMove()
+        {
+          var macdType = $('#macdTypeSelect').val();
+
+          if (macdType == 'Move')
+          {
+              enableMoveDetails();
+              disableMigrateDetails();
+              $('#btnSelectAllSubs').prop('disabled', true);
+              $('#searchAddressRow').removeClass('hidden');
+
+          }
+          else
+          {
+              disableMoveDetails();
+              // code reverted for OMB-1823
+              /*if (isMigrateVariety(macdType)) {
+                enableMigrateDetails();
+              } else {
+                disableMigrateDetails();
+              }*/
+
+              $('#btnSelectAllSubs').prop('disabled', false);
+              $('#searchAddressRow').addClass('hidden');
+          }
+        }
+
+        function isMigrateVariety(changeType) {
+          var isVariety = false;
+          var varieties = $('#migrateVarieties').val().slice(1, -1);
+          if (varieties) {
+              varieties.split(', ').forEach(function (item) {
+                if (item == changeType) {
+                  isVariety = true;
+                  return;
+                }
+              });
+          }
+          return isVariety;
+        }
+
+
+        /**
+         * MACD Move
+         *
+         * @author Minhaj Alam
+         * @story SFOM-377
+         * @since  13/06/2017
+        */
+        function enableMoveDetails() {
+            $('.moveServices').removeClass('hidden');
+        }
+
+         /**
+         * MACD Move
+         *
+         * @author Minhaj Alam
+         * @story SFOM-377
+         * @since  13/06/2017
+        */
+        function disableMoveDetails() {
+            $('.moveServices').addClass('hidden');
+        }
+
+         /**
+         * MACD Move
+         *
+         * @author Minhaj Alam
+         * @story SFOM-377
+         * @since  13/06/2017
+        */
+        function populateMoveOutDate(siteId) {
+            var moveInDate = $('#moveInDate-'+siteId).val();
+            var moveOutDate = $('#moveOutDate-'+siteId).val();
+            if (moveOutDate == '' || moveOutDate == undefined) {
+                $('#moveOutDate-'+siteId).val(moveInDate);
+            }
+            return true;
+        }
+
+         /**
+         * MACD Move
+         *
+         * @author Minhaj Alam
+         * @story SFOM-377
+         * @since  13/06/2017
+        */
+        function validateMoveDates(siteId) {
+            var moveInDate = $('#moveInDate-'+siteId).val();
+            var moveOutDate = $('#moveOutDate-'+siteId).val();
+            validateError(moveInDate, moveOutDate);
+        }
+
+         /**
+         * MACD Move
+         *
+         * @author Minhaj Alam
+         * @story SFOM-377
+         * @since  13/06/2017
+        */
+        function validateError(moveInDate, moveOutDate) {
+            if((moveInDate == '' || moveInDate == undefined) || !isValidMoveInMoveOutdate(moveInDate, moveOutDate)){
+              $('#btnNextError').text('Move-out date cannot be earlier than Move-in date.');
+              $('#btnNextError').show();
+              $('#btnNext').prop('disabled', true);
+              return false;
+            } else {
+              $('#btnNextError').hide();
+              $('#btnNext').prop('disabled', false);
+              return true;
+            }
+        }
+
+        function isValidMoveInMoveOutdate(moveInDateStr, moveOutDateStr)
+        {
+            dateFirst = moveInDateStr.split('-');
+            dateSecond = moveOutDateStr.split('-');
+            var moveInDate = new Date(dateFirst[2], dateFirst[1], dateFirst[0]);
+            var moveOutDate = new Date(dateSecond[2], dateSecond[1], dateSecond[0]);
+
+            return (moveInDate <= moveOutDate);
+
+        }
+
+        /**
+         * MACD Migrate
+         *
+         * @author Petar Miletic
+         * @story SFOM-785
+         * @since  22/05/2017
+        */
+        function enableMigrateDetails() {
+            $('.migrateServices').removeClass('hidden');
+            $('#downgradeRow').removeClass('hidden');
+            var items = $('.switchChecbox');
+
+            for (var i = 0, len = items.length; i < len; i++) {
+
+                var item = $(items[i]);
+                var state = item.hasClass('discontinued');
+                item.bootstrapSwitch('state', !state);
+            }
+
+            propServices();
+        }
+
+        /**
+         * MACD Migrate
+         *
+         * @author Petar Miletic
+         * @story SFOM-785
+         * @since  22/05/2017
+        */
+        function disableMigrateDetails() {
+
+            services = [];
+            $('.migrateServices').addClass('hidden');
+            $('#downgradeRow').addClass('hidden');
+        }
+
+        //preselect the MACD change type (if parameter is present in the URL)
+        function preselectChangeType()
+        {
+            var changeType = "{!$CurrentPage.parameters.changeType}";
+            if (changeType != '')
+            {
+                $('#macdTypeSelect').val(changeType);
+
+                showNewSiteForMove();
+            }
+        }
+
+        //disable site cbs if address not validated
+        function siteCbsDisabled()
+        {
+            //gets all the checked sites
+            $('input:checkbox[id^=site-]').each(function()
+            {
+                var siteId = $(this).attr('id').substring(5, $(this).attr('id').length);
+                var site = $(this);
+                
+                if ($('#macdTypeSelect').val() == 'Change')
+                {
+                    var isValidated = false;
+                    
+                    $('input:hidden[id$=validatedAddress]').each(function()
+                    {
+                        if ($(this).val() == siteId)
+                        {
+                            isValidated = true;
+                        }
+                    });
+                    
+                    if (!isValidated)
+                    {
+                        site.attr('disabled', true);
+                    }    
+                }
+                else
+                {
+                    site.attr('disabled', false);
+                }
+            });
+        }
+        
+        function subscriptionCbsDisabled(flag)
+        {
+            $('input:checkbox[id^=subs-]').each(function()
+            {
+                var disabled = flag;
+
+                var item = $(this);
+                var site = getParentSite(item);
+
+                //should be disabled if site cb is disabled
+                if (site.prop('disabled')) {
+                    disabled = true;
+                }
+
+                $(this).attr('disabled', disabled);
+            });
+        }
+        
+        function selectAllSubscriptions()
+        {
+            //Iterate over all subscription and site checkboxes and select them
+            //Warning - change if some other checkbox is added
+            $(':checkbox').prop('checked', true);
+        }
+        
+        function selectSiteSubscriptions(site)
+        {
+            //Whenever there is a change in checkbox value of the Site, change 
+            //the subscription(s) checkbox values appropriately
+            //-site checkbox checked, subscription checkboxes should be checked.
+            //site checkbox unchecked, related subscription checboxes should be unchecked
+            $('.subs' + site.id).prop('checked', site.checked);
+        }
+        
+        function selectParentSite(subscriptionId)
+        {
+            //Whenever there is a change in checkbox value of the Subscription,
+            //if the subscription gets selected, the parent Site must be selected
+            //also.
+            var item = $('#' + subscriptionId);
+            var site = getParentSite(item);
+            site.prop('checked', true);
+        }
+        
+        function macdProcessStart()
+        {
+            //SFOM-1097 - HPBX Service Check flag.
+            var hpbxflag = false;
+            // added as prt of bds dgt-336
+    		 var bdsWarningFlag = false;
+    		 var clickedAlready = false;
+          
+            //gets all the checked sites
+            $('input:checkbox:checked[id^=site-]').each(function()
+            {
+                var siteElemId = $(this).attr('id');
+                var site = siteElemId.substring(5, siteElemId.length);
+                //populate a list of related subscriptions
+                $('.subs' + siteElemId).each(function() {
+                    if (this.checked) {
+                        if($('#service' + this.id).val() == 'VoiceWorks' || $('#service' + this.id).val() == 'SipWise'){
+                            //setting flag as true if it is HPBX service                           
+                            hpbxflag = true;
+                        }
+                    }
+                });
+            });
+
+            var macdType = $('#macdTypeSelect').val();
+            //SFOM-1097 - HPBX Service Check
+            if(hpbxflag == false || (hpbxflag == true && macdType == 'Terminate')){
+                moveInMoveOutDetails = [];
+                propServices();
+
+                //hideOldErrors
+                $('#btnNextError').hide();
+
+                //disable the button that it cannot be double-clicked
+                $('#btnNext').prop('disabled', true);
+
+                //holds an array of selected sites and the selected subscriptions
+                var selectedSites = new SelectedSites();
+                var allAddressesValidated = true;
+
+
+                //gets all the checked sites
+                $('input:checkbox:checked[id^=site-]').each(function()
+                {
+                    var siteElemId = $(this).attr('id');
+
+                    var site = new Site(siteElemId.substring(5, siteElemId.length));
+
+                    //SFDT-517 Check if every selected address is validated
+                    //only for Change
+                    if (macdType == 'Change')
+                    {
+                        var isValidated = false;
+                        $('input:hidden[id$=validatedAddress]').each(function()
+                        {
+                            if ($(this).val() == site.id)
+                            {
+                                isValidated = true;
+                            }
+                        })
+                        if (!isValidated)
+                        {
+                            allAddressesValidated = false;
+                        }
+                    }
+
+                    //populate a list of related subscriptions
+                    $('.subs' + siteElemId).each(function() {
+
+                        if (this.checked) {
+                            site.subs.push(new Subscription(this.id.substring(5, this.id.length)));
+                        }
+                    });
+
+                    //SFOM-377
+                   if (macdType == 'Move') {
+                       var siteId = site.id;
+                       var moveInDate = $('#moveInDate-'+siteId).val();
+                       var moveOutDate = $('#moveOutDate-'+siteId).val();
+                       moveInMoveOutDetails.push({
+                           "id":siteId,
+                           "moveInDate":moveInDate,
+                           "moveOutDate":moveOutDate
+                           });
+
+                    }
+
+                    selectedSites.sites.push(site);
+
+                });
+
+
+                if (!allAddressesValidated)
+                {
+                    $('#btnNextError').text('Not all selected Site Addresses were validated. Please validate the Site Address.');
+                    $('#btnNextError').show();
+
+                    //re-enable the 'Next' button
+                    $('#btnNext').prop('disabled', false);
+                    return;
+                }
+
+                //check if no sites were selected
+                var noSitesSubsSelected = false;
+
+                if (selectedSites.sites.length == 0)
+                {
+                    noSitesSubsSelected = true;
+                }
+                else
+                {
+                    //check if some site was selected but there are no selected related
+                    //subscriptions
+                    $.each(selectedSites.sites, function(i)
+                    {
+                        if (selectedSites.sites[i].subs.length == 0)
+                        {
+                            noSitesSubsSelected = true;
+                        }
+                    });
+                }
+
+                if (noSitesSubsSelected == true)
+                {
+                    $('#btnNextError').text('No Sites/Subscriptions were selected! At least one Subscription should be selected.');
+                    $('#btnNextError').show();
+
+                    //re-enable the 'Next' button
+                    $('#btnNext').prop('disabled', false);
+                    return;
+                }
+
+                //move should only have one site selected
+                if (macdType == 'Move')
+                {
+                    if (selectedSites.sites.length > 1)
+                    {
+                        $('#btnNextError').text('For Move, only Subscriptions from one Site can be selected!');
+                        $('#btnNextError').show();
+
+                        //re-enable the 'Next' button
+                        $('#btnNext').prop('disabled', false);
+                        return;
+                    }
+                    else if ($('input[id*=moveSiteField]').val().trim() == '')
+                    {
+                        $('#btnNextError').text('For Move, the new Site has to be selected');
+                        $('#btnNextError').show();
+
+                        //re-enable the 'Next' button
+                        $('#btnNext').prop('disabled', false);
+                        return;
+                        //SFOM-377
+                    } else if(!validateError(moveInMoveOutDetails[0].moveInDate, moveInMoveOutDetails[0].moveOutDate)) {
+                       return;
+                    }
+ }
+
+
+                 //--dgt-336--
+                if (macdType == 'Terminate')
+                  {
+                          
+                   $('.bdscheck').each(function(index, item) {
+                               
+                               var parent = item.parentNode;
+                               var checkboxes = $(parent).find('input:checked');
+                               
+                               if (checkboxes.length > 0 && item.innerHTML.includes('BDS Standort')) {
+                                   bdsWarningFlag = true;
+                                   clickedAlready = true;
+                               }
+                           });
+                           
+                           if (bdsWarningFlag ){
+
+                               if (!confirm('Are you sure you want to terminate BDS Site?')) {
+                             //    $('#btnNextWarning').text('You are trying to terminate a BDS site...???');
+                               //  $('#btnNextWarning').show();
+                                       //re-enable the 'Next' button
+                              
+                                    $('#btnNext').prop('disabled', false);
+                                    return; 
+                                   
+                               }
+                               
+                             }  
+                            // return;
+                }
+
+                var progressBarCaption = 'RFS Check (1/' + selectedSites.sites.length + ')';
+                if (macdType == 'Terminate')
+                {
+                    progressBarCaption = 'Please wait';
+                }
+
+                //RFS check should update the progressBar appropriately
+                $('#progressBar').removeClass('hidden');
+                $('#progressBarInner').prop('aria-valuenow', (1/selectedSites.sites.length)*100).prop('style', 'width:' + (1/selectedSites.sites.length)*100 + '%').html(progressBarCaption);
+
+                var processedSites = 0;
+
+                var isMove = false;
+
+                //for move, we are firing the RFS check only for the selected move site
+                if (macdType == 'Move')
+                {
+                    isMove = true;
+
+                    var moveSite = new Site($('input[id*=moveSiteJson]').val());
+                    moveSite.subs = selectedSites.sites[0].subs;
+                    selectedSites.sites = [];
+                    selectedSites.sites.push(moveSite);
+                }
+
+                //SFDT-85, for Terminate no need for the RFS checks, just call the
+                //SFDT-396, for Migrate no need for the RFS checks
+                //createMacdOppAndBasket
+                if (macdType == 'Terminate')
+                {
+                    createMacdOppAndBasket(selectedSites, services, moveInMoveOutDetails);
+
+                } else {
+                    $.each(selectedSites.sites, function(i)
+                        {
+                            Visualforce.remoting.Manager.invokeAction(
+                                '{!$RemoteAction.UM_MACDConfigurationController.rfsCheck}',
+                                selectedSites.sites[i].id, isMove,
+                                    function(result, event)
+                                    {
+                                        if (event.status)
+                                        {
+                                            //only if RFS Check was a success, proceed
+                                            if (result.statusCode == 200)
+                                            {
+                                                selectedSites.sites[i].rfsResponse = result.respBody;
+
+                                                processedSites += 1;
+
+                                                $('#progressBarInner').prop('aria-valuenow', (processedSites/selectedSites.sites.length)*100).prop('style', 'width:'
+                                                                            + (processedSites/selectedSites.sites.length)*100 + '%').html('RFS Check (' + processedSites + '/' + selectedSites.sites.length + ')');
+
+                                                if (selectedSites.sites.length == processedSites)
+                                                {
+                                                    createMacdOppAndBasket(selectedSites, services, moveInMoveOutDetails);
+                                                }
+                                            }
+                                            else
+                                            {
+                                                var siteAddress = '';
+                                                if (isMove)
+                                                {
+                                                    siteAddress = $('input[id*=moveSiteField]').val();
+                                                }
+                                                else
+                                                {
+                                                    siteAddress = $('#site-' + selectedSites.sites[i].id).next().html();
+                                                }
+                                                $('#btnNextError').text('RFS Check Error(' + siteAddress + '): ' + result.respBody + ' Please contact the Administrator.');
+                                                $('#btnNextError').show();
+
+                                                //re-enable the 'Next' button
+                                                $('#btnNext').prop('disabled', false);
+                                                $('#progressBar').addClass('hidden');
+                                            }
+
+                                        }
+                                        else if (event.type === 'exception')
+                                        {
+                                            $('#btnNextError').text(event.message + ' Please contact the Administrator.');
+                                            $('#btnNextError').show();
+
+                                            //re-enable the 'Next' button
+                                            $('#btnNext').prop('disabled', false);
+                                            $('#progressBar').addClass('hidden');
+                                        }
+                                        else
+                                        {
+                                            $('#btnNextError').text(event.message + ' Please contact the Administrator.');
+                                            $('#btnNextError').show();
+
+                                            //re-enable the 'Next' button
+                                            $('#btnNext').prop('disabled', false);
+                                            $('#progressBar').addClass('hidden');
+                                        }
+                                    },
+                                    {escape: false}
+                            );
+                        });
+                }
+            }else{
+                //SFOM-1097 - Alert message for other MACD Operations
+                $('#btnNextError').text('MACD '+macdType+ ' is not allowed for HPBX Services.');
+                $('#btnNextError').show();
+
+                //re-enable the 'Next' button
+                $('#btnNext').prop('disabled', false);
+                return;
+            }
+        }
+        
+        function createMacdOppAndBasket(sites, migrateservices, moveInMoveOutDetails)
+        {
+            if (!migrateservices) {
+                migrateservices = [];
+            }
+
+            if (!moveInMoveOutDetails) {
+                moveInMoveOutDetails= [];
+            }
+
+            var isDowngrade = $('#cbDowngrade').prop('checked');
+
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.UM_MACDConfigurationController.createMacdOppAndBasket}',
+                JSON.stringify(sites), $('#macdTypeSelect').val(), $('input[id*=accountIdField]').val(), JSON.stringify(migrateservices), JSON.stringify(moveInMoveOutDetails), isDowngrade,
+                function(result, event)
+                {
+                    if (event.status)
+                    {
+                        if (result === 'Move failed')
+                        {
+                            $('#btnNextError').text('Internet not available on the selected Site');
+                            $('#btnNextError').show();
+                            
+                            //re-enable the 'Next' button
+                            $('#btnNext').prop('disabled', false);
+                            $('#progressBar').addClass('hidden');  
+                        }
+                        else
+                        {
+                            window.location = '/' + result;    
+                        }
+                    } 
+                    else if (event.type === 'exception')
+                    {
+                        $('#btnNextError').text(event.message);
+                        $('#btnNextError').show();
+                        
+                        //re-enable the 'Next' button
+                        $('#btnNext').prop('disabled', false);
+                        $('#progressBar').addClass('hidden');
+                    } 
+                    else 
+                    {
+                        $('#btnNextError').text(event.message);
+                        $('#btnNextError').show();
+                        
+                        //re-enable the 'Next' button
+                        $('#btnNext').prop('disabled', false);
+                        $('#progressBar').addClass('hidden');
+                    }
+                }, 
+                {escape: true}
+            );    
+        }
+        
+        //prepares the variables for address validation
+        //if validate address button is clicked, it would populate the site ID
+        //in the controller and the current url on the hidden element,
+        //otherwise if 'search address' button was clicked, it just sets everything to 
+        //blank/false 
+        function prepareAndShowValidate(validateButton)
+        {
+            var validateAddressFlag = false;
+            var siteId = '';
+            if (validateButton.id != 'btnShowAddressSearchModal')
+            {
+                validateAddressFlag = true;
+                siteId = validateButton.id.split('-')[1];
+                $('#currentUrl').val(window.location.href);
+            }
+            else
+            {
+                $('#currentUrl').val('');
+            }
+            validateAddress(validateAddressFlag, siteId);
+            setAddressFields(siteId, validateAddressFlag);
+        }
+        
+        //sets the address fields on the address search modal window
+        //if the address validation was called - fields are disabled.
+        //if address search  (for Move) was called, fields are enabled 
+        //and populated from the Account Visit Address
+        function setAddressFields(siteId, validateAddress)
+        {
+            if (validateAddress)
+            {
+                $('[id$=currentAddress]').find('table').find('td').find(':input').each(function()
+                {
+                   $(this).attr('disabled', true);
+                });
+                
+                $($('[id$=currentAddress').find('table').find('td').find(':input')[0]).val($('#street-' + siteId).val());
+                $($('[id$=currentAddress').find('table').find('td').find(':input')[1]).val($('#zipCode-' + siteId).val());
+                $($('[id$=currentAddress').find('table').find('td').find(':input')[2]).val($('#houseNumber-' + siteId).val());
+                $($('[id$=currentAddress').find('table').find('td').find(':input')[3]).val('');
+                $($('[id$=currentAddress').find('table').find('td').find(':input')[4]).val($('#city-' + siteId).val());                
+            }
+            else
+            {
+                $('[id$=currentAddress]').find('table').find('td').find(':input').each(function()
+                {
+                   $(this).attr('disabled', false);
+                });
+                $($('[id$=currentAddress').find('table').find('td').find(':input')[0]).val($('#accVisitStreet').val());
+                $($('[id$=currentAddress').find('table').find('td').find(':input')[1]).val($('#accVisitPostalCode').val());
+                $($('[id$=currentAddress').find('table').find('td').find(':input')[2]).val($('#accVisitHouseNumber').val());
+                $($('[id$=currentAddress').find('table').find('td').find(':input')[3]).val($('#accVisitHouseNumberExt').val());
+                $($('[id$=currentAddress').find('table').find('td').find(':input')[4]).val($('#accVisitCity').val());
+            }
+            
+            //had to use timeout as, if find address happens to quick, the controller variables are still not set
+            setTimeout(function(){$('[id$=btnFindAddress]').click();$('#modalAddressSearch').modal('show');}, 1500);
+     
+        }
+    </script>
+    <apex:form >
+        <div class="sfdcBootstrap">
+            <div class="container">
+                <br/>
+                <h2>{!$Label.LG_MACDConfiguration}</h2>
+                <br/>
+                <br/>
+                <div class="well">
+                    <div class="input-group">
+                        <span style="font-size:16px">{!$Label.LG_Account} </span>&nbsp;&nbsp;&nbsp;
+                        <a href="/{!account.Id}" style="font-size:14px">{!account.Name}</a>
+                        <apex:inputHidden value="{!account.Id}" id="accountIdField"/>
+                        <input id="currentUrl" type="hidden" value=""/>
+                        <input id="accVisitPostalCode" type="hidden" value="{!account.LG_VisitPostalCode__c}"/>
+                        <input id="accVisitHouseNumber" type="hidden" value="{!account.LG_VisitHouseNumber__c}"/>
+                        <input id="accVisitHouseNumberExt" type="hidden" value="{!account.LG_VisitHouseNumberExtension__c}"/>
+                        <input id="accVisitStreet" type="hidden" value="{!account.LG_VisitStreet__c}"/>
+                        <input id="accVisitCity" type="hidden" value="{!account.LG_VisitCity__c}"/>
+                        <input id="migrateVarieties" type="hidden" value="{!migrateVarieties}"/>
+                        <apex:outputText rendered="{!subscription != null}">
+                            <span class="input-group-btn">
+                                <span style="font-size:16px">{!$Label.LG_Subscription}&nbsp;&nbsp;&nbsp;</span>
+                                <a href="/{!subscription.Id}" style="font-size:14px">{!subscription.Name}</a>
+                            </span>
+                        </apex:outputText>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-3">                          
+                                <label for="macdTypeSelect">{!$Label.LG_MACDType}</label>
+                                <select class="form-control" id="macdTypeSelect">
+                                    <apex:repeat value="{!changeTypes}" var="changeType">
+                                        <option>{!changeType}</option>
+                                    </apex:repeat>
+                                </select>
+                            </div>
+
+                            <!-- removed for sfom-795
+                            <div class="col-sm-4">
+                                <label for="siteSelect">{!$Label.LG_Site}</label>
+                                <select class="form-control" id="siteSelect">
+                                    <option value="">{!$Label.Label_Select}</option>
+                                    <apex:repeat value="{!sites}" var="site">
+                                        <apex:outputText rendered="{!site.LG_AddressID__c != null}">
+                                            <option value="{!site.Id}">{!site.LG_FullAddressDetails__c}</option>
+                                        </apex:outputText>
+                                    </apex:repeat>
+                                </select>
+                            </div>
+                            -->
+                            <div class="col-sm-9">
+                                <br/>
+                                <button type="button" id="btnSelectAllSubs" onclick="selectAllSubscriptions()" class="btn btn-warning btn-sm pull-right">{!$Label.LG_SelectAllSubscriptions}</button>
+                            </div>
+                        </div>
+                        <div id="downgradeRow" class="row hidden">
+                          <br/><br/>
+                          <div class="form-group col-sm-5">
+                            <label for="cbDowngrade">{!$Label.LG_Downgrade}</label>
+                            <input id="cbDowngrade" type="checkbox"/>
+                          </div>
+                        </div>
+                        <div id="searchAddressRow" class="row hidden">
+                            <br/><br/>
+                            <div class="form-group col-sm-5">
+                                <button id="btnShowAddressSearchModal" type="button" class="btn btn-warning btn-sm" onclick="prepareAndShowValidate(this)">{!$Label.LG_SearchAddress}</button>
+                                <br/><br/>
+                                <label for="moveSiteField">{!$Label.LG_SelectedSite}</label>
+                                <apex:inputText disabled="true" styleClass="form-control" id="moveSiteField" value="{!moveSiteCaption}"/>
+                                <apex:inputHidden value="{!moveSiteJson}" id="moveSiteJson"/>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">{!$Label.LG_Subscription}s</div>
+                            <div class="panel-body">
+                                <apex:repeat value="{!sites}" var="site" id="siteInputs">
+                                    <div class="site">
+                                        <input id="site-{!site.Id}" type="checkbox" onchange="selectSiteSubscriptions(this)"/><h4> {!site.LG_FullAddressDetails__c}</h4>
+                                        <apex:outputText rendered="{!site.LG_AddressID__c == null}">
+                                            &nbsp;&nbsp;&nbsp;
+                                            <button id="btnValidateAddress-{!site.Id}" type="button" class="btn btn-warning btn-xs" onclick="prepareAndShowValidate(this)">{!$Label.LG_ValidateAddress}</button>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!site.LG_AddressID__c != null}">
+                                            <apex:inputHidden value="{!site.Id}" id="validatedAddress"/>
+                                        </apex:outputText>
+                                        <input id="zipCode-{!site.Id}" type="hidden" value="{!site.cscrm__Zip_Postal_Code__c}"/>
+                                        <input id="houseNumber-{!site.Id}" type="hidden" value="{!site.LG_HouseNumber__c}"/>
+                                        <input id="city-{!site.Id}" type="hidden" value="{!site.cscrm__City__c}"/>
+                                        <input id="street-{!site.Id}" type="hidden" value="{!site.cscrm__Street__c}"/>
+                                       <!-- /**
+                                       * MACD Move
+                                       *
+                                       * @author Minhaj Alam
+                                       * @story
+                                       * @story SFOM-377
+                                       * @since  07/06/2017
+                                      */ -->
+
+                                        <ul class="moveServices hidden">
+                                            <li>
+                                                <div id="moveInBlock" class="col-sm-6" style="padding:0px !important;">
+                                                    <div class="col-sm-3">
+                                                     <apex:outputText >{!$Label.LG_MoveIn_Date}</apex:outputText>
+                                                    </div>
+                                                    <div class="input-group date col-sm-4">
+                                                        <input type="text" class="form-control" id="moveInDate-{!site.Id}" value="{!moveInDate}" onchange="populateMoveOutDate('{!site.Id}');validateMoveDates('{!site.Id}');" />
+                                                        <span class="input-group-addon">
+                                                            <i class="glyphicon glyphicon-th"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div id="MoveOutBlock" class="col-sm-6" style="padding:0px !important;">
+                                                    <div class="col-sm-3">
+                                                     <apex:outputText >{!$Label.LG_Move_Out_Date}</apex:outputText>
+                                                    </div>
+                                                    <div class="input-group date col-sm-4">
+                                                        <input type="text" class="form-control" id="moveOutDate-{!site.Id}" value="{!moveOutDate}"  onchange="validateMoveDates('{!site.Id}');" />
+                                                        <span class="input-group-addon">
+                                                            <i class="glyphicon glyphicon-th"></i>
+                                                        </span>
+                                                    </div>
+                                               </div>
+                                            </li>
+                                        </ul>
+
+                                            <div style="padding-left:2em;">
+                                                <table>
+                                                    <apex:repeat value="{!siteToSubsMap[site.Id]}" var="subscription" id="subInputs">
+                                                        <!--Changed as part of BU-78 to add Service Number against subscription and formatting-->
+                                                        <tr>
+                                                            <td>
+                                                                <input class="subssite-{!site.Id}" id="subs-{!subscription.Id}" type="checkbox" onchange="selectParentSite(this.id)" /> <span class="bdscheck" style="font-size:14px">{!subscription.Name}</span>
+                                                            </td>
+                                                            <td style="font-size:12px; padding-left:2em; vertical-align:bottom;">
+                                                                Service Number : {!subsToServiceMap[subscription.Id].csordtelcoa__Service_Number__c}
+                                                                <input class="servicesubssite-{!site.Id}" id="servicesubs-{!subscription.Id}" type="hidden" value="{!subsToServiceMap[subscription.Id].LG_ProvisioningSystem__c}"/>
+                                                            </td>
+                                                        </tr>
+
+                                                        <!-- /**
+                                                         * MACD Migrate
+                                                         *
+                                                         * @author Petar Miletic
+                                                         * @story SFOM-785
+                                                         * @since  22/05/2017
+                                                        */ -->
+                                                        <ul class="migrateServices hidden">
+                                                            <apex:repeat value="{!subscription.csord__Services__r}" var="service">
+                                                              <apex:outputText rendered="{!service.csord__Service__c == null}">
+                                                                  <li>
+                                                                      <span style="display:inline-block; width: 200px;">
+                                                                          {!service.Name}
+                                                                      </span>
+                                                                      <span>
+                                                                          <input html-data-id="subs-{!subscription.Id}" Id="{!service.Id}" class="switchChecbox {!IF(!service.csordtelcoa__Product_Configuration__r.cscfga__Product_Definition__r.LG_Discontinued__c, 'discontinued', 'normal')}"
+                                                                          onchange="propServices()"
+                                                                          data-size="mini"
+                                                                          data-off-color="warning"
+                                                                          type="checkbox"
+                                                                          data-on-text="{!$Label.LG_Change}"
+                                                                          data-off-text="{!$Label.LG_Migrate}" />
+                                                                      </span>
+                                                                  </li>
+                                                                </apex:outputText>
+                                                            </apex:repeat>
+                                                        </ul>
+                                                    </apex:repeat>
+                                                </table>
+                                            </div>
+                                        <hr/>
+                                    </div>
+                                </apex:repeat>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger fade in" id="btnNextError" style="display:none;"/>
+                        <!--dgt-336-->
+                        <div class="alert alert-warning" id="btnNextWarning" style="display:none;"/>
+                      
+                        <div class="btn-group" style="text-align: center">
+                            <apex:actionFunction name="redirectToReturn" action="{!redirectToReturnId}"/>
+                            <apex:actionFunction name="validateAddress" action="{!prepareValidateVariables}" rerender="">
+                              <apex:param name="validateFlag" value="" assignTo="{!validateAddress}"/>
+                              <apex:param name="siteId" value="" assignTo="{!validateSiteId}"/>
+                            </apex:actionFunction>
+                            <button type="button" id="btnNext" class="btn btn-warning" onclick="macdProcessStart()">{!$Label.LG_ButtonNext}</button>
+                            <button type="button" id="btnCancel" class="btn btn-default" onclick="redirectToReturn()">{!$Label.LG_ButtonCancel}</button>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div id="progressBar" class="progress hidden">
+                          <div id="progressBarInner" class="progress-bar progress-bar-striped progress-bar-warning active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </apex:form>
+    
+    
+    <div class="sfdcBootstrap">
+        <!-- Modal For AddressSearch -->
+        <div class="modal fade" id="modalAddressSearch" role="dialog">
+          <div class="modal-dialog" style="width:70%">
+          
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">{!$Label.LG_AddressSearch}</h4>
+              </div>
+              <div class="modal-body">
+                  <c:UM_ValidateAddressComponent compsToRerender="moveSiteField,moveSiteJson" isOutsideAddressValidation="true" macdConfigurationController="{!pageController}"/>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</apex:page>

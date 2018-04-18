@@ -1,0 +1,21 @@
+<apex:page standardController="Case" Extensions="LG_Care_Cancel_CaMa_Transaction_Cntrl" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:pageMessages />
+  <apex:slds />
+  <apex:form >
+  <apex:pageBlock title="Cancellation Of CaMa Ticket">
+  <div class="slds-form slds-form_horizontal">
+      <label class="slds-form-element__label" for="text-input-id-1"><abbr class="slds-required" title="required">*</abbr>{!$Label.B2B_Care_vfPage_CareCancelCaMa1}</label>
+          <div class="slds-form-element__control">
+              <apex:inputField value="{!Case.B2B_Care_Cancellation_Code__c}" styleClass="slds-input"/>
+          </div>
+  </div>
+  <br></br>
+  <apex:pageBlockButtons >
+  <apex:commandButton styleClass="slds-button slds-button_neutral" value="{!$Label.B2B_Care_vfPage_CareCancelCaMa2}"  action="{!CancelCaMa}" disabled="{!flag}"></apex:commandButton>
+  <apex:commandButton styleClass="slds-button slds-button_neutral" value="{!$Label.B2B_Care_vfPage_CareCancelCaMa3}" action="{!Cancel}"></apex:commandButton>
+  </apex:pageBlockButtons>
+  </apex:pageBlock>
+  </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

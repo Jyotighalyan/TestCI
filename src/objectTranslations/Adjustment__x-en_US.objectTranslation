@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Adjustment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Adjustments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Invoice --></label>
+        <name>Invoice_Header__c</name>
+        <relationshipLabel><!-- Adjustments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Invoice Item --></label>
+        <name>Invoice_Item__c</name>
+        <relationshipLabel><!-- Adjustments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- accountExternalIdType --></label>
+        <name>accountExternalIdType__c</name>
+    </fields>
+    <fields>
+        <label><!-- accountExternalId --></label>
+        <name>accountExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- accountInternalId --></label>
+        <name>accountInternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- adjReasonCode --></label>
+        <name>adjReasonCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- billRefNo --></label>
+        <name>billRefNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- billRefResets --></label>
+        <name>billRefResets__c</name>
+    </fields>
+    <fields>
+        <label><!-- currencyCode --></label>
+        <name>currencyCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>effectiveDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- fraudIndicator --></label>
+        <name>fraudIndicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- origType --></label>
+        <name>origType__c</name>
+    </fields>
+    <fields>
+        <label><!-- primaryUnitsType --></label>
+        <name>primaryUnitsType__c</name>
+    </fields>
+    <fields>
+        <label><!-- primaryUnits --></label>
+        <name>primaryUnits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>requestStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Amount --></label>
+        <name>totalAmt__c</name>
+    </fields>
+    <fields>
+        <label><!-- trackingIdServ --></label>
+        <name>trackingIdServ__c</name>
+    </fields>
+    <fields>
+        <label><!-- trackingId --></label>
+        <name>trackingId__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

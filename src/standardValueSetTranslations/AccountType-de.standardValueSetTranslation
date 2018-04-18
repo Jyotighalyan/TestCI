@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Customer</masterLabel>
+        <translation>Kunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ex-Customer</masterLabel>
+        <translation>ehemaliger Kunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Partner</masterLabel>
+        <translation><!-- Partner --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Qualified Lead</masterLabel>
+        <translation>qualifizierter Lead</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

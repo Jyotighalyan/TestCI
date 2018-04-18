@@ -1,0 +1,18 @@
+{!TODAY()} 
+
+Guten Tag {!Contact.Salutation} {!Contact.LastName}, 
+
+gern kommen wir Ihrem Wunsch nach und senden Ihnen unser aktuelles Produktinformationsblatt. 
+
+Diese Informationen gelten für das Produkt generell. Etwaige Aktionen sind nicht berücksichtigt. Die konkreten Konditionen für Ihren Vertrag entnehmen Sie bitte der Auftragsbestätigung. 
+
+Umfangreiche Informationen zu all unseren Produkten finden Sie jederzeit auf www.unitymedia.de/business. 
+
+Für Rückfragen stehen wir Ihnen gern zur Verfügung: 
+
+Hotline: 0800 1415 9999 
+E-Mail: Enterprise.Service@unitymedia.de 
+
+Mit freundlichen Grüßen 
+
+Ihr Unitymedia Business Team

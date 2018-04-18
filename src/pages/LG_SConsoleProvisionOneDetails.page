@@ -1,0 +1,284 @@
+<apex:page standardController="Case" extensions="LG_SConsoleProvisionOneDetailsExtension">
+<link rel="stylesheet" href="/apex/sfLigtningOverride" />
+    <script type="text/javascript">
+    
+        window.onload = function(){
+            setPanelWidth();
+        };
+    
+        window.onresize = function() {
+            setPanelWidth();
+        };
+        
+        function setPanelWidth(){
+            var panelWidth = document.getElementById('{!$Component.Form.pb1.servicedetailssection.tableContent}');
+            panelWidth.style.width = (tableSize()-50) + 'px';
+        }
+        
+        function tableSize() {
+          var myWidth = 0, myHeight = 0;
+          if( typeof( window.innerWidth ) == 'number' ) {
+            //Non-IE
+            myWidth = window.innerWidth;
+              //myHeight = window.innerHeight;
+          } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+            //IE 6+ in 'standards compliant mode'
+            myWidth = document.documentElement.clientWidth;
+              //myHeight = document.documentElement.clientHeight;
+          } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+            //IE 4 compatible
+            myWidth = document.body.clientWidth;
+              //myHeight = document.body.clientHeight;
+          }
+            //window.alert( 'Width = ' + myWidth );
+            //window.alert( 'Height = ' + myHeight );
+            return myWidth;
+        }
+        
+        //Removed as a part of SFOM-1748
+        /*function EnableDisableDate(element, deleteaction){
+            var statusVal = document.getElementById('{!$Component.Form.pb1.servicedetailssection.servicedetailstable}');
+            var index = element.parentNode.parentNode.rowIndex;
+            var provTableSevice = document.getElementById('{!$Component.Form.pb1.servicedetailssection.servicedetailstable}'+':'+(index-1)+':servicestatus');
+            var seviceActivationDate = document.getElementById('{!$Component.Form.pb1.servicedetailssection.servicedetailstable}'+':'+(index-1)+':activationdate');
+            var seviceDeactivationDate = document.getElementById('{!$Component.Form.pb1.servicedetailssection.servicedetailstable}'+':'+(index-1)+':deactivationdate');
+            if(provTableSevice.value == 'Inactive'){
+                seviceDeactivationDate.disabled = false;
+                seviceActivationDate.disabled = true;
+                seviceActivationDate.value = '';
+            }else{
+                seviceActivationDate.disabled = false;
+                seviceDeactivationDate.disabled = true;
+                seviceDeactivationDate.value = '';
+            }
+           
+        }*/
+    </script>
+     <apex:form id="Form">
+        <apex:pageMessages ></apex:pageMessages>
+    <apex:pageBlock id="pb1" title="" mode="{!Mode}">
+    <apex:pageBlockSection title="Suborder" columns="2" collapsible="false" rendered="{!!Edit}" id="pb">
+          <apex:outputText label="Region" >
+          <apex:outputField value="{!Solution.LG_Address__r.cscrm__State_Province__c}" />
+          </apex:outputText>
+            <apex:outputText label="Technical contact number" >
+          <apex:outputField value="{!Solution.LG_Address__r.LG_TechnicalContact__r.Phone}" />
+          </apex:outputText>
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__c}" rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.csord__Order__c}" rendered="{!Provisioning}"/>
+            <apex:outputText label="Solution" rendered="{!Provisioning}">
+                <apex:outputLink value="/{!Solution.Id}" >{!Solution.LG_Solution_Name__c}</apex:outputLink>
+            </apex:outputText>
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__r.csordtelcoa__Change_Type__c}" rendered="{!Provisioning}"/>
+            <apex:outputField value="{!Solution.LG_TargetDate__c}" rendered="{!Provisioning}"/>
+            <!-- Removed as a part of - SFOM-1748 -->
+            <!--<apex:inputCheckbox value="{!jeopardy}" label="Jeopardy" rendered="{!Provisioning}" disabled="true"/> -->
+            <apex:outputField value="{!Solution.LG_EarliestInstallDate__c}" rendered="{!Provisioning}"/>
+            <!-- Removed as a part of - SFOM-1748 -->
+            <!--<apex:outputField value="{!Solution.LG_JeopardyExplanation__c}" rendered="{!Provisioning}"/>-->
+             <apex:outputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!Provisioning}"/>
+            <apex:outputText label="Provisioning Account No" >
+            <!--apex:outputField value="{!ProvisioningDetails[0].service.B2B_Care_Billing_Account_Number__c}" rendered="{!IF(ProvisioningDetails[0].service.LG_ProductFamily__c='Virtual Voice',false,true)}"/-->
+            <!-- Joshua 02/16/2018 Code change Replacing  service.B2B_Care_Billing_Account_Number__c with service.UM_HPBXExternalId__c in line below -->
+            <apex:outputField value="{!ProvisioningDetails[0].service.UM_HPBXExternalId__c}" rendered="{!!IF(CONTAINS(ProvisioningDetails[0].service.LG_ProductFamily__c,'Virtual Voice'),False,True)}"/>
+            <apex:outputField value="{!Solution.LG_ProvisioningAccountNo__c}" rendered="{!IF(CONTAINS(ProvisioningDetails[0].service.LG_ProductFamily__c,'Virtual Voice'),False,True)}"/>
+            </apex:outputText>
+            <!--Field blocked on behalf of SFOM-505 -->
+            
+            <!--<apex:outputfield value="{!Solution.Jeopardy_Reason__c}" rendered="{!Provisioning}"/>-->            
+            <apex:outputfield value="{!Solution.LG_Address__r.LG_Icomms_Premise_ID__c}" rendered="{!Provisioning}"/>
+             <apex:outputfield value="{!Solution.LG_Address__r.LG_Icomms_Site_ID__c}" rendered="{!Provisioning}"/>
+             <!-- SFOM-2250 added by sabeena-->
+              <apex:outputfield value="{!Asset.LG_MACAddress__c}" rendered="{!Provisioning}" />            
+             <!-- SFOM-2051 added by sabeena-->
+             <apex:outputfield value="{!Solution.LG_Address__r.LG_TechnicalContact__c}" label="Contact" rendered="{!Provisioning}" />            
+             <apex:outputText label="Service Location" rendered="{!Provisioning}">
+                <apex:outputLink value="/{!Solution.LG_Address__r.Id}" >{!Solution.LG_Address__r.LG_FullAddressDetails__c}</apex:outputLink>
+             </apex:outputText>
+             <!-- sfom 2475 -->
+             <apex:outputText label="Customer ID" rendered="{!Provisioning}">
+                 <apex:outputField value="{!Solution.csord__Order__r.csord__Account__r.LG_Huawei_Tenant_ID__c}" />
+             </apex:outputText>
+        </apex:pageBlockSection>
+        
+
+        
+        <apex:pageBlockSection title="Suborder" columns="2" collapsible="false" rendered="{!Edit}">
+            <apex:outputfield value="{!Solution.csord__Order__r.csord__Account__c}" rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__c}" rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.csord__Order__c}" rendered="{!Provisioning}"/>
+            <apex:outputText label="Solution" rendered="{!Provisioning}">
+                <apex:outputLink value="/{!Solution.Id}" >{!Solution.LG_Solution_Name__c}</apex:outputLink>
+            </apex:outputText>
+            <apex:outputfield value="{!Solution.csord__Order__r.csordtelcoa__Opportunity__r.csordtelcoa__Change_Type__c}" rendered="{!Provisioning}"/>
+            <apex:outputField value="{!Solution.LG_TargetDate__c}" rendered="{!Provisioning}"/>
+            <!-- Removed as a part of - SFOM-1748 -->
+            <!--<apex:inputCheckbox value="{!jeopardy}" label="Jeopardy" rendered="{!Provisioning}" />-->
+            <apex:inputField value="{!Solution.LG_EarliestInstallDate__c}" rendered="{!Provisioning}"/>
+            <!-- Removed as a part of - SFOM-1748 -->
+            <!--<apex:inputTextarea value="{!Solution.LG_JeopardyExplanation__c}" rendered="{!Provisioning}" disabled="{!jeopardy}"/>
+            <apex:outputText value="" rendered="{!jeoExpMsg}"/>
+            <apex:outputPanel style="text-align:center;color:red;font-weight:bold;" layout="block" rendered="{!jeoExpMsg}">
+                Jeopardy Explanation is mandatory.
+            </apex:outputPanel> -->
+            <apex:inputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!Provisioning}"/>
+            <apex:inputField value="{!Solution.LG_ProvisioningAccountNo__c}" rendered="{!Provisioning}"/>    <!---Added for SFOM 1693-->
+            <!--Field blocked on behalf of SFOM-505 -->
+            <!--<apex:selectList id="jeopardyReason" value="{!Solution.Jeopardy_Reason__c}" multiselect="false" size="1" label="Jeopardy Reason" rendered="{!Provisioning}">
+                    <apex:selectOptions value="{!JeopardyReason}"/>
+            </apex:selectList> -->
+            <apex:outputfield value="{!Solution.LG_Address__r.LG_Icomms_Premise_ID__c}" rendered="{!Provisioning}"/>
+            <apex:outputfield value="{!Solution.LG_Address__r.LG_Icomms_Site_ID__c}" rendered="{!Provisioning}"/> 
+             <!-- SFOM-2250 added by sabeena-->
+             <!--apex:outputfield value="{!Asset.LG_MACAddress__c}" rendered="{!Provisioning}" /-->            
+             <!-- SFOM-2051 added by sabeena-->
+             <!--Added for DGT-381 changes starts-->
+              <apex:inputfield value="{!Asset.LG_MACAddress__c}" rendered="{!Provisioning}" />  
+             <!--DGT-381 changes ends-->
+             <apex:outputfield value="{!Solution.LG_Address__r.LG_TechnicalContact__c}" label="Contact" rendered="{!Provisioning}" />            
+             <apex:outputText label="Service Location" rendered="{!Provisioning}">
+                <apex:outputLink value="/{!Solution.LG_Address__r.Id}" >{!Solution.LG_Address__r.LG_FullAddressDetails__c}</apex:outputLink>
+             </apex:outputText>
+            
+             <!-- sfom 2475 -->
+             <apex:outputText label="Customer ID" rendered="{!Provisioning}">
+                 <apex:outputField value="{!Solution.csord__Order__r.csord__Account__r.LG_Huawei_Tenant_ID__c}" rendered="{!Provisioning}" />
+             </apex:outputText>
+            
+            
+             
+        </apex:pageBlockSection>
+        <!--newly added for linked BDS DGT-117--rendered="{!checkBDSservice}"-->
+
+         <apex:pageBlockSection title="Linked BDS Details" columns="2" collapsible="false" rendered="{!checkBDSservice}">
+             <apex:outputText label="Primary Access">
+            <apex:outputField value="{!LInkedBDSvalue.LG_Primary_Check__c}"/> 
+             </apex:outputText>
+              <apex:outputText label="Secoundary Access">
+             <apex:outputField value="{!LInkedBDSvalue.LG_Secondary_Value__c}" />
+              </apex:outputText>
+             <apex:outputField value="{!LInkedBDSvalue.LG_Primary_Access_Network__c}" rendered="{!LInkedBDSvalue.LG_Primary_Check__c}"/> 
+             <apex:outputField value="{!LInkedBDSvalue.LG_Primary_Access_Type__c}" rendered="{!LInkedBDSvalue.LG_Primary_Check__c}"/> 
+             <apex:outputField value="{!LInkedBDSvalue.LG_Secondary_Access_Network__c}" rendered="{!LInkedBDSvalue.LG_Secondary_Value__c}"/> 
+             <apex:outputField value="{!LInkedBDSvalue.LG_Secondary_Access_Type__c}" rendered="{!LInkedBDSvalue.LG_Secondary_Value__c}"/>
+              <apex:outputText label="Bandwidth Speed">
+             <apex:outputField value="{!LInkedBDSvalue.UM_DownloadSpeed__c}" /> 
+               </apex:outputText>
+             <!--apex:outputField value="{!LInkedBDSvalue.LG_Hardware__c}" /-->
+              <apex:outputText label="Hardware">
+               <apex:outputField value="{!BDSServiceAsset.csord__Asset_Value__c}" />
+               </apex:outputText>
+             
+             <apex:outputField label="ESN Number" value="{!BDSServiceAsset.LG_MACAddress__c}" rendered="{!!Edit}"/> 
+                <apex:outputField value="{!BDSServiceAsset.LG_Logistics_Reference_Number__c}" rendered="{!!Edit }" /> 
+            <apex:outputField value="{!BDSServiceAsset.LG_Logistics_Supplier_Name__c}" rendered="{!!Edit}"/>
+            
+            <apex:inputField label="ESN Number" value="{!BDSServiceAsset.LG_MACAddress__c}" rendered="{!Edit}"/> 
+                 <apex:inputField value="{!BDSServiceAsset.LG_Logistics_Reference_Number__c}" rendered="{!Edit}"/>
+                <apex:inputField value="{!BDSServiceAsset.LG_Logistics_Supplier_Name__c}" rendered="{!Edit}"/>
+          </apex:pageBlockSection>
+          
+          
+             
+             
+             
+       
+          <apex:pageBlockSection id="servicedetailssection" title="Provisioning Details" columns="1" collapsible="false" >
+            <!--<apex:outputField value="{!Solution.LG_ProvisioningWorkOrder__c}" rendered="{!Provisioning}"/>-->
+            <apex:outputPanel id="tableContent" layout="block" style="overflow:auto;" >
+           <apex:pageBlockTable value="{!ProvisioningDetails}"  var="provObj" rendered="{!!Edit}" >
+               <apex:column headerValue="Provision Flag" width="35" style="text-align:center;">
+                    <apex:image value="{!URLFOR($Resource.TrafficSignal, '/'+provObj.provisionFlag)}" height="16" width="16" />
+                </apex:column>
+                <apex:column headerValue="Product Name">
+                    <apex:outputText >
+                        <apex:outputLink value="{!provObj.screenFlowPath}" rendered="{!provObj.screenFlowPath!=null}">{!provObj.service.Name}</apex:outputLink>
+                        <apex:outputText rendered="{!provObj.screenFlowPath==null}">{!provObj.service.Name}</apex:outputText>
+                        {!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                </apex:column>
+            <apex:column headerValue="Provisioning Code" value="{!provObj.service.LG_ProvisioningCode__c}" />
+               <!--SFOM-245   -->
+               <!-- Removed as a part of - SFOM-1748 -->
+                <!--<apex:column headerValue="Status" >
+                   <apex:outputField value="{!provObj.service.csord__Status__c}" />
+               </apex:column>-->
+               <!-- SFOM-1748 -->
+                <apex:column headerValue="Action" >
+                    <apex:outputField value="{!provObj.service.LG_Action__c}" />
+                </apex:column>
+                 <apex:column headerValue="Replaced Service Name" rendered="{IF(provObj.service.csordtelcoa__Replaced_Service__r.Name!=null)}">
+                <apex:outputField id="ReplacedServiceName" value="{!provObj.service.csordtelcoa__Replaced_Service__r.Name}" rendered="{IF(provObj.service.csordtelcoa__Replaced_Service__r.Name!=null)}"/>
+            </apex:column>
+               <apex:column headerValue="Activation Date">
+                    <apex:outputField value="{!provObj.service.csord__Activation_Date__c}" />
+                </apex:column>
+                <apex:column headerValue="Deactivation Date">
+                <apex:outputField value="{!provObj.service.csord__Deactivation_Date__c}" />
+            </apex:column>
+               <!-- SFOM - 647 Added by : Ankur Gupta -- Start -->
+                <!--<apex:column headerValue="Delta Status" value="{!provObj.service.csordtelcoa__Delta_Status__c}"/> -->
+               <!-- SFOM - 647 Added by : Ankur Gupta -- End -->
+               
+        </apex:pageBlockTable>
+
+        <apex:pageBlockTable id="servicedetailstable" value="{!ProvisioningDetails}"  var="provObj" rendered="{!Edit}">
+                <apex:column headerValue="Provision Flag" width="35" style="text-align:center;">
+                    <apex:image value="{!URLFOR($Resource.TrafficSignal, '/'+provObj.provisionFlag)}" height="16" width="16" />
+                </apex:column>
+                <apex:column headerValue="Product Name">
+                    <apex:outputText >
+                        <apex:outputLink value="{!provObj.screenFlowPath}" rendered="{!provObj.screenFlowPath!=null}">{!provObj.service.Name}</apex:outputLink>
+                        <apex:outputText rendered="{!provObj.screenFlowPath==null}">{!provObj.service.Name}</apex:outputText>
+                        {!provObj.address}&nbsp;{!provObj.keyAttribute}</apex:outputText>
+                </apex:column>
+            <apex:column headerValue="Provisioning Code" value="{!provObj.service.LG_ProvisioningCode__c}" />
+            <!--SFOM-245   -->
+            <!--SFOM-1693 - Select list blocked   -->
+           <!-- Removed as a part of - SFOM-1748 -->
+            <!--<apex:column headerValue="Status" >
+                <apex:selectList id="servicestatus" value="{!provObj.service.LG_ServiceStatus__c}" multiselect="false" size="1" onchange="EnableDisableDate(this,'{!provObj.deactivationrequired}');" rendered="{!!provObj.deactivationrequired}">
+                  <apex:selectOptions value="{!provObj.selectList}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList value="{!provObj.service.LG_ServiceStatus__c}" multiselect="false" size="1" rendered="{!provObj.deactivationrequired}">
+                  <apex:selectOptions value="{!provObj.selectList}"></apex:selectOptions>
+                </apex:selectList>
+           </apex:column>-->
+           <!--<apex:column headerValue="Status" >
+                   <apex:outputField value="{!provObj.service.csord__Status__c}" />
+            </apex:column> -->
+            <!-- SFOM-1748 -->
+            <apex:column headerValue="Action" >
+                <apex:outputField id="servicestatus" value="{!provObj.service.LG_Action__c}" />
+            </apex:column>
+             <apex:column headerValue="Replaced Service Name" rendered="{IF(provObj.service.csordtelcoa__Replaced_Service__r.Name!=null)}" >
+                <apex:outputField id="ReplacedServiceName" value="{!provObj.service.csordtelcoa__Replaced_Service__r.Name}" rendered="{IF(provObj.service.csordtelcoa__Replaced_Service__r.Name!=null)}"/>
+            </apex:column>
+            <apex:column headerValue="Activation Date">
+                <apex:inputField id="activationdate" value="{!provObj.service.csord__Activation_Date__c}" rendered="{!!provObj.deactivationrequired}" />
+                <apex:inputField value="{!provObj.service.csord__Activation_Date__c}" html-disabled="{!provObj.deactivationrequired}" rendered="{!provObj.deactivationrequired}" />
+            </apex:column>
+            <apex:column headerValue="Deactivation Date">
+                <apex:inputField value="{!provObj.service.csord__Deactivation_Date__c}" rendered="{!provObj.deactivationrequired}" />
+                <apex:inputField id="deactivationdate" value="{!provObj.service.csord__Deactivation_Date__c}" rendered="{!!provObj.deactivationrequired}" html-disabled="{!!provObj.deactivationrequired}"/>
+            </apex:column>
+             <!-- SFOM - 647 Added by : Ankur Gupta -- Start -->
+               <!-- <apex:column headerValue="Delta Status" value="{!provObj.service.csordtelcoa__Delta_Status__c}"/> -->
+               <!-- SFOM - 647 Added by : Ankur Gupta -- End -->
+        </apex:pageBlockTable>
+       </apex:outputPanel>
+       </apex:pageBlockSection>
+        <apex:pageBlockButtons rendered="{!!caseClosed}">
+            <apex:commandButton action="{!edit}" value="Edit" rendered="{!!Edit}" />
+            <!-- Removed as a part of SFOM-1748 -->
+            <!-- <apex:commandButton value="All Ready for Billing" rendered="{!!Edit}" action="{!ChangeServiceStatusRFB}"/>  -->   <!--SFOM 1693-->
+            <!--<apex:commandButton value="All Active/Inactive" rendered="{!!Edit}" action="{!ChangeServiceStatusActive}"/> -->      <!--SFOM 1693-->
+            <apex:commandButton value="Refresh" action="{!PageRefresh}" rendered="{!!Edit}"/>
+            <apex:commandButton action="{!save}" value="Save" rendered="{!Edit}" />
+            <apex:commandButton action="{!cancel}" value="Cancel" rendered="{!Edit}" />
+        </apex:pageBlockButtons>
+               
+        </apex:pageBlock>
+
+        </apex:form>
+</apex:page>
