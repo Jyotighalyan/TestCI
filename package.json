@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -8,6 +9,18 @@
     "destroy": "node build/destroy",
     "retrieve": "node build/retrieveByName",
     "package-xml": "./node_modules/.bin/package-xml -v \"37.0\"",
+=======
+  "name": "foreteescms",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "package": "npm run package-xml && npm run clean-metadata",
+    "build": "npm run package && npm run deploy",
+    "deploy": "node build/deploy",
+    "destroy": "node build/destroy",
+    "retrieve": "node build/retrieveByName",
+    "package-xml": "./node_modules/.bin/package-xml -n \"ForeTeesCMS\" -v \"37.0\"",
+>>>>>>> branch 'Jyoti_Ghalyan' of https://github.com/Jyotighalyan/Hello
     "clean-metadata": "./node_modules/.bin/package-xml -m -c",
     "gulp": "gulp"
   },
